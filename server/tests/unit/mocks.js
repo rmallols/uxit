@@ -8,4 +8,8 @@
             return $delegate;
         });
     });
+
+    angular.module('mocks.i18nSpy', []).factory('i18nService', function () {
+        return jasmine.createSpy('i18nService');
+    });
 })();
