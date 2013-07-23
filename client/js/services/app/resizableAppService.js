@@ -4,6 +4,12 @@
 
         var cols = rowService.getMaxSlots(), previousSize, resizingColumnScope, affectedColumn;
 
+        /**
+         * Triggers the resize event (mousedown)
+         *
+         * @param {object} resizingDomObj   The pointer to the DOM object that will be resized
+         * @param {object} event            The mouse(down) event that has been triggered
+         */
         function start(resizingDomObj, event) {
             var row = resizingDomObj.closest('.rows'), size = row.width() / cols;
             previousSize = resizingDomObj.width();
@@ -12,6 +18,11 @@
             resizingDomObj.resizable('option', 'grid', size);
         }
 
+        /**
+         * Executes the resize action
+         *
+         * @param {object} resizingDomObj   The pointer to the DOM object that is being resized
+         */
         function resize(resizingDomObj) {
             var hasBeenReduced = resizingDomObj.width() < previousSize;
             if (affectedColumn) {
@@ -24,6 +35,7 @@
             pageService.updateCurrentPage(null);
         }
 
+        /** Private methods **/
         function setAffectedColumn(resizingDomObj, event) {
             var index = resizingColumnScope.$index;
             //noinspection JSUnresolvedVariable
@@ -63,6 +75,7 @@
                 affectedColumn.size = affectedColumn.size - 1;
             }
         }
+        /** End private methods **/
 
         return {
             start: start,

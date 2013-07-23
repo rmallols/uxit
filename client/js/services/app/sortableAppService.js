@@ -5,6 +5,11 @@
 
         var originalElm, isUpdateBlocked = false, options;
 
+        /**
+         * Triggers the sort event
+         *
+         * @param {object} ui   The object that holds the information about the item that will be sorted
+         */
         function start(ui) {
             $('html').addClass('sorting');
             originalElm = $(ui.item).parent();
@@ -12,6 +17,11 @@
             registerKeyboardEvents();
         }
 
+        /**
+         * Executes the update action
+         *
+         * @param {object} ui   The object that holds the information about the item that will be sorted
+         */
         function update(ui) {
             var rows = pageService.getCurrentPage().rows;
             setOptions(rows, originalElm, $(ui.item));
@@ -24,13 +34,18 @@
             isUpdateBlocked = false;
         }
 
-        function isUpdateTime() {
-            return colService.areSameCol(options.originalCol, options.dropCol) || !isUpdateBlocked || options.isNewItem;
-        }
-
+        /**
+         * Finishes the sort event
+         *
+         */
         function stop() {
             unregisterKeyboardEvents();
             $('html').removeClass('sorting');
+        }
+
+        /** Private methods **/
+        function isUpdateTime() {
+            return colService.areSameCol(options.originalCol, options.dropCol) || !isUpdateBlocked || options.isNewItem;
         }
 
         function registerKeyboardEvents() {
@@ -186,6 +201,7 @@
             arrayService.add(dropCol.apps, { type: droppedElm.attr('type') }, dropAppIndex);
             droppedElm.remove();
         }
+        /** End private methods **/
 
         return {
             start: start,
