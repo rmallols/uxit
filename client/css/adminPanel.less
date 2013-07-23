@@ -1,0 +1,63 @@
+@defaultTop: -90%;
+
+.admin {
+    .offsettedHeight(-60px);
+	width:100%;
+	position:fixed;
+	top:@defaultTop;
+	left:0px;
+	text-align:left;
+    padding: @padding;
+    background-color: @high;
+    z-index:10;
+    .transition(top @speed);
+}
+
+.admin.hide {
+  top:@defaultTop;
+}
+
+.admin.show {
+  top: @tabsHeight;
+}
+
+.admin > .edit > .actions {
+    height: @tabsHeight;
+    position: absolute;
+    right: @padding;
+    bottom: @padding;
+    padding: @padding 0 0 @padding;
+    width: auto;
+    z-index:1;
+    background-color: @high;
+}
+
+.admin  > .edit > .actions > button {
+	display:none;
+}
+
+.admin.show  > .edit > .actions > button {
+	display:inline-block;
+}
+
+.admin > .edit .tabs.level1 {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width:100%;
+  z-index:1;
+}
+
+.admin > .edit .content.level1 {
+	height:100%;
+}
+
+.admin > .edit .content.level1,
+.admin > .edit .content.level2 {
+    color: @fontColor;
+    background-color: @highComp;
+}
+
+.admin .mediaThumbnail.selected {
+  background-color: @high !important;
+}

@@ -1,0 +1,47 @@
+[list] .item {
+  float: left;
+}
+
+[list].selectable .item {
+  position:relative;
+  overflow: hidden;
+}
+
+[list].selectable .item:hover {
+  background: #eee;
+}
+
+[list].selectable .item.active {
+  overflow: visible;
+}
+
+[list] .item > .text {
+  float: left;
+}
+
+@selectFromCheckboxWidth: 32px;
+[list].selectable .item > .text {
+  cursor:pointer;
+  .offsettedWidth(-@selectFromCheckboxWidth);
+}
+
+[list] .item > button.remove {
+  position:absolute;
+  margin-top:15px;
+  right:@transitionRight;
+  .transition(right @speed);
+}
+
+[list] .item.active > button.remove,
+[list] .item:hover > button.remove {
+  right:@padding;
+}
+
+[list] .item .selectFromCheckbox {
+  width: @selectFromCheckboxWidth;
+  float: left;
+}
+
+[list] .item .selectFromCheckbox > * {
+  margin: @padding @padding 0 0;
+}

@@ -1,0 +1,10 @@
+<div>
+    <div class="navigationContainer {{model.navigationPos}}">
+        <div class="navigatorOverlay"></div>
+        <div class="navigator cf" ng-style="setNavigatorCenterPos()">
+            <img class="mediaThumbnail" ng-repeat="media in internalData.mediaList" ng-click="internalData.goToMedia($index)"
+                 ng-class="getMediaThumbnailSelectedClass($index)" ng-src="{{getDownloadUrl($index)}}" />
+        </div>
+    </div>
+    <img ng-src="{{getDownloadUrl(internalData.currentMediaIndex)}}" />
+</div>

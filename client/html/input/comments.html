@@ -1,0 +1,21 @@
+<div class="comments">
+    <h5 class="title"><label i18n="comments"></label></h5>
+    <div ng-show="comments.length == 0" class="noComments"><label i18n="comments.noItems"></label></div>
+    <ul class="firstLevel" ng-show="comments.length > 0">
+        <li class="comment" ng-repeat="comment in comments">
+            <img class="avatar" ng-src="{{getDownloadUrl(comment.create.author.media)}}" />
+            <div class="metaData">
+                <div class="header">
+                    <div class="author"><a href="#">{{comment.create.author.fullName}}</a></div>
+                    <div class="date">{{getFormattedDate(comment.create.date)}}</div>
+                    <div rating="comment.avgRating" target-id="comment._id" target-collection="comments"
+                         height="16" ux-show="showRatings()"></div>
+                </div>
+                <div class="message" ng-bind-html-unsafe="comment.text"></div>
+            </div>
+        </li>
+    </ul>
+    <!--<textarea ng-model="newCommentText" class="newCommentInput" content-editable placeholder="{{getI18nPlaceholder()}}"></textarea>-->
+    <textarea ng-model="newCommentText" class="newCommentInput" placeholder="{{getI18nPlaceholder()}}"></textarea>
+    <button class="addIcon" ng-click="createComment()">Add comment</button>
+</div>

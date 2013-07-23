@@ -1,0 +1,6 @@
+<div>
+    <div ng-repeat="language in languages" class="flag {{language.code}}" ng-click="selectLanguage(language.code)"
+         ng-class="{current: isCurrentLanguage(language.code)}" title="{{language.text}}">
+        <img ng-src="/client/images/flags/{{language.code}}.svg" />
+     </div>
+</div>

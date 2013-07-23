@@ -1,0 +1,52 @@
+@smallButtonSize  : 28px;
+@normalButtonSize : 42px;
+@bigButtonSize    : 64px;
+
+button {
+	.circled;
+	background-color:@high;
+	background-size:auto 70%;
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+	border:3px solid @highComp;
+    width:@normalButtonSize;
+    height:@normalButtonSize;
+}
+
+button:hover { background-color:@highDarken; }
+
+button:not(:empty) {
+  width: auto;
+  padding: 0px 12px 0px 36px;
+  background-position:8px 50%;
+  font-size: 18px;
+  color: @highComp;
+}
+
+button-group > button { margin: 0px; }
+
+button-group > button:first-child {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-right: 0px;
+}
+
+button-group > button:last-child {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left: 0px;
+}
+
+button-group > button:not(:first-child):not(:last-child) {
+  border-radius: 0px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  margin: 0px -6px 0px -6px;
+  position: relative;
+}
+
+button.active { border-color: red !important; }
+
+button.small    { width:@smallButtonSize; height:@smallButtonSize; }
+button.normal   { width:@normalButtonSize; height:@normalButtonSize; }
+button.big      { width:@bigButtonSize; height:@bigButtonSize; }

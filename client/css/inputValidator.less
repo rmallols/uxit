@@ -1,0 +1,98 @@
+@hiddenRightPos : -100px;
+@opacity: 0.9;
+@helpWidth: 200px;
+
+.input-help {
+  visibility: hidden;
+  position:absolute;
+  z-index: 100;
+  top: -7px;
+  right: @hiddenRightPos;
+  width:@helpWidth;
+  padding:@padding;
+  color: @fontColor;
+  background:@highComp;
+  opacity: 0;
+  color:@highComp;
+  .transitionMultiple(~" right @{speed}, opacity @{speed}");
+}
+
+/*Input help default arrow style */
+.input-help::before {
+  content: "\25C0";
+  position: absolute;
+  top:@padding;
+  left:-11px;
+  font-size:16px;
+  line-height:16px;
+  color:#ddd;
+  text-shadow:none;
+}
+
+/* Input help title*/
+.input-help .title {
+  font-size:16px;
+  line-height:20px;
+}
+
+/* Hide the input help when it's pristine */
+.ng-pristine + .input-help {
+  visibility: hidden;
+}
+
+/* Show green border when stuff has been typed in, and its valid */
+.ng-dirty.ng-valid {
+  border-color:@successColor;
+}
+
+/* Show red border when the stuff is invalid */
+/*.ng-dirty*/.ng-invalid {
+  border-color:@errorColor;
+}
+
+/* Help should show and be red when valid */
+.ng-valid + .input-help {
+  border-color: @successColor;
+  background-color:@successColor;
+  right: @hiddenRightPos;
+  .transitionMultiple(~" right @{speed}, opacity 1000, visibility 1000");
+}
+
+/* Help should show and be red when invalid */
+/* It should be dirty or pristine with a special flag to force the message visbility*/
+.ng-pristine.ng-invalid.forceMessage + .input-help,
+.ng-invalid.ng-dirty + .input-help {
+  border-color: @errorColor;
+  background-color:@errorColor;
+  right: -@helpWidth + 20;
+  opacity: @opacity;
+  visibility: visible;
+}
+
+/* Input help colors depending on the validation state*/
+.ng-valid + .input-help::before {
+  color:@successColor;
+}
+
+.ng-invalid + .input-help::before {
+  color: @errorColor;
+}
+
+/* Style input help requirement bullets */
+.input-help ul {
+  list-style: none;
+  margin: 10px 0 0 0;
+}
+
+/* Default each bullet to be invalid with a red cross and text */
+.input-help li {
+  padding: 4px 0px 0px 22px;
+  line-height: 18px;
+  background-repeat: no-repeat;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAA1CAYAAABIkmvkAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAJwAAACcBKgmRTwAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMC8wOS8xMlhq+BkAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAAEA0lEQVRIie2WW2jbVRzHv//zT5rkn0ub61zaNdEiPqTC9EFRhtgJk63qg3Wr0806pswNiYgDUXxwyryCEB8UBevtaSCCDHQoboKyoVvVzfRmL2napU0mrdbl8s//dy4+dM1M28n64FsPnIdz+XzO75zfOXA0pRRWU7o/uS9FxOc+3/vlIQBgq4F3fHxvKuIPJ9cFwi9uTXU8BwDa1Uaw/aN7UusCkWRbPI5yxcTI2Bgy49kXrkrwwIedqYg/nGyLXwsJiYHBYWTGs7Cq5Kpt4cA3PXft+2rX40vhrt7OVLgplIzHYuBKoH9gCKMjGVE1LdfJl86YDAAOfN2ziZP4NODyv9/z2fanFuH7P9iWCjcFk/FYK4QSGLgEk0WeUy/3mQCgPXFs9xbBRW883NrssDvQN3hWcOLPEPGWiD94MBaPQymBoaERjI9mBSfu+fHwL+biItpjR3e6JFfloDeAaGQ9SpUycvlp6ExHJBKGYsDvgyMYH81KTsL90yuX4VoWdh3pMqSQpWBjAC3RZkgpYEkCFDA8NIqJ0UlFxI3Tr/5aB9elsau305BcloKBAFpjLeBSYGRwDBNjk4oTN06/dnYZXCcAgK1vbzYkl6VwOATihOzYlOLEjTOvn1sRXiYAgDsP32YIKUuWaXFOwtP3xrnqleAVBQBwy/M3GZy4+PnN3/4TvqJgNWVVj2lNsCZYE6wJ1gRrgv9dYAMAHHw2Bl2fUEpBVavtLPVW/78nVR/Zk4CupzVHA6zChSOK0yHv0S8GFyK4BMPhAJxOgLE03/9kYhE2dz+agKaldY8bDaEQ7D5ft7Roy+UIlCooy5LQdaZ5vVBEgGmmrT172yVxaIylmdcDm9cHc2oK1Zm8kETvLAo0pRRk8mmnEqKouVw68zVCzP8F/uccFHHoXi/sjT6Y53Mw83mhOHn8J7416wQAwPftd0ouiswwdJu/CRASkBKQAmYuBzNfWIC/O173W6llwfbeu6Yi8tDsrAQJYGICyGQAIWDO5KUkaxlcJwAASdSmaWAQHCACOAc4h6YzJi1qWymNNUHlwYcT0JDWXQbACYhGgeh6gHM4Ghuh2/R0YePNiaUCTSmFcvdDCY1paZvhht3nQ2VmGmahICSR5vQHmDt6DcozeZSnp2FdLLZHhwdq94SVd+xMaJqWtrkM2L1uVHILpy0t8igidymXExfHMzBCQbhCIdga7Onz8etqkdgkUYTZbYCSqORmULlQEIq4J3jyexMA8jdu9BRzuaKyLN3udkNjDEqICID+2hbm797Wwez24/T3vJTE3aFTP9Sd9vT1NziVEMUGr1c35+Y2b5jKnqgNKqWglMLspjs6/rj1dudie2mdao07J5s3dCzt/werJTyI1yYqpQAAAABJRU5ErkJggg==) no-repeat  2px -@inputHeight;
+}
+
+/* Set to green check and text when valid */
+.input-help li.valid {
+  background-position: 2px 6px;
+}

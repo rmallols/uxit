@@ -1,0 +1,58 @@
+@boxMargin: 5px;
+nested-items ul.items { min-height: @boxMargin; }
+nested-items { display: block; }
+nested-items nested-items li { margin-left: 20px; }
+
+nested-items li.item > div.box {
+  display: block;
+  margin-bottom: @boxMargin;
+  padding: 0px;
+  box-sizing:border-box;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+nested-items li.item > div.box.collapsed {
+  margin-bottom: 2 * @boxMargin;
+}
+
+nested-items li.item > div.box + .subItemsContainer.hasSubItems {
+  margin-top: 2 * @boxMargin;
+}
+
+nested-items li.item > div.box label {
+  display: inline-block;
+  float: left;
+  text-align: left;
+  padding: @padding 5px;
+  .offsettedWidth(-40px)
+}
+
+nested-items li.item.hasSubItems > div.box label {
+  .offsettedWidth(-70px)
+}
+
+nested-items li.item .sortingBox {
+  height: 100%;
+  border-right: 1px dashed @highCompDarken;
+  margin-right: 10px;
+}
+
+@buttonsPadding : 7px;
+nested-items li.item button.toggleSubItems {
+  float: left;
+  margin: 2 * @buttonsPadding @buttonsPadding 0px 0px;
+}
+
+nested-items li.item .actions {
+  position: absolute;
+  right: @transitionRight;
+  top: @buttonsPadding;
+  .transition(right @speed);
+}
+
+nested-items li.item > div.box:hover .actions,
+nested-items li.item > div.box.selected .actions {
+  right:@buttonsPadding;
+}

@@ -1,0 +1,58 @@
+ul.pages {
+  margin-top: 0px;
+  height: 100%;
+}
+
+ul.pages.adminAccess {
+  margin-top: @tabsHeight;
+  .offsettedHeight(-@tabsHeight);
+}
+
+ul.pages > li.page {
+    min-height: 100%;
+    background: none;
+}
+
+ul.pages > li.page > * {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.columns {
+    padding: 0px !important;
+    position: relative;
+    border: 3px solid transparent;
+    /*.transition(width @speed);*/
+}
+
+html.sorting .columns {
+  border: 3px dashed blue;
+}
+
+.columns,
+.columns > * {
+  min-height: 20px;
+}
+
+.columns .ui-resizable-handle {
+  width: 60px;
+  z-index: 2 !important;
+}
+
+.columns .ui-resizable-e {
+  right:-60px;
+}
+
+.columns .ui-resizable-w {
+  left:-60px;
+}
+
+html:not(.appMaximized) .columns .appContainer {
+  z-index: 4;
+}
+
+@media only screen and (max-width: 767px) {
+  .rows, .columns { padding: 0px;}
+}
+

@@ -1,0 +1,6 @@
+<ul class="rating">
+    <li ng-repeat="rating in normalizedRating" ng-click="rate($index+1)" ng-class="getStarStyleClass($index+1, rating)"
+        ng-mouseenter="hoverRate($index+1)" ng-mouseleave="clearHoverRate()">
+            <div class="star" ng-style="getStarSize()"></div>
+    </li>
+</ul>

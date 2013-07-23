@@ -1,0 +1,30 @@
+.minicolors {
+  width: 100% !important;
+}
+
+@previewColorPadding: 8px;
+.minicolors .minicolors-swatch {
+  width: @inputHeight - @previewColorPadding !important;
+  height: @inputHeight - @previewColorPadding !important;
+  position: absolute;
+  margin-top: @previewColorPadding / 2;
+  margin-left: @previewColorPadding / 2;
+}
+
+.minicolors .minicolors-swatch span {
+  box-shadow: inset 0 (@inputHeight / 2 - 1) 0 rgba(255, 255, 255, .1) !important;
+}
+
+.minicolors input.minicolors-input {
+  width: 100% !important;
+  height: @inputHeight !important;
+  border: @fieldBoxBorderColor !important;
+  padding:@fieldBoxPadding @fieldBoxPadding @fieldBoxPadding @inputHeight !important;
+  margin: 0px !important;
+}
+
+.minicolors .minicolors-panel {
+  top: @inputHeight !important;
+  border: none !important;
+  box-shadow: none !important;
+}

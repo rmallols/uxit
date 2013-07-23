@@ -1,0 +1,91 @@
+.app.mediaCarouselApp .content {
+    text-align:center;
+}
+
+.app.mediaCarouselApp .content [media-carousel-view] {
+    position: relative;
+}
+
+.app.mediaCarouselApp .navigatorOverlay {
+    position:absolute;
+    z-index: 1;
+    background:black;
+    opacity:.5;
+}
+
+.app.mediaCarouselApp .navigator {
+    position:absolute;
+    z-index: 2;
+}
+
+.app.mediaCarouselApp .navigationContainer.top .navigatorOverlay,
+.app.mediaCarouselApp .navigationContainer.bottom .navigatorOverlay {
+    width: 100%;
+    height: 40px;
+}
+
+.app.mediaCarouselApp .navigationContainer.top .navigatorOverlay,
+.app.mediaCarouselApp .navigationContainer.top .navigator {
+    top: 0;
+}
+
+.app.mediaCarouselApp .navigationContainer.bottom .navigatorOverlay,
+.app.mediaCarouselApp .navigationContainer.bottom .navigator {
+    bottom: 0;
+}
+
+.app.mediaCarouselApp .navigationContainer.left .navigatorOverlay,
+.app.mediaCarouselApp .navigationContainer.left .navigator,
+.app.mediaCarouselApp .navigationContainer.right .navigatorOverlay,
+.app.mediaCarouselApp .navigationContainer.right .navigator {
+    width:20%;
+    height:100%;
+}
+
+.app.mediaCarouselApp .navigationContainer.left .navigatorOverlay,
+.app.mediaCarouselApp .navigationContainer.left .navigator {
+    left: 0;
+}
+.app.mediaCarouselApp .navigationContainer.right .navigatorOverlay,
+.app.mediaCarouselApp .navigationContainer.right .navigator {
+    right: 0;
+}
+
+.app.mediaCarouselApp .navigationContainer.top .navigator,
+.app.mediaCarouselApp .navigationContainer.bottom .navigator {
+    left: 50%;
+}
+
+.app.mediaCarouselApp .navigationContainer.top .navigator > img.mediaThumbnail,
+.app.mediaCarouselApp .navigationContainer.bottom .navigator > img.mediaThumbnail {
+    width:96px;
+    float:left;
+}
+
+.app.mediaCarouselApp .navigationContainer.left .navigator > img.mediaThumbnail,
+.app.mediaCarouselApp .navigationContainer.right .navigator > img.mediaThumbnail {
+    width:95%;
+}
+
+.app.mediaCarouselApp .navigator > .mediaThumbnail {
+    cursor:pointer;
+    margin:5px;
+}
+
+.app.mediaCarouselApp .navigator > div.mediaThumbnail {
+    width:32px;
+    height:32px;
+    background:#ccc;
+}
+
+.app.mediaCarouselApp .navigator > img.mediaThumbnail {
+    border:3px solid transparent;
+}
+
+.app.mediaCarouselApp .navigator > div.mediaThumbnail.selected {
+    background-color:#dd0000;
+}
+
+.app.mediaCarouselApp .navigator > img.mediaThumbnail.selected {
+    border-color: red;
+}

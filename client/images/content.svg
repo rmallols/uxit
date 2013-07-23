@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- The icon can be used freely in both personal and commercial projects with no attribution required, but always appreciated. 
+You may NOT sub-license, resell, rent, redistribute or otherwise transfer the icon without express written permission from iconmonstr.com -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   width="512px"
+   height="512px"
+   viewBox="0 0 512 512"
+   enable-background="new 0 0 512 512"
+   xml:space="preserve"
+   id="svg2"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="iconmonstr-newspaper-4-icon (1).svg"><metadata
+   id="metadata9"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs7" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1303"
+   inkscape:window-height="745"
+   id="namedview5"
+   showgrid="false"
+   inkscape:zoom="0.4609375"
+   inkscape:cx="-82.440678"
+   inkscape:cy="256"
+   inkscape:window-x="55"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg2" />
+<path
+   id="newspaper-4-icon"
+   d="M407.941,220.651c-39.386,2.067-88.79,14.911-119.858,26.849v-20.085  c33.274-11.258,78.492-23.829,119.858-26V220.651z M407.941,236.75c-41.366,2.171-86.584,14.742-119.858,26v20.085  c31.068-11.938,80.473-24.781,119.858-26.849V236.75z M407.941,152.748c-41.366,2.171-86.584,14.742-119.858,26v33.085  c31.068-11.938,80.473-24.781,119.858-26.849V152.748z M462,88.104v289.334c-73.634,3.533-140.68,16.394-206,46.457  c-65.32-30.063-132.366-42.924-206-46.457V88.104c72.509,3.568,153.417,18.396,206,47.096C308.583,106.5,389.491,91.672,462,88.104z   M246.917,165.727C203.917,140,133.115,127.129,80,120.749v228.562c60.812,4.957,119.021,17.719,166.917,36.197V165.727z   M432,120.749c-53.115,6.38-123.917,19.251-166.917,44.978v219.781c47.896-18.479,106.105-31.24,166.917-36.197V120.749z   M407.941,272.417c-41.366,2.171-86.584,14.742-119.858,26v20.085c31.068-11.938,80.473-24.781,119.858-26.849V272.417z   M407.941,308.75c-41.366,2.171-86.584,14.742-119.858,26v20.085c31.068-11.938,80.473-24.781,119.858-26.849V308.75z   M223.917,227.415c-33.274-11.258-78.492-23.829-119.858-26v19.236c39.386,2.067,88.79,14.911,119.858,26.849V227.415z   M223.917,334.75c-33.274-11.258-78.492-23.829-119.858-26v19.236c39.386,2.067,88.79,14.911,119.858,26.849V334.75z   M223.917,178.748c-33.274-11.258-78.492-23.829-119.858-26v32.236c39.386,2.067,88.79,14.911,119.858,26.849V178.748z   M223.917,298.417c-33.274-11.258-78.492-23.829-119.858-26v19.236c39.386,2.067,88.79,14.911,119.858,26.849V298.417z   M223.917,262.75c-33.274-11.258-78.492-23.829-119.858-26v19.236c39.386,2.067,88.79,14.911,119.858,26.849V262.75z"
+   style="stroke:none;stroke-opacity:1;fill:#ffffff;fill-opacity:1" />
+</svg>

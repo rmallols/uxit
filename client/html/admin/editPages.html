@@ -1,0 +1,50 @@
+<li class="hasSubmenu">
+	<div class="submenu">
+        <nested-pages-wrapper pages="pages" items="items" selected-item="selectedPage" on-add="onAddPage($page)"></nested-pages-wrapper>
+	</div>
+    <ul vertical-tabs="level2Tabs"></ul>
+	<div class="content level2">
+        <ul ng-form="editPages">
+            <li class="layer" id="currentLayout{{$id}}">
+                <div class="columns large-9 textAlignRight"><label i18n="editPages.id"></label></div>
+                <div class="columns large-16">/{{selectedPage.url}}</div>
+                <div class="columns large-9 textAlignRight"><label i18n="editPages.text"></label></div>
+                <div class="columns large-16">
+                    <input type="text" ng-model="selectedPage.text" i18n-db-input ng-change="updateSelectedPageUrl()" mandatory />
+                </div>
+                <div class="columns large-9 textAlignRight"><label i18n="editPages.description"></label></div>
+                <div class="columns large-16">
+                    <textarea content-editable ng-model="selectedPage.description" i18n-db-input ux-change="registerSelectedPageChange"></textarea>
+                </div>
+                <div class="columns large-9 textAlignRight"><label i18n="editPages.type"></label></div>
+                <div class="columns large-16">
+                    <select ng-model="selectedPage.type" ng-options="obj.id as obj.text for obj in pageTypes"
+                            ng-change="registerSelectedPageChange()"></select>
+                </div>
+                <div ux-show="selectedPage.type=='externalLink'">
+                    <div class="columns large-8 textAlignRight"><label i18n="editPages.url"></label></div>
+                    <div class="columns large-11">
+                        <input type="text" ng-model="selectedPage.externalLinkUrl" mandatory ng-change="registerSelectedPageChange()" />
+                    </div>
+                    <div class="columns large-2 textAlignRight"><label i18n="editPages.target"></label></div>
+                    <div class="columns large-4">
+                        <select ng-model="selectedPage.target" ng-options="obj.id as obj.text for obj in targets"
+                                ng-change="registerSelectedPageChange()"></select>
+                    </div>
+                </div>
+            </li>
+            <li class="layer" id="changeLayout{{$id}}">
+                <padding>
+                    34
+                </padding>
+            </li>
+            <li class="layer" id="section2c{{$id}}">
+                <padding>
+                    <h2>Section 6</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et turpis sed metus fermentum pellentesque. Vestibulum auctor neque ac nunc elementum malesuada. Praesent non est sed libero vestibulum consectetuer. Sed vehicula. Vivamus quis tellus sit amet erat ultrices luctus. Fusce a ligula. Fusce viverra libero vitae velit. Aenean bibendum nibh non lorem. Suspendisse quis velit. Integer sit amet lacus. Curabitur tristique. Morbi eu lectus. Vestibulum tristique aliquam quam. Sed neque.</p>
+                    <p>Nulla facilisi. Quisque eleifend libero. Sed eros. Morbi vel leo. Morbi varius tincidunt sem. Nam sodales volutpat velit. Suspendisse potenti. Duis vehicula pede non nisi. Proin elit pede</p>
+                </padding>
+            </li>
+        </ul>
+	</div>
+</li>

@@ -1,0 +1,12 @@
+<div><h6>Text</h6></div>
+<div><h6>URL<h6></div>
+<ul sortable="model.links">
+	<li ng-repeat="link in model.links" class="cf">
+		<div><input type="text" ng-model="link.text"/></div>
+		<div><input type="text" ng-model="link.url"/></div>
+		<div><button class="removeIcon" ng-click="removeItemFromModel($index, model.links)">Remove</button></div>
+	</li>
+</ul>
+<div class="actions">
+	<button class="addIcon" ng-click="addItemToModel(model.links)">+</button>
+</div>

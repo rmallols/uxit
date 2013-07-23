@@ -1,0 +1,8 @@
+<div>
+    <label i18n="editContent.title"></label>: <input type="text" ng-model="content.title" i18n-db-input mandatory />
+    <label i18n="editContent.summary"></label>: <div content-editable ng-model="content.summary" type="type" i18n-db-input></div>
+    <label i18n="editContent.content"></label>: <div content-editable ng-model="content.content" type="type" i18n-db-input></div>
+    <label i18n="tags"></label>:
+    <auto-complete ng-model="content.tags" ng-options="availableTags" label-key="text"
+                   placeholder="Start typing to retrieve tags" multiple="true"></auto-complete>
+</div>

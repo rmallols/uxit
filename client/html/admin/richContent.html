@@ -1,0 +1,22 @@
+<div>
+    <div class="columns large-8 textAlignRight"><label i18n="richContent.color"></label></div>
+    <div class="columns large-16">
+        <input color-picker placeholder="richContent.color.placeholder" ng-model="model.color" on-change="propagateChanges" />
+    </div>
+    <div class="columns large-8 textAlignRight"><label i18n="richContent.style"></label></div>
+    <div class="columns large-16">
+        <button toggle-style ng-model="model.fontWeight" active-when="bold" inactive-when="normal" class="boldIcon"></button>
+        <button toggle-style ng-model="model.fontStyle" active-when="italic" inactive-when="normal" class="italicIcon"></button>
+        <button toggle-style ng-model="model.textDecoration" active-when="underline" inactive-when="none" class="underlineIcon"></button>
+    </div>
+    <div class="columns large-8 textAlignRight"><label i18n="richContent.size"></label></div>
+    <div class="columns large-16">
+        <select ng-model="model.fontSize" ng-init="model.fontSize=model.fontSize||'16px'"
+                ng-options="obj.value as obj.text for obj in headingOptions" ng-change="propagateChanges()"></select>
+    </div>
+    <div class="columns large-8 textAlignRight"><label i18n="richContent.link"></label></div>
+    <div class="columns large-16">
+        <auto-complete ng-model="selectedPageId" ng-options="pagesList" label-key="text" value-key="url"
+                       ux-change="changeLink" placeholder="richContent.link.placeholder"></auto-complete>
+    </div>
+</div>

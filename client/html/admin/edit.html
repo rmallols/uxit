@@ -1,0 +1,17 @@
+<div class="edit cf">
+    <div class="actions">
+        <button class="saveIcon" ng-click="save()"></button>
+        <button class="cancelIcon" ng-click="cancel()"></button>
+    </div>
+	<ul class="tabs level1" ng-show="showIfMultipleTabs()">
+		<li ng-repeat="panel in panels" style="width:{{tabWidth}}%" ng-style="panel.ngStyle()" ng-click="clickTab($index)"
+            class="tab button" ng-class="getTabClasses(panel, $index)" title="{{panel.description}}" i18n-title>
+            <label i18n="{{panel.title}}"></label>
+            <label ux-show="isEditedMarkVisible($parent[panel.type])" ng-class="getEditedMarkColor($parent[panel.type])"
+                   class="editedMark">*</label>
+		</li>
+	</ul>
+	<div class="content level1" ng-show="activeTab >= 0">
+		<ul></ul>
+	</div>
+</div>

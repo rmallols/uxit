@@ -1,0 +1,58 @@
+.app > [app-header] > .header {
+  .padding;
+  visibility:hidden;
+  position:absolute;
+  background:@fontColor;
+  color: @highComp;
+  width:100%;
+  top:-@headerHeight;
+  height: @headerHeight;
+  .transition(top @speed);
+}
+
+
+.app > [app-header] > .header > .title {
+  .floatLeft;
+}
+
+.app > [app-header] > .header > .actions {
+  margin-right:@padding;
+}
+
+.app.maximized > [app-header] > .header > .actions {
+  margin-right: 2 * @padding + 5;
+}
+
+@headerToggleSize : 48px;
+.app .headerToggle {
+  width:@headerToggleSize;
+  height:@headerToggleSize;
+  position:absolute;
+  background-color:@fontColor;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 32px 32px;
+  right: 0px;
+  cursor: pointer;
+  z-index: 3;
+  .settingsIcon;
+  .transition(right @speed);
+}
+
+.app.maximized > [app-header] > .header {
+  position: fixed;
+}
+
+.app.maximized > [app-header] .headerToggle {
+  position: fixed;
+  z-index:4;
+}
+
+.app.enabledHeader > [app-header] > .header {
+  top:0px;
+  visibility:visible;
+}
+
+.app:not(.maximized).enabledHeader > [app-header] > .headerToggle {
+  right:-@headerToggleSize * 0.8;
+}

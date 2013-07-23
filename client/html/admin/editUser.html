@@ -1,0 +1,27 @@
+<div>
+    <div class="columns large-8">
+        <file-uploader preview="true" ng-model="user.media" on-upload="updateUser"
+                       default-media-url="defaultAvatarUrl" endpoint="/media/upload/"></file-uploader>
+    </div>
+    <div class="columns large-16">
+        <div><label i18n="editUser.fullName"></label>: <input type="text" ng-model="user.fullName" mandatory /></div>
+        <div><label i18n="editUser.email"></label>: <input type="text" ng-model="user.email" email-mandatory mandatory /></div>
+        <div>
+            <label i18n="editUser.password"></label>:
+            <input type="password" ng-model="user.password" password-mandatory
+                   placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"/>
+        </div>
+        <div>
+            <label i18n="editUser.role"></label>
+            <select ng-model="user.role" ng-options="obj.karma as obj.title for obj in roles"></select>
+        </div>
+        <div>
+            <label i18n="editUser.language"></label>
+            <select ng-model="user.language" ng-options="obj.code as obj.text for obj in languages"></select>
+        </div>
+        <div><label i18n="tags"></label>:
+            <auto-complete ng-model="user.tags" ng-options="availableTags" label-key="text"
+                           placeholder="Start typing to retrieve tags" multiple="true" mandatory></auto-complete>
+        </div>
+    </div>
+</div>

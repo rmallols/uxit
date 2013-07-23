@@ -1,0 +1,74 @@
+@import url("/client/css/constants.less");
+@import url("/client/lib/less/prefixer.less");
+
+.app.menuApp li.page {
+  display:inline-block;
+  white-space: nowrap;
+}
+
+.app.menuApp li.page a {
+  display: inline-block;
+  position: relative;
+  padding: 6px 16px 6px 16px;
+  z-index: 1;
+}
+
+.app.menuApp li.page:hover a {
+  z-index: 3;
+}
+
+.app.menuApp li.page:hover > a {
+  background-color: @fontColorHover;
+}
+
+.app.menuApp li.page.current > a {
+  background-color: @fontColor;
+}
+
+.app.menuApp li.page a > button.toggleSubPages {
+  float: left;
+  margin: 0px 5px 0px -5px;
+}
+
+.app.menuApp li.page:hover > a,
+.app.menuApp li.page.current > a {
+  color: @highComp;
+}
+
+.app.menuApp .subPagesMenuContainer {
+  position: relative;
+}
+
+.app.menuApp ul.subPagesMenu {
+  position: absolute;
+  background: @highComp;
+  top:-40px;
+  visibility: hidden;
+  border:3px solid @fontColorHover;
+  margin-top:-3px;
+  z-index: 0;
+  .transition(top @speed);
+}
+
+.app.menuApp li.page:hover ul.subPagesMenu {
+  visibility: visible;
+  top:0px;
+  z-index: 2;
+}
+
+.app.menuApp ul.subPagesMenu li.page {
+  display: block;
+}
+
+.app.menuApp ul.subPagesMenu li.page > a {
+  padding-left: 2 * @padding;
+  width: 100%;
+}
+
+.editBox[type="menuApp"] {
+    height:50%;
+}
+
+.editBox[type="menuApp"] .edit .content.level1 {
+    height:80%;
+}

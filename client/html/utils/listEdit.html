@@ -1,0 +1,50 @@
+<div>
+
+    <div class="columns large-12">
+        <div class="columns large-25"><input checkbox ng-model="model.searchable" label="Enable search"/></div>
+    </div>
+
+    <div class="columns large-12">
+        <div class="columns large-13 textAlignRight">Page size:</div>
+        <div class="columns large-12"><input type="text" ng-model="model.pageSize" /></div>
+    </div>
+
+    <div class="columns large-12">
+        <div class="columns large-13 textAlignRight">Skip:</div>
+        <div class="columns large-12"><input type="text" ng-model="model.skip" /></div>
+    </div>
+
+    <div class="columns large-12">
+        <div class="columns large-13 textAlignRight">Sort field:</div>
+        <div class="columns large-12">
+            <select ng-model="model.sort.field" ng-options="obj.id as obj.text for obj in sortTypes.field"></select>
+        </div>
+    </div>
+
+    <div class="columns large-12">
+        <div class="columns large-13 textAlignRight">Sort order:</div>
+        <div class="columns large-12">
+            <select ng-model="model.sort.order" ng-options="obj.id as obj.text for obj in sortTypes.order"></select>
+        </div>
+    </div>
+
+    <label>
+        Pagination position:
+        <select ng-model="model.pageActionPos" >
+            <option value="0">Top</option>
+            <option value="1">bottom</option>
+            <option value="2">topAndBottom</option>
+        </select>
+    </label>
+
+    Filter:
+    <auto-complete ng-model="model.tags" ng-options="availableTags" label-key="text"
+                   placeholder="Select tags to filter" multiple="true"></auto-complete>
+
+    <div class="columns large-12">
+        <div class="columns large-13 textAlignRight">Columns:</div>
+        <div class="columns large-12">
+            <select ng-model="model.columns" ng-options="obj.value as obj.text for obj in columnOptions"></select>
+        </div>
+    </div>
+</div>

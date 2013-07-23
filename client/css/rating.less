@@ -1,0 +1,36 @@
+ul.rating {
+}
+
+ul.rating > li {
+  float:left;
+  padding:2px;
+  cursor:pointer;
+}
+
+ul.rating > li > div {
+  width:32px;
+  height:32px;
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size: 100% auto;
+}
+
+ul.rating > li.full-rated > div {
+  background-image: url('../images/starFull.svg');
+}
+
+ul.rating > li.half-rated > div {
+  background-image: url('../images/starHalf.svg');
+}
+
+ul.rating > li.none-rated > div {
+  background-image: url('../images/starNone.svg');
+}
+
+ul.rating > li.hoverState {
+  border: none !important;
+}
+
+ul.rating > li.hoverState > div {
+  background-image: url('../images/starHigh.svg');
+}

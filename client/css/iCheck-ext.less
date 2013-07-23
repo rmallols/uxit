@@ -1,0 +1,32 @@
+.checkContainer {
+  margin-right: 20px;
+  .floatLeft;
+}
+
+.checkContainer .check {
+  margin-right: 5px;
+  background-image: url('../images/checkBlue.png');
+}
+
+.checkContainer.white .check {
+  background-image: url('../images/checkWhite.png');
+}
+
+.checkContainer .check,
+.checkContainer .check + label {
+  float: left;
+}
+
+.checkContainer .check + label {
+  cursor: pointer;
+}
+
+/* Retina support */
+@media only screen and (min-device-pixel-ratio: 1.5) {
+  .checkContainer .check {
+    background-image: url('../images/checkBlue@2x.png');
+  }
+  .editBox .checkContainer .check {
+    background-image: url('../images/checkWhite@2x.png');
+  }
+}

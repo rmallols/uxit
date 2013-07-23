@@ -1,0 +1,19 @@
+<div class="mediaPopupContainer">
+    <div class="overlay" ng-show="showPopup" ng-click="closePopup()" title="Click here to close the popup"></div>
+    <div class="mediaPopup" ng-style="setCenterPosition()">
+        <div class="header">
+            <div class="metadata" ng-bind-html-unsafe="getMediaHtmlDetails()">
+            </div>
+            <div class="actions">
+                <button class="removeIcon" ng-click="closePopup()"></button>
+            </div>
+        </div>
+        <div class="imgWrapper" ng-class="getImgWrapperClass()">
+            <img ng-src="{{getDownloadUrl(mediaList[0])}}" />
+        </div>
+        <div class="navigationActions" ng-style="setNavigationActionsPosition()">
+            <div class="prev" ng-click="getPrevMedia()" ng-show="mediaIndex > 0"></div>
+            <div class="next" ng-click="getNextMedia()" ng-show="mediaIndex < (mediaList.length - 1)"></div>
+        </div>
+    </div>
+</div>

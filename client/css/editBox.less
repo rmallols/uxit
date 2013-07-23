@@ -1,0 +1,129 @@
+@arrowWidth   :30px;
+@borderWidth  :5px;
+@arrowTopPos  :60px;
+@editBoxWidth :500px;
+
+.editBox {
+    position:absolute;
+    top:0px;
+    left:0px;
+    /*margin-top:-@arrowTopPos;*/
+    margin-top: -(@arrowTopPos + @borderWidth);
+    background: @high;
+    width:@editBoxWidth;
+    .padding;
+    z-index:4;
+    border:@borderWidth solid @highComp;
+    cursor: default;
+}
+
+.editBox.child {
+  background: @highDarken;
+}
+
+.editBox:after, .editBox:before {
+    position: absolute;
+    right: 100%;
+    border: @arrowWidth solid transparent;
+    margin: -@arrowWidth 0 0 -(2 * @arrowWidth);
+    content: " ";
+    height: 0;
+    width: 0;
+    pointer-events: none;
+}
+
+.editBox h1, .editBox h2, .editBox h3, .editBox h4, .editBox h5, .editBox h6 {
+  color: @highComp;
+}
+
+.editBox[arrowPos="top"]:after {
+  top: -@arrowWidth;
+  .offsettedLeft(50%, @arrowWidth);
+  border-bottom-color: @high;
+}
+
+.editBox[arrowPos="top"]:before {
+  top: -(@arrowWidth + 3 * @borderWidth - 2);
+  border-width:(@borderWidth + @arrowWidth);
+  .offsettedLeft(50%, @arrowWidth - @borderWidth);
+  border-bottom-color: @highComp;
+}
+
+.editBox[arrowPos="right"] {
+  margin-left:-(@arrowWidth + @borderWidth);
+}
+
+.editBox[arrowPos="right"]:after {
+  top: @arrowTopPos;
+  left:100%;
+  border-left-color: @high;
+  .offsettedLeft(2 * @arrowWidth);
+}
+
+.editBox[arrowPos="right"]:before {
+  top: @arrowTopPos;
+  left:100%;
+  border-left-color: @highComp;
+  border-width:(@borderWidth + @arrowWidth);
+  margin-top:-(@borderWidth + @arrowWidth);
+  .offsettedLeft(2 * @arrowWidth + 3);
+}
+
+.editBox[arrowPos="bottom"]:after {
+  bottom: -(2 * @arrowWidth);
+  .offsettedLeft(50%, @arrowWidth);
+  border-top-color: @high;
+}
+
+.editBox[arrowPos="bottom"]:before {
+  bottom: -(2 * @arrowWidth + 3 * @borderWidth - 2);
+  border-width:(@borderWidth + @arrowWidth);
+  .offsettedLeft(50%, @arrowWidth - @borderWidth);
+  border-top-color: @highComp;
+}
+
+.editBox[arrowPos="left"] {
+  margin-left:@arrowWidth + @borderWidth;
+}
+
+.editBox[arrowPos="left"]:after {
+    top: @arrowTopPos;
+    left:0;
+    border-right-color: @high;
+}
+
+.editBox[arrowPos="left"]:before {
+  top: @arrowTopPos;
+  left:-(2* @borderWidth + 2);
+  border-right-color: @highComp;
+  border-width:(@borderWidth + @arrowWidth);
+  margin-top:-(@borderWidth + @arrowWidth);
+}
+
+.editBox .content {
+    clear:both;
+    background: inherit !important;
+}
+
+.editBox .content.level1 .active:not(button) {
+  background-color: @highComp !important;
+}
+
+.editBox.child[arrowPos="top"]:after { border-bottom-color: @highDarken !important; }
+.editBox.child[arrowPos="right"]:after { border-left-color: @highDarken !important; }
+.editBox.child[arrowPos="bottom"]:after { border-top-color: @highDarken !important; }
+.editBox.child[arrowPos="left"]:after { border-right-color: @highDarken !important; }
+
+.editBox .checkContainer .check {
+  background-image: url('../images/checkWhite.png');
+}
+
+.editBox .content.level1 > ul > .layer {
+  max-height: 400px;
+}
+
+/*If the layer has error, force the overflow to be visible to the error messages can appear outside of the editbox,
+without operlapping the error components */
+.editBox .content.level1 > ul > .layer.ng-invalid {
+  overflow: visible;
+}

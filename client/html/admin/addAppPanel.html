@@ -1,0 +1,43 @@
+<div id="addAppPanel" class="addAppPanel" state="hidden">
+    <div class="collapsedView">
+        <file-uploader endpoint="/rest/availableApps/deploy/" on-upload="onAvailableAppDeployed"></file-uploader>
+        <div class="filterContainer"><input type="text" ng-model="filter"></div>
+        <ul class="apps">
+            <div ng-repeat="availableApp in availableApps.model | filter: filter" ng-class="getBlockStyleClass(availableApp.id)">
+                <div class="category" ng-show="availableApp.firstInCategory">{{availableApp.category}}</div>
+                <li sortable-add-app class="newItem" type="{{availableApp.id}}" ng-class="getAppClasses($index)">
+                    <div class="text">{{availableApp.title}}</div>
+                    <button class="infoIcon" ng-click="toggleExpandedView(availableApp)"></button>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <div class="expandedView">
+        <div class="content">
+            <div class="header">
+                <div class="main">
+                    <h3 class="title">{{highlight.title}}</h3>
+                    <div rating="highlight.avgRating" target-id="highlight._id" target-collection="{{highlight.collection}}" height="32"></div>
+                    <div class="actions">
+                        <button class="addIcon">Add!</button>
+                        <button class="removeIcon" ng-click="undeploy()"><label i18n="app.remove"></label></button>
+                    </div>
+                </div>
+                <div class="metadata">
+                    <label class="key" i18n="addApp.version"></label>: <label class="value">{{highlight.version}}</label>
+                    <label class="key" i18n="addApp.category"></label>: <label class="value">{{highlight.category}}</label>
+                    <label class="key" i18n="addApp.creationDate"></label>: <label class="value">{{highlight.create.date}}</label>
+                    <label class="key" i18n="addApp.provider"></label>: <label class="value">{{highlight.provider}}</label>
+                </div>
+                <div class="description">{{highlight.desc}}</div>
+            </div>
+            <div class="preview" app-container>
+                <app ng-class="highlight.id" model="highlight.model" type="highlight.id"></app>
+            </div>
+            <div class="details">
+                <line-chart data="highlight.stats"></line-chart>
+                <comments target-id="highlight._id" placeholder="addApp.addComment" on-add="onAddedComment"></comments>
+            </div>
+        </div>
+    </div>
+</div>

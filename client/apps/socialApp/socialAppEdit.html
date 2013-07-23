@@ -1,0 +1,22 @@
+<div>
+    <div>
+        <div class="columns large-25"><input checkbox ng-model="model.showEmail" label="Show e-mail?"/></div>
+        <div class="columns large-25"><input type="text" ng-model="model.email" ng-show="model.showEmail" /></div>
+    </div>
+    <div>
+        <div class="columns large-25"><input checkbox ng-model="model.showFacebook" label="Show Facebook?"/></div>
+        <div class="columns large-25"><input type="text" ng-model="model.facebook" ng-show="model.showFacebook" /></div>
+    </div>
+    <div>
+        <div class="columns large-25"><input checkbox ng-model="model.showTwitter" label="Show Twitter?"/></div>
+        <div class="columns large-25"><input type="text" ng-model="model.twitter" ng-show="model.showTwitter" /></div>
+    </div>
+    <div>
+        <div class="columns large-25"><input checkbox ng-model="model.showLinkedIn" label="Show LinkedIn?"/></div>
+        <div class="columns large-25"><input type="text" ng-model="model.linkedIn" ng-show="model.showLinkedIn" /></div>
+    </div>
+    <div class="columns large-25">
+        Icon size:
+        <select ng-model="model.iconSize" ng-options="obj.id as obj.text for obj in internalData.iconSizes"></select>
+    </div>
+</div>

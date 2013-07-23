@@ -1,0 +1,175 @@
+@collapsedAddAppPanelWidth : 17%;
+@expandedAddAppPanelWidth : 83%;
+
+.addAppPanel {
+  position:fixed;
+  top:@tabsHeight;
+  left:-@collapsedAddAppPanelWidth;
+  width:auto;
+  height:100%;
+  z-index:1;
+}
+
+.addAppPanel > .collapsedView {
+  left: 0;
+  width:@collapsedAddAppPanelWidth;
+  background:@high;
+  color:@highComp;
+  position:fixed;
+  z-index:1;
+  .transition(left @speed);
+}
+
+.addAppPanel[state="hidden"] > .collapsedView {
+  left:-@collapsedAddAppPanelWidth;
+}
+
+.addAppPanel > .collapsedView > .filterContainer {
+  .padding;
+}
+
+.addAppPanel > .collapsedView .apps li {
+  .box;
+  padding: 5px !important;
+  background-image: url('../images/add.svg');
+  background-repeat: no-repeat;
+  background-position: 8px 8px;
+  background-size: auto 36px;
+}
+
+.addAppPanel > .collapsedView .apps li > .text {
+  float: left;
+  font-size: 20px;
+  padding: 8px 5px 5px 46px;
+  .offsettedWidth(-50px);
+}
+
+.addAppPanel > .collapsedView .apps li > button.info {
+  float: right;
+}
+
+.addAppPanel > .collapsedView .apps .highlight {
+  margin-right:-@padding;
+}
+
+.addAppPanel > .collapsedView .apps .highlight li {
+  background:@highCompDarken;
+  font-weight:bold;
+}
+
+.appPanel > .collapsedView button.infoIcon {
+  float: right;
+}
+
+.addAppPanel > .collapsedView,
+.addAppPanel > .expandedView {
+  float:left;
+}
+
+.addAppPanel > .collapsedView .apps,
+.addAppPanel > .expandedView .preview,
+.addAppPanel > .expandedView .details {
+  overflow-y: auto;
+}
+
+.addAppPanel > .expandedView .preview,
+.addAppPanel > .expandedView .details {
+  overflow-x: hidden;
+}
+
+/*@appsHeight: `($(window).height() - 150)`;
+@highlightContentHeight: `($(window).height() - 280)`;*/
+@appsHeight: 500;
+@highlightContentHeight: 370;
+
+.addAppPanel > .collapsedView .apps {
+  height:0px+@appsHeight;
+}
+
+.addAppPanel > .expandedView .preview,
+.addAppPanel > .expandedView .details {
+  height:0px+@highlightContentHeight;
+}
+
+
+.addAppPanel[state="expanded"] > .collapsedView .apps {
+  overflow-y:visible;
+}
+
+.addAppPanel > .expandedView {
+  position:fixed;
+  left: 0px;
+  width: @expandedAddAppPanelWidth;
+  height:100%;
+  background:@high;
+  .padding;
+  visibility: hidden;
+  .transition(left @speed);
+}
+
+.addAppPanel > .expandedView ::-webkit-scrollbar-thumb { background-color: darken(@highCompDarken, 10%); }
+
+.addAppPanel[state="expanded"] > .expandedView {
+  visibility: visible;
+  left: @collapsedAddAppPanelWidth;
+}
+
+.addAppPanel > .expandedView > .content {
+  height: 100%;
+  background:@highCompDarken;
+  .padding;
+  .cf;
+}
+
+.addAppPanel > .expandedView .preview {
+  float:left;
+  width:60%;
+  .paddingRight;
+}
+
+.addAppPanel > .expandedView .details {
+  float:right;
+  width:40%;
+  .paddingLeft;
+}
+
+.addAppPanel > .expandedView .header .title {
+  float:left;
+}
+
+.addAppPanel > .expandedView .header > .main {
+  .cf;
+}
+
+.addAppPanel > .expandedView .header > .main > .rating {
+  margin: 5px 0px 0px 10px;
+  display:inline-block;
+}
+
+.addAppPanel > .expandedView .header,
+.addAppPanel > .expandedView .metadata {
+  .cf;
+  .paddingBottom;
+}
+
+.addAppPanel > .expandedView .metadata label.value {
+  font-weight:bold;
+}
+
+.addAppPanel > .expandedView .comments > ul {
+  max-height:28%;
+  margin:0px 10px 10px 0px;
+  padding-right:10px;
+  overflow-y:auto;
+}
+
+.addAppPanel > .expandedView .comments .newCommentInput {
+  height:@inputHeight;
+  min-height:@inputHeight;
+  max-height:@inputHeight;
+  .offsettedWidth(-10px);
+}
+
+.addAppPanel [sortable-add-app] {
+  cursor: move;
+}

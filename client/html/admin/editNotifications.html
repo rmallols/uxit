@@ -1,0 +1,30 @@
+<li class="hasSubmenu">
+    <ul vertical-tabs="level2Tabs"></ul>
+    <div class="content level2">
+        <ul>
+            <li class="layer">
+                <div class="block">
+                    <h4><label i18n="editNotifications.email.selectAddressees"></label></h4>
+                    <auto-complete ng-model="model.notifications.email.selectedUsers" ng-options="usersList" label-key="fullName" value-key="email"
+                                   placeholder="editNotifications.email.typeToGetUsers" multiple="true"></auto-complete>
+                </div>
+                <div class="block">
+                    <h4><label i18n="editNotifications.email.writeMessage"></label></h4>
+                    <h6><label i18n="editNotifications.title"></label></h6>
+                    <input type="text" ng-model="model.notifications.email.subject" />
+                    <h6><label i18n="editNotifications.content"></label></h6>
+                    <div content-editable ng-model="model.notifications.email.text" class="content"></div>
+                </div>
+            </li>
+            <li class="layer">
+                <h6><i><label i18n="editNotifications.liveMessage.sendMessage"></label></i></h6>
+                <div class="block">
+                    <h6><label i18n="editNotifications.title"></label></h6>
+                    <input type="text" ng-model="model.notifications.liveMessage.subject" />
+                    <h6><label i18n="editNotifications.content"></label></h6>
+                    <div content-editable ng-model="model.notifications.liveMessage.text" class="content"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</li>
