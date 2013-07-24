@@ -51,7 +51,6 @@
                     scope.showEditTemplate = function () {
                         var targetObj = $('> .header > .actions > .editIcon', element);
                         scope.panels = getEditPanels();
-                        console.log("PANELS", scope.panels)
                         scope.onSave = function () {
                             if (scope.onLayerSave) { scope.onLayerSave(); }
                             pageService.updateCurrentPage(null);

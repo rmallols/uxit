@@ -18,8 +18,10 @@ function ($routeParams, userService, mediaService, tagService, roleService, i18n
             if (scope.user) {
                 if (!scope.user.media) {
                     scope.user.media = {};
-                    scope.defaultAvatarUrl = mediaService.getDefaultAvatarUrl();
                 }
+            }
+            if(!scope.user || !scope.user.media) {
+                scope.defaultAvatarUrl = mediaService.getDefaultAvatarUrl();
             }
             scope.onLayerSave = function (callback) {
                 userService.updateUser(scope.user, function (result) {

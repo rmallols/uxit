@@ -50,9 +50,6 @@ module.exports = {
             if (query.projection) { //Add the query projection, if case
                 getFirstQuery.projection = query.projection;
             }
-
-
-
             this.getFirst(db, collection, getFirstQuery, function (document) {
                 cacheService.setJoins(document);
                 callback(document);
@@ -63,7 +60,7 @@ module.exports = {
             sort = this._normalizeSort(query.sort);
             //noinspection JSUnresolvedVariable
             db.collection(collection).count(query.q, function (err, totalSize) {
-                db.collection(collection).find(query.q, projection, function (err, documents) {
+                db.collection(collection).find(query.q, projection).sort(sort).skip(skip).limit(pageSize, function (err, documents) {
                     if (documents) {
                         documents.forEach(function (document) {
                             cacheService.setJoins(document);
@@ -73,7 +70,7 @@ module.exports = {
                         totalSize   : totalSize,
                         results     : documents
                     });
-                }).sort(sort).skip(skip).limit(pageSize);
+                });
             });
         }
     }
