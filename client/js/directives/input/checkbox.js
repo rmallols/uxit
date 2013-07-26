@@ -70,8 +70,8 @@ COMPONENTS.directive('checkbox', ['$rootScope', '$timeout', function ($rootScope
                         //so he'll set the $dirty state to the form
                         ngModelCtrl.$setViewValue(scope.ngModel);
                     }
-                    if (scope.ngClick) { scope.ngClick(); }
                     if (!$rootScope.$$phase) { scope.$apply(); }
+                    if (scope.ngClick) { scope.ngClick(); }
                 }
             }
         }

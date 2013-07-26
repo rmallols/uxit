@@ -4,7 +4,11 @@ COMPONENTS.directive('colorPicker', ['styleService', 'i18nService', function (st
         require: 'ngModel',
 		restrict: 'A',
         replace: true,
-        template: '<div class="colorPicker"><input type="text" placeholder="{{getI18nPlaceholder()}}"/></div>',
+        template:   '<div class="colorPicker">' +
+                        '<input type="text" placeholder="{{getI18nPlaceholder()}}"/>' +
+                        '<div class="transparentToggle" checkbox ng-model="isTransparent" label="colorPicker.transparent" ' +
+                        'ng-click="toggleTransparent()" />' +
+                    '</div>',
         scope: {
             model       : '=ngModel',
             placeholder : '@',
@@ -12,8 +16,11 @@ COMPONENTS.directive('colorPicker', ['styleService', 'i18nService', function (st
         },
 		link: function link(scope, element, attrs, ngModelCtrl) {
 
-            var rgbObj = null, inputElm = $(' > input', element);
+            var rgbObj = null, inputElm = $(' > input[type="text"]', element);
             if (scope.model) {
+                if(scope.model === 'transparent') { //Initialize the transparency, if case
+                    scope.isTransparent = true;
+                }
                 rgbObj = styleService.rgbStrToRgbObj(scope.model);
                 if (rgbObj) {
                     scope.model = styleService.rgbObjToHexStr(rgbObj);
@@ -26,6 +33,7 @@ COMPONENTS.directive('colorPicker', ['styleService', 'i18nService', function (st
                 showSpeed: 0,
                 hideSpeed: 0,
                 show: function () {
+                    removeTransparentColor();
                     $(this).focus();
                 },
                 changeDelay: 10, //Give some time margin to ensure that the change() callback takes the new value
@@ -47,8 +55,14 @@ COMPONENTS.directive('colorPicker', ['styleService', 'i18nService', function (st
             scope.$watch('model', function (newVal) {
                 //Wrap the plugin in a try-catch statement as for some unknown reason sometimes the settings
                 //don't arrive to the minicolor plugin so it throwns an error
-                try { inputElm.minicolors('value', newVal); }
-                catch (ex) {}
+                if(scope.isTransparent) { //Check if the current value is set to 'transparent'
+                    try { inputElm.minicolors('value', ''); }
+                    catch (ex) {}
+                    setTransparentColor();
+                } else {
+                    try { inputElm.minicolors('value', newVal); }
+                    catch (ex) {}
+                }
             });
 
             inputElm.blur(function () {
@@ -60,6 +74,28 @@ COMPONENTS.directive('colorPicker', ['styleService', 'i18nService', function (st
             scope.getI18nPlaceholder = function () {
                 return i18nService(scope.placeholder);
             };
+
+            scope.toggleTransparent = function() {
+                if(scope.isTransparent) {
+                    setTransparentColor();
+                } else {
+                    removeTransparentColor();
+                }
+                scope.$apply();
+            };
+
+            /** Private methods **/
+            function setTransparentColor() {
+                scope.isTransparent = true;
+                scope.model = 'transparent';
+                inputElm.attr('readonly', 'readonly');
+            }
+
+            function removeTransparentColor() {
+                scope.isTransparent = false;
+                scope.model = '';
+                inputElm.removeAttr('readonly');
+            }
 		}
 	};
 }]);

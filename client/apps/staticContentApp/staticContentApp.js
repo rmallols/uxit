@@ -74,7 +74,6 @@ COMPONENTS.directive('staticContentAppAdd', function (contentService) {
         link: function link(scope) {
             scope.internalData.displayAddedContent = true;
             scope.onLayerSave = function (callback) {
-                console.log("NEW CONTENT!!!!!", scope, scope.content)
                 contentService.createContent(scope.content, function (newContent) {
                     //1. Update the current selected ID
                     scope.model.selectedContentId = newContent._id;

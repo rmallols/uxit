@@ -6,6 +6,10 @@
   white-space: nowrap;
 }
 
+.app.menuApp li.page h6 {
+  margin: 0px;
+}
+
 .app.menuApp li.page a {
   display: inline-block;
   position: relative;
@@ -17,11 +21,11 @@
   z-index: 3;
 }
 
-.app.menuApp li.page:hover > a {
+.app.menuApp li.page:hover > h6 > a {
   background-color: @fontColorHover;
 }
 
-.app.menuApp li.page.current > a {
+.app.menuApp li.page.current > h6 > a {
   background-color: @fontColor;
 }
 
@@ -30,8 +34,8 @@
   margin: 0px 5px 0px -5px;
 }
 
-.app.menuApp li.page:hover > a,
-.app.menuApp li.page.current > a {
+.app.menuApp li.page:hover > h6 > a,
+.app.menuApp li.page.current > h6 > a {
   color: @highComp;
 }
 
@@ -60,7 +64,7 @@
   display: block;
 }
 
-.app.menuApp ul.subPagesMenu li.page > a {
+.app.menuApp ul.subPagesMenu li.page > h6 > a {
   padding-left: 2 * @padding;
   width: 100%;
 }

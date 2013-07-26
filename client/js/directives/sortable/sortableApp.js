@@ -12,7 +12,7 @@
                 function instantiateSortableApp() {
                     scope.sortableOptions = {
                         items               : '.app',
-                        handle              : '.content',
+                        /*handle              : '.content',*/
                         cancel              : '.content > *',
                         connectWith         : '[sortable-app]',
                         placeholder         : 'sortingPlaceholder',

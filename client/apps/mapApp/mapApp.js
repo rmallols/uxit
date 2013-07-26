@@ -11,3 +11,16 @@ COMPONENTS.directive('mapAppView', function () {
 		templateUrl: '/client/apps/mapApp/mapAppView.html'
 	};
 });
+
+
+COMPONENTS.directive('mapAppEdit', function () {
+    'use strict';
+    return {
+        restrict: 'A',
+        replace: true,
+        scope: {
+            model: '='
+        },
+        templateUrl: '/client/apps/mapApp/mapAppEdit.html'
+    };
+});

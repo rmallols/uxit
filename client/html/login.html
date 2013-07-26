@@ -3,23 +3,21 @@
         Hello, {{$root.portal.user.fullName}}. [<a href="#" ng-click="logout()">Logout</a>]
     </div>
     <form class="login cf" action="/rest/login" method="POST" ng-show="!$root.portal.user">
-        <!--<div class="box">-->
-            <div class="user rows">
-                <div class="label columns large-8 textAlignRight">E-mail:</div><div class="field columns large-16">
-                <input type="text" name="email" ng-model="email" />
-            </div>
-            </div>
-            <div class="password rows">
-                <div class="label columns large-8 textAlignRight">Password:</div><div class="field columns large-16">
-                <input type="password" name="password" ng-model="password" />
-            </div>
-            </div>
-            <!--<div class="remember rows">
-                <input checkbox ng-model="remember" label="Remember" />
-            </div>-->
-            <div class="submit rows">
-                <button type="submit" class="okIcon floatRight"></button>
-            </div>
-        <!--</div>-->
+        <div class="user columns large-12">
+            <div class="label columns large-8 textAlignRight">E-mail:</div><div class="field columns large-16">
+            <input type="text" name="email" ng-model="email" />
+        </div>
+        </div>
+        <div class="password columns large-11">
+            <div class="label columns large-8 textAlignRight">Password:</div><div class="field columns large-16">
+            <input type="password" name="password" ng-model="password" />
+        </div>
+        </div>
+        <!--<div class="remember rows">
+            <input checkbox ng-model="remember" label="Remember" />
+        </div>-->
+        <div class="submit columns large-2">
+            <button type="submit" class="okIcon floatRight"></button>
+        </div>
     </form>
 </div>

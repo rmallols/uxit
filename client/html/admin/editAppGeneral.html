@@ -4,5 +4,7 @@
         <div class="columns large-25">
             <input checkbox ng-model="model.showTitle" label="editApp.showAppTitles"/>
         </div>
+        <label i18n="editApp.float"></label>
+        <select ng-model="model.float" ng-options="obj.id as obj.text for obj in floats"></select>
     </div>
 </div>
