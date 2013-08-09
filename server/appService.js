@@ -4,7 +4,7 @@ var deleteService       = require('./crud/deleteService'),
     updateService       = require('./crud/updateService'),
     getService          = require('./crud/getService'),
     zipService          = require('./zipService'),
-    constantsService    = require('./dbService'),
+    constantsService    = require('./constantsService'),
     fileSystemService   = require('./fileSystemService');
 
 module.exports = {
