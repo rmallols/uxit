@@ -1,6 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('resizableAppService', ['pageService', 'rowService', function (pageService, rowService) {
+    COMPONENTS.factory('resizableAppService', ['portalService', 'pageService', 'rowService',
+    function (portalService, pageService, rowService) {
 
         var cols = rowService.getMaxSlots(), previousSize, resizingColumnScope, affectedColumn;
 
@@ -33,6 +34,7 @@
             //Update the scope of the whole row so both the resizing and the affected cols changes will be executed
             resizingColumnScope.$parent.$apply();
             pageService.updateCurrentPage(null);
+            portalService.savePortal(null);
         }
 
         /** Private methods **/

@@ -1,10 +1,23 @@
 <ul class="pages" ng-style="setPagesStyles()" ng-class="getAdminAccessStyleClass()">
-    <li ng-repeat="row in page.rows" class="rows">
+    <li ng-repeat="row in $root.portal.template.rows" class="rows">
         <ul>
             <li ng-repeat="column in row.columns" resizable-app="{{isAdmin()}}" class="columns large-{{column.size}}">
                 <ul sortable-app="{{isAdmin()}}" ui-sortable="sortableOptions" ng-model="column.apps" class="appContainer">
+
                     <li app ng-repeat="app in column.apps" model="app.model" type="app.type" width="column.size"
                         row-index="$parent.$parent.$index" col-index="$parent.$index" app-index="$index"></li>
+
+                    <li ng-repeat="row in column.rows" class="rows">
+                        <ul>
+                            <li ng-repeat="column in row.columns" resizable-app="{{isAdmin()}}" class="columns large-{{column.size}}">
+                                <ul sortable-app="{{isAdmin()}}" ui-sortable="sortableOptions" ng-model="column.apps" class="appContainer">
+                                    <li app ng-repeat="app in column.apps" model="app.model" type="app.type" width="column.size"
+                                        row-index="$parent.$parent.$index" col-index="$parent.$index" app-index="$index"></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
                 </ul>
             </li>
         </ul>

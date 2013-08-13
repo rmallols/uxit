@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.directive('appHeader', ['$rootScope', 'appService', 'pageService', 'roleService', 'stringService', 'editBoxUtilsService',
-    function ($rootScope, appService, pageService, roleService, stringService, editBoxUtilsService) {
+    COMPONENTS.directive('appHeader', ['$rootScope', 'appService', 'portalService', 'pageService', 'roleService', 'stringService', 'editBoxUtilsService',
+    function ($rootScope, appService, portalService, pageService, roleService, stringService, editBoxUtilsService) {
             return {
                 restrict: 'A',
                 replace: true,
@@ -54,6 +54,7 @@
                         scope.onSave = function () {
                             if (scope.onLayerSave) { scope.onLayerSave(); }
                             pageService.updateCurrentPage(null);
+                            portalService.savePortal(null);
                         };
                         editBoxUtilsService.showEditBox(scope, targetObj, targetObj);
                     };

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('sortableAppService', ['$rootScope', '$timeout', 'pageService', 'rowService', 'colService', 'arrayService', 'keyboardService',
-    function ($rootScope, $timeout, pageService, rowService, colService, arrayService, keyboardService) {
+    COMPONENTS.factory('sortableAppService', ['$rootScope', '$timeout', 'portalService', 'pageService', 'rowService', 'colService', 'arrayService', 'keyboardService',
+    function ($rootScope, $timeout, portalService, pageService, rowService, colService, arrayService, keyboardService) {
 
         var originalElm, isUpdateBlocked = false, options;
 
@@ -23,7 +23,7 @@
          * @param {object} ui   The object that holds the information about the item that will be sorted
          */
         function update(ui) {
-            var rows = pageService.getCurrentPage().rows;
+            var rows = $rootScope.portal.template.rows;
             setOptions(rows, originalElm, $(ui.item));
             if (isUpdateTime()) {
                 updateIfThereIsSpace();
@@ -79,8 +79,10 @@
             options.originalAppIndex    = originalElm.prevAll('.app').size();
             options.dropRowIndex        = droppedElm.closest('.rows').prevAll('.rows').size();
             options.dropAppIndex        = droppedElm.prevAll('.app').size();
-            options.originalRow         = options.rows[options.originalRowIndex];
-            options.dropRow             = options.rows[options.dropRowIndex];
+            //options.originalRow         = options.rows[options.originalRowIndex];
+            options.originalRow         = originalElm.closest('.rows').scope().row;
+            //options.dropRow             = options.rows[options.dropRowIndex];
+            options.dropRow             = droppedElm.closest('.rows').scope().row;
             options.dropCol             = options.dropRow.columns[options.dropColIndex];
             options.originalCol         = options.originalRow.columns[options.originalColIndex];
             options.elmHasChangedRow    = options.originalRow.$$hashKey !== options.dropRow.$$hashKey;
@@ -88,6 +90,7 @@
             options.affectedOriginalCol = (options.elmHasChangedRow)
                 ? colService.getAffectedCol(options.originalRow.columns, options.originalColIndex)
                 : options.affectedDropCol;
+            console.log("x0", options.originalRow, options.originalColIndex)
             return options;
         }
 
@@ -99,6 +102,7 @@
         }
 
         function executeUpdate() {
+            console.log("updating2...");
             if (options.isNewItem) { //That's a new item that comes from drag and drop
                 deleteNewDroppedElm(options.dropCol, options.droppedElm, options.dropAppIndex);
             }
@@ -107,6 +111,7 @@
             //For some reason, in some cases the dragging app is not deleted, so it's necessary to explicitly delete it
             deleteGhostApp();
             pageService.updateCurrentPage(null);
+            portalService.savePortal(null);
         }
 
         function updateConsideringRowChange() {

@@ -63,7 +63,7 @@
          * Adds an empty row on a given position
          *
          * @param {object}  rows            The array with the rows where the new one is going to be placed
-         * @param {integer} dropRowIndex    The position of the new row
+         * @param {number}  dropRowIndex    The position of the new row
          */
         function addEmptyRow(rows, dropRowIndex) {
             arrayService.add(rows, getEmptyRow(), dropRowIndex);

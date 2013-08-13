@@ -20,7 +20,8 @@ function PortalController($scope, $rootScope, $routeParams, portalService, pageS
                 } else if (!pageModel) {
                     stdService.error('The page \"' + $routeParams.page + '\" cannot be found');
                 } else {
-                    $rootScope.portal   = portalModel;
+                    $rootScope.portal = portalModel;
+                    $rootScope.portal.template.rows[1].columns[0].rows = pageModel.rows;
                     pageService.setCurrentPage(pageModel);
                     $rootScope.$broadcast('pageLoaded');
                     if (callback) { callback(); }
