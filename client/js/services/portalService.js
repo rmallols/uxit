@@ -1,8 +1,8 @@
 (function (COMPONENTS) {
     'use strict';
     COMPONENTS.factory('portalService', ['$compile', '$rootScope', 'pageService', 'crudService', 'mediaService',
-                                         'i18nDbService', 'constantsService', 'timerService',
-    function ($compile, $rootScope, pageService, crudService, mediaService, i18nDbService, constantsService, timerService) {
+                                         'i18nDbService', 'constantsService', 'timerService', 'rowService', 'colService', 'arrayService',
+    function ($compile, $rootScope, pageService, crudService, mediaService, i18nDbService, constantsService, timerService, rowService, colService, arrayService) {
 
         var windowDimensions;
 
@@ -13,6 +13,17 @@
         function setHeader() {
             setTitle();
             setFavicon();
+        }
+
+        /**
+         * Updates the current pages data defined in the context of the template structure.
+         * The goal is to isolate the template structure knowledge from other resources
+         *
+         * @param {object} portal   The object that contains the portal data
+         * @param {object} pageData The new pages data that is considered to be outside of the template structure (that's the page instance data)
+         */
+        function updatePageDataFromTemplate(portal, pageData) {
+            portal.template.rows[1].columns[0].rows = pageData;
         }
 
         /**
@@ -38,11 +49,12 @@
          */
         function savePortal(callback) {
             //The user handling will have to be refactored at UXIT-273
-            var user = $.extend(true, {}, $rootScope.portal.user);
-            delete $rootScope.portal.user;
-            crudService.update(constantsService.collections.portal, $rootScope.portal._id, $rootScope.portal, function (data) {
+            var portalData;
+            portalData = angular.copy($rootScope.portal);
+            delete portalData.user;
+            updatePageDataFromTemplate(portalData, []);
+            crudService.update(constantsService.collections.portal, portalData._id, portalData, function (data) {
                 setHeader(); //Reload the headers as they could have changed
-                $rootScope.portal.user = user;
                 if (callback) {
                     callback(data);
                 }
@@ -106,6 +118,41 @@
             return $rootScope.portal.fullscreenMode === 'real';
         }
 
+        /**
+         *
+         *
+         * @param appElm
+         * @param appIndex
+         */
+        function deleteApp(appElm, appIndex) {
+            var columnScope = angular.element(appElm.closest('.columns')).scope(),
+                apps = columnScope.column.apps,
+                rowScope = columnScope.$parent,
+                columns = rowScope.row.columns,
+                wrapperScope = rowScope.$parent,
+                rows = getWrappingRows(wrapperScope);
+            arrayService.delete(apps, appIndex);
+            if (apps.length === 0) {
+                colService.deleteColAndDependencies(columns, columnScope.$index);
+                if (columns.length === 1) {
+                    rowService.deleteRowAndDependencies(rows, rowScope.$index);
+                }
+            }
+            pageService.updateCurrentPage(null);
+            savePortal(null);
+        }
+
+        /**
+         * Gets the rows of a given object. This method is useful in order to isolate resources from being aware of
+         * the different rows wrapping objects (i.e. template vs page rows)
+         *
+         * @param {object}  wrapperScope    The scope that contains a sort of rows
+         * @returns {Array}                 The array that contains the rows of the given scope
+         */
+        function getWrappingRows(wrapperScope) {
+            return (wrapperScope.page) ? wrapperScope.page.rows : wrapperScope.column.rows;
+        }
+
         /* PRIVATE METHODS */
         function setTitle() {
             var currentPage = pageService.getCurrentPage();
@@ -138,10 +185,13 @@
             enableAppSortableFeature: enableAppSortableFeature,
             disableAppSortableFeature: disableAppSortableFeature,
             savePortal: savePortal,
+            updatePageDataFromTemplate: updatePageDataFromTemplate,
+            deleteApp: deleteApp,
             setWindowDimensions: setWindowDimensions,
             getWindowDimensions: getWindowDimensions,
             getDefaultFaviconUrl: getDefaultFaviconUrl,
             isRealFullscreen: isRealFullscreen,
+            getWrappingRows: getWrappingRows,
             trackAnalytics: trackAnalytics
         };
     }]);

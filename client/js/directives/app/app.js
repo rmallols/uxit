@@ -1,8 +1,8 @@
 (function () {
     'use strict';
-    COMPONENTS.directive('app', ['$rootScope', '$compile', 'pageService', 'styleService', 'appService',
+    COMPONENTS.directive('app', ['$rootScope', '$compile', 'portalService', 'styleService', 'appService',
                                 'availableAppsService', 'constantsService', 'stringService', 'roleService',
-    function factory($rootScope, $compile, pageService, styleService, appService, availableAppsService,
+    function factory($rootScope, $compile, portalService, styleService, appService, availableAppsService,
                      constantsService, stringService, roleService) {
         return {
             restrict: 'A',
@@ -11,10 +11,7 @@
             scope: {
                 type    : '=',
                 model   : '=',
-                width   : '=',
-                rowIndex: '=',
-                colIndex: '=',
-                appIndex: '='
+                width   : '='
             },
             link: function link(scope, element) {
 
@@ -62,7 +59,7 @@
                         if (appService.isMaximized()) {
                             appService.disableMaximized(element, scope.onResized);
                         }
-                        pageService.deleteApp(scope.rowIndex, scope.colIndex, scope.appIndex);
+                        portalService.deleteApp(element, scope.$parent.$index);
                         $(this).remove();
                     });
                 };

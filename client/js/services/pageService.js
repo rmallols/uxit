@@ -1,7 +1,7 @@
 (function (COMPONENTS) {
     'use strict';
-    COMPONENTS.factory('pageService', ['$rootScope', 'crudService', 'rowService', 'colService', 'arrayService', 'constantsService',
-    function ($rootScope, crudService, rowService, colService, arrayService, constantsService) {
+    COMPONENTS.factory('pageService', ['$rootScope', 'crudService', 'rowService', 'constantsService',
+    function ($rootScope, crudService, rowService, constantsService) {
 
         var pages, currentPage;
 
@@ -128,25 +128,6 @@
             updateCurrentPage(null);
         }
 
-        /**
-         *
-         *
-         * @param rowIndex
-         * @param columnIndex
-         * @param itemIndex
-         */
-        function deleteApp(rowIndex, columnIndex, itemIndex) {
-            var rows = getCurrentPage().rows, columns = rows[rowIndex].columns, apps = columns[columnIndex].apps;
-            arrayService.delete(apps, itemIndex);
-            if (apps.length === 0) {
-                colService.deleteColAndDependencies(columns, columnIndex);
-                if (columns.length === 1) {
-                    rowService.deleteRowAndDependencies(rows, rowIndex);
-                }
-            }
-            updateCurrentPage(null);
-        }
-
         return {
             loadPages: loadPages,
             getPages: getPages,
@@ -158,8 +139,7 @@
             getCurrentPage: getCurrentPage,
             setCurrentPage: setCurrentPage,
             isSubPageOf: isSubPageOf,
-            addApp: addApp,
-            deleteApp: deleteApp
+            addApp: addApp
         };
     }]);
 })(window.COMPONENTS);

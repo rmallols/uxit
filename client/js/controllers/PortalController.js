@@ -21,7 +21,8 @@ function PortalController($scope, $rootScope, $routeParams, portalService, pageS
                     stdService.error('The page \"' + $routeParams.page + '\" cannot be found');
                 } else {
                     $rootScope.portal = portalModel;
-                    $rootScope.portal.template.rows[1].columns[0].rows = pageModel.rows;
+                    portalService.updatePageDataFromTemplate($rootScope.portal, pageModel.rows);
+                    console.log("al añadir un app sobre una row de template vacio, añade dos filas vacias en la página. Habría que forzar que detectara que es template para que no añadiera nada en ese caso. Elimina el app del template y vuélvelo a añadir. Coge el rows del page en lugar del template, por eso añade al page. La idea puede ser buena de marcar cada row de template con un flag ('bla'), de forma que si tiene el flag coja directamente del template")
                     pageService.setCurrentPage(pageModel);
                     $rootScope.$broadcast('pageLoaded');
                     if (callback) { callback(); }

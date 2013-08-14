@@ -23,8 +23,7 @@
          * @param {object} ui   The object that holds the information about the item that will be sorted
          */
         function update(ui) {
-            var rows = $rootScope.portal.template.rows;
-            setOptions(rows, originalElm, $(ui.item));
+            setOptions(originalElm, $(ui.item));
             if (isUpdateTime()) {
                 updateIfThereIsSpace();
                 if (!$rootScope.$$phase) {
@@ -68,10 +67,17 @@
             }
         }
 
-        function setOptions(rows, originalElm, droppedElm) {
+        function setOptions(originalElm, droppedElm) {
+            var wrapperOriginalRowsScope    = angular.element(originalElm.closest('.rows')).scope().$parent,
+                wrapperDropRowsScope        = angular.element(droppedElm.closest('.rows')).scope().$parent;
+            console.log("wrapping drop rows", angular.element(droppedElm.closest('.rows')).scope());
             options = {};
             options.isNewItem           = droppedElm.attr('sortable-add-app') !== undefined;
-            options.rows                = rows;
+            options.originalRows        = portalService.getWrappingRows(wrapperOriginalRowsScope);
+            //options.dropRows            = portalService.getWrappingRows(wrapperDropRowsScope);
+            options.dropRows            = (angular.element(droppedElm.closest('.rows')).scope().row.bla)
+                ? $rootScope.portal.template.rows
+                : angular.element(droppedElm.closest('.rows')).scope().$parent.page.rows;
             options.droppedElm          = droppedElm;
             options.originalColIndex    = originalElm.closest('.columns').prevAll('.columns').size();
             options.dropColIndex        = droppedElm.closest('.columns').prevAll('.columns').size();
@@ -79,9 +85,7 @@
             options.originalAppIndex    = originalElm.prevAll('.app').size();
             options.dropRowIndex        = droppedElm.closest('.rows').prevAll('.rows').size();
             options.dropAppIndex        = droppedElm.prevAll('.app').size();
-            //options.originalRow         = options.rows[options.originalRowIndex];
             options.originalRow         = originalElm.closest('.rows').scope().row;
-            //options.dropRow             = options.rows[options.dropRowIndex];
             options.dropRow             = droppedElm.closest('.rows').scope().row;
             options.dropCol             = options.dropRow.columns[options.dropColIndex];
             options.originalCol         = options.originalRow.columns[options.originalColIndex];
@@ -90,7 +94,8 @@
             options.affectedOriginalCol = (options.elmHasChangedRow)
                 ? colService.getAffectedCol(options.originalRow.columns, options.originalColIndex)
                 : options.affectedDropCol;
-            console.log("x0", options.originalRow, options.originalColIndex)
+
+            console.log("DP", options.dropRows, angular.element(droppedElm.closest('.rows')).scope())
             return options;
         }
 
@@ -102,12 +107,11 @@
         }
 
         function executeUpdate() {
-            console.log("updating2...");
             if (options.isNewItem) { //That's a new item that comes from drag and drop
                 deleteNewDroppedElm(options.dropCol, options.droppedElm, options.dropAppIndex);
             }
             updateConsideringRowChange(); //New and / or old column were empty -> resize is required
-            decorateDropRow(); //New column handling
+            decorateDropRow(); //New row handling
             //For some reason, in some cases the dragging app is not deleted, so it's necessary to explicitly delete it
             deleteGhostApp();
             pageService.updateCurrentPage(null);
@@ -125,6 +129,8 @@
         }
 
         function updateWithRowChange() {
+            console.log("adding empty rows!!", options.dropRows);
+
             if (rowService.isDropRowEmpty(options.dropRow)) {
                 addEmptyRows();
             }
@@ -172,8 +178,8 @@
         }
 
         function addEmptyRows() {
-            rowService.addEmptyRow(options.rows, options.dropRowIndex);
-            rowService.addEmptyRow(options.rows, options.dropRowIndex + 2);
+            rowService.addEmptyRow(options.dropRows, options.dropRowIndex);
+            rowService.addEmptyRow(options.dropRows, options.dropRowIndex + 2);
             //If the two new rows were added before the original row is,
             //it's necessary to increase the pointer to the original row index as well
             if (options.dropRowIndex < options.originalRowIndex) {
@@ -187,7 +193,7 @@
             }
             colService.normalizeEmptyCols(options.originalRow);
             if (rowService.isOriginalRowEmpty(options.originalRow)) {
-                rowService.deleteRowAndDependencies(options.rows, options.originalRowIndex);
+                rowService.deleteRowAndDependencies(options.originalRows, options.originalRowIndex);
             }
         }
 

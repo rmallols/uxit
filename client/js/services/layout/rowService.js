@@ -49,7 +49,7 @@
          * Adds a row and an empty sibling row
          *
          * @param {object}  rows        The array with the rows where the new one is going to be placed
-         * @param {object}  newRowPos   The position of the new row
+         * @param {number}  newRowPos   The position of the new row
          */
         function addRowAndDependencies(rows, newRowPos) {
             var newRow = {columns: [
@@ -85,8 +85,12 @@
          * @param {integer} rowIndex    The index of the row that is going to be deleted
          */
         function deleteRowAndDependencies(rows, rowIndex) {
-            arrayService.delete(rows, rowIndex);
-            arrayService.delete(rows, rowIndex);
+            if(rows.length > 1) {
+                arrayService.delete(rows, rowIndex);
+            }
+            if(rows.length > 1) {
+                arrayService.delete(rows, rowIndex);
+            }
         }
 
         return {

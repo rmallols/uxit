@@ -1,6 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('colService', ['$rootScope', 'arrayService', function ($rootScope, arrayService) {
+    COMPONENTS.factory('colService', ['$rootScope', 'rowService', 'arrayService',
+    function ($rootScope, rowService, arrayService) {
 
         /**
          * Normalizes the structure of a given row
@@ -42,6 +43,9 @@
             }
             arrayService.delete(columns, columnIndex);
             arrayService.delete(columns, columnIndex);
+            if(!affectedCol) { //If there's just one column alive, force it to fit all the available space in the row
+                columns[0].size = rowService.getMaxSlots();
+            }
         }
 
         /**

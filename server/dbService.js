@@ -22,6 +22,27 @@ module.exports = {
                     "background": "#fff"
                 }
             },
+            "template": {
+                "rows": [
+                    {
+                        "columns": [
+                            { "size": 25, "apps": [] }
+                        ]
+                    },
+                    {
+                        "columns": [
+                            {
+                                "rows": []
+                            }
+                        ]
+                    },
+                    {
+                        "columns": [
+                            { "size": 25, "apps": [] }
+                        ]
+                    }
+                ]
+            },
             "pages"	:
                 [
                     {
