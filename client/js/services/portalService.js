@@ -129,28 +129,16 @@
                 apps = columnScope.column.apps,
                 rowScope = columnScope.$parent,
                 columns = rowScope.row.columns,
-                wrapperScope = rowScope.$parent,
-                rows = getWrappingRows(wrapperScope);
+                rows = rowService.getWrappingRows(rowScope);
             arrayService.delete(apps, appIndex);
             if (apps.length === 0) {
                 colService.deleteColAndDependencies(columns, columnScope.$index);
-                if (columns.length === 1) {
+                if (columns.length === 1 && !rowService.isTemplateRow(rowScope.row)) {
                     rowService.deleteRowAndDependencies(rows, rowScope.$index);
                 }
             }
             pageService.updateCurrentPage(null);
             savePortal(null);
-        }
-
-        /**
-         * Gets the rows of a given object. This method is useful in order to isolate resources from being aware of
-         * the different rows wrapping objects (i.e. template vs page rows)
-         *
-         * @param {object}  wrapperScope    The scope that contains a sort of rows
-         * @returns {Array}                 The array that contains the rows of the given scope
-         */
-        function getWrappingRows(wrapperScope) {
-            return (wrapperScope.page) ? wrapperScope.page.rows : wrapperScope.column.rows;
         }
 
         /* PRIVATE METHODS */
@@ -191,7 +179,6 @@
             getWindowDimensions: getWindowDimensions,
             getDefaultFaviconUrl: getDefaultFaviconUrl,
             isRealFullscreen: isRealFullscreen,
-            getWrappingRows: getWrappingRows,
             trackAnalytics: trackAnalytics
         };
     }]);

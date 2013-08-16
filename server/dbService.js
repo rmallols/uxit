@@ -25,6 +25,7 @@ module.exports = {
             "template": {
                 "rows": [
                     {
+                        "template": true,
                         "columns": [
                             { "size": 25, "apps": [] }
                         ]
@@ -32,11 +33,12 @@ module.exports = {
                     {
                         "columns": [
                             {
-                                "rows": []
+                                "size": 25, "rows": []
                             }
                         ]
                     },
                     {
+                        "template": true,
                         "columns": [
                             { "size": 25, "apps": [] }
                         ]

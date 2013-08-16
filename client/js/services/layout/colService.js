@@ -14,6 +14,10 @@
                     normalizeEmptyCols(row);
                 }
             }
+            //If there's just one column alive, force it to fit all the available space in the row
+            if(row.columns.length === 1) {
+                row.columns[0].size = rowService.getMaxSlots();
+            }
         }
 
         /**

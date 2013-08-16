@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('rowService', ['arrayService', function (arrayService) {
+    COMPONENTS.factory('rowService', ['$rootScope', 'arrayService', function ($rootScope, arrayService) {
 
         var maxSlots = 25;
 
@@ -93,6 +93,28 @@
             }
         }
 
+        /**
+         * Gets the rows of a given row scope. This method is useful in order to isolate resources from being aware of
+         * the different rows wrapping objects (i.e. template vs page rows)
+         *
+         * @param {object}  rowScope    The scope of the row
+         * @returns {Array}             The array that contains the rows of the given scope
+         */
+        function getWrappingRows(rowScope) {
+            return (rowScope.row.template)
+                ? $rootScope.portal.template.rows : $rootScope.portal.template.rows[1].columns[0].rows;
+        }
+
+        /**
+         * Determines if a given row is part of the template structure or not
+         *
+         * @param {object} row  The row that could be part of the template structure or not
+         * @returns {boolean}   True if the given row is part of the template structure. False otherwise
+         */
+        function isTemplateRow(row) {
+            return row.template;
+        }
+
         return {
             getMaxSlots: getMaxSlots,
             isAvailableSpaceInRow: isAvailableSpaceInRow,
@@ -101,7 +123,9 @@
             addRowAndDependencies: addRowAndDependencies,
             addEmptyRow: addEmptyRow,
             getEmptyRow: getEmptyRow,
-            deleteRowAndDependencies: deleteRowAndDependencies
+            deleteRowAndDependencies: deleteRowAndDependencies,
+            getWrappingRows: getWrappingRows,
+            isTemplateRow: isTemplateRow
         };
     }]);
 })();

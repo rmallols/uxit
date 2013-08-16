@@ -22,16 +22,21 @@ ul.pages > li.page > * {
 .columns {
     padding: 0px !important;
     position: relative;
-    border: 3px solid transparent;
     /*.transition(width @speed);*/
 }
 
-html.sorting .columns {
-  border: 3px dashed blue;
+html .columns.template > ul,
+html .columns.page > ul {
+  border: 6px solid transparent;
+  margin: 5px;
 }
 
-html.sorting .columns.template {
-  border: 3px dashed green;
+html.sorting .columns.page > ul {
+  border-color: @high;
+}
+
+html.sorting .columns.template > ul {
+  border-color: @successColor;
 }
 
 .columns,
