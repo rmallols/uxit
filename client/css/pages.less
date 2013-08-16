@@ -25,8 +25,8 @@ ul.pages > li.page > * {
     /*.transition(width @speed);*/
 }
 
-html .columns.template > ul,
-html .columns.page > ul {
+.columns.template > ul,
+.columns.page > ul {
   border: 6px solid transparent;
   margin: 5px;
 }
@@ -37,6 +37,10 @@ html.sorting .columns.page > ul {
 
 html.sorting .columns.template > ul {
   border-color: @successColor;
+}
+
+html.appMaximized .columns.page:not(.colMaximized) {
+  display: none;
 }
 
 .columns,

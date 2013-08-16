@@ -9,14 +9,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="245.1674"
-   height="93.517548"
-   id="svg3822"
+   width="351.35318"
+   height="121.07509"
+   id="svg3049"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 3">
+   sodipodi:docname="logo6.svg">
   <defs
-     id="defs3824" />
+     id="defs3051" />
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -25,22 +25,22 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="159.34815"
-     inkscape:cy="101.02704"
+     inkscape:cx="175.59166"
+     inkscape:cy="49.581868"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g3024"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1304"
+     inkscape:window-width="1301"
      inkscape:window-height="745"
-     inkscape:window-x="54"
-     inkscape:window-y="-8"
+     inkscape:window-x="296"
+     inkscape:window-y="1072"
      inkscape:window-maximized="1" />
   <metadata
-     id="metadata3827">
+     id="metadata3054">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -55,43 +55,39 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-131.70201,-154.17483)">
+     transform="translate(-389.08854,-876.77612)">
     <g
-       transform="translate(177.32701,-287.57772)"
-       id="g3795">
-      <g
-         transform="translate(-3.15625,-0.140625)"
-         id="g3879">
-        <text
-           xml:space="preserve"
-           style="font-size:127.75772095px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Sans"
-           x="19.248276"
-           y="605.84027"
-           id="text2982-5"
-           sodipodi:linespacing="125%"
-           transform="scale(1.1416607,0.87591699)"><tspan
-             sodipodi:role="line"
-             id="tspan2984-2"
-             x="19.248276"
-             y="605.84027"
-             style="font-size:22.83321381px;fill:#666666;fill-opacity:1;font-family:Absolut Pro reduced;-inkscape-font-specification:Absolut Pro reduced"><tspan
-   style="fill:#32b4e4;fill-opacity:1;font-family:Absolut Pro reduced;-inkscape-font-specification:Absolut Pro reduced"
-   id="tspan4097">amazing</tspan> portals</tspan></text>
-      </g>
+       transform="translate(9.3478486,435.51593)"
+       id="g3024">
       <text
-         sodipodi:linespacing="125%"
-         id="text3021"
-         y="504.58002"
-         x="-45.625"
-         style="font-size:91.02249146px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Sans"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;fill:#666666;fill-opacity:1;font-family:Absolut Pro reduced;-inkscape-font-specification:Absolut Pro reduced Light"
-           y="504.58002"
-           x="-45.625"
-           id="tspan3023"
-           sodipodi:role="line">men<tspan
-   id="tspan3793"
+         xml:space="preserve"
+         style="font-size:111.905159px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Sans"
+         x="373.99033"
+         y="521.04999"
+         id="text2982-6"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan2984-14"
+           x="373.99033"
+           y="521.04999"
+           style="font-weight:bold;fill:#666666;fill-opacity:1;font-family:Alte Haas Grotesk;-inkscape-font-specification:Alte Haas Grotesk Bold">men<tspan
+   id="tspan3916"
    style="fill:#32b4e4;fill-opacity:1">z</tspan>it</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:127.25871277px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Sans"
+         x="333.79367"
+         y="632.52557"
+         id="text2982-5-2"
+         sodipodi:linespacing="125%"
+         transform="scale(1.1372015,0.87935163)"><tspan
+           sodipodi:role="line"
+           id="tspan2984-2-3"
+           x="333.79367"
+           y="632.52557"
+           style="font-size:33px;letter-spacing:5px;fill:#666666;fill-opacity:1;font-family:Alte Haas Grotesk;-inkscape-font-specification:Alte Haas Grotesk"><tspan
+   style="font-size:33px;letter-spacing:5px;fill:#32b4e4;fill-opacity:1;font-family:Alte Haas Grotesk;-inkscape-font-specification:Alte Haas Grotesk"
+   id="tspan4097-2">Amazing</tspan> Portals</tspan></text>
     </g>
   </g>
 </svg>

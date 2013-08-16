@@ -6,7 +6,7 @@
                 restrict: 'A',
                 replace: true,
                 templateUrl: '/client/html/app/appHeader.html',
-                link: function link(scope, element) {
+                link: function link(scope, element, attrs) {
 
                     var appElm = element.parent();
 
@@ -44,7 +44,7 @@
                             appService.disableMaximized(appElm, scope.onResized);
                         }
                         else {
-                            appService.enableMaximized(appElm, scope.onResized);
+                            appService.enableMaximized(appElm, scope.$eval(attrs.width), scope.onResized);
                         }
                     };
 

@@ -3,18 +3,19 @@
     COMPONENTS.factory('appService', ['$rootScope', 'portalService', 'keyboardService',
     function ($rootScope, portalService, keyboardService) {
 
-        var maximized, directiveId = 'app';
+        var maximized, directiveId = 'app', previousSize;
 
         /**
          *  Enables the Maximized state of a given app
          *
-         * @param {object}      element     The pointer to the root object of the app
-         * @param {function}    onResized   The callback function to be executed once the app has been maximized
+         * @param {object}      element     The pointer to the root object of the app that is being maximized
+         * @param {integer}     currentSize The current size of the columns that is wrapping the app that is being maximized
+         * @param {function}    onResized   The callback function to be executed once the app that is being maximized
          */
-        function enableMaximized(element, onResized) {
+        function enableMaximized(element, currentSize, onResized) {
             maximized = true;
             portalService.enableAppSortableFeature();
-            element.addClass('maximized');
+            //element.addClass('maximized');
             $('html').addClass('appMaximized'); //Allow CSS setup from external components
             if (portalService.isRealFullscreen()) { element.fullScreen(true); }
             triggerOnResizeEvent(onResized);
@@ -26,13 +27,23 @@
                 }
             });
             registerKeyboardEvents(element, onResized);
+
+
+
+            console.log("********************do this just if portalService.isTemplateFullScreen()")
+            console.log("additionally, the maximize button should be disabled for the template apps if the template fullscreen is the active one")
+            var columns = element.closest('.columns');
+            columns.addClass('colMaximized large-23');
+            columns.prev('.columns').addClass('colMaximized');
+            columns.next('.columns').addClass('colMaximized');
+            previousSize = currentSize;
         }
 
         /**
          *  Disables the Maximized state of a given app
          *
-         * @param {object}      element     The pointer to the root object of the app
-         * @param {function}    onResized   The callback function to be executed once the app has been maximized
+         * @param {object}      element     The pointer to the root object of the app that was maximized
+         * @param {function}    onResized   The callback function to be executed once the app that was maximized
          */
         function disableMaximized(element, onResized) {
             maximized = false;
@@ -45,6 +56,11 @@
             triggerOnResizeEvent(onResized);
             $(document).unbind("fullscreenchange");
             unregisterKeyboardEvents();
+
+
+            console.log("****SAME ON THE DISABLE SIDE.")
+            $('.colMaximized.large-23').removeClass('large-23').addClass('large-' + previousSize);
+            $('.colMaximized').removeClass('colMaximized');
         }
 
         /**
