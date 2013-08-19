@@ -7,11 +7,6 @@ function ($rootScope, pageService, rowService, userService, roleService, styleSe
 		templateUrl: '/client/html/pages.html',
 		link: function link(scope) {
 
-            /*
-            $rootScope.$on('pageLoaded', function () {
-                scope.page = pageService.getCurrentPage();
-            });*/
-
             scope.setPagesStyles = function () {
                 if (scope.$root.portal) {
                     return styleService.getNormalizedStyles($rootScope.portal.styles, null);

@@ -6,61 +6,46 @@
         var maximized, directiveId = 'app', previousSize;
 
         /**
-         *  Enables the Maximized state of a given app
+         *  Enables the fullscreen state of a given app
          *
-         * @param {object}      element     The pointer to the root object of the app that is being maximized
-         * @param {integer}     currentSize The current size of the columns that is wrapping the app that is being maximized
-         * @param {function}    onResized   The callback function to be executed once the app that is being maximized
+         * @param {object}      element     The pointer to the root object of the app that is being fullscreened
+         * @param {integer}     currentSize The current size of the columns that is wrapping the app that is being fullscreened
+         * @param {function}    onResized   The callback function to be executed once the app that is being fullscreened
          */
-        function enableMaximized(element, currentSize, onResized) {
+        function enableFullscreen(element, currentSize, onResized) {
+            $('html').addClass('fullscreen');
             maximized = true;
             portalService.enableAppSortableFeature();
-            //element.addClass('maximized');
-            $('html').addClass('appMaximized'); //Allow CSS setup from external components
-            if (portalService.isRealFullscreen()) { element.fullScreen(true); }
+            if (portalService.isRealFullscreen()) {
+                enableRealFullscreen(element, onResized);
+            } else if(portalService.isMaximizedFullscreen()) {
+                enableMaximizedFullscreen(element);
+            } else if(portalService.isTemplateFullscreen()) {
+                enableTemplateFullscreen(element, currentSize);
+            }
             triggerOnResizeEvent(onResized);
-            //If 'ESC' key is pressed, the app event won't be called in HTML5 fullscreen mode
-            //Consequently, we need to manually disable the maximized state is it's not longer fullscreen
-            $(document).bind("fullscreenchange", function () {
-                if (!$(document).fullScreen()) {
-                    disableMaximized(element, onResized);
-                }
-            });
             registerKeyboardEvents(element, onResized);
-
-
-
-            console.log("********************do this just if portalService.isTemplateFullScreen()")
-            console.log("additionally, the maximize button should be disabled for the template apps if the template fullscreen is the active one")
-            var columns = element.closest('.columns');
-            columns.addClass('colMaximized large-23');
-            columns.prev('.columns').addClass('colMaximized');
-            columns.next('.columns').addClass('colMaximized');
-            previousSize = currentSize;
         }
 
         /**
-         *  Disables the Maximized state of a given app
+         *  Disables the fullscreen state of a given app
          *
-         * @param {object}      element     The pointer to the root object of the app that was maximized
-         * @param {function}    onResized   The callback function to be executed once the app that was maximized
+         * @param {object}      element     The pointer to the root object of the app that was fullscreened
+         * @param {function}    onResized   The callback function to be executed once the app that was fullscreened
          */
-        function disableMaximized(element, onResized) {
+        function disableFullscreen(element, onResized) {
+            $('html').removeClass('fullscreen');
             maximized = false;
             portalService.disableAppSortableFeature();
-            element.removeClass('maximized');
-            $('html').removeClass('appMaximized'); //Allow CSS setup from external components
-            if ($rootScope.portal.html5Fullscreen) {
-                element.fullScreen(false);
+            if (portalService.isRealFullscreen()) {
+                disableRealFullscreen(element);
+            } else if(portalService.isMaximizedFullscreen()) {
+                disableMaximizedFullscreen(element);
+            } else if(portalService.isTemplateFullscreen()) {
+                disableTemplateFullscreen(element);
             }
             triggerOnResizeEvent(onResized);
-            $(document).unbind("fullscreenchange");
             unregisterKeyboardEvents();
-
-
-            console.log("****SAME ON THE DISABLE SIDE.")
-            $('.colMaximized.large-23').removeClass('large-23').addClass('large-' + previousSize);
-            $('.colMaximized').removeClass('colMaximized');
         }
 
         /**
@@ -83,8 +68,56 @@
         }
 
         /** Private methods **/
+        function enableRealFullscreen(element, onResized) {
+            $('html').addClass('appRealFullscreen'); //Allow CSS setup from ancestor DOM elements
+            element.addClass('realFullscreen');
+            element.fullScreen(true);
+            //If 'ESC' key is pressed, the app event won't be called in HTML5 fullscreen mode
+            //Consequently, we need to manually disable the maximized state is it's not longer fullscreen
+            $(document).bind("fullscreenchange", function () {
+                if (!$(document).fullScreen()) {
+                    disableFullscreen(element, onResized);
+                }
+            });
+        }
+
+        function disableRealFullscreen(element) {
+            $('html').removeClass('appRealFullscreen'); //Allow CSS setup from ancestor DOM elements
+            element.removeClass('realFullscreen');
+            element.fullScreen(false);
+            $(document).unbind("fullscreenchange");
+        }
+
+        function enableMaximizedFullscreen(element) {
+            $('html').addClass('appMaximizedFullscreen'); //Allow CSS setup from ancestor DOM elements
+            element.addClass('maximizedFullscreen');
+        }
+
+        function disableMaximizedFullscreen(element) {
+            $('html').removeClass('appMaximizedFullscreen'); //Allow CSS setup from ancestor DOM elements
+            element.removeClass('maximizedFullscreen');
+        }
+
+        function enableTemplateFullscreen(element, currentSize) {
+            console.log("additionally, the maximize button should be disabled for the template apps if the template fullscreen is the active one")
+            var columns = element.closest('.columns');
+            columns.addClass('colMaximized large-23');
+            columns.prev('.columns').addClass('colMaximized');
+            columns.next('.columns').addClass('colMaximized');
+            previousSize = currentSize;
+            $('html').addClass('appTemplateFullscreen'); //Allow CSS setup from ancestor DOM elements
+            element.addClass('templateFullscreen');
+        }
+
+        function disableTemplateFullscreen(element) {
+            $('.colMaximized.large-23').removeClass('large-23').addClass('large-' + previousSize);
+            $('.colMaximized').removeClass('colMaximized');
+            $('html').removeClass('appTemplateFullscreen'); //Allow CSS setup from ancestor DOM elements
+            element.removeClass('templateFullscreen');
+        }
+
         function registerKeyboardEvents(element, onResized) {
-            keyboardService.register('esc', directiveId, function () { disableMaximized(element, onResized); });
+            keyboardService.register('esc', directiveId, function () { disableFullscreen(element, onResized); });
         }
 
         function unregisterKeyboardEvents() {
@@ -92,8 +125,8 @@
         }
 
         return {
-            enableMaximized: enableMaximized,
-            disableMaximized: disableMaximized,
+            enableFullscreen: enableFullscreen,
+            disableFullscreen: disableFullscreen,
             isMaximized: isMaximized,
             triggerOnResizeEvent: triggerOnResizeEvent
         };

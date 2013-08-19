@@ -6,7 +6,7 @@
                 restrict: 'A',
                 replace: true,
                 templateUrl: '/client/html/app/appHeader.html',
-                link: function link(scope, element, attrs) {
+                link: function link(scope, element) {
 
                     var appElm = element.parent();
 
@@ -41,10 +41,10 @@
 
                     scope.toggleMaximized = function () {
                         if (appService.isMaximized()) {
-                            appService.disableMaximized(appElm, scope.onResized);
+                            appService.disableFullscreen(appElm, scope.onResized);
                         }
                         else {
-                            appService.enableMaximized(appElm, scope.$eval(attrs.width), scope.onResized);
+                            appService.enableFullscreen(appElm, scope.$eval(scope.width), scope.onResized);
                         }
                     };
 
@@ -61,6 +61,11 @@
 
                     $rootScope.$on('onWindowResized', function () {
                         appService.triggerOnResizeEvent(scope.onResized);
+                    });
+
+                    scope.isTemplateFullscreen = portalService.isTemplateFullscreen();
+                    $rootScope.$on('onPortalSaved', function () {
+                        scope.isTemplateFullscreen = portalService.isTemplateFullscreen();
                     });
 
                     /** Private methods */

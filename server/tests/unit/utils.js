@@ -1,4 +1,69 @@
 'use strict';
+function loadPortal(callback) {
+    var mockedResponse = {
+        "id"    : "uxitDev",
+        "title"	: "UXIT dev",
+        "desc"	: "This is the description of the portal!",
+        "styles": {
+            "background": ""
+        },
+        "app": {
+            "showTitle" : false,
+            "showComments" : false,
+            "styles" : {
+                "background": "#fff"
+            }
+        },
+        "template": {
+            "rows": [
+                {
+                    "template": true,
+                    "columns": [
+                        { "size": 25, "apps": [] }
+                    ]
+                },
+                {
+                    "columns": [
+                        {
+                            "size": 25, "rows": []
+                        }
+                    ]
+                },
+                {
+                    "template": true,
+                    "columns": [
+                        { "size": 25, "apps": [] }
+                    ]
+                }
+            ]
+        },
+        "pages"	:
+            [
+                {
+                    "page": "Home",
+                    "text": "Inicio",
+                    "rows": [
+                        {
+                            "columns": [
+                                {
+                                    "size": 25,
+                                    "apps": [
+                                        {
+                                            "type": "login"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+    };
+    if (callback) {
+        callback(mockedResponse);
+    }
+}
+
 function loadPages($httpBackend, pageService, callback) {
     var mockedResponse = {
         "totalSize": 3,

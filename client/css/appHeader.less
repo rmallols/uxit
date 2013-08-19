@@ -20,7 +20,7 @@
   margin-right:@padding;
 }
 
-.app.maximized > [app-header] > .header > .actions {
+.app.maximizedFullscreen > [app-header] > .header > .actions {
   margin-right: 2 * @padding + 5;
 }
 
@@ -41,11 +41,11 @@
   .transition(right @speed);
 }
 
-.app.maximized > [app-header] > .header {
+.app.maximizedFullscreen > [app-header] > .header {
   position: fixed;
 }
 
-.app.maximized > [app-header] .headerToggle {
+.app.maximizedFullscreen > [app-header] .headerToggle {
   position: fixed;
   z-index:4;
 }

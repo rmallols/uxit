@@ -54,6 +54,7 @@
             delete portalData.user;
             updatePageDataFromTemplate(portalData, []);
             crudService.update(constantsService.collections.portal, portalData._id, portalData, function (data) {
+                $rootScope.$broadcast('onPortalSaved');
                 setHeader(); //Reload the headers as they could have changed
                 if (callback) {
                     callback(data);
@@ -119,6 +120,24 @@
         }
 
         /**
+         * Determines if the fullscreen mode is using all the available space in the browser
+         *
+         * @returns {boolean} True if the fullscreen mode is maximized. False otherwise
+         */
+        function isMaximizedFullscreen() {
+            return $rootScope.portal.fullscreenMode === 'maximized';
+        }
+
+        /**
+         * Determines if the fullscreen mode is using all the available space in the non-templated area
+         *
+         * @returns {boolean} True if the fullscreen mode is template. False otherwise
+         */
+        function isTemplateFullscreen() {
+            return $rootScope.portal.fullscreenMode === 'template';
+        }
+
+        /**
          *
          *
          * @param appElm
@@ -179,6 +198,8 @@
             getWindowDimensions: getWindowDimensions,
             getDefaultFaviconUrl: getDefaultFaviconUrl,
             isRealFullscreen: isRealFullscreen,
+            isMaximizedFullscreen: isMaximizedFullscreen,
+            isTemplateFullscreen: isTemplateFullscreen,
             trackAnalytics: trackAnalytics
         };
     }]);

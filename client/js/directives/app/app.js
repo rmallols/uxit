@@ -9,9 +9,10 @@
             replace: true,
             templateUrl: '/client/html/app/app.html',
             scope: {
-                type    : '=',
-                model   : '=',
-                width   : '='
+                type        : '=',
+                model       : '=',
+                width       : '=',
+                templateApp : '@'
             },
             link: function link(scope, element) {
 
