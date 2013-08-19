@@ -1,7 +1,8 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('sortableAppService', ['$rootScope', '$timeout', 'portalService', 'pageService', 'rowService', 'colService', 'arrayService', 'keyboardService',
-    function ($rootScope, $timeout, portalService, pageService, rowService, colService, arrayService, keyboardService) {
+    COMPONENTS.factory('sortableAppService', ['$rootScope', '$timeout', 'portalService', 'pageService', 'rowService',
+    'colService', 'arrayService', 'keyboardService', 'timerService',
+    function ($rootScope, $timeout, portalService, pageService, rowService, colService, arrayService, keyboardService, timerService) {
 
         var originalElm, isUpdateBlocked = false, options;
 
@@ -202,7 +203,7 @@
                     arrayService.delete(dropCol.apps, index);
                 }
             });
-            arrayService.add(dropCol.apps, { type: droppedElm.attr('type') }, dropAppIndex);
+            arrayService.add(dropCol.apps, { type: droppedElm.attr('type'), id: timerService.getRandomNumber() }, dropAppIndex);
             droppedElm.remove();
         }
         /** End private methods **/

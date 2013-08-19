@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('appService', ['$rootScope', 'portalService', 'keyboardService',
-    function ($rootScope, portalService, keyboardService) {
+    COMPONENTS.factory('appService', ['$rootScope', '$location', 'portalService', 'keyboardService',
+    function ($rootScope, $location, portalService, keyboardService) {
 
         var maximized, directiveId = 'app', previousSize;
 
@@ -9,10 +9,12 @@
          *  Enables the fullscreen state of a given app
          *
          * @param {object}      element     The pointer to the root object of the app that is being fullscreened
+         * @param {integer}     _id         The ID of the app that is being fullscreened
          * @param {integer}     currentSize The current size of the columns that is wrapping the app that is being fullscreened
          * @param {function}    onResized   The callback function to be executed once the app that is being fullscreened
          */
-        function enableFullscreen(element, currentSize, onResized) {
+        function enableFullscreen(element, _id, currentSize, onResized) {
+            $location.search({_id: _id});
             $('html').addClass('fullscreen');
             maximized = true;
             portalService.enableAppSortableFeature();
@@ -34,6 +36,7 @@
          * @param {function}    onResized   The callback function to be executed once the app that was fullscreened
          */
         function disableFullscreen(element, onResized) {
+            $location.search({});
             $('html').removeClass('fullscreen');
             maximized = false;
             portalService.disableAppSortableFeature();
@@ -99,7 +102,6 @@
         }
 
         function enableTemplateFullscreen(element, currentSize) {
-            console.log("additionally, the maximize button should be disabled for the template apps if the template fullscreen is the active one")
             var columns = element.closest('.columns');
             columns.addClass('colMaximized large-23');
             columns.prev('.columns').addClass('colMaximized');

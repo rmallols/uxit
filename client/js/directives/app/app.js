@@ -9,6 +9,7 @@
             replace: true,
             templateUrl: '/client/html/app/app.html',
             scope: {
+                id          : '=app',
                 type        : '=',
                 model       : '=',
                 width       : '=',

@@ -1,7 +1,8 @@
 (function () {
     'use strict';
-    COMPONENTS.directive('appHeader', ['$rootScope', 'appService', 'portalService', 'pageService', 'roleService', 'stringService', 'editBoxUtilsService',
-    function ($rootScope, appService, portalService, pageService, roleService, stringService, editBoxUtilsService) {
+    COMPONENTS.directive('appHeader', ['$rootScope', '$location', 'appService', 'portalService', 'pageService',
+    'roleService', 'stringService', 'editBoxUtilsService',
+    function ($rootScope, $location, appService, portalService, pageService, roleService, stringService, editBoxUtilsService) {
             return {
                 restrict: 'A',
                 replace: true,
@@ -41,10 +42,10 @@
 
                     scope.toggleMaximized = function () {
                         if (appService.isMaximized()) {
-                            appService.disableFullscreen(appElm, scope.onResized);
+                            disableFullscreen();
                         }
                         else {
-                            appService.enableFullscreen(appElm, scope.$eval(scope.width), scope.onResized);
+                            enableFullscreen();
                         }
                     };
 
@@ -67,6 +68,10 @@
                     $rootScope.$on('onPortalSaved', function () {
                         scope.isTemplateFullscreen = portalService.isTemplateFullscreen();
                     });
+
+                    if(Number($location.search()._id) === scope.id) {
+                        enableFullscreen();
+                    }
 
                     /** Private methods */
                     function getEditPanels() {
@@ -94,6 +99,14 @@
                             panels.push(panel);
                         });
                         return panels;
+                    }
+
+                    function enableFullscreen() {
+                        appService.enableFullscreen(appElm, scope.id, scope.width, scope.onResized);
+                    }
+
+                    function disableFullscreen() {
+                        appService.disableFullscreen(appElm, scope.onResized);
                     }
                 }
             };

@@ -15,16 +15,17 @@ function ($locationProvider, $routeProvider) {
         })
         .when('/:portal/:page', {
             templateUrl: '/client/html/pages/portal.html',
-            controller: PortalController
+            controller: PortalController,
+            reloadOnSearch: false
         })
         .otherwise({ redirectTo: '/' });
-}]).run(["$rootScope", "userService", "pageService", "roleService", "tagService", "availableAppsService", "i18nService",
-    function ($rootScope, userService, pageService, roleService, tagService, availableAppsService, i18nService) {
+}]).run(["$rootScope", "$location", "userService", "pageService", "roleService", "tagService", "availableAppsService", "i18nService",
+    function ($rootScope, $location, userService, pageService, roleService, tagService, availableAppsService, i18nService) {
         userService.loadUsers(null);    //Cache users
         pageService.loadPages(null);    //Cache pages
         roleService.loadRoles(null);    //Cache roles
         tagService.loadTags(null);      //Cache tags
         i18nService.loadLanguages(null);//Cache languages
         availableAppsService.loadAvailableApps(null); //Cache available apps
-        $rootScope.$on("$routeChangeSuccess", function AbstractControllerOnRouteUpdate() {});
+        $rootScope.$on("$routeChangeSuccess", function () {});
 }]);

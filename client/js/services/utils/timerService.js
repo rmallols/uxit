@@ -18,12 +18,13 @@
         }
 
         /**
-         * Provides a 10^5 scale random integer
+         * Provides a unique integer based on the current datetime as seed
          *
-         * @returns {int} The random integer
+         * @returns {int} The unique integer
          */
         function getRandomNumber() {
-            return Math.floor(Math.random() * 1000000);
+            var now = new Date();
+            return now.getTime();
         }
 
         return {
