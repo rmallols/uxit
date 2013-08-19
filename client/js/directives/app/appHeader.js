@@ -40,8 +40,8 @@
                         return null;
                     };
 
-                    scope.toggleMaximized = function () {
-                        if (appService.isMaximized()) {
+                    scope.toggleFullscreen = function () {
+                        if (appService.isFullscreen()) {
                             disableFullscreen();
                         }
                         else {
@@ -69,9 +69,10 @@
                         scope.isTemplateFullscreen = portalService.isTemplateFullscreen();
                     });
 
-                    if(Number($location.search()._id) === scope.id) {
-                        enableFullscreen();
-                    }
+                    manageFullscreenFromSearch();
+                    scope.$on('$routeUpdate', function(){
+                        manageFullscreenFromSearch();
+                    });
 
                     /** Private methods */
                     function getEditPanels() {
@@ -102,11 +103,19 @@
                     }
 
                     function enableFullscreen() {
-                        appService.enableFullscreen(appElm, scope.id, scope.width, scope.onResized);
+                        appService.enableFullscreen(appElm, scope._id, scope.width, scope.onResized);
                     }
 
                     function disableFullscreen() {
                         appService.disableFullscreen(appElm, scope.onResized);
+                    }
+
+                    function manageFullscreenFromSearch() {
+                        if(Number($location.search()._id) === scope._id) {
+                            enableFullscreen();
+                        } else if(!$location.search()._id) {
+                            disableFullscreen();
+                        }
                     }
                 }
             };

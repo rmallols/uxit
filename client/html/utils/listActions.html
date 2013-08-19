@@ -6,7 +6,7 @@
             <label i18n="list.deleteSelected"></label>
         </button>
     </div>
-    <div class="rightActions floatRight getPage">
+    <div class="rightActions floatRight getPage" ng-show="showPrevPageLink()||showNextPageLink()">
         <button class="getPrevPage" ng-click="getPrevPage()" ng-show="showPrevPageLink()"><</button>
         <button class="getNextPage" ng-click="getNextPage()" ng-show="showNextPageLink()">></button>
     </div>

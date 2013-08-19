@@ -5,6 +5,7 @@ COMPONENTS.directive('contentList', ['constantsService', function (constantsServ
 		replace: true,
 		templateUrl: '/client/html/list/contentList.html',
         scope : {
+            _id: '=id',
             config: '=',
             refreshList: '='
         },

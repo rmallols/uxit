@@ -3,7 +3,7 @@
     COMPONENTS.factory('appService', ['$rootScope', '$location', 'portalService', 'keyboardService',
     function ($rootScope, $location, portalService, keyboardService) {
 
-        var maximized, directiveId = 'app', previousSize;
+        var fullscreen, directiveId = 'app', previousSize;
 
         /**
          *  Enables the fullscreen state of a given app
@@ -14,19 +14,21 @@
          * @param {function}    onResized   The callback function to be executed once the app that is being fullscreened
          */
         function enableFullscreen(element, _id, currentSize, onResized) {
-            $location.search({_id: _id});
-            $('html').addClass('fullscreen');
-            maximized = true;
-            portalService.enableAppSortableFeature();
-            if (portalService.isRealFullscreen()) {
-                enableRealFullscreen(element, onResized);
-            } else if(portalService.isMaximizedFullscreen()) {
-                enableMaximizedFullscreen(element);
-            } else if(portalService.isTemplateFullscreen()) {
-                enableTemplateFullscreen(element, currentSize);
+            if(!isFullscreen()) {
+                $location.search('_id', _id);
+                $('html').addClass('fullscreen');
+                fullscreen = true;
+                portalService.enableAppSortableFeature();
+                if (portalService.isRealFullscreen()) {
+                    enableRealFullscreen(element, onResized);
+                } else if(portalService.isMaximizedFullscreen()) {
+                    enableFullscreenFullscreen(element);
+                } else if(portalService.isTemplateFullscreen()) {
+                    enableTemplateFullscreen(element, currentSize);
+                }
+                triggerOnResizeEvent(onResized);
+                registerKeyboardEvents(element, onResized);
             }
-            triggerOnResizeEvent(onResized);
-            registerKeyboardEvents(element, onResized);
         }
 
         /**
@@ -38,12 +40,12 @@
         function disableFullscreen(element, onResized) {
             $location.search({});
             $('html').removeClass('fullscreen');
-            maximized = false;
+            fullscreen = false;
             portalService.disableAppSortableFeature();
             if (portalService.isRealFullscreen()) {
                 disableRealFullscreen(element);
             } else if(portalService.isMaximizedFullscreen()) {
-                disableMaximizedFullscreen(element);
+                disableFullscreenFullscreen(element);
             } else if(portalService.isTemplateFullscreen()) {
                 disableTemplateFullscreen(element);
             }
@@ -52,12 +54,12 @@
         }
 
         /**
-         * Determines if there's any maximized app or not
+         * Determines if there's any fullscreen app or not
          *
-         * @returns {boolean} True if there's any app maximized. False otherwise
+         * @returns {boolean} True if there's any app fullscreen. False otherwise
          */
-        function isMaximized() {
-            return maximized;
+        function isFullscreen() {
+            return fullscreen;
         }
 
         /**
@@ -76,7 +78,7 @@
             element.addClass('realFullscreen');
             element.fullScreen(true);
             //If 'ESC' key is pressed, the app event won't be called in HTML5 fullscreen mode
-            //Consequently, we need to manually disable the maximized state is it's not longer fullscreen
+            //Consequently, we need to manually disable the fullscreen state is it's not longer fullscreen
             $(document).bind("fullscreenchange", function () {
                 if (!$(document).fullScreen()) {
                     disableFullscreen(element, onResized);
@@ -91,29 +93,29 @@
             $(document).unbind("fullscreenchange");
         }
 
-        function enableMaximizedFullscreen(element) {
-            $('html').addClass('appMaximizedFullscreen'); //Allow CSS setup from ancestor DOM elements
-            element.addClass('maximizedFullscreen');
+        function enableFullscreenFullscreen(element) {
+            $('html').addClass('appFullscreenFullscreen'); //Allow CSS setup from ancestor DOM elements
+            element.addClass('fullscreenFullscreen');
         }
 
-        function disableMaximizedFullscreen(element) {
-            $('html').removeClass('appMaximizedFullscreen'); //Allow CSS setup from ancestor DOM elements
-            element.removeClass('maximizedFullscreen');
+        function disableFullscreenFullscreen(element) {
+            $('html').removeClass('appFullscreenFullscreen'); //Allow CSS setup from ancestor DOM elements
+            element.removeClass('fullscreenFullscreen');
         }
 
         function enableTemplateFullscreen(element, currentSize) {
             var columns = element.closest('.columns');
-            columns.addClass('colMaximized large-23');
-            columns.prev('.columns').addClass('colMaximized');
-            columns.next('.columns').addClass('colMaximized');
+            columns.addClass('colFullscreen large-23');
+            columns.prev('.columns').addClass('colFullscreen');
+            columns.next('.columns').addClass('colFullscreen');
             previousSize = currentSize;
             $('html').addClass('appTemplateFullscreen'); //Allow CSS setup from ancestor DOM elements
             element.addClass('templateFullscreen');
         }
 
         function disableTemplateFullscreen(element) {
-            $('.colMaximized.large-23').removeClass('large-23').addClass('large-' + previousSize);
-            $('.colMaximized').removeClass('colMaximized');
+            $('.colFullscreen.large-23').removeClass('large-23').addClass('large-' + previousSize);
+            $('.colFullscreen').removeClass('colFullscreen');
             $('html').removeClass('appTemplateFullscreen'); //Allow CSS setup from ancestor DOM elements
             element.removeClass('templateFullscreen');
         }
@@ -129,7 +131,7 @@
         return {
             enableFullscreen: enableFullscreen,
             disableFullscreen: disableFullscreen,
-            isMaximized: isMaximized,
+            isFullscreen: isFullscreen,
             triggerOnResizeEvent: triggerOnResizeEvent
         };
     }]);

@@ -5,6 +5,7 @@ COMPONENTS.directive('contentListAppView', function () {
 		replace: true,
 		templateUrl: '/client/apps/contentListApp/contentListAppView.html',
         scope: {
+            _id: '=id',
             model: '=',
             onLayerSave: '='
         },

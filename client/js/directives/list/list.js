@@ -1,8 +1,8 @@
 (function (Math, Number, COMPONENTS) {
     'use strict';
-    COMPONENTS.directive('list', ['$rootScope', 'portalService', 'rowService', 'crudService', 'editBoxUtilsService', 'domService',
-                                  'arrayService', 'roleService', 'stringService', 'dbService', 'i18nService',
-    function ($rootScope, portalService, rowService, crudService, editBoxUtilsService, domService, arrayService,
+    COMPONENTS.directive('list', ['$rootScope', '$location', 'portalService', 'rowService', 'crudService',
+    'editBoxUtilsService', 'domService', 'arrayService', 'roleService', 'stringService', 'dbService', 'i18nService',
+    function ($rootScope, $location, portalService, rowService, crudService, editBoxUtilsService, domService, arrayService,
               roleService, stringService, dbService, i18nService) {
         return {
             restrict: 'A',
@@ -11,6 +11,7 @@
             templateUrl: '/client/html/list/list.html',
             require: '?ngModel, config',
             scope : {
+                _id             : '=id',
                 collection      : '=',
                 items           : '=list',
                 config          : '=',
@@ -55,7 +56,6 @@
                 };
 
                 scope.unselect = function (item) {
-
                     if (scope.isMultiSelectable()) {
                         if (item.isSelected) {
                             deleteFromSeletedIds(item._id);
@@ -66,29 +66,22 @@
                 };
 
                 scope.selectItem = function (item, $index, $event, editOnSelect) {
-                    function showEditBox() {
-                        var targetObj = $('#' + item._id + ' > *:first-child', element);
-                        hideEditBox(); //Hide any other previous instance of the edit box component
-                        scope.panels = scope.onSelectPanels;
-                        scope.model = item;
-                        scope.onClose = function () { scope.unselect(item); };
-                        editBoxUtilsService.showEditBox(scope, targetObj, targetObj);
-                    }
-
-                    function hideEditBox() { editBoxUtilsService.hideEditBox(null); }
-
                     //Toggle selection only if the item is selectable
                     if (scope.isSelectable()) {
                         if (!item.isSelected) {
                             scope.select(item);
-                            if (scope.isEditable() && editOnSelect) { showEditBox(); }
+                            if (scope.isEditable() && editOnSelect) { showEditBox(item); }
                             //Close edit box it the user click has been outside of it
                         } else if (!$event || !editBoxUtilsService.isEditBoxClicked($event)) {
                             scope.unselect(item);
                             if (scope.isEditable()) { hideEditBox(); }
                         }
+                        if (scope.onSelect) { scope.onSelect(item, $index, scope.isSelectable()); }
+                    } else {
+                        setNavigateId(item._id);
+                        $location.search('_id', scope._id);
+                        $location.search('navigateId', item._id);
                     }
-                    if (scope.onSelect) { scope.onSelect(item, $index, scope.isSelectable()); }
                 };
 
                 scope.getWrapperClass = function () { return (scope.isSelectable()) ? 'selectable' : ''; };
@@ -144,9 +137,24 @@
                 scope.$watch('collection', function () { scope.loadList(); });
                 scope.searchText = '';
                 scope.currentPage = 0;
-
                 //Reload changes everytime the change flag is received
                 $rootScope.$on(scope.collection + 'Changed', function () { scope.loadList(); });
+                setNavigateId($location.search().navigateId);
+                scope.$on('$routeUpdate', function(){
+                    setNavigateId($location.search().navigateId);
+                });
+
+                /** Private methods **/
+                function showEditBox(item) {
+                    var targetObj = $('#' + item._id + ' > *:first-child', element);
+                    hideEditBox(); //Hide any other previous instance of the edit box component
+                    scope.panels = scope.onSelectPanels;
+                    scope.model = item;
+                    scope.onClose = function () { scope.unselect(item); };
+                    editBoxUtilsService.showEditBox(scope, targetObj, targetObj);
+                }
+
+                function hideEditBox() { editBoxUtilsService.hideEditBox(null); }
 
                 function allowIfHasAdminRole(action) { return (isAdmin()) ? action : false; }
 
@@ -203,6 +211,11 @@
                     }
                     return tagOptions;
                 }
+
+                function setNavigateId(navigateId) {
+                    scope.navigateId = navigateId;
+                }
+                /** End of private methods **/
             }
         };
     }]);

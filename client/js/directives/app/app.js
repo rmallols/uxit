@@ -9,7 +9,7 @@
             replace: true,
             templateUrl: '/client/html/app/app.html',
             scope: {
-                id          : '=app',
+                _id         : '=app',
                 type        : '=',
                 model       : '=',
                 width       : '=',
@@ -21,7 +21,7 @@
 
                 scope.setViewTemplate = function () {
                     var directiveName = stringService.toSnakeCase(scope.type),
-                        template = '<div ' + directiveName + '-view model="model" ' +
+                        template = '<div ' + directiveName + '-view id="_id" model="model" ' +
                                     'internal-data="internalData" on-layer-save="onLayerSave" on-resized="onResized"></div>',
                         compiledTemplates = $compile(template)(scope);
                     $('> .content > [data]', element).html('').append(compiledTemplates);
@@ -58,8 +58,8 @@
 
                 scope.removeApp = function () {
                     element.hide("explode", { direction: "horizontal" }, window.speed, function () {
-                        if (appService.isMaximized()) {
-                            appService.disableMaximized(element, scope.onResized);
+                        if (appService.isFullscreen()) {
+                            appService.disableFullscreen(element, scope.onResized);
                         }
                         portalService.deleteApp(element, scope.$parent.$index);
                         $(this).remove();
