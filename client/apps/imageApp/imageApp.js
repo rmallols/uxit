@@ -51,7 +51,6 @@ COMPONENTS.directive('imageAppEdit', function () {
                 columns     : 2
             };
 
-            console.log("Testing refresh list...");
             scope.refreshList = function () {};
 
             scope.onSelect = function (media) {

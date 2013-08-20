@@ -14,11 +14,11 @@
   display: inline-block;
   position: relative;
   padding: 6px 16px 6px 16px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .app.menuApp li.page:hover a {
-  z-index: 3;
+  z-index: 4;
 }
 
 .app.menuApp li.page:hover > h6 > a {
@@ -50,14 +50,14 @@
   visibility: hidden;
   border:3px solid @fontColorHover;
   margin-top:-3px;
-  z-index: 0;
+  z-index: 1;
   .transition(top @speed);
 }
 
 .app.menuApp li.page:hover ul.subPagesMenu {
   visibility: visible;
   top:0px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .app.menuApp ul.subPagesMenu li.page {

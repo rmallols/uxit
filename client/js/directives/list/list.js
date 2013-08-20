@@ -68,10 +68,11 @@
                 scope.selectItem = function (item, $index, $event, editOnSelect) {
                     if (scope.isSelectable()) {
                         handleDefaultSelectionMechanism(item, editOnSelect, $event);
-                    } else if (scope.onSelect) {
-                        handleCustomSelectionMechanism(item, $index);
                     } else {
                         handleNavigationMechanism(item);
+                    }
+                    if (scope.onSelect) {
+                        handleCustomSelectionMechanism(item, $index);
                     }
                 };
 
