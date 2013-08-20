@@ -1,5 +1,5 @@
-COMPONENTS.directive('pages', ['$rootScope', 'pageService', 'rowService', 'userService', 'roleService', 'styleService',
-function ($rootScope, pageService, rowService, userService, roleService, styleService) {
+COMPONENTS.directive('pages', ['$rootScope', 'pageService', 'rowService', 'appService', 'userService', 'roleService', 'styleService',
+function ($rootScope, pageService, rowService, appService, userService, roleService, styleService) {
 	'use strict';
     return {
 		restrict: 'E',
@@ -19,6 +19,20 @@ function ($rootScope, pageService, rowService, userService, roleService, styleSe
             };
 
             scope.isAdmin = function () { return roleService.hasAdminRole(userService.getCurrentUser()); };
+
+            scope.isAppSortAllowed = function() {
+                return isAppSortAndResizeAllowed();
+            };
+
+            scope.isAppResizeAllowed = function() {
+                return isAppSortAndResizeAllowed();
+            };
+
+            /** Private methods **/
+            function isAppSortAndResizeAllowed() {
+                return scope.isAdmin() && !appService.isFullscreen();
+            }
+            /** End of private methods **/
 		}
 	};
 }]);

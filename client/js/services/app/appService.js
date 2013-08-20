@@ -15,16 +15,14 @@
          */
         function enableFullscreen(element, _id, currentSize, onResized) {
             if(!isFullscreen()) {
-                $location.search('_id', _id);
                 $('html').addClass('fullscreen');
                 fullscreen = true;
-                portalService.enableAppSortableFeature();
                 if (portalService.isRealFullscreen()) {
                     enableRealFullscreen(element, onResized);
                 } else if(portalService.isMaximizedFullscreen()) {
-                    enableFullscreenFullscreen(element);
+                    enableMaximizedFullscreen(element, _id);
                 } else if(portalService.isTemplateFullscreen()) {
-                    enableTemplateFullscreen(element, currentSize);
+                    enableTemplateFullscreen(element, _id, currentSize);
                 }
                 triggerOnResizeEvent(onResized);
                 registerKeyboardEvents(element, onResized);
@@ -38,14 +36,12 @@
          * @param {function}    onResized   The callback function to be executed once the app that was fullscreened
          */
         function disableFullscreen(element, onResized) {
-            $location.search('_id', null);
             $('html').removeClass('fullscreen');
             fullscreen = false;
-            portalService.disableAppSortableFeature();
             if (portalService.isRealFullscreen()) {
                 disableRealFullscreen(element);
             } else if(portalService.isMaximizedFullscreen()) {
-                disableFullscreenFullscreen(element);
+                disableMaximizedFullscreen(element);
             } else if(portalService.isTemplateFullscreen()) {
                 disableTemplateFullscreen(element);
             }
@@ -93,17 +89,19 @@
             $(document).unbind("fullscreenchange");
         }
 
-        function enableFullscreenFullscreen(element) {
-            $('html').addClass('appFullscreenFullscreen'); //Allow CSS setup from ancestor DOM elements
-            element.addClass('fullscreenFullscreen');
+        function enableMaximizedFullscreen(element, _id) {
+            $('html').addClass('appMaximizedFullscreen'); //Allow CSS setup from ancestor DOM elements
+            element.addClass('maximizedFullscreen');
+            updateSearchId(_id);
         }
 
-        function disableFullscreenFullscreen(element) {
-            $('html').removeClass('appFullscreenFullscreen'); //Allow CSS setup from ancestor DOM elements
-            element.removeClass('fullscreenFullscreen');
+        function disableMaximizedFullscreen(element) {
+            $('html').removeClass('appMaximizedFullscreen'); //Allow CSS setup from ancestor DOM elements
+            element.removeClass('maximizedFullscreen');
+            updateSearchId(null);
         }
 
-        function enableTemplateFullscreen(element, currentSize) {
+        function enableTemplateFullscreen(element, _id, currentSize) {
             var columns = element.closest('.columns');
             columns.addClass('colFullscreen large-23');
             columns.prev('.columns').addClass('colFullscreen');
@@ -111,6 +109,7 @@
             previousSize = currentSize;
             $('html').addClass('appTemplateFullscreen'); //Allow CSS setup from ancestor DOM elements
             element.addClass('templateFullscreen');
+            updateSearchId(_id);
         }
 
         function disableTemplateFullscreen(element) {
@@ -118,14 +117,22 @@
             $('.colFullscreen').removeClass('colFullscreen');
             $('html').removeClass('appTemplateFullscreen'); //Allow CSS setup from ancestor DOM elements
             element.removeClass('templateFullscreen');
+            updateSearchId(null);
         }
 
         function registerKeyboardEvents(element, onResized) {
-            keyboardService.register('esc', directiveId, function () { disableFullscreen(element, onResized); });
+            keyboardService.register('esc', directiveId, function () {
+                disableFullscreen(element, onResized);
+                $rootScope.$apply();
+            });
         }
 
         function unregisterKeyboardEvents() {
             keyboardService.unregister('esc', directiveId);
+        }
+
+        function updateSearchId(_id) {
+            $location.search('_id', _id);
         }
 
         return {

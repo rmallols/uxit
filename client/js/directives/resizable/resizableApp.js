@@ -6,7 +6,16 @@
             replace: false,
             link: function link(scope, element, attrs) {
 
-                function instantiateResizableApp() {
+                attrs.$observe('resizableApp', function (newVal) {
+                    if (newVal === 'true') { //Block the resize capability if the user doesn't have permissions enough
+                        enableResizableApp();
+                    } else {
+                        disableResizableApp();
+                    }
+                });
+
+                /** Private methods **/
+                function enableResizableApp() {
                     element.resizable({
                         handles: 'e, w',
                         start: function (event) {
@@ -18,11 +27,10 @@
                     });
                 }
 
-                attrs.$observe('resizableApp', function (newVal) {
-                    if (newVal === 'true') { //Block the resize capability if the user doesn't have permissions enough
-                        instantiateResizableApp();
-                    }
-                });
+                function disableResizableApp() {
+                    element.resizable('destroy');
+                }
+                /** End of private methods **/
             }
         };
     }]);

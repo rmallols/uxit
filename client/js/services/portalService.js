@@ -29,22 +29,6 @@
         /**
          *
          *
-         */
-        function enableAppSortableFeature() {
-            console.log("ENABLING SORTABLE STATUS");
-        }
-
-        /**
-         *
-         *
-         */
-        function disableAppSortableFeature() {
-            console.log("DISABLING SORTABLE STATUS");
-        }
-
-        /**
-         *
-         *
          * @param callback
          */
         function savePortal(callback) {
@@ -189,8 +173,6 @@
 
         return {
             setHeader: setHeader,
-            enableAppSortableFeature: enableAppSortableFeature,
-            disableAppSortableFeature: disableAppSortableFeature,
             savePortal: savePortal,
             updatePageDataFromTemplate: updatePageDataFromTemplate,
             deleteApp: deleteApp,
