@@ -24,7 +24,7 @@ function ($rootScope, mediaService, constantsService) {
                     newConfig.columns = 4;
                 }
             });
-                   console.log("OUT, REVIEW WHY IS NOT WORKING WITHOUT THIS CONSOLE.LOG", scope.refreshList);
+
             scope.onUpload = function() {
                 if(scope.refreshList) {
                     scope.refreshList();

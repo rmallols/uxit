@@ -5,12 +5,13 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="5">
+          <list size="6">
             <item index="0" class="java.lang.String" itemvalue="ng-app" />
             <item index="1" class="java.lang.String" itemvalue="ng-view" />
             <item index="2" class="java.lang.String" itemvalue="i18n" />
             <item index="3" class="java.lang.String" itemvalue="ng-disabled" />
             <item index="4" class="java.lang.String" itemvalue="app" />
+            <item index="5" class="java.lang.String" itemvalue="list-expanded-view" />
           </list>
         </value>
       </option>

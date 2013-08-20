@@ -2,26 +2,24 @@
   float: left;
 }
 
-[list].selectable .item {
+[list] .item {
   position:relative;
   overflow: hidden;
 }
 
-[list].selectable .item:hover {
-  background: #eee;
+[list] .item.listView:hover {
+  background: @highCompDarken;
+  cursor:pointer;
 }
 
 [list].selectable .item.active {
   overflow: visible;
 }
 
+@selectFromCheckboxWidth: 32px;
 [list] .item > .text {
   float: left;
-}
-
-@selectFromCheckboxWidth: 32px;
-[list].selectable .item > .text {
-  cursor:pointer;
+  margin-bottom: @padding;
   .offsettedWidth(-@selectFromCheckboxWidth);
 }
 

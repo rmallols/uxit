@@ -66,21 +66,12 @@
                 };
 
                 scope.selectItem = function (item, $index, $event, editOnSelect) {
-                    //Toggle selection only if the item is selectable
                     if (scope.isSelectable()) {
-                        if (!item.isSelected) {
-                            scope.select(item);
-                            if (scope.isEditable() && editOnSelect) { showEditBox(item); }
-                            //Close edit box it the user click has been outside of it
-                        } else if (!$event || !editBoxUtilsService.isEditBoxClicked($event)) {
-                            scope.unselect(item);
-                            if (scope.isEditable()) { hideEditBox(); }
-                        }
-                        if (scope.onSelect) { scope.onSelect(item, $index, scope.isSelectable()); }
+                        handleDefaultSelectionMechanism(item, editOnSelect, $event);
+                    } else if (scope.onSelect) {
+                        handleCustomSelectionMechanism(item, $index);
                     } else {
-                        setNavigateId(item._id);
-                        $location.search('_id', scope._id);
-                        $location.search('navigateId', item._id);
+                        handleNavigationMechanism(item);
                     }
                 };
 
@@ -88,8 +79,9 @@
 
                 scope.getItemStyleClasses = function (item) {
                     var maxColSize = rowService.getMaxSlots(),
-                        columnWidth = (scope.config.columns) ? Math.floor(maxColSize / scope.config.columns) : maxColSize;
-                    return 'large-' + columnWidth + ' ' + (item.isSelected ? 'active' : '');
+                        columnWidth = (scope.config.columns) ? Math.floor(maxColSize / scope.config.columns) : maxColSize,
+                        viewMode = (scope.detailId) ? 'detailView': 'listView';
+                    return 'large-' + columnWidth + ' ' + viewMode + ' ' + (item.isSelected ? 'active' : '');
                 };
 
                 scope.getDefaultedValue = function (scopeProp) {
@@ -101,6 +93,10 @@
                     crudService.delete(scope.collection, id, null);
                     deleteFromSeletedIds(id);
                     scope.loadList();
+                };
+
+                scope.deleteDetailId = function() {
+                    $location.search('detailId', null);
                 };
 
                 scope.loadList = function () {
@@ -139,9 +135,9 @@
                 scope.currentPage = 0;
                 //Reload changes everytime the change flag is received
                 $rootScope.$on(scope.collection + 'Changed', function () { scope.loadList(); });
-                setNavigateId($location.search().navigateId);
+                setDetailId($location.search().detailId);
                 scope.$on('$routeUpdate', function(){
-                    setNavigateId($location.search().navigateId);
+                    setDetailId($location.search().detailId);
                 });
 
                 /** Private methods **/
@@ -168,24 +164,23 @@
                 }
 
                 function deleteFromSeletedIds(id) {
-
-                    function getItemSelectedPos(itemId) {
-                        var itemSelectedPos = null, i;
-                        if (scope.selectedIds) {
-                            for (i = 0; i < scope.selectedIds.length; i += 1) {
-                                if (scope.selectedIds[i] === itemId) {
-                                    itemSelectedPos = i;
-                                    break;
-                                }
-                            }
-                        }
-                        return itemSelectedPos;
-                    }
-
                     var itemSelectedPos = getItemSelectedPos(id);
                     if (itemSelectedPos) { //Delete the item from the selected items list, just if it was actually selected
                         arrayService.delete(scope.selectedIds, itemSelectedPos);
                     }
+                }
+
+                function getItemSelectedPos(itemId) {
+                    var itemSelectedPos = null, i;
+                    if (scope.selectedIds) {
+                        for (i = 0; i < scope.selectedIds.length; i += 1) {
+                            if (scope.selectedIds[i] === itemId) {
+                                itemSelectedPos = i;
+                                break;
+                            }
+                        }
+                    }
+                    return itemSelectedPos;
                 }
 
                 function getFilterOptions() {
@@ -212,8 +207,28 @@
                     return tagOptions;
                 }
 
-                function setNavigateId(navigateId) {
-                    scope.navigateId = navigateId;
+                function setDetailId(detailId) {
+                    scope.detailId = detailId;
+                }
+
+                function handleDefaultSelectionMechanism(item, editOnSelect, $event) {
+                    if (!item.isSelected) {
+                        scope.select(item);
+                        if (scope.isEditable() && editOnSelect) { showEditBox(item); }
+                        //Close edit box it the user click has been outside of it
+                    } else if (!$event || !editBoxUtilsService.isEditBoxClicked($event)) {
+                        scope.unselect(item);
+                        if (scope.isEditable()) { hideEditBox(); }
+                    }
+                }
+
+                function handleCustomSelectionMechanism(item, $index) {
+                    scope.onSelect(item, $index, scope.isSelectable());
+                }
+
+                function handleNavigationMechanism(item) {
+                    setDetailId(item._id);
+                    $location.search('detailId', item._id);
                 }
                 /** End of private methods **/
             }

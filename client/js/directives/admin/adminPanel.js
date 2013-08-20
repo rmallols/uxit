@@ -1,7 +1,8 @@
 (function () {
     'use strict';
-    COMPONENTS.directive('adminPanel', ['$rootScope', 'portalService', 'addAppService', 'mediaService', 'keyboardService', '$timeout',
-    function ($rootScope, portalService, addAppService, mediaService, keyboardService, $timeout) {
+    COMPONENTS.directive('adminPanel', ['$rootScope', '$location', 'portalService', 'addAppService', 'mediaService',
+    'keyboardService', '$timeout',
+    function ($rootScope, $location, portalService, addAppService, mediaService, keyboardService, $timeout) {
         return {
             restrict: 'E',
             transclude: true,
@@ -36,39 +37,16 @@
                 }
 
                 function show(tabIndex) {
-
-                    function registerKeyboardEvents() {
-                        keyboardService.register('ctrl+a', directiveId, function () {
-                            scope.activeTab = 0;
-                            toggleAddAppPanel();
-                            scope.$apply();
-                        });
-                        keyboardService.register('ctrl+enter', directiveId, function () {
-                            scope.onSave();
-                            scope.$apply();
-                        });
-                        keyboardService.register('esc', directiveId, function () {
-                            scope.onCancel();
-                            scope.$apply();
-                        });
-                    }
-
                     currentTabIndex = tabIndex;
                     element.removeClass('hide').addClass('show');
                     if (addAppService.isAddAppPanelActive()) {
                         addAppService.hideAddAppPanel();
                     }
+                    $location.search({}); //Remove any URL parameter to avoid potential conflicts i.e. with the lists
                     registerKeyboardEvents();
                 }
 
                 function hide() {
-
-                    function unregisterKeyboardEvents() {
-                        keyboardService.unregister('ctrl+a', directiveId);
-                        keyboardService.unregister('ctrl+enter', directiveId);
-                        keyboardService.unregister('esc', directiveId);
-                    }
-
                     currentTabIndex = null;
                     element.removeClass('show').addClass('hide');
                     unregisterKeyboardEvents();
@@ -82,6 +60,28 @@
                     $timeout(function() {
                         scope.activeTab = -1;
                     }, 0);
+                }
+
+                function registerKeyboardEvents() {
+                    keyboardService.register('ctrl+a', directiveId, function () {
+                        scope.activeTab = 0;
+                        toggleAddAppPanel();
+                        scope.$apply();
+                    });
+                    keyboardService.register('ctrl+enter', directiveId, function () {
+                        scope.onSave();
+                        scope.$apply();
+                    });
+                    keyboardService.register('esc', directiveId, function () {
+                        scope.onCancel();
+                        scope.$apply();
+                    });
+                }
+
+                function unregisterKeyboardEvents() {
+                    keyboardService.unregister('ctrl+a', directiveId);
+                    keyboardService.unregister('ctrl+enter', directiveId);
+                    keyboardService.unregister('esc', directiveId);
                 }
 
                 ngStyleAvatarFn = function () {

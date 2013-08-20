@@ -1,10 +1,10 @@
 <div ng-class="getWrapperClass()">
-    <div ng-show="isSearchable() && !navigateId">
+    <div ng-show="isSearchable() && !detailId">
         <label i18n="list.search"></label><input type="text" ng-model="searchText" ux-keyup="search()"/>
     </div>
     <div ng-show="isPageActionsTop()" list-actions class="top"></div>
     <div ng-show="items.length == 0"><i><label i18n="list.noItems"></label></i></div>
-    <div ng-show="items.length > 0" ng-hide="navigateId && navigateId!=item._id" id="{{item._id}}" ng-repeat="item in items"
+    <div ng-show="items.length > 0" ng-hide="detailId && detailId!=item._id" id="{{item._id}}" ng-repeat="item in items"
          class="item columns" ng-class="getItemStyleClasses(item)">
         <div class="selectFromCheckbox" ng-show="isMultiSelectable()">
             <input checkbox class="white" ng-model="item.isSelected" ng-click="selectItem(item, $index, $event, false)"
@@ -17,5 +17,8 @@
             <label i18n="list.delete"></label>
         </button>
     </div>
+    <a href="#" ng-show="detailId" ng-click="deleteDetailId()" class="floatRight">
+        << <label i18n="list.goBack"></label>
+    </a>
     <div ng-show="isPageActionsBottom()" list-actions class="bottom"></div>
 </div>

@@ -38,7 +38,7 @@
          * @param {function}    onResized   The callback function to be executed once the app that was fullscreened
          */
         function disableFullscreen(element, onResized) {
-            $location.search({});
+            $location.search('_id', null);
             $('html').removeClass('fullscreen');
             fullscreen = false;
             portalService.disableAppSortableFeature();
