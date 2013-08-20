@@ -42,9 +42,8 @@ function (mediaService, arrayService, stdService) {
                         stdService.error('Error uploading file', xhr);
                     },
                     success: function (uploadedFile) {
-                        scope.uploadedFile = uploadedFile;
                         if (scope.model) {
-                            scope.model = uploadedFile;
+                            scope.model = uploadedFile[0];
                         }
                         scope.$apply();
                         if (scope.onUpload) {

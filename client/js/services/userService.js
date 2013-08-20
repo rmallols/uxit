@@ -45,8 +45,8 @@
                     portalId    : $routeParams.portal,
                     tags        : user.tags
                 };
-                if (user.media && user.media[0] && user.media[0]._id) {
-                    data.mediaId = user.media[0]._id;
+                if (user.media && user.media._id) {
+                    data.mediaId = user.media._id;
                 }
                 crudService.createUser(data, function (newUser) {
                     if (callback) {
@@ -75,8 +75,8 @@
                     portalId    : $routeParams.portal,
                     tags        : user.tags
                 };
-                if (user.media && user.media[0] && user.media[0]._id) {
-                    data.mediaId = user.media[0]._id;
+                if (user.media && user.media._id) {
+                    data.mediaId = user.media._id;
                 }
                 if (user.password) { //Update the password, just in case it's being entered by the user
                     data.password = user.password;
