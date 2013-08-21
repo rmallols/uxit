@@ -12,11 +12,19 @@
                     type            : '=',
                     options         : '=',
                     onBlur          : '=',
+                    placeholder     : '@',
                     uxChange        : '=uxChange'
                 },
                 replace: true,
-                template: '<div ux-keyup="onKeyup()" ng-mouseup="showEditBox()" contenteditable="{{isEditable()}}"></div>',
+                template:   '<div>' +
+                                '<div ux-keyup="onKeyup()" ng-mouseup="showEditBox()" contenteditable="{{isEditable()}}"></div>' +
+                                '<div class="placeholder" ng-show="placeholder && showPlaceholder">' +
+                                    '<label i18n="{{placeholder}}"></label>' +
+                                '</div>' +
+                            '</div>',
                 link: function (scope, element, attrs, ctrl) {
+
+                    var contentEditableObj = $(' > [contenteditable]', element);
 
                     scope.isAdmin = function () { return roleService.hasAdminRole($rootScope.portal.user); };
 
@@ -24,7 +32,7 @@
                     scope.onKeyup = function () { updateValue(); };
 
                     scope.isEditable = function() {
-                        return scope.isAdmin() && !element.attr('readonly') && !element.attr('disabled');
+                        return scope.isAdmin() && !contentEditableObj.attr('readonly') && !contentEditableObj.attr('disabled');
                     };
 
                     scope.$watch('content', function () {
@@ -32,16 +40,17 @@
                         //(i.e. cleaning the box after adding a comment)
                         //In practise, that means to update it if it's not being modified by the user,
                         //so it doesn't have the focus at this moment
-                        if (!element.is(':focus')) {
-                            element.html(scope.content || ''); //Set the view value
+                        if (!contentEditableObj.is(':focus')) {
+                            contentEditableObj.html(scope.content || ''); //Set the view value
                         }
+                        handlePlaceholder();
                     });
 
                     scope.showEditBox = function () {
                         if (scope.isAdmin() && textSelectionService.isSelection()) {
                             var selectedTextDomObj = textSelectionService.getSelectedTextDomObj(),
                                 defaultPanels = [{ title: 'Content', type: 'richContent' }];
-                            scope.model = styleService.getComputedStyleInRange(element, selectedTextDomObj);
+                            scope.model = styleService.getComputedStyleInRange(contentEditableObj, selectedTextDomObj);
                             forceTextSelection();
                             scope.panels = (scope.customPanels) ? scope.customPanels : defaultPanels;
                             scope.onSave = function (/*styles*/) {
@@ -50,22 +59,22 @@
                                 //Send the blur event in a new thread as otherwise maybe the content has not been update yet
                                 //So the content could be saved with the fake selection still active,
                                 //so the selectin would persist forever
-                                setTimeout(function () { element.blur(); }, 0);
+                                setTimeout(function () { contentEditableObj.blur(); }, 0);
                             };
                             scope.onCancel = function (/*styles*/) {
                                 textSelectionService.removeSelection(); //Remove text selection, if case
-                                element.blur();
+                                contentEditableObj.blur();
                             };
                             scope.onChange = function (styles) {
                                 textSelectionService.restoreSelection(); //Restore saved selection
                                 textSelectionService.setStylesToSelection(styles); //Apply styles physically
                                 updateValue();
                             };
-                            editBoxUtilsService.showEditBox(scope, element, selectedTextDomObj);
+                            editBoxUtilsService.showEditBox(scope, contentEditableObj, selectedTextDomObj);
                         }
                     };
 
-                    element.blur(function () {
+                    contentEditableObj.blur(function () {
                         if (!editBoxUtilsService.isEditBoxVisible()) {
                             if (scope.onBlur) {
                                 scope.onBlur();
@@ -76,12 +85,13 @@
                     //noinspection JSUnresolvedVariable
                     if (scope.options && scope.options.allowMultiLine === false) {
                         //noinspection JSUnresolvedFunction
-                        element.keypress(function (e) { return e.which !== 13; });
+                        contentEditableObj.keypress(function (e) { return e.which !== 13; });
                     }
 
                     function updateValue() {
-                        if (element.html() === '<br>') { element.html(''); }
-                        scope.content = element.html();     //Set the model value
+                        if (contentEditableObj.html() === '<br>') { contentEditableObj.html(''); }
+                        scope.content = contentEditableObj.html();     //Set the model value
+                        handlePlaceholder();
                         ctrl.$setViewValue(scope.content);
                         if (scope.uxChange) { scope.uxChange(); }
                     }
@@ -89,6 +99,10 @@
                     function forceTextSelection() {
                         textSelectionService.setFakeSelection();
                         textSelectionService.saveSelection(); //Save the current text selection to be able to restore if afterwards
+                    }
+
+                    function handlePlaceholder() {
+                        scope.showPlaceholder = (scope.content === undefined || scope.content === '');
                     }
                 }
             };

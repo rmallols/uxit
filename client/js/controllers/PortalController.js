@@ -58,8 +58,4 @@ function PortalController($scope, $rootScope, $routeParams, portalService, pageS
         portalService.setWindowDimensions();
         portalService.trackAnalytics();
     });
-
-    /*$scope.user = {
-        password: '123'
-    }*/
 }

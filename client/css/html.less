@@ -97,6 +97,11 @@ del {text-decoration: line-through}
 ::selection, [fakeSelection] {background: @high; color: @highComp !important; text-shadow: none} /* selected text */
 a [fakeSelection] {color: @highComp !important;} /* selected link */
 
+/* PLACEHOLDERS*/
+::-webkit-input-placeholder { color: @placeholderColor; }
+::-moz-placeholder { color: @placeholderColor; }
+:-ms-input-placeholder { color: @placeholderColor; }
+
 /* OTHERS */
 strong, b, dt { font-weight: bold}
 dfn {font-style: italic}
