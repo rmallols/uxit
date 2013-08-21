@@ -130,6 +130,7 @@ window.speed = 150;
     getScript(directivePath + '/input/colorPicker.js');
     getScript(directivePath + '/input/checkbox.js');
     getScript(directivePath + '/input/radio.js');
+    getScript(directivePath + '/input/password.js');
     getScript(directivePath + '/validation/mandatory.js');
     getScript(directivePath + '/validation/emailMandatory.js');
     getScript(directivePath + '/validation/passwordMandatory.js');

@@ -12,10 +12,14 @@ COMPONENTS.directive('passwordMandatory', ['$compile', 'validationService', func
                     '</ul>',
                 compiledErrorHtmlDetails = $compile(errorHtmlDetails)(scope),
                 validationFn = function (viewValue) {
-                    scope.pwdValidLength = (viewValue && viewValue.length >= 8  ? 'valid' : undefined);
-                    scope.pwdHasLetter = (viewValue && /[A-z]/.test(viewValue)) ? 'valid' : undefined;
-                    scope.pwdHasNumber = (viewValue && /\d/.test(viewValue))    ? 'valid' : undefined;
-                    return scope.pwdValidLength && scope.pwdHasLetter && scope.pwdHasNumber;
+                    if(!viewValue) {
+                       return true;
+                    } else {
+                        scope.pwdValidLength = (viewValue && viewValue.length >= 8  ? 'valid' : undefined);
+                        scope.pwdHasLetter = (viewValue && /[A-z]/.test(viewValue)) ? 'valid' : undefined;
+                        scope.pwdHasNumber = (viewValue && /\d/.test(viewValue))    ? 'valid' : undefined;
+                        return scope.pwdValidLength && scope.pwdHasLetter && scope.pwdHasNumber;
+                    }
                 };
             validationService.setupValidation(value, element, ctrl, validationTitle,
                                               compiledErrorHtmlDetails, validationKey, validationFn);
