@@ -107,6 +107,7 @@ window.speed = 150;
     getScript(directivePath + '/utils/boxSortable.js');
     getScript(directivePath + '/utils/uxEvents.js');
     getScript(directivePath + '/utils/uxShow.js');
+    getScript(directivePath + '/utils/multipleFiles.js');
     getScript(directivePath + '/list/list.js');
     getScript(directivePath + '/list/mediaList.js');
     getScript(directivePath + '/list/userList.js');
