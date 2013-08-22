@@ -84,6 +84,7 @@ window.speed = 150;
     getScript(servicePath + '/utils/domService.js');
     getScript(servicePath + '/utils/canvasService.js');
     getScript(servicePath + '/utils/stringService.js');
+    getScript(servicePath + '/utils/objectService.js');
     getScript(servicePath + '/utils/textSelectionService.js');
     getScript(servicePath + '/utils/dateService.js');
     getScript(servicePath + '/utils/arrayService.js');

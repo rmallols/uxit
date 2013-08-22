@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    COMPONENTS.factory('i18nDbService', ['i18nService', function (i18nService) {
+    COMPONENTS.factory('i18nDbService', ['i18nService', 'objectService', function (i18nService, objectService) {
 
         /**
          * Gets the i18n value of a given object
@@ -13,7 +13,7 @@
             var currentLanguage = i18nService.getCurrentLanguage(),
                 defaultLanguage = i18nService.getDefaultLanguage();
             //The i18n structure will be set if it has not been defined yet
-            return (obj && typeof(obj) === 'object') ? (obj[currentLanguage] || obj[defaultLanguage]) : {text: obj};
+            return (obj && objectService.isObject(obj)) ? (obj[currentLanguage] || obj[defaultLanguage]) : {text: obj};
         }
 
         /**

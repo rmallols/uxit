@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.directive('i18nDbInput', ['$rootScope', '$compile', 'i18nService', 'i18nDbService', 'stringService',
-    function ($rootScope, $compile, i18nService, i18nDbService, stringService) {
+    COMPONENTS.directive('i18nDbInput', ['$rootScope', '$compile', 'i18nService', 'i18nDbService', 'stringService', 'objectService',
+    function ($rootScope, $compile, i18nService, i18nDbService, stringService, objectService) {
         var i18nPreffix = '_i18n_';
         return {
             priority: 1000,
@@ -90,7 +90,7 @@
                 function initI18nStructure(newVal) {
                     //If the leaf object was a primitive one (i.e. a string), we should get its parent object
                     //and initialize a new object in order to keep the double binding
-                    if (typeof(newVal) !== 'object') {
+                    if (!objectService.isObject(newVal)) {
                         initLeafStructure();
                         initDefaultLanguageStructure(newVal);
                         if (currentLanguage !== defaultLanguage) {
