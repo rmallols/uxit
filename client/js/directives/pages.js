@@ -1,5 +1,5 @@
-COMPONENTS.directive('pages', ['portalService', 'pageService', 'rowService', 'appService', 'userService', 'roleService', 'styleService',
-function (portalService, pageService, rowService, appService, userService, roleService, styleService) {
+COMPONENTS.directive('pages', ['portalService', 'pageService', 'rowService', 'appService', 'roleService', 'sessionService', 'styleService',
+function (portalService, pageService, rowService, appService, roleService, sessionService, styleService) {
 	'use strict';
     return {
 		restrict: 'E',
@@ -20,7 +20,7 @@ function (portalService, pageService, rowService, appService, userService, roleS
                 return roleService.getAdminAccessStyleClass();
             };
 
-            scope.isAdmin = function () { return roleService.hasAdminRole(userService.getCurrentUser()); };
+            scope.isAdmin = function () { return roleService.hasAdminRole(sessionService.getUserSession()); };
 
             scope.isAppSortAllowed = function() {
                 return isAppSortAndResizeAllowed();

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('roleService', ['$rootScope', 'userService', 'crudService', 'constantsService',
-    function ($rootScope, userService, crudService, constantsService) {
+    COMPONENTS.factory('roleService', ['$rootScope', 'sessionService', 'crudService', 'constantsService',
+    function ($rootScope, sessionService, crudService, constantsService) {
 
         var keyBasedRoles,    //Store an associative array to make the role validation process as easy as possible
             indexBasedRoles;  //Store the public, index-based role data
@@ -86,7 +86,7 @@
         }
 
         function getAdminAccessStyleClass() {
-            return hasAdminRole(userService.getCurrentUser()) ? 'adminAccess' : '';
+            return hasAdminRole(sessionService.getUserSession()) ? 'adminAccess' : '';
         }
 
         return {

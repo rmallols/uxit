@@ -91,22 +91,11 @@
             }
         }
 
-        /**
-         *
-         *
-         * @returns {*}
-         */
-        function getCurrentUser() {
-            var userSession = sessionService.getUserSession();
-            return (portalService.getPortal()) ? userSession : null;
-        }
-
         return {
             loadUsers: loadUsers,
             getUsers: getUsers,
             createUser: createUser,
-            updateUser: updateUser,
-            getCurrentUser: getCurrentUser
+            updateUser: updateUser
         };
     }]);
 })(window.COMPONENTS);
