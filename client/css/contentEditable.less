@@ -4,10 +4,15 @@
 
 [content-editable] > [contenteditable] {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 [content-editable] > .placeholder {
+  z-index: 1;
+}
+
+[content-editable] > .placeholder,
+[content-editable] > .background {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -15,4 +20,8 @@
   height: 100%;
   padding: @fieldBoxPadding;
   color: @placeholderColor;
+}
+
+[content-editable] > .background {
+  background-color: @highComp;
 }

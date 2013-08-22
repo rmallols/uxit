@@ -16,12 +16,7 @@
                     uxChange        : '=uxChange'
                 },
                 replace: true,
-                template:   '<div>' +
-                                '<div ux-keyup="onKeyup()" ng-mouseup="showEditBox()" contenteditable="{{isEditable()}}"></div>' +
-                                '<div class="placeholder" ng-show="placeholder && showPlaceholder">' +
-                                    '<label i18n="{{placeholder}}"></label>' +
-                                '</div>' +
-                            '</div>',
+                templateUrl: '/client/html/input/contentEditable.html',
                 link: function (scope, element, attrs, ctrl) {
 
                     var contentEditableObj = $(' > [contenteditable]', element);

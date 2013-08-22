@@ -82,6 +82,8 @@
                 }
 
                 registerKeyboardEvents();
+
+                scope.bla = 'hello world!'
             }
         };
     }]);
