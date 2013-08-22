@@ -92,7 +92,8 @@
                     return null;
                 };
 
-                //noinspection JSHint
+                scope.portal = portalService.getPortal();
+
                 scope.panels = [
                     {
                         title: 'adminPanel.addApp', description: 'adminPanel.addApp.desc',

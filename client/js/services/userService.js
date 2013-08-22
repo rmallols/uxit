@@ -1,7 +1,7 @@
 (function (COMPONENTS) {
     'use strict';
-    COMPONENTS.factory('userService', ['$rootScope', 'sessionService', 'crudService', '$routeParams', 'constantsService',
-    function ($rootScope, sessionService, crudService, $routeParams, constantsService) {
+    COMPONENTS.factory('userService', ['portalService', 'sessionService', 'crudService', '$routeParams', 'constantsService',
+    function (portalService, sessionService, crudService, $routeParams, constantsService) {
 
         var users;
 
@@ -98,7 +98,7 @@
          */
         function getCurrentUser() {
             var userSession = sessionService.getUserSession();
-            return ($rootScope.portal) ? userSession : null;
+            return (portalService.getPortal()) ? userSession : null;
         }
 
         return {

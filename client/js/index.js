@@ -19,13 +19,27 @@ function ($locationProvider, $routeProvider) {
             reloadOnSearch: false
         })
         .otherwise({ redirectTo: '/' });
-}]).run(["$rootScope", "$location", "userService", "pageService", "roleService", "tagService", "availableAppsService", "i18nService",
-    function ($rootScope, $location, userService, pageService, roleService, tagService, availableAppsService, i18nService) {
+}]).run(["$rootScope", "$location", "portalService", "userService", "pageService", "roleService", "sessionService", "tagService",
+    "availableAppsService", "i18nService",
+    function ($rootScope, $location, portalService, userService, pageService, roleService, sessionService, tagService,
+    availableAppsService, i18nService) {
+
         userService.loadUsers(null);    //Cache users
         pageService.loadPages(null);    //Cache pages
         roleService.loadRoles(null);    //Cache roles
         tagService.loadTags(null);      //Cache tags
         i18nService.loadLanguages(null);//Cache languages
         availableAppsService.loadAvailableApps(null); //Cache available apps
-        $rootScope.$on("$routeChangeSuccess", function () {});
+        sessionService.loadUserSession(function (userSession) {
+            if (userSession && userSession.language) {
+                i18nService.changeLanguage(userSession.language);
+            }
+        });
+        $rootScope.$on("$routeChangeSuccess", function () {
+            portalService.loadPortal(function() {
+                portalService.setHeader();
+                portalService.setWindowDimensions();
+                portalService.trackAnalytics();
+            });
+        });
 }]);

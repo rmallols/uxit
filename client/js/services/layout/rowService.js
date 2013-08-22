@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('rowService', ['$rootScope', 'arrayService', function ($rootScope, arrayService) {
+    COMPONENTS.factory('rowService', ['arrayService', function (arrayService) {
 
         var maxSlots = 25;
 
@@ -97,12 +97,12 @@
          * Gets the rows of a given row scope. This method is useful in order to isolate resources from being aware of
          * the different rows wrapping objects (i.e. template vs page rows)
          *
-         * @param {object}  rowScope    The scope of the row
-         * @returns {Array}             The array that contains the rows of the given scope
+         * @param   {object}  rowScope  The scope of the row
+         * @param   {array}   rows      The root array of rows
+         * @returns {array}             The array that contains the rows of the given scope
          */
-        function getWrappingRows(rowScope) {
-            return (rowScope.row.template)
-                ? $rootScope.portal.template.rows : $rootScope.portal.template.rows[1].columns[0].rows;
+        function getWrappingRows(rowScope, rows) {
+            return (rowScope.row.template) ? rows : rows[1].columns[0].rows;
         }
 
         /**

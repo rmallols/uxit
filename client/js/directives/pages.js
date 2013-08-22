@@ -1,5 +1,5 @@
-COMPONENTS.directive('pages', ['$rootScope', 'pageService', 'rowService', 'appService', 'userService', 'roleService', 'styleService',
-function ($rootScope, pageService, rowService, appService, userService, roleService, styleService) {
+COMPONENTS.directive('pages', ['portalService', 'pageService', 'rowService', 'appService', 'userService', 'roleService', 'styleService',
+function (portalService, pageService, rowService, appService, userService, roleService, styleService) {
 	'use strict';
     return {
 		restrict: 'E',
@@ -7,9 +7,11 @@ function ($rootScope, pageService, rowService, appService, userService, roleServ
 		templateUrl: '/client/html/pages.html',
 		link: function link(scope) {
 
+            scope.portal = portalService.getPortal();
+
             scope.setPagesStyles = function () {
-                if (scope.$root.portal) {
-                    return styleService.getNormalizedStyles($rootScope.portal.styles, null);
+                if (scope.portal) {
+                    return styleService.getNormalizedStyles(scope.portal.styles, null);
                 }
                 return null;
             };

@@ -12,7 +12,7 @@
                     var appElm = element.parent(), userSession = sessionService.getUserSession();
 
                     scope.showHeader = function () {
-                        return $rootScope.globalSettings.showAppHeader && userSession;
+                        return userSession;
                     };
 
                     scope.showEditActions = function () {

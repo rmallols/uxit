@@ -1,12 +1,11 @@
 describe('portalService', function () {
     'use strict';
-    var $rootScope, portalService;
+    var portal, portalService;
     beforeEach(module("components"));
     beforeEach(inject(["$rootScope", "portalService", function (_$rootScope, _portalService) {
-        $rootScope      = _$rootScope;
         portalService  = _portalService;
-        loadPortal(function(portal) {
-            $rootScope.portal = portal;
+        loadPortal(function(loadedPortal) {
+            portal = loadedPortal;
         })
     }]));
 
@@ -18,19 +17,19 @@ describe('portalService', function () {
 
     describe('Fullscreen', function () {
         it('should detect the real fullscreen mode', function () {
-            $rootScope.portal.fullscreenMode = 'real';
+            portal.fullscreenMode = 'real';
             expect(portalService.isRealFullscreen()).toBe(true);
             expect(portalService.isMaximizedFullscreen()).toBe(false);
             expect(portalService.isTemplateFullscreen()).toBe(false);
         });
         it('should detect the maximized fullscreen mode', function () {
-            $rootScope.portal.fullscreenMode = 'maximized';
+            portal.fullscreenMode = 'maximized';
             expect(portalService.isRealFullscreen()).toBe(false);
             expect(portalService.isMaximizedFullscreen()).toBe(true);
             expect(portalService.isTemplateFullscreen()).toBe(false);
         });
         it('should detect the template fullscreen mode', function () {
-            $rootScope.portal.fullscreenMode = 'template';
+            portal.fullscreenMode = 'template';
             expect(portalService.isRealFullscreen()).toBe(false);
             expect(portalService.isMaximizedFullscreen()).toBe(false);
             expect(portalService.isTemplateFullscreen()).toBe(true);

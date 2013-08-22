@@ -28,9 +28,9 @@
                 };
 
                 scope.setAppStyles = function () {
-                    if (scope.model && $rootScope.portal) {
+                    if (scope.model && portalService.getPortal()) {
                         //1. Set the default app styles from the portal settings
-                        var styles  = styleService.getNormalizedStyles($rootScope.portal.app.styles, null);
+                        var styles  = styleService.getNormalizedStyles(portalService.getPortal().app.styles, null);
                         //2. Overwrite the app styles with the app specific settings
                         styles = styleService.getNormalizedStyles(scope.model.styles, styles);
                         return styles;
@@ -39,13 +39,14 @@
                 };
 
                 scope.isTitleVisible = function () {
+                    var portal = portalService.getPortal();
                     //noinspection JSUnresolvedVariable
                     if (scope.model && scope.model.showTitle !== undefined) {
                         //noinspection JSUnresolvedVariable
                         return scope.model.showTitle;
                     }
                     //noinspection JSUnresolvedVariable
-                    return ($rootScope.portal.app) ? $rootScope.portal.app.showTitle : false;
+                    return (portal.app) ? portal.app.showTitle : false;
                 };
 
                 scope.getAppStyleSheet = function () {

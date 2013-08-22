@@ -1,10 +1,11 @@
 (function (COMPONENTS) {
     'use strict';
-    COMPONENTS.factory('portalService', ['$compile', '$rootScope', 'pageService', 'crudService', 'mediaService',
-                                         'i18nDbService', 'constantsService', 'timerService', 'rowService', 'colService', 'arrayService',
-    function ($compile, $rootScope, pageService, crudService, mediaService, i18nDbService, constantsService, timerService, rowService, colService, arrayService) {
+    COMPONENTS.factory('portalService', ['$compile', '$rootScope', '$routeParams', 'pageService', 'crudService', 'mediaService',
+    'i18nDbService', 'constantsService', 'timerService', 'rowService', 'colService', 'domService', 'arrayService', 'stdService',
+    function ($compile, $rootScope, $routeParams, pageService, crudService, mediaService, i18nDbService, constantsService,
+              timerService, rowService, colService, domService, arrayService, stdService) {
 
-        var windowDimensions;
+        var portal, windowDimensions;
 
         /**
          *
@@ -27,6 +28,43 @@
         }
 
         /**
+         * Loads the current portal data
+         *
+         * @param {function} callback The function to be executed once the portal has been loaded
+         */
+        function loadPortal(callback) {
+            var bodyObj;
+            if ($routeParams.portal) {
+                bodyObj = $('body');
+                domService.addLoadingFeedback(bodyObj);
+                crudService.get(constantsService.collections.portal, $routeParams.portal, null, function (loadedPortal) {
+                    var pageModel = pageService.getPage($routeParams.page);
+                    domService.removeLoadingFeedback(bodyObj);
+                    if (!loadedPortal) {
+                        stdService.error('The portal \"' + $routeParams.portal + '\" cannot be found');
+                    } else if (!pageModel) {
+                        stdService.error('The page \"' + $routeParams.page + '\" cannot be found');
+                    } else {
+                        portal = loadedPortal;
+                        updatePageDataFromTemplate(getPortal(), pageModel.rows);
+                        pageService.setCurrentPage(pageModel);
+                        $rootScope.$broadcast('pageLoaded');
+                        if (callback) { callback(getPortal()); }
+                    }
+                });
+            }
+        }
+
+        /**
+         * Gets the current portal data
+         *
+         * @returns {object} The current portal data
+         */
+        function getPortal() {
+            return portal;
+        }
+
+        /**
          *
          *
          * @param callback
@@ -34,7 +72,7 @@
         function savePortal(callback) {
             //The user handling will have to be refactored at UXIT-273
             var portalData;
-            portalData = angular.copy($rootScope.portal);
+            portalData = angular.copy(getPortal());
             delete portalData.user;
             updatePageDataFromTemplate(portalData, []);
             crudService.update(constantsService.collections.portal, portalData._id, portalData, function (data) {
@@ -73,9 +111,9 @@
          * Registers portal stats through Google Analytics
           */
         function trackAnalytics() {
-            if ($rootScope.portal.trackingCode) {
+            if (getPortal().trackingCode) {
                 var _gaq = _gaq || [], ga, s;
-                _gaq.push(['_setAccount', $rootScope.portal.trackingCode]);
+                _gaq.push(['_setAccount', getPortal().trackingCode]);
                 _gaq.push(['_trackPageview']);
                 ga = document.createElement('script');
                 ga.type = 'text/javascript';
@@ -100,7 +138,7 @@
          * @returns {boolean} True if the fullscreen mode is real. False otherwise
          */
         function isRealFullscreen() {
-            return $rootScope.portal.fullscreenMode === 'real';
+            return getPortal().fullscreenMode === 'real';
         }
 
         /**
@@ -109,7 +147,7 @@
          * @returns {boolean} True if the fullscreen mode is maximized. False otherwise
          */
         function isMaximizedFullscreen() {
-            return $rootScope.portal.fullscreenMode === 'maximized';
+            return getPortal().fullscreenMode === 'maximized';
         }
 
         /**
@@ -118,7 +156,7 @@
          * @returns {boolean} True if the fullscreen mode is template. False otherwise
          */
         function isTemplateFullscreen() {
-            return $rootScope.portal.fullscreenMode === 'template';
+            return getPortal().fullscreenMode === 'template';
         }
 
         /**
@@ -132,7 +170,7 @@
                 apps = columnScope.column.apps,
                 rowScope = columnScope.$parent,
                 columns = rowScope.row.columns,
-                rows = rowService.getWrappingRows(rowScope);
+                rows = rowService.getWrappingRows(rowScope, getPortal().template.rows);
             arrayService.delete(apps, appIndex);
             if (apps.length === 0) {
                 colService.deleteColAndDependencies(columns, columnScope.$index);
@@ -147,7 +185,7 @@
         /* PRIVATE METHODS */
         function setTitle() {
             var currentPage = pageService.getCurrentPage();
-            document.title = i18nDbService.getI18nProperty(currentPage.text).text + ' | ' + $rootScope.portal.title;
+            document.title = i18nDbService.getI18nProperty(currentPage.text).text + ' | ' + getPortal().title;
         }
 
         function setDefaultFavicon() {
@@ -156,14 +194,14 @@
         }
 
         function setCustomFavicon() {
-            mediaService.getMediaFromId($rootScope.portal.faviconId, function (favicon) {
+            mediaService.getMediaFromId(getPortal().faviconId, function (favicon) {
                 var faviconUrl = mediaService.getDownloadUrl(favicon) + '?v=' + timerService.getRandomNumber();
                 $("#favicon").attr('href', faviconUrl);
             });
         }
 
         function setFavicon() {
-            if ($rootScope.portal.faviconId) {
+            if (getPortal().faviconId) {
                 setCustomFavicon();
             } else {
                 setDefaultFavicon();
@@ -173,6 +211,8 @@
 
         return {
             setHeader: setHeader,
+            loadPortal: loadPortal,
+            getPortal: getPortal,
             savePortal: savePortal,
             updatePageDataFromTemplate: updatePageDataFromTemplate,
             deleteApp: deleteApp,

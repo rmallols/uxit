@@ -1,8 +1,8 @@
 (function ()  {
     'use strict';
-    COMPONENTS.directive('comments', ['$rootScope', 'crudService', 'sessionService', 'mediaService', 'dateService',
+    COMPONENTS.directive('comments', ['portalService', 'crudService', 'sessionService', 'mediaService', 'dateService',
                                       'i18nService', 'constantsService', 'stringService',
-    function ($rootScope, crudService, sessionService, mediaService, dateService, i18nService, constantsService, stringService) {
+    function (portalService, crudService, sessionService, mediaService, dateService, i18nService, constantsService, stringService) {
 
         return {
             restrict: 'E',
@@ -61,7 +61,7 @@
                 scope.showRatings = function () {
                     return (!stringService.isEmpty(scope.allowRatings))
                         ? scope.allowRatings
-                        : $rootScope.portal.comments.allowRatings;
+                        : portalService.getPortal().comments.allowRatings;
                 };
 
                 scope.getI18nPlaceholder = function () {

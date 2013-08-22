@@ -69,12 +69,13 @@
         }
 
         function setOptions(originalElm, droppedElm) {
+            var wrappingRows = portalService.getPortal().template.rows;
             options = {};
             options.isNewItem               = droppedElm.attr('sortable-add-app') !== undefined;
             options.wrapperOriginalRowScope = angular.element(originalElm.closest('.rows')).scope();
             options.wrapperDropRowScope     = angular.element(droppedElm.closest('.rows')).scope();
-            options.originalRows            = rowService.getWrappingRows(options.wrapperOriginalRowScope);
-            options.dropRows                = rowService.getWrappingRows(options.wrapperDropRowScope);
+            options.originalRows            = rowService.getWrappingRows(options.wrapperOriginalRowScope, wrappingRows);
+            options.dropRows                = rowService.getWrappingRows(options.wrapperDropRowScope, wrappingRows);
             options.droppedElm              = droppedElm;
             options.originalColIndex        = originalElm.closest('.columns').prevAll('.columns').size();
             options.dropColIndex            = droppedElm.closest('.columns').prevAll('.columns').size();
