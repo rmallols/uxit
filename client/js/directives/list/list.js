@@ -53,6 +53,9 @@
                     }
                     lastSelectedItem = item;
                     item.isSelected = true;
+                    if(!$rootScope.$$phase) {
+                        scope.$apply();
+                    }
                 };
 
                 scope.unselect = function (item) {
@@ -63,6 +66,9 @@
                     }
                     else if (scope.isSingleSelectable()) { scope.selectedIds = null; }
                     item.isSelected = false;
+                    if(!$rootScope.$$phase) {
+                        scope.$apply();
+                    }
                 };
 
                 scope.selectItem = function (item, $index, $event, editOnSelect) {
@@ -166,7 +172,8 @@
 
                 function deleteFromSeletedIds(id) {
                     var itemSelectedPos = getItemSelectedPos(id);
-                    if (itemSelectedPos) { //Delete the item from the selected items list, just if it was actually selected
+                    //Delete the item from the selected items list, just if it was actually selected
+                    if (itemSelectedPos !== undefined) {
                         arrayService.delete(scope.selectedIds, itemSelectedPos);
                     }
                 }
