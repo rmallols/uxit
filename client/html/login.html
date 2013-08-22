@@ -1,8 +1,8 @@
 <div>
-    <div ng-show="$root.portal.user">
-        Hello, {{$root.portal.user.fullName}}. [<a href="#" ng-click="logout()">Logout</a>]
+    <div ng-show="userSession">
+        Hello, {{userSession.fullName}}. [<a href="#" ng-click="logout()">Logout</a>]
     </div>
-    <form class="login cf" action="/rest/login" method="POST" ng-show="!$root.portal.user">
+    <form class="login cf" action="/rest/login" method="POST" ng-show="!userSession">
         <div class="user columns large-12">
             <div class="label columns large-8 textAlignRight">E-mail:</div><div class="field columns large-16">
             <input type="text" name="email" ng-model="email" />

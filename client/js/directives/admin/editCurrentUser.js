@@ -11,7 +11,7 @@ function ($rootScope, userService, sessionService) {
         },
         link: function link(scope) {
 
-            scope.currentUser = $rootScope.portal.user;
+            scope.userSession = sessionService.getUserSession();
 
             scope.onLayerSave = function (callback) {
                 userService.updateUser(scope.currentUser, function () {

@@ -6,10 +6,13 @@
             replace: false,
             link: function link(scope, element, attrs) {
 
+                var hasBeenInitialized = false;
+
                 attrs.$observe('resizableApp', function (newVal) {
                     if (newVal === 'true') { //Block the resize capability if the user doesn't have permissions enough
+                        hasBeenInitialized = true;
                         enableResizableApp();
-                    } else {
+                    } else if(hasBeenInitialized) {
                         disableResizableApp();
                     }
                 });

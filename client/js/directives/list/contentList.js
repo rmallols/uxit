@@ -14,14 +14,6 @@ COMPONENTS.directive('contentList', ['constantsService', function (constantsServ
             scope.collection        = constantsService.collections.content;
             scope.searchTargets     = ['title', 'summary', 'content'];
             scope.onSelectPanels    = [{ title: 'Edit content', type: 'editContent'}];
-
-            scope.config = {
-                editable        : true,
-                selectable      : true,
-                multiSelectable : true,
-                uploadable      : true,
-                deletable       : true
-            };
 		}
 	};
 }]);

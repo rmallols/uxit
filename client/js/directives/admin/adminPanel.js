@@ -1,8 +1,8 @@
 (function () {
     'use strict';
     COMPONENTS.directive('adminPanel', ['$rootScope', '$location', 'portalService', 'addAppService', 'mediaService',
-    'keyboardService', '$timeout',
-    function ($rootScope, $location, portalService, addAppService, mediaService, keyboardService, $timeout) {
+    'sessionService', 'keyboardService', '$timeout',
+    function ($rootScope, $location, portalService, addAppService, mediaService, sessionService, keyboardService, $timeout) {
         return {
             restrict: 'E',
             transclude: true,
@@ -11,7 +11,8 @@
             scope: {},
             link: function (scope, element) {
 
-                var currentTabIndex, ngStyleAvatarFn, directiveId = 'adminPanel';
+                var currentTabIndex, ngStyleAvatarFn, directiveId = 'adminPanel',
+                    userSession = sessionService.getUserSession();
 
                 function toggle(tabIndex) {
                     if (tabIndex !== currentTabIndex) {
@@ -85,13 +86,12 @@
                 }
 
                 ngStyleAvatarFn = function () {
-                    if ($rootScope.portal.user) {
-                        return { backgroundImage: 'url("' + mediaService.getDownloadUrl($rootScope.portal.user.media) + '")' };
+                    if (userSession) {
+                        return { backgroundImage: 'url("' + mediaService.getDownloadUrl(userSession.media) + '")' };
                     }
                     return null;
                 };
 
-                //ngStyleAvatar = { backgroundImage: 'url("' + mediaService.getDownloadUrl($rootScope.portal.user.media) + '")' };
                 //noinspection JSHint
                 scope.panels = [
                     {

@@ -1,26 +1,26 @@
 (function () {
     'use strict';
     COMPONENTS.directive('appHeader', ['$rootScope', '$location', 'appService', 'portalService', 'pageService',
-    'roleService', 'stringService', 'editBoxUtilsService',
-    function ($rootScope, $location, appService, portalService, pageService, roleService, stringService, editBoxUtilsService) {
+    'roleService', 'sessionService', 'stringService', 'editBoxUtilsService',
+    function ($rootScope, $location, appService, portalService, pageService, roleService, sessionService, stringService, editBoxUtilsService) {
             return {
                 restrict: 'A',
                 replace: true,
                 templateUrl: '/client/html/app/appHeader.html',
                 link: function link(scope, element) {
 
-                    var appElm = element.parent();
+                    var appElm = element.parent(), userSession = sessionService.getUserSession();
 
                     scope.showHeader = function () {
-                        return $rootScope.globalSettings.showAppHeader && $rootScope.portal.user;
+                        return $rootScope.globalSettings.showAppHeader && userSession;
                     };
 
                     scope.showEditActions = function () {
-                        return $rootScope.portal.user && roleService.hasCreatorRole($rootScope.portal.user);
+                        return userSession && roleService.hasCreatorRole(userSession);
                     };
 
                     scope.showAdminActions = function () {
-                        return $rootScope.portal.user && roleService.hasAdminRole($rootScope.portal.user);
+                        return userSession && roleService.hasAdminRole(userSession);
                     };
 
                     scope.toggleHeader = function () {
@@ -28,7 +28,7 @@
                     };
 
                     scope.isAdmin = function () {
-                        return roleService.hasAdminRole($rootScope.portal.user);
+                        return roleService.hasAdminRole(userSession);
                     };
 
                     scope.getAppHelpText = function () {

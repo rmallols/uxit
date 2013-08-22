@@ -1,9 +1,9 @@
 (function (Math, Number, COMPONENTS) {
     'use strict';
     COMPONENTS.directive('list', ['$rootScope', '$location', 'portalService', 'rowService', 'crudService',
-    'editBoxUtilsService', 'domService', 'arrayService', 'roleService', 'stringService', 'dbService', 'i18nService',
+    'editBoxUtilsService', 'domService', 'arrayService', 'roleService', 'sessionService', 'stringService', 'dbService', 'i18nService',
     function ($rootScope, $location, portalService, rowService, crudService, editBoxUtilsService, domService, arrayService,
-              roleService, stringService, dbService, i18nService) {
+              roleService, sessionService, stringService, dbService, i18nService) {
         return {
             restrict: 'A',
             replace: true,
@@ -24,7 +24,7 @@
             },
             link: function link(scope, element) {
 
-                var lastSelectedItem,
+                var lastSelectedItem, userSession = sessionService.getUserSession(),
                     defaultOptions = { pageSize: 10, skip: 0, pageActionPos: 2, searchable : true,
                         sort: { field: 'create.date', order : '1' } };
 
@@ -161,7 +161,7 @@
 
                 function allowIfHasAdminRole(action) { return (isAdmin()) ? action : false; }
 
-                function isAdmin() { return roleService.hasAdminRole($rootScope.portal.user); }
+                function isAdmin() { return roleService.hasAdminRole(userSession); }
 
                 function setCurrentPage() {
                     //Avoid pointing to a out of index page

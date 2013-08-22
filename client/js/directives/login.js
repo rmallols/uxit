@@ -6,6 +6,7 @@ COMPONENTS.directive('login', ['sessionService', function (sessionService) {
 		templateUrl: '/client/html/login.html',
         scope: {},
 		link: function link(scope) {
+            scope.userSession = sessionService.getUserSession();
             scope.logout = function () {
                 sessionService.logout();
             };

@@ -3,22 +3,29 @@
     COMPONENTS.factory('sessionService', ['$rootScope', '$routeParams', 'ajaxService',
     function ($rootScope, $routeParams, ajaxService) {
 
+        var userSession;
+
         /**
          *
          *
          * @param callback
          */
-        function getSession(callback) {
+        function loadUserSession(callback) {
             ajaxService.ajax({
                 url     : '/rest/getSession/',
                 method  : 'POST',
                 data    : {},
-                success	: function (response) {
+                success	: function (loadedUserSession) {
+                    setUserSession(loadedUserSession);
                     if (callback) {
-                        callback(response);
+                        callback(getUserSession());
                     }
                 }
             });
+        }
+
+        function getUserSession() {
+            return userSession;
         }
 
         /**
@@ -27,7 +34,7 @@
          * @param model
          */
         function addSessionDataToModel(model) {
-            model.create.author = $rootScope.portal.user;
+            model.create.author = getUserSession();
             delete model.create.authorId;
         }
 
@@ -37,7 +44,7 @@
          * @returns {boolean}
          */
         function isUserLogged() {
-            return $rootScope.portal.user !== undefined;
+            return getUserSession() !== undefined;
         }
 
         /**
@@ -48,9 +55,20 @@
             window.open('/' + $routeParams.portal + '/logout', '_self');
         }
 
+        /** Private methods **/
+        function setUserSession(loadedUserSession) {
+            if (loadedUserSession) {
+                userSession = loadedUserSession;
+            } else {
+                userSession = null;
+            }
+        }
+        /** End of private methods **/
+
         return {
             //login: login,
-            getSession              : getSession,
+            loadUserSession         : loadUserSession,
+            getUserSession          : getUserSession,
             addSessionDataToModel   : addSessionDataToModel,
             isUserLogged            : isUserLogged,
             logout                  : logout

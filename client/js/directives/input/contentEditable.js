@@ -1,8 +1,8 @@
 (function() {
     'use strict';
     COMPONENTS.directive('contentEditable', ['$rootScope', 'textSelectionService', 'domService', 'roleService',
-        'editBoxUtilsService', 'styleService',
-        function ($rootScope, textSelectionService, domService, roleService, editBoxUtilsService, styleService) {
+        'sessionService', 'editBoxUtilsService', 'styleService',
+        function ($rootScope, textSelectionService, domService, roleService, sessionService, editBoxUtilsService, styleService) {
             return {
                 priority: -1,
                 require: 'ngModel',
@@ -19,9 +19,10 @@
                 templateUrl: '/client/html/input/contentEditable.html',
                 link: function (scope, element, attrs, ctrl) {
 
-                    var contentEditableObj = $(' > [contenteditable]', element);
+                    var contentEditableObj = $(' > [contenteditable]', element),
+                        userSession = sessionService.getUserSession();
 
-                    scope.isAdmin = function () { return roleService.hasAdminRole($rootScope.portal.user); };
+                    scope.isAdmin = function () { return roleService.hasAdminRole(userSession); };
 
                     // view -> model
                     scope.onKeyup = function () { updateValue(); };

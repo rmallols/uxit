@@ -30,28 +30,15 @@ function PortalController($scope, $rootScope, $routeParams, portalService, pageS
         }
     }
 
-    function getUserSession(callback) {
-        sessionService.getSession(function (user) {
-            if (user) {
-                $rootScope.portal.user = user;
-            } else {
-                $rootScope.portal.user = null;
-            }
-            if (callback) {
-                callback(user);
-            }
-        });
-    }
-
     $rootScope.portal = {};
     $rootScope.globalSettings = {};
     //Manually set the default status about showing the app headers
     $rootScope.globalSettings.showAppHeader = true;
 
     getPortal(function () {
-        getUserSession(function (user) {
-            if (user.language) {
-                i18nService.changeLanguage(user.language);
+        sessionService.loadUserSession(function (userSession) {
+            if (userSession && userSession.language) {
+                i18nService.changeLanguage(userSession.language);
             }
         });
         portalService.setHeader();
