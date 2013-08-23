@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    COMPONENTS.factory('ajaxService', ['$http', function ($http) {
+    COMPONENTS.factory('ajaxService', ['$http', 'loadingService', function ($http, loadingService) {
 
         /**
          * Executes an ajax request to the backend
@@ -18,6 +18,7 @@
             if (settings.data && settings.method === 'GET') {
                 settings.url = settings.url + '?' + decodeURIComponent($.param(settings.data)); //JSON -> query string
             }
+            loadingService.start();
             $http(settings).success(
             function (data/*, status, headers, config*/) {
                 if (options.success) {
@@ -28,6 +29,7 @@
                     options.error(data);
                 }
             });
+            loadingService.done();
         }
 
         return {

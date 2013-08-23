@@ -46,6 +46,7 @@ window.speed = 150;
     getScript(libPath + '/miniColors/jquery.minicolors.js');
     getStyleSheet(libPath + '/iCheck/skins/square/blue.css');
     getScript(libPath + '/iCheck/jquery.icheck-0.9.1.min.js');
+    getScript(libPath + '/nprogress/nprogress.js');
 
     //Core resources
     getStyleSheet(styleSheetPath + '/main.less');
@@ -68,8 +69,9 @@ window.speed = 150;
     getScript(servicePath + '/ajaxService.js');
     getScript(servicePath + '/constantsService.js');
     getScript(servicePath + '/undeployService.js');
-    getScript(servicePath + '/stdService.js');
-    getScript(servicePath + '/globalMsgService.js');
+    getScript(servicePath + '/feedback/stdService.js');
+    getScript(servicePath + '/feedback/globalMsgService.js');
+    getScript(servicePath + '/feedback/loadingService.js');
     getScript(servicePath + '/i18n/i18nService.js');
     getScript(servicePath + '/i18n/i18nDbService.js');
     getScript(servicePath + '/app/appService.js');
