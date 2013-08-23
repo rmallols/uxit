@@ -186,4 +186,5 @@ window.speed = 150;
     getScript('/client/apps/webGlApp/webGlApp.js');
     getScript('/client/apps/iframeApp/iframeApp.js');
     getScript('/client/apps/languageSelectApp/languageSelectApp.js');
+    getScript('/client/apps/slidesApp/slidesApp.js');
 }());
