@@ -19,9 +19,9 @@ function ($locationProvider, $routeProvider) {
             reloadOnSearch: false
         })
         .otherwise({ redirectTo: '/' });
-}]).run(["$rootScope", "$location", "portalService", "userService", "pageService", "roleService", "sessionService", "tagService",
+}]).run(["$rootScope", "$routeParams", "$location", "portalService", "userService", "pageService", "roleService", "sessionService", "tagService",
     "availableAppsService", "i18nService",
-    function ($rootScope, $location, portalService, userService, pageService, roleService, sessionService, tagService,
+    function ($rootScope, $routeParams, $location, portalService, userService, pageService, roleService, sessionService, tagService,
     availableAppsService, i18nService) {
 
         userService.loadUsers(null);    //Cache users
@@ -36,7 +36,7 @@ function ($locationProvider, $routeProvider) {
             }
         });
         $rootScope.$on("$routeChangeSuccess", function () {
-            portalService.loadPortal(function() {
+            portalService.loadPortal($routeParams.portal, $routeParams.page, function() {
                 portalService.setHeader();
                 portalService.setWindowDimensions();
                 portalService.trackAnalytics();

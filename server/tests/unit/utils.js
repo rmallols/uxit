@@ -1,7 +1,11 @@
 'use strict';
-function loadPortal(callback) {
+var routeParams = {
+    portal: 'uxitDev',
+    page: 'Home'
+};
+function loadPortal($httpBackend, portalService, callback) {
     var mockedResponse = {
-        "id"    : "uxitDev",
+        "id"    : routeParams.portal,
         "title"	: "UXIT dev",
         "desc"	: "This is the description of the portal!",
         "styles": {
@@ -59,9 +63,13 @@ function loadPortal(callback) {
                 }
             ]
     };
-    if (callback) {
-        callback(mockedResponse);
-    }
+    $httpBackend.when('GET', '/rest/portal/' + routeParams.portal + '?').respond(mockedResponse);
+    portalService.loadPortal(routeParams.portal, routeParams.page, function (portal) {
+        if (callback) {
+            callback(portal);
+        }
+    });
+    $httpBackend.flush();
 }
 
 function loadPages($httpBackend, pageService, callback) {
@@ -92,7 +100,7 @@ function loadPages($httpBackend, pageService, callback) {
                     }
                 },
                 "type": "apps",
-                "url": "Home"
+                "url": routeParams.page
             },
             {
                 "_id": "foo",

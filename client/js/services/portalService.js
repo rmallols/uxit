@@ -1,8 +1,8 @@
 (function (COMPONENTS) {
     'use strict';
-    COMPONENTS.factory('portalService', ['$compile', '$rootScope', '$routeParams', 'pageService', 'crudService', 'mediaService',
+    COMPONENTS.factory('portalService', ['$compile', '$rootScope', 'pageService', 'crudService', 'mediaService',
     'i18nDbService', 'constantsService', 'timerService', 'rowService', 'colService', 'domService', 'arrayService', 'stdService',
-    function ($compile, $rootScope, $routeParams, pageService, crudService, mediaService, i18nDbService, constantsService,
+    function ($compile, $rootScope, pageService, crudService, mediaService, i18nDbService, constantsService,
               timerService, rowService, colService, domService, arrayService, stdService) {
 
         var portal, windowDimensions;
@@ -28,22 +28,24 @@
         }
 
         /**
-         * Loads the current portal data
-         *
-         * @param {function} callback The function to be executed once the portal has been loaded
+         * Loads the current portal data in the context of a given page
+         * 
+         * @param {string}      portalId    The identifier of the portal which data is going to be retrieved
+         * @param {string}      pageId      The identifier of the page which data is going to be retrieved
+         * @param {function}    callback    The callback function to be executed once the process finishes
          */
-        function loadPortal(callback) {
+        function loadPortal(portalId, pageId, callback) {
             var bodyObj;
-            if ($routeParams.portal) {
+            if (portalId) {
                 bodyObj = $('body');
                 domService.addLoadingFeedback(bodyObj);
-                crudService.get(constantsService.collections.portal, $routeParams.portal, null, function (loadedPortal) {
-                    var pageModel = pageService.getPage($routeParams.page);
+                crudService.get(constantsService.collections.portal, portalId, null, function (loadedPortal) {
+                    var pageModel = pageService.getPage(pageId);
                     domService.removeLoadingFeedback(bodyObj);
                     if (!loadedPortal) {
-                        stdService.error('The portal \"' + $routeParams.portal + '\" cannot be found');
+                        stdService.error('The portal \"' + portalId + '\" cannot be found');
                     } else if (!pageModel) {
-                        stdService.error('The page \"' + $routeParams.page + '\" cannot be found');
+                        stdService.error('The page \"' + pageId + '\" cannot be found');
                     } else {
                         portal = loadedPortal;
                         updatePageDataFromTemplate(getPortal(), pageModel.rows);

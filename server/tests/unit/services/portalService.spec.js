@@ -2,11 +2,13 @@ describe('portalService', function () {
     'use strict';
     var portal, portalService;
     beforeEach(module("components"));
-    beforeEach(inject(["$rootScope", "portalService", function (_$rootScope, _portalService) {
+    beforeEach(inject(["$httpBackend", "portalService", "pageService",
+    function ($httpBackend, _portalService, pageService) {
         portalService  = _portalService;
-        loadPortal(function(loadedPortal) {
+        loadPages($httpBackend, pageService);
+        loadPortal($httpBackend, portalService, function(loadedPortal) {
             portal = loadedPortal;
-        })
+        });
     }]));
 
     describe('Favicon', function () {
