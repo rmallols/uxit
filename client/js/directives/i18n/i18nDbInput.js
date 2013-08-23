@@ -22,16 +22,20 @@
                     defaultLanguage = i18nService.getDefaultLanguage(), ngModelLevels = attrs.ngModel.split('.'),
                     originalModelParentLeafPointer, leafProp, currentLanguage, creatingFromCustomLanguage;
 
-                element.click(function () {
-                    currentLanguage = i18nService.getCurrentLanguage();
-                    if (isDisabled) {
-                        isDisabled = false;
-                        $(this).removeAttr('readonly');
-                        originalModelLeafPointer[currentLanguage] = {};
-                        originalModelLeafPointer[currentLanguage].text = originalModelLeafPointer[defaultLanguage].text;
-                        scope[controller.i18nNgModel] = originalModelLeafPointer[currentLanguage];
-                        scope.$apply();
-                    }
+                //Bind with the click function in a new thread as otherwise some components
+                //could not have been initialized yet
+                setTimeout(function() {
+                    element.click(function () {
+                        currentLanguage = i18nService.getCurrentLanguage();
+                        if (isDisabled) {
+                            isDisabled = false;
+                            $(this).removeAttr('readonly');
+                            originalModelLeafPointer[currentLanguage] = {};
+                            originalModelLeafPointer[currentLanguage].text = originalModelLeafPointer[defaultLanguage].text;
+                            scope[controller.i18nNgModel] = originalModelLeafPointer[currentLanguage];
+                            scope.$apply();
+                        }
+                    });
                 });
 
                 scope.$watch(attrs.ngModel, function (newVal) {
