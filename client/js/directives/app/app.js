@@ -89,6 +89,14 @@
                     if (type === scope.type) { scope.removeApp(); }
                 });
 
+                element.mouseenter(function() {
+                    element.addClass('hover');
+                });
+
+                element.mouseleave(function() {
+                    element.removeClass('hover');
+                });
+
                 /** Private methods **/
                 function initModel() {
                     //Wait till the available apps data has been retrieved
