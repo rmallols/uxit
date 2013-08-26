@@ -18,20 +18,43 @@ COMPONENTS.directive('slidesAppView', [function () {
                 { content: '<h3>Discramiler</h3>This is a harcoded example about how to add cool stuff with small effort' }
             ];
 
-            yepnope({
-                load: [
-                    appPath + 'css/reveal.min.css',
-                    appPath + 'js/reveal.js',
-                    appPath + 'lib/js/head.min.js'
-                ],
-                complete: function () {
-                    initializeReveal();
-                }
-            });
+            if(window.Reveal) { //Reveal library has been already loaded
+                initializeWithoutResources();
+            } else { //Reveal doesn't exists -> load it
+                initializeWithResources();
+            }
 
             /** Private methods **/
+            function initializeWithResources() {
+                loadResources(function() {
+                    initializeReveal();
+                    scope.$apply();
+                });
+            }
+
+            function initializeWithoutResources() {
+                initializeReveal();
+                setTimeout(function() {
+                    Reveal.next();
+                    Reveal.prev();
+                }, 0);
+            }
+
+            function loadResources(callback) {
+                yepnope({
+                    load: [
+                        appPath + 'css/reveal.min.css',
+                        appPath + 'js/reveal.js',
+                        appPath + 'lib/js/head.min.js'
+                    ],
+                    complete: function () {
+                        if(callback) { callback(); }
+                    }
+                });
+            }
+
             function initializeReveal() {
-                Reveal.initialize({
+                window.Reveal.initialize({
                     controls: true,
                     progress: true,
                     history: false,
@@ -46,7 +69,6 @@ COMPONENTS.directive('slidesAppView', [function () {
                     ]
                 });
                 scope.show = true;
-                scope.$apply();
             }
             /** End of private methods **/
         }
