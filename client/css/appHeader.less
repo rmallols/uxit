@@ -34,7 +34,7 @@
   background-position: center center;
   background-size: 32px 32px;
   top: 0px;
-  right: 0px;
+  right:-@headerToggleSize;
   cursor: pointer;
   z-index: 3;
   .settingsIcon;
@@ -47,14 +47,11 @@
 
 .app.maximizedFullscreen > [app-header] .headerToggle {
   position: fixed;
+  right: 0px;
   z-index:4;
 }
 
 .app.enabledHeader > [app-header] > .header {
   top:0px;
   visibility:visible;
-}
-
-.app:not(.maximized).enabledHeader > [app-header] > .headerToggle {
-  right:-@headerToggleSize * 0.8;
 }

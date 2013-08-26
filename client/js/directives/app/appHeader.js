@@ -24,7 +24,7 @@
                     };
 
                     scope.toggleHeader = function () {
-                        appElm.toggleClass('enabledHeader');
+                        toggleHeader();
                     };
 
                     scope.isAdmin = function () {
@@ -47,6 +47,7 @@
                         else {
                             enableFullscreen();
                         }
+                        hideHeader();
                     };
 
                     scope.showEditTemplate = function () {
@@ -117,6 +118,14 @@
                             disableFullscreen();
                         }
                     }
+
+                    function toggleHeader() {
+                        $('.app').not(appElm).removeClass('enabledHeader');
+                        appElm.toggleClass('enabledHeader');
+                    }
+
+                    function hideHeader() { appElm.removeClass('enabledHeader'); }
+                    /** End of private methods */
                 }
             };
         }]);
