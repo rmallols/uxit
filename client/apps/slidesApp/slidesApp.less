@@ -1,0 +1,22 @@
+.app.slidesApp .reveal {
+  font-size: 250%;
+  position: relative;
+  overflow: hidden;
+}
+
+.app.slidesApp .reveal .controls {
+  position: absolute;
+  bottom: 10px;
+}
+
+@disabledControlColor: #000;
+@enabledControlColor: #32b4e4;
+.app.slidesApp .reveal .controls .navigate-up { border-bottom-color: @disabledControlColor; }
+.app.slidesApp .reveal .controls .navigate-right { border-left-color: @disabledControlColor; }
+.app.slidesApp .reveal .controls .navigate-down { border-top-color: @disabledControlColor; }
+.app.slidesApp .reveal .controls .navigate-left { border-right-color: @enabledControlColor; }
+.app.slidesApp .reveal .controls .navigate-up.enabled { border-bottom-color: @enabledControlColor; }
+.app.slidesApp .reveal .controls .navigate-right.enabled { border-left-color: @enabledControlColor; }
+.app.slidesApp .reveal .controls .navigate-down.enabled { border-top-color: @enabledControlColor; }
+.app.slidesApp .reveal .controls .navigate-left.enabled { border-right-color: @enabledControlColor; }
+
