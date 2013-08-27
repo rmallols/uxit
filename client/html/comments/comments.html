@@ -1,0 +1,13 @@
+<div class="comments">
+    <h5 class="title" ng-hide="parentComment"><label i18n="comments"></label></h5>
+    <div ng-show="comments.length == 0 && !parentComment" class="noComments">
+        <label i18n="comments.noItems"></label>
+    </div>
+    <ul ng-show="comments.length > 0">
+        <li ng-repeat="comment in comments" comment="comment"></li>
+    </ul>
+    <div ng-hide="hideAdd">
+        <textarea content-editable ng-model="newCommentText" class="newCommentInput" placeholder="{{getI18nPlaceholder()}}"></textarea>
+        <button class="addIcon floatRight" ng-click="createComment()">Add comment</button>
+    </div>
+</div>

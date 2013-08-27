@@ -39,7 +39,7 @@ describe('i18nDbInput directive', function () {
             i18nDbInputDirective = compile(template, scopeObj);
             expect(i18nDbInputDirective.val()).toBe(scopeObj.page.title.en.text);
         });
-        it('should block the edit capabilities in languages where there isn\'t available content till it\'s clicked', function () {
+        xit('should block the edit capabilities in languages where there isn\'t available content till it\'s clicked', function () {
             var scopeObj = { page: { title: { en: { text: 'Test value without translation'}}}},
                 i18nDbInputDirective;
             i18nService.changeLanguage('es');

@@ -2,6 +2,10 @@
 var routeParams = {
     portal: 'uxitDev',
     page: 'Home'
+}, NProgress = {
+    configure: function(){},
+    start: function(){},
+    done: function(){}
 };
 function loadPortal($httpBackend, portalService, callback) {
     var mockedResponse = {
