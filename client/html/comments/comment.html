@@ -9,10 +9,11 @@
                 <div class="date">{{getFormattedDate(comment.create.date)}}</div>
                 <div rating="comment.avgRating" target-id="comment._id" target-collection="comments" height="16" ux-show="showRatings()"></div>
                 <button class="toggleReply replyIcon small" ng-click="toggleReply()" i18n-title title="comments.addReply"></button>
+                <button class="toggleEdit editIcon small" ng-click="toggleEdit()" i18n-title title="comments.edit"></button>
                 <button class="deleteComment removeIcon small" ng-click="deleteComment()" i18n-title title="comments.deleteComment"></button>
             </div>
         </div>
-        <div class="message" ng-bind-html-unsafe="comment.text"></div>
+        <div content-editable="comment.isEditable" ng-model="comment.text" type="type" on-blur="updateComment" class="message"></div>
         <div class="repliesWrapper"></div>
     </div>
 </li>

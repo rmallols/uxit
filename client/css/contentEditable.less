@@ -1,11 +1,14 @@
 [content-editable] {
   position: relative;
-  border: 1px solid @high;
 }
 
 [content-editable] > [contenteditable] {
   position: relative;
   z-index: 2;
+}
+
+[content-editable] > [contenteditable="false"] {
+  border-color: transparent;
 }
 
 [content-editable] > .placeholder {
@@ -21,8 +24,4 @@
   height: 100%;
   padding: @fieldBoxPadding;
   color: @placeholderColor;
-}
-
-[content-editable]:not([readonly]) > .background {
-  background-color: @highComp;
 }

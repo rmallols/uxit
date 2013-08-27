@@ -13,10 +13,11 @@
             link: function link(scope, element) {
 
                 var repliesHtml =   '<comments target-id="comment._id" parent-comment="comment" hide-add="hideAdd" ' +
-                                    'placeholder="addApp.addReply"></comments>';
+                                    'placeholder="comments.addReply.placeholder"></comments>';
                 $('.repliesWrapper', element).replaceWith($compile(repliesHtml)(scope));
 
                 scope.hideAdd = true;
+                scope.comment.isEditable = false;
                 scope.getDownloadUrl = function (media) {
                     return (media) ? mediaService.getDownloadUrl(media) : false;
                 };
@@ -35,6 +36,14 @@
                     scope.hideAdd = scope.hideAdd !== true;
                 };
 
+                scope.toggleEdit = function() {
+                    scope.comment.isEditable = scope.comment.isEditable !== true;
+                };
+
+                scope.updateComment = function() {
+                    crudService.update(constantsService.collections.comments, scope.comment._id, { text: scope.comment.text});
+                };
+
                 scope.deleteComment = function() {
                     deleteCommentRecursively(scope.comment);
                 };
@@ -48,7 +57,7 @@
 
                 function deleteCommentRecursively(comment) {
                     if(comment.comments && comment.comments.length) {
-                        comment.comments.forEach(function(comment, index) {
+                        comment.comments.forEach(function(comment) {
                             deleteCommentRecursively(comment);
                         });
                     }

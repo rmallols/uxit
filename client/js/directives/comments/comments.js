@@ -11,10 +11,11 @@
                 onAdd           : '=',
                 allowRatings    : '=',
                 parentComment   : '=',
-                hideAdd         : '='
+                hideAdd         : '=',
+                placeholder     : '@'
             },
             templateUrl: '/client/html/comments/comments.html',
-            link: function link(scope, element, attrs) {
+            link: function link(scope) {
 
                 scope.$watch('targetId', function (newVal) {
                     if (newVal) {
@@ -44,10 +45,6 @@
                             scope.onAdd();
                         }
                     });
-                };
-
-                scope.getI18nPlaceholder = function () {
-                    return i18nService(attrs.placeholder);
                 };
             }
         };

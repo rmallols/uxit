@@ -7,7 +7,9 @@
         <li ng-repeat="comment in comments" comment="comment"></li>
     </ul>
     <div ng-hide="hideAdd">
-        <textarea content-editable ng-model="newCommentText" class="newCommentInput" placeholder="{{getI18nPlaceholder()}}"></textarea>
-        <button class="addIcon floatRight" ng-click="createComment()">Add comment</button>
+        <textarea content-editable ng-model="newCommentText" class="newCommentInput" placeholder="{{placeholder}}"></textarea>
+        <button class="addIcon createComment floatRight" ng-click="createComment()">
+            <label i18n="{{placeholder}}"></label>
+        </button>
     </div>
 </div>

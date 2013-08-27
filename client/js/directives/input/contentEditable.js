@@ -7,6 +7,7 @@
                 priority: -1,
                 require: 'ngModel',
                 scope : {
+                    contentEditable : '=',
                     content         : '=ngModel',
                     customPanels    : '=panels',
                     type            : '=',
@@ -28,7 +29,8 @@
                     scope.onKeyup = function () { updateValue(); };
 
                     scope.isEditable = function() {
-                        return scope.isAdmin() && !contentEditableObj.attr('readonly') && !contentEditableObj.attr('disabled');
+                        var hasRights = (scope.contentEditable !== undefined) ? scope.contentEditable : scope.isAdmin();
+                        return hasRights && !contentEditableObj.attr('readonly') && !contentEditableObj.attr('disabled');
                     };
 
                     scope.$watch('content', function () {
