@@ -1,7 +1,6 @@
 (function() {
     'use strict';
     COMPONENTS.directive('password', [function () {
-        'use strict';
         return {
             restrict: 'A',
             require: 'ngModel',

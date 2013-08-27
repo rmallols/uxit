@@ -16,6 +16,7 @@
     getScript('http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js');
     getScript('http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js');
     getScript(libPath + '/angularJs/angular-sortable.js');
+    getScript(libPath + '/nprogress/nprogress.js');
 
     //
     getScript(scriptPath + '/index.js');
@@ -46,4 +47,5 @@
     getScript('/client/apps/webGlApp/webGlApp.js');
     getScript('/client/apps/iframeApp/iframeApp.js');
     getScript('/client/apps/languageSelectApp/languageSelectApp.js');
+    getScript('/client/apps/slidesApp/slidesApp.js');
 })();
