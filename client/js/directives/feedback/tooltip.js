@@ -1,41 +1,59 @@
-(function (undefined) {
+(function () {
     'use strict';
-    COMPONENTS.directive('title', ['$rootScope', 'i18nService', 'i18nDbService',
-    function ($rootScope, i18nService, i18nDbService) {
+    COMPONENTS.directive('title', ['$rootScope', '$compile', 'tooltipService',
+    function ($rootScope, $compile, tooltipService) {
         return {
             restrict: 'A',
-            link: function link(scope, element, attrs) {
-
-                attrs.$observe('title', function (newVal) {
-                    if (newVal && newVal !== '') {
-                        if (!element.data('powertip')) { //Tooltip initialization
-                            element.powerTip({
-                                smartPlacement : true,
-                                mouseOnToPopup : attrs.keepTitleOnTooltipHover === 'true'
-                            });
-                        }
-                        setTitle(newVal);
-                    }
-                });
-
-                $rootScope.$on('languageChanged', function () {
-                    setTitle(attrs.title);
-                });
-
-                function setTitle(newTitle) {
-                    if (attrs.i18nTitle !== undefined) { //i18n value
-                        element.data('powertip', i18nService(newTitle));
-                    } else if (attrs.i18nDbTitle !== undefined) { //i18n-db value
-                        try { //The title could be a JSON object for i18n pourposes, so it's necessary to get the proper language
-                            element.data('powertip', i18nDbService.getI18nProperty(jQuery.parseJSON(newTitle)).text);
-                        } catch(ex) { //If the title is not JSON object based (i18ndb is not ready yet, just display the value as it is
-                            element.data('powertip', newTitle);
-                        }
-                    } else { //Plain value
-                        element.data('powertip', newTitle);
-                    }
+            compile: function (tElement, tAttrs) {
+                if(tAttrs.titleShowConfirm) {
+                    tAttrs.keepTitleOnTooltipHover = 'true';
                 }
+                return function link(scope, element, attrs) {
+
+                    var isDialog = false;
+
+                    attrs.$observe('title', function (newVal) {
+                        initialize(newVal);
+                    });
+
+                    scope.$watch(attrs.titleShowConfirm, function(newVal) {
+                        if(newVal) {
+                            var message = $compile($('<div>' + attrs.titleTextConfirm + '</div>'))(scope);
+                            initialize(message);
+                            tooltipService.show(element);
+                            isDialog = true;
+                        } else {
+                            setTitle(attrs.title);
+                            isDialog = false;
+                        }
+                    });
+
+                    tooltipService.onClose(element, function() {
+                        if(isDialog) {
+                            scope[attrs.titleShowConfirm] = false;
+                            scope.$apply();
+                        }
+                    });
+
+                    $rootScope.$on('languageChanged', function () {
+                        setTitle(attrs.title);
+                    });
+
+                    /** Private methods **/
+                    function initialize(title) {
+                        var options = {
+                            mouseOnToPopup: attrs.keepTitleOnTooltipHover === 'true'
+                        };
+                        tooltipService.initialize(element, title, options);
+                    }
+
+                    function setTitle(newTitle) {
+                        tooltipService.setTitle(newTitle, element);
+                    }
+                    /** End of private methods **/
+                };
+
             }
         };
     }]);
-})(window.undefined);
+})();

@@ -185,6 +185,7 @@ function loadLanguages($httpBackend, i18nService, callback) {
 function compileFn($compile, $scope, $document) {
     var element = angular.element, container;
 
+
     function getContainer($document) {
         var body = element($document[0].body),
             containerDiv = element('div.container', body);

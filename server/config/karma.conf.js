@@ -7,8 +7,10 @@ files= [
     JASMINE,
     JASMINE_ADAPTER,
     './client/lib/jQuery/jquery-2.0.2.min.js',
+    './client/lib/jQuery/jquery-ui-1.10.3.custom.min.js',
     './client/lib/angularJs/angular-*.js',
     './client/lib/i18n/jquery.i18n.properties-min-1.0.9.js',
+    './client/lib/powerTip/jquery.powertip.min.js',
     './client/lib/iCheck/jquery.icheck-0.9.1.min.js',
     './client/js/index.js',
     './client/js/directives/*',
@@ -22,7 +24,7 @@ files= [
 ];
 
 // list of files to exclude
-exclude= ['Chrome'];
+exclude= [];
 
 // use dolts reporter, as travis terminal does not support escaping sequences
 // possible values= 'dots', 'progress', 'junit', 'teamcity'

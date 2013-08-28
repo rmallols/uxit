@@ -70,6 +70,7 @@ window.speed = 150;
     getScript(servicePath + '/constantsService.js');
     getScript(servicePath + '/undeployService.js');
     getScript(servicePath + '/feedback/stdService.js');
+    getScript(servicePath + '/feedback/tooltipService.js');
     getScript(servicePath + '/feedback/globalMsgService.js');
     getScript(servicePath + '/feedback/loadingService.js');
     getScript(servicePath + '/i18n/i18nService.js');
