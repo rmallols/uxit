@@ -1,5 +1,5 @@
 //noinspection JSHint
-function PortalController($scope, roleService, sessionService, tooltipService, $compile) {
+function PortalController($scope, roleService, sessionService) {
     'use strict';
     $scope.isAdmin = function () {
         return roleService.hasAdminRole(sessionService.getUserSession());
@@ -9,14 +9,8 @@ function PortalController($scope, roleService, sessionService, tooltipService, $
 
 
     $scope.bla = 'test value2';
-    $scope.test = 'MSure?!!!';
-    $scope.showConfirm = false;
 
-    $scope.confirmDelete = function() {
-        $scope.showConfirm = true;
-    };
-
-    $scope.bindedMethod = function() {
-        console.log("DELETED!!!");
+    $scope.bindedMethod = function(item) {
+        console.log("DELETED!!!", item);
     };
 }

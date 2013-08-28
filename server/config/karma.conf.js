@@ -7,7 +7,6 @@ files= [
     JASMINE,
     JASMINE_ADAPTER,
     './client/lib/jQuery/jquery-2.0.2.min.js',
-    './client/lib/jQuery/jquery-ui-1.10.3.custom.min.js',
     './client/lib/angularJs/angular-*.js',
     './client/lib/i18n/jquery.i18n.properties-min-1.0.9.js',
     './client/lib/powerTip/jquery.powertip.min.js',

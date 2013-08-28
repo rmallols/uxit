@@ -2,10 +2,12 @@
     'use strict';
     COMPONENTS.factory('tooltipService', ['i18nService', 'i18nDbService', function (i18nService, i18nDbService) {
 
-        function setTitle(newTitle, element) {
-            hide(element); //The tooltip has to be closed first in order to get che new title refreshed
-            var hasI18nTitle = element.attr('has-i18n-title'), hasI18nDbTitle = element.attr('has-i18n-db-title');
-            if (hasI18nTitle !== undefined) { //i18n value
+        function setTitle(newTitle, element, isHtml) {
+            hide(); //The tooltip has to be closed first in order to get che new title refreshed
+            var hasI18nTitle = element.attr('i18n-title'), hasI18nDbTitle = element.attr('i18n-db-title');
+            if(isHtml) { //The data comes as HTML, so as it doesn't make sense do to anything with it, display it as it is
+                element.data('powertip', newTitle);
+            } else if (hasI18nTitle !== undefined) { //i18n value
                 element.data('powertip', i18nService(newTitle));
             } else if (hasI18nDbTitle !== undefined) { //i18n-db value
                 try { //The title could be a JSON object for i18n pourposes, so it's necessary to get the proper language
@@ -18,14 +20,14 @@
             }
         }
 
-        function initialize(element, title, customOptions) {
+        function initialize(element, title, customOptions, isHtml) {
             var options;
             if (title && title !== '') {
                 if (!exists(element)) { //Tooltip initialization
                     options = angular.extend(getDefaults(), customOptions);
                     element.powerTip(options);
                 }
-                setTitle(title, element);
+                setTitle(title, element, isHtml);
             }
         }
 
@@ -35,10 +37,8 @@
             }
         }
 
-        function hide(element) {
-            if(exists(element)) {
-                $.powerTip.hide(element, true);
-            }
+        function hide() {
+            $.powerTip.hide(null, true);
         }
 
         function exists(element) {
@@ -58,6 +58,7 @@
                 smartPlacement : true,
                 fadeInTime: 0,
                 fadeOutTime: 0,
+                closeDelay: 300,
                 mouseOnToPopup : false
             };
         }

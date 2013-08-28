@@ -1,9 +1,10 @@
 (function (Math, Number, COMPONENTS) {
     'use strict';
     COMPONENTS.directive('list', ['$rootScope', '$location', 'portalService', 'rowService', 'crudService',
-    'editBoxUtilsService', 'domService', 'arrayService', 'roleService', 'sessionService', 'stringService', 'dbService', 'i18nService',
+    'editBoxUtilsService', 'domService', 'arrayService', 'roleService', 'sessionService', 'stringService', 'dbService',
+    'i18nService', 'tooltipService',
     function ($rootScope, $location, portalService, rowService, crudService, editBoxUtilsService, domService, arrayService,
-              roleService, sessionService, stringService, dbService, i18nService) {
+              roleService, sessionService, stringService, dbService, i18nService, tooltipService) {
         return {
             restrict: 'A',
             replace: true,
@@ -99,6 +100,7 @@
                 scope.delete = function (id) {
                     crudService.delete(scope.collection, id, null);
                     deleteFromSeletedIds(id);
+                    tooltipService.hide();
                     scope.loadList();
                 };
 

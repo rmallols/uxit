@@ -1,8 +1,8 @@
 (function ()  {
     'use strict';
     COMPONENTS.directive('comment', ['$compile', 'portalService', 'dateService', 'stringService', 'mediaService',
-                                    'crudService', 'constantsService',
-    function ($compile, portalService, dateService, stringService, mediaService, crudService, constantsService) {
+                                    'crudService', 'constantsService', 'tooltipService',
+    function ($compile, portalService, dateService, stringService, mediaService, crudService, constantsService, tooltipService) {
         return {
             restrict: 'A',
             replace: true,
@@ -46,6 +46,7 @@
 
                 scope.deleteComment = function() {
                     deleteCommentRecursively(scope.comment);
+                    tooltipService.hide();
                 };
 
                 /** Private methods **/

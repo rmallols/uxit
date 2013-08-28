@@ -75,13 +75,24 @@
             domObject.removeClass('loading');
         }
 
+        /**
+         * Converts a jQuery DOM object into a plain string
+         *
+         * @param   {object}    domObj  The pointer to the DOM object that is going to be converted
+         * @returns {string}            The converted string
+         */
+        function convertDomObjToStr(domObj) {
+            return $('<div>').append(domObj.clone()).html();
+        }
+
         return {
             getCoordinates: getCoordinates,
             getObjPadding: getObjPadding,
             getElementType: getElementType,
             getDomPercent: getDomPercent,
             addLoadingFeedback: addLoadingFeedback,
-            removeLoadingFeedback: removeLoadingFeedback
+            removeLoadingFeedback: removeLoadingFeedback,
+            convertDomObjToStr: convertDomObjToStr
         };
     }]);
 })();

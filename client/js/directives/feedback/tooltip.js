@@ -4,8 +4,10 @@
     function ($rootScope, $compile, tooltipService) {
         return {
             restrict: 'A',
+            priority: -1,
             compile: function (tElement, tAttrs) {
-                if(tAttrs.titleShowConfirm) {
+                //noinspection JSUnresolvedVariable
+                if(tAttrs.titleClick) {
                     tAttrs.keepTitleOnTooltipHover = 'true';
                 }
                 return function link(scope, element, attrs) {
@@ -16,22 +18,26 @@
                         initialize(newVal);
                     });
 
-                    scope.$watch(attrs.titleShowConfirm, function(newVal) {
+                    attrs.$observe('titleClick', function (newVal) {
                         if(newVal) {
-                            var message = $compile($('<div>' + attrs.titleTextConfirm + '</div>'))(scope);
-                            initialize(message);
-                            tooltipService.show(element);
-                            isDialog = true;
-                        } else {
-                            setTitle(attrs.title);
-                            isDialog = false;
+                            element.click(function() {
+                                //noinspection JSUnresolvedVariable
+                                var messageObj  = $compile($('<div>' + attrs.titleClick + '</div>'))(scope);
+                                scope.$apply();
+                                initialize(messageObj, true);
+                                tooltipService.show(element);
+                                isDialog = true;
+                            });
                         }
                     });
 
                     tooltipService.onClose(element, function() {
                         if(isDialog) {
-                            scope[attrs.titleShowConfirm] = false;
-                            scope.$apply();
+                            isDialog = false;
+                            setTitle(attrs.title);
+                            if(!$rootScope.$$phase) {
+                                scope.$apply();
+                            }
                         }
                     });
 
@@ -40,11 +46,11 @@
                     });
 
                     /** Private methods **/
-                    function initialize(title) {
+                    function initialize(title, isHtml) {
                         var options = {
                             mouseOnToPopup: attrs.keepTitleOnTooltipHover === 'true'
                         };
-                        tooltipService.initialize(element, title, options);
+                        tooltipService.initialize(element, title, options, isHtml);
                     }
 
                     function setTitle(newTitle) {
