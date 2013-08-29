@@ -1,6 +1,6 @@
 (function() {
-    COMPONENTS.directive('fileUploader', ['mediaService', 'arrayService', 'stdService',
-    function (mediaService, arrayService, stdService) {
+    COMPONENTS.directive('fileUploader', ['$rootScope', 'mediaService', 'arrayService', 'stdService', 'editBoxUtilsService',
+    function ($rootScope, mediaService, arrayService, stdService, editBoxUtilsService) {
         'use strict';
         return {
             restrict: 'E',
@@ -15,6 +15,8 @@
                 preview         : '@'
             },
             link: function link(scope, element) {
+
+                var mediaListSelectionObj = $('.mediaListSelection', element);
 
                 scope.getDownloadUrl = function (file) {
                     //If an array is passed (multiple files were uploaded) just display the first one
@@ -37,6 +39,17 @@
                     $('input[type="file"]', element).click();
                 };
 
+                scope.selectFromMediaList = function() {
+                    scope.panels = [{ title: 'Media list selection', type: 'mediaListSelection' }];
+                    scope.internalData = {
+                        media: scope.model
+                    };
+                    scope.onChange = function() {
+                        success([scope.internalData.media]);
+                    };
+                    editBoxUtilsService.showEditBox(scope, element, mediaListSelectionObj);
+                };
+
                 scope.submit = function () {
                     //Submit in progress...
                     element.ajaxSubmit({
@@ -44,20 +57,52 @@
                             stdService.error('Error uploading file', xhr);
                         },
                         success: function (uploadedFile) {
-                            if (scope.model) {
-                                scope.model = uploadedFile[0];
-                            }
-                            scope.$apply();
-                            if (scope.onUpload) {
-                                scope.onUpload(uploadedFile);
-                            }
-                            scope.$apply();
+                            success(uploadedFile);
                         }
                     });
                     //It's necessary to return false in order to avoid page refresh
                     return false;
                 };
+
+                /** Private methods **/
+                function success(file) {
+                    if (scope.model) {
+                        scope.model = file[0];
+                    }
+                    if(!$rootScope.$$phase) {
+                        scope.$apply();
+                    }
+                    if (scope.onUpload) {
+                        scope.onUpload(file);
+                    }
+                }
+                /** End of private methods **/
             }
         };
+    }]);
+
+    COMPONENTS.directive('mediaListSelection', [function () {
+        'use strict';
+        return {
+            restrict: 'A',
+            replace: false,
+            template: '<media-list config="config" refresh-list="refreshList" on-select="onSelect"></media-list>',
+            scope: {
+                internalData: '=',
+                onChange    : '='
+            },
+            link: function link(scope) {
+                scope.config = {
+                    selectable  : true,
+                    uploadable  : false,
+                    columns     : 2
+                };
+                scope.refreshList = function () {};
+                scope.onSelect = function (media) {
+                    scope.internalData.media = media;
+                    if (scope.onChange) { scope.onChange(); }
+                };
+            }
+        }
     }]);
 })();
