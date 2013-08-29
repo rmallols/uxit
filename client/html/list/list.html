@@ -13,8 +13,8 @@
         <div class="text" ng-click="selectItem(item, $index, $event, true)">
             <div ng-transclude></div>
         </div>
-        <button class="remove removeIcon" ng-click="selectItem(item, $index, $event, false)" ng-show="isDeletable()" title
-                title-click="<label i18n='areYouSure'></label> <button class='okIcon' ng-click='delete(item._id)'></button>">
+        <button class="remove removeIcon" ng-click="selectItem(item, $index, $event, false)" ng-show="isDeletable()"
+                title confirm-action="delete(item._id)">
             <label i18n="list.delete"></label>
         </button>
     </div>

@@ -1,41 +1,83 @@
 describe('tooltip directive and service', function () {
 
-    var $rootScope, $scope, $compile, tS, template, titleDirective, tooltipObj;
+    var $rootScope, $scope, $compile, tS, iS, template, titleDirective, tooltipObj;
 
     beforeEach(module('components', 'mocks.$timeout'));
-    beforeEach(inject(["$rootScope", "$compile", "$document", "tooltipService",
-    function ($rootScope_, $compile_, $document_, tooltipService_) {
+    beforeEach(inject(["$rootScope", "$compile", "$document", "tooltipService", "i18nService",
+    function ($rootScope_, $compile_, $document_, tooltipService_, i18nService_) {
         $rootScope      = $rootScope_;
         $scope          = $rootScope.$new();
         $compile        = compileFn($compile_, $scope, $document_);
         tS              = tooltipService_;
+        iS              = i18nService_;
     }]));
 
     it('should add a tooltip object to the DOM', function () {
-        template        = '<div title="hello"></div>';
+        template        = '<button title="hello"></button>';
         titleDirective  = $compile(template, {});
         $rootScope.$digest();
         tooltipObj      = $('#powerTip');
         expect(tooltipObj.size()).toBe(1);
         expect(tooltipObj.text()).toBe('');
+        tS.hide();
     });
 
-    it('should add the title to the DOM whenever the tooltip is shown', function () {
-        template        = '<div title="hello"></div>';
+    it('should add the static title to the DOM whenever the tooltip is shown', function () {
+        template        = '<button title="hello"></button>';
         titleDirective  = $compile(template, {});
         $rootScope.$digest();
         tooltipObj      = $('#powerTip');
         tS.show(titleDirective);
         expect(tooltipObj.text()).toBe('hello');
+        tS.hide();
     });
 
-    xit('should model', function () {
-        template        = '<div title="{{hello}}"></div>';
-        titleDirective  = $compile(template, { hello: 'aaaa'});
+    it('should add the dynamic title to the DOM whenever the tooltip is shown', function () {
+        template        = '<button title="{{hello}}"></button>';
+        titleDirective  = $compile(template, { hello: 'test value'});
         $rootScope.$digest();
         tooltipObj      = $('#powerTip');
         tS.show(titleDirective);
-        dump(titleDirective, tooltipObj);
-        //expect(tooltipObj.text()).toBe('hello');
+        expect(tooltipObj.text()).toBe('test value');
+        tS.hide();
+        $scope.hello = 'test second value';
+        $scope.$digest();
+        tS.show(titleDirective);
+        expect(tooltipObj.text()).toBe('test second value');
+        tS.hide();
+    });
+
+    it('should add the dynamic title (i18n based) to the DOM whenever the tooltip is shown', function () {
+        template        = '<button title="{{hello}}" i18n-db-title></button>';
+        titleDirective  = $compile(template, { hello: { en: { text: 'test value'}, es: { text: 'test valor'}}});
+        $rootScope.$digest();
+        tooltipObj      = $('#powerTip');
+        tS.show(titleDirective);
+        expect(tooltipObj.text()).toBe('test value');
+        iS.changeLanguage('es');
+        tS.hide();
+        $scope.$digest();
+        tS.show(titleDirective);
+        expect(tooltipObj.text()).toBe('test valor');
+        tS.hide();
+    });
+
+    it('should show the confirm action whenever the element is clicked', function () {
+        template        = '<button title="{{hello}}" i18n-db-title confirm-action="bla(1)"></button>';
+        titleDirective  = $compile(template, { hello: { en: { text: 'test value'}, es: { text: 'test valor'}}});
+        $rootScope.$digest();
+        tooltipObj      = $('#powerTip');
+        tS.show(titleDirective);
+        expect(tooltipObj.text()).toBe('test value');
+        tS.hide();
+        titleDirective.click();
+        $scope.$digest();
+        expect(tooltipObj.text()).toBe('[areYouSure]');
+        tS.hide();
+        iS.changeLanguage('es');
+        $scope.$digest();
+        tS.show(titleDirective);
+        expect(tooltipObj.text()).toBe('test valor');
+        tS.hide();
     });
 });

@@ -5,28 +5,32 @@
         return {
             restrict: 'A',
             priority: -1,
+            /*scope: {
+                title: '@',
+                confirmText: '@',
+                confirmAction: '&'
+            },*/
             compile: function (tElement, tAttrs) {
                 //noinspection JSUnresolvedVariable
-                if(tAttrs.titleClick) {
+                if(tAttrs.confirmAction) {
                     tAttrs.keepTitleOnTooltipHover = 'true';
                 }
                 return function link(scope, element, attrs) {
 
                     var isDialog = false;
 
+                    scope.executeConfirmAction = function(actionToExecute) {
+                        scope.$eval(actionToExecute);
+                    };
+
                     attrs.$observe('title', function (newVal) {
                         initialize(newVal);
                     });
 
-                    attrs.$observe('titleClick', function (newVal) {
+                    attrs.$observe('confirmAction', function (newVal) {
                         if(newVal) {
                             element.click(function() {
-                                //noinspection JSUnresolvedVariable
-                                var messageObj  = $compile($('<div>' + attrs.titleClick + '</div>'))(scope);
-                                scope.$apply();
-                                initialize(messageObj, true);
-                                tooltipService.show(element);
-                                isDialog = true;
+                                showConfirmMessage();
                             });
                         }
                     });
@@ -55,6 +59,18 @@
 
                     function setTitle(newTitle) {
                         tooltipService.setTitle(newTitle, element);
+                    }
+
+                    function showConfirmMessage() {
+                        //noinspection JSUnresolvedVariable
+                        var labelHtml   = '<label i18n="' + (attrs.confirmText || 'areYouSure') + '"></label>',
+                            buttonHtml  = '<button class="okIcon" ng-click="executeConfirmAction(\'' + attrs.confirmAction + '\')"></button>',
+                            messageHtml = '<div class="confirmText">' + labelHtml + buttonHtml + '</div>';
+                        var messageObj  = $compile($(messageHtml))(scope);
+                        scope.$apply();
+                        initialize(messageObj, true);
+                        tooltipService.show(element);
+                        isDialog = true;
                     }
                     /** End of private methods **/
                 };

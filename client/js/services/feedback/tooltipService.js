@@ -58,7 +58,7 @@
                 smartPlacement : true,
                 fadeInTime: 0,
                 fadeOutTime: 0,
-                closeDelay: 300,
+                closeDelay: 200,
                 mouseOnToPopup : false
             };
         }
