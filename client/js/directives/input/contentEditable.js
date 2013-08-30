@@ -26,7 +26,10 @@
                     scope.isAdmin = function () { return roleService.hasAdminRole(userSession); };
 
                     // view -> model
-                    scope.onKeyup = function () { updateValue(); };
+                    scope.onKeyup = function () {
+                        updateValue();
+                        scope.showEditBox();
+                    };
 
                     scope.isEditable = function() {
                         var hasRights = (scope.contentEditable !== undefined) ? scope.contentEditable : scope.isAdmin();
