@@ -26,7 +26,16 @@
             return availableApps;
         }
 
-        /** INTERNAL METHODS **/
+        /**
+         * Gets the current categories of apps
+         *
+         * @returns {Array} The list of available categories
+         */
+        function getCategories() {
+            return categories;
+        }
+
+        /** Private methods **/
         function setAvailableApps(retrievedAvailableApps) {
             var index = 0;
             //Store an index of model to ease the access afterwards (for instance, from the portlet directive)
@@ -51,10 +60,12 @@
                 availableApp.firstInCategory = true;
             }
         }
+        /** End of private methods **/
 
         return {
             loadAvailableApps: loadAvailableApps,
-            getAvailableApps: getAvailableApps
+            getAvailableApps: getAvailableApps,
+            getCategories: getCategories
         };
     }]);
 })();

@@ -182,6 +182,168 @@ function loadLanguages($httpBackend, i18nService, callback) {
     $httpBackend.flush();
 }
 
+function loadRoles($httpBackend, roleService, callback) {
+    var mockedResponse = {
+        "totalSize": 4,
+        "results": [
+            {
+                "_id": "51193be27091c10032000003",
+                "title": "Guest user",
+                "karma": 0,
+                "description": "Guest user in portal",
+                "code": "guest",
+                "create": {}
+            },
+            {
+                "_id": "51193c1c7091c10032000004",
+                "title": "Reader user",
+                "karma": 1,
+                "description": "Reader user in portal",
+                "code": "reader",
+                "create": {}
+            },
+            {
+                "_id": "51193c247091c10032000005",
+                "title": "Creator user",
+                "karma": 2,
+                "description": "Creator user in portal",
+                "code": "creator",
+                "create": {}
+            },
+            {
+                "_id": "51193c257091c10032000006",
+                "title": "Admin user",
+                "karma": 3,
+                "description": "Admin user in portal",
+                "code": "admin",
+                "create": {}
+            }
+        ]
+    };
+    $httpBackend.when('GET', '/rest/roles?sort[field]=karma&sort[order]=1').respond(mockedResponse);
+    roleService.loadRoles(function (roles) {
+        if (callback) {
+            callback(roles);
+        }
+    });
+    $httpBackend.flush();
+}
+
+function loadAvailableApps($httpBackend, availableAppsService, callback) {
+    var mockedResponse = {
+        "totalSize": 2,
+        "results": [
+            {
+                "_id": "5118cee97091c10032000001",
+                "actions": [
+                    "minimize",
+                    "maximize",
+                    "remove"
+                ],
+                "avgRating": "2.50",
+                "category": "users",
+                "createDate": "",
+                "defaultTemplate": "view",
+                "desc": "This is the login form example, bla bla bla",
+                "disabled": false,
+                "id": "loginApp",
+                "provider": "Test provider",
+                "templates": [
+                    "view",
+                    "edit",
+                    "help"
+                ],
+                "title": "Login form",
+                "update": {
+                    "date": "2013-04-28T22:00:00.000Z",
+                    "authorId": "511e68853bcdab0405000001"
+                },
+                "version": "0.3",
+                "create": {}
+            },
+            {
+                "_id": "511934e87091c10032000002",
+                "actions": [
+                    "minimize",
+                    "maximize",
+                    "remove"
+                ],
+                "avgRating": "4.00",
+                "category": "users",
+                "comments": [],
+                "creationDate": "",
+                "defaultModel": {
+                    "showTitles": true,
+                    "showSearch": true,
+                    "pageSize": 10,
+                    "skip": 0,
+                    "pageActionPos": 2,
+                    "sort": {
+                        "field": "create.date",
+                        "order": "-1"
+                    },
+                    "searchable": true
+                },
+                "defaultTemplate": "view",
+                "desc": "This is the user list example, asdas dmasd msad as dasndasd asdasdsa",
+                "disabled": false,
+                "editPanels": [
+                    {
+                        "title": "Add",
+                        "type": "add"
+                    }
+                ],
+                "id": "userListApp",
+                "provider": "",
+                "rating": "",
+                "templates": [
+                    "view",
+                    "edit",
+                    "help"
+                ],
+                "title": "User List",
+                "update": {
+                    "date": "2013-04-28T22:00:00.000Z",
+                    "authorId": "511e68853bcdab0405000001"
+                },
+                "version": "0.15-dev",
+                "create": {}
+            },
+            {
+                "_id": "50e47006b3b92f3c1a000012",
+                "actions": [
+                    "minimize",
+                    "maximize",
+                    "remove"
+                ],
+                "category": "media",
+                "comments": [],
+                "creationDate": "",
+                "defaultTemplate": "view",
+                "desc": "",
+                "disabled": false,
+                "id": "bannerApp",
+                "provider": "",
+                "rating": "",
+                "templates": [
+                    "view",
+                    "edit",
+                    "help"
+                ],
+                "title": "Banner",
+                "create": {}
+            },
+        ]
+    };
+    $httpBackend.when('GET', '/rest/availableApps?sort[field]=category&sort[order]=-1').respond(mockedResponse);
+    availableAppsService.loadAvailableApps(function (availableApps) {
+        if (callback) {
+            callback(availableApps);
+        }
+    });
+    $httpBackend.flush();
+}
+
 function compileFn($compile, $scope, $document) {
     var element = angular.element, container;
 

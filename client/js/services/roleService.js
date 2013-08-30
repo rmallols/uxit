@@ -7,23 +7,10 @@
             indexBasedRoles;  //Store the public, index-based role data
 
         /**
+         * Loads all the system roles from the backend
          *
-         *
-         * @returns {*}
+         * @param {function} callback Method to be executed once the roles have been fully retrieved
          */
-        function getRoles() {
-            return indexBasedRoles;
-        }
-
-        /**
-         *
-         *
-         * @returns {*}
-         */
-        function getRole(role) {
-            return indexBasedRoles[role];
-        }
-
         function loadRoles(callback) {
             var params = { sort: { field: 'karma', order : '1' }};
             crudService.get(constantsService.collections.roles, null, params, function (serverRoles) {
@@ -46,46 +33,70 @@
         }
 
         /**
+         * Gets all the system roles
          *
+         * @returns {array} The array of system roles
+         */
+        function getRoles() {
+            return indexBasedRoles;
+        }
+
+        /**
+         * Gets a specific role based on its karma
          *
-         * @param user
-         * @returns {boolean}
+         * @param   {number}    karma The karma identifier of the role that is going to be retrieved
+         * @returns {object}    The role with all the information according to the karma selector
+         */
+        function getRole(karma) {
+            return indexBasedRoles[karma];
+        }
+
+        /**
+         * Determines if the user has guest role or not
+         *
+         * @param   {object}    user    The user that is going to be analyzed if he has the role or not
+         * @returns {boolean}           True if the user has guest role. False otherwise
          */
         function hasGuestRole(user) {
-            return (keyBasedRoles) ? user.role >= keyBasedRoles[constantsService.roles.guest].karma : false;
+            return (user && keyBasedRoles) ? user.role >= keyBasedRoles[constantsService.roles.guest].karma : false;
         }
 
         /**
+         * Determines if the user has reader role or not
          *
-         *
-         * @param user
-         * @returns {boolean}
+         * @param   {object}    user    The user that is going to be analyzed if he has the role or not
+         * @returns {boolean}           True if the user has reader role. False otherwise
          */
         function hasReaderRole(user) {
-            return (keyBasedRoles) ? user.role >= keyBasedRoles[constantsService.roles.reader].karma : false;
+            return (user && keyBasedRoles) ? user.role >= keyBasedRoles[constantsService.roles.reader].karma : false;
         }
 
         /**
+         * Determines if the user has creator role or not
          *
-         *
-         * @param user
-         * @returns {boolean}
+         * @param   {object}    user    The user that is going to be analyzed if he has the role or not
+         * @returns {boolean}           True if the user has creator role. False otherwise
          */
         function hasCreatorRole(user) {
-            return (keyBasedRoles) ? user.role >= keyBasedRoles[constantsService.roles.creator].karma : false;
+            return (user && keyBasedRoles) ? user.role >= keyBasedRoles[constantsService.roles.creator].karma : false;
         }
 
         /**
+         * Determines if the user has admin role or not
          *
-         *
-         * @param user
-         * @returns {boolean}
+         * @param   {object}    user    The user that is going to be analyzed if he has the role or not
+         * @returns {boolean}           True if the user has admin role. False otherwise
          */
         function hasAdminRole(user) {
-            return (keyBasedRoles && user) ? user.role >= keyBasedRoles[constantsService.roles.admin].karma : false;
+            return (user && keyBasedRoles && user) ? user.role >= keyBasedRoles[constantsService.roles.admin].karma : false;
         }
 
-        function getAdminAccessStyleClass() {
+        /**
+         * Gets the admin style class of the current user
+         *
+         * @returns {string} A key that identifies that the current user has the admin role. Empty string otherwise
+         */
+        function getCurrentUserAdminAccessStyleClass() {
             return hasAdminRole(sessionService.getUserSession()) ? 'adminAccess' : '';
         }
 
@@ -97,7 +108,7 @@
             hasReaderRole   : hasReaderRole,
             hasCreatorRole  : hasCreatorRole,
             hasAdminRole    : hasAdminRole,
-            getAdminAccessStyleClass : getAdminAccessStyleClass
+            getCurrentUserAdminAccessStyleClass : getCurrentUserAdminAccessStyleClass
         };
     }]);
 })();

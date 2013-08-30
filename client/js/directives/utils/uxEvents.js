@@ -8,7 +8,7 @@
     }
     //noinspection JSHint
     var forEach = angular.forEach,
-        events = ['change', 'keyup'];
+        events = ['change', 'keyup', 'blur'];
     forEach(events, function eventHandler(event) {
         var directiveName = 'ux' + capitalize(event);
         COMPONENTS.directive(directiveName, ['$parse', function ($parse) {

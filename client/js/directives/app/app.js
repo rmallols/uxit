@@ -67,7 +67,7 @@
                     });
                 };
 
-                scope.getAdminAccessStyleClass = function () { return roleService.getAdminAccessStyleClass(); };
+                scope.getCurrentUserAdminAccessStyleClass = function () { return roleService.getCurrentUserAdminAccessStyleClass(); };
 
                 scope.$watch('type', function (newVal) {
                     if (newVal) {

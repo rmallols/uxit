@@ -16,8 +16,8 @@ function (portalService, pageService, rowService, appService, roleService, sessi
                 return null;
             };
 
-            scope.getAdminAccessStyleClass = function () {
-                return roleService.getAdminAccessStyleClass();
+            scope.getCurrentUserAdminAccessStyleClass = function () {
+                return roleService.getCurrentUserAdminAccessStyleClass();
             };
 
             scope.isAdmin = function () { return roleService.hasAdminRole(sessionService.getUserSession()); };

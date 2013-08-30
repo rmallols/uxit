@@ -62,21 +62,55 @@ describe('stringService', function() {
     });
 
     describe('isEmpty', function() {
-        it('should idenfity an empty string (\'\')', function() {
+        it('should identify an empty string (\'\')', function() {
             var isEmptyToken = stringService.isEmpty('');
             expect(isEmptyToken).toBe(true);
         });
-        it('[should idenfity an empty string (null)', function() {
+        it('should identify an empty string (null)', function() {
             var isEmptyToken = stringService.isEmpty(null);
             expect(isEmptyToken).toBe(true);
         });
-        it('should idenfity an empty string (undefined)', function() {
+        it('should identify an empty string (undefined)', function() {
             var isEmptyToken = stringService.isEmpty(undefined);
             expect(isEmptyToken).toBe(true);
         });
-        it('should idenfity an empty string (non empty)', function() {
+        it('should identify an empty string (non empty)', function() {
             var isEmptyToken = stringService.isEmpty(' ');
             expect(isEmptyToken).toBe(false);
+        });
+    });
+
+    describe('isExternalUrl', function() {
+        it('should identify an external url as valid', function() {
+            var url = 'http://www.test.com';
+            expect(stringService.isExternalUrl(url)).toBe(true);
+            url = 'https://www.test';
+            expect(stringService.isExternalUrl(url)).toBe(true);
+            url = 'www.test';
+            expect(stringService.isExternalUrl(url)).toBe(true);
+            url = 'test.org';
+            expect(stringService.isExternalUrl(url)).toBe(true);
+        });
+        it('should identify an internal url as non valid', function() {
+            var url;
+            expect(stringService.isExternalUrl(url)).toBe(false);
+            url = null;
+            expect(stringService.isExternalUrl(url)).toBe(false);
+            url = '';
+            expect(stringService.isExternalUrl(url)).toBe(false);
+            url = 'test';
+            expect(stringService.isExternalUrl(url)).toBe(false);
+            url = '/test';
+            expect(stringService.isExternalUrl(url)).toBe(false);
+        });
+    });
+
+    describe('normalizeExternalUrl', function() {
+        it('should normalizes the format of a given external url, adding the http:// preffix, if necessary', function() {
+            var url = 'www.test.net';
+            expect(stringService.normalizeExternalUrl(url)).toBe('http://www.test.net');
+            url = 'test.org';
+            expect(stringService.normalizeExternalUrl(url)).toBe('http://test.org');
         });
     });
 });

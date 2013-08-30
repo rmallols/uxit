@@ -1,7 +1,7 @@
 .autoCompleteContainer {
   border-width: 1px;
   border-style: solid;
-  /*.fieldBox;*/ /*Commented for style incompatibility problems with the ng-valid and ng-invalid mechanism*/
+  border-color: @high;
   padding: 0px;
 }
 
@@ -12,8 +12,9 @@
 
 .select2-container .select2-choice {
   padding: 5px;
-  height: @inputHeight;
+  height: @inputHeight - 2px;
   line-height: 1.1;
+  border: none;
 }
 
 .select2-container .select2-choice,
@@ -65,4 +66,8 @@
 .select2-container-multi .select2-choices,
 .select2-container-multi .select2-choices .select2-search-choice {
 	background-image:none;
+}
+
+.select2-drop {
+  top: 0px;
 }

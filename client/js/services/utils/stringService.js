@@ -79,6 +79,32 @@
             return string === '' || string === null || string === undefined;
         }
 
+        /**
+         * Determines if the given string is an external url or not
+         *
+         * @param   {string} url    The string that is going to determine if it's an external url or not
+         * @returns {*}             True if the string is an external url. False otherwise
+         */
+        function isExternalUrl(url) {
+            //noinspection JSValidateTypes
+            var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi,
+                regex = new RegExp(expression);
+            if(!url) {
+                return false;
+            }
+            return url.match(regex) !== null;
+        }
+
+        /**
+         * Normalizes the format of a given external url, adding the http:// preffix, if necessary
+         *
+         * @param   {string} url    The url that is going to be normalized
+         * @returns {string}        The normalized url
+         */
+        function normalizeExternalUrl(url) {
+            return (url.indexOf('http://') < 0) ? 'http://' + url : url;
+        }
+
         return {
             replaceToken: replaceToken,
             capitalize: capitalize,
@@ -86,7 +112,9 @@
             toSnakeCase: toSnakeCase,
             toCamelCase: toCamelCase,
             trim: trim,
-            isEmpty: isEmpty
+            isEmpty: isEmpty,
+            isExternalUrl: isExternalUrl,
+            normalizeExternalUrl: normalizeExternalUrl
         };
     }]);
 })();

@@ -1,5 +1,5 @@
-COMPONENTS.directive('richContent', ['crudService', 'constantsService', 'textSelectionService', 'domService',
-function (crudService, constantsService, textSelectionService) {
+COMPONENTS.directive('richContent', ['crudService', 'constantsService', 'textSelectionService', 'stringService', 'i18nService',
+function (crudService, constantsService, textSelectionService, stringService, i18nService) {
 	'use strict';
     return {
 		restrict: 'A',
@@ -11,24 +11,45 @@ function (crudService, constantsService, textSelectionService) {
         },
 		link: function link(scope) {
 
+            scope.linkTypes = [
+                { id: 'internal',  text: i18nService('richContent.link.internal') },
+                { id: 'external', text: i18nService('richContent.link.external') }
+            ];
+
             scope.propagateChanges = function () {
                 if (scope.onChange) { scope.onChange(); }
             };
 
-            scope.changeLink = function () {
-                if (scope.selectedPageId) {
-                    textSelectionService.setLink({
-                        id      : scope.selectedPageId,
-                        href    : scope.selectedPageId,
-                        title   : '/' + scope.selectedPageId,
-                        target  : '_self'
-                    });
-                }
+            scope.setInternalLink = function () {
+                setLink(scope.internalLink, '_self');
             };
 
+            scope.setExternalLink = function() {
+                setLink(stringService.normalizeExternalUrl(scope.externalLink), '_blank');
+            };
+
+            /** Private methods **/
             function getSelectedLink() {
-                var linkObj = textSelectionService.getSelectedLinkDomObj();
-                scope.selectedPageId = linkObj.attr('id');
+                var linkObj = textSelectionService.getSelectedLinkDomObj(),
+                    linkStr = linkObj.attr('id');
+                if(stringService.isExternalUrl(linkStr)) {
+                    scope.externalLink = linkStr;
+                    scope.linkType = scope.linkTypes[1].id;
+                } else {
+                    scope.internalLink = linkStr;
+                    scope.linkType = scope.linkTypes[0].id;
+                }
+            }
+
+            function setLink(link, target) {
+                if (link) {
+                    textSelectionService.setLink({
+                        id      : link,
+                        href    : link,
+                        title   : link,
+                        target  : target
+                    });
+                }
             }
 
             function setHeadingOptions() {
@@ -51,6 +72,7 @@ function (crudService, constantsService, textSelectionService) {
                     });
                 });
             }
+            /** End of private methods **/
 
             getSelectedLink();
             setHeadingOptions();

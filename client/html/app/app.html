@@ -1,4 +1,4 @@
-<div class="app {{type}} {{getAdminAccessStyleClass()}} cf" ng-style="setAppStyles()">
+<div class="app {{type}} {{getCurrentUserAdminAccessStyleClass()}} cf" ng-style="setAppStyles()">
     <div app-header class="cf"></div>
 	<div class="content cf">
         <div class="title" ng-show="isTitleVisible()"><h5>{{model.title || appInfo.title}}</h5></div>
