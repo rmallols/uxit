@@ -4,7 +4,7 @@
     COMPONENTS.factory('textSelectionService', [function () {
 
         //noinspection JSUnresolvedVariable
-        var savedSel = false, rangyPlgn = rangy, linkKey = 'link';
+        var savedSel = false, rangyPlgn = rangy, linkKey = 'link', imageKey = 'image';
 
         /**
          * Saves the current selection
@@ -79,7 +79,7 @@
         }
 
         /**
-         * Set link to the current selection (add / update actions)
+         * Sets link to the current selection (add / update actions)
          *
          * @param {object} linkOptions The object that contains all the link attributes (id, target, url...)
          */
@@ -93,6 +93,27 @@
                 var classApplier = rangyPlgn.createCssClassApplier(linkKey, {
                     elementTagName      : "a",
                     elementProperties   : linkOptions
+                });
+                classApplier.applyToSelection();
+            }
+            restoreSelection();
+        }
+
+        /**
+         * Sets image to the current selection (add / update actions)
+         *
+         * @param {object} imageOptions The object that contains all the image attributes (id, src...)
+         */
+        function setImage(imageOptions) {
+            restoreSelection();
+            var existingImageObj = getSelectedTextDomObj().closest('.' + imageKey);
+            var existsImage = existingImageObj.length > 0;
+            if(existsImage) { //If the image was there before, we'll update its attributes
+                existingImageObj.attr(imageOptions);
+            } else { //The image is going to be created by the first time
+                var classApplier = rangyPlgn.createCssClassApplier(imageKey, {
+                    elementTagName      : "img",
+                    elementProperties   : imageOptions
                 });
                 classApplier.applyToSelection();
             }
@@ -137,6 +158,7 @@
             restoreSelection:restoreSelection,
             removeSelection:removeSelection,
             setLink: setLink,
+            setImage: setImage,
             getSelectedLinkDomObj: getSelectedLinkDomObj
         };
     }]);

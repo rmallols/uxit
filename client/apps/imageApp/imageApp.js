@@ -51,8 +51,6 @@ COMPONENTS.directive('imageAppEdit', function () {
                 columns     : 2
             };
 
-            scope.refreshList = function () {};
-
             scope.onSelect = function (media) {
                 scope.model.mediaId = media._id;
                 scope.internalData.media = media;

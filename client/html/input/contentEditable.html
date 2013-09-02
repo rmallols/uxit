@@ -1,7 +1,12 @@
 <div>
-    <div ux-keyup="onKeyup()" ng-mouseup="showEditBox()" contenteditable="{{isEditable()}}"></div>
-    <div class="placeholder" ng-show="placeholder && showPlaceholder">
-        <label i18n="{{placeholder}}"></label>
+    <div class="actionsArea" ng-show="isEditable() && showActions" >
+        <media-picker ng-model="newImage" multiple="false" on-close="onClose"></media-picker>
     </div>
-    <div class="background"></div>
+    <div class="editableArea">
+        <div ux-keyup="onKeyup()" ng-mouseup="showEditBox()" contenteditable="{{isEditable()}}"></div>
+        <div class="placeholder" ng-show="placeholder && showPlaceholder">
+            <label i18n="{{placeholder}}"></label>
+        </div>
+        <div class="background"></div>
+    </div>
 </div>

@@ -59,13 +59,13 @@
                 }, 100);
             }
 
-            if(!isEditBoxVisible()) {
+            //if(!isEditBoxVisible()) {
                 setTargetSettings();
                 setArrowPos();
                 blockHideEditBox();     //Block the hide action to avoid flickering efect from portal directive
                 addEditBoxToDom();
                 safeUnblockEditBox();   //Unblock the hidding action
-            }
+            //}
         }
 
         /**

@@ -130,12 +130,15 @@
                 scope.isEditable = function () { return allowIfHasAdminRole(scope.config.editable); };
                 scope.isDeletable = function () { return allowIfHasAdminRole(scope.config.deletable); };
 
-                if (scope.refreshList) {
-                    scope.refreshList = function () {
-                        setCurrentPage();
-                        scope.loadList();
-                    };
-                }
+                var unregister = scope.$watch('refreshList', function(newVal) {
+                    if(newVal) {
+                        unregister();
+                        scope.refreshList = function () {
+                            setCurrentPage();
+                            scope.loadList();
+                        };
+                    }
+                });
 
                 //Load the list just once some meaningful data is provided as otherwise the current directive
                 //could try to get data before it's provided from the invoking function

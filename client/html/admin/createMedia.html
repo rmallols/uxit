@@ -2,7 +2,7 @@
     Name:
     <div ng-show="multipleFilesUploaded">{{getMultipleFilesUploadedNames()}}</div>
     <input type="text" ng-model="media[0].name" mandatory ng-show="!multipleFilesUploaded" />
-    content: <file-uploader on-upload="onUpload" endpoint="/media/upload/"></file-uploader>
+    content: <file-uploader on-upload="onUpload"></file-uploader>
     Tags:
     <auto-complete ng-model="media.tags" ng-options="availableTags" label-key="text"
                    placeholder="Start typing to retrieve tags" multiple="true"></auto-complete>

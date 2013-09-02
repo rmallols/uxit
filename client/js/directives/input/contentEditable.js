@@ -1,8 +1,9 @@
 (function() {
     'use strict';
-    COMPONENTS.directive('contentEditable', ['$rootScope', 'textSelectionService', 'domService', 'roleService',
-        'sessionService', 'editBoxUtilsService', 'styleService',
-        function ($rootScope, textSelectionService, domService, roleService, sessionService, editBoxUtilsService, styleService) {
+    COMPONENTS.directive('contentEditable', ['$rootScope', '$timeout', 'textSelectionService', 'caretService', 'domService',
+        'roleService', 'sessionService', 'editBoxUtilsService', 'mediaService', 'styleService',
+        function ($rootScope, $timeout, textSelectionService, caretService, domService, roleService, sessionService,
+                  editBoxUtilsService, mediaService, styleService) {
             return {
                 priority: -1,
                 require: 'ngModel',
@@ -20,7 +21,7 @@
                 templateUrl: '/client/html/input/contentEditable.html',
                 link: function (scope, element, attrs, ctrl) {
 
-                    var contentEditableObj = $(' > [contenteditable]', element),
+                    var contentEditableObj = $(' > .editableArea > [contenteditable]', element),
                         userSession = sessionService.getUserSession();
 
                     scope.isAdmin = function () { return roleService.hasAdminRole(userSession); };
@@ -72,15 +73,37 @@
                                 updateValue();
                             };
                             editBoxUtilsService.showEditBox(scope, contentEditableObj, selectedTextDomObj);
+                            scope.showActions = true;
                         }
                     };
 
-                    contentEditableObj.blur(function () {
-                        if (!editBoxUtilsService.isEditBoxVisible()) {
-                            if (scope.onBlur) {
-                                scope.onBlur();
-                            }
+                    scope.onClose = function() {
+                        scope.showActions = false;
+                    };
+
+                    scope.$watch('newImage', function(newVal) {
+                        if(newVal && newVal._id) {
+                            caretService.insertImage(mediaService.getDownloadUrl(newVal), contentEditableObj);
+                            updateValue();
                         }
+                    });
+
+                    contentEditableObj.focus(function () {
+                        scope.showActions = true;
+                    });
+
+                    contentEditableObj.blur(function () {
+                        //It's necessary to execute the blur actions with some delay to ensure the model is up to date before
+                        //For instance, without it the showActions flag will be set to false immediately,
+                        //and so the action buttons will never be reached as their keyup event is fired after this blur one
+                        $timeout(function() {
+                            if (!editBoxUtilsService.isEditBoxVisible()) {
+                                scope.showActions = false;
+                                if (scope.onBlur) {
+                                    scope.onBlur();
+                                }
+                            }
+                        }, 250);
                     });
 
                     //noinspection JSUnresolvedVariable
@@ -89,6 +112,7 @@
                         contentEditableObj.keypress(function (e) { return e.which !== 13; });
                     }
 
+                    /** Private methods **/
                     function updateValue() {
                         if (contentEditableObj.html() === '<br>') { contentEditableObj.html(''); }
                         scope.content = contentEditableObj.html();     //Set the model value
@@ -105,6 +129,7 @@
                     function handlePlaceholder() {
                         scope.showPlaceholder = (scope.content === undefined || scope.content === '');
                     }
+                    /** End of private methods **/
                 }
             };
         }]);

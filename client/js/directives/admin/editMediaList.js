@@ -6,7 +6,6 @@ COMPONENTS.directive('editMediaList', [function () {
         templateUrl: '/client/html/admin/editMediaList.html',
         scope: {},
         controller: ["$scope", function ($scope) {
-            $scope.refreshList = function () {};
             $scope.config = {
                 editable        : true,
                 selectable      : true,

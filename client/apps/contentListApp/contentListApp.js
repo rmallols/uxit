@@ -8,12 +8,6 @@ COMPONENTS.directive('contentListAppView', function () {
             _id: '=id',
             model: '=',
             onLayerSave: '='
-        },
-		link: function link(scope) {
-            scope.refreshList = function () {};
-            scope.onLayerSave = function () {
-                scope.refreshList();
-            };
         }
 	};
 });

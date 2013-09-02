@@ -1,22 +1,30 @@
-[content-editable] {
+[content-editable],
+[content-editable] > .editableArea {
   position: relative;
 }
 
-[content-editable] > [contenteditable] {
+[content-editable] > .actionsArea {
+  position: absolute !important;
+  right: -@padding;
+  top: -45px;
+  z-index: 3;
+}
+
+[content-editable] > .editableArea > [contenteditable] {
   position: relative;
   z-index: 2;
 }
 
-[content-editable] > [contenteditable="false"] {
+[content-editable] > .editableArea > [contenteditable="false"] {
   border-color: transparent;
 }
 
-[content-editable] > .placeholder {
+[content-editable] > .editableArea > .placeholder {
   z-index: 1;
 }
 
-[content-editable] > .placeholder,
-[content-editable] > .background {
+[content-editable] > .editableArea > .placeholder,
+[content-editable] > .editableArea > .background {
   position: absolute;
   top: 0px;
   left: 0px;

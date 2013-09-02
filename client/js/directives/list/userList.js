@@ -5,8 +5,7 @@ COMPONENTS.directive('userList', ['mediaService', 'constantsService', function (
 		replace: true,
 		templateUrl: '/client/html/list/userList.html',
         scope : {
-            config: '=',
-            refreshList: '='
+            config: '='
         },
 		link: function link(scope) {
             scope.items             = [];
@@ -18,6 +17,7 @@ COMPONENTS.directive('userList', ['mediaService', 'constantsService', function (
             scope.transcludedData.getUserAvatarUrl = function(item) {
                 return (item.media) ? mediaService.getDownloadUrl(item.media) : mediaService.getDefaultAvatarUrl();
             };
+            scope.refreshList = function() {};
 		}
 	};
 }]);

@@ -5,7 +5,7 @@ describe('fileuploader directive', function () {
     beforeEach(module('components', 'mocks.$timeout'));
     beforeEach(inject(["$rootScope", "$compile", "$document", function ($rootScope_, $compile_, $document_) {
         var template    = '<file-uploader preview="true" ng-model="user.media" multiple="false" ' +
-                          'default-media-url="defaultAvatarUrl" endpoint="/media/upload/"></file-uploader>';
+                          'default-media-url="defaultAvatarUrl"></file-uploader>';
         $rootScope      = $rootScope_;
         $scope          = $rootScope.$new();
         $compile        = compileFn($compile_, $scope, $document_);

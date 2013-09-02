@@ -1,3 +1,5 @@
+@resizableWidth: 45px;
+
 ul.pages {
   margin-top: 0px;
   height: 100%;
@@ -49,16 +51,16 @@ html.appTemplateFullscreen .columns.page:not(.colFullscreen) {
 }
 
 .columns .ui-resizable-handle {
-  width: 60px;
+  width: @resizableWidth;
   z-index: 2 !important;
 }
 
 .columns .ui-resizable-e {
-  right:-60px;
+  right:-@resizableWidth;
 }
 
 .columns .ui-resizable-w {
-  left:-60px;
+  left:-@resizableWidth;
 }
 
 html:not(.fullscreen) .columns .appContainer {

@@ -1,7 +1,7 @@
 <div>
     <div class="columns large-8">
-        <file-uploader preview="true" ng-model="user.media" multiple="false"
-                       default-media-url="defaultAvatarUrl" endpoint="/media/upload/"></file-uploader>
+        <media-picker preview="true" ng-model="user.media" multiple="false"
+                      default-media-url="defaultAvatarUrl"></media-picker>
     </div>
     <div class="columns large-16">
         <div><label i18n="editUser.fullName"></label>: <input type="text" ng-model="user.fullName" mandatory /></div>

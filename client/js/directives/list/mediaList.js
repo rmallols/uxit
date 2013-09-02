@@ -6,7 +6,6 @@ function ($rootScope, mediaService, constantsService) {
 		replace: true,
         scope : {
             config: '=',
-            refreshList: '=',
             onSelect: '='
         },
 		templateUrl: '/client/html/list/mediaList.html',
@@ -25,11 +24,12 @@ function ($rootScope, mediaService, constantsService) {
                 }
             });
 
+            scope.refreshList = function() {};
+
             scope.onUpload = function() {
-                if(scope.refreshList) {
-                    scope.refreshList();
-                    $rootScope.$broadcast('mediaChanged', 'create'); //Propagate the media create event
-                }
+                scope.refreshList();
+                $rootScope.$broadcast('mediaChanged', 'create'); //Propagate the media create event
+                scope.$apply();
             };
 
             scope.onSelectMedia = function (item, index, selectable) {

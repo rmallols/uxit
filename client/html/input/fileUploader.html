@@ -1,8 +1,3 @@
-<form id="uploadForm" enctype="multipart/form-data" action="{{endpoint}}" method="post" class="fileUploader">
-    <img class="current" ng-src="{{getDownloadUrl(model)}}" ng-show="preview=='true'"
-         title="{{getFileTitle(model)}}" keep-title-on-tooltip-hover="true" />
+<form id="uploadForm" enctype="multipart/form-data" action="{{endpoint||'/media/upload/'}}" method="post" class="fileUploader">
     <input type="file" ng-model="files" ux-change="submit()" name="upload" multiple-files="{{multiple}}" />
-    <button class="mediaListSelection mediaIcon" ng-click="selectFromMediaList()">
-        <label i18n="fileUploader.selectFromMediaList"></label>
-    </button>
 </form>

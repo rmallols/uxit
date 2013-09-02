@@ -7,12 +7,6 @@ COMPONENTS.directive('mediaListAppView', function () {
         scope: {
             model: '=',
             onLayerSave: '='
-        },
-		link: function link(scope) {
-            scope.refreshList = function () {};
-            scope.onLayerSave = function () {
-                scope.refreshList();
-            };
         }
 	};
 });
