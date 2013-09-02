@@ -144,12 +144,6 @@ app.post('/rest/sendEmail', function (req, res) {
     });
 });
 
-app.get('/initializePortal', checkAuth, function (req, res) {
-    crudService.initializePortal(req.session, function (result) {
-        res.send(result)
-    });
-});
-
 app.get('/initializeApp', checkAuth, function (req, res) {
     crudService.initializeApp(req.session, function (result) {
         res.send(result)

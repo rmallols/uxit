@@ -23,6 +23,18 @@ getService.get(db, constantsService.collections.media, null, { projection : { da
     });
 });
 
+Object.keys(constantsService.collections).forEach(function(collectionKey) {
+    var collection = constantsService.collections[collectionKey];
+    if(collection === 'portal') {
+        if(!dbService.existsCollection(db, collection)) {
+            dbService.initializeCollection(db, collection, function() {
+                console.log("WHILA!");
+            });
+        }
+    }
+
+});
+
 module.exports = {
 
     create: function (collection, body, session, callback) {
@@ -76,10 +88,6 @@ module.exports = {
 
     download: function (id, callback) {
         downloadService.download(db, id, callback);
-    },
-
-    initializePortal: function (callback) {
-        dbService.initializePortal(db, session, callback);
     },
 
     initializeApp: function (session, callback) {
