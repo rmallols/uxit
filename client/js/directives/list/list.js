@@ -73,7 +73,7 @@
                 };
 
                 scope.selectItem = function (item, $index, $event, editOnSelect) {
-                    if (scope.isSelectable()) {
+                    if (scope.isSelectable() || scope.isEditable()) {
                         handleDefaultSelectionMechanism(item, editOnSelect, $event);
                     } else {
                         handleNavigationMechanism(item);
@@ -83,7 +83,11 @@
                     }
                 };
 
-                scope.getWrapperClass = function () { return (scope.isSelectable()) ? 'selectable' : ''; };
+                scope.getWrapperClass = function () {
+                    var isSelectable    = (scope.isSelectable()) ? 'selectable' : '',
+                        isEditable      = (scope.isEditable()) ? 'editable' : '';
+                    return isSelectable +  ' '  + isEditable;
+                };
 
                 scope.getItemStyleClasses = function (item) {
                     var maxColSize = rowService.getMaxSlots(),
