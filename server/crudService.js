@@ -1,38 +1,21 @@
 'use strict';
 /*DB SETTINGS*/
-var dbService           = require("./dbService");
-var appService          = require("./appService");
-var cacheService        = require("./cacheService");
-var createService       = require("./crud/createService");
-var userService         = require("./crud/userService");
-var rateService         = require("./crud/rateService");
-var getService          = require("./crud/getService");
-var getStatsService     = require("./crud/getStatsService");
-var updateService       = require("./crud/updateService");
-var deleteService       = require("./crud/deleteService");
-var downloadService     = require("./crud/downloadService");
-var mediaService        = require("./crud/mediaService");
-var constantsService    = require('./constantsService');
-var db = dbService.connect();
+var dbService           = require("./dbService"),
+    appService          = require("./appService"),
+    sessionService      = require("./sessionService"),
+    createService       = require("./crud/createService"),
+    userService         = require("./crud/userService"),
+    rateService         = require("./crud/rateService"),
+    getService          = require("./crud/getService"),
+    getStatsService     = require("./crud/getStatsService"),
+    updateService       = require("./crud/updateService"),
+    deleteService       = require("./crud/deleteService"),
+    downloadService     = require("./crud/downloadService"),
+    mediaService        = require("./crud/mediaService"),
+    db = dbService.connect();
 
-getService.get(db, constantsService.collections.media, null, { projection : { data : 0}}, function (documents) {
-    cacheService.initCachedMedia(documents);
-    //Cache user once all the media is cached as the former could have references to the latest
-    getService.get(db, constantsService.collections.users, null, { projection : { password : 0}}, function (documents) {
-        cacheService.initCachedUsers(documents);
-    });
-});
-
-Object.keys(constantsService.collections).forEach(function(collectionKey) {
-    var collection = constantsService.collections[collectionKey];
-    if(collection === 'portal') {
-        if(!dbService.existsCollection(db, collection)) {
-            dbService.initializeCollection(db, collection, function() {
-                console.log("WHILA!");
-            });
-        }
-    }
-
+dbService.initializeCollections(db, function() {
+    getService.cacheResources(db);
 });
 
 module.exports = {
@@ -92,5 +75,23 @@ module.exports = {
 
     initializeApp: function (session, callback) {
         dbService.initializeApp(db, session, callback);
+    },
+
+    login: function(body, session, callback) {
+        sessionService.login(db, body, session, function (success) {
+            callback(success);
+        });
+    },
+
+    getSession: function(session, callback) {
+        sessionService.getSession(db, session, function (user) {
+            callback(user);
+        });
+    },
+
+    logout: function(session, callback) {
+        sessionService.logout(session, function () {
+            callback({});
+        });
     }
 };

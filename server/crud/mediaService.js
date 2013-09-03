@@ -2,6 +2,7 @@
 var cacheService        = require("../cacheService"),
     utilsService        = require("../utilsService"),
     fileSystemService   = require("../fileSystemService"),
+    consoleService      = require('../consoleService'),
     gm                  = require('gm');
 
 module.exports = {
@@ -44,7 +45,9 @@ module.exports = {
                         } else { //Create new media
                             createNewFile(saveObj, callback);
                         }
-                    } else { console.log("ERROR, GRAPHICS MAGICK COULD NOT BE ABLE TO GET MEDIA SIZE", err); }
+                    } else {
+                        consoleService.error("ERROR, GRAPHICS MAGICK COULD NOT BE ABLE TO GET MEDIA SIZE");
+                    }
                 });
             });
         }

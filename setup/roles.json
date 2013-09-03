@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Guest user",
+        "karma": 0,
+        "description": "Guest user in portal",
+        "code": "guest"
+    },
+    {
+        "title": "Reader user",
+        "karma": 1,
+        "description": "Reader user in portal",
+        "code": "reader"
+    },
+    {
+        "title": "Creator user",
+        "karma": 2,
+        "description": "Creator user in portal",
+        "code": "creator"
+    },
+    {
+        "title": "Admin user",
+        "karma": 3,
+        "description": "Admin user in portal",
+        "code": "admin"
+    }
+]

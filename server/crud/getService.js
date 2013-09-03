@@ -1,6 +1,7 @@
 'use strict';
-var utilsService = require("../utilsService");
-var cacheService = require("../cacheService");
+var utilsService        = require("../utilsService"),
+    cacheService        = require("../cacheService"),
+    constantsService    = require('../constantsService');
 
 module.exports = {
 
@@ -73,5 +74,16 @@ module.exports = {
                 });
             });
         }
+    },
+
+    cacheResources: function(db) {
+        var self = this;
+        self.get(db, constantsService.collections.media, null, { projection : { data : 0}}, function (documents) {
+            cacheService.initCachedMedia(documents);
+            //Cache user once all the media is cached as the former could have references to the latest
+            self.get(db, constantsService.collections.users, null, { projection : { password : 0}}, function (documents) {
+                cacheService.initCachedUsers(documents);
+            });
+        });
     }
 };

@@ -1,8 +1,4 @@
 'use strict';
-/*DB SETTINGS*/
-var databaseUrl = "uxit";
-var collections = ["users"];
-var db = require("mongojs").connect(databaseUrl, collections);
 /*SERVICES*/
 var userService = require('./crud/userService');
 var cacheService = require('./cacheService');
@@ -11,7 +7,7 @@ var bcrypt = require('bcrypt-nodejs');
 
 module.exports = {
 
-    login: function (body, session, callback) {
+    login: function (db, body, session, callback) {
         /*var cryptPassword = bcrypt.hashSync(body.password);*/
         userService.get(db, body.email, function (user) {
             if (user && bcrypt.compareSync(body.password, user.password)) {
@@ -25,7 +21,7 @@ module.exports = {
         });
     },
 
-    getSession: function (session, callback) {
+    getSession: function (db, session, callback) {
         //Look for the user data in database to always have fresh data
         if (session.user) {
             userService.get(db, session.user.email, function (user) {

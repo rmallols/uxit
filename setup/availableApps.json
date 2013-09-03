@@ -1,0 +1,303 @@
+[
+    {
+        "title": "Links",
+        "disabled": false,
+        "creationDate": "",
+        "provider": "",
+        "category": "navigation",
+        "desc": "",
+        "rating": "",
+        "comments": [  ],
+        "templates": [ "view", "edit", "help" ],
+        "defaultTemplate": "view",
+        "actions": [ "minimize", "maximize", "remove" ],
+        "id": "linksApp"
+    },
+    {
+        "actions": [ "minimize", "maximize", "remove" ],
+        "category": "media",
+        "comments": [  ],
+        "creationDate": "",
+        "defaultTemplate": "view",
+        "desc": "",
+        "disabled": false,
+        "id": "bannerApp",
+        "provider": "",
+        "rating": "",
+        "templates": [ "view", "edit", "help" ],
+        "title": "Banner"
+    },
+    {
+        "id": "socialApp",
+        "title": "Social",
+        "desc": "",
+        "disabled": false,
+        "provider": "",
+        "category": ""
+    },{
+        "id": "imageApp",
+        "title": "Image",
+        "disabled": false,
+        "creationDate": "",
+        "provider": "",
+        "category": "media",
+        "desc": "",
+        "rating": "",
+        "comments": [  ],
+        "templates": [ "view", "edit", "help" ],
+        "defaultTemplate": "view",
+        "actions": [ "minimize", "maximize", "remove" ]
+    },
+    {
+        "id": "iframeApp",
+        "title": "Iframe",
+        "desc": "",
+        "disabled": false,
+        "provider": "",
+        "category": "",
+        "avgRating": "",
+        "version": "1.0",
+        "editPanels": null,
+        "noCustomEditPanel": false,
+        "defaultModel": {  }
+    },
+    {
+        "id": "languageSelectApp",
+        "title": "language Select",
+        "desc": "",
+        "disabled": false,
+        "provider": "",
+        "category": "",
+        "avgRating": "",
+        "version": "1.0",
+        "editPanels": null,
+        "noCustomEditPanel": false,
+        "defaultModel": {  }
+    },
+    {
+        "id": "videoApp",
+        "title": "Video",
+        "disabled": false,
+        "creationDate": "",
+        "provider": "",
+        "category": "media",
+        "desc": "",
+        "rating": "",
+        "comments": [  ],
+        "templates": [ "view", "edit", "help" ],
+        "defaultTemplate": "view",
+        "actions": [ "minimize", "maximize", "remove" ]
+    },
+    {
+        "id": "mapApp",
+        "title": "Map",
+        "disabled": false,
+        "creationDate": "",
+        "provider": "",
+        "category": "contact",
+        "desc": "",
+        "rating": "",
+        "comments": [  ],
+        "templates": [ "view", "edit", "help" ],
+        "defaultTemplate": "view",
+        "actions": [ "minimize", "maximize", "remove" ],
+        "defaultModel": {
+            "height": 400,
+            "url": "https://maps.google.es/maps?q=Haw%C3%A1i,+Estados+Unidos&hl=es&ie=UTF8&ll=19.784796,-155.415344&spn=1.568708,2.535095&sll=37.775142,-122.419431&sspn=0.010295,0.019805&oq=hawai&t=h&hnear=Haw%C3%A1i,+Estados+Unidos&z=9&iwloc=A"
+        }
+    },
+    {
+        "id": "contentListApp",
+        "title": "Content List",
+        "disabled": false,
+        "creationDate": "",
+        "provider": "",
+        "category": "content",
+        "desc": "",
+        "rating": "",
+        "comments": [  ],
+        "templates": [ "view", "edit", "help" ],
+        "defaultTemplate": "view",
+        "actions": [ "minimize", "maximize", "remove" ],
+        "defaultModel": {
+            "showTitles": true,
+            "showSearch": true,
+            "pageSize": 10,
+            "skip": 0,
+            "pageActionPos": 2,
+            "sort": {
+                "field": "create.date",
+                "order": "-1"
+            },
+            "searchable": true
+        },
+        "editPanels": [
+            {
+                "title": "Add",
+                "type": "add"
+            }
+        ]
+    },
+    {
+        "id": "mediaListApp",
+        "title": "Media list",
+        "desc": "",
+        "disabled": false,
+        "provider": "",
+        "category": "media",
+        "avgRating": "",
+        "version": "1.0",
+        "defaultModel": { "columns": "3",
+            "searchable": true
+        },
+        "editPanels": [
+            {
+                "title": "Add",
+                "type": "add"
+            }
+        ]
+    },{
+        "id": "webGlApp",
+        "title": "3D graphics",
+        "desc": "",
+        "disabled": false,
+        "provider": "",
+        "category": "",
+        "avgRating": "",
+        "version": "1.0"
+    },
+    {
+        "actions": [ "minimize", "maximize", "remove" ],
+        "avgRating": "2.50",
+        "category": "users",
+        "defaultTemplate": "view",
+        "desc": "This is the login form example, bla bla bla",
+        "disabled": false,
+        "id": "loginApp",
+        "provider": "Test provider",
+        "templates": [ "view", "edit", "help" ],
+        "title": "Login form",
+        "version": "0.3"
+    },
+    {
+        "actions": [ "minimize", "maximize", "remove" ],
+        "avgRating": "4.00",
+        "category": "users",
+        "comments": [  ],
+        "creationDate": "",
+        "defaultModel": {
+            "showTitles": true,
+            "showSearch": true,
+            "pageSize": 10,
+            "skip": 0,
+            "pageActionPos": 2,
+            "sort": {
+                "field": "create.date",
+                "order": "-1"
+            },
+            "searchable": true
+        },
+        "defaultTemplate": "view",
+        "desc": "This is the user list example, asdas dmasd msad as dasndasd asdasdsa",
+        "disabled": false,
+        "editPanels": [
+            {
+                "title": "Add",
+                "type": "add"
+            }
+        ],
+        "id": "userListApp",
+        "provider": "",
+        "rating": "",
+        "templates": [ "view", "edit", "help" ],
+        "title": "User List",
+        "version": "0.15-dev"
+    },
+    {
+        "id": "mediaCarouselApp",
+        "title": "Media Carousel",
+        "disabled": false,
+        "creationDate": "",
+        "provider": "",
+        "category": "media",
+        "desc": "",
+        "rating": "",
+        "comments": [  ],
+        "templates": [ "view", "edit", "help" ],
+        "defaultTemplate": "view",
+        "actions": [ "minimize", "maximize", "remove" ],
+        "editPanels": [
+            {
+                "title": "Edit",
+                "type": "edit"
+            },
+            {
+                "title": "Select media",
+                "type": "selectMedia"
+            }
+        ],
+        "defaultModel": {
+            "timer": 2000,
+            "navigationPos": "bottom"
+        }
+    },
+    {
+        "id": "staticContentApp",
+        "title": "Static content",
+        "disabled": false,
+        "creationDate": "",
+        "provider": "",
+        "category": "content",
+        "desc": "",
+        "rating": "",
+        "comments": [  ],
+        "templates": [ "view", "edit", "help" ],
+        "defaultTemplate": "view",
+        "actions": [ "minimize", "maximize", "remove" ],
+        "noCustomEditPanel": true,
+        "editPanels": [
+            {
+                "title": "Edit",
+                "type": "edit"
+            },
+            {
+                "title": "Select content",
+                "type": "selectContent"
+            },
+            {
+                "title": "Add",
+                "type": "add"
+            }
+        ],
+        "defaultModel": { "showTitles": true,
+            "showComments": true,
+            "showRatings": true }
+    },
+    {
+        "actions": [ "minimize", "maximize", "remove" ],
+        "avgRating": "4.00",
+        "category": "navigation",
+        "comments": [  ],
+        "creationDate": "",
+        "defaultTemplate": "view",
+        "desc": "This is the description of the menuApp!!!",
+        "disabled": false,
+        "id": "menuApp",
+        "provider": "",
+        "templates": [ "view", "edit", "help" ],
+        "title": "Menu"
+    },
+    {
+        "id": "slidesApp",
+        "title": "Presentations",
+        "desc": "",
+        "disabled": false,
+        "provider": "",
+        "category": "",
+        "version": "1.0",
+        "editPanels": null,
+        "noCustomEditPanel": false,
+        "defaultModel": { "slides": [ { "content": "Hello!" }, { "content": "Slides!" } ] },
+        "avgRating": ""
+    }
+]

@@ -1,23 +1,20 @@
 'use strict';
 /*EXPRESS SETTINGS*/
-var express = require('express');
-var app     = express();
-var server  = require('http').createServer(app);
-var io      = require('socket.io').listen(server, { log: false });
+var express             = require('express'),
+    app                 = express(),
+    server              = require('http').createServer(app),
+    io                  = require('socket.io').listen(server, { log: false }),
+    path                = require('path'),
+    /*SERVICES */
+    crudService         = require('./crudService'),
+    emailService        = require('./emailService'),
+    constantsService    = require('./constantsService'),
+    liveMessageService  = require("./liveMessageService");
 
 //noinspection JSUnresolvedFunction
 app.use(express.bodyParser());
 app.use(express.cookieParser());
 app.use(express.session({ secret: "ch0pSuey" }));
-
-var path = require('path');
-
-/*SERVICES*/
-var crudService         = require('./crudService');
-var sessionService      = require('./sessionService');
-var emailService        = require('./emailService');
-var constantsService    = require('./constantsService');
-var liveMessageService  = require("./liveMessageService");
 
 function checkAuth(req, res, next) {
     if (!req.session.user) {
@@ -28,7 +25,7 @@ function checkAuth(req, res, next) {
 }
 
 app.post('/rest/login', function (req, res) {
-    sessionService.login(req.body, req.session, function (success) {
+    crudService.login(req.body, req.session, function(success) {
         if (success) {
             res.redirect('/' + req.session.user.portalId); //Redirect to user default portal
         } else {
@@ -38,19 +35,19 @@ app.post('/rest/login', function (req, res) {
 });
 
 app.post('/rest/getSession', function (req, res) {
-    sessionService.getSession(req.session, function (user) {
+    crudService.getSession(req.session, function(user) {
         res.send(user);
     });
 });
 
 app.get('/logout', function (req, res) {
-    sessionService.logout(req.session, function () {
+    crudService.logout(req.session, function() {
         res.redirect('/login');
     });
 });
 
 app.get('/:portal/logout', function (req, res) {
-    sessionService.logout(req.session, function () {
+    crudService.logout(req.session, function() {
         res.redirect('/' + req.params.portal);
     });
 });
@@ -164,8 +161,12 @@ app.get('/:portalId', function (req, res) {
         sort : { field: 'position', order : '1' }
     };
     crudService.getFirst(constantsService.collections.pages, params, function (firstPage) {
-        if (firstPage.type === 'externalLink') { res.redirect(firstPage.externalLinkUrl); }
-        else { res.redirect(req.params.portalId + '/' + firstPage.url); }
+        if(firstPage) {
+            if (firstPage.type === 'externalLink') { res.redirect(firstPage.externalLinkUrl); }
+            else { res.redirect(req.params.portalId + '/' + firstPage.url); }
+        } else {
+            res.redirect(req.params.portalId + '/PAGE_NOT_FOUND');
+        }
     });
 });
 

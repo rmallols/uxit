@@ -1,5 +1,4 @@
 'use strict';
-var cacheService = require("./cacheService");
 module.exports = {
 
     addCreateSignature : function (body, session) {
@@ -48,5 +47,8 @@ module.exports = {
             }
         }
         return updatedModel;
+    },
+    isArray: function (item) {
+        return Object.prototype.toString.call( item ) === '[object Array]';
     }
 };
