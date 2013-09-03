@@ -45,7 +45,8 @@ button-group > button:not(:first-child):not(:last-child) {
   position: relative;
 }
 
-button.active { border-color: red !important; }
+button.active { background-color: @highDarken !important; }
+button.active:hover { background-color:@high !important; }
 
 button.small    { width:@smallButtonSize; height:@smallButtonSize; }
 button.normal   { width:@normalButtonSize; height:@normalButtonSize; }
