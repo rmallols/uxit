@@ -97,7 +97,7 @@
                         //For instance, without it the showActions flag will be set to false immediately,
                         //and so the action buttons will never be reached as their keyup event is fired after this blur one
                         $timeout(function() {
-                            if (!editBoxUtilsService.isEditBoxVisible()) {
+                            if (!editBoxUtilsService.isAnyEditBoxVisible()) {
                                 scope.showActions = false;
                                 if (scope.onBlur) {
                                     scope.onBlur();

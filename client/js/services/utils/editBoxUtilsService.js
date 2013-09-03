@@ -59,13 +59,13 @@
                 }, 100);
             }
 
-            //if(!isEditBoxVisible()) {
+            if(!isEditBoxVisible(element)) {
                 setTargetSettings();
                 setArrowPos();
                 blockHideEditBox();     //Block the hide action to avoid flickering efect from portal directive
                 addEditBoxToDom();
                 safeUnblockEditBox();   //Unblock the hidding action
-            //}
+            }
         }
 
         /**
@@ -91,11 +91,11 @@
         }
 
         /**
-         * Gets the edit box visibility status
+         * Gets the edit box visibility status, considering all the instances
          *
          * @returns {boolean} True if there is at least one edit box visible. False otherwise
          */
-        function isEditBoxVisible() {
+        function isAnyEditBoxVisible() {
             return $('.editBox').size() > 0;
         }
 
@@ -125,10 +125,16 @@
             isHideActionBlocked = false;
         }
 
+        /** Private methods **/
+        function isEditBoxVisible(element) {
+            return element.next('.editBox').size() > 0;
+        }
+        /** End of private methods **/
+
         return {
             showEditBox         : showEditBox,
             hideEditBox         : hideEditBox,
-            isEditBoxVisible    : isEditBoxVisible,
+            isAnyEditBoxVisible    : isAnyEditBoxVisible,
             isEditBoxClicked    : isEditBoxClicked,
             blockHideEditBox    : blockHideEditBox,
             unblockHideEditBox  : unblockHideEditBox

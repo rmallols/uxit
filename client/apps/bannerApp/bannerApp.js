@@ -14,7 +14,7 @@ COMPONENTS.directive('bannerAppView', function (pageService, editBoxUtilsService
             //noinspection JSUnresolvedFunction
             var canvasObj = $('canvas', element),
                 canvas = new fabric.Canvas(canvasObj[0]),
-                isEditBoxVisible = false;
+                isAnyEditBoxVisible = false;
 
             /*function getCanvasCoordinates(canvasObj, canvasElm) {
                 var scaleX = canvasElm.scaleX || 1, scaleY = canvasElm.scaleY || 1;
@@ -109,7 +109,7 @@ COMPONENTS.directive('bannerAppView', function (pageService, editBoxUtilsService
             };
 
             canvas.on('object:selected', function (e) {
-                isEditBoxVisible = true;
+                isAnyEditBoxVisible = true;
                 scope.model.fill = e.target.fill;
                 scope.model.text = e.target.text;
                 editBoxUtilsService.blockHideEditBox();
@@ -123,7 +123,7 @@ COMPONENTS.directive('bannerAppView', function (pageService, editBoxUtilsService
 
             canvas.on('after:render', function () {
                 canvas.calcOffset(); //Force to recalculate the mouse position to avoid offsets
-                if (isEditBoxVisible) {
+                if (isAnyEditBoxVisible) {
                     var activeElm = canvas.getActiveObject();
                     if (activeElm) {
                         //noinspection JSUnresolvedVariable,JSHint
