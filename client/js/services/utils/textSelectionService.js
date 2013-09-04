@@ -4,7 +4,7 @@
     COMPONENTS.factory('textSelectionService', [function () {
 
         //noinspection JSUnresolvedVariable
-        var savedSel = false, rangyPlgn = rangy, linkKey = 'link', imageKey = 'image';
+        var savedSel = false, rangyPlgn = rangy,  keys = { link: 'link', heading: 'heading' };
 
         /**
          * Saves the current selection
@@ -84,49 +84,34 @@
          * @param {object} linkOptions The object that contains all the link attributes (id, target, url...)
          */
         function setLink(linkOptions) {
-            restoreSelection();
-            var existingLinkObj = getSelectedTextDomObj().closest('.' + linkKey);
-            var existsLink = existingLinkObj.length > 0;
-            if(existsLink) { //If the link was there before, we'll update its attributes
-                existingLinkObj.attr(linkOptions);
-            } else { //The link is going to be created by the first time
-                var classApplier = rangyPlgn.createCssClassApplier(linkKey, {
-                    elementTagName      : "a",
-                    elementProperties   : linkOptions
-                });
-                classApplier.applyToSelection();
-            }
-            restoreSelection();
+            setDomObj('a', keys.link, linkOptions);
         }
 
         /**
-         * Sets image to the current selection (add / update actions)
+         * Sets heading style to the current selection (add / update actions)
          *
-         * @param {object} imageOptions The object that contains all the image attributes (id, src...)
+         * @param {string} headingType The string that represents the type (size) of the heading
          */
-        function setImage(imageOptions) {
-            restoreSelection();
-            var existingImageObj = getSelectedTextDomObj().closest('.' + imageKey);
-            var existsImage = existingImageObj.length > 0;
-            if(existsImage) { //If the image was there before, we'll update its attributes
-                existingImageObj.attr(imageOptions);
-            } else { //The image is going to be created by the first time
-                var classApplier = rangyPlgn.createCssClassApplier(imageKey, {
-                    elementTagName      : "img",
-                    elementProperties   : imageOptions
-                });
-                classApplier.applyToSelection();
-            }
-            restoreSelection();
+        function setHeading(headingType) {
+            setDomObj('div', keys.heading, { id: headingType });
+        }
+
+        /**
+         * Gets the reference to the pointer to the DOM object of the closest heading of the current selection
+         *
+         * @returns {string} The Id of the selected heading
+         */
+        function getSelectedHeadingId() {
+            return getSelectedId(keys.heading);
         }
 
         /**
          * Gets the reference to the pointer to the DOM object of the closest link of the current selection
          *
-         * @returns {object} The pointer to the DOM with the link
+         * @returns {string} The Id of the selected link
          */
-        function getSelectedLinkDomObj() {
-            return getSelectedTextDomObj().closest('.' + linkKey);
+        function getSelectedLinkId() {
+            return getSelectedId(keys.link);
         }
 
         /**
@@ -148,6 +133,28 @@
             }
         }
 
+        /** Private methods **/
+        function getSelectedId(key) {
+            return getSelectedTextDomObj().closest('.' + key).attr('id');
+        }
+
+        function setDomObj(type, key, options) {
+            restoreSelection();
+            var existingLinkObj = getSelectedTextDomObj().closest('.' + key);
+            var existsLink = existingLinkObj.length > 0;
+            if(existsLink) { //If the link was there before, we'll update its attributes
+                existingLinkObj.attr(options);
+            } else { //The link is going to be created by the first time
+                var classApplier = rangyPlgn.createCssClassApplier(key, {
+                    elementTagName      : type,
+                    elementProperties   : options
+                });
+                classApplier.applyToSelection();
+            }
+            restoreSelection();
+        }
+        /** End of private methods **/
+
         return {
             saveSelection:saveSelection,
             setFakeSelection:setFakeSelection,
@@ -158,8 +165,9 @@
             restoreSelection:restoreSelection,
             removeSelection:removeSelection,
             setLink: setLink,
-            setImage: setImage,
-            getSelectedLinkDomObj: getSelectedLinkDomObj
+            setHeading: setHeading,
+            getSelectedHeadingId: getSelectedHeadingId,
+            getSelectedLinkId: getSelectedLinkId
         };
     }]);
 })();

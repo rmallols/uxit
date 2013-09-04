@@ -20,6 +20,10 @@ function (crudService, constantsService, textSelectionService, stringService, i1
                 if (scope.onChange) { scope.onChange(); }
             };
 
+            scope.setHeading = function() {
+                setHeading(scope.heading);
+            };
+
             scope.setInternalLink = function () {
                 setLink(scope.internalLink, '_self');
             };
@@ -29,14 +33,19 @@ function (crudService, constantsService, textSelectionService, stringService, i1
             };
 
             /** Private methods **/
+            function getSelectedHeading() {
+                var headingId = textSelectionService.getSelectedHeadingId();
+                if(headingId) {
+                    scope.heading = headingId;
+                }
+            }
             function getSelectedLink() {
-                var linkObj = textSelectionService.getSelectedLinkDomObj(),
-                    linkStr = linkObj.attr('id');
-                if(stringService.isExternalUrl(linkStr)) {
-                    scope.externalLink = linkStr;
+                var linkId = textSelectionService.getSelectedLinkId();
+                if(stringService.isExternalUrl(linkId)) {
+                    scope.externalLink = linkId;
                     scope.linkType = scope.linkTypes[1].id;
                 } else {
-                    scope.internalLink = linkStr;
+                    scope.internalLink = linkId;
                     scope.linkType = scope.linkTypes[0].id;
                 }
             }
@@ -52,12 +61,16 @@ function (crudService, constantsService, textSelectionService, stringService, i1
                 }
             }
 
+            function setHeading(heading) {
+                textSelectionService.setHeading(heading);
+            }
+
             function setHeadingOptions() {
                 scope.headingOptions = [
-                    {value: '16px',   text: 'Normal'},
-                    {value: '55px',     text: 'Title 1'},
-                    {value: '40px',     text: 'Title 2'},
-                    {value: '25px',     text: 'Title 3'}
+                    {value: 'normal',   text: 'Normal'},
+                    {value: 'heading1', text: 'Heading 1'},
+                    {value: 'heading2', text: 'Heading 2'},
+                    {value: 'heading3', text: 'Heading 3'}
                 ];
             }
 
@@ -73,9 +86,9 @@ function (crudService, constantsService, textSelectionService, stringService, i1
                 });
             }
             /** End of private methods **/
-
-            getSelectedLink();
             setHeadingOptions();
+            getSelectedHeading();
+            getSelectedLink();
             getPagesList();
         }
 	};

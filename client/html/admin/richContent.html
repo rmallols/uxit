@@ -11,8 +11,8 @@
     </div>
     <div class="columns large-9 textAlignRight"><label i18n="richContent.size"></label></div>
     <div class="columns large-16">
-        <select ng-model="model.fontSize" ng-init="model.fontSize=model.fontSize||'16px'"
-                ng-options="obj.value as obj.text for obj in headingOptions" ng-change="propagateChanges()"></select>
+        <select ng-model="heading" ng-init="heading=heading||'normal'"
+                ng-options="obj.value as obj.text for obj in headingOptions" ng-change="setHeading()"></select>
     </div>
     <div class="columns large-9 textAlignRight"><label i18n="richContent.link"></label></div>
     <div class="columns large-6">

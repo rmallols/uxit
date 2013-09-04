@@ -60,7 +60,7 @@
                                 updateValue();
                                 //Send the blur event in a new thread as otherwise maybe the content has not been update yet
                                 //So the content could be saved with the fake selection still active,
-                                //so the selectin would persist forever
+                                //so the selection would persist forever
                                 setTimeout(function () { contentEditableObj.blur(); }, 0);
                             };
                             scope.onCancel = function (/*styles*/) {
