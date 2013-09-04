@@ -76,7 +76,7 @@ module.exports = function(grunt) {
         less: {
             prod: {
                 options: {
-                    yuicompress: true
+                    compress: true
                 },
                 files: {
                     "<%= min %>css.min.css": "client/css/main.less"

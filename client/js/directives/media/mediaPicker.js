@@ -59,7 +59,6 @@
     }]);
 
     COMPONENTS.directive('mediaListPicker', [function () {
-        'use strict';
         return {
             restrict: 'A',
             replace: false,
@@ -79,6 +78,6 @@
                     if (scope.onChange) { scope.onChange(); }
                 };
             }
-        }
+        };
     }]);
 })();
