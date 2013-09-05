@@ -24,7 +24,7 @@
 
                 scope.defaultFaviconUrl = portalService.getDefaultFaviconUrl();
 
-                mediaService.getMediaFromId(scope.model.faviconId, function (favicon) {
+                mediaService.getMedia(scope.model.faviconId, null, function (favicon) {
                     scope.favicon = favicon;
                 });
 

@@ -1,5 +1,5 @@
-COMPONENTS.directive('autoComplete', ['$rootScope', 'crudService', 'constantsService', 'i18nService', 'i18nDbService',
-function ($rootScope, crudService, constantsService, i18nService, i18nDbService) {
+COMPONENTS.directive('autoComplete', ['$rootScope', 'tagService', 'constantsService', 'i18nService', 'i18nDbService',
+function ($rootScope, tagService, constantsService, i18nService, i18nDbService) {
     'use strict';
     return {
         restrict: 'E',
@@ -24,7 +24,7 @@ function ($rootScope, crudService, constantsService, i18nService, i18nDbService)
                 if (e.added && e.added.newItem) {
                     delete e.added.newItem;
                     //Save the newly added element
-                    crudService.create(constantsService.collections.tags, { text: e.added.text }, function (newTag) {
+                    tagService.createTag(e.added.text, function (newTag) {
                         e.val[e.val.length - 1] = newTag[attrs.valueKey];
                         updateModel(e.val);
                     });

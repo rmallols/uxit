@@ -1,4 +1,4 @@
-COMPONENTS.directive('mediaCarouselAppView', function (portalService, mediaService, crudService, timerService, constantsService) {
+COMPONENTS.directive('mediaCarouselAppView', function (portalService, mediaService, timerService, constantsService) {
 	'use strict';
     return {
 		restrict: 'A',
@@ -20,7 +20,7 @@ COMPONENTS.directive('mediaCarouselAppView', function (portalService, mediaServi
                 }
             }
             filter = { q : { '$or': query }, projection: { data: 0 } };
-            crudService.get(constantsService.collections.media, null, filter, function (mediaList) {
+            mediaService.getMedia( null, filter, function (mediaList) {
                 mediaLoaded = true;
                 scope.internalData.mediaList = mediaList.results;
                 scope.internalData.goToMedia(scope.internalData.currentMediaIndex);
@@ -121,7 +121,7 @@ COMPONENTS.directive('mediaCarouselAppEdit', function (timerService) {
     };
 });
 
-COMPONENTS.directive('mediaCarouselAppSelectMedia', function (crudService, constantsService) {
+COMPONENTS.directive('mediaCarouselAppSelectMedia', function (mediaService, constantsService) {
     'use strict';
     return {
         restrict: 'A',
@@ -142,7 +142,7 @@ COMPONENTS.directive('mediaCarouselAppSelectMedia', function (crudService, const
                     }
                 }
                 filter = { q : { '$or': query } };
-                crudService.get(constantsService.collections.media, null, filter, function (mediaList) {
+                mediaService.getMedia(null, filter, function (mediaList) {
                     scope.internalData.mediaList = mediaList.results;
                     scope.internalData.currentMediaIndex = 0;
                     scope.internalData.goToMedia(scope.internalData.currentMediaIndex);

@@ -1,4 +1,4 @@
-COMPONENTS.directive('staticContentAppView', function ($rootScope, crudService, constantsService) {
+COMPONENTS.directive('staticContentAppView', function ($rootScope, contentService, constantsService) {
 	'use strict';
     return {
 		restrict: 'A',
@@ -12,18 +12,13 @@ COMPONENTS.directive('staticContentAppView', function ($rootScope, crudService, 
 		link: function link(scope) {
 
             function loadContent() {
-                crudService.get(constantsService.collections.content, scope.model.selectedContentId, null, function (content) {
+                contentService.getContent(scope.model.selectedContentId, null, function (content) {
                     scope.internalData = content;
                 });
             }
 
             scope.onContentUpdated = function () { //Save callback from content editable
-                var options =                                            {
-                    title    : scope.internalData.title,
-                    summary  : scope.internalData.summary,
-                    content  : scope.internalData.content
-                };
-                crudService.update(constantsService.collections.content, scope.model.selectedContentId, options);
+                contentService.updateContent(scope.internalData, null);
             };
 
             loadContent();
@@ -90,7 +85,7 @@ COMPONENTS.directive('staticContentAppAdd', function (contentService) {
     };
 });
 
-COMPONENTS.directive('staticContentAppSelectContent', function (pageService, crudService, constantsService) {
+COMPONENTS.directive('staticContentAppSelectContent', function (pageService, contentService, constantsService) {
     'use strict';
     return {
         restrict: 'A',
@@ -105,7 +100,7 @@ COMPONENTS.directive('staticContentAppSelectContent', function (pageService, cru
 
             scope.contentList = [];
             var params = { projection: {title: 1}};
-            crudService.get(constantsService.collections.content, null, params, function (contentList) {
+            contentService.getContent(null, params, function (contentList) {
                 //IMPORTANT!!! Avoid the temptation of doing scope.contentList = content.results
                 //As the pointer to the options would be broken
                 $.each(contentList.results, function (index, content) {
@@ -115,7 +110,7 @@ COMPONENTS.directive('staticContentAppSelectContent', function (pageService, cru
 
             scope.$watch('model.selectedContentId', function (newVal, oldVal) {
                 if (newVal && newVal !== oldVal) {
-                    crudService.get(constantsService.collections.content, newVal, null, function (content) {
+                    contentService.getContent(newVal, null, function (content) {
                         pageService.updateCurrentPage(null);
                         //It's necessary to store each field to avoid breaking the pointer referenced by angular
                         scope.internalData.title     = content.title;

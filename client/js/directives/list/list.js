@@ -1,10 +1,9 @@
 (function (Math, Number, COMPONENTS) {
     'use strict';
-    COMPONENTS.directive('list', ['$rootScope', '$location', 'portalService', 'rowService', 'crudService',
-    'editBoxUtilsService', 'domService', 'arrayService', 'roleService', 'sessionService', 'stringService', 'dbService',
-    'i18nService', 'tooltipService',
-    function ($rootScope, $location, portalService, rowService, crudService, editBoxUtilsService, domService, arrayService,
-              roleService, sessionService, stringService, dbService, i18nService, tooltipService) {
+    COMPONENTS.directive('list', ['$rootScope', '$location', 'rowService', 'listService',
+    'editBoxUtilsService', 'arrayService', 'roleService', 'sessionService', 'stringService', 'tooltipService',
+    function ($rootScope, $location, rowService, listService, editBoxUtilsService, arrayService,
+              roleService, sessionService, stringService, tooltipService) {
         return {
             restrict: 'A',
             replace: true,
@@ -102,7 +101,7 @@
                 };
 
                 scope.delete = function (id) {
-                    crudService.delete(scope.collection, id, null);
+                    listService.deleteListItem(scope.collection, id);
                     deleteFromSeletedIds(id);
                     tooltipService.hide();
                     scope.loadList();
@@ -113,15 +112,17 @@
                 };
 
                 scope.loadList = function () {
-                    var filter = {
-                        q           : { $and: [{ $or: getFilterOptions() }, { $or: getTagOptions() }]},
-                        currentPage : scope.currentPage,
-                        pageSize    : scope.getDefaultedValue('pageSize'),
-                        skip        : scope.getDefaultedValue('skip'),
-                        sort        : scope.getDefaultedValue('sort'),
-                        projection  : scope.projection
+                    var options = {
+                            collection      : scope.collection,
+                            searchText      : scope.searchText,
+                            searchTargets   : scope.searchTargets,
+                            currentPage     : scope.currentPage,
+                            pageSize        : scope.getDefaultedValue('pageSize'),
+                            skip            : scope.getDefaultedValue('skip'),
+                            sort            : scope.getDefaultedValue('sort'),
+                            projection      : scope.projection
                     };
-                    crudService.get(scope.collection, null, filter, function (list) {
+                    listService.loadList(options, function(list) {
                         scope.totalSize = list.totalSize;
                         scope.items = list.results;
                     });
@@ -198,30 +199,6 @@
                         }
                     }
                     return itemSelectedPos;
-                }
-
-                function getFilterOptions() {
-                    var filterOptions = [], currentLanguage = i18nService.getCurrentLanguage(),
-                        inexactSelector = dbService.getInexactSelector(scope.searchText);
-                    scope.searchTargets.forEach(function (searchTarget) {
-                        var filterOption = {}, i18nFilterOption = {}, i18nSearchTarget;
-                        filterOption[searchTarget] = inexactSelector;
-                        filterOptions.push(filterOption);     //Add plain text filter
-                        i18nSearchTarget = searchTarget + '.' + currentLanguage + '.text';
-                        i18nFilterOption[i18nSearchTarget] = inexactSelector;
-                        filterOptions.push(i18nFilterOption); //Add i18n text filter
-                    });
-                    return filterOptions;
-                }
-
-                function getTagOptions() {
-                    var tagOptions = [];
-                    if (scope.config.tags) {
-                        scope.config.tags.forEach(function (tag) {
-                            tagOptions[tagOptions.length] = { tag: tag };
-                        });
-                    }
-                    return tagOptions;
                 }
 
                 function setDetailId(detailId) {

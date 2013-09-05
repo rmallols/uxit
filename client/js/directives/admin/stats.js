@@ -1,5 +1,5 @@
-COMPONENTS.directive('stats', ['$rootScope', 'crudService', 'roleService', 'constantsService',
-function($rootScope, crudService, roleService, constantsService) {
+COMPONENTS.directive('stats', ['$rootScope', 'statsService', 'roleService', 'constantsService',
+function($rootScope, statsService, roleService, constantsService) {
     'use strict';
     return {
         restrict: 'A',
@@ -39,28 +39,28 @@ function($rootScope, crudService, roleService, constantsService) {
                 return normalizedData;
             }
 
-            crudService.getStats(constantsService.collections.content, {}, function (stats) {
+            statsService.getStats(constantsService.collections.content, {}, function (stats) {
                 normalizeTimeTmpDelete(stats);
                 scope.newsPerDay = stats;
             });
 
-            crudService.getStats(constantsService.collections.users, {}, function (stats) {
+            statsService.getStats(constantsService.collections.users, {}, function (stats) {
                 normalizeTimeTmpDelete(stats);
                 scope.usersPerDay = stats;
             });
 
             filter = { groupBy : 'create.authorId'};
-            crudService.getStats(constantsService.collections.content, filter, function (stats) {
+            statsService.getStats(constantsService.collections.content, filter, function (stats) {
                 scope.contentPerUser = normalizeUserData(stats);
             });
 
             filter = { groupBy : 'role'};
-            crudService.getStats(constantsService.collections.users, filter, function (stats) {
+            statsService.getStats(constantsService.collections.users, filter, function (stats) {
                 scope.usersPerRole = normalizeUsersPerRoleData(stats);
             });
 
             filter = { groupBy : 'create.authorId'};
-            crudService.getStats(constantsService.collections.comments, filter, function (stats) {
+            statsService.getStats(constantsService.collections.comments, filter, function (stats) {
                 scope.commentsPerUser = normalizeUserData(stats);
             });
         }

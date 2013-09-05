@@ -7,7 +7,7 @@ var dbService           = require("./dbService"),
     userService         = require("./crud/userService"),
     rateService         = require("./crud/rateService"),
     getService          = require("./crud/getService"),
-    getStatsService     = require("./crud/getStatsService"),
+    statsService        = require("./crud/statsService"),
     updateService       = require("./crud/updateService"),
     deleteService       = require("./crud/deleteService"),
     downloadService     = require("./crud/downloadService"),
@@ -54,7 +54,7 @@ module.exports = {
     },
 
     getStats : function (collection, query, session, callback) {
-        getStatsService.getStats(db, collection, query, session, callback);
+        statsService.getStats(db, collection, query, session, callback);
     },
 
     deployApp: function (files, session, callback) {

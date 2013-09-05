@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.directive('addAppPanel', ['availableAppsService', 'undeployService', 'constantsService', 'addAppService', 'crudService', 'keyboardService',
-    function (availableAppsService, undeployService, constantsService, addAppService, crudService, keyboardService) {
+    COMPONENTS.directive('addAppPanel', ['availableAppsService', 'undeployService', 'constantsService', 'addAppService', 'statsService', 'keyboardService',
+    function (availableAppsService, undeployService, constantsService, addAppService, statsService, keyboardService) {
         return {
             restrict: 'E',
             transclude: true,
@@ -15,7 +15,7 @@
                 scope.showExpandedView = function (availableApp) {
                     function getStats() {
                         var filter = { cond : { targetId: scope.highlight._id }};
-                        crudService.getStats(constantsService.collections.comments, filter, function (stats) {
+                        statsService.getStats(constantsService.collections.comments, filter, function (stats) {
                             scope.highlight.stats = stats;
                         });
                     }

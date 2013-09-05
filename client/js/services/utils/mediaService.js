@@ -47,12 +47,13 @@
          * Gets a media object from its Id
          *
          * @param {string}              mediaId     The Id of the media which object is going to be retrieved
+         *                                          If not defined, multiple results could be retrieved
+         * @param {object}              params      The params to execute a more fine grained query
          * @param {function({object})}  callback    The returning function with the media object
          */
-        function getMediaFromId(mediaId, callback) {
-            var params = {
-                projection  : { data: 0 } //We're interested in the metadata of the image, but not on the binary data
-            };
+        function getMedia(mediaId, params, callback) {
+            if(!params) { params = {}; }
+            params.projection = { data: 0 }; //We're interested in the metadata of the image, but not on the binary data
             crudService.get(constantsService.collections.media, mediaId, params, function (media) {
                 if (callback) { callback(media); }
             });
@@ -118,7 +119,7 @@
         return {
             createMedia         : createMedia,
             updateMedia         : updateMedia,
-            getMediaFromId      : getMediaFromId,
+            getMedia            : getMedia,
             getDownloadUrl      : getDownloadUrl,
             getMediaHtmlDetails : getMediaHtmlDetails,
             getDefaultAvatarUrl : getDefaultAvatarUrl

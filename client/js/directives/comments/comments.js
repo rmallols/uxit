@@ -1,7 +1,7 @@
 (function ()  {
     'use strict';
-    COMPONENTS.directive('comments', ['crudService', 'sessionService', 'i18nService', 'constantsService',
-    function ( crudService, sessionService, i18nService, constantsService) {
+    COMPONENTS.directive('comments', ['commentsService', 'sessionService', 'i18nService', 'constantsService',
+    function ( commentsService, sessionService, i18nService, constantsService) {
 
         return {
             restrict: 'E',
@@ -19,13 +19,10 @@
 
                 scope.$watch('targetId', function (newVal) {
                     if (newVal) {
-                        var filter = {
-                            q       : { targetId : scope.targetId },
-                            sort    : { field: 'create.date', order : '-1' }
-                        };
-                        crudService.get(constantsService.collections.comments, null, filter, function (comments) {
+                        commentsService.loadComments(scope.targetId, function(comments) {
                             scope.comments = comments.results;
                             if(scope.parentComment) {
+                                //noinspection JSPrimitiveTypeWrapperUsage
                                 scope.parentComment.comments = scope.comments;
                             }
                         });
@@ -33,8 +30,7 @@
                 });
 
                 scope.createComment = function () {
-                    var data = { text : scope.newCommentText, targetId : scope.targetId };
-                    crudService.create(constantsService.collections.comments, data, function (newComment) {
+                    commentsService.createComment(scope.newCommentText, scope.targetId, function(newComment) {
                         scope.newCommentText = ''; //Clean the comment field
                         sessionService.addSessionDataToModel(newComment); //Add media info to the newly created comment
                         scope.comments.push(newComment);

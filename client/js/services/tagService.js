@@ -18,6 +18,18 @@
         /**
          *
          *
+         * @param text
+         * @param callback
+         */
+        function createTag(text, callback) {
+            crudService.create(constantsService.collections.tags, { text: text }, function (newTag) {
+                if (callback) { callback(newTag); }
+            });
+        }
+
+        /**
+         *
+         *
          */
         function updateTag(tag, callback) {
             var data = { text : tag.text };
@@ -39,6 +51,7 @@
 
         return {
             loadTags    : loadTags,
+            createTag   : createTag,
             getTags     : getTags,
             updateTag   : updateTag
         };

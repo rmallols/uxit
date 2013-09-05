@@ -196,7 +196,7 @@
         }
 
         function setCustomFavicon() {
-            mediaService.getMediaFromId(getPortal().faviconId, function (favicon) {
+            mediaService.getMedia(getPortal().faviconId, null, function (favicon) {
                 var faviconUrl = mediaService.getDownloadUrl(favicon) + '?v=' + timerService.getRandomNumber();
                 $("#favicon").attr('href', faviconUrl);
             });

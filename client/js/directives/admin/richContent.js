@@ -1,5 +1,5 @@
-COMPONENTS.directive('richContent', ['crudService', 'constantsService', 'textSelectionService', 'stringService', 'i18nService',
-function (crudService, constantsService, textSelectionService, stringService, i18nService) {
+COMPONENTS.directive('richContent', ['pageService', 'constantsService', 'textSelectionService', 'stringService', 'i18nService',
+function (pageService, constantsService, textSelectionService, stringService, i18nService) {
 	'use strict';
     return {
 		restrict: 'A',
@@ -75,15 +75,13 @@ function (crudService, constantsService, textSelectionService, stringService, i1
             }
 
             function getPagesList() {
-                scope.pagesList = [];
-                var params = { projection: {text: 1, url: 1}};
-                crudService.get(constantsService.collections.pages, null, params, function (pagesList) {
-                    //IMPORTANT!!! Avoid the temptation of doing scope.pagesList = pagesList.results
-                    //As the pointer to the options would be broken
-                    $.each(pagesList.results, function (index, page) {
-                        scope.pagesList.push(page);
-                    });
-                });
+                /*scope.pagesList = [];
+                //IMPORTANT!!! Avoid the temptation of doing scope.pagesList = pagesList.results
+                //As the pointer to the options would be broken
+                $.each(pageService.getPages(), function (index, page) {
+                    scope.pagesList.push(page);
+                });*/
+                scope.pagesList = pageService.getPages();
             }
             /** End of private methods **/
             setHeadingOptions();

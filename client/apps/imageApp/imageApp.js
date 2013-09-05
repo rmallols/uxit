@@ -12,7 +12,7 @@ COMPONENTS.directive('imageAppView', function (mediaService) {
         link: function link(scope) {
 
             if (scope.model.mediaId) {
-                mediaService.getMediaFromId(scope.model.mediaId, function (media) {
+                mediaService.getMedia(scope.model.mediaId, null, function (media) {
                     scope.internalData.media = media;
                 });
             }
