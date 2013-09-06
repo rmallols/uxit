@@ -1,4 +1,4 @@
-COMPONENTS.directive('rating', ['crudService', 'constantsService', function (crudService, constantsService) {
+COMPONENTS.directive('rating', ['rateService', 'constantsService', function (rateService, constantsService) {
 	'use strict';
     return {
 		restrict: 'A',
@@ -34,14 +34,7 @@ COMPONENTS.directive('rating', ['crudService', 'constantsService', function (cru
             };
 
             scope.rate = function (rating) {
-                var data = {
-                    rating      : rating,
-                    target      : {
-                        id          : scope.targetId,
-                        collection  : scope.targetCollection
-                    }
-                };
-                crudService.rate(constantsService.collections.ratings, data, function (avgRating) {
+                rateService.rate(rating, scope.targetId, scope.targetCollection, function (avgRating) {
                     scope.rating = avgRating.avgRating;
                     normalizeRating();
                 });

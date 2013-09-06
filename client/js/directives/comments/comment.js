@@ -1,8 +1,8 @@
 (function ()  {
     'use strict';
     COMPONENTS.directive('comment', ['$compile', 'portalService', 'dateService', 'stringService', 'mediaService',
-                                    'crudService', 'constantsService', 'tooltipService',
-    function ($compile, portalService, dateService, stringService, mediaService, crudService, constantsService, tooltipService) {
+                                    'commentsService', 'constantsService', 'tooltipService',
+    function ($compile, portalService, dateService, stringService, mediaService, commentsService, constantsService, tooltipService) {
         return {
             restrict: 'A',
             replace: true,
@@ -41,7 +41,7 @@
                 };
 
                 scope.updateComment = function() {
-                    crudService.update(constantsService.collections.comments, scope.comment._id, { text: scope.comment.text});
+                    commentsService.updateComment(scope.comment._id, { text: scope.comment.text});
                 };
 
                 scope.deleteComment = function() {
@@ -51,7 +51,7 @@
 
                 /** Private methods **/
                 function deleteComment(comment) {
-                    crudService.delete(constantsService.collections.comments, comment._id, function() {
+                    commentsService.deleteComment(comment._id, function() {
                         comment.deleted = true;
                     });
                 }

@@ -69,6 +69,7 @@ window.speed = 150;
     getScript(servicePath + '/commentsService.js');
     getScript(servicePath + '/availableAppsService.js');
     getScript(servicePath + '/statsService.js');
+    getScript(servicePath + '/rateService.js');
     getScript(servicePath + '/ajaxService.js');
     getScript(servicePath + '/constantsService.js');
     getScript(servicePath + '/undeployService.js');

@@ -18,6 +18,13 @@
             });
         }
 
+        /**
+         *
+         *
+         * @param newCommentText
+         * @param targetId
+         * @param callback
+         */
         function createComment(newCommentText, targetId, callback) {
             var data = { text : newCommentText, targetId : targetId };
             crudService.create(constantsService.collections.comments, data, function (newComment) {
@@ -25,9 +32,36 @@
             });
         }
 
+        /**
+         *
+         *
+         * @param commentId
+         * @param data
+         * @param callback
+         */
+        function updateComment(commentId, data, callback) {
+            crudService.update(constantsService.collections.comments, commentId, data, function(updatedComment) {
+                if(callback) { callback(updatedComment); }
+            });
+        }
+
+        /**
+         *
+         *
+         * @param commentId
+         * @param callback
+         */
+        function deleteComment(commentId, callback) {
+            crudService.delete(constantsService.collections.comments, commentId, function() {
+                if(callback) { callback(); }
+            });
+        }
+
         return {
             loadComments : loadComments,
-            createComment: createComment
+            createComment: createComment,
+            updateComment: updateComment,
+            deleteComment: deleteComment
         };
     }]);
 })();
