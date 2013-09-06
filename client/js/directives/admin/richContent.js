@@ -75,14 +75,9 @@ function (pageService, constantsService, textSelectionService, stringService, i1
             }
 
             function getPagesList() {
-                /*scope.pagesList = [];
-                //IMPORTANT!!! Avoid the temptation of doing scope.pagesList = pagesList.results
-                //As the pointer to the options would be broken
-                $.each(pageService.getPages(), function (index, page) {
-                    scope.pagesList.push(page);
-                });*/
                 scope.pagesList = pageService.getPages();
             }
+
             /** End of private methods **/
             setHeadingOptions();
             getSelectedHeading();

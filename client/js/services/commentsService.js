@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('commentsService', ['crudService', function (crudService) {
+    COMPONENTS.factory('commentsService', ['crudService', 'constantsService', function (crudService, constantsService) {
 
         /**
          *

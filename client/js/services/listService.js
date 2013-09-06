@@ -1,6 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('listService', ['crudService', 'i18nService', function (crudService, i18nService) {
+    COMPONENTS.factory('listService', ['crudService', 'dbService', 'i18nService',
+    function (crudService, dbService, i18nService) {
 
         /**
          *
