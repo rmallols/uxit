@@ -19,7 +19,6 @@
                 onSelectPanels  : '=',
                 projection      : '=',
                 searchTargets   : '=',
-                refreshList     : '=',
                 transcludedData : '='
             },
             link: function link(scope, element) {
@@ -135,23 +134,15 @@
                 scope.isEditable = function () { return allowIfHasAdminRole(scope.config.editable); };
                 scope.isDeletable = function () { return allowIfHasAdminRole(scope.config.deletable); };
 
-                var unregister = scope.$watch('refreshList', function(newVal) {
-                    if(newVal) {
-                        unregister();
-                        scope.refreshList = function () {
-                            setCurrentPage();
-                            scope.loadList();
-                        };
-                    }
-                });
-
                 //Load the list just once some meaningful data is provided as otherwise the current directive
                 //could try to get data before it's provided from the invoking function
-                scope.$watch('collection', function () { scope.loadList(); });
+                scope.$watch('collection', function () {
+                    scope.loadList();
+                    //Reload changes everytime the change flag is received
+                    $rootScope.$on(scope.collection + 'Changed', function () { scope.loadList(); });
+                });
                 scope.searchText = '';
                 scope.currentPage = 0;
-                //Reload changes everytime the change flag is received
-                $rootScope.$on(scope.collection + 'Changed', function () { scope.loadList(); });
                 setDetailId($location.search().detailId);
                 scope.$on('$routeUpdate', function(){
                     setDetailId($location.search().detailId);

@@ -17,7 +17,6 @@ COMPONENTS.directive('userList', ['mediaService', 'constantsService', function (
             scope.transcludedData.getUserAvatarUrl = function(item) {
                 return (item.media) ? mediaService.getDownloadUrl(item.media) : mediaService.getDefaultAvatarUrl();
             };
-            scope.refreshList = function() {};
 		}
 	};
 }]);

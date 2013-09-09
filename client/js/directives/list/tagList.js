@@ -12,7 +12,6 @@ COMPONENTS.directive('tagList', ['constantsService', function (constantsService)
             scope.collection        = constantsService.collections.tags;
             scope.searchTargets     = ['text'];
             scope.onSelectPanels    = [{ title: 'Edit tag', type: 'editTag'}];
-            scope.refreshList = function() {};
 		}
 	};
 }]);

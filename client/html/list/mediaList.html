@@ -2,7 +2,7 @@
     <file-uploader ux-show="config.uploadable" on-upload="onUpload" multiple="true"></file-uploader>
     <media-popup media-index="popupMediaIndex" media-list="items"></media-popup>
     <div list="items" collection="collection" config="config" projection="projection" on-select="onSelectMedia"
-         on-select-panels="onSelectPanels" search-targets="searchTargets" refresh-list="refreshList" transcluded-data="transcludedData">
+         on-select-panels="onSelectPanels" search-targets="searchTargets" transcluded-data="transcludedData">
             <img ng-src="{{transcludedData.getDownloadUrl(item)}}" title="{{transcludedData.getMediaTitle(item)}}"
                  keep-title-on-tooltip-hover="true" class="cursorPointer" edit-on-click="true" />
     </div>

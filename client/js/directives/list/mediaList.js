@@ -24,10 +24,7 @@ function ($rootScope, mediaService, constantsService) {
                 }
             });
 
-            scope.refreshList = function() {};
-
             scope.onUpload = function() {
-                scope.refreshList();
                 $rootScope.$broadcast('mediaChanged', 'create'); //Propagate the media create event
                 scope.$apply();
             };
