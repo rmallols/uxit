@@ -6,11 +6,15 @@
                 <div class="author"><a href="#">{{comment.create.author.fullName}}</a></div>
             </div>
             <div class="floatRight">
-                <div class="date">{{getFormattedDate(comment.create.date)}}</div>
-                <div rating="comment.avgRating" target-id="comment._id" target-collection="comments" height="16" ux-show="showRatings()"></div>
-                <button class="toggleReply replyIcon small" ng-click="toggleReply()" i18n-title title="comments.addReply"></button>
-                <button class="toggleEdit editIcon small" ng-click="toggleEdit()" i18n-title title="comments.edit"></button>
-                <button class="deleteComment removeIcon small" i18n-title title="comments.deleteComment" confirm-action="deleteComment()"></button>
+                <div class="date">{{getFormattedDate()}}</div>
+                <div rating="comment.avgRating" target-id="comment._id" target-author-id="comment.create.author._id"
+                     target-collection="comments" height="16" ux-show="showRatings()"></div>
+                <button class="toggleReply replyIcon small" ng-click="toggleReply()" i18n-title title="comments.addReply"
+                        ng-show="isSelfActionAllowed"></button>
+                <button class="toggleEdit editIcon small" ng-click="toggleEdit()" i18n-title title="comments.edit"
+                        ng-show="isSelfActionAllowed"></button>
+                <button class="deleteComment removeIcon small" i18n-title title="comments.deleteComment"
+                        confirm-action="deleteComment()" ng-show="isSelfActionAllowed"></button>
             </div>
         </div>
         <div content-editable="comment.isEditable" ng-model="comment.text" type="type" on-blur="updateComment" class="message"></div>

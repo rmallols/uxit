@@ -1,7 +1,6 @@
 (function ()  {
     'use strict';
-    COMPONENTS.directive('comments', ['commentsService', 'sessionService', 'i18nService', 'constantsService',
-    function ( commentsService, sessionService, i18nService, constantsService) {
+    COMPONENTS.directive('comments', ['commentsService', 'sessionService', function (commentsService, sessionService) {
 
         return {
             restrict: 'E',
@@ -16,6 +15,8 @@
             },
             templateUrl: '/client/html/comments/comments.html',
             link: function link(scope) {
+
+                scope.loggedUser = sessionService.isUserLogged();
 
                 scope.$watch('targetId', function (newVal) {
                     if (newVal) {

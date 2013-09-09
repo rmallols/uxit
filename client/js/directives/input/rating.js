@@ -1,4 +1,4 @@
-COMPONENTS.directive('rating', ['rateService', 'constantsService', function (rateService, constantsService) {
+COMPONENTS.directive('rating', ['rateService', 'sessionService', function (rateService, sessionService) {
 	'use strict';
     return {
 		restrict: 'A',
@@ -6,11 +6,14 @@ COMPONENTS.directive('rating', ['rateService', 'constantsService', function (rat
         scope: {
             rating              : '=',
             targetId            : '=',
+            targetAuthorId      : '=',
             targetCollection    : '@',
             starSize            : '@height'
         },
 		templateUrl: '/client/html/input/rating.html',
 		link: function link(scope) {
+
+            var ratingAllowed;
 
             scope.$watch('rating', function () {
                 initRating();
@@ -20,8 +23,14 @@ COMPONENTS.directive('rating', ['rateService', 'constantsService', function (rat
                 initRating();
             });
 
+            scope.$watch('targetAuthorId', function () {
+                setRatingAllowed();
+            });
+
             scope.hoverRate = function (rating) {
-                scope.rateOnHover = rating;
+                if(ratingAllowed) {
+                    scope.rateOnHover = rating;
+                }
             };
 
             scope.clearHoverRate = function () {
@@ -34,10 +43,12 @@ COMPONENTS.directive('rating', ['rateService', 'constantsService', function (rat
             };
 
             scope.rate = function (rating) {
-                rateService.rate(rating, scope.targetId, scope.targetCollection, function (avgRating) {
-                    scope.rating = avgRating.avgRating;
-                    normalizeRating();
-                });
+                if(ratingAllowed) {
+                    rateService.rate(rating, scope.targetId, scope.targetCollection, function (avgRating) {
+                        scope.rating = avgRating.avgRating;
+                        normalizeRating();
+                    });
+                }
             };
 
             scope.getStarSize = function() {
@@ -47,6 +58,17 @@ COMPONENTS.directive('rating', ['rateService', 'constantsService', function (rat
                     height  : scope.starSize || defaultSize
                 };
             };
+
+            /** Private methods **/
+            function isRatingAllowed() {
+                var isUserLogged = sessionService.isUserLogged(),
+                    isSessionUserTargetUser = isUserLogged && scope.targetAuthorId === sessionService.getUserSession()._id;
+                return isUserLogged && (!scope.targetAuthorId || !isSessionUserTargetUser);
+            }
+
+            function setRatingAllowed() {
+                ratingAllowed = isRatingAllowed()
+            }
 
             function initRating() {
                 scope.normalizedRating = [];
@@ -64,6 +86,7 @@ COMPONENTS.directive('rating', ['rateService', 'constantsService', function (rat
                         : 'none';
                 }
             }
+            /** End of private methods **/
 		}
 	};
 }]);

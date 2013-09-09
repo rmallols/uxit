@@ -37,7 +37,6 @@ module.exports = {
         projection = this._normalizeProjection(query.projection);
         //noinspection JSUnresolvedFunction
         db.collection(collection).findOne(query.q, projection, function (err, document) {
-            cacheService.setJoins(document);
             callback(document);
         });
     },

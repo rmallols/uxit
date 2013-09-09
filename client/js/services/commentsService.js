@@ -11,7 +11,7 @@
         function loadComments(targetId, callback) {
             var filter = {
                 q       : { targetId : targetId },
-                sort    : { field: 'create.date', order : '-1' }
+                sort    : { field: 'create.date', order : '1' }
             };
             crudService.get(constantsService.collections.comments, null, filter, function (comments) {
                 if(callback) { callback(comments); }

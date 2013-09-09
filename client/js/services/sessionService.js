@@ -44,7 +44,8 @@
          * @returns {boolean}
          */
         function isUserLogged() {
-            return getUserSession() !== undefined;
+            var userSession = getUserSession();
+            return userSession !== null && userSession !== undefined;
         }
 
         /**

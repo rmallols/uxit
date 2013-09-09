@@ -49,7 +49,7 @@
                     });
 
                     scope.showEditBox = function () {
-                        if (scope.isAdmin() && textSelectionService.isSelection()) {
+                        if (scope.isEditable() && textSelectionService.isSelection()) {
                             var selectedTextDomObj = textSelectionService.getSelectedTextDomObj(),
                                 defaultPanels = [{ title: 'Content', type: 'richContent' }];
                             scope.model = styleService.getComputedStyleInRange(contentEditableObj, selectedTextDomObj);

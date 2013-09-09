@@ -1,8 +1,9 @@
 (function ()  {
     'use strict';
     COMPONENTS.directive('comment', ['$compile', 'portalService', 'dateService', 'stringService', 'mediaService',
-                                    'commentsService', 'constantsService', 'tooltipService',
-    function ($compile, portalService, dateService, stringService, mediaService, commentsService, constantsService, tooltipService) {
+                                    'commentsService', 'constantsService', 'tooltipService', 'sessionService',
+    function ($compile, portalService, dateService, stringService, mediaService, commentsService, constantsService,
+              tooltipService, sessionService) {
         return {
             restrict: 'A',
             replace: true,
@@ -14,16 +15,18 @@
 
                 var repliesHtml =   '<comments target-id="comment._id" parent-comment="comment" hide-add="hideAdd" ' +
                                     'placeholder="comments.addReply.placeholder"></comments>';
+
                 $('.repliesWrapper', element).replaceWith($compile(repliesHtml)(scope));
 
                 scope.hideAdd = true;
                 scope.comment.isEditable = false;
+                scope.isSelfActionAllowed = isSelfActionAllowed();
                 scope.getDownloadUrl = function (media) {
                     return (media) ? mediaService.getDownloadUrl(media) : false;
                 };
 
-                scope.getFormattedDate = function (date) {
-                    return dateService.getFormattedDate(date);
+                scope.getFormattedDate = function () {
+                    return dateService.getFormattedDate(scope.comment.create.date);
                 };
 
                 scope.showRatings = function () {
@@ -63,6 +66,11 @@
                         });
                     }
                     deleteComment(comment);
+                }
+
+                function isSelfActionAllowed() {
+                    var isLoggedUser = sessionService.isUserLogged();
+                    return isLoggedUser && scope.comment.create.author._id === sessionService.getUserSession()._id;
                 }
                 /** End of private methods **/
             }

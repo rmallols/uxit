@@ -7,7 +7,8 @@
                     <div content-editable ng-model="internalData.title" type="type" on-blur="onContentUpdated" class="noBorder" i18n-db-input></div>
                 </a>
             </h3>
-            <div rating="internalData.avgRating" target-id="model.selectedContentId" target-collection="content" ux-show="model.showRatings"></div>
+            <div rating="internalData.avgRating" target-id="model.selectedContentId" target-collection="content"
+                 target-author-id="internalData.create.author._id" ux-show="model.showRatings"></div>
         </div>
         <div content-editable ng-model="internalData.summary" type="type" on-blur="onContentUpdated" class="noBorder" i18n-db-input></div>
         <div content-editable ng-model="internalData.content" type="type" on-blur="onContentUpdated" class="noBorder" i18n-db-input></div>

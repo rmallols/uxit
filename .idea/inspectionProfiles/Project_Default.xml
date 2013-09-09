@@ -5,7 +5,7 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="9">
+          <list size="21">
             <item index="0" class="java.lang.String" itemvalue="ng-app" />
             <item index="1" class="java.lang.String" itemvalue="ng-view" />
             <item index="2" class="java.lang.String" itemvalue="i18n" />
@@ -15,6 +15,18 @@
             <item index="6" class="java.lang.String" itemvalue="ng-click" />
             <item index="7" class="java.lang.String" itemvalue="ng-class" />
             <item index="8" class="java.lang.String" itemvalue="on-change" />
+            <item index="9" class="java.lang.String" itemvalue="rating" />
+            <item index="10" class="java.lang.String" itemvalue="target-collection" />
+            <item index="11" class="java.lang.String" itemvalue="ng-show" />
+            <item index="12" class="java.lang.String" itemvalue="confirm-action" />
+            <item index="13" class="java.lang.String" itemvalue="i18n-title" />
+            <item index="14" class="java.lang.String" itemvalue="target-author-id" />
+            <item index="15" class="java.lang.String" itemvalue="target-id" />
+            <item index="16" class="java.lang.String" itemvalue="height" />
+            <item index="17" class="java.lang.String" itemvalue="ng-model" />
+            <item index="18" class="java.lang.String" itemvalue="type" />
+            <item index="19" class="java.lang.String" itemvalue="on-blur" />
+            <item index="20" class="java.lang.String" itemvalue="content-editable" />
           </list>
         </value>
       </option>
