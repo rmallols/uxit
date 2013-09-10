@@ -3,20 +3,20 @@
     COMPONENTS.factory('stdService', ['globalMsgService', function (globalMsgService) {
 
         /**
+         * Shows a warn message on the browser console
          *
-         *
-         * @param text
-         * @param details
+         * @param {string} text     Main text of to be displayed
+         * @param {string} details  Secondary text to be displayed
          */
         function warn(text, details) {
             console.warn("[WARN] " + text, details);
         }
 
         /**
+         * Shows an error message on the browser console and on the global service mechanism
          *
-         *
-         * @param text
-         * @param details
+         * @param {string} text     Main text of to be displayed
+         * @param {string} details  Secondary text to be displayed
          */
         function error(text, details) {
             console.error("[ERROR] " + text, details);
@@ -24,9 +24,9 @@
         }
 
         /**
+         * Shows a todo message on the browser console
          *
-         *
-         * @param text
+         * @param {string} text Main text of to be displayed
          */
         function todo(text) {
             console.log("[TODO] " + text);

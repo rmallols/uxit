@@ -4,10 +4,10 @@
     function (crudService, dbService, i18nService) {
 
         /**
+         * Gets a list of items from a given collection
          *
-         *
-         * @param options
-         * @param callback
+         * @param {object}      options     The settings that will define the query to execute (collection, filters...)
+         * @param {function}    callback    The function to execute once the list has been loaded
          */
         function loadList(options, callback) {
             var filter = {
@@ -27,10 +27,10 @@
         }
 
         /**
+         * Deletes an item from the list
          *
-         *
-         * @param collection
-         * @param itemId
+         * @param {string} collection   The collection where the item to be removed is
+         * @param {string} itemId       The Id of the item that is going to be removed
          */
         function deleteListItem(collection, itemId) {
             crudService.delete(collection, itemId, null);

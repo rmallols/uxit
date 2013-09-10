@@ -3,12 +3,12 @@
     COMPONENTS.factory('rateService', ['crudService', 'constantsService', function (crudService, constantsService) {
 
         /**
+         * Rates a given item
          *
-         *
-         * @param rating
-         * @param targetId
-         * @param targetCollection
-         * @param callback
+         * @param {string}      rating              The rating's value
+         * @param {string}      targetId            The Id of the item that is going to be rated
+         * @param {string}      targetCollection    The collection where the item to be rated is stored
+         * @param {function}    callback            The function to execute once the rating has been fully done
          */
         function rate(rating, targetId, targetCollection, callback) {
             var data = {

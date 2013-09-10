@@ -6,9 +6,9 @@
         var userSession;
 
         /**
+         * Loads the currently logged user session
          *
-         *
-         * @param callback
+         * @param {function} callback The function to execute once the session has been fully loaded
          */
         function loadUserSession(callback) {
             ajaxService.ajax({
@@ -24,14 +24,19 @@
             });
         }
 
+        /**
+         * Gets the session of the currently logged user
+         *
+         * @returns {object} The info of the session of the currently logged user
+         */
         function getUserSession() {
             return userSession;
         }
 
         /**
+         * Attachs session information to a given model object
          *
-         *
-         * @param model
+         * @param {object} model The object where the session data is going to be attached
          */
         function addSessionDataToModel(model) {
             model.create.author = getUserSession();
@@ -39,9 +44,9 @@
         }
 
         /**
+         * Determines if the current user is logged or not
          *
-         *
-         * @returns {boolean}
+         * @returns {boolean} True if the current user is logged. False otherwise
          */
         function isUserLogged() {
             var userSession = getUserSession();
@@ -49,8 +54,7 @@
         }
 
         /**
-         *
-         *
+         * Closes the session of the current user
          */
         function logout() {
             window.open('/' + $routeParams.portal + '/logout', '_self');

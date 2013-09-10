@@ -6,9 +6,9 @@
         var pages, currentPage;
 
         /**
+         * Loads the available pages in the system
          *
-         *
-         * @param callback
+         * @param {function} callback The function to execute once the pages have been fully loaded
          */
         function loadPages(callback) {
             var params = {
@@ -21,16 +21,19 @@
         }
 
         /**
+         * Gets the previously loaded pages
          *
-         *
+         * @returns {array} The array of previously loaded pages
          */
         function getPages() {
             return pages;
         }
 
         /**
+         * Gets a page based on its unique Url
          *
-         *
+         * @param   {string} url    The Url that identifies the page that is going to be retrieved
+         * @returns {object}        The page identified by the given Url
          */
         function getPage(url) {
             var matchedPage = null;
@@ -43,8 +46,10 @@
         }
 
         /**
+         * Creates a new page
          *
-         *
+         * @param {object}      data        The info of the new page
+         * @param {function}    callback    The function to execute once the page has been fully created
          */
         function createPage(data, callback) {
             crudService.create(constantsService.collections.pages, data, function () {
@@ -56,8 +61,11 @@
         }
 
         /**
+         * Updates an existing page
          *
-         *
+         * @param {string}      pageId      The Id of the page that is going to be updated
+         * @param {object}      data        The new information of the page
+         * @param {function}    callback    The function to execute once the page has been fully updated
          */
         function updatePage(pageId, data, callback) {
             crudService.update(constantsService.collections.pages, pageId, data, function (data) {
@@ -69,8 +77,9 @@
         }
 
         /**
+         * Updates the current page
          *
-         *
+         * @param {function}    callback    The function to execute once the current page has been fully updated
          */
         function updateCurrentPage(callback) {
             var currentPage = getCurrentPage();
@@ -80,8 +89,10 @@
         }
 
         /**
+         * Deletes a given page
          *
-         *
+         * @param {string}      pageId      The Id of the page that is going to be deleted
+         * @param {function}    callback    The function to execute once the page has been fully deleted
          */
         function deletePage(pageId, callback) {
             crudService.delete(constantsService.collections.pages, pageId, function () {
@@ -93,18 +104,18 @@
         }
 
         /**
+         * Gets the current page
          *
-         *
-         * @returns {*}
+         * @returns {object} The information of the current page
          */
         function getCurrentPage() {
             return currentPage;
         }
 
         /**
+         * Updates the current page
          *
-         *
-         * @param newCurrentPage
+         * @param {object} newCurrentPage The page that is going to be set as the new current one
          */
         function setCurrentPage(newCurrentPage) {
             currentPage = newCurrentPage;
@@ -118,16 +129,6 @@
          */
         function isSubPageOf(subPage, page) { return subPage.parentPageId === page._id; }
 
-        /**
-         *
-         *
-         */
-        function addApp() {
-            var newRowPos = 1, rows = getCurrentPage().rows;
-            rowService.addRowAndDependencies(rows, newRowPos);
-            updateCurrentPage(null);
-        }
-
         return {
             loadPages: loadPages,
             getPages: getPages,
@@ -138,8 +139,7 @@
             deletePage: deletePage,
             getCurrentPage: getCurrentPage,
             setCurrentPage: setCurrentPage,
-            isSubPageOf: isSubPageOf,
-            addApp: addApp
+            isSubPageOf: isSubPageOf
         };
     }]);
 })(window.COMPONENTS);

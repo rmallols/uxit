@@ -39,28 +39,28 @@ function($rootScope, statsService, roleService, constantsService) {
                 return normalizedData;
             }
 
-            statsService.getStats(constantsService.collections.content, {}, function (stats) {
+            statsService.loadStats(constantsService.collections.content, {}, function (stats) {
                 normalizeTimeTmpDelete(stats);
                 scope.newsPerDay = stats;
             });
 
-            statsService.getStats(constantsService.collections.users, {}, function (stats) {
+            statsService.loadStats(constantsService.collections.users, {}, function (stats) {
                 normalizeTimeTmpDelete(stats);
                 scope.usersPerDay = stats;
             });
 
             filter = { groupBy : 'create.authorId'};
-            statsService.getStats(constantsService.collections.content, filter, function (stats) {
+            statsService.loadStats(constantsService.collections.content, filter, function (stats) {
                 scope.contentPerUser = normalizeUserData(stats);
             });
 
             filter = { groupBy : 'role'};
-            statsService.getStats(constantsService.collections.users, filter, function (stats) {
+            statsService.loadStats(constantsService.collections.users, filter, function (stats) {
                 scope.usersPerRole = normalizeUsersPerRoleData(stats);
             });
 
             filter = { groupBy : 'create.authorId'};
-            statsService.getStats(constantsService.collections.comments, filter, function (stats) {
+            statsService.loadStats(constantsService.collections.comments, filter, function (stats) {
                 scope.commentsPerUser = normalizeUserData(stats);
             });
         }

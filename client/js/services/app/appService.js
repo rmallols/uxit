@@ -134,6 +134,7 @@
         function updateSearchId(_id) {
             $location.search('_id', _id);
         }
+        /** End of private methods **/
 
         return {
             enableFullscreen: enableFullscreen,

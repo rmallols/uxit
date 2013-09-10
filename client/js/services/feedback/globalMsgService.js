@@ -5,10 +5,11 @@
         var onShowObservers = [], onHideObservers = [];
 
         /**
+         * Shows the global message
          *
-         *
-         * @param text
-         * @param details
+         * @param {string} text     Main text of to be displayed
+         * @param {string} details  Secondary text to be displayed,
+         *                          that will be shown just whenever the user will click in the 'show details' link
          */
         function show(text, details) {
             onShowObservers.forEach(function (onShowObserver) {
@@ -17,7 +18,7 @@
         }
 
         /**
-         *
+         * Hides the global message
          *
          */
         function hide() {
@@ -27,18 +28,18 @@
         }
 
         /**
+         * Triggers a given observer event whenever the global message is shown
          *
-         *
-         * @param observer
+         * @param {function} observer The function to be executed whenever the global message is shown
          */
         function onShow(observer) {
             onShowObservers.push(observer);
         }
 
         /**
+         * Triggers a given observer event whenever the global message is hidden
          *
-         *
-         * @param observer
+         * @param {function} observer The function to be executed whenever the global message is hidden
          */
         function onHide(observer) {
             onHideObservers.push(observer);

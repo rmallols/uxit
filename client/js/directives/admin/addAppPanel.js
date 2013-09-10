@@ -15,7 +15,7 @@
                 scope.showExpandedView = function (availableApp) {
                     function getStats() {
                         var filter = { cond : { targetId: scope.highlight._id }};
-                        statsService.getStats(constantsService.collections.comments, filter, function (stats) {
+                        statsService.loadStats(constantsService.collections.comments, filter, function (stats) {
                             scope.highlight.stats = stats;
                         });
                     }

@@ -6,8 +6,9 @@
         var users;
 
         /**
+         * Loads all the available users in the system
          *
-         *
+         * @param {function} callback The function to be executed once all the users have been fully loaded
          */
         function loadUsers(callback) {
             var params = {
@@ -20,18 +21,19 @@
         }
 
         /**
+         * Gets the previously loaded users
          *
-         *
+         * @returns {array} The array with all the previously loaded users
          */
         function getUsers() {
             return users;
         }
 
         /**
+         * Creates a new user
          *
-         *
-         * @param user
-         * @param callback
+         * @param {object}      user        The object that stores the new user information
+         * @param {function}    callback    The function to be executed once the user has been fully created
          */
         function createUser(user, callback) {
             var data;
@@ -59,10 +61,10 @@
         }
 
         /**
+         * Updates an existing user
          *
-         *
-         * @param user
-         * @param callback
+         * @param {object}      user        The object that stores the existing user information
+         * @param {function}    callback    The function to be executed once the user has been fully updated
          */
         function updateUser(user, callback) {
             var data;

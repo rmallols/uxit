@@ -8,7 +8,7 @@
         var portal, windowDimensions;
 
         /**
-         *
+         * Sets the header information of the portal (page title, favicon...)
          *
          */
         function setHeader() {
@@ -67,9 +67,9 @@
         }
 
         /**
+         * Saves the current portal model
          *
-         *
-         * @param callback
+         * @param {function} callback The function to execute once the portal has been fully saved
          */
         function savePortal(callback) {
             //The user handling will have to be refactored at UXIT-273
@@ -88,7 +88,7 @@
 
         /**
          * Caches the window dimensions (width and height)
-          */
+         */
         function setWindowDimensions() {
             windowDimensions = { width: $(window).width(), height: $(window).height() };
             $(window).resize(function () { //Auto-update the window dimensions object everytime the window is resized
@@ -103,6 +103,7 @@
 
         /**
          * Retrieves the cached window dimensions (width and height)
+         *
          * @returns {object} The windows width and height
          */
         function getWindowDimensions() {
@@ -111,7 +112,7 @@
 
         /**
          * Registers portal stats through Google Analytics
-          */
+         */
         function trackAnalytics() {
             if (getPortal().trackingCode) {
                 var _gaq = _gaq || [], ga, s;
@@ -162,10 +163,10 @@
         }
 
         /**
+         * Deletes a given app
          *
-         *
-         * @param appElm
-         * @param appIndex
+         * @param {object}  appElm      The pointer to the DOM object where the app that is going to be deleted id
+         * @param {string}  appIndex    The index of the app in the context of the column where it is
          */
         function deleteApp(appElm, appIndex) {
             var columnScope = angular.element(appElm.closest('.columns')).scope(),
