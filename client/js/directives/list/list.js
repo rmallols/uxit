@@ -1,9 +1,9 @@
 (function (Math, Number, COMPONENTS) {
     'use strict';
     COMPONENTS.directive('list', ['$rootScope', '$location', 'rowService', 'listService',
-    'editBoxUtilsService', 'arrayService', 'roleService', 'sessionService', 'stringService', 'tooltipService',
+    'editBoxUtilsService', 'arrayService', 'roleService', 'sessionService', 'objectService', 'tooltipService',
     function ($rootScope, $location, rowService, listService, editBoxUtilsService, arrayService,
-              roleService, sessionService, stringService, tooltipService) {
+              roleService, sessionService, objectService, tooltipService) {
         return {
             restrict: 'A',
             replace: true,
@@ -95,7 +95,7 @@
                 };
 
                 scope.getDefaultedValue = function (scopeProp) {
-                    return (!stringService.isEmpty(scope.config[scopeProp]))
+                    return (!objectService.isEmpty(scope.config[scopeProp]))
                         ? scope.config[scopeProp] : defaultOptions[scopeProp];
                 };
 

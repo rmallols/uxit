@@ -23,4 +23,23 @@ describe('objectService', function() {
             expect(objectService.isObject(function() {})).toBe(false);
         });
     });
+
+    describe('isEmpty', function() {
+        it('should identify an empty string (\'\')', function() {
+            var isEmptyToken = objectService.isEmpty('');
+            expect(isEmptyToken).toBe(true);
+        });
+        it('should identify an empty string (null)', function() {
+            var isEmptyToken = objectService.isEmpty(null);
+            expect(isEmptyToken).toBe(true);
+        });
+        it('should identify an empty string (undefined)', function() {
+            var isEmptyToken = objectService.isEmpty(undefined);
+            expect(isEmptyToken).toBe(true);
+        });
+        it('should identify an empty string (non empty)', function() {
+            var isEmptyToken = objectService.isEmpty(' ');
+            expect(isEmptyToken).toBe(false);
+        });
+    });
 });

@@ -1,19 +1,19 @@
 describe('radio directive', function () {
     'use strict';
-    var $rootScope, $scope, $compile, $timeout, compile, template, checkSelector, stringService;
+    var $rootScope, $scope, $compile, $timeout, compile, template, checkSelector, objectService;
 
     beforeEach(module('components', 'mocks.$timeout'));
-    beforeEach(inject(["$rootScope", "$compile", "stringService", "$timeout",
-    function ($rootScope_, $compile_, stringService_, $timeout_) {
-        $rootScope      = $rootScope_;
-        $scope          = $rootScope_.$new();
-        $timeout        = $timeout_;
-        stringService   = stringService_;
-        compile         = compileFn($compile_, $scope);
+    beforeEach(inject(["$rootScope", "$compile", "objectService", "$timeout",
+    function ($rootScope_, $compile_, objectService_, $timeout_) {
+        $rootScope      =   $rootScope_;
+        $scope          =   $rootScope_.$new();
+        $timeout        =   $timeout_;
+        objectService   =   objectService_;
+        compile         =   compileFn($compile_, $scope);
         template        =   '<div radio ng-model="ngModel" label="{{label}}" value="v1" name="bla"></div>' +
                             '<div radio ng-model="ngModel" label="{{label}}" value="v2" name="bla"></div>' +
                             '<div radio ng-model="ngModel" label="{{label}}" value="v3" name="bla"></div>';
-        checkSelector   = ' > .check.iradio_square-blue';
+        checkSelector   =   ' > .check.iradio_square-blue';
     }]));
 
     it('should have a wrapping class', function () {
@@ -23,7 +23,7 @@ describe('radio directive', function () {
 
     it('should have an Id', function () {
         var radioDirective = compile(template, {ngModel:'', label:''});
-        expect(stringService.isEmpty($('input', radioDirective).attr('id'))).toBe(false);
+        expect(objectService.isEmpty($('input', radioDirective).attr('id'))).toBe(false);
     });
 
     it('should have the proper stylesheet class', function () {

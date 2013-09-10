@@ -13,8 +13,19 @@
             return typeof(item) === 'object';
         }
 
+        /**
+         * Determines if the given string is empty or not
+         *
+         * @param   {string}    object  The string that is going to determine if it's empty or not
+         * @returns {boolean}           True if the string is empty. False otherwise
+         */
+        function isEmpty(object) {
+            return object === '' || object === null || object === undefined;
+        }
+
         return {
-            isObject: isObject
+            isObject: isObject,
+            isEmpty: isEmpty
         };
     }]);
 })();

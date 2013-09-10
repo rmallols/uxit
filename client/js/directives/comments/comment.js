@@ -1,8 +1,8 @@
 (function ()  {
     'use strict';
-    COMPONENTS.directive('comment', ['$compile', 'portalService', 'dateService', 'stringService', 'mediaService',
+    COMPONENTS.directive('comment', ['$compile', 'portalService', 'dateService', 'objectService', 'mediaService',
                                     'commentsService', 'constantsService', 'tooltipService', 'sessionService',
-    function ($compile, portalService, dateService, stringService, mediaService, commentsService, constantsService,
+    function ($compile, portalService, dateService, objectService, mediaService, commentsService, constantsService,
               tooltipService, sessionService) {
         return {
             restrict: 'A',
@@ -30,7 +30,7 @@
                 };
 
                 scope.showRatings = function () {
-                    return (!stringService.isEmpty(scope.allowRatings))
+                    return (!objectService.isEmpty(scope.allowRatings))
                         ? scope.allowRatings
                         : portalService.getPortal().comments.allowRatings;
                 };

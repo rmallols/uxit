@@ -61,25 +61,6 @@ describe('stringService', function() {
         });
     });
 
-    describe('isEmpty', function() {
-        it('should identify an empty string (\'\')', function() {
-            var isEmptyToken = stringService.isEmpty('');
-            expect(isEmptyToken).toBe(true);
-        });
-        it('should identify an empty string (null)', function() {
-            var isEmptyToken = stringService.isEmpty(null);
-            expect(isEmptyToken).toBe(true);
-        });
-        it('should identify an empty string (undefined)', function() {
-            var isEmptyToken = stringService.isEmpty(undefined);
-            expect(isEmptyToken).toBe(true);
-        });
-        it('should identify an empty string (non empty)', function() {
-            var isEmptyToken = stringService.isEmpty(' ');
-            expect(isEmptyToken).toBe(false);
-        });
-    });
-
     describe('isExternalUrl', function() {
         it('should identify an external url as valid', function() {
             var url = 'http://www.test.com';

@@ -70,16 +70,6 @@
         }
 
         /**
-         * Determines if the given string is empty or not
-         *
-         * @param   {string}    string  The string that is going to determine if it's empty or not
-         * @returns {boolean}           True if the string is empty. False otherwise
-         */
-        function isEmpty(string) {
-            return string === '' || string === null || string === undefined;
-        }
-
-        /**
          * Determines if the given string is an external url or not
          *
          * @param   {string} url    The string that is going to determine if it's an external url or not
@@ -112,7 +102,6 @@
             toSnakeCase: toSnakeCase,
             toCamelCase: toCamelCase,
             trim: trim,
-            isEmpty: isEmpty,
             isExternalUrl: isExternalUrl,
             normalizeExternalUrl: normalizeExternalUrl
         };

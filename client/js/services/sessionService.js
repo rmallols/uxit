@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('sessionService', ['$rootScope', '$routeParams', 'ajaxService',
-    function ($rootScope, $routeParams, ajaxService) {
+    COMPONENTS.factory('sessionService', ['$rootScope', '$routeParams', 'ajaxService', 'objectService',
+    function ($rootScope, $routeParams, ajaxService, objectService) {
 
         var userSession;
 
@@ -50,7 +50,7 @@
          */
         function isUserLogged() {
             var userSession = getUserSession();
-            return userSession !== null && userSession !== undefined;
+            return !objectService.isEmpty(userSession);
         }
 
         /**

@@ -1,7 +1,7 @@
 (function (window, Number) {
     'use strict';
-    COMPONENTS.directive('mediaPopup', ['mediaService', 'domService', 'stringService', 'keyboardService',
-    function (mediaService, domService, stringService, keyboardService) {
+    COMPONENTS.directive('mediaPopup', ['mediaService', 'domService', 'objectService', 'keyboardService',
+    function (mediaService, domService, objectService, keyboardService) {
 
         return {
             restrict: 'E',
@@ -42,7 +42,7 @@
                 scope.getDownloadUrl = function () {
                     //noinspection JSValidateTypes
                     scope.isloadingImage = false;
-                    if (!stringService.isEmpty(scope.mediaIndex)) {
+                    if (!objectService.isEmpty(scope.mediaIndex)) {
                         return mediaService.getDownloadUrl(scope.mediaList[scope.mediaIndex]);
                     }
                     return null;
@@ -50,7 +50,7 @@
 
                 scope.getMediaHtmlDetails = function () {
                     //noinspection JSValidateTypes
-                    if (!stringService.isEmpty(scope.mediaIndex)) {
+                    if (!objectService.isEmpty(scope.mediaIndex)) {
                         return mediaService.getMediaHtmlDetails(scope.mediaList[scope.mediaIndex]);
                     }
                     return null;
