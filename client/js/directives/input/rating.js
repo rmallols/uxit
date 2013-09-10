@@ -67,7 +67,7 @@ COMPONENTS.directive('rating', ['rateService', 'sessionService', function (rateS
             }
 
             function setRatingAllowed() {
-                ratingAllowed = isRatingAllowed()
+                ratingAllowed = isRatingAllowed();
             }
 
             function initRating() {
