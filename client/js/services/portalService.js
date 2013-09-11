@@ -42,17 +42,11 @@
                 crudService.get(constantsService.collections.portal, portalId, null, function (loadedPortal) {
                     var pageModel = pageService.getPage(pageId);
                     domService.removeLoadingFeedback(bodyObj);
-                    if (!loadedPortal) {
-                        stdService.error('The portal \"' + portalId + '\" cannot be found');
-                    } else if (!pageModel) {
-                        stdService.error('The page \"' + pageId + '\" cannot be found');
-                    } else {
-                        portal = loadedPortal;
-                        updatePageDataFromTemplate(getPortal(), pageModel.rows);
-                        pageService.setCurrentPage(pageModel);
-                        $rootScope.$broadcast('pageLoaded');
-                        if (callback) { callback(getPortal()); }
-                    }
+                    portal = loadedPortal;
+                    updatePageDataFromTemplate(getPortal(), pageModel.rows);
+                    pageService.setCurrentPage(pageModel);
+                    $rootScope.$broadcast('pageLoaded');
+                    if (callback) { callback(getPortal()); }
                 });
             }
         }

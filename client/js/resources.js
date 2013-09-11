@@ -54,6 +54,7 @@ window.speed = 150;
     getScript(scriptPath + '/errorHandler.js');
     getScript(scriptPath + '/controllers/LoginController.js');
     getScript(scriptPath + '/controllers/PortalController.js');
+    getScript(scriptPath + '/controllers/ErrorController.js');
 
     //Services
     getScript(servicePath + '/portalService.js');

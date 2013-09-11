@@ -24,6 +24,11 @@ function checkAuth(req, res, next) {
     }
 }
 
+function goToIndex(res) {
+    var absPath = path.resolve('../');
+    res.sendfile(absPath + '/index.html');
+}
+
 app.post('/rest/login', function (req, res) {
     crudService.login(req.body, req.session, function(success) {
         if (success) {
@@ -130,6 +135,7 @@ app.get('/media/:id/:name', function (req, res) {
         res.header("Content-Type", content.mime);
         //var buffer = new Buffer(content[0].data, "binary");
         //res.end(buffer, 'binary');
+        //noinspection JSUnresolvedFunction,JSCheckFunctionSignatures
         buffer = new Buffer(content[0].data.toString('base64'), "base64")
         res.end(buffer, 'base64');
     });
@@ -149,41 +155,62 @@ app.get('/initializeApp', checkAuth, function (req, res) {
 
 app.use('/', express.static('../'));
 
-app.get('/login', function (req, res) {
-    var absPath = path.resolve('../');
-    res.sendfile(absPath + '/index.html');
-});
+app.get('/login', function (req, res) { goToIndex(res); });
+
+app.get('/error', function (req, res) { goToIndex(res); });
 
 app.get('/:portalId', function (req, res) {
-    var params = {
-        q : { position : 0 },
-        projection : { url: 1, type: 1, externalLinkUrl: 1},
-        sort : { field: 'position', order : '1' }
-    };
-    crudService.getFirst(constantsService.collections.pages, params, function (firstPage) {
-        if(firstPage) {
-            if (firstPage.type === 'externalLink') { res.redirect(firstPage.externalLinkUrl); }
-            else { res.redirect(req.params.portalId + '/' + firstPage.url); }
+    existsPortal(req.params.portalId, function(existsPortal) {
+        if(existsPortal) {
+            var params = {
+                q : { position : 0 },
+                projection : { url: 1, type: 1, externalLinkUrl: 1}
+            };
+            crudService.getFirst(constantsService.collections.pages, params, function (firstPage) {
+                if(firstPage) {
+                    if (firstPage.type === 'externalLink') { res.redirect(firstPage.externalLinkUrl); }
+                    else { res.redirect(req.params.portalId + '/' + firstPage.url); }
+                }
+            });
         } else {
-            res.redirect(req.params.portalId + '/PAGE_NOT_FOUND');
+            res.redirect('/error?title=errorPage.portalNotFound&targetId=' + req.params.portalId);
         }
     });
 });
 
 app.get('/:portalId/:pageId', function (req, res) {
-    var absPath = path.resolve('../'),
-        params = {
-            q : { url : req.params.pageId },
-            projection : { url: 1, type: 1, externalLinkUrl: 1},
-            sort : { field: 'position', order : '1' }
-        };
-    crudService.get(constantsService.collections.pages, null, params, function (pages) {
-        if (pages.results.length > 0 && pages.results[0].type === 'externalLink') {
-            res.redirect(pages.results[0].externalLinkUrl);
+    existsPortal(req.params.portalId, function(existsPortal) {
+        if(existsPortal) {
+            var params = {
+                q : { url : req.params.pageId },
+                projection : { url: 1, type: 1, externalLinkUrl: 1}
+            };
+            crudService.getFirst(constantsService.collections.pages, params, function (page) {
+                if(page) {
+                    if (page.type === 'externalLink') {
+                        res.redirect(pages.results[0].externalLinkUrl);
+                    }
+                    else { goToIndex(res); }
+                } else {
+                    res.redirect('/error?title=errorPage.pageNotFound&targetId=' + req.params.pageId +
+                        '&portalId=' + req.params.portalId + '&showPortalHomeButton=true');
+                }
+            });
+        } else {
+            res.redirect('/error?title=errorPage.portalNotFound&targetId=' + req.params.portalId);
         }
-        else { res.sendfile(absPath + '/index.html'); }
     });
 });
+
+function existsPortal(portalId, callback) {
+    var params = {
+        q : { _id : portalId },
+        projection : { create: 1 }
+    };
+    crudService.getFirst(constantsService.collections.portal, params, function (firstPortal) {
+        if(callback) { callback(firstPortal !== null && firstPortal !== undefined); }
+    });
+}
 
 liveMessageService.init(io);
 

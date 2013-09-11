@@ -8,6 +8,10 @@ function ($locationProvider, $routeProvider) {
             controller:  LoginController
         })
         .when('/logout', { redirectTo: '/login' })
+        .when('/error', {
+            templateUrl: '/client/html/pages/error.html',
+            controller:  ErrorController
+        })
         .when('/:portal/logout', { redirectTo: '/login' })
         .when('/:portal', {
             templateUrl: '/client/html/pages/portal.html',
@@ -16,7 +20,7 @@ function ($locationProvider, $routeProvider) {
         .when('/:portal/:page', {
             templateUrl: '/client/html/pages/portal.html',
             controller: PortalController,
-            reloadOnSearch: false
+            reloadOnSearch: true
         })
         .otherwise({ redirectTo: '/' });
 }]).run(["$rootScope", "$routeParams", "$location", "portalService", "userService", "pageService", "roleService", "sessionService", "tagService",
