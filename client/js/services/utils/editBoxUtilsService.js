@@ -9,11 +9,11 @@
         /**
          * Shows the edit box
          *
-         * @param {object} scope                The model of the DOM object where the edit bot will be attached to
-         * @param {object} element              The pointer to the DOM object where the edit bot will be attached to
-         * @param {object} selectedTextDomObj   The pointer to the DOM object of the selected text, if case
+         * @param {object} scope            The model of the DOM object where the edit bot will be attached to
+         * @param {object} element          The pointer to the DOM object where the edit bot will be attached to
+         * @param {object} selectedDomObj   The pointer to the DOM object of the selected text, if case
          */
-        function showEditBox(scope, element, selectedTextDomObj) {
+        function showEditBox(scope, element, selectedDomObj) {
             function setTargetSettings() {
                 //Add relative position to the parent element of the edit box
                 //To force the [0,0] axis at its beginning and make the position placement easier afterwards
@@ -22,8 +22,8 @@
                 scope.target = {
                     id          : scope.$id,
                     element     : element,
-                    coordinates : (selectedTextDomObj)
-                                    ? domService.getCoordinates(selectedTextDomObj)
+                    coordinates : (selectedDomObj)
+                                    ? domService.getCoordinates(selectedDomObj)
                                     : domService.getCoordinates(element)
                 };
             }
@@ -31,7 +31,7 @@
             function setArrowPos() {
 
                 function isTargetObjLeftPlaced() {
-                    return selectedTextDomObj.offset().left + scope.target.coordinates.width < $(window).width() / 2;
+                    return selectedDomObj.offset().left + (scope.target.coordinates.width / 2) < $(window).width() / 2;
                 }
 
                 scope.arrowPos = isTargetObjLeftPlaced() ? 'left' : 'right';
@@ -134,7 +134,7 @@
         return {
             showEditBox         : showEditBox,
             hideEditBox         : hideEditBox,
-            isAnyEditBoxVisible    : isAnyEditBoxVisible,
+            isAnyEditBoxVisible : isAnyEditBoxVisible,
             isEditBoxClicked    : isEditBoxClicked,
             blockHideEditBox    : blockHideEditBox,
             unblockHideEditBox  : unblockHideEditBox

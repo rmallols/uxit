@@ -1,7 +1,7 @@
 (function() {
     'use strict';
-    COMPONENTS.directive('contentEditable', ['$rootScope', '$timeout', '$compile', 'textSelectionService', 'caretService', 'domService',
-        'roleService', 'sessionService', 'editBoxUtilsService', 'mediaService', 'styleService', 'tooltipService',
+    COMPONENTS.directive('contentEditable', ['$rootScope', '$timeout', '$compile', 'textSelectionService', 'caretService',
+        'domService', 'roleService', 'sessionService', 'editBoxUtilsService', 'mediaService', 'styleService', 'tooltipService',
         function ($rootScope, $timeout, $compile, textSelectionService, caretService, domService, roleService, sessionService,
                   editBoxUtilsService, mediaService, styleService, tooltipService) {
             return {
@@ -18,7 +18,7 @@
                     uxChange        : '=uxChange'
                 },
                 replace: true,
-                templateUrl: '/client/html/input/contentEditable.html',
+                templateUrl: '/client/html/contentEditable/contentEditable.html',
                 link: function (scope, element, attrs, ctrl) {
 
                     var contentEditableObj = $(' > .editableArea > [contenteditable]', element),
@@ -64,6 +64,18 @@
                         }
                     };
 
+                    scope.showEditBox2 = function (selectedMediaDomObj) {
+                        var defaultPanels = [{ title: 'Select media', type: 'selectMedia' }];
+                        scope.model = {};
+                        forceTextSelection();
+                        scope.panels = (scope.customPanels) ? scope.customPanels : defaultPanels;
+                        scope.onSave = onSaveEditBox;
+                        scope.onCancel = onCancelEditBox;
+                        scope.onChange = onChangeEditBox;
+                        editBoxUtilsService.showEditBox(scope, contentEditableObj, selectedMediaDomObj);
+                        scope.showActions = true;
+                    };
+
                     scope.onClose = function() {
                         scope.showActions = false;
                     };
@@ -78,6 +90,14 @@
                     contentEditableObj.focus(function () {
                         scope.showActions = true;
                     });
+
+                    setTimeout(function() {
+                        console.log("listening...");
+                        $('img', contentEditableObj).click(function() {
+                            scope.showEditBox2($(this));
+                        });
+                    });
+
 
                     contentEditableObj.blur(function () {
                         //It's necessary to execute the blur actions with some delay to ensure the model is up to date before
