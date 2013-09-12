@@ -91,15 +91,32 @@
                 fadeInTime: 0,
                 fadeOutTime: 0,
                 closeDelay: 200,
-                mouseOnToPopup : false
+                mouseOnToPopup : true
             };
         }
 
-        /** Private methods **/
+        /**
+         * Determines if the tooltip has been already attached to the given element
+         *
+         * @param   {object}    element The pointer to the DOM object where the element that is going to be analyzed is
+         * @returns {boolean}           True if the given element already has the tooltip attached to it. False otherwise
+         */
         function exists(element) {
             return element.data('powertip');
         }
-        /** End of private methods **/
+
+        /**
+         * Stores a backup ot the tooltip. This could be necessary in some cases as the tooltip component
+         * deletes the 'title' attribute. Consequently, if the DOM element is saved (i.e. from content-editable)
+         * next time it's compiled it won't have the 'title' attribute, and so the tooltip won't be applied there.
+         * In practice, there's a backup-title directive that re-enables the original and so it's compiled as usual
+         *
+         * @param {object} element  The pointer to the DOM object where the title that is going to be backuped is
+         * @param {string} title    The title that is going to be backuped
+         */
+        function backupTitle(element, title) {
+            element.attr('backup-title', title);
+        }
 
         return {
             initialize: initialize,
@@ -107,7 +124,9 @@
             hide: hide,
             setTitle: setTitle,
             onClose: onClose,
-            getDefaults: getDefaults
+            getDefaults: getDefaults,
+            exists: exists,
+            backupTitle: backupTitle
         };
     }]);
 })();

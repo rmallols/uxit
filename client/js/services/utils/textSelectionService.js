@@ -106,6 +106,15 @@
         }
 
         /**
+         * Gets the pointer to the DOM object of the closest link of the current selection
+         *
+         * @returns {object} The pointer to the DOM object of the closest link of the current selection
+         */
+        function getSelectedLink() {
+            return getSelectedTextDomObj().closest('.' + keys.link);
+        }
+
+        /**
          * Gets the reference to the pointer to the DOM object of the closest link of the current selection
          *
          * @returns {string} The Id of the selected link
@@ -166,6 +175,7 @@
             removeSelection:removeSelection,
             setLink: setLink,
             setHeading: setHeading,
+            getSelectedLink: getSelectedLink,
             getSelectedHeadingId: getSelectedHeadingId,
             getSelectedLinkId: getSelectedLinkId
         };

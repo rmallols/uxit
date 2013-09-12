@@ -55,7 +55,7 @@ function (pageService, constantsService, textSelectionService, stringService, i1
                     textSelectionService.setLink({
                         id      : link,
                         href    : link,
-                        title   : link,
+                        title   : '<a href="' + link + '" target="' + target + '">' + link + '</a>',
                         target  : target
                     });
                 }

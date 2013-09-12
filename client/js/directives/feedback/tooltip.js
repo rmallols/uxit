@@ -1,15 +1,26 @@
 (function () {
     'use strict';
+    COMPONENTS.directive('backupTitle', ['$rootScope', '$compile', function ($rootScope, $compile) {
+        return {
+            restrict: 'A',
+            compile: function (tElement, tAttrs) {
+                tElement.attr('title', tAttrs.backupTitle);
+                tElement.removeAttr('backup-title');
+                return function link(scope, element) {
+                    element.data('backup-title', true);
+                    $compile(element)(scope);
+                }
+            }
+        };
+    }]);
+
+
+
     COMPONENTS.directive('title', ['$rootScope', '$compile', 'tooltipService',
     function ($rootScope, $compile, tooltipService) {
         return {
             restrict: 'A',
             priority: -1,
-            /*scope: {
-                title: '@',
-                confirmText: '@',
-                confirmAction: '&'
-            },*/
             compile: function (tElement, tAttrs) {
                 //noinspection JSUnresolvedVariable
                 if(tAttrs.confirmAction) {
@@ -18,6 +29,10 @@
                 return function link(scope, element, attrs) {
 
                     var isDialog = false;
+
+                    if(element.data('backup-title')) {
+                        element.attr('backup-title', attrs.title);
+                    }
 
                     scope.executeConfirmAction = function(actionToExecute) {
                         scope.$eval(actionToExecute);
@@ -51,14 +66,12 @@
 
                     /** Private methods **/
                     function initialize(title, isHtml) {
-                        var options = {
-                            mouseOnToPopup: attrs.keepTitleOnTooltipHover === 'true'
-                        };
-                        tooltipService.initialize(element, title, options, isHtml);
+                        var customOptions = {};
+                        tooltipService.initialize(element, title, customOptions, isHtml);
                     }
 
                     function setTitle(newTitle) {
-                        tooltipService.setTitle(newTitle, element);
+                        tooltipService.setTitle(newTitle, element, false);
                     }
 
                     function showConfirmMessage() {

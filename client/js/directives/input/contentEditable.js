@@ -1,9 +1,9 @@
 (function() {
     'use strict';
-    COMPONENTS.directive('contentEditable', ['$rootScope', '$timeout', 'textSelectionService', 'caretService', 'domService',
-        'roleService', 'sessionService', 'editBoxUtilsService', 'mediaService', 'styleService',
-        function ($rootScope, $timeout, textSelectionService, caretService, domService, roleService, sessionService,
-                  editBoxUtilsService, mediaService, styleService) {
+    COMPONENTS.directive('contentEditable', ['$rootScope', '$timeout', '$compile', 'textSelectionService', 'caretService', 'domService',
+        'roleService', 'sessionService', 'editBoxUtilsService', 'mediaService', 'styleService', 'tooltipService',
+        function ($rootScope, $timeout, $compile, textSelectionService, caretService, domService, roleService, sessionService,
+                  editBoxUtilsService, mediaService, styleService, tooltipService) {
             return {
                 priority: -1,
                 require: 'ngModel',
@@ -43,7 +43,8 @@
                         //In practise, that means to update it if it's not being modified by the user,
                         //so it doesn't have the focus at this moment
                         if (!contentEditableObj.is(':focus')) {
-                            contentEditableObj.html(scope.content || ''); //Set the view value
+                            contentEditableObj.html((scope.content) ? scope.content : ''); //Set the view value
+                            compileLink($('a', contentEditableObj)); //compile the links to get their tooltip
                         }
                         handlePlaceholder();
                     });
@@ -55,23 +56,9 @@
                             scope.model = styleService.getComputedStyleInRange(contentEditableObj, selectedTextDomObj);
                             forceTextSelection();
                             scope.panels = (scope.customPanels) ? scope.customPanels : defaultPanels;
-                            scope.onSave = function (/*styles*/) {
-                                textSelectionService.removeSelection(); //Remove text selection, if case
-                                updateValue();
-                                //Send the blur event in a new thread as otherwise maybe the content has not been update yet
-                                //So the content could be saved with the fake selection still active,
-                                //so the selection would persist forever
-                                setTimeout(function () { contentEditableObj.blur(); }, 0);
-                            };
-                            scope.onCancel = function (/*styles*/) {
-                                textSelectionService.removeSelection(); //Remove text selection, if case
-                                contentEditableObj.blur();
-                            };
-                            scope.onChange = function (styles) {
-                                textSelectionService.restoreSelection(); //Restore saved selection
-                                textSelectionService.setStylesToSelection(styles); //Apply styles physically
-                                updateValue();
-                            };
+                            scope.onSave = onSaveEditBox;
+                            scope.onCancel = onCancelEditBox;
+                            scope.onChange = onChangeEditBox;
                             editBoxUtilsService.showEditBox(scope, contentEditableObj, selectedTextDomObj);
                             scope.showActions = true;
                         }
@@ -114,6 +101,7 @@
 
                     /** Private methods **/
                     function updateValue() {
+
                         if (contentEditableObj.html() === '<br>') { contentEditableObj.html(''); }
                         scope.content = contentEditableObj.html();     //Set the model value
                         handlePlaceholder();
@@ -128,6 +116,50 @@
 
                     function handlePlaceholder() {
                         scope.showPlaceholder = (scope.content === undefined || scope.content === '');
+                    }
+
+                    function setLinkTitles() {
+                        var selLinkDomObj = textSelectionService.getSelectedLink(),
+                            newTitle = selLinkDomObj.attr('title');
+                        if(selLinkDomObj.size()) { //Update titles just if the edited element is as link
+                            if(tooltipService.exists(selLinkDomObj)) {
+                                updateLinkTitle(selLinkDomObj, newTitle); //If the link already existed, update it
+                            } else {
+                                compileLink(selLinkDomObj); //If the link has just been created, compile it
+                            }
+                            //Save a backup of the title so it would be regenerated afterwards if necessary
+                            tooltipService.backupTitle(selLinkDomObj, newTitle);
+                        }
+                    }
+
+                    function compileLink(linkObj) {
+                        $compile(linkObj)(scope);
+                    }
+
+                    function updateLinkTitle(linkObj, newTitle) {
+                        tooltipService.setTitle(newTitle, linkObj, true);
+                        linkObj.removeAttr('title');
+                    }
+
+                    function onSaveEditBox() {
+                        setLinkTitles(); //Set the titles of the links with the tooltip directive
+                        textSelectionService.removeSelection(); //Remove text selection, if case
+                        updateValue();
+                        //Send the blur event in a new thread as otherwise maybe the content has not been update yet
+                        //So the content could be saved with the fake selection still active,
+                        //so the selection would persist forever
+                        setTimeout(function () { contentEditableObj.blur(); }, 0);
+                    }
+
+                    function onCancelEditBox() {
+                        textSelectionService.removeSelection(); //Remove text selection, if case
+                        contentEditableObj.blur();
+                    }
+
+                    function onChangeEditBox(styles) {
+                        textSelectionService.restoreSelection(); //Restore saved selection
+                        textSelectionService.setStylesToSelection(styles); //Apply styles physically
+                        updateValue();
                     }
                     /** End of private methods **/
                 }
