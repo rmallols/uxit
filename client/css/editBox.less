@@ -118,12 +118,8 @@
   background-image: url('../images/checkWhite.png');
 }
 
-.editBox .content.level1 > ul > .layer {
-  max-height: 400px;
-}
-
-/*If the layer has error, force the overflow to be visible to the error messages can appear outside of the editbox,
-without operlapping the error components */
-.editBox .content.level1 > ul > .layer.ng-invalid {
-  overflow: visible;
+.editBox .scrollable {
+  overflow-y: auto;
+  height: 100%;
+  max-height: 350px;
 }

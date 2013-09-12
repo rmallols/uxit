@@ -4,7 +4,7 @@
     function (emailService, stdService, userService, liveMessageService) {
         return {
             restrict: 'A',
-            replace: false,
+            replace: true,
             templateUrl: '/client/html/admin/editNotifications.html',
             scope: {
                 model: '=',
