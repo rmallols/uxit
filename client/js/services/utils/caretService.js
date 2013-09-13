@@ -1,16 +1,21 @@
 (function () {
     'use strict';
 
-    COMPONENTS.factory('caretService', [function () {
+    COMPONENTS.factory('caretService', ['timerService', function (timerService) {
 
         /**
          * Inserts an image based on the given Url on the current caret position
          *
-         * @param {string} url                  The Url where the image is
-         * @param {object} contentEditableObj   The content editable object where the caret is
+         * @param   {string}    url                 The Url where the image is
+         * @param   {object}    contentEditableObj  The content editable object where the caret is
+         * @param   {string}    onClickFn           The scope reference of the function to execute whenever the image is clicked
+         * @return  {int}                           The Id of the the image that has just been created
          */
-        function insertImage(url, contentEditableObj) {
-            insertHtml('<img src="' + url + '"/>', contentEditableObj);
+        function insertImage(url, contentEditableObj, onClickFn) {
+            var  id = timerService.getRandomNumber(),
+                clickFn = (onClickFn) ? 'ng-click="' + onClickFn + '(' + id + ')' : '';
+            insertHtml('<img id="' + id + '" src="' + url + '" ' + clickFn + '"/>', contentEditableObj);
+            return id;
         }
 
         /** Private methods **/

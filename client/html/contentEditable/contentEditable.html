@@ -1,6 +1,6 @@
 <div>
     <div class="actionsArea" ng-show="isEditable() && showActions" >
-        <media-picker ng-model="newImage" multiple="false" on-close="onClose"></media-picker>
+        <media-picker ng-model="newMedia" multiple="false" on-close="onClose"></media-picker>
     </div>
     <div class="editableArea">
         <div ux-keyup="onKeyup()" ng-mouseup="showEditBox()" contenteditable="{{isEditable()}}"></div>
