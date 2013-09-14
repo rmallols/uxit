@@ -18,8 +18,12 @@
                     { id: 'big',        text: i18nService('selectMedia.size.big') }
                 ];
 
-                scope.propagateChanges = function () {
-                    if (scope.onChange) { scope.onChange(); }
+                scope.propagateChanges = function (media) {
+                    if (scope.onChange) { scope.onChange(media); }
+                };
+
+                scope.onMediaChange = function(media) {
+                    scope.propagateChanges(media);
                 };
             }
         };

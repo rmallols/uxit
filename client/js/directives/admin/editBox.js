@@ -34,17 +34,18 @@
                 };
 
                 scope.save = function () {
-                    editBoxUtilsService.hideEditBox(scope.$id);
+                    console.log("X1", scope);
+                    editBoxUtilsService.hideEditBox(scope.target.id);
                     if (scope.onSave)   { scope.onSave(scope.model, scope.$id); }
                     if (scope.onClose)  { scope.onClose(); }
                 };
 
-                scope.change = function () {
-                    if (scope.onChange) { scope.onChange(scope.model, scope.$id); }
+                scope.change = function (data) {
+                    if (scope.onChange) { scope.onChange(scope.model, scope.$id, data); }
                 };
 
                 scope.cancel = function () {
-                    editBoxUtilsService.hideEditBox(scope.$id);
+                    editBoxUtilsService.hideEditBox(scope.target.id);
                     if (scope.onCancel) { scope.onCancel(); }
                     if (scope.onClose)  { scope.onClose(); }
                 };

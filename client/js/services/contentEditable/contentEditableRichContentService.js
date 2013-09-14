@@ -5,6 +5,13 @@
     'textSelectionService', 'tooltipService', 'styleService',
     function (contentEditableService, editBoxUtilsService, textSelectionService, tooltipService, styleService) {
 
+        /**
+         * Shows the edit box in order to modify the styles of the currently selected text
+         *
+         * @param {object} cEScope      The scope of the content editable component
+         * @param {object} cEDomObj     The pointer to the DOM object where the content editable is
+         * @param {object} ngModelCtrl  The controller of the ng-model directive attached to the content editable component
+         */
         function showEditBox(cEScope, cEDomObj, ngModelCtrl) {
             if (cEScope.isEditable() && textSelectionService.isSelection()) {
                 var selectedTextDomObj = textSelectionService.getSelectedTextDomObj(),
@@ -25,7 +32,8 @@
                 cEScope.showActions = true;
             }
         }
-        
+
+        /** Private methods **/
         function onSaveEditBox(cEScope, cEDomObj, ngModelCtrl) {
             setLinkTitles(cEScope); //Set the titles of the links with the tooltip directive
             textSelectionService.removeSelection(); //Remove text selection, if case
@@ -49,15 +57,14 @@
             textSelectionService.saveSelection(); //Save the current text selection to be able to restore if afterwards
         }
 
-        /** Private methods **/
         function setLinkTitles(cEScope) {
             var selLinkDomObj = textSelectionService.getSelectedLink(),
                 newTitle = selLinkDomObj.attr('title');
             if(selLinkDomObj.size()) { //Update titles just if the edited element is as link
                 if(tooltipService.exists(selLinkDomObj)) {
                     updateLinkTitle(selLinkDomObj, newTitle); //If the link already existed, update it
-                } else {
-                    contentEditableService.compileElement(cEScope, selLinkDomObj); //If the link has just been created, compile it
+                } else { //If the link has just been created, compile it
+                    contentEditableService.compileElement(cEScope, selLinkDomObj);
                 }
                 //Save a backup of the title so it would be regenerated afterwards if necessary
                 tooltipService.backupTitle(selLinkDomObj, newTitle);

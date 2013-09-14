@@ -1,4 +1,12 @@
 <div>
+    <div>
+        <div class="columns large-10 textAlignRight">
+            <label i18n="selectMedia.source"></label>
+        </div>
+        <div class="columns large-15">
+            <media-picker ng-model="internalData.updatedMedia" multiple="false" on-change="onMediaChange"></media-picker>
+        </div>
+    </div>
     <div class="columns large-10 textAlignRight">
         <label i18n="selectMedia.size"></label>
     </div>

@@ -68,7 +68,7 @@
                     if(newVal && newVal._id) {
                         imageId = caretService.insertImage(downloadUrl, cEDomObj, 'onMediaClick');
                         imageObj = $('#' + imageId, cEDomObj);
-                        contentEditableService.compileElement(imageObj);
+                        contentEditableService.compileElement(scope, imageObj);
                         contentEditableService.updateValue(scope, cEDomObj, ngModelCtrl);
                     }
                 });

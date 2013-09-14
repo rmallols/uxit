@@ -9,7 +9,8 @@
                 model           : '=ngModel',
                 endpoint        : '@',
                 onUpload        : '=',
-                onClose         : '=',
+                onMediaChange   : '=onChange',
+                onMediaClose    : '=onClose',
                 defaultMediaUrl : '=',
                 multiple        : '@',
                 preview         : '@'
@@ -38,6 +39,11 @@
                     scope.onChange = function() {
                         success(scope.internalData.media);
                     };
+                    scope.onClose = function() {
+                        if(scope.onMediaClose) {
+                            scope.onMediaClose();
+                        }
+                    };
                     editBoxUtilsService.showEditBox(scope, element, $('button', element));
                 };
 
@@ -51,6 +57,9 @@
                     }
                     if (scope.onUpload) {
                         scope.onUpload(file);
+                    }
+                    if(scope.onMediaChange) {
+                        scope.onMediaChange(file);
                     }
                 }
                 /** End of private methods **/
