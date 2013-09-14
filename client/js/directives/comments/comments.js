@@ -1,7 +1,7 @@
 (function ()  {
     'use strict';
-    COMPONENTS.directive('comments', ['commentsService', 'sessionService', function (commentsService, sessionService) {
-
+    COMPONENTS.directive('comments', ['commentsService', 'sessionService', 'mediaService',
+    function (commentsService, sessionService, mediaService) {
         return {
             restrict: 'E',
             replace: true,
@@ -42,6 +42,11 @@
                             scope.onAdd();
                         }
                     });
+                };
+
+                scope.getUserAvatarUrl = function () {
+                    return (sessionService.isUserLogged())
+                        ? mediaService.getDownloadUrl(sessionService.getUserSession().media) : false;
                 };
             }
         };

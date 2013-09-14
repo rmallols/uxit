@@ -1,6 +1,6 @@
 <li class="comment cf" ng-hide="comment.deleted">
     <img class="avatar" ng-src="{{getDownloadUrl(comment.create.author.media)}}" />
-    <div class="metaData">
+    <div class="metaData avatarSibling">
         <div class="header">
             <div class="floatLeft">
                 <div class="author"><a href="#">{{comment.create.author.fullName}}</a></div>
@@ -10,7 +10,7 @@
                 <div rating="comment.avgRating" target-id="comment._id" target-author-id="comment.create.author._id"
                      target-collection="comments" height="16" ux-show="showRatings()"></div>
                 <button class="toggleReply replyIcon small" ng-click="toggleReply()" i18n-title title="comments.addReply"
-                        ng-show="isSelfActionAllowed"></button>
+                        ng-show="isLoggedUser"></button>
                 <button class="toggleEdit editIcon small" ng-click="toggleEdit()" i18n-title title="comments.edit"
                         ng-show="isSelfActionAllowed"></button>
                 <button class="deleteComment removeIcon small" i18n-title title="comments.deleteComment"

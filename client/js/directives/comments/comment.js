@@ -20,6 +20,7 @@
 
                 scope.hideAdd = true;
                 scope.comment.isEditable = false;
+                scope.isLoggedUser = sessionService.isUserLogged();
                 scope.isSelfActionAllowed = isSelfActionAllowed();
                 scope.getDownloadUrl = function (media) {
                     return (media) ? mediaService.getDownloadUrl(media) : false;
@@ -69,8 +70,7 @@
                 }
 
                 function isSelfActionAllowed() {
-                    var isLoggedUser = sessionService.isUserLogged();
-                    return isLoggedUser && scope.comment.create.author._id === sessionService.getUserSession()._id;
+                    return scope.isLoggedUser && scope.comment.create.author._id === sessionService.getUserSession()._id;
                 }
                 /** End of private methods **/
             }

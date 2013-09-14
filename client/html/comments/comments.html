@@ -6,8 +6,9 @@
     <ul ng-show="comments.length > 0">
         <li ng-repeat="comment in comments" comment="comment"></li>
     </ul>
-    <div ng-hide="hideAdd || !loggedUser">
-        <textarea content-editable ng-model="newCommentText" class="newCommentInput" placeholder="{{placeholder}}"></textarea>
+    <div class="cf" ng-hide="hideAdd || !loggedUser">
+        <img class="avatar" ng-src="{{getUserAvatarUrl()}}" />
+        <textarea content-editable ng-model="newCommentText" class="newCommentInput avatarSibling" placeholder="{{placeholder}}"></textarea>
         <button class="addIcon createComment floatRight" ng-click="createComment()">
             <label i18n="{{placeholder}}"></label>
         </button>
