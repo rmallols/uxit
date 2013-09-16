@@ -1225,7 +1225,7 @@ angular.module("selectMedia.html", []).run(["$templateCache", function($template
 
 angular.module("fileUploader.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("fileUploader.html",
-    "<form id=\"uploadForm\" enctype=\"multipart/form-data\" action=\"{{endpoint||'/media/upload/'}}\" method=\"post\" class=\"fileUploader\">\n" +
+    "<form enctype=\"multipart/form-data\" action=\"{{endpoint||'/media/upload/'}}\" method=\"post\" class=\"fileUploader\">\n" +
     "    <input type=\"file\" ng-model=\"files\" ux-change=\"submit()\" name=\"upload\" multiple-files=\"{{multiple}}\" />\n" +
     "</form>\n" +
     "");

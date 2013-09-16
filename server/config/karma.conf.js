@@ -12,10 +12,12 @@ files= [
     './client/lib/powerTip/jquery.powertip.min.js',
     './client/lib/iCheck/jquery.icheck-0.9.1.min.js',
     './client/js/index.js',
+    './client/js/templates.js',
     './client/js/directives/*',
     './client/js/directives/*/*',
     './client/js/services/*',
     './client/js/services/*/*',
+    './client/html/input/fileUploader.html',
     './server/tests/unit/directives/*.spec.js',
     './server/tests/unit/services/*.spec.js',
     './server/tests/unit/mocks.js',
@@ -81,7 +83,7 @@ reportSlowerThan= 500;
 
 // compile coffee scripts
 preprocessors= {
-    '**/*.coffee': 'coffee'
+    './client/html/**/*.html': 'html2js'
 };
 
 plugins= [
