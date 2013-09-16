@@ -64,8 +64,7 @@ COMPONENTS.directive('slidesAppView', [function () {
                     dependencies: [ // Optional libraries used to extend on reveal.js
                         { src: appPath + 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
                         { src: appPath + 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                        { src: appPath + 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                        { src: appPath + 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                        { src: appPath + 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
                     ]
                 });
                 scope.show = true;

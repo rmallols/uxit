@@ -9,12 +9,10 @@
                 return function link(scope, element) {
                     element.data('backup-title', true);
                     $compile(element)(scope);
-                }
+                };
             }
         };
     }]);
-
-
 
     COMPONENTS.directive('title', ['$rootScope', '$compile', 'tooltipService',
     function ($rootScope, $compile, tooltipService) {

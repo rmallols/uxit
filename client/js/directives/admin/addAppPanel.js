@@ -1,7 +1,8 @@
 (function () {
     'use strict';
-    COMPONENTS.directive('addAppPanel', ['availableAppsService', 'undeployService', 'constantsService', 'addAppService', 'statsService', 'keyboardService',
-    function (availableAppsService, undeployService, constantsService, addAppService, statsService, keyboardService) {
+    COMPONENTS.directive('addAppPanel', ['$rootScope', 'availableAppsService', 'undeployService', 'constantsService',
+    'addAppService', 'statsService', 'keyboardService',
+    function ($rootScope, availableAppsService, undeployService, constantsService, addAppService, statsService, keyboardService) {
         return {
             restrict: 'E',
             transclude: true,
@@ -65,7 +66,10 @@
                 };
 
                 scope.collection = constantsService.collections.comments;
-                scope.availableApps = availableAppsService.getAvailableApps();
+
+                $rootScope.$on('availableAppsLoaded', function() {
+                    scope.availableApps = availableAppsService.getAvailableApps();
+                });
 
                 function registerKeyboardEvents() {
                     keyboardService.register(['tab', 'down'], directiveId, function () {

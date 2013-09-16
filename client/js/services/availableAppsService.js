@@ -1,6 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('availableAppsService', ['crudService', 'constantsService', function (crudService, constantsService) {
+    COMPONENTS.factory('availableAppsService', ['$rootScope', 'crudService', 'constantsService',
+    function ($rootScope, crudService, constantsService) {
 
         var availableApps, categories = [];
 
@@ -14,6 +15,7 @@
             crudService.get(constantsService.collections.availableApps, null, filter, function (availableApps) {
                 setAvailableApps(availableApps.results);
                 if (callback) { callback(getAvailableApps()); }
+                $rootScope.$broadcast('availableAppsLoaded');
             });
         }
 

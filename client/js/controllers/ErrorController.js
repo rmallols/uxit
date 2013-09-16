@@ -7,5 +7,5 @@ function ErrorController($scope, $routeParams, i18nService) {
 
     $scope.goToPortalHome = function() {
         location.href = $routeParams.portalId;
-    }
+    };
 }

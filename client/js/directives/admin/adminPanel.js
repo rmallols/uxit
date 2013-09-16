@@ -92,7 +92,9 @@
                     return null;
                 };
 
-                scope.portal = portalService.getPortal();
+                $rootScope.$on('portalLoaded', function() {
+                    scope.portal = portalService.getPortal();
+                });
 
                 scope.panels = [
                     {
