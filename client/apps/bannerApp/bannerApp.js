@@ -3,7 +3,7 @@ COMPONENTS.directive('bannerAppView', function (pageService, editBoxUtilsService
 	return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: '/client/apps/bannerApp/bannerAppView.html',
+		templateUrl: 'bannerAppView.html',
         scope: {
             model: '=',
             internalData: '=',

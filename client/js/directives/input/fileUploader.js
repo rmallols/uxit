@@ -4,7 +4,7 @@
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: '/client/html/input/fileUploader.html',
+            templateUrl: 'fileUploader.html',
             scope: {
                 model           : '=ngModel',
                 endpoint        : '@',

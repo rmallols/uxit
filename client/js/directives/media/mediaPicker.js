@@ -15,7 +15,7 @@
                 multiple        : '@',
                 preview         : '@'
             },
-            templateUrl: '/client/html/media/mediaPicker.html',
+            templateUrl: 'mediaPicker.html',
             link: function link(scope, element) {
 
                 scope.getDownloadUrl = function (file) {

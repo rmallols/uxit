@@ -4,7 +4,7 @@ function($rootScope, statsService, roleService, constantsService) {
     return {
         restrict: 'A',
         replace: false,
-        templateUrl: '/client/html/admin/stats.html',
+        templateUrl: 'stats.html',
         scope: {},
         link: function link(scope) {
 

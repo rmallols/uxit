@@ -4,7 +4,7 @@
         return {
             restrict: 'A',
             replace: true,
-            templateUrl: '/client/html/utils/listActions.html',
+            templateUrl: 'listActions.html',
             link: function link(scope) {
 
                 scope.getPrevPage = function () {

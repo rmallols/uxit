@@ -7,7 +7,7 @@
         return {
             restrict: 'A',
             replace: true,
-            templateUrl: '/client/html/app/app.html',
+            templateUrl: 'app.html',
             scope: {
                 _id         : '=app',
                 type        : '=',

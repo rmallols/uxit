@@ -3,7 +3,7 @@ COMPONENTS.directive('styles', [function () {
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: '/client/html/admin/styles.html',
+        templateUrl: 'styles.html',
         scope: {
             model : '=styles'
         },

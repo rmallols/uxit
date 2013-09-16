@@ -6,7 +6,7 @@
         return {
             restrict: 'A',
             replace: true,
-            templateUrl: '/client/html/contentEditable/richContent.html',
+            templateUrl: 'richContent.html',
             scope: {
                 model       : '=',
                 onChange    : '='

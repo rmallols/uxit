@@ -3,7 +3,7 @@ COMPONENTS.directive('editContent', ['contentService', 'tagService', function (c
     return {
         restrict: 'A',
         replace: false,
-        templateUrl: '/client/html/admin/editContent.html',
+        templateUrl: 'editContent.html',
         scope: {
             content     : '=model',
             onLayerSave : '='

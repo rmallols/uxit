@@ -3,7 +3,7 @@ COMPONENTS.directive('listEdit', ['rowService', 'tagService', function (rowServi
     return {
         restrict: 'A',
         replace: false,
-        templateUrl: '/client/html/utils/listEdit.html',
+        templateUrl: 'listEdit.html',
         link: function link(scope) {
 
             scope.availableTags = tagService.getTags();

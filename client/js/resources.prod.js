@@ -20,6 +20,7 @@
 
     //
     getScript(scriptPath + '/index.js');
+    getScript(scriptPath + '/templates.js');
     getScript(scriptPath + '/errorHandler.js');
 
     //

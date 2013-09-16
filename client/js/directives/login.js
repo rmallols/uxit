@@ -3,7 +3,7 @@ COMPONENTS.directive('login', ['sessionService', function (sessionService) {
     return {
 		restrict: 'E',
 		replace: true,
-		templateUrl: '/client/html/login.html',
+		templateUrl: 'login.html',
         scope: {},
 		link: function link(scope) {
             scope.userSession = sessionService.getUserSession();

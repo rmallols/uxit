@@ -5,7 +5,7 @@
         return {
             restrict: 'A',
             replace: true,
-            templateUrl: '/client/html/admin/editNotifications.html',
+            templateUrl: 'editNotifications.html',
             scope: {
                 model: '=',
                 onLayerSave : '='

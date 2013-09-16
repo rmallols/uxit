@@ -3,7 +3,7 @@ COMPONENTS.directive('mediaListAppView', function () {
     return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: '/client/apps/mediaListApp/mediaListAppView.html',
+		templateUrl: 'mediaListAppView.html',
         scope: {
             model: '=',
             onLayerSave: '='
@@ -16,7 +16,7 @@ COMPONENTS.directive('mediaListAppAdd', function (mediaService) {
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: '/client/apps/mediaListApp/mediaListAppAdd.html',
+        templateUrl: 'mediaListAppAdd.html',
         scope : {
             onLayerSave : '='
         },
@@ -35,6 +35,6 @@ COMPONENTS.directive('mediaListAppEdit', function () {
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: '/client/apps/mediaListApp/mediaListAppEdit.html'
+        templateUrl: 'mediaListAppEdit.html'
     };
 });

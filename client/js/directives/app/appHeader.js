@@ -6,7 +6,7 @@
             return {
                 restrict: 'A',
                 replace: true,
-                templateUrl: '/client/html/app/appHeader.html',
+                templateUrl: 'appHeader.html',
                 link: function link(scope, element) {
 
                     var appElm = element.parent(), userSession = sessionService.getUserSession();

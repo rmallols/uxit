@@ -4,7 +4,7 @@ function ($rootScope, userService, sessionService) {
     return {
         restrict: 'A',
         replace: false,
-        templateUrl: '/client/html/admin/editCurrentUser.html',
+        templateUrl: 'editCurrentUser.html',
         scope: {
             model: '=',
             onLayerSave: '='

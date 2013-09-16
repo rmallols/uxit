@@ -3,7 +3,7 @@ COMPONENTS.directive('contentList', ['constantsService', function (constantsServ
     return {
 		restrict: 'E',
 		replace: true,
-		templateUrl: '/client/html/list/contentList.html',
+		templateUrl: 'contentList.html',
         scope : {
             _id: '=id',
             config: '='

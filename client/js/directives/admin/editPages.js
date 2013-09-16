@@ -7,7 +7,7 @@
         return {
             restrict: 'A',
             replace: true,
-            templateUrl: '/client/html/admin/editPages.html',
+            templateUrl: 'editPages.html',
             scope: {
                 onLayerSave : '='
             },

@@ -3,7 +3,7 @@ COMPONENTS.directive('mediaCarouselAppView', function (portalService, mediaServi
     return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: '/client/apps/mediaCarouselApp/mediaCarouselAppView.html',
+		templateUrl: 'mediaCarouselAppView.html',
         scope: {
             model: '=',
             internalData: '=',
@@ -92,7 +92,7 @@ COMPONENTS.directive('mediaCarouselAppEdit', function (timerService) {
     return {
         restrict: 'A',
         replace: false,
-        templateUrl: '/client/apps/mediaCarouselApp/mediaCarouselAppEdit.html',
+        templateUrl: 'mediaCarouselAppEdit.html',
         scope: {
             model           : '=',
             internalData    : '=',
@@ -126,7 +126,7 @@ COMPONENTS.directive('mediaCarouselAppSelectMedia', function (mediaService, cons
     return {
         restrict: 'A',
         replace: false,
-        templateUrl: '/client/apps/mediaCarouselApp/mediaCarouselAppSelectMedia.html',
+        templateUrl: 'mediaCarouselAppSelectMedia.html',
         scope: {
             model           : '=',
             internalData    : '=',

@@ -3,7 +3,7 @@ COMPONENTS.directive('createMedia', ['tagService', function (tagService) {
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: '/client/html/admin/createMedia.html',
+        templateUrl: 'createMedia.html',
         scope : {
             media : '='
         },

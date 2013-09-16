@@ -3,7 +3,7 @@ COMPONENTS.directive('editMedia', ['mediaService', 'tagService', function (media
     return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: '/client/html/admin/editMedia.html',
+		templateUrl: 'editMedia.html',
         scope: {
             media       : '=model',
             onLayerSave : '='

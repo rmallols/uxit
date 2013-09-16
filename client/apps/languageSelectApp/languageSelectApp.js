@@ -10,7 +10,7 @@
                 internalData : '=',
                 onLayerSave : '='
             },
-            templateUrl: '/client/apps/languageSelectApp/languageSelectAppView.html',
+            templateUrl: 'languageSelectAppView.html',
             link: function (scope) {
 
                 scope.languages = i18nService.getLanguages();
@@ -35,7 +35,7 @@
                 internalData : '=',
                 onLayerSave : '='
             },
-            templateUrl: '/client/apps/languageSelectApp/languageSelectAppEdit.html',
+            templateUrl: 'languageSelectAppEdit.html',
             link: function link(scope) {
             }
         };

@@ -1,24 +1,24 @@
 var COMPONENTS = angular.module('components', []);
-angular.module('app', ['components', 'errorModule', 'ui.sortable']).config(['$locationProvider', '$routeProvider',
+angular.module('app', ['templates-main', 'components', 'errorModule', 'ui.sortable']).config(['$locationProvider', '$routeProvider',
 function ($locationProvider, $routeProvider) {
     $locationProvider.html5Mode(true);
     $routeProvider
         .when('/login', {
-            templateUrl: '/client/html/pages/login.html',
+            templateUrl: 'loginPage.html',
             controller:  LoginController
         })
         .when('/logout', { redirectTo: '/login' })
         .when('/error', {
-            templateUrl: '/client/html/pages/error.html',
+            templateUrl: 'errorPage.html',
             controller:  ErrorController
         })
         .when('/:portal/logout', { redirectTo: '/login' })
         .when('/:portal', {
-            templateUrl: '/client/html/pages/portal.html',
+            templateUrl: 'portalPage.html',
             controller: PortalController
         })
         .when('/:portal/:page', {
-            templateUrl: '/client/html/pages/portal.html',
+            templateUrl: 'portalPage.html',
             controller: PortalController,
             reloadOnSearch: true
         })
@@ -27,7 +27,6 @@ function ($locationProvider, $routeProvider) {
     "availableAppsService", "i18nService",
     function ($rootScope, $routeParams, $location, portalService, userService, pageService, roleService, sessionService, tagService,
     availableAppsService, i18nService) {
-
         userService.loadUsers(null);    //Cache users
         pageService.loadPages(null);    //Cache pages
         roleService.loadRoles(null);    //Cache roles

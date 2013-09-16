@@ -3,7 +3,7 @@ COMPONENTS.directive('contentListAppView', function () {
     return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: '/client/apps/contentListApp/contentListAppView.html',
+		templateUrl: 'contentListAppView.html',
         scope: {
             _id: '=id',
             model: '=',
@@ -17,7 +17,7 @@ COMPONENTS.directive('contentListAppAdd', function (contentService) {
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: '/client/apps/contentListApp/contentListAppAdd.html',
+        templateUrl: 'contentListAppAdd.html',
         scope : {
             onLayerSave : '='
         },
@@ -36,6 +36,6 @@ COMPONENTS.directive('contentListAppEdit', function () {
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: '/client/apps/contentListApp/contentListAppEdit.html'
+        templateUrl: 'contentListAppEdit.html'
     };
 });

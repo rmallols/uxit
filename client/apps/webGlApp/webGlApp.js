@@ -3,7 +3,7 @@ COMPONENTS.directive('webGlAppView', function () {
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: '/client/apps/webGlApp/webGlAppView.html',
+        templateUrl: 'webGlAppView.html',
         scope: {
             onResized : '='
         },
@@ -101,7 +101,7 @@ COMPONENTS.directive('webGlAppView', function () {
                     loader = new THREE.JSONLoader(true);
                     element.append(loader.statusDomElement);
 
-                    loader.load("/client/apps/webGlApp/obj/leeperrysmith/LeePerrySmith.js", function (geometry) {
+                    loader.load("obj/leeperrysmith/LeePerrySmith.js", function (geometry) {
                         createScene(geometry, 100)
                     });
 
@@ -150,7 +150,7 @@ COMPONENTS.directive('webGlAppView', function () {
 
                     var mapHeight, mapSpecular, mapColor, shader, fragmentShader, vertexShader, uniforms, material;
 
-                    mapHeight = THREE.ImageUtils.loadTexture("/client/apps/webglApp/obj/leeperrysmith/Infinite-Level_02_Disp_NoSmoothUV-4096.jpg");
+                    mapHeight = THREE.ImageUtils.loadTexture("obj/leeperrysmith/Infinite-Level_02_Disp_NoSmoothUV-4096.jpg");
 
                     mapHeight.anisotropy = 4;
                     mapHeight.repeat.set(0.998, 0.998);
@@ -158,7 +158,7 @@ COMPONENTS.directive('webGlAppView', function () {
                     mapHeight.wrapS = mapHeight.wrapT = THREE.RepeatWrapping;
                     mapHeight.format = THREE.RGBFormat;
 
-                    mapSpecular = THREE.ImageUtils.loadTexture("/client/apps/webglApp/obj/leeperrysmith/Map-SPEC.jpg");
+                    mapSpecular = THREE.ImageUtils.loadTexture("obj/leeperrysmith/Map-SPEC.jpg");
 
                     mapSpecular.anisotropy = 4;
                     mapSpecular.repeat.set(0.998, 0.998);
@@ -166,7 +166,7 @@ COMPONENTS.directive('webGlAppView', function () {
                     mapSpecular.wrapS = mapSpecular.wrapT = THREE.RepeatWrapping;
                     mapSpecular.format = THREE.RGBFormat;
 
-                    mapColor = THREE.ImageUtils.loadTexture("/client/apps/webglApp/obj/leeperrysmith/Map-COL.jpg");
+                    mapColor = THREE.ImageUtils.loadTexture("obj/leeperrysmith/Map-COL.jpg");
 
                     mapColor.anisotropy = 4;
                     mapColor.repeat.set(0.998, 0.998);
@@ -252,15 +252,15 @@ COMPONENTS.directive('webGlAppView', function () {
 
             yepnope({
                 load: [
-                    '/client/apps/webGlApp/lib/three.min.js',
-                    '/client/apps/webGlApp/js/ShaderSkin.js',
-                    '/client/apps/webGlApp/js/shaders/CopyShader.js',
-                    '/client/apps/webGlApp/js/postprocessing/EffectComposer.js',
-                    '/client/apps/webGlApp/js/postprocessing/RenderPass.js',
-                    '/client/apps/webGlApp/js/postprocessing/ShaderPass.js',
-                    '/client/apps/webGlApp/js/postprocessing/MaskPass.js',
-                    '/client/apps/webGlApp/js/Detector.js',
-                    '/client/apps/webGlApp/js/stats.min.js'
+                    'lib/three.min.js',
+                    'js/ShaderSkin.js',
+                    'js/shaders/CopyShader.js',
+                    'js/postprocessing/EffectComposer.js',
+                    'js/postprocessing/RenderPass.js',
+                    'js/postprocessing/ShaderPass.js',
+                    'js/postprocessing/MaskPass.js',
+                    'js/Detector.js',
+                    'js/stats.min.js'
                 ],
                 complete: function () {
                     setTimeout(function () { //Display in a new thread to avoid problem with the size of the canvas
@@ -279,6 +279,6 @@ COMPONENTS.directive('webGlAppEdit', function () {
         restrict: 'A',
         replace: true,
         scope: {},
-        templateUrl: '/client/apps/webGlApp/webGlAppEdit.html'
+        templateUrl: 'webGlAppEdit.html'
     };
 });

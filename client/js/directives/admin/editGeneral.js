@@ -4,7 +4,7 @@
         return {
             restrict: 'A',
             replace: true,
-            templateUrl: '/client/html/admin/editGeneral.html',
+            templateUrl: 'editGeneral.html',
             scope: {
                 model : '='
             },

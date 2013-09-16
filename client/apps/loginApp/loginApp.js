@@ -3,7 +3,7 @@ COMPONENTS.directive('loginAppView', function () {
     return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: '/client/apps/loginApp/loginAppView.html',
+		templateUrl: 'loginAppView.html',
         scope: {
             model: '=',
             internalData: '=',

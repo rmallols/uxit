@@ -3,7 +3,7 @@ COMPONENTS.directive('imageAppView', function (mediaService) {
     return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: '/client/apps/imageApp/imageAppView.html',
+		templateUrl: 'imageAppView.html',
         scope: {
             model: '=',
             internalData: '=',
@@ -37,7 +37,7 @@ COMPONENTS.directive('imageAppEdit', function () {
     return {
         restrict: 'A',
         replace: false,
-        templateUrl: '/client/apps/imageApp/imageAppEdit.html',
+        templateUrl: 'imageAppEdit.html',
         scope: {
             model           : '=',
             internalData    : '=',

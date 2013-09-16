@@ -6,7 +6,7 @@
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: '/client/html/media/mediaPopup.html',
+            templateUrl: 'mediaPopup.html',
             scope: {
                 mediaIndex  : '=',
                 mediaList   : '='

@@ -13,7 +13,7 @@
                 hideAdd         : '=',
                 placeholder     : '@'
             },
-            templateUrl: '/client/html/comments/comments.html',
+            templateUrl: 'comments.html',
             link: function link(scope) {
 
                 scope.loggedUser = sessionService.isUserLogged();

@@ -5,7 +5,7 @@
         return {
             restrict: 'E',
             transclude: true,
-            templateUrl: '/client/html/admin/editBox.html',
+            templateUrl: 'editBox.html',
             replace: true,
             scope: {
                 model           : '=',

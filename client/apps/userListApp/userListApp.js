@@ -3,7 +3,7 @@ COMPONENTS.directive('userListAppView', function () {
     return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: '/client/apps/userListApp/userListAppView.html',
+		templateUrl: 'userListAppView.html',
         scope: {
             model: '=',
             onLayerSave: '='
@@ -16,7 +16,7 @@ COMPONENTS.directive('userListAppAdd', function (userService) {
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: '/client/apps/userListApp/userListAppAdd.html',
+        templateUrl: 'userListAppAdd.html',
         scope : {
             onLayerSave : '='
         },
@@ -35,6 +35,6 @@ COMPONENTS.directive('userListAppEdit', function () {
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: '/client/apps/userListApp/userListAppEdit.html'
+        templateUrl: 'userListAppEdit.html'
     };
 });

@@ -3,7 +3,7 @@ COMPONENTS.directive('editTagList', [function () {
     return {
         restrict: 'A',
         replace: false,
-        templateUrl: '/client/html/admin/editTagList.html',
+        templateUrl: 'editTagList.html',
         scope: {},
         controller: ["$scope", function ($scope) {
             $scope.config = {

@@ -6,7 +6,7 @@
         return {
             restrict: 'E',
             transclude: true,
-            templateUrl: '/client/html/admin/adminPanel.html',
+            templateUrl: 'adminPanel.html',
             replace: true,
             scope: {},
             link: function (scope, element) {

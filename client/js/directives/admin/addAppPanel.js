@@ -5,7 +5,7 @@
         return {
             restrict: 'E',
             transclude: true,
-            templateUrl: '/client/html/admin/addAppPanel.html',
+            templateUrl: 'addAppPanel.html',
             replace: true,
             link: function (scope, element) {
 

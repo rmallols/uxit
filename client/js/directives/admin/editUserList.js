@@ -3,7 +3,7 @@ COMPONENTS.directive('editUserList', [function () {
     return {
         restrict: 'A',
         replace: false,
-        templateUrl: '/client/html/admin/editUserList.html',
+        templateUrl: 'editUserList.html',
         scope: {},
         controller: ["$scope", function ($scope) {
             $scope.config = {

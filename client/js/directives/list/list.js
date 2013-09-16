@@ -8,7 +8,7 @@
             restrict: 'A',
             replace: true,
             transclude: true,
-            templateUrl: '/client/html/list/list.html',
+            templateUrl: 'list.html',
             require: '?ngModel, config',
             scope : {
                 _id             : '=id',

@@ -8,7 +8,7 @@ function ($rootScope, mediaService, constantsService) {
             config: '=',
             onSelect: '='
         },
-		templateUrl: '/client/html/list/mediaList.html',
+		templateUrl: 'mediaList.html',
 		link: function link(scope) {
 
             scope.items             = [];

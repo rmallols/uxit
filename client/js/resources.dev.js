@@ -51,6 +51,7 @@ window.speed = 150;
     //Core resources
     getStyleSheet(styleSheetPath + '/main.less');
     getScript(scriptPath + '/index.js');
+    getScript(scriptPath + '/templates.js');
     getScript(scriptPath + '/errorHandler.js');
     getScript(scriptPath + '/controllers/LoginController.js');
     getScript(scriptPath + '/controllers/PortalController.js');

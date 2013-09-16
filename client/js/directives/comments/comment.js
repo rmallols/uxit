@@ -10,7 +10,7 @@
             scope: {
                 comment: '='
             },
-            templateUrl: '/client/html/comments/comment.html',
+            templateUrl: 'comment.html',
             link: function link(scope, element) {
 
                 var repliesHtml =   '<comments target-id="comment._id" parent-comment="comment" hide-add="hideAdd" ' +

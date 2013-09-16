@@ -10,7 +10,7 @@
                 internalData : '=',
                 onLayerSave : '='
             },
-            templateUrl: '/client/apps/iframeApp/iframeAppView.html'
+            templateUrl: 'iframeAppView.html'
         };
     }]);
 
@@ -23,7 +23,7 @@
                 internalData : '=',
                 onLayerSave : '='
             },
-            templateUrl: '/client/apps/iframeApp/iframeAppEdit.html',
+            templateUrl: 'iframeAppEdit.html',
             link: function link(scope) {
                 //It's not a good idea to play directly with the model, because as soon as the user will start
                 //to change the URL, the iframe will be reloaded as well, probably blocking the browser

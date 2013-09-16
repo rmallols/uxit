@@ -5,7 +5,7 @@
         return {
             restrict: 'A',
             replace: true,
-            templateUrl: '/client/apps/menuApp/menuAppView.html',
+            templateUrl: 'menuAppView.html',
             scope: {},
             link: function link(scope) {
 

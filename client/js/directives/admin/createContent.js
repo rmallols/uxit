@@ -3,7 +3,7 @@ COMPONENTS.directive('createContent', ['tagService', function (tagService) {
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: '/client/html/admin/editContent.html',
+        templateUrl: 'editContent.html',
         scope : {
             content : '='
         },

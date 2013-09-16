@@ -18,7 +18,7 @@
                 uxChange        : '=uxChange'
             },
             replace: true,
-            templateUrl: '/client/html/contentEditable/contentEditable.html',
+            templateUrl: 'contentEditable.html',
             link: function (scope, element, attrs, ngModelCtrl) {
 
                 var cEDomObj = $(' > .editableArea > [contenteditable]', element),

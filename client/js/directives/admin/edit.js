@@ -6,7 +6,7 @@
             restrict: 'E',
             require: 'ngModel',
             transclude: true,
-            templateUrl: '/client/html/admin/edit.html',
+            templateUrl: 'edit.html',
             replace: true,
             scope : {
                 model               : '=ngModel',

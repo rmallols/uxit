@@ -4,7 +4,7 @@
         return {
             restrict: 'A',
             replace: true,
-            templateUrl: '/client/html/contentEditable/selectMedia.html',
+            templateUrl: 'selectMedia.html',
             scope: {
                 internalData    : '=',
                 onChange        : '='

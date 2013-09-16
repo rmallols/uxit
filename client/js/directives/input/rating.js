@@ -10,7 +10,7 @@ COMPONENTS.directive('rating', ['rateService', 'sessionService', function (rateS
             targetCollection    : '@',
             starSize            : '@height'
         },
-		templateUrl: '/client/html/input/rating.html',
+		templateUrl: 'rating.html',
 		link: function link(scope) {
 
             var ratingAllowed;

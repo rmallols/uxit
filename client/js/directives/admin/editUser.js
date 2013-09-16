@@ -4,7 +4,7 @@ function ($routeParams, userService, mediaService, tagService, roleService, i18n
     return {
         restrict: 'A',
         replace: false,
-        templateUrl: '/client/html/admin/editUser.html',
+        templateUrl: 'editUser.html',
         scope: {
             user        : '=model',
             onLayerSave : '='

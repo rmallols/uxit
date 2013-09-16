@@ -8,7 +8,7 @@ COMPONENTS.directive('mapAppView', function () {
             internalData: '=',
             onLayerSave: '='
         },
-		templateUrl: '/client/apps/mapApp/mapAppView.html'
+		templateUrl: 'mapAppView.html'
 	};
 });
 
@@ -21,6 +21,6 @@ COMPONENTS.directive('mapAppEdit', function () {
         scope: {
             model: '='
         },
-        templateUrl: '/client/apps/mapApp/mapAppEdit.html'
+        templateUrl: 'mapAppEdit.html'
     };
 });

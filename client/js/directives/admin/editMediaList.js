@@ -3,7 +3,7 @@ COMPONENTS.directive('editMediaList', [function () {
     return {
         restrict: 'A',
         replace: false,
-        templateUrl: '/client/html/admin/editMediaList.html',
+        templateUrl: 'editMediaList.html',
         scope: {},
         controller: ["$scope", function ($scope) {
             $scope.config = {

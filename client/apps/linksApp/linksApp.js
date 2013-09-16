@@ -3,7 +3,7 @@ COMPONENTS.directive('linksAppView', function () {
     return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: '/client/apps/linksApp/linksAppView.html',
+		templateUrl: 'linksAppView.html',
         scope: {
             model: '=',
             internalData: '=',

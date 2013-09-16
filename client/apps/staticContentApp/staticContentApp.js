@@ -3,7 +3,7 @@ COMPONENTS.directive('staticContentAppView', function ($rootScope, contentServic
     return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: '/client/apps/staticContentApp/staticContentAppView.html',
+		templateUrl: 'staticContentAppView.html',
         scope: {
             model: '=',
             internalData: '=',
@@ -37,7 +37,7 @@ COMPONENTS.directive('staticContentAppEdit', function (pageService) {
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: '/client/apps/staticContentApp/staticContentAppEdit.html',
+        templateUrl: 'staticContentAppEdit.html',
         scope: {
             model : '=',
             internalData : '=',
@@ -60,7 +60,7 @@ COMPONENTS.directive('staticContentAppAdd', function (contentService) {
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: '/client/apps/staticContentApp/staticContentAppAdd.html',
+        templateUrl: 'staticContentAppAdd.html',
         scope: {
             model : '=',
             internalData : '=',
@@ -90,7 +90,7 @@ COMPONENTS.directive('staticContentAppSelectContent', function (pageService, con
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: '/client/apps/staticContentApp/staticContentAppSelectContent.html',
+        templateUrl: 'staticContentAppSelectContent.html',
         scope: {
             model: '=',
             internalData: '=',

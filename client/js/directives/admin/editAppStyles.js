@@ -3,7 +3,7 @@ COMPONENTS.directive('editAppStyles', [function () {
     return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: '/client/html/admin/editAppStyles.html',
+		templateUrl: 'editAppStyles.html',
         scope: {
             model       : '=',
             onLayerSave : '='

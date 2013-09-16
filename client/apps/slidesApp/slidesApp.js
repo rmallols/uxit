@@ -3,7 +3,7 @@ COMPONENTS.directive('slidesAppView', [function () {
     return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: '/client/apps/slidesApp/slidesAppView.html',
+		templateUrl: 'slidesAppView.html',
         scope: {
             model: '=',
             internalData: '=',
@@ -80,7 +80,7 @@ COMPONENTS.directive('slidesAppEdit', [function () {
     return {
         restrict: 'A',
         replace: false,
-        templateUrl: '/client/apps/slidesApp/slidesAppEdit.html',
+        templateUrl: 'slidesAppEdit.html',
         scope: {
             model           : '=',
             internalData    : '=',

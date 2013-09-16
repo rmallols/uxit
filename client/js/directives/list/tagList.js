@@ -3,7 +3,7 @@ COMPONENTS.directive('tagList', ['constantsService', function (constantsService)
     return {
 		restrict: 'E',
 		replace: true,
-		templateUrl: '/client/html/list/tagList.html',
+		templateUrl: 'tagList.html',
         scope : {
             config: '='
         },

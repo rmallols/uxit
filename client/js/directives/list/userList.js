@@ -3,7 +3,7 @@ COMPONENTS.directive('userList', ['mediaService', 'constantsService', function (
     return {
 		restrict: 'E',
 		replace: true,
-		templateUrl: '/client/html/list/userList.html',
+		templateUrl: 'userList.html',
         scope : {
             config: '='
         },

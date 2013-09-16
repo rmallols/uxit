@@ -1,13 +1,15 @@
-COMPONENTS.directive('pages', ['portalService', 'pageService', 'rowService', 'appService', 'roleService', 'sessionService', 'styleService',
-function (portalService, pageService, rowService, appService, roleService, sessionService, styleService) {
+COMPONENTS.directive('pages', ['$rootScope', 'portalService', 'pageService', 'rowService', 'appService', 'roleService', 'sessionService', 'styleService',
+function ($rootScope, portalService, pageService, rowService, appService, roleService, sessionService, styleService) {
 	'use strict';
     return {
 		restrict: 'E',
 		replace: true,
-		templateUrl: '/client/html/pages.html',
+		templateUrl: 'pages.html',
 		link: function link(scope) {
 
-            scope.portal = portalService.getPortal();
+            $rootScope.$on('portalLoaded', function() {
+                scope.portal = portalService.getPortal();
+            });
 
             scope.setPagesStyles = function () {
                 if (scope.portal) {

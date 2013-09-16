@@ -45,7 +45,8 @@ module.exports = function(grunt) {
                 files: {
                     '<%= min %>js.min.js': ['<%= app_js %>controllers/*.js',
                                             '<%= app_js %>directives/*.js', '<%= app_js %>directives/*/*.js',
-                                            '<%= app_js %>services/*.js', '<%= app_js %>services/*/*.js'],
+                                            '<%= app_js %>services/*.js', '<%= app_js %>services/*/*.js',
+                                            '<%= app_js %>errorHandler.js', '<%= app_js %>templates.js'],
                     '<%= min %>lib.min.js': ['<%= app_lib %>fabricJs/*.js',
                                              '<%= app_lib %>i18n/*.js',
                                              '<%= app_lib %>yepnope/*.js',
@@ -82,6 +83,17 @@ module.exports = function(grunt) {
                     "<%= min %>css.min.css": "client/css/main.less"
                 }
             }
+        },
+        html2js: {
+            options: {
+                rename: function (moduleName) {
+                    return moduleName.substring(moduleName.lastIndexOf('/') + 1);
+                }
+            },
+            main: {
+                src: ['client/**/*.html'],
+                dest: '<%= app_js %>templates.js'
+            }
         }
     });
 
@@ -92,9 +104,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-html2js');
 
     //grunt.registerTask('default', []);
     //grunt.registerTask('krm', ['karma']);
     grunt.registerTask('dev', ['clean', 'jshint', 'karma', 'preprocess:dev']);
     grunt.registerTask('prod', ['clean', 'jshint', 'karma', 'preprocess:prod', 'concat', 'uglify', 'less:prod']);
+    grunt.registerTask('tc2', ['html2js']);
 };

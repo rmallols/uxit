@@ -5,7 +5,7 @@
             restrict: 'A',
             require: 'ngModel',
             replace: true,
-            templateUrl: '/client/html/input/password.html',
+            templateUrl: 'password.html',
             scope: {
                 model: '=ngModel'
             },

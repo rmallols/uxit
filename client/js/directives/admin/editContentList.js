@@ -3,7 +3,7 @@ COMPONENTS.directive('editContentList', [function () {
     return {
         restrict: 'A',
         replace: false,
-        templateUrl: '/client/html/admin/editContentList.html',
+        templateUrl: 'editContentList.html',
         scope: {},
         controller: ["$scope", function ($scope) {
             $scope.config = {

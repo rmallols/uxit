@@ -3,7 +3,7 @@ COMPONENTS.directive('socialAppView', function () {
     return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: '/client/apps/socialApp/socialAppView.html',
+		templateUrl: 'socialAppView.html',
         scope: {
             model: '='
         },
@@ -20,7 +20,7 @@ COMPONENTS.directive('socialAppEdit', function () {
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: '/client/apps/socialApp/socialAppEdit.html',
+        templateUrl: 'socialAppEdit.html',
         scope: {
             model: '=',
             internalData: '='

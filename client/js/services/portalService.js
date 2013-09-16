@@ -1,11 +1,11 @@
 (function (COMPONENTS) {
     'use strict';
     COMPONENTS.factory('portalService', ['$compile', '$rootScope', 'pageService', 'crudService', 'mediaService',
-    'i18nDbService', 'constantsService', 'timerService', 'rowService', 'colService', 'domService', 'arrayService', 'stdService',
+    'i18nDbService', 'constantsService', 'timerService', 'rowService', 'colService', 'domService', 'arrayService',
     function ($compile, $rootScope, pageService, crudService, mediaService, i18nDbService, constantsService,
-              timerService, rowService, colService, domService, arrayService, stdService) {
+              timerService, rowService, colService, domService, arrayService) {
 
-        var portal, windowDimensions;
+        var portal = {}, windowDimensions;
 
         /**
          * Sets the header information of the portal (page title, favicon...)
@@ -45,7 +45,7 @@
                     portal = loadedPortal;
                     updatePageDataFromTemplate(getPortal(), pageModel.rows);
                     pageService.setCurrentPage(pageModel);
-                    $rootScope.$broadcast('pageLoaded');
+                    $rootScope.$broadcast('portalLoaded');
                     if (callback) { callback(getPortal()); }
                 });
             }

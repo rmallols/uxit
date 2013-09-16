@@ -6,7 +6,7 @@ COMPONENTS.directive('videoAppView', function () {
         scope: {
             model: '='
         },
-		templateUrl: '/client/apps/videoApp/videoAppView.html'
+		templateUrl: 'videoAppView.html'
 	};
 });
 
@@ -18,6 +18,6 @@ COMPONENTS.directive('videoAppEdit', function () {
         scope: {
             model: '='
         },
-        templateUrl: '/client/apps/videoApp/videoAppEdit.html'
+        templateUrl: 'videoAppEdit.html'
     };
 });
