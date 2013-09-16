@@ -1,10 +1,12 @@
 describe('roleService', function() {
     'use strict';
 
-    var rS, cS;
+    var rS, cS, $httpBackend, sessionService;
     beforeEach( module("components"));
-    beforeEach(inject(["$httpBackend", "roleService", "constantsService",
-    function ($httpBackend, roleService_, constantsService_) {
+    beforeEach(inject(["$httpBackend", "roleService", "sessionService", "constantsService",
+    function ($httpBackend_, roleService_, sessionService_, constantsService_) {
+        $httpBackend    = $httpBackend_;
+        sessionService  = sessionService_;
         rS = roleService_;
         cS = constantsService_;
         loadRoles($httpBackend, rS, null);
@@ -155,6 +157,19 @@ describe('roleService', function() {
         it('should determine that admin users have the admin role', function() {
             var user = { role: 3 };
             expect(rS.hasAdminRole(user)).toBe(true);
+        });
+    });
+
+    describe('getCurrentUserAdminAccessStyleClass', function() {
+
+        it('should not retrieve any admin related class if the user doesn\'t have admin role', function() {
+            loadUserSession($httpBackend, sessionService, false, null);
+            expect(rS.getCurrentUserAdminAccessStyleClass()).toBe('');
+        });
+
+        it('should retrieve an admin related class if the user has admin role', function() {
+            loadUserSession($httpBackend, sessionService, true, null);
+            expect(rS.getCurrentUserAdminAccessStyleClass()).toBe('adminAccess');
         });
     });
 });
