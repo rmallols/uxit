@@ -11,6 +11,7 @@ files= [
     './client/lib/i18n/jquery.i18n.properties-min-1.0.9.js',
     './client/lib/powerTip/jquery.powertip.min.js',
     './client/lib/iCheck/jquery.icheck-0.9.1.min.js',
+    './client/lib/less/less-1.3.0.min.js',
     './client/js/index.js',
     './client/js/templates.js',
     './client/js/directives/*',
