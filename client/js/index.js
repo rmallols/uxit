@@ -20,7 +20,7 @@ function ($locationProvider, $routeProvider) {
         .when('/:portal/:page', {
             templateUrl: 'portalPage.html',
             controller: PortalController,
-            reloadOnSearch: true
+            reloadOnSearch: false
         })
         .otherwise({ redirectTo: '/' });
 }]).run(["$rootScope", "$routeParams", "$location", "portalService", "userService", "pageService", "roleService", "sessionService", "tagService",

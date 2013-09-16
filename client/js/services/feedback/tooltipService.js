@@ -62,7 +62,9 @@
          *
          */
         function hide() {
-            $.powerTip.hide(null, true);
+            try {
+                $.powerTip.hide(null, true);
+            } catch(e) {}
         }
 
         /**
