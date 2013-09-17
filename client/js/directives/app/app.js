@@ -62,7 +62,7 @@
                         if (appService.isFullscreen()) {
                             appService.disableFullscreen(element, scope.onResized);
                         }
-                        portalService.deleteApp(element, scope.$parent.$index);
+                        appService.deleteApp(element, scope.$parent.$index);
                         $(this).remove();
                     });
                 };

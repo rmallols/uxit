@@ -142,7 +142,7 @@
                 };
 
                 scope.onSave = function () {
-                    portalService.savePortal(function () {
+                    portalService.updatePortal(function () {
                         hide();
                         inactiveTab();
                     });

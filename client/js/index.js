@@ -24,9 +24,9 @@ function ($locationProvider, $routeProvider) {
         })
         .otherwise({ redirectTo: '/' });
 }]).run(["$rootScope", "$routeParams", "$location", "portalService", "userService", "pageService", "roleService", "sessionService", "tagService",
-    "availableAppsService", "i18nService",
-    function ($rootScope, $routeParams, $location, portalService, userService, pageService, roleService, sessionService, tagService,
-    availableAppsService, i18nService) {
+    "availableAppsService", "i18nService", "metaService",
+    function ($rootScope, $routeParams, $location, portalService, userService, pageService, roleService, sessionService,
+    tagService, availableAppsService, i18nService, metaService) {
         userService.loadUsers(null);    //Cache users
         pageService.loadPages(null);    //Cache pages
         roleService.loadRoles(null);    //Cache roles
@@ -41,7 +41,7 @@ function ($locationProvider, $routeProvider) {
         $rootScope.$on("$routeChangeSuccess", function () {
             portalService.loadPortal($routeParams.portal, $routeParams.page, function() {
                 portalService.setHeader();
-                portalService.setWindowDimensions();
+                metaService.setWindowDimensions();
                 portalService.trackAnalytics();
             });
         });

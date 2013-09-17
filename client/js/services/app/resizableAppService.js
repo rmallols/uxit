@@ -34,7 +34,7 @@
             //Update the scope of the whole row so both the resizing and the affected cols changes will be executed
             resizingColumnScope.$parent.$apply();
             pageService.updateCurrentPage(null);
-            portalService.savePortal(null);
+            portalService.updatePortal(null);
         }
 
         /** Private methods **/

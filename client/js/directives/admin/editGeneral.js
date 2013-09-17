@@ -1,6 +1,7 @@
 (function (COMPONENTS) {
     'use strict';
-    COMPONENTS.directive('editGeneral', ['portalService', 'mediaService', function (portalService, mediaService) {
+    COMPONENTS.directive('editGeneral', ['portalService', 'mediaService', 'metaService',
+    function (portalService, mediaService, metaService) {
         return {
             restrict: 'A',
             replace: true,
@@ -22,7 +23,7 @@
                     { title: 'editGeneral.analytics',   styleClass : 'statsIcon' }
                 ];
 
-                scope.defaultFaviconUrl = portalService.getDefaultFaviconUrl();
+                scope.defaultFaviconUrl = metaService.getDefaultFaviconUrl();
 
                 mediaService.getMedia(scope.model.faviconId, null, function (favicon) {
                     scope.favicon = favicon;

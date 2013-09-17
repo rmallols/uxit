@@ -1,7 +1,8 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('appService', ['$rootScope', '$location', 'portalService', 'keyboardService',
-    function ($rootScope, $location, portalService, keyboardService) {
+    COMPONENTS.factory('appService', ['$rootScope', '$location', 'portalService', 'pageService', 'rowService',
+    'colService', 'arrayService', 'keyboardService',
+    function ($rootScope, $location, portalService, pageService, rowService, colService, arrayService, keyboardService) {
 
         var fullscreen, directiveId = 'app', previousSize;
 
@@ -66,6 +67,29 @@
         function triggerOnResizeEvent(onResized) {
             //Give some delay to the onResized callback as it could be affected by the asnync html5 fullscreen event
             if (onResized) { setTimeout(function () { onResized(); }, 100); }
+        }
+
+        /**
+         * Deletes a given app
+         *
+         * @param {object}  appElm      The pointer to the DOM object where the app that is going to be deleted id
+         * @param {string}  appIndex    The index of the app in the context of the column where it is
+         */
+        function deleteApp(appElm, appIndex) {
+            var columnScope = angular.element(appElm.closest('.columns')).scope(),
+                apps = columnScope.column.apps,
+                rowScope = columnScope.$parent,
+                columns = rowScope.row.columns,
+                rows = rowService.getWrappingRows(rowScope, portalService.getPortal().template.rows);
+            arrayService.delete(apps, appIndex);
+            if (apps.length === 0) {
+                colService.deleteColAndDependencies(columns, columnScope.$index);
+                if (columns.length === 1 && !rowService.isTemplateRow(rowScope.row)) {
+                    rowService.deleteRowAndDependencies(rows, rowScope.$index);
+                }
+            }
+            pageService.updateCurrentPage(null);
+            portalService.updatePortal(null);
         }
 
         /** Private methods **/
@@ -140,7 +164,8 @@
             enableFullscreen: enableFullscreen,
             disableFullscreen: disableFullscreen,
             isFullscreen: isFullscreen,
-            triggerOnResizeEvent: triggerOnResizeEvent
+            triggerOnResizeEvent: triggerOnResizeEvent,
+            deleteApp: deleteApp
         };
     }]);
 })();

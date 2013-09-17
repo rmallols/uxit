@@ -56,7 +56,7 @@
                         scope.onSave = function () {
                             if (scope.onLayerSave) { scope.onLayerSave(); }
                             pageService.updateCurrentPage(null);
-                            portalService.savePortal(null);
+                            portalService.updatePortal(null);
                         };
                         editBoxUtilsService.showEditBox(scope, targetObj, targetObj);
                     };

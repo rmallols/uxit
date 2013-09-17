@@ -69,6 +69,7 @@ window.speed = 150;
     getScript(servicePath + '/ajaxService.js');
     getScript(servicePath + '/constantsService.js');
     getScript(servicePath + '/undeployService.js');
+    getScript(servicePath + '/metaService.js');
     getScript(servicePath + '/feedback/stdService.js');
     getScript(servicePath + '/feedback/tooltipService.js');
     getScript(servicePath + '/feedback/globalMsgService.js');
