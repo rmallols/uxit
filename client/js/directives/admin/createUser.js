@@ -1,7 +1,6 @@
 (function () {
     'use strict';
     function createUser(mediaService, roleService, tagService, i18nService) {
-        'use strict';
         return {
             restrict: 'A',
             replace: true,

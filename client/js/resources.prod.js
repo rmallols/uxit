@@ -11,7 +11,6 @@
 
     var clientPath = '/client', scriptPath = clientPath + '/js', libPath = clientPath + '/lib', minPath = clientPath + '/min';
     getScript('/socket.io/socket.io.js'); //Live message - socked library
-    getStyleSheet(libPath + '/foundation/foundation-4.2.3.custom.css');
     getScript('http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js');
     getScript('http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js');
     getScript('http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js');

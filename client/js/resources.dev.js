@@ -19,7 +19,6 @@ window.speed = 150;
 
     //External libraries
     getScript('/socket.io/socket.io.js'); //Live message - socked library
-    getStyleSheet(libPath + '/foundation/foundation-4.2.3.custom.css');
     getScript(libPath + '/jQuery/jquery-2.0.2.min.js');
     getScript(libPath + '/jQuery/jquery-ui-1.10.3.custom.min.js');
     getScript(libPath + '/angularJs/angular-1.0.7.min.js');
@@ -35,16 +34,11 @@ window.speed = 150;
     getScript(libPath + '/form/jquery.form.js');
     getScript(libPath + '/morrisJs/raphael-2.1.0.min.js');
     getScript(libPath + '/morrisJs/morris-0.4.1.min.js');
-    getStyleSheet(libPath + '/morrisJs/morris-0.4.1.min.css');
-    getStyleSheet(libPath + '/select2/select2.css');
     getScript(libPath + '/select2/select2.min.js');
-    getStyleSheet(libPath + '/powerTip/jquery.powertip.min.css');
     getScript(libPath + '/powerTip/jquery.powertip.min.js');
     getScript(libPath + '/mousetrap/mousetrap.min.js');
     getScript(libPath + '/fullscreen/jquery.fullscreen-min.js');
-    getStyleSheet(libPath + '/miniColors/jquery.minicolors.css');
     getScript(libPath + '/miniColors/jquery.minicolors.js');
-    getStyleSheet(libPath + '/iCheck/skins/square/blue.css');
     getScript(libPath + '/iCheck/jquery.icheck-0.9.1.min.js');
     getScript(libPath + '/nprogress/nprogress.js');
 
