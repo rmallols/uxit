@@ -14,7 +14,7 @@ function ($rootScope, userService, sessionService) {
             scope.userSession = sessionService.getUserSession();
 
             scope.onLayerSave = function (callback) {
-                userService.updateUser(scope.currentUser, function () {
+                userService.updateUser(scope.userSession, function () {
                     callback();
                 });
             };
