@@ -16,7 +16,6 @@
             var defaultPanels = [{ title: 'Select media', type: 'selectMedia' }];
             if (cEScope.isEditable()) {
                 unselectItem($('img.active', cEDomObj));
-                console.log("AA", cEScope.$id);
                 editBoxUtilsService.hideEditBox(cEScope.$id);
                 cEScope.internalData = {
                     mediaSize: getMediaSize(sMDomObj)

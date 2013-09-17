@@ -11,7 +11,8 @@ COMPONENTS.directive('editUserList', [function () {
                 selectable      : true,
                 multiSelectable : true,
                 uploadable      : true,
-                deletable       : true
+                deletable       : true,
+                creatable       : true
             };
         }]
     };

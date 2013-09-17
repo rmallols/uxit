@@ -127,17 +127,19 @@ app.post('/media/upload/:id?*', checkAuth, function (req, res) {
 
 app.get('/media/:id/:name', function (req, res) {
     crudService.download(req.params.id, function (content) {
-        //Try to get the file name from the URL in order to keep the document name once it's going to be downloaded
-        // Otherwise, take it from database
-        var filename = req.params.name || content.name, buffer;
-        //noinspection JSUnresolvedFunction
-        res.attachment(filename);
-        res.header("Content-Type", content.mime);
-        //var buffer = new Buffer(content[0].data, "binary");
-        //res.end(buffer, 'binary');
-        //noinspection JSUnresolvedFunction,JSCheckFunctionSignatures
-        buffer = new Buffer(content[0].data.toString('base64'), "base64")
-        res.end(buffer, 'base64');
+        if(content && content[0]) {
+            //Try to get the file name from the URL in order to keep the document name once it's going to be downloaded
+            // Otherwise, take it from database
+            var filename = req.params.name || content.name, buffer;
+            //noinspection JSUnresolvedFunction
+            res.attachment(filename);
+            res.header("Content-Type", content.mime);
+            //var buffer = new Buffer(content[0].data, "binary");
+            //res.end(buffer, 'binary');
+            //noinspection JSUnresolvedFunction,JSCheckFunctionSignatures
+            buffer = new Buffer(content[0].data.toString('base64'), "base64")
+            res.end(buffer, 'base64');
+        }
     });
 });
 

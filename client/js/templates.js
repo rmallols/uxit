@@ -25,7 +25,7 @@ angular.module("bannerAppView.html", []).run(["$templateCache", function($templa
 angular.module("contentListAppAdd.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("contentListAppAdd.html",
     "<div>\n" +
-    "    <div create-content content=\"content\"></div>\n" +
+    "    <div create-content model=\"content\"></div>\n" +
     "</div>");
 }]);
 
@@ -229,7 +229,7 @@ angular.module("mediaCarouselAppView.html", []).run(["$templateCache", function(
 angular.module("mediaListAppAdd.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("mediaListAppAdd.html",
     "<div>\n" +
-    "    <div create-media media=\"media\"></div>\n" +
+    "    <div create-media model=\"media\"></div>\n" +
     "</div>");
 }]);
 
@@ -489,7 +489,7 @@ angular.module("socialAppView.html", []).run(["$templateCache", function($templa
 angular.module("staticContentAppAdd.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("staticContentAppAdd.html",
     "<div>\n" +
-    "    <div create-content content=\"content\"></div>\n" +
+    "    <div create-content model=\"content\"></div>\n" +
     "    <input checkbox ng-model=\"internalData.displayAddedContent\" label=\"Display added?\" />\n" +
     "</div>");
 }]);
@@ -559,7 +559,7 @@ angular.module("staticContentAppView.html", []).run(["$templateCache", function(
 angular.module("userListAppAdd.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("userListAppAdd.html",
     "<div>\n" +
-    "    <div create-user user=\"user\"></div>\n" +
+    "    <div create-user model=\"user\"></div>\n" +
     "</div>");
 }]);
 
@@ -1287,7 +1287,7 @@ angular.module("list.html", []).run(["$templateCache", function($templateCache) 
     "        </div>\n" +
     "        <button class=\"remove removeIcon\" ng-click=\"selectItem(item, $index, $event, false)\" ng-show=\"isDeletable()\"\n" +
     "                title confirm-action=\"delete(item._id)\">\n" +
-    "            <label i18n=\"list.delete\"></label>\n" +
+    "            <label i18n=\"list.deleteItem\"></label>\n" +
     "        </button>\n" +
     "    </div>\n" +
     "    <a href=\"#\" ng-show=\"detailId\" ng-click=\"deleteDetailId()\" class=\"floatRight\">\n" +
@@ -1472,6 +1472,9 @@ angular.module("listActions.html", []).run(["$templateCache", function($template
     "        <button class=\"removeIcon\" ng-click=\"deleteSelected()\" ng-show=\"selectedIds.length && isDeletable()\">\n" +
     "            <label i18n=\"list.deleteSelected\"></label>\n" +
     "        </button>\n" +
+    "    </div>\n" +
+    "    <div class=\"leftActions floatLeft\" ng-show=\"isCreatable()\">\n" +
+    "        <button create-item-button class=\"addIcon\" ng-click=\"createItem()\"><label i18n=\"list.createItem\"></label></button>\n" +
     "    </div>\n" +
     "    <div class=\"rightActions floatRight getPage\" ng-show=\"showPrevPageLink()||showNextPageLink()\">\n" +
     "        <button class=\"getPrevPage\" ng-click=\"getPrevPage()\" ng-show=\"showPrevPageLink()\">&lt;</button>\n" +

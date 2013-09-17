@@ -6,6 +6,9 @@
             <label i18n="list.deleteSelected"></label>
         </button>
     </div>
+    <div class="leftActions floatLeft" ng-show="isCreatable()">
+        <button create-item-button class="addIcon" ng-click="createItem()"><label i18n="list.createItem"></label></button>
+    </div>
     <div class="rightActions floatRight getPage" ng-show="showPrevPageLink()||showNextPageLink()">
         <button class="getPrevPage" ng-click="getPrevPage()" ng-show="showPrevPageLink()">&lt;</button>
         <button class="getNextPage" ng-click="getNextPage()" ng-show="showNextPageLink()">&gt;</button>

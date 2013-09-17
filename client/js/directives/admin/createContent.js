@@ -5,7 +5,7 @@ COMPONENTS.directive('createContent', ['tagService', function (tagService) {
         replace: true,
         templateUrl: 'editContent.html',
         scope : {
-            content : '='
+            content : '=model'
         },
         link: function link(scope) {
             scope.availableTags = tagService.getTags();

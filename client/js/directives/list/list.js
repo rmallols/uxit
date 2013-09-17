@@ -133,6 +133,7 @@
                 scope.isMultiSelectable = function () { return allowIfHasAdminRole(scope.config.multiSelectable); };
                 scope.isEditable = function () { return allowIfHasAdminRole(scope.config.editable); };
                 scope.isDeletable = function () { return allowIfHasAdminRole(scope.config.deletable); };
+                scope.isCreatable = function () { return allowIfHasAdminRole(scope.config.creatable); };
 
                 //Load the list just once some meaningful data is provided as otherwise the current directive
                 //could try to get data before it's provided from the invoking function
@@ -163,13 +164,6 @@
                 function allowIfHasAdminRole(action) { return (isAdmin()) ? action : false; }
 
                 function isAdmin() { return roleService.hasAdminRole(userSession); }
-
-                function setCurrentPage() {
-                    //Avoid pointing to a out of index page
-                    if ((scope.currentPage + 1) * scope.getDefaultedValue('pageSize') > scope.totalSize) {
-                        scope.currentPage = Math.floor(scope.totalSize / scope.getDefaultedValue('pageSize'));
-                    }
-                }
 
                 function deleteFromSeletedIds(id) {
                     var itemSelectedPos = getItemSelectedPos(id);

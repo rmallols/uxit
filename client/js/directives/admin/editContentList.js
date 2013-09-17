@@ -11,7 +11,8 @@ COMPONENTS.directive('editContentList', [function () {
                 selectable      : true,
                 multiSelectable : true,
                 uploadable      : true,
-                deletable       : true
+                deletable       : true,
+                creatable       : true
             };
         }]
     };

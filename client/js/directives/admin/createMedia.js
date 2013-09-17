@@ -5,7 +5,7 @@ COMPONENTS.directive('createMedia', ['tagService', function (tagService) {
         replace: true,
         templateUrl: 'createMedia.html',
         scope : {
-            media : '='
+            media : '=model'
         },
         link: function link(scope) {
 

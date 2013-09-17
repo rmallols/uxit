@@ -34,7 +34,6 @@
                 };
 
                 scope.save = function () {
-                    console.log("X1", scope);
                     editBoxUtilsService.hideEditBox(scope.target.id);
                     if (scope.onSave)   { scope.onSave(scope.model, scope.$id); }
                     if (scope.onClose)  { scope.onClose(); }
