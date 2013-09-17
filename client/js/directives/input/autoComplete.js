@@ -38,65 +38,63 @@ function ($rootScope, tagService, constantsService, i18nService, i18nDbService) 
                 if (scope.model) {
                     ctrl.$setViewValue(scope.model);
                 }
-                if (newVal && newVal.length > 0) {
-                    var setup = {
-                        data: {
-                            results: scope.options,
-                            text: function (item) {
-                                var labelKey = i18nDbService.getI18nProperty(item[attrs.labelKey]).text;
-                                return labelKey || '';
-                            }
-                        },
-                        multiple: attrs.multiple === 'true',
-                        placeholder: i18nService(attrs.placeholder),
-                        minimumInputLength: 0,
-                        id: function (item) {
-                            return item[attrs.valueKey];
-                        },
-                        createSearchChoice: function (term, data) {
-                            if ($(data).filter(function () {
-                                var labelKey = i18nDbService.getI18nProperty(this[attrs.labelKey]).text;
-                                return parseInt(labelKey.localeCompare(term), 10) === 0;
-                            }).length === 0) {
-                                var choiceObj = {};
-                                choiceObj.newItem = true;
-                                choiceObj[attrs.valueKey] = term;   //Reserved attribute
-                                choiceObj[attrs.labelKey] = term;
-                                return choiceObj;
-                            }
-                            return null;
-                        },
-                        initSelection: function (element, callback) {
-                            var data = [], ids = element.val().split(","), id;
-                            $(ids).each(function () {
-                                id = this;
-                                $(scope.options).each(function () {
-                                    if (parseInt(id.localeCompare("" + this[attrs.valueKey]), 10) === 0) {
-                                        if (attrs.multiple === 'true') {
-
-                                            data.push(this);
-                                        } else {
-                                            data = this;
-                                        }
-                                    }
-                                });
-                            });
-                            callback(data);
-                        },
-                        formatResult: function (item) {
-                            var labelKey = i18nDbService.getI18nProperty(item[attrs.labelKey]).text,
-                                htmlMarkup = '<label>' + labelKey + '</label>';
-                            if (item.newItem) {
-                                htmlMarkup += ' <i>(New item)</i>';
-                            }
-                            return htmlMarkup;
-                        },
-                        formatSelection: function (item) {
-                            return i18nDbService.getI18nProperty(item[attrs.labelKey]).text;
+                var setup = {
+                    data: {
+                        results: newVal,
+                        text: function (item) {
+                            var labelKey = i18nDbService.getI18nProperty(item[attrs.labelKey]).text;
+                            return labelKey || '';
                         }
-                    };
-                    autoCompleteObj.select2(setup).select2("val", scope.model); //It's necessary to provide a default value
-                }
+                    },
+                    multiple: attrs.multiple === 'true',
+                    placeholder: i18nService(attrs.placeholder),
+                    minimumInputLength: 0,
+                    id: function (item) {
+                        return item[attrs.valueKey];
+                    },
+                    createSearchChoice: function (term, data) {
+                        if ($(data).filter(function () {
+                            var labelKey = i18nDbService.getI18nProperty(this[attrs.labelKey]).text;
+                            return parseInt(labelKey.localeCompare(term), 10) === 0;
+                        }).length === 0) {
+                            var choiceObj = {};
+                            choiceObj.newItem = true;
+                            choiceObj[attrs.valueKey] = term;   //Reserved attribute
+                            choiceObj[attrs.labelKey] = term;
+                            return choiceObj;
+                        }
+                        return null;
+                    },
+                    initSelection: function (element, callback) {
+                        var data = [], ids = element.val().split(","), id;
+                        $(ids).each(function () {
+                            id = this;
+                            $(newVal).each(function () {
+                                if (parseInt(id.localeCompare("" + this[attrs.valueKey]), 10) === 0) {
+                                    if (attrs.multiple === 'true') {
+
+                                        data.push(this);
+                                    } else {
+                                        data = this;
+                                    }
+                                }
+                            });
+                        });
+                        callback(data);
+                    },
+                    formatResult: function (item) {
+                        var labelKey = i18nDbService.getI18nProperty(item[attrs.labelKey]).text,
+                            htmlMarkup = '<label>' + labelKey + '</label>';
+                        if (item.newItem) {
+                            htmlMarkup += ' <i>(New item)</i>';
+                        }
+                        return htmlMarkup;
+                    },
+                    formatSelection: function (item) {
+                        return i18nDbService.getI18nProperty(item[attrs.labelKey]).text;
+                    }
+                };
+                autoCompleteObj.select2(setup).select2("val", scope.model); //It's necessary to provide a default value
             }, true /*Compare object for equality rather than for reference*/);
 
             function updateModel(newVal) {
