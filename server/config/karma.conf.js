@@ -23,7 +23,7 @@ files= [
     './server/tests/unit/directives/*.spec.js',
     './server/tests/unit/services/*.spec.js',
     './server/tests/unit/mocks.js',
-    './server/tests/unit/utils.js'
+    './server/tests/unit/utils/*.js'
 ];
 
 // list of files to exclude
