@@ -11,6 +11,7 @@
     "grunt-contrib-cssmin": "~0.6.1",
     "grunt-contrib-less": "~0.5.2",
     "grunt-preprocess": "~2.3.0",
-    "grunt-karma": "~0.4.4"
+    "grunt-karma": "~0.4.4",
+    "grunt-shell": "~0.4.0"
   }
 }

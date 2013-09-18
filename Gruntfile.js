@@ -94,9 +94,18 @@ module.exports = function(grunt) {
                 src: ['client/**/*.html'],
                 dest: '<%= app_js %>templates.js'
             }
+        },
+        shell: {
+            mongo: {
+                command: 'C:\\usr\\tech\\servers\\mongodb-win32-x86_64-2.2.2\\bin\\mongod.exe',
+                options: {
+                    async: true
+                }
+            }
         }
     });
 
+    grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-karma');
@@ -111,4 +120,5 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', ['clean', 'jshint', 'karma', 'preprocess:dev', 'generateTemplates']);
     grunt.registerTask('prod', ['clean', 'jshint', 'karma', 'preprocess:prod', 'generateTemplates', 'concat', 'uglify', 'less:prod']);
     grunt.registerTask('generateTemplates', ['html2js']);
+    grunt.registerTask('startMongo', ['shell']);
 };

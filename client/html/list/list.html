@@ -7,13 +7,13 @@
     <div ng-show="items.length > 0" ng-hide="detailId && detailId!=item._id" id="{{item._id}}" ng-repeat="item in items"
          class="item columns" ng-class="getItemStyleClasses(item)">
         <div class="selectFromCheckbox" ng-show="isMultiSelectable()">
-            <input checkbox class="white" ng-model="item.isSelected" ng-click="selectItem(item, $index, $event, false)"
+            <input checkbox class="white" ng-model="item.isSelected" ng-click="clickOnItem(item, $index, $event, false)"
                    block-update-model="true" />
         </div>
-        <div class="text" ng-click="selectItem(item, $index, $event, true)">
+        <div class="text" ng-click="clickOnItem(item, $index, $event, true)">
             <div ng-transclude></div>
         </div>
-        <button class="remove removeIcon" ng-click="selectItem(item, $index, $event, false)" ng-show="isDeletable()"
+        <button class="remove removeIcon" ng-click="clickOnItem(item, $index, $event, false)" ng-show="isDeletable()"
                 title confirm-action="delete(item._id)">
             <label i18n="list.deleteItem"></label>
         </button>

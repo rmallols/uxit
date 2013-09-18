@@ -20,7 +20,18 @@
          * @returns {boolean}           True if the string is empty. False otherwise
          */
         function isEmpty(object) {
-            return object === '' || object === null || object === undefined;
+            var hasOwnProperty = Object.prototype.hasOwnProperty; // Speed up calls to hasOwnProperty
+            // null and undefined are empty
+            if (object == null) return true;
+            // Assume if it has a length property with a non-zero value
+            // that that property is correct.
+            if (object.length && object.length > 0)    return false;
+            if (object.length === 0)  return true;
+            for (var key in object) {
+                if (hasOwnProperty.call(object, key))    return false;
+            }
+            // Doesn't handle toString and toValue enumeration bugs in IE < 9
+            return true;
         }
 
         return {

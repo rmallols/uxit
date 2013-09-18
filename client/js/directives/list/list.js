@@ -1,8 +1,8 @@
 (function (Math, Number, COMPONENTS) {
     'use strict';
     COMPONENTS.directive('list', ['$rootScope', '$location', 'rowService', 'listService',
-    'editBoxUtilsService', 'arrayService', 'roleService', 'sessionService', 'objectService', 'tooltipService',
-    function ($rootScope, $location, rowService, listService, editBoxUtilsService, arrayService,
+    'roleService', 'sessionService', 'objectService', 'tooltipService',
+    function ($rootScope, $location, rowService, listService,
               roleService, sessionService, objectService, tooltipService) {
         return {
             restrict: 'A',
@@ -23,9 +23,9 @@
             },
             link: function link(scope, element) {
 
-                var lastSelectedItem, userSession = sessionService.getUserSession(),
-                    defaultOptions = { pageSize: 10, skip: 0, pageActionPos: 2, searchable : true,
-                        sort: { field: 'create.date', order : '1' } };
+                var userSession = sessionService.getUserSession(),
+                    defaultOptions = {  pageSize: 10, skip: 0, pageActionPos: 2, searchable : true,
+                                        sort: { field: 'create.date', order : '1' } };
 
                 scope.search = function () { scope.loadList(); };
 
@@ -40,45 +40,15 @@
                 };
 
                 scope.select = function (item) {
-                    if (scope.isMultiSelectable()) {
-                        if (!scope.selectedIds) { scope.selectedIds = []; }
-                        if (!item.isSelected) { //Select the item if it wasn't selected before
-                            scope.selectedIds.push(item._id);
-                        }
-                    }
-                    else if (scope.isSingleSelectable()) {
-                        scope.selectedIds = item._id;
-                        if (lastSelectedItem) { lastSelectedItem.isSelected = false; }
-                    }
-                    lastSelectedItem = item;
-                    item.isSelected = true;
-                    if(!$rootScope.$$phase) {
-                        scope.$apply();
-                    }
+                    listService.selectItem(scope, item);
                 };
 
                 scope.unselect = function (item) {
-                    if (scope.isMultiSelectable()) {
-                        if (item.isSelected) {
-                            deleteFromSeletedIds(item._id);
-                        }
-                    }
-                    else if (scope.isSingleSelectable()) { scope.selectedIds = null; }
-                    item.isSelected = false;
-                    if(!$rootScope.$$phase) {
-                        scope.$apply();
-                    }
+                    listService.unselectItem(scope, item);
                 };
 
-                scope.selectItem = function (item, $index, $event, editOnSelect) {
-                    if (scope.isSelectable() || scope.isEditable()) {
-                        handleDefaultSelectionMechanism(item, editOnSelect, $event);
-                    } else {
-                        handleNavigationMechanism(item);
-                    }
-                    if (scope.onSelect) {
-                        handleCustomSelectionMechanism(item, $index);
-                    }
+                scope.clickOnItem = function (item, $index, $event, editOnSelect) {
+                    listService.clickOnItem(scope, element, item, $index, $event, editOnSelect);
                 };
 
                 scope.getWrapperClass = function () {
@@ -100,8 +70,8 @@
                 };
 
                 scope.delete = function (id) {
-                    listService.deleteListItem(scope.collection, id);
-                    deleteFromSeletedIds(id);
+                    listService.deleteItem(scope.collection, id);
+                    listService.deleteFromSeletedIds(scope, id);
                     tooltipService.hide();
                     scope.loadList();
                 };
@@ -144,71 +114,15 @@
                 });
                 scope.searchText = '';
                 scope.currentPage = 0;
-                setDetailId($location.search().detailId);
+                listService.setDetailId(scope, $location.search().detailId);
                 scope.$on('$routeUpdate', function(){
-                    setDetailId($location.search().detailId);
+                    listService.setDetailId(scope, $location.search().detailId);
                 });
 
                 /** Private methods **/
-                function showEditBox(item) {
-                    var targetObj = $('#' + item._id + ' > *:first-child', element);
-                    hideEditBox(); //Hide any other previous instance of the edit box component
-                    scope.panels = scope.onSelectPanels;
-                    scope.model = item;
-                    scope.onClose = function () { scope.unselect(item); };
-                    editBoxUtilsService.showEditBox(scope, targetObj, targetObj);
-                }
-
-                function hideEditBox() { editBoxUtilsService.hideEditBox(null); }
-
                 function allowIfHasAdminRole(action) { return (isAdmin()) ? action : false; }
 
                 function isAdmin() { return roleService.hasAdminRole(userSession); }
-
-                function deleteFromSeletedIds(id) {
-                    var itemSelectedPos = getItemSelectedPos(id);
-                    //Delete the item from the selected items list, just if it was actually selected
-                    if (itemSelectedPos !== undefined) {
-                        arrayService.delete(scope.selectedIds, itemSelectedPos);
-                    }
-                }
-
-                function getItemSelectedPos(itemId) {
-                    var itemSelectedPos = null, i;
-                    if (scope.selectedIds) {
-                        for (i = 0; i < scope.selectedIds.length; i += 1) {
-                            if (scope.selectedIds[i] === itemId) {
-                                itemSelectedPos = i;
-                                break;
-                            }
-                        }
-                    }
-                    return itemSelectedPos;
-                }
-
-                function setDetailId(detailId) {
-                    scope.detailId = detailId;
-                }
-
-                function handleDefaultSelectionMechanism(item, editOnSelect, $event) {
-                    if (!item.isSelected) {
-                        scope.select(item);
-                        if (scope.isEditable() && editOnSelect) { showEditBox(item); }
-                        //Close edit box it the user click has been outside of it
-                    } else if (!$event || !editBoxUtilsService.isEditBoxClicked($event)) {
-                        scope.unselect(item);
-                        if (scope.isEditable()) { hideEditBox(); }
-                    }
-                }
-
-                function handleCustomSelectionMechanism(item, $index) {
-                    scope.onSelect(item, $index, scope.isSelectable());
-                }
-
-                function handleNavigationMechanism(item) {
-                    setDetailId(item._id);
-                    $location.search('detailId', item._id);
-                }
                 /** End of private methods **/
             }
         };
