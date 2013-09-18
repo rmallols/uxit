@@ -11,7 +11,6 @@
                 contentEditable : '=',
                 content         : '=ngModel',
                 customPanels    : '=panels',
-                type            : '=',
                 options         : '=',
                 onBlur          : '=',
                 placeholder     : '@',
@@ -35,7 +34,7 @@
                 scope.isEditable = function() {
                     //noinspection JSValidateTypes
                     var hasRights = (scope.contentEditable !== undefined) ? scope.contentEditable : scope.isAdmin();
-                    return hasRights && !cEDomObj.attr('readonly') && !cEDomObj.attr('disabled');
+                    return hasRights && !element.attr('readonly') && !element.attr('disabled');
                 };
 
                 scope.$watch('content', function () {

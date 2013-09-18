@@ -7,3 +7,7 @@ var routeParams = {
     start: function(){},
     done: function(){}
 };
+
+function trim(str) {
+    return str.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,'').replace(/\s+/g,' ');
+}

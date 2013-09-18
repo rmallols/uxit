@@ -1365,7 +1365,7 @@ angular.module("login.html", []).run(["$templateCache", function($templateCache)
 
 angular.module("mediaPicker.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("mediaPicker.html",
-    "<div>\n" +
+    "<div class=\"mediaPicker\">\n" +
     "    <button class=\"mediaIcon\" ng-click=\"selectFromMediaList()\">\n" +
     "        <label i18n=\"fileUploader.selectFromMediaList\"></label>\n" +
     "    </button>\n" +
