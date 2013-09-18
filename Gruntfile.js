@@ -117,8 +117,8 @@ module.exports = function(grunt) {
 
     //grunt.registerTask('default', []);
     //grunt.registerTask('krm', ['karma']);
+    grunt.registerTask('startMongo', ['shell']);
+    grunt.registerTask('generateTemplates', ['html2js']);
     grunt.registerTask('dev', ['clean', 'jshint', 'karma', 'preprocess:dev', 'generateTemplates']);
     grunt.registerTask('prod', ['clean', 'jshint', 'karma', 'preprocess:prod', 'generateTemplates', 'concat', 'uglify', 'less:prod']);
-    grunt.registerTask('generateTemplates', ['html2js']);
-    grunt.registerTask('startMongo', ['shell']);
 };

@@ -1,8 +1,8 @@
 (function (Math, Number, COMPONENTS) {
     'use strict';
-    COMPONENTS.directive('list', ['$rootScope', '$location', 'rowService', 'listService',
+    COMPONENTS.directive('list', ['$rootScope', '$location', 'rowService', 'listService', 'listSelectService',
     'roleService', 'sessionService', 'objectService', 'tooltipService',
-    function ($rootScope, $location, rowService, listService,
+    function ($rootScope, $location, rowService, listService, listSelectService,
               roleService, sessionService, objectService, tooltipService) {
         return {
             restrict: 'A',
@@ -40,15 +40,15 @@
                 };
 
                 scope.select = function (item) {
-                    listService.selectItem(scope, item);
+                    listSelectService.selectItem(scope, item);
                 };
 
                 scope.unselect = function (item) {
-                    listService.unselectItem(scope, item);
+                    listSelectService.unselectItem(scope, item);
                 };
 
                 scope.clickOnItem = function (item, $index, $event, editOnSelect) {
-                    listService.clickOnItem(scope, element, item, $index, $event, editOnSelect);
+                    listSelectService.clickOnItem(scope, element, item, $index, $event, editOnSelect);
                 };
 
                 scope.getWrapperClass = function () {
@@ -71,7 +71,7 @@
 
                 scope.delete = function (id) {
                     listService.deleteItem(scope.collection, id);
-                    listService.deleteFromSeletedIds(scope, id);
+                    listSelectService.dropFromSelectedList(scope, id);
                     tooltipService.hide();
                     scope.loadList();
                 };

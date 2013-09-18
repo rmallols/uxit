@@ -1279,13 +1279,13 @@ angular.module("list.html", []).run(["$templateCache", function($templateCache) 
     "    <div ng-show=\"items.length > 0\" ng-hide=\"detailId && detailId!=item._id\" id=\"{{item._id}}\" ng-repeat=\"item in items\"\n" +
     "         class=\"item columns\" ng-class=\"getItemStyleClasses(item)\">\n" +
     "        <div class=\"selectFromCheckbox\" ng-show=\"isMultiSelectable()\">\n" +
-    "            <input checkbox class=\"white\" ng-model=\"item.isSelected\" ng-click=\"selectItem(item, $index, $event, false)\"\n" +
+    "            <input checkbox class=\"white\" ng-model=\"item.isSelected\" ng-click=\"clickOnItem(item, $index, $event, false)\"\n" +
     "                   block-update-model=\"true\" />\n" +
     "        </div>\n" +
-    "        <div class=\"text\" ng-click=\"selectItem(item, $index, $event, true)\">\n" +
+    "        <div class=\"text\" ng-click=\"clickOnItem(item, $index, $event, true)\">\n" +
     "            <div ng-transclude></div>\n" +
     "        </div>\n" +
-    "        <button class=\"remove removeIcon\" ng-click=\"selectItem(item, $index, $event, false)\" ng-show=\"isDeletable()\"\n" +
+    "        <button class=\"remove removeIcon\" ng-click=\"clickOnItem(item, $index, $event, false)\" ng-show=\"isDeletable()\"\n" +
     "                title confirm-action=\"delete(item._id)\">\n" +
     "            <label i18n=\"list.deleteItem\"></label>\n" +
     "        </button>\n" +
