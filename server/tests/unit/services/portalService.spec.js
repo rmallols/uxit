@@ -11,12 +11,6 @@ describe('portalService', function () {
         });
     }]));
 
-    describe('Favicon', function () {
-        it('should detect the default favicon url', function () {
-            expect(portalService.getDefaultFaviconUrl()).toBe('/client/images/favicon.ico');
-        });
-    });
-
     describe('Fullscreen', function () {
         it('should detect the real fullscreen mode', function () {
             portal.fullscreenMode = 'real';

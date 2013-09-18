@@ -56,7 +56,9 @@ describe('i18nDbInput directive', function () {
                     en: { text: 'Test value without translation'},
                     es: { text: 'Test valor con traducción'}
                 }}},
-                i18nDbInputDirective = compile(template, scopeObj);
+                i18nDbInputDirective;
+            i18nService.changeLanguage('en');
+            i18nDbInputDirective = compile(template, scopeObj);
             expect(i18nDbInputDirective.val()).toBe(scopeObj.page.title.en.text);
         });
         it('should publish the translated value, already with the proper i18n format, once a language change happens', function () {

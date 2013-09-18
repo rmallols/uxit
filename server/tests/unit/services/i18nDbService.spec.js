@@ -39,7 +39,9 @@ describe('i18nDbService', function () {
         });
         it('should detect that an object has i18n structure in the default language', function() {
             var label = { en: { text: 'hellow i18n' }},
-                hasI18nStructure = i18nDbService.hasI18nStructure(label);
+                hasI18nStructure;
+            i18nService.changeLanguage('en');
+            hasI18nStructure = i18nDbService.hasI18nStructure(label);
             expect(hasI18nStructure).toBe(true);
         });
         it('should detect that an object doesn\'t have i18n structure in a non default language', function() {

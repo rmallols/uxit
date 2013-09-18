@@ -52,6 +52,7 @@ describe('tooltip directive and service', function () {
         titleDirective  = $compile(template, { hello: { en: { text: 'test value'}, es: { text: 'test valor'}}});
         $rootScope.$digest();
         tooltipObj      = $('#powerTip');
+        iS.changeLanguage('en');
         tS.show(titleDirective);
         expect(tooltipObj.text()).toBe('test value');
         iS.changeLanguage('es');
@@ -67,6 +68,7 @@ describe('tooltip directive and service', function () {
         titleDirective  = $compile(template, { hello: { en: { text: 'test value'}, es: { text: 'test valor'}}});
         $rootScope.$digest();
         tooltipObj      = $('#powerTip');
+        iS.changeLanguage('en');
         tS.show(titleDirective);
         expect(tooltipObj.text()).toBe('test value');
         tS.hide();

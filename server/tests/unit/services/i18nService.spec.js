@@ -19,13 +19,6 @@ describe('i18nService', function () {
     });
 
     describe('language detection', function() {
-        it('should detect the default and current language as english', function() {
-            var currentLanguage = i18nService.getCurrentLanguage(),
-                defaultLanguage = i18nService.getDefaultLanguage(),
-                englishLangCode = 'en';
-            expect(defaultLanguage).toBe(englishLangCode);
-            expect(currentLanguage).toBe(englishLangCode);
-        });
         it('should detect the language change', function() {
             var currentLanguage, spanishLangCode = 'es';
             i18nService.changeLanguage(spanishLangCode);
