@@ -3,17 +3,18 @@ var cacheService        = require("../cacheService"),
     utilsService        = require("../utilsService"),
     fileSystemService   = require("../fileSystemService"),
     consoleService      = require('../consoleService'),
-    gm                  = require('gm');
+    gm                  = require('gm'),
+    dbService           = require("../dbService");
 
 module.exports = {
 
-    upload : function (db, id, files, session, callback) {
+    upload : function (id, files, session, callback) {
 
         function uploadFile(file, callback) {
 
             function createNewFile(saveObj, callback) {
                 utilsService.addCreateSignature(saveObj, session);
-                db.media.save(saveObj, function (err, newContent) {
+                dbService.getDbConnection().media.save(saveObj, function (err, newContent) {
                     saveObj._id = newContent._id;
                     delete saveObj.data;
                     cacheService.updateCachedMedia(saveObj);
@@ -23,7 +24,7 @@ module.exports = {
 
             function updateExistingFile(saveObj, callback) {
                 utilsService.addUpdateSignature(saveObj, session);
-                db.media.update({_id: utilsService.getFormattedId(db, id)}, {$set: saveObj}, function () {
+                dbService.getDbConnection().media.update({_id: utilsService.getFormattedId(id)}, {$set: saveObj}, function () {
                     cacheService.updateCachedMedia(saveObj);
                     callback(saveObj);
                 });

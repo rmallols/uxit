@@ -5,11 +5,12 @@ var deleteService       = require('./crud/deleteService'),
     getService          = require('./crud/getService'),
     zipService          = require('./zipService'),
     constantsService    = require('./constantsService'),
-    fileSystemService   = require('./fileSystemService');
+    fileSystemService   = require('./fileSystemService'),
+    dbService           = require('./dbService');
 
 module.exports = {
 
-    deploy: function (db, files, session, callback) {
+    deploy: function (files, session, callback) {
 
         function getSetupObj(setupStr) {
             var setupObj;
@@ -50,12 +51,12 @@ module.exports = {
             var data, query;
             data = setDbData(setupObj);
             query = { q: [{ text: setupObj.id, targets: ['id'] }] };
-            getService.exists(db, constantsService.collections.availableApps, query, function (id) {
+            getService.exists(constantsService.collections.availableApps, query, function (id) {
                 if (id) {
-                    updateService.update(db, constantsService.collections.availableApps, id, data, session, callback);
+                    updateService.update(constantsService.collections.availableApps, id, data, session, callback);
                 } else {
                     data.avgRating = '';
-                    createService.create(db, constantsService.collections.availableApps, data, session, callback);
+                    createService.create(constantsService.collections.availableApps, data, session, callback);
                 }
             });
         }
@@ -64,8 +65,8 @@ module.exports = {
             collections.forEach(function (collection) {
                 // Create a capped collection with a maximum of 1000 documents
                 //noinspection JSUnresolvedFunction
-                db.createCollection(collection, {capped: true, size: 10000, max: 1000, w: 1}, function (/*err, collection*/) {
-                    createService.create(db, collection, { hello: 'world' + Math.floor(Math.random()*11)}, session, callback);
+                dbService.getDbConnection().createCollection(collection, {capped: true, size: 10000, max: 1000, w: 1}, function (/*err, collection*/) {
+                    createService.create(collection, { hello: 'world' + Math.floor(Math.random()*11)}, session, callback);
                 });
             });
         }
@@ -102,8 +103,8 @@ module.exports = {
         }
     },
 
-    undeploy: function (db, id, data, session, callback) {
-        deleteService.delete(db, constantsService.collections.availableApps, id, function () {
+    undeploy: function (id, data, session, callback) {
+        deleteService.delete(constantsService.collections.availableApps, id, function () {
             fileSystemService.deleteFolderRecursive('../client/apps/' + data.id + '/');
             callback();
         });

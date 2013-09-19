@@ -1,4 +1,6 @@
 'use strict';
+var dbService = require("./dbService");
+
 module.exports = {
 
     addCreateSignature : function (body, session) {
@@ -20,10 +22,10 @@ module.exports = {
     },
     //Get the formatted of the mongodb collection, as it will usually be a native object id,
     //but in some specific situations, it could be a plain string (for instance, in the case of the portal names)
-    getFormattedId: function (db, originalId) {
+    getFormattedId: function (originalId) {
         var _id;
         try {
-            _id = db.ObjectId(originalId);
+            _id = dbService.getDbConnection().ObjectId(originalId);
         } catch (ex) {
             _id = originalId;
         }

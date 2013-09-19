@@ -7,9 +7,9 @@ var bcrypt = require('bcrypt-nodejs');
 
 module.exports = {
 
-    login: function (db, body, session, callback) {
+    login: function (body, session, callback) {
         /*var cryptPassword = bcrypt.hashSync(body.password);*/
-        userService.get(db, body.email, function (user) {
+        userService.get(body.email, function (user) {
             if (user && bcrypt.compareSync(body.password, user.password)) {
                 delete user.password;
                 session.user = user;
@@ -21,10 +21,10 @@ module.exports = {
         });
     },
 
-    getSession: function (db, session, callback) {
+    getSession: function (session, callback) {
         //Look for the user data in database to always have fresh data
         if (session.user) {
-            userService.get(db, session.user.email, function (user) {
+            userService.get(session.user.email, function (user) {
                 delete user.password;
                 session.user = user;
                 cacheService.joinMediaData(session.user);

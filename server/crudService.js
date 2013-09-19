@@ -11,80 +11,81 @@ var dbService           = require("./dbService"),
     updateService       = require("./crud/updateService"),
     deleteService       = require("./crud/deleteService"),
     downloadService     = require("./crud/downloadService"),
-    mediaService        = require("./crud/mediaService"),
-    db = dbService.connect();
+    mediaService        = require("./crud/mediaService");
 
-dbService.initializeCollections(db, function() {
-    getService.cacheResources(db);
+dbService.connect();
+
+dbService.initializeCollections(function() {
+    getService.cacheResources();
 });
 
 module.exports = {
 
     create: function (collection, body, session, callback) {
-        createService.create(db, collection, body, session, callback);
+        createService.create(collection, body, session, callback);
     },
 
     //Give a special handling to the create user action as it requires password crypting
     createUser: function (collection, body, session, callback) {
-        userService.create(db, collection, body, session, callback);
+        userService.create(collection, body, session, callback);
     },
 
     rate: function (collection, body, session, callback) {
-        rateService.rate(db, collection, body, session, callback);
+        rateService.rate(collection, body, session, callback);
     },
 
     get: function (collection, id, query, callback) {
-        getService.get(db, collection, id, query, callback);
+        getService.get(collection, id, query, callback);
     },
 
     getFirst: function (collection, query, callback) {
-        getService.getFirst(db, collection, query, callback);
+        getService.getFirst(collection, query, callback);
     },
 
     update: function (collection, id, body, session, callback) {
-        updateService.update(db, collection, id, body, session, callback);
+        updateService.update(collection, id, body, session, callback);
     },
 
     updateUser: function (collection, id, body, session, callback) {
-        userService.update(db, collection, id, body, session, callback);
+        userService.update(collection, id, body, session, callback);
     },
 
     delete: function (collection, id, callback) {
-        deleteService.delete(db, collection, id, callback);
+        deleteService.delete(collection, id, callback);
     },
 
     getStats : function (collection, query, session, callback) {
-        statsService.getStats(db, collection, query, session, callback);
+        statsService.getStats(collection, query, session, callback);
     },
 
     deployApp: function (files, session, callback) {
-        appService.deploy(db, files, session, callback);
+        appService.deploy(files, session, callback);
     },
 
     undeployApp: function (id, body, session, callback) {
-        appService.undeploy(db, id, body, session, callback);
+        appService.undeploy(id, body, session, callback);
     },
 
     uploadMedia: function (id, files, session, callback) {
-        mediaService.upload(db, id, files, session, callback);
+        mediaService.upload(id, files, session, callback);
     },
 
     download: function (id, callback) {
-        downloadService.download(db, id, callback);
+        downloadService.download(id, callback);
     },
 
     initializeApp: function (session, callback) {
-        dbService.initializeApp(db, session, callback);
+        dbService.initializeApp(session, callback);
     },
 
     login: function(body, session, callback) {
-        sessionService.login(db, body, session, function (success) {
+        sessionService.login(body, session, function (success) {
             callback(success);
         });
     },
 
     getSession: function(session, callback) {
-        sessionService.getSession(db, session, function (user) {
+        sessionService.getSession(session, function (user) {
             callback(user);
         });
     },
