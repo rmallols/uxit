@@ -34,6 +34,7 @@
                 scope.isEditable = function() {
                     //noinspection JSValidateTypes
                     var hasRights = (scope.contentEditable !== undefined) ? scope.contentEditable : scope.isAdmin();
+                    dump("EDITABLE?", hasRights && !element.attr('readonly') && !element.attr('disabled'));
                     return hasRights && !element.attr('readonly') && !element.attr('disabled');
                 };
 

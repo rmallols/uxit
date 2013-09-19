@@ -1,14 +1,15 @@
 describe('caret service', function () {
 
-    var $rootScope, $scope, $compile, $httpBackend, sessionService, roleService;
+    var $rootScope, $scope, $compile, $httpBackend, $timeout, sessionService, roleService;
 
     beforeEach(module('components', 'templates-main', 'mocks.$timeout'));
-    beforeEach(inject(["$rootScope", "$compile", "$document", "$httpBackend", "sessionService", "roleService",
-    function ($rootScope_, $compile_, $document_, $httpBackend_, sessionService_, roleService_) {
+    beforeEach(inject(["$rootScope", "$compile", "$document", "$httpBackend", "$timeout", "sessionService", "roleService",
+    function ($rootScope_, $compile_, $document_, $httpBackend_, $timeout_, sessionService_, roleService_) {
         $rootScope      = $rootScope_;
         $scope          = $rootScope.$new();
         $compile        = compileFn($compile_, $scope, $document_);
         $httpBackend    = $httpBackend_;
+        $timeout        = $timeout_;
         sessionService  = sessionService_;
         roleService     = roleService_;
     }]));
@@ -50,13 +51,54 @@ describe('caret service', function () {
             expect(mediaPicker.length).toBe(1);
         });
 
-        xit('should have the actions area wrapper', function () {
+        it('should not show the actions area by default', function () {
             var template =  '<div content-editable ng-model="content"></div>',
                 contentEditableDirective = $compile(template, { content: 'test content'}),
                 actionsArea;
             $rootScope.$digest();
             actionsArea = $(' > .actionsArea', contentEditableDirective);
-            expect(actionsArea.length).toBe(1);
+            expect(actionsArea.is(':visible')).toBe(false);
+        });
+
+        it('should not show the actions area if the editable area is focused but the user doesn\'t have the proper permissions', function () {
+            var template =  '<div content-editable ng-model="content"></div>',
+                contentEditableDirective = $compile(template, { content: 'test content'}),
+                actionsArea, editableArea;
+            $rootScope.$digest();
+            actionsArea = $(' > .actionsArea', contentEditableDirective);
+            editableArea = $(' > .editableArea', contentEditableDirective);
+            editableArea.focus();
+            expect(actionsArea.is(':visible')).toBe(false);
+        });
+
+        it('should show the actions area if the editable area is focused and the user has the proper permissions', function () {
+            loadRoles($httpBackend, roleService, null);
+            loadUserSession($httpBackend, sessionService, true, null);
+            var template =  '<div content-editable ng-model="content"></div>',
+                contentEditableDirective = $compile(template, { content: 'test content'}),
+                actionsArea, contentEditable;
+            $rootScope.$digest();
+            actionsArea = $(' > .actionsArea', contentEditableDirective);
+            contentEditable = $(' > .editableArea > [contenteditable]', contentEditableDirective);
+            contentEditable.focus();
+            $rootScope.$apply();
+            expect(actionsArea.is(':visible')).toBe(true);
+        });
+
+        it('should not show the actions area if the editable area was focused and blurred afterwards and the user has the proper permissions', function () {
+            loadRoles($httpBackend, roleService, null);
+            loadUserSession($httpBackend, sessionService, true, null);
+            var template =  '<div content-editable ng-model="content"></div>',
+                contentEditableDirective = $compile(template, { content: 'test content'}),
+                actionsArea, contentEditable;
+            $rootScope.$digest();
+            actionsArea = $(' > .actionsArea', contentEditableDirective);
+            contentEditable = $(' > .editableArea > [contenteditable]', contentEditableDirective);
+            contentEditable.focus();
+            $rootScope.$apply();
+            contentEditable.blur();
+            $timeout.flush();
+            expect(actionsArea.is(':visible')).toBe(false);
         });
     });
 

@@ -97,7 +97,7 @@ module.exports = function(grunt) {
         },
         shell: {
             mongo: {
-                command: 'C:\\usr\\tech\\servers\\mongodb-win32-x86_64-2.2.2\\bin\\mongod.exe',
+                command: grunt.option('path'),
                 options: {
                     async: true
                 }
