@@ -168,6 +168,7 @@ window.speed = 150;
     getScript(directivePath + '/admin/editUser.js');
     getScript(directivePath + '/admin/editCurrentUser.js');
     getScript(directivePath + '/admin/editUserList.js');
+    getScript(directivePath + '/admin/createTag.js');
     getScript(directivePath + '/admin/editTag.js');
     getScript(directivePath + '/admin/editTagList.js');
     getScript(directivePath + '/admin/editNotifications.js');
