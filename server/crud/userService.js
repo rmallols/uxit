@@ -1,9 +1,10 @@
 'use strict';
-var getService      = require("./getService"),
-    utilsService    = require("../utilsService"),
+var getService          = require("./getService"),
+    utilsService        = require("../utilsService"),
 /*CRYPT MODULE*/
-    bcrypt          = require('bcrypt-nodejs'),
-    dbService       = require("../dbService");
+    bcrypt              = require('bcrypt-nodejs'),
+    dbService           = require("../dbService"),
+    constantsService    = require("../constantsService");
 
 module.exports = {
 
@@ -55,8 +56,9 @@ module.exports = {
     },
 
     get: function (email, callback) {
-        var filter = { $and: [{email: email}]};
-        dbService.getDbConnection().users.findOne(filter, function (err, user) {
+        var filter      = { $and: [{email: email}]},
+            collection  = constantsService.collections.users;
+        dbService.getDbConnection().collection(collection).findOne(filter, function (err, user) {
             callback(user);
         });
     }
