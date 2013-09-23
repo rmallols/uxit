@@ -998,7 +998,7 @@ angular.module("editUser.html", []).run(["$templateCache", function($templateCac
     "        <div><label i18n=\"editUser.email\"></label>: <input type=\"text\" ng-model=\"user.email\" email-mandatory mandatory /></div>\n" +
     "        <div>\n" +
     "            <label i18n=\"editUser.password\"></label>:\n" +
-    "            <input password ng-model=\"user.password\" />\n" +
+    "            <input password ng-model=\"user.password\" click-to-change=\"clickToChangePassword\" />\n" +
     "        </div>\n" +
     "        <div>\n" +
     "            <label i18n=\"editUser.role\"></label>\n" +
@@ -1234,11 +1234,11 @@ angular.module("fileUploader.html", []).run(["$templateCache", function($templat
 angular.module("password.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("password.html",
     "<div>\n" +
-    "    <a href=\"#\" ng-click=\"togglePassword()\">\n" +
-    "        <label ng-show=\"!changePasswordActive\"><label i18n=\"password.change\"></label></label>\n" +
-    "        <label ng-show=\"changePasswordActive\"><label i18n=\"password.cancelChanges\"></label></label>\n" +
+    "    <a href=\"#\" ng-click=\"togglePassword()\" ng-show=\"clickToChange\">\n" +
+    "        <label class=\"change\" ng-show=\"!changePasswordActive\"><label i18n=\"password.change\"></label></label>\n" +
+    "        <label class=\"cancelChanges\" ng-show=\"changePasswordActive\"><label i18n=\"password.cancelChanges\"></label></label>\n" +
     "    </a>\n" +
-    "    <input ng-show=\"changePasswordActive\" type=\"password\" ng-model=\"model\" password-mandatory />\n" +
+    "    <input ux-show=\"changePasswordActive  || !clickToChange\" type=\"password\" ng-model=\"model\" password-mandatory />\n" +
     "</div>");
 }]);
 

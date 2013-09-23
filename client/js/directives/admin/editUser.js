@@ -15,6 +15,7 @@ function ($routeParams, userService, mediaService, tagService, roleService, i18n
             //Duplicate the array to avoid infecting the original languages object
             scope.languages = $.extend(true, [], i18nService.getLanguages());
             scope.languages.unshift({ code: '', text: i18nService('editUser.language.inheritBrowser')});
+            scope.clickToChangePassword = true;
             if (scope.user) {
                 if (!scope.user.media) {
                     scope.user.media = {};

@@ -7,7 +7,8 @@
             replace: true,
             templateUrl: 'password.html',
             scope: {
-                model: '=ngModel'
+                model: '=ngModel',
+                clickToChange: '='
             },
             link: function (scope) {
                 scope.togglePassword = function() {
