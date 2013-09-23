@@ -22,7 +22,7 @@
         function isEmpty(object) {
             var hasOwnProperty = Object.prototype.hasOwnProperty; // Speed up calls to hasOwnProperty
             // null and undefined are empty
-            if (object == null) return true;
+            if (object === null || object === undefined) return true;
             // Assume if it has a length property with a non-zero value
             // that that property is correct.
             if (object.length && object.length > 0)    return false;

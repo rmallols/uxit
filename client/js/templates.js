@@ -990,7 +990,7 @@ angular.module("editUser.html", []).run(["$templateCache", function($templateCac
   $templateCache.put("editUser.html",
     "<div>\n" +
     "    <div class=\"columns large-8\">\n" +
-    "        <media-picker preview=\"true\" ng-model=\"user.media\" multiple=\"false\" default-media-url=\"defaultAvatarUrl\"></media-picker>\n" +
+    "        <media-picker preview=\"true\" ng-model=\"user.media\" default-media-url=\"defaultAvatarUrl\"></media-picker>\n" +
     "    </div>\n" +
     "    <div class=\"columns large-16\">\n" +
     "        <div><label i18n=\"editUser.fullName\"></label>: <input type=\"text\" ng-model=\"user.fullName\" mandatory /></div>\n" +

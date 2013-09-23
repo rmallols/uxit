@@ -26,9 +26,6 @@
     getStyleSheet(minPath + '/css.min.css');
     getScript(minPath + '/js.min.js');
 
-    //Load the LESS script, just after all the LESS stylesheets are loaded
-    getScript(libPath + '/less/less-1.3.3.min.js');
-
     //TODO: APP DIRECTIVES, PENDING TO BE MIGRATED TO AN STILL NOT SUPPORTED LAZY LOADING STRATEGY
     getScript('/client/apps/loginApp/loginApp.js');
     getScript('/client/apps/staticContentApp/staticContentApp.js');
