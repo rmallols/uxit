@@ -12,7 +12,6 @@
                 onMediaChange   : '=onChange',
                 onMediaClose    : '=onClose',
                 defaultMediaUrl : '=',
-                multiple        : '@',
                 preview         : '@'
             },
             templateUrl: 'mediaPicker.html',
@@ -45,6 +44,10 @@
                         }
                     };
                     editBoxUtilsService.showEditBox(scope, element, $('button', element));
+                };
+
+                scope.deleteSelection = function() {
+                    success(null);
                 };
 
                 /** Private methods **/

@@ -10,7 +10,6 @@ COMPONENTS.directive('editTagList', [function () {
                 editable        : true,
                 selectable      : true,
                 multiSelectable : true,
-                uploadable      : true,
                 deletable       : true,
                 creatable       : true
             };

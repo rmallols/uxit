@@ -990,8 +990,7 @@ angular.module("editUser.html", []).run(["$templateCache", function($templateCac
   $templateCache.put("editUser.html",
     "<div>\n" +
     "    <div class=\"columns large-8\">\n" +
-    "        <media-picker preview=\"true\" ng-model=\"user.media\" multiple=\"false\"\n" +
-    "                      default-media-url=\"defaultAvatarUrl\"></media-picker>\n" +
+    "        <media-picker preview=\"true\" ng-model=\"user.media\" multiple=\"false\" default-media-url=\"defaultAvatarUrl\"></media-picker>\n" +
     "    </div>\n" +
     "    <div class=\"columns large-16\">\n" +
     "        <div><label i18n=\"editUser.fullName\"></label>: <input type=\"text\" ng-model=\"user.fullName\" mandatory /></div>\n" +
@@ -1369,8 +1368,10 @@ angular.module("mediaPicker.html", []).run(["$templateCache", function($template
     "    <button class=\"mediaIcon\" ng-click=\"selectFromMediaList()\">\n" +
     "        <label i18n=\"fileUploader.selectFromMediaList\"></label>\n" +
     "    </button>\n" +
-    "    <img class=\"current\" ng-src=\"{{getDownloadUrl(model)}}\" ng-show=\"preview=='true'\"\n" +
-    "         title=\"{{getFileTitle(model)}}\" />\n" +
+    "    <img class=\"current\" ng-src=\"{{getDownloadUrl(model)}}\" ng-show=\"preview=='true'\" title=\"{{getFileTitle(model)}}\" />\n" +
+    "    <button class=\"removeIcon small\" ng-click=\"deleteSelection()\" ng-show=\"model._id\">\n" +
+    "        <label i18n=\"fileUploader.deleteSelection\"></label>\n" +
+    "    </button>\n" +
     "</div>");
 }]);
 

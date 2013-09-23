@@ -16,13 +16,11 @@ function ($routeParams, userService, mediaService, tagService, roleService, i18n
             scope.languages = $.extend(true, [], i18nService.getLanguages());
             scope.languages.unshift({ code: '', text: i18nService('editUser.language.inheritBrowser')});
             scope.clickToChangePassword = true;
+            scope.defaultAvatarUrl = mediaService.getDefaultAvatarUrl();
             if (scope.user) {
                 if (!scope.user.media) {
                     scope.user.media = {};
                 }
-            }
-            if(!scope.user || !scope.user.media) {
-                scope.defaultAvatarUrl = mediaService.getDefaultAvatarUrl();
             }
             scope.onLayerSave = function (callback) {
                 userService.updateUser(scope.user, function (result) {

@@ -10,7 +10,6 @@ COMPONENTS.directive('editUserList', [function () {
                 editable        : true,
                 selectable      : true,
                 multiSelectable : true,
-                uploadable      : true,
                 deletable       : true,
                 creatable       : true
             };

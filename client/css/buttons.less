@@ -1,4 +1,4 @@
-@smallButtonSize  : 28px;
+@smallButtonSize  : 32px;
 @normalButtonSize : 42px;
 @bigButtonSize    : 64px;
 
@@ -50,3 +50,7 @@ button.active { background-color: @highDarken !important; }
 button.small    { width:@smallButtonSize; height:@smallButtonSize; }
 button.normal   { width:@normalButtonSize; height:@normalButtonSize; }
 button.big      { width:@bigButtonSize; height:@bigButtonSize; }
+
+button.small:not(:empty) {
+  padding: 0px 8px 0px 28px;
+}
