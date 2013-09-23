@@ -49,14 +49,6 @@
                     return (portal.app) ? portal.app.showTitle : false;
                 };
 
-                scope.getAppStyleSheet = function () {
-                    var appPath = constantsService.appsPath + '/' + scope.type + '/', sheetName = scope.type + '.less',
-                        sheetPath = appPath + sheetName, link = $('<link rel="stylesheet" type="text/less" href="' + sheetPath + '" />');
-                    //noinspection JSHint
-                    less.sheets.push(link[0]);
-                    less.refresh();
-                };
-
                 scope.removeApp = function () {
                     element.hide("explode", { direction: "horizontal" }, window.speed, function () {
                         if (appService.isFullscreen()) {
@@ -67,7 +59,9 @@
                     });
                 };
 
-                scope.getCurrentUserAdminAccessStyleClass = function () { return roleService.getCurrentUserAdminAccessStyleClass(); };
+                scope.getCurrentUserAdminAccessStyleClass = function () {
+                    return roleService.getCurrentUserAdminAccessStyleClass();
+                };
 
                 scope.$watch('type', function (newVal) {
                     if (newVal) {
@@ -111,7 +105,6 @@
                     }
                     scope.internalData = {};
                     scope.setViewTemplate();
-                    scope.getAppStyleSheet();
                     element.addClass(scope.type);
                 }
 
