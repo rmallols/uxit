@@ -32,7 +32,7 @@ function goToIndex(res) {
 app.post('/rest/login', function (req, res) {
     crudService.login(req.body, req.session, function(success) {
         if (success) {
-            res.redirect('/' + req.session.user.portalId); //Redirect to user default portal
+            res.redirect('/default'); //Redirect to user default portal
         } else {
             res.redirect('/login?error');
         }
@@ -57,16 +57,16 @@ app.get('/:portal/logout', function (req, res) {
     });
 });
 
-app.post('/rest/:collection/create', checkAuth, function (req, res) {
-    crudService.create(req.params.collection, req.body, req.session, function (newItem) {
-        res.send(newItem);
+app.post('/rest/users/create', checkAuth, function (req, res) {
+    crudService.createUser(req.body, req.session, function (newUser) {
+        if (!newUser)   { res.send('The e-mail address already exists. Please select a new one', 403); }
+        else            { res.send(newUser); }
     });
 });
 
-app.post('/rest/:collection/createUser', checkAuth, function (req, res) {
-    crudService.createUser(req.params.collection, req.body, req.session, function (newUser) {
-        if (!newUser)   { res.send('The e-mail address already exists. Please select a new one', 403); }
-        else            { res.send(newUser); }
+app.post('/rest/:collection/create', checkAuth, function (req, res) {
+    crudService.create(req.params.collection, req.body, req.session, function (newItem) {
+        res.send(newItem);
     });
 });
 
@@ -88,16 +88,16 @@ app.get('/rest/:collection/:id?*', function (req, res) {
     });
 });
 
-app.put('/rest/:collection/:id/update', checkAuth, function (req, res) {
-    crudService.update(req.params.collection, req.params.id, req.body, req.session, function (result) {
-        res.send(result);
+app.put('/rest/users/:id/update', checkAuth, function (req, res) {
+    crudService.updateUser(req.params.id, req.body, req.session, function (updatedUser) {
+        if (!updatedUser)   { res.send('The e-mail address already exists. Please select a new one', 403); }
+        else                { res.send(updatedUser); }
     });
 });
 
-app.put('/rest/:collection/:id/updateUser', checkAuth, function (req, res) {
-    crudService.updateUser(req.params.collection, req.params.id, req.body, req.session, function (updatedUser) {
-        if (!updatedUser)   { res.send('The e-mail address already exists. Please select a new one', 403); }
-        else                { res.send(updatedUser); }
+app.put('/rest/:collection/:id/update', checkAuth, function (req, res) {
+    crudService.update(req.params.collection, req.params.id, req.body, req.session, function (result) {
+        res.send(result);
     });
 });
 
@@ -156,6 +156,12 @@ app.get('/initializeApp', checkAuth, function (req, res) {
 });
 
 app.use('/', express.static('../'));
+
+app.get('/default', function (req, res) {
+    crudService.getFirst(constantsService.collections.portal, {}, function (firstPortal) {
+        res.redirect('/' + firstPortal._id);
+    });
+});
 
 app.get('/login', function (req, res) { goToIndex(res); });
 

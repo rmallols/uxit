@@ -26,8 +26,8 @@ module.exports = {
     },
 
     //Give a special handling to the create user action as it requires password crypting
-    createUser: function (collection, body, session, callback) {
-        userService.create(collection, body, session, callback);
+    createUser: function (body, session, callback) {
+        userService.create(body, session, callback);
     },
 
     rate: function (collection, body, session, callback) {
@@ -46,8 +46,8 @@ module.exports = {
         updateService.update(collection, id, body, session, callback);
     },
 
-    updateUser: function (collection, id, body, session, callback) {
-        userService.update(collection, id, body, session, callback);
+    updateUser: function (id, body, session, callback) {
+        userService.update(id, body, session, callback);
     },
 
     delete: function (collection, id, callback) {

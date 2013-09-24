@@ -61,8 +61,8 @@
         };
     }]);
 
-    COMPONENTS.directive('createItemButton', ['crudService', 'editBoxUtilsService',
-    function (crudService, editBoxUtilsService) {
+    COMPONENTS.directive('createItemButton', ['$injector', 'crudService', 'editBoxUtilsService',
+    function ($injector, crudService, editBoxUtilsService) {
         return {
             restrict: 'A',
             scope: {},

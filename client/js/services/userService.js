@@ -44,11 +44,10 @@
                     password    : user.password,
                     role        : user.role,
                     language    : user.language,
-                    portalId    : $routeParams.portal,
                     tags        : user.tags
                 };
                 data.mediaId = (user.media && user.media._id) ? user.media._id : null;
-                crudService.createUser(data, function (newUser) {
+                crudService.create(data, function (newUser) {
                     if (callback) {
                         callback(newUser);
                     }
@@ -79,7 +78,7 @@
                 if (user.password) { //Update the password, just in case it's being entered by the user
                     data.password = user.password;
                 }
-                crudService.updateUser(user._id, data, function (updatedUser) {
+                crudService.update(user._id, data, function (updatedUser) {
                     if (callback) {
                         callback(updatedUser);
                     }

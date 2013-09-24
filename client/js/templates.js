@@ -1237,7 +1237,7 @@ angular.module("password.html", []).run(["$templateCache", function($templateCac
     "        <label class=\"change\" ng-show=\"!changePasswordActive\"><label i18n=\"password.change\"></label></label>\n" +
     "        <label class=\"cancelChanges\" ng-show=\"changePasswordActive\"><label i18n=\"password.cancelChanges\"></label></label>\n" +
     "    </a>\n" +
-    "    <input ux-show=\"changePasswordActive  || !clickToChange\" type=\"password\" ng-model=\"model\" password-mandatory />\n" +
+    "    <input ng-show=\"changePasswordActive  || !clickToChange\" type=\"password\" ng-model=\"model\" password-mandatory />\n" +
     "</div>");
 }]);
 
