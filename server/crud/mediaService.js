@@ -3,6 +3,7 @@ var cacheService        = require("../cacheService"),
     utilsService        = require("../utilsService"),
     fileSystemService   = require("../fileSystemService"),
     consoleService      = require('../consoleService'),
+    constantsService    = require('../constantsService'),
     gm                  = require('gm'),
     dbService           = require("../dbService");
 
@@ -14,7 +15,7 @@ module.exports = {
 
             function createNewFile(saveObj, callback) {
                 utilsService.addCreateSignature(saveObj, session);
-                dbService.getDbConnection().media.save(saveObj, function (err, newContent) {
+                dbService.getDbConnection().collection(constantsService.collections.media).save(saveObj, function (err, newContent) {
                     saveObj._id = newContent._id;
                     delete saveObj.data;
                     cacheService.updateCachedMedia(saveObj);
@@ -23,8 +24,11 @@ module.exports = {
             }
 
             function updateExistingFile(saveObj, callback) {
+                var collection = constantsService.collections.media,
+                    id = {_id: utilsService.getFormattedId(id)},
+                    params = {$set: saveObj};
                 utilsService.addUpdateSignature(saveObj, session);
-                dbService.getDbConnection().media.update({_id: utilsService.getFormattedId(id)}, {$set: saveObj}, function () {
+                dbService.getDbConnection().collection(collection).update(id, params, function () {
                     cacheService.updateCachedMedia(saveObj);
                     callback(saveObj);
                 });
