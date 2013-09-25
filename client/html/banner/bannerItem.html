@@ -1,0 +1,8 @@
+<div class="bannerItem">
+    <button class="edit editIcon" ng-click="editItem()"></button>
+    <div class="item text" ux-show="type=='text'">
+        <div>{{value}}</div>
+    </div>
+    <img class="item image" ux-show="type=='image'" ng-src="{{value}}" />
+    <input type="text" class="selectHandler" />
+</div>

@@ -1,4 +1,4 @@
-angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'bannerAppView.html', 'contentListAppAdd.html', 'contentListAppEdit.html', 'contentListAppHelp.html', 'contentListAppView.html', 'iframeAppEdit.html', 'iframeAppHelp.html', 'iframeAppView.html', 'imageAppEdit.html', 'imageAppHelp.html', 'imageAppView.html', 'languageSelectAppEdit.html', 'languageSelectAppHelp.html', 'languageSelectAppView.html', 'linksAppEdit.html', 'linksAppHelp.html', 'linksAppView.html', 'loginAppEdit.html', 'loginAppHelp.html', 'loginAppView.html', 'mapAppEdit.html', 'mapAppHelp.html', 'mapAppView.html', 'mediaCarouselAppEdit.html', 'mediaCarouselAppHelp.html', 'mediaCarouselAppSelectMedia.html', 'mediaCarouselAppView.html', 'mediaListAppAdd.html', 'mediaListAppEdit.html', 'mediaListAppHelp.html', 'mediaListAppView.html', 'menuAppEdit.html', 'menuAppHelp.html', 'menuAppView.html', 'example.html', 'slidesAppEdit.html', 'slidesAppHelp.html', 'slidesAppView.html', 'socialAppEdit.html', 'socialAppHelp.html', 'socialAppView.html', 'staticContentAppAdd.html', 'staticContentAppEdit.html', 'staticContentAppHelp.html', 'staticContentAppSelectContent.html', 'staticContentAppView.html', 'userListAppAdd.html', 'userListAppEdit.html', 'userListAppHelp.html', 'userListAppView.html', 'videoAppEdit.html', 'videoAppHelp.html', 'videoAppView.html', 'webGlAppEdit.html', 'webGlAppHelp.html', 'webGlAppView.html', 'addAppPanel.html', 'adminPanel.html', 'createMedia.html', 'edit.html', 'editAppGeneral.html', 'editAppStyles.html', 'editBox.html', 'editContent.html', 'editContentList.html', 'editCurrentUser.html', 'editGeneral.html', 'editMedia.html', 'editMediaList.html', 'editNotifications.html', 'editPages.html', 'editStyles.html', 'editTag.html', 'editTagList.html', 'editUser.html', 'editUserList.html', 'stats.html', 'styles.html', 'app.html', 'appHeader.html', 'comment.html', 'comments.html', 'contentEditable.html', 'richContent.html', 'selectMedia.html', 'fileUploader.html', 'password.html', 'rating.html', 'contentList.html', 'list.html', 'mediaList.html', 'tagList.html', 'userList.html', 'login.html', 'mediaPicker.html', 'mediaPopup.html', 'pages.html', 'errorPage.html', 'loginPage.html', 'portalPage.html', 'listActions.html', 'listEdit.html']);
+angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'bannerAppView.html', 'contentListAppAdd.html', 'contentListAppEdit.html', 'contentListAppHelp.html', 'contentListAppView.html', 'iframeAppEdit.html', 'iframeAppHelp.html', 'iframeAppView.html', 'imageAppEdit.html', 'imageAppHelp.html', 'imageAppView.html', 'languageSelectAppEdit.html', 'languageSelectAppHelp.html', 'languageSelectAppView.html', 'linksAppEdit.html', 'linksAppHelp.html', 'linksAppView.html', 'loginAppEdit.html', 'loginAppHelp.html', 'loginAppView.html', 'mapAppEdit.html', 'mapAppHelp.html', 'mapAppView.html', 'mediaCarouselAppEdit.html', 'mediaCarouselAppHelp.html', 'mediaCarouselAppSelectMedia.html', 'mediaCarouselAppView.html', 'mediaListAppAdd.html', 'mediaListAppEdit.html', 'mediaListAppHelp.html', 'mediaListAppView.html', 'menuAppEdit.html', 'menuAppHelp.html', 'menuAppView.html', 'example.html', 'slidesAppEdit.html', 'slidesAppHelp.html', 'slidesAppView.html', 'socialAppEdit.html', 'socialAppHelp.html', 'socialAppView.html', 'staticContentAppAdd.html', 'staticContentAppEdit.html', 'staticContentAppHelp.html', 'staticContentAppSelectContent.html', 'staticContentAppView.html', 'userListAppAdd.html', 'userListAppEdit.html', 'userListAppHelp.html', 'userListAppView.html', 'videoAppEdit.html', 'videoAppHelp.html', 'videoAppView.html', 'webGlAppEdit.html', 'webGlAppHelp.html', 'webGlAppView.html', 'addAppPanel.html', 'adminPanel.html', 'createMedia.html', 'edit.html', 'editAppGeneral.html', 'editAppStyles.html', 'editBox.html', 'editContent.html', 'editContentList.html', 'editCurrentUser.html', 'editGeneral.html', 'editMedia.html', 'editMediaList.html', 'editNotifications.html', 'editPages.html', 'editStyles.html', 'editTag.html', 'editTagList.html', 'editUser.html', 'editUserList.html', 'stats.html', 'styles.html', 'app.html', 'appHeader.html', 'bannerCanvas.html', 'bannerItem.html', 'comment.html', 'comments.html', 'contentEditable.html', 'richContent.html', 'selectMedia.html', 'fileUploader.html', 'password.html', 'rating.html', 'contentList.html', 'list.html', 'mediaList.html', 'tagList.html', 'userList.html', 'login.html', 'mediaPicker.html', 'mediaPopup.html', 'pages.html', 'errorPage.html', 'loginPage.html', 'portalPage.html', 'listActions.html', 'listEdit.html']);
 
 angular.module("bannerAppEdit.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerAppEdit.html",
@@ -1104,6 +1104,28 @@ angular.module("appHeader.html", []).run(["$templateCache", function($templateCa
     "</div>");
 }]);
 
+angular.module("bannerCanvas.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bannerCanvas.html",
+    "<div class=\"bannerCanvas\" ng-class=\"{overflowVisible: overflowVisible}\">\n" +
+    "    <button class=\"addIcon\" ng-click=\"addImage()\">Add image</button>\n" +
+    "    <button class=\"addIcon\" ng-click=\"addText()\">Add text</button>\n" +
+    "    <div class=\"content\"></div>\n" +
+    "    <div class=\"grid\"></div>\n" +
+    "</div>");
+}]);
+
+angular.module("bannerItem.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("bannerItem.html",
+    "<div class=\"bannerItem\">\n" +
+    "    <button class=\"edit editIcon\" ng-click=\"editItem()\"></button>\n" +
+    "    <div class=\"item text\" ux-show=\"type=='text'\">\n" +
+    "        <div>{{value}}</div>\n" +
+    "    </div>\n" +
+    "    <img class=\"item image\" ux-show=\"type=='image'\" ng-src=\"{{value}}\" />\n" +
+    "    <input type=\"text\" class=\"selectHandler\" />\n" +
+    "</div>");
+}]);
+
 angular.module("comment.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("comment.html",
     "<li class=\"comment cf\" ng-hide=\"comment.deleted\">\n" +
@@ -1459,9 +1481,12 @@ angular.module("loginPage.html", []).run(["$templateCache", function($templateCa
 
 angular.module("portalPage.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("portalPage.html",
-    "<div global-msg></div>\n" +
+    "<!--<div global-msg></div>\n" +
     "<admin-panel ux-show=\"isAdmin()\"></admin-panel>\n" +
-    "<pages></pages>");
+    "<pages></pages>-->\n" +
+    "<div banner-canvas></div>\n" +
+    "<div banner-item type=\"text\" value=\"Test text!\"></div>\n" +
+    "<div banner-item type=\"image\" value=\"/client/images/add.svg\"></div>");
 }]);
 
 angular.module("listActions.html", []).run(["$templateCache", function($templateCache) {

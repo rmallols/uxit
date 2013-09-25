@@ -71,7 +71,7 @@
                 }
                 return false;
             };
-            Mousetrap.bind(shortcut, normalizedBindFn);
+            Mousetrap.bindGlobal(shortcut, normalizedBindFn); //Use bind global to enable events even inside of inputs
         }
 
         function unbind(shortcut) {

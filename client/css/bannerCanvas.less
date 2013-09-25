@@ -1,0 +1,38 @@
+.bannerCanvas,
+.bannerCanvas > .content {
+  width: 100%;
+  height: 301px;
+  overflow: hidden;
+}
+
+.bannerCanvas.overflowVisible,
+.bannerCanvas.overflowVisible > .content {
+  overflow: visible;
+}
+
+.bannerCanvas > .content {
+  position: absolute;
+}
+
+.bannerCanvas .grid {
+  position: relative;
+  height: 100%;
+  border: 1px solid #ccc;
+}
+
+.bannerCanvas .grid .ruler {
+  position: absolute;
+  z-index: 1;
+}
+
+.bannerCanvas .grid .ruler.col {
+  width: 1px;
+  height: 100%;
+  border-left: 1px solid #ccc;
+}
+
+.bannerCanvas .grid .ruler.row {
+  height: 1px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+}
