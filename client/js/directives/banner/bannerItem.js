@@ -8,6 +8,7 @@
             scope: {
                 type: '@',
                 value: '@',
+                onChange: '&',
                 overflowVisible: '='
             },
             templateUrl: 'bannerItem.html',
@@ -22,6 +23,9 @@
                     grid: [ 50,50 ],
                     start: function() {
                         start();
+                    },
+                    stop: function() {
+                        propagateChanges();
                     }
                 });
                 element.resizable({
@@ -52,12 +56,6 @@
                     var defaultPanels = [{ title: 'Select media', type: 'selectMedia' }];
                     scope.internalData = {};
                     scope.panels = defaultPanels;
-                    scope.onSave = function() {
-                        console.log("SAVE!");
-                    };
-                    scope.onCancel = function() {
-                        console.log("CANCEL");
-                    };
                     scope.onChange = function(model, id, selectedMedia) {
                         scope.value = mediaService.getDownloadUrl(selectedMedia);
                     };
@@ -81,6 +79,7 @@
                         if(!keepItemSelected) {
                             element.removeClass('active');
                             inputElm.removeClass('forceVisible');
+                            propagateChanges();
                         }
                     }, window.speed);
                 }
@@ -95,6 +94,12 @@
 
                 function hideOverflow() {
                     scope.overflowVisible = false;
+                }
+
+                function propagateChanges() {
+                    if(scope.onChange) {
+                        scope.onChange();
+                    }
                 }
                 /** End of private methods **/
             }

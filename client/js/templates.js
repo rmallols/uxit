@@ -1106,11 +1106,10 @@ angular.module("appHeader.html", []).run(["$templateCache", function($templateCa
 
 angular.module("bannerCanvas.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerCanvas.html",
-    "<div class=\"bannerCanvas\" ng-class=\"{overflowVisible: overflowVisible}\">\n" +
+    "<div class=\"bannerCanvas\">\n" +
     "    <button class=\"addIcon\" ng-click=\"addImage()\">Add image</button>\n" +
     "    <button class=\"addIcon\" ng-click=\"addText()\">Add text</button>\n" +
-    "    <div class=\"content\"></div>\n" +
-    "    <div class=\"grid\"></div>\n" +
+    "    <div class=\"grid\" ng-class=\"{overflowVisible: overflowVisible}\"></div>\n" +
     "</div>");
 }]);
 
@@ -1484,9 +1483,8 @@ angular.module("portalPage.html", []).run(["$templateCache", function($templateC
     "<!--<div global-msg></div>\n" +
     "<admin-panel ux-show=\"isAdmin()\"></admin-panel>\n" +
     "<pages></pages>-->\n" +
-    "<div banner-canvas></div>\n" +
-    "<div banner-item type=\"text\" value=\"Test text!\"></div>\n" +
-    "<div banner-item type=\"image\" value=\"/client/images/add.svg\"></div>");
+    "        {{test}}-\n" +
+    "<div banner-canvas ng-model=\"test\"></div>");
 }]);
 
 angular.module("listActions.html", []).run(["$templateCache", function($templateCache) {

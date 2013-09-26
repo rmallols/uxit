@@ -1,15 +1,16 @@
+@borderWidth: 3px;
 .bannerItem {
   position: absolute;
+  top: 50px;
+  left: 50px;
   display: block;
-  width: 150px;
-  height: 150px;
-  cursor: move;
+  width: 150px - 2 * @borderWidth;
+  height: 150px - 2 * @borderWidth;
+  cursor: pointer;
   text-align: center;
+  border: @borderWidth dashed transparent;
+  box-sizing: content-box;
   .alignCenter;
-}
-
-.bannerItem > .item.text {
-  font-size: 200%;
 }
 
 .bannerItem > button.edit {
@@ -17,6 +18,10 @@
   visibility: hidden;
   top: 10px;
   right: 10px;
+}
+
+.bannerItem.active {
+  cursor: move;
 }
 
 .bannerItem.active > button.edit {
