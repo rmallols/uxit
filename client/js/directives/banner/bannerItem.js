@@ -1,15 +1,14 @@
 (function() {
-    COMPONENTS.directive('bannerItem', ['$timeout', 'mediaService', 'editBoxUtilsService',
-    function ($timeout, mediaService, editBoxUtilsService) {
+    COMPONENTS.directive('bannerItem', ['$rootScope', '$timeout', 'mediaService', 'editBoxUtilsService', 'domService',
+    function ($rootScope, $timeout, mediaService, editBoxUtilsService, domService) {
         'use strict';
         return {
             restrict: 'A',
             replace: true,
             scope: {
-                type: '@',
-                value: '@',
-                onChange: '&',
-                overflowVisible: '='
+                item: '=data',
+                overflowVisible: '=',
+                onItemChange: '&onChange'
             },
             templateUrl: 'bannerItem.html',
             link: function link(scope, element) {
@@ -17,15 +16,20 @@
                 var inputElm = $(' > input.selectHandler', element),
                     editButtonElm = $(' > button.edit', element),
                     originalBoxSize = getBoxSize(),
-                    keepItemSelected = false;
+                    keepItemSelected = false,
+                    borderWidth = domService.getObjBorderWidth(element),
+                    horizontalBorderWidth = borderWidth.left + borderWidth.right,
+                    verticalBorderWidth = borderWidth.top + borderWidth.bottom;
+
+                setDomCoordinatesFromModel();
 
                 element.draggable({
                     grid: [ 50,50 ],
                     start: function() {
-                        start();
+                        select();
                     },
                     stop: function() {
-                        propagateChanges();
+                        setModelCoordinatesFromDom(); //Update the model before propagating the changes
                     }
                 });
                 element.resizable({
@@ -36,11 +40,14 @@
                         var newBoxSize  = getBoxSize(),
                             newFontSize = (newBoxSize / originalBoxSize) * 100;
                         element.css('font-size', newFontSize + '%');
+                    },
+                    stop: function() {
+                        setModelCoordinatesFromDom(); //Update the model before propagating the changes
                     }
                 });
 
                 element.click(function() {
-                    start();
+                    select();
                 });
 
                 inputElm.focus(function() {
@@ -48,7 +55,7 @@
                 });
 
                 inputElm.blur(function() {
-                    stop();
+                    unselect();
                 });
 
                 scope.editItem = function() {
@@ -61,7 +68,7 @@
                     };
                     scope.onClose = function() {
                         keepItemSelected = false;
-                        stop();
+                        unselect();
                         hideOverflow();
                     };
                     showOverflow();
@@ -69,17 +76,34 @@
                 };
 
                 /** Private methods **/
-                function start() {
+                function setDomCoordinatesFromModel() {
+                    element.css('width', scope.item.size.width - horizontalBorderWidth);
+                    element.css('height', scope.item.size.height - verticalBorderWidth);
+                    element.css('top', scope.item.position.top);
+                    element.css('left', scope.item.position.left);
+                }
+
+                function setModelCoordinatesFromDom() {
+                    scope.item.size.width    = parseInt(element.css('width')) + horizontalBorderWidth;
+                    scope.item.size.height   = parseInt(element.css('height')) + verticalBorderWidth;
+                    scope.item.position.top  = parseInt(element.css('top'));
+                    scope.item.position.left = parseInt(element.css('left'));
+                    if(!$rootScope.$$phase) {
+                        scope.$apply();
+                    }
+                }
+
+                function select() {
                     inputElm.addClass('forceVisible');
                     inputElm.focus();
                 }
 
-                function stop() {
+                function unselect() {
                     $timeout(function() {
                         if(!keepItemSelected) {
                             element.removeClass('active');
                             inputElm.removeClass('forceVisible');
-                            propagateChanges();
+                            setModelCoordinatesFromDom(); //Update the model before propagating the changes
                         }
                     }, window.speed);
                 }
@@ -94,12 +118,6 @@
 
                 function hideOverflow() {
                     scope.overflowVisible = false;
-                }
-
-                function propagateChanges() {
-                    if(scope.onChange) {
-                        scope.onChange();
-                    }
                 }
                 /** End of private methods **/
             }

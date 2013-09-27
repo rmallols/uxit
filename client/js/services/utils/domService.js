@@ -34,6 +34,21 @@
         }
 
         /**
+         * Gets the border width of a given DOM object
+         *
+         * @param   {object} obj    The DOM object pointer of which the border width attributes are required
+         * @returns {object}        The DOM object border (top, right, bottom, left)
+         */
+        function getObjBorderWidth(obj) {
+            return {
+                top     : parseInt(obj.css('borderTopWidth'), 10),
+                right   : parseInt(obj.css('borderRightWidth'), 10),
+                bottom  : parseInt(obj.css('borderBottomWidth'), 10),
+                left    : parseInt(obj.css('borderLeftWidth'), 10)
+            };
+        }
+
+        /**
          * Gets the type of a given DOM object pointer
          *
          * @param   {object} obj    The DOM object pointer of which the type is required
@@ -88,6 +103,7 @@
         return {
             getCoordinates: getCoordinates,
             getObjPadding: getObjPadding,
+            getObjBorderWidth: getObjBorderWidth,
             getElementType: getElementType,
             getDomPercent: getDomPercent,
             addLoadingFeedback: addLoadingFeedback,

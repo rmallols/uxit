@@ -1109,18 +1109,20 @@ angular.module("bannerCanvas.html", []).run(["$templateCache", function($templat
     "<div class=\"bannerCanvas\">\n" +
     "    <button class=\"addIcon\" ng-click=\"addImage()\">Add image</button>\n" +
     "    <button class=\"addIcon\" ng-click=\"addText()\">Add text</button>\n" +
-    "    <div class=\"grid\" ng-class=\"{overflowVisible: overflowVisible}\"></div>\n" +
+    "    <div class=\"grid\" ng-class=\"{overflowVisible: overflowVisible}\">\n" +
+    "        <div banner-item ng-repeat=\"item in items.data\" data=\"item\" overflow-visible=\"overflowVisible\"></div>\n" +
+    "    </div>\n" +
     "</div>");
 }]);
 
 angular.module("bannerItem.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerItem.html",
-    "<div class=\"bannerItem\">\n" +
+    "<div id=\"{{item.id}}\" class=\"bannerItem\">\n" +
     "    <button class=\"edit editIcon\" ng-click=\"editItem()\"></button>\n" +
-    "    <div class=\"item text\" ux-show=\"type=='text'\">\n" +
-    "        <div>{{value}}</div>\n" +
+    "    <div class=\"item text\" ux-show=\"item.type=='text'\">\n" +
+    "        <div>{{item.value}}</div>\n" +
     "    </div>\n" +
-    "    <img class=\"item image\" ux-show=\"type=='image'\" ng-src=\"{{value}}\" />\n" +
+    "    <img class=\"item image\" ux-show=\"item.type=='image'\" ng-src=\"{{item.value}}\" />\n" +
     "    <input type=\"text\" class=\"selectHandler\" />\n" +
     "</div>");
 }]);
@@ -1483,8 +1485,8 @@ angular.module("portalPage.html", []).run(["$templateCache", function($templateC
     "<!--<div global-msg></div>\n" +
     "<admin-panel ux-show=\"isAdmin()\"></admin-panel>\n" +
     "<pages></pages>-->\n" +
-    "        {{test}}-\n" +
-    "<div banner-canvas ng-model=\"test\"></div>");
+    "<div banner-canvas ng-model=\"test\"></div>\n" +
+    "{{test}}-");
 }]);
 
 angular.module("listActions.html", []).run(["$templateCache", function($templateCache) {

@@ -1,5 +1,7 @@
 <div class="bannerCanvas">
     <button class="addIcon" ng-click="addImage()">Add image</button>
     <button class="addIcon" ng-click="addText()">Add text</button>
-    <div class="grid" ng-class="{overflowVisible: overflowVisible}"></div>
+    <div class="grid" ng-class="{overflowVisible: overflowVisible}">
+        <div banner-item ng-repeat="item in items.data" data="item" overflow-visible="overflowVisible"></div>
+    </div>
 </div>
