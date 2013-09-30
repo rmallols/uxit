@@ -1,6 +1,6 @@
 (function() {
+    'use strict';
     COMPONENTS.directive('fileUploader', ['$rootScope', 'stdService', function ($rootScope, stdService) {
-        'use strict';
         return {
             restrict: 'E',
             replace: true,

@@ -2,9 +2,7 @@ angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'b
 
 angular.module("bannerAppEdit.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerAppEdit.html",
-    "<div>\n" +
-    "	<textarea ng-model=\"model.content\"></textarea>\n" +
-    "</div>");
+    "<div>Test edit page</div>");
 }]);
 
 angular.module("bannerAppHelp.html", []).run(["$templateCache", function($templateCache) {
@@ -15,11 +13,8 @@ angular.module("bannerAppHelp.html", []).run(["$templateCache", function($templa
 angular.module("bannerAppView.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerAppView.html",
     "<div>\n" +
-    "    <button ng-click=\"addNewText()\">Add Text</button>\n" +
-    "    <button ng-click=\"addNewImage()\">Add Image</button>\n" +
-    "    <canvas></canvas>\n" +
-    "</div>\n" +
-    "");
+    "    <div banner-canvas ng-model=\"model.items\" on-change=\"onModelChange()\"></div>\n" +
+    "</div>");
 }]);
 
 angular.module("contentListAppAdd.html", []).run(["$templateCache", function($templateCache) {
@@ -1107,10 +1102,10 @@ angular.module("appHeader.html", []).run(["$templateCache", function($templateCa
 angular.module("bannerCanvas.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerCanvas.html",
     "<div class=\"bannerCanvas\">\n" +
-    "    <button class=\"addIcon\" ng-click=\"addImage()\">Add image</button>\n" +
-    "    <button class=\"addIcon\" ng-click=\"addText()\">Add text</button>\n" +
+    "    <button class=\"addImage addIcon\" ng-click=\"addImage()\">Add image</button>\n" +
+    "    <button class=\"addText addIcon\" ng-click=\"addText()\">Add text</button>\n" +
     "    <div class=\"grid\" ng-class=\"{overflowVisible: overflowVisible}\">\n" +
-    "        <div banner-item ng-repeat=\"item in items.data\" data=\"item\" overflow-visible=\"overflowVisible\"></div>\n" +
+    "        <div banner-item ng-repeat=\"item in items.data\" data=\"item\" on-change=\"onItemChange()\" overflow-visible=\"overflowVisible\"></div>\n" +
     "    </div>\n" +
     "</div>");
 }]);
@@ -1249,8 +1244,7 @@ angular.module("fileUploader.html", []).run(["$templateCache", function($templat
   $templateCache.put("fileUploader.html",
     "<form enctype=\"multipart/form-data\" action=\"{{endpoint||'/media/upload/'}}\" method=\"post\" class=\"fileUploader\">\n" +
     "    <input type=\"file\" ng-model=\"files\" ux-change=\"submit()\" name=\"upload\" multiple-files=\"{{multiple}}\" />\n" +
-    "</form>\n" +
-    "");
+    "</form>");
 }]);
 
 angular.module("password.html", []).run(["$templateCache", function($templateCache) {
@@ -1482,11 +1476,9 @@ angular.module("loginPage.html", []).run(["$templateCache", function($templateCa
 
 angular.module("portalPage.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("portalPage.html",
-    "<!--<div global-msg></div>\n" +
+    "<div global-msg></div>\n" +
     "<admin-panel ux-show=\"isAdmin()\"></admin-panel>\n" +
-    "<pages></pages>-->\n" +
-    "<div banner-canvas ng-model=\"test\"></div>\n" +
-    "{{test}}-");
+    "<pages></pages>");
 }]);
 
 angular.module("listActions.html", []).run(["$templateCache", function($templateCache) {

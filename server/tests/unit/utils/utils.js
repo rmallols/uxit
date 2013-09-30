@@ -15,3 +15,15 @@ function trim(str) {
 function isVisible(elm) {
     return elm.css('display') !== 'none';
 }
+
+function keydownEvent(keycode) {
+    return keyEvent("keydown", keycode);
+}
+
+function keyEvent(type, keycode) {
+    var e = jQuery.Event(type);
+    e.ctrlKey = false;
+    e.which = keycode;
+    e.keyCode = keycode;
+    return e;
+}

@@ -16,10 +16,14 @@ module.exports = function(grunt) {
             }
         },
         karma: {
-            unit: {
+            run: {
                 configFile: 'server/config/karma.conf.js',
                 singleRun: true/*,
                 background: true*/
+            },
+            watch: {
+                configFile: 'server/config/karma.conf.js',
+                singleRun: false
             }
         },
         preprocess : {
@@ -118,7 +122,8 @@ module.exports = function(grunt) {
     //grunt.registerTask('default', []);
     //grunt.registerTask('krm', ['karma']);
     grunt.registerTask('startMongo', ['shell']);
+    grunt.registerTask('startKarma', ['karma:watch']);
     grunt.registerTask('generateTemplates', ['html2js']);
-    grunt.registerTask('dev', ['clean', 'jshint', 'karma', 'preprocess:dev', 'generateTemplates']);
-    grunt.registerTask('prod', ['clean', 'jshint', 'karma', 'preprocess:prod', 'generateTemplates', 'concat', 'uglify', 'less:prod']);
+    grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'preprocess:dev', 'generateTemplates']);
+    grunt.registerTask('prod', ['clean', 'jshint', 'karma:run', 'preprocess:prod', 'generateTemplates', 'concat', 'uglify', 'less:prod']);
 };

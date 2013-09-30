@@ -15,13 +15,14 @@
 
                 var inputElm = $(' > input.selectHandler', element),
                     editButtonElm = $(' > button.edit', element),
-                    originalBoxSize = getBoxSize(),
                     keepItemSelected = false,
                     borderWidth = domService.getObjBorderWidth(element),
                     horizontalBorderWidth = borderWidth.left + borderWidth.right,
-                    verticalBorderWidth = borderWidth.top + borderWidth.bottom;
+                    verticalBorderWidth = borderWidth.top + borderWidth.bottom,
+                    originalBoxSize;
 
                 setDomCoordinatesFromModel();
+                originalBoxSize = getBoxSize(); //Calculate the original box size once the DOM is ready
 
                 element.draggable({
                     grid: [ 50,50 ],
@@ -30,8 +31,10 @@
                     },
                     stop: function() {
                         setModelCoordinatesFromDom(); //Update the model before propagating the changes
+                        propagateChanges();
                     }
                 });
+
                 element.resizable({
                     //aspectRatio: true,
                     grid: 50,
@@ -43,6 +46,7 @@
                     },
                     stop: function() {
                         setModelCoordinatesFromDom(); //Update the model before propagating the changes
+                        propagateChanges();
                     }
                 });
 
@@ -64,7 +68,10 @@
                     scope.internalData = {};
                     scope.panels = defaultPanels;
                     scope.onChange = function(model, id, selectedMedia) {
-                        scope.value = mediaService.getDownloadUrl(selectedMedia);
+                        scope.item.value = mediaService.getDownloadUrl(selectedMedia);
+                    };
+                    scope.onSave = function() {
+                        propagateChanges();
                     };
                     scope.onClose = function() {
                         keepItemSelected = false;
@@ -105,7 +112,7 @@
                             inputElm.removeClass('forceVisible');
                             setModelCoordinatesFromDom(); //Update the model before propagating the changes
                         }
-                    }, window.speed);
+                    }, 150);
                 }
 
                 function getBoxSize() {
@@ -118,6 +125,12 @@
 
                 function hideOverflow() {
                     scope.overflowVisible = false;
+                }
+
+                function propagateChanges() {
+                    if(scope.onItemChange) {
+                        scope.onItemChange();
+                    }
                 }
                 /** End of private methods **/
             }

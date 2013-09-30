@@ -1,13 +1,14 @@
 (function() {
-    COMPONENTS.directive('bannerCanvas', ['$compile', 'timerService', 'keyboardService',
-    function ($compile, timerService, keyboardService) {
+    COMPONENTS.directive('bannerCanvas', ['$compile', 'timerService', 'arrayService', 'keyboardService',
+    function ($compile, timerService, arrayService, keyboardService) {
         'use strict';
         return {
             restrict: 'A',
             replace: true,
             templateUrl: 'bannerCanvas.html',
             scope: {
-                model: '=ngModel'
+                model: '=ngModel',
+                onChange: '&'
             },
             link: function link(scope, element) {
 
@@ -20,12 +21,14 @@
                 createGrid();
                 registerKeyboardEvents();
 
+                if(!scope.model) {
+                    scope.model = [];
+                }
+
                 scope.items = {
                     index: {},
-                    data: []
+                    data: scope.model
                 };
-
-                scope.model = scope.items.data;
 
                 scope.addImage = function() {
                     createImage();
@@ -33,6 +36,10 @@
 
                 scope.addText = function() {
                     createText();
+                };
+
+                scope.onItemChange = function() {
+                    propagateChanges();
                 };
 
                 /** Private methods **/
@@ -49,7 +56,7 @@
                 }
 
                 function createImage() {
-                    createItem('image', '/client/images/add.svg');
+                    createItem('image', '/client/images/logo.svg');
                 }
 
                 function createText() {
@@ -70,18 +77,38 @@
                             top : (topPos > 0) ? topPos : 0,
                             left: (leftPos > 0) ? leftPos : 0
                         }
-                    })
+                    });
+                    propagateChanges();
                 }
 
                 function registerKeyboardEvents() {
                     keyboardService.register('del', directiveId, function () {
-                        console.log("DELETE IN PROGRESS!");
-                        $('.bannerItem.active').each(function() {
-                            var itemId      = $(this).attr('id'),
-                                itemIndex   = scope.items.index[itemId];
-
-                        });
+                        deleteSelectedItems();
+                        scope.$apply();
                     });
+                }
+
+                function deleteSelectedItems() {
+                    $('.bannerItem.active').each(function() {
+                        var itemId      = $(this).attr('id'),
+                            itemIndex   = scope.items.index[itemId];
+                        delete scope.items.index[itemId];
+                        arrayService.delete(scope.items.data, itemIndex);
+                        updateIndexes();
+                    });
+                    propagateChanges();
+                }
+
+                function updateIndexes() {
+                    angular.forEach(scope.items.data, function(item, $index) {
+                        scope.items.index[item.id] = $index;
+                    })
+                }
+
+                function propagateChanges() {
+                    if(scope.onChange) {
+                        scope.onChange();
+                    }
                 }
                 /** End of private methods **/
             }
