@@ -23,7 +23,6 @@ window.speed = 150;
     getScript(libPath + '/jQuery/jquery-ui-1.10.3.custom.min.js');
     getScript(libPath + '/angularJs/angular-1.0.7.min.js');
     getScript(libPath + '/angularJs/angular-sortable.js');
-    getScript(libPath + '/fabricJs/fabric.0.9.15.min.js');
     getScript(libPath + '/i18n/jquery.i18n.properties-min-1.0.9.js');
     getScript(libPath + '/yepnope/yepnope.1.5.4-min.js');
     getScript(libPath + '/rangy/rangy-core.js');
