@@ -38,6 +38,7 @@ module.exports = {
 
     update : function (id, body, session, callback) {
         this.existsOtherUserWithSameEmail(id, body.email, function (existsUser) {
+            var collection  = constantsService.collections.users;
             if (existsUser) { //Avoid update new user with already existing mails
                 callback(null);
             } else {
