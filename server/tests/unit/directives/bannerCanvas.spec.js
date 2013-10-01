@@ -14,6 +14,10 @@ describe('bannerCanvas directive', function () {
         $rootScope.$digest();
     }]));
 
+    describe("my suite", function() {
+        it("as")
+    })
+
     describe('main DOM structure', function () {
 
         it('should have the \'bannerCanvas\' styleclass', function () {
