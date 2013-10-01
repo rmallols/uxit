@@ -15,6 +15,7 @@ files= [
     './client/lib/rangy/*.js',
     './client/lib/mousetrap/mousetrap.min.js',
     './client/lib/mousetrap/mousetrap-global-bind.min.js',
+    './client/lib/fullscreen/jquery.fullscreen-min.js',
     './client/js/index.js',
     './client/js/templates.js',
     './client/js/directives/*',

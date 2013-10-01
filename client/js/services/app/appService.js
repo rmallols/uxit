@@ -10,8 +10,8 @@
          *  Enables the fullscreen state of a given app
          *
          * @param {object}      element     The pointer to the root object of the app that is being fullscreened
-         * @param {integer}     _id         The ID of the app that is being fullscreened
-         * @param {integer}     currentSize The current size of the columns that is wrapping the app that is being fullscreened
+         * @param {number}      _id         The ID of the app that is being fullscreened
+         * @param {number}      currentSize The current size of the columns that is wrapping the app that is being fullscreened
          * @param {function}    onResized   The callback function to be executed once the app that is being fullscreened
          */
         function enableFullscreen(element, _id, currentSize, onResized) {
@@ -73,7 +73,7 @@
          * Deletes a given app
          *
          * @param {object}  appElm      The pointer to the DOM object where the app that is going to be deleted id
-         * @param {string}  appIndex    The index of the app in the context of the column where it is
+         * @param {number}  appIndex    The index of the app in the context of the column where it is
          */
         function deleteApp(appElm, appIndex) {
             var columnScope = angular.element(appElm.closest('.columns')).scope(),
