@@ -30,7 +30,8 @@
         /**
          * Gets the CSS actual styles of an object starting from a given ancestor element
          *
-         * @param   {object} rootObj    The pointer to the DOM object where the root element is (the calculations start from there)
+         * @param   {object} rootObj    The pointer to the DOM object where the root element is
+         *                              (the calculations start from there, without considering it)
          * @param   {object} leafObj    The pointer to the DOM object of which the styles are going to be retrieved
          * @returns {object}            The computed styles of the leaf object calculating taking as reference the root object
          */
