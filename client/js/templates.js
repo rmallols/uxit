@@ -66,7 +66,7 @@ angular.module("iframeAppView.html", []).run(["$templateCache", function($templa
 angular.module("imageAppEdit.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("imageAppEdit.html",
     "<div>\n" +
-    "    <media-list config=\"config\" on-select=\"onSelect\"></media-list>\n" +
+    "    <media-list config=\"config\" on-select=\"onSelect()\"></media-list>\n" +
     "</div>");
 }]);
 
@@ -616,7 +616,7 @@ angular.module("addAppPanel.html", []).run(["$templateCache", function($template
   $templateCache.put("addAppPanel.html",
     "<div id=\"addAppPanel\" class=\"addAppPanel\" state=\"hidden\">\n" +
     "    <div class=\"collapsedView\">\n" +
-    "        <file-uploader endpoint=\"/rest/availableApps/deploy/\" on-upload=\"onAvailableAppDeployed\"></file-uploader>\n" +
+    "        <file-uploader endpoint=\"/rest/availableApps/deploy/\" on-upload=\"onAvailableAppDeployed()\"></file-uploader>\n" +
     "        <div class=\"filterContainer\"><input type=\"text\" ng-model=\"filter\"></div>\n" +
     "        <ul class=\"apps\">\n" +
     "            <div ng-repeat=\"availableApp in availableApps.model | filter: filter\" ng-class=\"getBlockStyleClass(availableApp.id)\">\n" +
@@ -664,7 +664,7 @@ angular.module("adminPanel.html", []).run(["$templateCache", function($templateC
   $templateCache.put("adminPanel.html",
     "<div class=\"admin cf\">\n" +
     "    <add-app-panel></add-app-panel>\n" +
-    "    <edit ng-model=\"portal\" edit=\"edit\" panels=\"panels\" on-cancel=\"onCancel\" on-save=\"onSave\"\n" +
+    "    <edit ng-model=\"portal\" edit=\"edit\" panels=\"panels\" on-cancel=\"onCancel()\" on-save=\"onSave()\"\n" +
     "          active-tab=\"activeTab\" limit-layer-height=\"false\"></edit>\n" +
     "</div>\n" +
     "");
@@ -676,7 +676,7 @@ angular.module("createMedia.html", []).run(["$templateCache", function($template
     "    Name:\n" +
     "    <div ng-show=\"multipleFilesUploaded\">{{getMultipleFilesUploadedNames()}}</div>\n" +
     "    <input type=\"text\" ng-model=\"media[0].name\" mandatory ng-show=\"!multipleFilesUploaded\" />\n" +
-    "    content: <file-uploader on-upload=\"onUpload\"></file-uploader>\n" +
+    "    content: <file-uploader on-upload=\"onUpload()\"></file-uploader>\n" +
     "    Tags:\n" +
     "    <auto-complete ng-model=\"media.tags\" ng-options=\"availableTags\" label-key=\"text\"\n" +
     "                   placeholder=\"Start typing to retrieve tags\" multiple=\"true\"></auto-complete>\n" +
@@ -734,7 +734,7 @@ angular.module("editBox.html", []).run(["$templateCache", function($templateCach
     "<div id=\"editBox{{target.id}}\" class=\"editBox cf\" arrowPos=\"{{arrowPos}}\" ng-style=\"getStyles()\" type=\"{{target.type}}\">\n" +
     "    <div class=\"content cf\">\n" +
     "        <edit ng-model=\"model\" internal-data=\"internalData\" panels=\"panels\" active-tab=\"activeTab\"\n" +
-    "              on-save=\"save\" on-change=\"change\" on-cancel=\"cancel\" limit-layer-height=\"true\"></edit>\n" +
+    "              on-save=\"save()\" on-change=\"change()\" on-cancel=\"cancel()\" limit-layer-height=\"true\"></edit>\n" +
     "    </div>\n" +
     "</div>\n" +
     "");
@@ -765,7 +765,7 @@ angular.module("editCurrentUser.html", []).run(["$templateCache", function($temp
     "    <div class=\"actions\">\n" +
     "        <button ng-click=\"logout()\">Logout</button>\n" +
     "    </div>\n" +
-    "    <div edit-user model=\"userSession\" on-layer-save=\"onLayerSave\" class=\"clearBoth\"></div>\n" +
+    "    <div edit-user model=\"userSession\" on-layer-save=\"onLayerSave()\" class=\"clearBoth\"></div>\n" +
     "</div>");
 }]);
 
@@ -786,7 +786,7 @@ angular.module("editGeneral.html", []).run(["$templateCache", function($template
     "                </div>\n" +
     "                <div class=\"columns large-25\">\n" +
     "                    <label i18n=\"editGeneral.general.favicon\"></label>\n" +
-    "                    <file-uploader preview=\"true\" ng-model=\"favicon\" on-upload=\"updateFavicon\"\n" +
+    "                    <file-uploader preview=\"true\" ng-model=\"favicon\" on-upload=\"updateFavicon($uploadedFile)\"\n" +
     "                                   default-media-url=\"defaultFaviconUrl\"></file-uploader>\n" +
     "                </div>\n" +
     "                <div class=\"columns large-25\">\n" +
@@ -842,7 +842,7 @@ angular.module("editMedia.html", []).run(["$templateCache", function($templateCa
   $templateCache.put("editMedia.html",
     "<div>\n" +
     "    <label i18n=\"editMedia.name\"></label>: <input type=\"text\" ng-model=\"media.name\" mandatory ng-show=\"!multipleFilesUploaded\" />\n" +
-    "    <label i18n=\"editMedia.content\"></label>: <file-uploader on-upload=\"onUpload\" endpoint=\"/media/upload/{{media._id}}\"></file-uploader>\n" +
+    "    <label i18n=\"editMedia.content\"></label>: <file-uploader on-upload=\"onUpload()\" endpoint=\"/media/upload/{{media._id}}\"></file-uploader>\n" +
     "    <label i18n=\"tags\"></label>:\n" +
     "    <auto-complete ng-model=\"media.tags\" ng-options=\"availableTags\" label-key=\"text\"\n" +
     "                   placeholder=\"tags.placeholder\" multiple=\"true\"></auto-complete>\n" +
@@ -1174,7 +1174,7 @@ angular.module("contentEditable.html", []).run(["$templateCache", function($temp
   $templateCache.put("contentEditable.html",
     "<div>\n" +
     "    <div class=\"actionsArea\" ng-show=\"isEditable() && showActions\" >\n" +
-    "        <media-picker ng-model=\"newMedia\" multiple=\"false\" on-close=\"onClose\"></media-picker>\n" +
+    "        <media-picker ng-model=\"newMedia\" multiple=\"false\" on-close=\"onClose()\"></media-picker>\n" +
     "    </div>\n" +
     "    <div class=\"editableArea\">\n" +
     "        <div ux-keyup=\"onKeyup()\" ng-mouseup=\"showEditBox()\" contenteditable=\"{{isEditable()}}\"></div>\n" +
@@ -1191,7 +1191,7 @@ angular.module("richContent.html", []).run(["$templateCache", function($template
     "<div>\n" +
     "    <div class=\"columns large-9 textAlignRight\"><label i18n=\"richContent.color\"></label></div>\n" +
     "    <div class=\"columns large-16\">\n" +
-    "        <input color-picker placeholder=\"richContent.color.placeholder\" ng-model=\"model.color\" on-change=\"propagateChanges\" />\n" +
+    "        <input color-picker placeholder=\"richContent.color.placeholder\" ng-model=\"model.color\" on-change=\"propagateChanges()\" />\n" +
     "    </div>\n" +
     "    <div class=\"columns large-9 textAlignRight\"><label i18n=\"richContent.style\"></label></div>\n" +
     "    <div class=\"columns large-16\">\n" +
@@ -1227,7 +1227,7 @@ angular.module("selectMedia.html", []).run(["$templateCache", function($template
     "            <label i18n=\"selectMedia.source\"></label>\n" +
     "        </div>\n" +
     "        <div class=\"columns large-15\">\n" +
-    "            <media-picker ng-model=\"internalData.updatedMedia\" multiple=\"false\" on-change=\"onMediaChange\"></media-picker>\n" +
+    "            <media-picker ng-model=\"internalData.updatedMedia\" multiple=\"false\" on-change=\"onMediaChange()\"></media-picker>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "    <div class=\"columns large-10 textAlignRight\">\n" +
@@ -1316,7 +1316,7 @@ angular.module("list.html", []).run(["$templateCache", function($templateCache) 
 angular.module("mediaList.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("mediaList.html",
     "<div>\n" +
-    "    <file-uploader ux-show=\"config.uploadable\" on-upload=\"onUpload\" multiple=\"true\"></file-uploader>\n" +
+    "    <file-uploader ux-show=\"config.uploadable\" on-upload=\"onUpload()\" multiple=\"true\"></file-uploader>\n" +
     "    <media-popup media-index=\"popupMediaIndex\" media-list=\"items\"></media-popup>\n" +
     "    <div list=\"items\" collection=\"collection\" config=\"config\" projection=\"projection\" on-select=\"onSelectMedia\"\n" +
     "         on-select-panels=\"onSelectPanels\" search-targets=\"searchTargets\" transcluded-data=\"transcludedData\">\n" +

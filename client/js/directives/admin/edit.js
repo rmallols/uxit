@@ -12,11 +12,11 @@
                 model               : '=ngModel',
                 internalData        : '=',
                 panels              : '=',
-                onSave              : '=',
-                onChange            : '=',
-                onCancel            : '=',
                 activeTab           : '=',
-                limitLayerHeight    : '@'
+                limitLayerHeight    : '@',
+                onSave              : '&',
+                onChange            : '&',
+                onCancel            : '&'
             },
             link: function (scope, element, attrs) {
 
@@ -130,7 +130,7 @@
                             html =  '<li class="layer" ng-form name="' + panel.type + '">' +
                                 '<div id="' + panel.type + scope.$id + '" ' + directiveName + ' ' +
                                 'model="model" ng-style="getLayerHeight()" internal-data="internalData" ' +
-                                'on-cancel="onCancel" on-change="onChange" on-layer-save="panels[' + i + '].onLayerSave" ' +
+                                'on-cancel="onCancel()" on-change="onChange()" on-layer-save="panels[' + i + '].onLayerSave()" ' +
                                 'ux-show="isLayerShown(' + i + ')" persist="true"></div>' +
                                 '</li>',
                             directiveElement = $compile(html)(scope);

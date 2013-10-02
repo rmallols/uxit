@@ -12,7 +12,7 @@ COMPONENTS.directive('colorPicker', ['styleService', 'i18nService', function (st
         scope: {
             model       : '=ngModel',
             placeholder : '@',
-            onChange    : '='
+            onChange    : '&'
         },
 		link: function link(scope, element, attrs, ngModelCtrl) {
 

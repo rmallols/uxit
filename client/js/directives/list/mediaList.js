@@ -6,7 +6,7 @@ function ($rootScope, mediaService, constantsService) {
 		replace: true,
         scope : {
             config: '=',
-            onSelect: '='
+            onSelect: '&'
         },
 		templateUrl: 'mediaList.html',
 		link: function link(scope) {

@@ -5,7 +5,7 @@ COMPONENTS.directive('webGlAppView', function () {
         replace: true,
         templateUrl: 'webGlAppView.html',
         scope: {
-            onResized : '='
+            onResized : '&'
         },
         link: function link(scope, element) {
 

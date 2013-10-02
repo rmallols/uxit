@@ -7,7 +7,7 @@ COMPONENTS.directive('slidesAppView', [function () {
         scope: {
             model: '=',
             internalData: '=',
-            onLayerSave: '='
+            onLayerSave: '&'
         },
         link: function link(scope) {
 
@@ -83,7 +83,7 @@ COMPONENTS.directive('slidesAppEdit', [function () {
         scope: {
             model           : '=',
             internalData    : '=',
-            onLayerSave     : '='
+            onLayerSave     : '&'
         },
         link: function link(scope) {}
     };

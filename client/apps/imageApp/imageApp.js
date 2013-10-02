@@ -7,7 +7,7 @@ COMPONENTS.directive('imageAppView', function (mediaService) {
         scope: {
             model: '=',
             internalData: '=',
-            onLayerSave: '='
+            onLayerSave: '&'
         },
         link: function link(scope) {
 
@@ -41,7 +41,7 @@ COMPONENTS.directive('imageAppEdit', function () {
         scope: {
             model           : '=',
             internalData    : '=',
-            onLayerSave     : '='
+            onLayerSave     : '&'
         },
         link: function link(scope) {
 

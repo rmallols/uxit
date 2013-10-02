@@ -8,7 +8,7 @@
             scope: {
                 model           : '=ngModel',
                 endpoint        : '@',
-                onUpload        : '=',
+                onUpload        : '&',
                 defaultMediaUrl : '=',
                 multiple        : '@',
                 preview         : '@'
@@ -42,7 +42,9 @@
                         scope.$apply();
                     }
                     if (scope.onUpload) {
-                        scope.onUpload(file);
+                        scope.onUpload({
+                            $uploadedFile: file
+                        });
                     }
                 }
                 /** End of private methods **/

@@ -7,7 +7,7 @@ function ($rootScope, userService, sessionService) {
         templateUrl: 'editCurrentUser.html',
         scope: {
             model: '=',
-            onLayerSave: '='
+            onLayerSave: '&'
         },
         link: function link(scope) {
 

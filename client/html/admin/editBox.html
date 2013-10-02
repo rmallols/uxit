@@ -1,6 +1,6 @@
 <div id="editBox{{target.id}}" class="editBox cf" arrowPos="{{arrowPos}}" ng-style="getStyles()" type="{{target.type}}">
     <div class="content cf">
         <edit ng-model="model" internal-data="internalData" panels="panels" active-tab="activeTab"
-              on-save="save" on-change="change" on-cancel="cancel" limit-layer-height="true"></edit>
+              on-save="save()" on-change="change()" on-cancel="cancel()" limit-layer-height="true"></edit>
     </div>
 </div>

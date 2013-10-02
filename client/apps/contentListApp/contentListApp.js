@@ -7,7 +7,7 @@ COMPONENTS.directive('contentListAppView', function () {
         scope: {
             _id: '=id',
             model: '=',
-            onLayerSave: '='
+            onLayerSave: '&'
         }
 	};
 });
@@ -19,7 +19,7 @@ COMPONENTS.directive('contentListAppAdd', function (contentService) {
         replace: true,
         templateUrl: 'contentListAppAdd.html',
         scope : {
-            onLayerSave : '='
+            onLayerSave : '&'
         },
         link: function link(scope) {
             scope.onLayerSave = function (callback) {

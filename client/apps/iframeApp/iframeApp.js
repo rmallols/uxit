@@ -8,7 +8,7 @@
             scope: {
                 model : '=',
                 internalData : '=',
-                onLayerSave : '='
+                onLayerSave : '&'
             },
             templateUrl: 'iframeAppView.html'
         };
@@ -21,7 +21,7 @@
             scope: {
                 model : '=',
                 internalData : '=',
-                onLayerSave : '='
+                onLayerSave : '&'
             },
             templateUrl: 'iframeAppEdit.html',
             link: function link(scope) {

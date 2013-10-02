@@ -1,6 +1,6 @@
 <div>
     <label i18n="editMedia.name"></label>: <input type="text" ng-model="media.name" mandatory ng-show="!multipleFilesUploaded" />
-    <label i18n="editMedia.content"></label>: <file-uploader on-upload="onUpload" endpoint="/media/upload/{{media._id}}"></file-uploader>
+    <label i18n="editMedia.content"></label>: <file-uploader on-upload="onUpload()" endpoint="/media/upload/{{media._id}}"></file-uploader>
     <label i18n="tags"></label>:
     <auto-complete ng-model="media.tags" ng-options="availableTags" label-key="text"
                    placeholder="tags.placeholder" multiple="true"></auto-complete>

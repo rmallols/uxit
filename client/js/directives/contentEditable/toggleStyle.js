@@ -4,10 +4,10 @@
         return {
             restrict: 'A',
             replace: true,
-            template: '<button ng-click="toggleState()" ng-class="{active:isActive()}" on-change="onChange"></button>',
+            template: '<button ng-click="toggleState()" ng-class="{active:isActive()}" on-change="onChange()"></button>',
             scope: {
                 model       : '=ngModel',
-                onChange    : '='
+                onChange    : '&'
             },
             link: function link(scope, element, attrs) {
 

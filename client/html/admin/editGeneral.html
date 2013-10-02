@@ -13,7 +13,7 @@
                 </div>
                 <div class="columns large-25">
                     <label i18n="editGeneral.general.favicon"></label>
-                    <file-uploader preview="true" ng-model="favicon" on-upload="updateFavicon"
+                    <file-uploader preview="true" ng-model="favicon" on-upload="updateFavicon($uploadedFile)"
                                    default-media-url="defaultFaviconUrl"></file-uploader>
                 </div>
                 <div class="columns large-25">

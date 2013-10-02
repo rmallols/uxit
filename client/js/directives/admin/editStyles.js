@@ -6,7 +6,7 @@ COMPONENTS.directive('editStyles', [function () {
         templateUrl: 'editStyles.html',
         scope: {
             model       : '=',
-            onLayerSave : '='
+            onLayerSave : '&'
         },
         link: function link(scope) {
             scope.level2Tabs = [

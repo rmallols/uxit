@@ -11,12 +11,12 @@
                 model           : '=',
                 internalData    : '=',
                 panels          : '=',
-                onSave          : '=',
-                onChange        : '=',
-                onCancel        : '=',
-                onClose         : '=',
                 target          : '=',
-                arrowPos        : '='
+                arrowPos        : '=',
+                onSave          : '&',
+                onChange        : '&',
+                onCancel        : '&',
+                onClose         : '&'
             },
             link: function (scope, element) {
 

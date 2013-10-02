@@ -22,7 +22,7 @@
                 scope.setViewTemplate = function () {
                     var directiveName = stringService.toSnakeCase(scope.type),
                         template = '<div ' + directiveName + '-view id="_id" model="model" ' +
-                                    'internal-data="internalData" on-layer-save="onLayerSave" on-resized="onResized"></div>',
+                                    'internal-data="internalData" on-layer-save="onLayerSave()" on-resized="onResized()"></div>',
                         compiledTemplates = $compile(template)(scope);
                     $('> .content > [data]', element).html('').append(compiledTemplates);
                 };

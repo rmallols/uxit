@@ -9,8 +9,8 @@
                 model           : '=ngModel',
                 endpoint        : '@',
                 onUpload        : '=',
-                onMediaChange   : '=onChange',
-                onMediaClose    : '=onClose',
+                onMediaChange   : '&onChange',
+                onMediaClose    : '&onClose',
                 defaultMediaUrl : '=',
                 preview         : '@'
             },
@@ -39,7 +39,9 @@
                         success(scope.internalData.media);
                     };
                     scope.onClose = function() {
+                        console.log("OUT")
                         if(scope.onMediaClose) {
+                            console.log("IN")
                             scope.onMediaClose();
                         }
                     };
@@ -74,7 +76,7 @@
         return {
             restrict: 'A',
             replace: false,
-            template: '<media-list config="config" on-select="onSelect"></media-list>',
+            template: '<media-list config="config" on-select="onSelect()"></media-list>',
             scope: {
                 internalData: '=',
                 onChange    : '='

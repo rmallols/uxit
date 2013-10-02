@@ -41,8 +41,8 @@
                 if (!scope.model) { scope.model = {}; }
                 var editBoxObj, parentEditBoxObj;
                 editBoxObj = $('<edit-box model="model" panels="panels" arrow-pos="arrowPos" ' +
-                    'internal-data="internalData" on-save="onSave" on-change="onChange" on-cancel="onCancel" ' +
-                    'on-close="onClose" target="target"></edit-box>');
+                    'internal-data="internalData" on-save="onSave()" on-change="onChange()" on-cancel="onCancel()" ' +
+                    'on-close="onClose()" target="target"></edit-box>');
                 parentEditBoxObj = element.closest('.editBox');
                 if (parentEditBoxObj.size()) {
                     editBoxObj.addClass('child');

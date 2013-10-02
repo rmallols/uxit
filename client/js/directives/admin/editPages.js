@@ -9,7 +9,7 @@
             replace: true,
             templateUrl: 'editPages.html',
             scope: {
-                onLayerSave : '='
+                onLayerSave : '&'
             },
             link: function link(scope) {
 

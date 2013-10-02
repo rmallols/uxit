@@ -6,7 +6,7 @@ COMPONENTS.directive('userListAppView', function () {
 		templateUrl: 'userListAppView.html',
         scope: {
             model: '=',
-            onLayerSave: '='
+            onLayerSave: '&'
         }
 	};
 });
@@ -18,7 +18,7 @@ COMPONENTS.directive('userListAppAdd', function (userService) {
         replace: true,
         templateUrl: 'userListAppAdd.html',
         scope : {
-            onLayerSave : '='
+            onLayerSave : '&'
         },
         link: function link(scope) {
             scope.onLayerSave = function (callback) {

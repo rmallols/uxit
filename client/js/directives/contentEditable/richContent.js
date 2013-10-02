@@ -9,7 +9,7 @@
             templateUrl: 'richContent.html',
             scope: {
                 model       : '=',
-                onChange    : '='
+                onChange    : '&'
             },
             link: function link(scope) {
 

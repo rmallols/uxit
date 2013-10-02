@@ -7,7 +7,7 @@ COMPONENTS.directive('bannerAppView', ['pageService', function (pageService) {
         scope: {
             model: '=',
             internalData: '=',
-            onLayerSave: '='
+            onLayerSave: '&'
         },
 		link: function link(scope) {
             scope.onModelChange = function() {
