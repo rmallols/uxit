@@ -33,7 +33,7 @@ function ($rootScope, mediaService, constantsService) {
                 if (!selectable) { //Show the popup just if the item is not selectable
                     scope.popupMediaIndex = index;
                 }
-                if (scope.onSelect) { scope.onSelect(item); }
+                if (scope.onSelect) { scope.onSelect({$item: item}); }
             };
 
             scope.transcludedData = {};

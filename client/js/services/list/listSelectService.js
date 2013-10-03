@@ -98,7 +98,7 @@
         }
 
         function handleCustomSelectionMechanism(listScope, item, $index) {
-            listScope.onSelect(item, $index, listScope.isSelectable());
+            listScope.onSelect({$item: item, $index: $index, $selectable: listScope.isSelectable()});
         }
 
         function handleNavigationMechanism(listScope, item) {

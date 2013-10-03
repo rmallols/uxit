@@ -1318,7 +1318,7 @@ angular.module("mediaList.html", []).run(["$templateCache", function($templateCa
     "<div>\n" +
     "    <file-uploader ux-show=\"config.uploadable\" on-upload=\"onUpload()\" multiple=\"true\"></file-uploader>\n" +
     "    <media-popup media-index=\"popupMediaIndex\" media-list=\"items\"></media-popup>\n" +
-    "    <div list=\"items\" collection=\"collection\" config=\"config\" projection=\"projection\" on-select=\"onSelectMedia()\"\n" +
+    "    <div list=\"items\" collection=\"collection\" config=\"config\" projection=\"projection\" on-select=\"onSelectMedia($item, $index, $selectable)\"\n" +
     "         on-select-panels=\"onSelectPanels\" search-targets=\"searchTargets\" transcluded-data=\"transcludedData\">\n" +
     "            <img ng-src=\"{{transcludedData.getDownloadUrl(item)}}\" title=\"{{transcludedData.getMediaTitle(item)}}\"\n" +
     "                 class=\"cursorPointer\" edit-on-click=\"true\" />\n" +

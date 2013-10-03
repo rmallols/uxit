@@ -39,9 +39,7 @@
                         success(scope.internalData.media);
                     };
                     scope.onClose = function() {
-                        console.log("OUT")
                         if(scope.onMediaClose) {
-                            console.log("IN")
                             scope.onMediaClose();
                         }
                     };
@@ -76,10 +74,10 @@
         return {
             restrict: 'A',
             replace: false,
-            template: '<media-list config="config" on-select="onSelect()"></media-list>',
+            template: '<media-list config="config" on-select="onSelect($item)"></media-list>',
             scope: {
                 internalData: '=',
-                onChange    : '='
+                onChange    : '&'
             },
             link: function link(scope) {
                 scope.config = {
@@ -87,8 +85,8 @@
                     uploadable  : true,
                     columns     : 2
                 };
-                scope.onSelect = function (media) {
-                    scope.internalData.media = media;
+                scope.onSelect = function ($item) {
+                    scope.internalData.media = $item;
                     if (scope.onChange) { scope.onChange(); }
                 };
             }

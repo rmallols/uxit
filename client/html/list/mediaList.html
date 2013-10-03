@@ -1,7 +1,7 @@
 <div>
     <file-uploader ux-show="config.uploadable" on-upload="onUpload()" multiple="true"></file-uploader>
     <media-popup media-index="popupMediaIndex" media-list="items"></media-popup>
-    <div list="items" collection="collection" config="config" projection="projection" on-select="onSelectMedia()"
+    <div list="items" collection="collection" config="config" projection="projection" on-select="onSelectMedia($item, $index, $selectable)"
          on-select-panels="onSelectPanels" search-targets="searchTargets" transcluded-data="transcludedData">
             <img ng-src="{{transcludedData.getDownloadUrl(item)}}" title="{{transcludedData.getMediaTitle(item)}}"
                  class="cursorPointer" edit-on-click="true" />
