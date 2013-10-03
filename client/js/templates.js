@@ -1075,7 +1075,8 @@ angular.module("app.html", []).run(["$templateCache", function($templateCache) {
     "    <div app-header class=\"cf\"></div>\n" +
     "	<div class=\"content cf\">\n" +
     "        <div class=\"title\" ng-show=\"isTitleVisible()\"><h5>{{model.title || appInfo.title}}</h5></div>\n" +
-    "        <div data ng-class=\"{alignCenter: model.align=='center', alignRight: model.align=='right'}\"></div>\n" +
+    "        <div app-bridge model=\"model\" internal-data=\"internalData\" src=\"{{type}}\" view=\"{{view}}\"\n" +
+    "             ng-class=\"{alignCenter: model.align=='center', alignRight: model.align=='right'}\"></div>\n" +
     "	</div>\n" +
     "</div>\n" +
     "");
@@ -1478,7 +1479,8 @@ angular.module("portalPage.html", []).run(["$templateCache", function($templateC
   $templateCache.put("portalPage.html",
     "<div global-msg></div>\n" +
     "<admin-panel ux-show=\"isAdmin()\"></admin-panel>\n" +
-    "<pages></pages>");
+    "<pages></pages>\n" +
+    "<!--<div app-bridge src=\"bannerApp\" view=\"view\"></div>-->");
 }]);
 
 angular.module("listActions.html", []).run(["$templateCache", function($templateCache) {

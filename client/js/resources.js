@@ -108,6 +108,7 @@ window.speed = 150;
     getScript(directivePath + '/pages.js');
     getScript(directivePath + '/app/app.js');
     getScript(directivePath + '/app/appHeader.js');
+    getScript(directivePath + '/app/appBridge.js');
     getScript(directivePath + '/i18n/i18n.js');
     getScript(directivePath + '/i18n/i18nDb.js');
     getScript(directivePath + '/i18n/i18nDbInput.js');
@@ -185,6 +186,7 @@ window.speed = 150;
 
     //TODO: APP DIRECTIVES, PENDING TO BE MIGRATED TO AN STILL NOT SUPPORTED LAZY LOADING STRATEGY
     getScript('/client/apps/loginApp/loginApp.js');
+    getScript('/client/apps/loginApp/loginAppService.js');
     getScript('/client/apps/staticContentApp/staticContentApp.js');
     getScript('/client/apps/linksApp/linksApp.js');
     getScript('/client/apps/mapApp/mapApp.js');
@@ -193,8 +195,10 @@ window.speed = 150;
     getScript('/client/apps/imageApp/imageApp.js');
     getScript('/client/apps/mediaCarouselApp/mediaCarouselApp.js');
     getScript('/client/apps/bannerApp/bannerApp.js');
+    getScript('/client/apps/bannerApp/bannerAppService.js');
     getScript('/client/apps/contentListApp/contentListApp.js');
     getScript('/client/apps/userListApp/userListApp.js');
+    getScript('/client/apps/userListApp/userListAppService.js');
     getScript('/client/apps/mediaListApp/mediaListApp.js');
     getScript('/client/apps/socialApp/socialApp.js');
     getScript('/client/apps/webGlApp/webGlApp.js');

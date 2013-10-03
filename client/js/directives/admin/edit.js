@@ -125,14 +125,26 @@
                     scope.tabWidth = 100 / scope.panels.length;
                     scope.panels[0].active = true;
                     angular.forEach(scope.panels, function (panel) {
-                        var directiveName =  stringService.toSnakeCase(panel.type),
+                        var html, directiveName, directiveElement;
+                        if(panel.appBridge) {
+                            directiveName =  'app-bridge';
+                            console.log("CH UNIFICAR SRC Y VIEW, Y PASARLOS COMO STRING!!!", panel.src, panel.view);
+                            html =  '<li class="layer" ng-form name="' + panel.type + '">' +
+                                '<div id="' + panel.type + scope.$id + '" ' + directiveName + ' ' +
+                                'model="model" ng-style="getLayerHeight()" internal-data="internalData" ' +
+                                'on-cancel="onCancel()" on-change="onChange()" on-layer-save="panels[' + i + '].onLayerSave" ' +
+                                'ux-show="isLayerShown(' + i + ')" persist="true" src="{{' + panel.src + '}}" view="{{' + panel.view + '}}"></div>' +
+                                '</li>';
+                        } else {
+                            directiveName =  stringService.toSnakeCase(panel.type);
                             html =  '<li class="layer" ng-form name="' + panel.type + '">' +
                                 '<div id="' + panel.type + scope.$id + '" ' + directiveName + ' ' +
                                 'model="model" ng-style="getLayerHeight()" internal-data="internalData" ' +
                                 'on-cancel="onCancel()" on-change="onChange()" on-layer-save="panels[' + i + '].onLayerSave" ' +
                                 'ux-show="isLayerShown(' + i + ')" persist="true"></div>' +
-                                '</li>',
-                            directiveElement = $compile(html)(scope);
+                                '</li>';
+                        }
+                        directiveElement = $compile(html)(scope);
                         if (panel.active) {
                             scope.activePanel = panel;
                         }
