@@ -25,8 +25,8 @@
                 cEScope.onCancel = function() {
                     onCancelEditBox(cEScope);
                 };
-                cEScope.onChange = function(styles) {
-                    onChangeEditBox(cEScope, cEDomObj, ngModelCtrl, styles);
+                cEScope.onChange = function() {
+                    onChangeEditBox(cEScope, cEDomObj, ngModelCtrl, cEScope.model);
                 };
                 editBoxUtilsService.showEditBox(cEScope, cEDomObj, selectedTextDomObj);
                 cEScope.showActions = true;

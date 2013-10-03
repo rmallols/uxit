@@ -14,7 +14,7 @@
                 options         : '=',
                 onBlur          : '=',
                 placeholder     : '@',
-                uxChange        : '=uxChange'
+                uxChange        : '&'
             },
             replace: true,
             templateUrl: 'contentEditable.html',

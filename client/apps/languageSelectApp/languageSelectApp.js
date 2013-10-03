@@ -8,7 +8,7 @@
             scope: {
                 model : '=',
                 internalData : '=',
-                onLayerSave : '&'
+                onLayerSave : '='
             },
             templateUrl: 'languageSelectAppView.html',
             link: function (scope) {
@@ -33,7 +33,7 @@
             scope: {
                 model : '=',
                 internalData : '=',
-                onLayerSave : '&'
+                onLayerSave : '='
             },
             templateUrl: 'languageSelectAppEdit.html',
             link: function link(scope) {

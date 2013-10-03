@@ -5,8 +5,8 @@ COMPONENTS.directive('contentList', ['constantsService', function (constantsServ
 		replace: true,
 		templateUrl: 'contentList.html',
         scope : {
-            _id: '=id',
-            config: '='
+            _id     : '=id',
+            config  : '='
         },
 		link: function link(scope) {
             scope.items             = [];

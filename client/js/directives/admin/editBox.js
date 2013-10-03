@@ -33,14 +33,14 @@
                     };
                 };
 
+                scope.change = function () {
+                    if (scope.onChange)  { scope.onChange(); }
+                };
+
                 scope.save = function () {
                     editBoxUtilsService.hideEditBox(scope.target.id);
                     if (scope.onSave)   { scope.onSave(scope.model, scope.$id); }
                     if (scope.onClose)  { scope.onClose(); }
-                };
-
-                scope.change = function (data) {
-                    if (scope.onChange) { scope.onChange(scope.model, scope.$id, data); }
                 };
 
                 scope.cancel = function () {

@@ -21,7 +21,7 @@
     <div class="columns large-10">
         <div ng-show="linkType=='internal'" >
             <auto-complete ng-model="internalLink" ng-options="pagesList" label-key="text" value-key="url"
-                           ux-change="setInternalLink" placeholder="richContent.link.placeholder"></auto-complete>
+                           ux-change="setInternalLink()" placeholder="richContent.link.placeholder"></auto-complete>
         </div>
         <input type="text" ng-model="externalLink" ux-blur="setExternalLink()" ng-show="linkType=='external'" />
     </div>

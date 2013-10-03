@@ -6,7 +6,7 @@ COMPONENTS.directive('mediaListAppView', function () {
 		templateUrl: 'mediaListAppView.html',
         scope: {
             model: '=',
-            onLayerSave: '&'
+            onLayerSave : '='
         }
 	};
 });
@@ -18,7 +18,7 @@ COMPONENTS.directive('mediaListAppAdd', function (mediaService) {
         replace: true,
         templateUrl: 'mediaListAppAdd.html',
         scope : {
-            onLayerSave : '&'
+            onLayerSave : '='
         },
         link: function link(scope) {
             scope.onLayerSave = function (callback) {

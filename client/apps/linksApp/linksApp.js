@@ -7,7 +7,7 @@ COMPONENTS.directive('linksAppView', function () {
         scope: {
             model: '=',
             internalData: '=',
-            onLayerSave: '&'
+            onLayerSave : '='
         },
 		link: function link() {
 		}

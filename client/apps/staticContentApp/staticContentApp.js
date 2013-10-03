@@ -7,7 +7,7 @@ COMPONENTS.directive('staticContentAppView', function ($rootScope, contentServic
         scope: {
             model: '=',
             internalData: '=',
-            onLayerSave: '&'
+            onLayerSave : '='
         },
 		link: function link(scope) {
 
@@ -41,7 +41,7 @@ COMPONENTS.directive('staticContentAppEdit', function (pageService) {
         scope: {
             model : '=',
             internalData : '=',
-            onLayerSave : '&'
+            onLayerSave : '='
         },
         link: function link(scope) {
             var originalShowTitles = scope.model.showTitles;
@@ -64,7 +64,7 @@ COMPONENTS.directive('staticContentAppAdd', function (contentService) {
         scope: {
             model : '=',
             internalData : '=',
-            onLayerSave : '&'
+            onLayerSave : '='
         },
         link: function link(scope) {
             scope.internalData.displayAddedContent = true;
@@ -94,7 +94,7 @@ COMPONENTS.directive('staticContentAppSelectContent', function (pageService, con
         scope: {
             model: '=',
             internalData: '=',
-            onLayerSave: '&'
+            onLayerSave : '='
         },
         link: function link(scope) {
 

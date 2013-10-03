@@ -7,7 +7,7 @@ COMPONENTS.directive('mediaCarouselAppView', function (portalService, mediaServi
         scope: {
             model: '=',
             internalData: '=',
-            onLayerSave: '&'
+            onLayerSave : '='
         },
         link: function link(scope, element) {
 
@@ -96,7 +96,7 @@ COMPONENTS.directive('mediaCarouselAppEdit', function (timerService) {
         scope: {
             model           : '=',
             internalData    : '=',
-            onLayerSave     : '&'
+            onLayerSave     : '='
         },
         link: function link(scope) {
             scope.navigationPos = [ {value: 'top', text: 'Top'},

@@ -6,7 +6,7 @@ COMPONENTS.directive('editAppGeneral', ['i18nService', function (i18nService) {
 		templateUrl: 'editAppGeneral.html',
         scope: {
             model       : '=',
-            onLayerSave : '&'
+            onLayerSave : '='
         },
         link: function link(scope) {
             scope.aligns = [

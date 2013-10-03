@@ -765,7 +765,7 @@ angular.module("editCurrentUser.html", []).run(["$templateCache", function($temp
     "    <div class=\"actions\">\n" +
     "        <button ng-click=\"logout()\">Logout</button>\n" +
     "    </div>\n" +
-    "    <div edit-user model=\"userSession\" on-layer-save=\"onLayerSave()\" class=\"clearBoth\"></div>\n" +
+    "    <div edit-user model=\"userSession\" on-layer-save=\"onLayerSave\" class=\"clearBoth\"></div>\n" +
     "</div>");
 }]);
 
@@ -911,7 +911,7 @@ angular.module("editPages.html", []).run(["$templateCache", function($templateCa
     "                <div class=\"columns large-9 textAlignRight\"><label i18n=\"editPages.description\"></label></div>\n" +
     "                <div class=\"columns large-16\">\n" +
     "                    <textarea content-editable ng-model=\"selectedPage.description\" i18n-db-input\n" +
-    "                              ux-change=\"registerSelectedPageChange\" placeholder=\"editPages.description.placeholder\"></textarea>\n" +
+    "                              ux-change=\"registerSelectedPageChange()\" placeholder=\"editPages.description.placeholder\"></textarea>\n" +
     "                </div>\n" +
     "                <div class=\"columns large-9 textAlignRight\"><label i18n=\"editPages.type\"></label></div>\n" +
     "                <div class=\"columns large-16\">\n" +
@@ -1211,7 +1211,7 @@ angular.module("richContent.html", []).run(["$templateCache", function($template
     "    <div class=\"columns large-10\">\n" +
     "        <div ng-show=\"linkType=='internal'\" >\n" +
     "            <auto-complete ng-model=\"internalLink\" ng-options=\"pagesList\" label-key=\"text\" value-key=\"url\"\n" +
-    "                           ux-change=\"setInternalLink\" placeholder=\"richContent.link.placeholder\"></auto-complete>\n" +
+    "                           ux-change=\"setInternalLink()\" placeholder=\"richContent.link.placeholder\"></auto-complete>\n" +
     "        </div>\n" +
     "        <input type=\"text\" ng-model=\"externalLink\" ux-blur=\"setExternalLink()\" ng-show=\"linkType=='external'\" />\n" +
     "    </div>\n" +
@@ -1318,7 +1318,7 @@ angular.module("mediaList.html", []).run(["$templateCache", function($templateCa
     "<div>\n" +
     "    <file-uploader ux-show=\"config.uploadable\" on-upload=\"onUpload()\" multiple=\"true\"></file-uploader>\n" +
     "    <media-popup media-index=\"popupMediaIndex\" media-list=\"items\"></media-popup>\n" +
-    "    <div list=\"items\" collection=\"collection\" config=\"config\" projection=\"projection\" on-select=\"onSelectMedia\"\n" +
+    "    <div list=\"items\" collection=\"collection\" config=\"config\" projection=\"projection\" on-select=\"onSelectMedia()\"\n" +
     "         on-select-panels=\"onSelectPanels\" search-targets=\"searchTargets\" transcluded-data=\"transcludedData\">\n" +
     "            <img ng-src=\"{{transcludedData.getDownloadUrl(item)}}\" title=\"{{transcludedData.getMediaTitle(item)}}\"\n" +
     "                 class=\"cursorPointer\" edit-on-click=\"true\" />\n" +

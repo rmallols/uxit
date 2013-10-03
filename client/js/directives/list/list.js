@@ -15,11 +15,11 @@
                 collection      : '=',
                 items           : '=list',
                 config          : '=',
-                onSelect        : '=',
-                onSelectPanels  : '=',
                 projection      : '=',
                 searchTargets   : '=',
-                transcludedData : '='
+                transcludedData : '=',
+                onSelectPanels  : '=',
+                onSelect        : '&'
             },
             link: function link(scope, element) {
 

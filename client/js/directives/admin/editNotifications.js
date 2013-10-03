@@ -8,7 +8,7 @@
             templateUrl: 'editNotifications.html',
             scope: {
                 model: '=',
-                onLayerSave : '&'
+                onLayerSave : '='
             },
             link: function link(scope) {
 

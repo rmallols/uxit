@@ -6,7 +6,7 @@ COMPONENTS.directive('mapAppView', function () {
         scope: {
             model: '=',
             internalData: '=',
-            onLayerSave: '&'
+            onLayerSave : '='
         },
 		templateUrl: 'mapAppView.html'
 	};

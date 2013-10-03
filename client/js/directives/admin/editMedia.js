@@ -6,7 +6,7 @@ COMPONENTS.directive('editMedia', ['mediaService', 'tagService', function (media
 		templateUrl: 'editMedia.html',
         scope: {
             media       : '=model',
-            onLayerSave : '&'
+            onLayerSave : '='
         },
 		link: function link(scope) {
             scope.availableTags = tagService.getTags();

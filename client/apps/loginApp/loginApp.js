@@ -7,7 +7,7 @@ COMPONENTS.directive('loginAppView', function () {
         scope: {
             model: '=',
             internalData: '=',
-            onLayerSave: '&'
+            onLayerSave : '='
         },
         link: function link() {
         }

@@ -6,7 +6,7 @@ COMPONENTS.directive('editTag', ['tagService', function (tagService) {
         templateUrl: 'editTag.html',
         scope: {
             tag         : '=model',
-            onLayerSave : '&'
+            onLayerSave : '='
         },
         link: function link(scope) {
             scope.onLayerSave = function (callback) {
