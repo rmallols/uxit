@@ -571,6 +571,7 @@ angular.module("userListAppHelp.html", []).run(["$templateCache", function($temp
 angular.module("userListAppView.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("userListAppView.html",
     "<div>\n" +
+    "    --{{view}}\n" +
     "    <user-list config=\"model\"></user-list>\n" +
     "</div>");
 }]);
@@ -1479,8 +1480,7 @@ angular.module("portalPage.html", []).run(["$templateCache", function($templateC
   $templateCache.put("portalPage.html",
     "<div global-msg></div>\n" +
     "<admin-panel ux-show=\"isAdmin()\"></admin-panel>\n" +
-    "<pages></pages>\n" +
-    "<!--<div app-bridge src=\"bannerApp\" view=\"view\"></div>-->");
+    "<pages></pages>");
 }]);
 
 angular.module("listActions.html", []).run(["$templateCache", function($templateCache) {

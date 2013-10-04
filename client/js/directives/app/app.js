@@ -15,21 +15,12 @@
                 width       : '=',
                 templateApp : '@'
             },
-            controller: ['$scope', function ($scope) {
-                $scope.view = 'view';
-                $scope.internalData = {};
-            }],
             link: function link(scope, element) {
 
                 var hasWidthChanged = false;
                 element.addClass(scope.type);
-                /*scope.setViewTemplate = function () {
-                    var directiveName = stringService.toSnakeCase(scope.type),
-                        template = '<div ' + directiveName + '-view id="_id" model="model" ' +
-                                    'internal-data="internalData" on-layer-save="onLayerSave" on-resized="onResized()"></div>',
-                        compiledTemplates = $compile(template)(scope);
-                    $('> .content > [data]', element).html('').append(compiledTemplates);
-                }; */
+                scope.view = 'view';
+                scope.internalData = {};
 
                 scope.setAppStyles = function () {
                     if (scope.model && portalService.getPortal()) {

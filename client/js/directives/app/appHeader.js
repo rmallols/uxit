@@ -85,7 +85,10 @@
                     function getDefaultEditPanels() {
                         var panels = [];
                         //noinspection JSUnresolvedVariable
-                        if (!scope.appInfo.noCustomEditPanel) { panels.push({ title: 'Edit', type: scope.type + 'Edit' }); }
+                        if (!scope.appInfo.noCustomEditPanel) {
+                            panels.push({   title: 'Edit', type: scope.type + 'Edit',
+                                            appBridge: true, src:scope.type, view:'edit' });
+                        }
                         panels.push(
                             { title: 'Edit App', type: 'editAppGeneral'},
                             { title: 'Styles setup', type: 'editAppStyles'});
@@ -96,7 +99,10 @@
                         var panels = [], panelType, defaultEditPanels;
                         scope.appInfo.editPanels.forEach(function (panel) {
                             panelType = scope.type + stringService.capitalize(panel.type);
-                            panels.push({ title: panel.title, type: panelType, styleClass: panel.type, appBridge: true, src:scope.type, view: panel.type });
+                            panels.push(
+                                {   title: panel.title, type: panelType, styleClass: panel.type,
+                                    appBridge: true, src:scope.type, view: panel.type
+                                });
                         });
                         defaultEditPanels = getDefaultEditPanels();
                         defaultEditPanels.forEach(function (panel) {
