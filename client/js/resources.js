@@ -187,7 +187,7 @@ window.speed = 150;
     //TODO: APP DIRECTIVES, PENDING TO BE MIGRATED TO AN STILL NOT SUPPORTED LAZY LOADING STRATEGY
     getScript('/client/apps/loginApp/loginApp.js');
     getScript('/client/apps/loginApp/loginAppService.js');
-    getScript('/client/apps/staticContentApp/staticContentApp.js');
+    //getScript('/client/apps/staticContentApp/staticContentApp.js');
     getScript('/client/apps/staticContentApp/staticContentAppService.js');
     getScript('/client/apps/linksApp/linksApp.js');
     getScript('/client/apps/linksApp/linksAppService.js');

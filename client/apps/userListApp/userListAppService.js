@@ -9,11 +9,6 @@
         }
 
         function onAddSave(scope, callback) {
-
-            setTimeout(function() {
-                console.log("CH", scope.user);
-            }, 2000)
-
             userService.createUser(scope.user, function () {
                 callback();
             });

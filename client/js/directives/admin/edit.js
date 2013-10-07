@@ -115,9 +115,11 @@
                     /** Private methods **/
                     function save() {
                         var processedPanels = 0;
+                        console.log("OOUT!", scope.panels)
                         scope.panels.forEach(function (panel) {
                             panel.onLayerSave(function () {
                                 processedPanels += 1;
+                                console.log("PROCESSED!");
                                 if (processedPanels === scope.panels.length) {
                                     scope.onSave();
                                 }

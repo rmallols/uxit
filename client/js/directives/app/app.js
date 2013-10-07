@@ -15,12 +15,14 @@
                 width       : '=',
                 templateApp : '@'
             },
+            controller: ['$scope', function controller($scope) {
+                $scope.view = 'view';
+                $scope.internalData = {};
+            }],
             link: function link(scope, element) {
 
                 var hasWidthChanged = false;
                 element.addClass(scope.type);
-                scope.view = 'view';
-                scope.internalData = {};
 
                 scope.setAppStyles = function () {
                     if (scope.model && portalService.getPortal()) {

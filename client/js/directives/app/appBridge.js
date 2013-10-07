@@ -14,9 +14,18 @@
                 },
                 link: function link(scope, element) {
 
+                    //var childScope = scope.$new();
+                    var childScope = scope.$new(true);
+                    childScope.internalData = scope.internalData;
+                    childScope.model = scope.model;
+                    childScope.onLayerSave = scope.onLayerSave;
+
                     scope.$watch('src', function(src) {
+
                         if(src && scope.view) {
-                            executeServiceMethod(src, scope.view)
+                            childScope.src = scope.src;
+                            childScope.view = scope.view;
+                            executeServiceMethod(src, childScope.view)
                         }
                     });
 
@@ -27,44 +36,35 @@
                     }
 
                     function compileTemplate(src, view) {
-
-                        console.log("ALERTA!!! la idea de trabajar con template cache puede ser buena para así compilarlo con el scope que nos de la gana " +
-                            "y enviar ese mismo scope a los servicios. Parece que funciona, aunque, para mayor limpieza, seguramente todas estas operaciones" +
-                            "se deberían hacer sobre un nuevo scope con .$new() para que cada layer tuviera su propio scope y no trabajar directamente con el raiz")
-
-
                         var templateId = src + sS.capitalize(view) + '.html',
                             appElm = $($templateCache.get(templateId));
-
-
-
                         element.html(appElm);
-                        $compile(appElm)(scope);
+                        $compile(appElm)(childScope);
                         return appElm;
                     }
 
                     function manageServiceFns(src, view) {
                         $timeout(function() {
                             var appService = $injector.get(src + 'Service');
-                            defineOnLayerSaveFn(appService, scope, view);
+                            defineOnLayerSaveFn(appService, view);
                             if(appService[view]) {
-                                appService[view](scope);
+                                appService[view](childScope);
                             }
                         })
                     }
 
-                    function defineOnLayerSaveFn(appService, appScope, view) {
-                        if(scope.onLayerSave) {
-                            scope.onLayerSave = function (callback) {
-                                onLayerSave(appService, appScope, view, callback);
+                    function defineOnLayerSaveFn(appService, view) {
+                        if(childScope.onLayerSave) {
+                            childScope.onLayerSave = function (callback) {
+                                onLayerSave(appService, view, callback);
                             };
                         }
                     }
 
-                    function onLayerSave(appService, appScope, view, callback) {
+                    function onLayerSave(appService, view, callback) {
                         var onSaveFn = 'on' + sS.capitalize(view) + 'Save';
                         if(appService[onSaveFn]) {
-                            appService[onSaveFn](appScope, function() {
+                            appService[onSaveFn](childScope, function() {
                                 callback();
                             });
                         }

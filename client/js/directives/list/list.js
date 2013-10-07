@@ -97,12 +97,6 @@
                     });
                 };
 
-                console.log("T", scope.config);
-                setTimeout(function() {
-                    console.log("X", scope.config);
-
-                }, 500);
-
                 scope.isSearchable = function () { return scope.getDefaultedValue('searchable'); };
                 scope.isSelectable = function () { return scope.isSingleSelectable() || scope.isMultiSelectable(); };
                 scope.isSingleSelectable = function () { return allowIfHasAdminRole(scope.config.selectable); };

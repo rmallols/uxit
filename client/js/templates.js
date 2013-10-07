@@ -531,6 +531,7 @@ angular.module("staticContentAppSelectContent.html", []).run(["$templateCache", 
 angular.module("staticContentAppView.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("staticContentAppView.html",
     "<div>\n" +
+    "    --{{model.selectedContentId}} --{{model.selectedContentId}}\n" +
     "    <div ng-show=\"!model.selectedContentId\"><em>Please select a content from the edit panel</em></div>\n" +
     "    <div ng-show=\"model.selectedContentId\">\n" +
     "        <div class=\"contentHeader cf\">\n" +
@@ -571,7 +572,6 @@ angular.module("userListAppHelp.html", []).run(["$templateCache", function($temp
 angular.module("userListAppView.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("userListAppView.html",
     "<div>\n" +
-    "    --{{view}}\n" +
     "    <user-list config=\"model\"></user-list>\n" +
     "</div>");
 }]);
