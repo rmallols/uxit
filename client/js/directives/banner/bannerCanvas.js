@@ -47,11 +47,11 @@
                         var colPos, rowPos;
                     for(var i = 0; i < totalCols; i++) {
                         colPos = (i + 1) * gridSize;
-                        gridElm.append('<div class="ruler col" style="top: 0; left: ' + colPos + 'px"></div>')
+                        gridElm.append('<div class="ruler col" style="top: 0; left: ' + colPos + 'px"></div>');
                     }
                     for(var j = 0; j < totalRows; j++) {
                         rowPos = (j + 1) * gridSize;
-                        gridElm.append('<div class="ruler row" style="top: ' + rowPos + 'px; left: 0"></div>')
+                        gridElm.append('<div class="ruler row" style="top: ' + rowPos + 'px; left: 0"></div>');
                     }
                 }
 
