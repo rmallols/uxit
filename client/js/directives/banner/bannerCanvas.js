@@ -102,7 +102,7 @@
                 function updateIndexes() {
                     angular.forEach(scope.items.data, function(item, $index) {
                         scope.items.index[item.id] = $index;
-                    })
+                    });
                 }
 
                 function propagateChanges() {

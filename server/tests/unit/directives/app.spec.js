@@ -72,9 +72,33 @@ describe('app directive', function () {
         it('should have the clearfix style class in the reference to the content area', function () {
             expect($(' > .content.cf', appDirective).length).toBe(1);
         });
+    });
 
-        it('should have a reference to the app specific area in the reference to the content area', function () {
-            expect($(' > .content > [data]', appDirective).length).toBe(1);
+    describe('content area - app bridge', function () {
+
+        var appBridgeSelector = ' > .content > [app-bridge]';
+        it('should have a reference to the app bridge area', function () {
+            expect($(appBridgeSelector, appDirective).length).toBe(1);
+        });
+
+        it('should specify the model attribute', function () {
+            expect($(appBridgeSelector, appDirective).attr('model')).toBe('model');
+        });
+
+        it('should specify the internal data attribute', function () {
+            expect($(appBridgeSelector, appDirective).attr('internal-data')).toBe('internalData');
+        });
+
+        it('should specify the src attribute', function () {
+            expect($(appBridgeSelector, appDirective).attr('src')).toBe('loginApp');
+        });
+
+        it('should specify the view attribute', function () {
+            expect($(appBridgeSelector, appDirective).attr('view')).toBe('view');
+        });
+
+        it('should specify the onEvent attribute', function () {
+            expect($(appBridgeSelector, appDirective).attr('on-event')).toBe('onEvent');
         });
     });
 

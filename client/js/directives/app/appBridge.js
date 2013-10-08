@@ -21,7 +21,7 @@
                     $timeout(function() {
                         inheritParentScopeModel();
                         if(childScope.src && childScope.view) {
-                            executeServiceMethod(childScope.src, childScope.view)
+                            executeServiceMethod(childScope.src, childScope.view);
                         }
                     });
 

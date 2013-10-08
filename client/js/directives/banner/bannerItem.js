@@ -91,10 +91,10 @@
                 }
 
                 function setModelCoordinatesFromDom() {
-                    scope.item.size.width    = parseInt(element.css('width')) + horizontalBorderWidth;
-                    scope.item.size.height   = parseInt(element.css('height')) + verticalBorderWidth;
-                    scope.item.position.top  = parseInt(element.css('top'));
-                    scope.item.position.left = parseInt(element.css('left'));
+                    scope.item.size.width    = parseInt(element.css('width'), 10) + horizontalBorderWidth;
+                    scope.item.size.height   = parseInt(element.css('height'), 10) + verticalBorderWidth;
+                    scope.item.position.top  = parseInt(element.css('top'), 10);
+                    scope.item.position.left = parseInt(element.css('left'), 10);
                     if(!$rootScope.$$phase) {
                         scope.$apply();
                     }
