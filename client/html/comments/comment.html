@@ -17,7 +17,8 @@
                         confirm-action="deleteComment()" ng-show="isSelfActionAllowed"></button>
             </div>
         </div>
-        <div content-editable="comment.isEditable" ng-model="comment.text" type="type" on-blur="updateComment" class="message"></div>
+        <div content-editable="comment.isEditable" ng-model="comment.text" type="type"
+             on-blur="updateComment()" class="message"></div>
         <div class="repliesWrapper"></div>
     </div>
 </li>

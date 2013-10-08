@@ -1,6 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.directive('appBridge', ['$injector', '$compile', '$timeout', '$templateCache', 'stringService',
+    COMPONENTS.directive('appBridge', ['$injector', '$compile', '$timeout', '$templateCache',
+    'stringService',
     function ($injector, $compile, $timeout, $templateCache, sS) {
             return {
                 restrict: 'A',
@@ -9,6 +10,7 @@
                     model           : '=',
                     internalData    : '=',
                     onLayer         : '=',
+                    onEvent         : '=',
                     src             : '@',
                     view            : '@'
                 },
@@ -26,10 +28,11 @@
                     /** Private methods **/
                     function inheritParentScopeModel() {
                         childScope.internalData = scope.internalData;
-                        childScope.model = scope.model;
-                        childScope.onLayer = scope.onLayer;
-                        childScope.src = scope.src;
-                        childScope.view = scope.view;
+                        childScope.model        = scope.model;
+                        childScope.onLayer      = scope.onLayer;
+                        childScope.src          = scope.src;
+                        childScope.view         = scope.view;
+                        childScope.onEvent      = scope.onEvent;
                     }
 
                     function executeServiceMethod(src, view) {
@@ -47,10 +50,9 @@
 
                     function manageServiceFns(src, view, appElm) {
                         var appService = $injector.get(src + 'Service');
+                        defineViewFn(appService, view, appElm);
                         defineOnLayerSaveFn(appService, view);
-                        if(appService[view]) {
-                            appService[view](childScope, appElm);
-                        }
+                        defineOnResizeFn(appService, appElm);
                     }
 
                     function defineOnLayerSaveFn(appService, view) {
@@ -60,6 +62,23 @@
                                 appService[onSaveFn](childScope, function() {
                                     callback();
                                 });
+                            };
+                        }
+                    }
+
+                    function defineViewFn(appService, view, appElm) {
+                        if(appService[view]) {
+                            appService[view](childScope, appElm);
+                        }
+                    }
+
+                    function defineOnResizeFn(appService, appElm) {
+                        if(childScope.onEvent) {
+                            childScope.onEvent.resize = function() {
+                                var onResizeFn = 'onResize';
+                                if(appService[onResizeFn]) {
+                                    appService[onResizeFn](childScope, appElm);
+                                }
                             };
                         }
                     }

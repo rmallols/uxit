@@ -62,7 +62,7 @@
                     };
 
                     $rootScope.$on('onWindowResized', function () {
-                        appService.triggerOnResizeEvent(scope.onResized);
+                        appService.triggerOnResizeEvent(scope.onEvent.resize);
                     });
 
                     scope.isTemplateFullscreen = portalService.isTemplateFullscreen();
@@ -112,11 +112,11 @@
                     }
 
                     function enableFullscreen() {
-                        appService.enableFullscreen(appElm, scope._id, scope.width, scope.onResized);
+                        appService.enableFullscreen(appElm, scope._id, scope.width, scope.onEvent.resize);
                     }
 
                     function disableFullscreen() {
-                        appService.disableFullscreen(appElm, scope.onResized);
+                        appService.disableFullscreen(appElm, scope.onEvent.resize);
                     }
 
                     function manageFullscreenFromSearch() {

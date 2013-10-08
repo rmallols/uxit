@@ -3,6 +3,7 @@
 	<div class="content cf">
         <div class="title" ng-show="isTitleVisible()"><h5>{{model.title || appInfo.title}}</h5></div>
         <div app-bridge model="model" internal-data="internalData" src="{{type}}" view="{{view}}"
-             ng-class="{alignCenter: model.align=='center', alignRight: model.align=='right'}"></div>
+             ng-class="{alignCenter: model.align=='center', alignRight: model.align=='right'}"
+             on-event="onEvent"></div>
 	</div>
 </div>

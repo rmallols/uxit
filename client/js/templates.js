@@ -551,16 +551,19 @@ angular.module("staticContentAppView.html", []).run(["$templateCache", function(
     "        <div class=\"contentHeader cf\">\n" +
     "            <h3 ng-show=\"model.showTitles\" class=\"title\">\n" +
     "                <a href=\"#\">\n" +
-    "                    <div content-editable ng-model=\"internalData.title\" type=\"type\" on-blur=\"onContentUpdated\" class=\"noBorder\" i18n-db-input></div>\n" +
+    "                    <div content-editable ng-model=\"internalData.title\" type=\"type\"\n" +
+    "                         on-blur=\"onContentUpdated()\" class=\"noBorder\" i18n-db-input></div>\n" +
     "                </a>\n" +
     "            </h3>\n" +
     "            <div rating=\"internalData.avgRating\" target-id=\"model.selectedContentId\" target-collection=\"content\"\n" +
     "                 target-author-id=\"internalData.create.author._id\" ux-show=\"model.showRatings\"></div>\n" +
     "        </div>\n" +
-    "        <div content-editable ng-model=\"internalData.summary\" type=\"type\" on-blur=\"onContentUpdated\" class=\"noBorder\" i18n-db-input></div>\n" +
-    "        <div content-editable ng-model=\"internalData.content\" type=\"type\" on-blur=\"onContentUpdated\" class=\"noBorder\" i18n-db-input></div>\n" +
-    "        <comments target-id=\"model.selectedContentId\" placeholder=\"comments.addComment.placeholder\" ux-show=\"model.showComments\"\n" +
-    "                  allow-ratings=\"model.showCommentsRatings\"></comments>\n" +
+    "        <div content-editable ng-model=\"internalData.summary\" type=\"type\"\n" +
+    "             on-blur=\"onContentUpdated()\" class=\"noBorder\" i18n-db-input></div>\n" +
+    "        <div content-editable ng-model=\"internalData.content\" type=\"type\"\n" +
+    "             on-blur=\"onContentUpdated()\" class=\"noBorder\" i18n-db-input></div>\n" +
+    "        <comments target-id=\"model.selectedContentId\" placeholder=\"comments.addComment.placeholder\"\n" +
+    "                  ux-show=\"model.showComments\" allow-ratings=\"model.showCommentsRatings\"></comments>\n" +
     "    </div>\n" +
     "</div>\n" +
     "");
@@ -1091,7 +1094,8 @@ angular.module("app.html", []).run(["$templateCache", function($templateCache) {
     "	<div class=\"content cf\">\n" +
     "        <div class=\"title\" ng-show=\"isTitleVisible()\"><h5>{{model.title || appInfo.title}}</h5></div>\n" +
     "        <div app-bridge model=\"model\" internal-data=\"internalData\" src=\"{{type}}\" view=\"{{view}}\"\n" +
-    "             ng-class=\"{alignCenter: model.align=='center', alignRight: model.align=='right'}\"></div>\n" +
+    "             ng-class=\"{alignCenter: model.align=='center', alignRight: model.align=='right'}\"\n" +
+    "             on-event=\"onEvent\"></div>\n" +
     "	</div>\n" +
     "</div>\n" +
     "");
@@ -1159,7 +1163,8 @@ angular.module("comment.html", []).run(["$templateCache", function($templateCach
     "                        confirm-action=\"deleteComment()\" ng-show=\"isSelfActionAllowed\"></button>\n" +
     "            </div>\n" +
     "        </div>\n" +
-    "        <div content-editable=\"comment.isEditable\" ng-model=\"comment.text\" type=\"type\" on-blur=\"updateComment\" class=\"message\"></div>\n" +
+    "        <div content-editable=\"comment.isEditable\" ng-model=\"comment.text\" type=\"type\"\n" +
+    "             on-blur=\"updateComment()\" class=\"message\"></div>\n" +
     "        <div class=\"repliesWrapper\"></div>\n" +
     "    </div>\n" +
     "</li>");

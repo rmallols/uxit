@@ -78,10 +78,11 @@
         }
 
         function updateData(internalData, content) {
-            internalData.title     = content.title;
-            internalData.summary   = content.summary;
-            internalData.content   = content.content;
-            internalData.avgRating = content.avgRating;
+            internalData._id        = content._id;
+            internalData.title      = content.title;
+            internalData.summary    = content.summary;
+            internalData.content    = content.content;
+            internalData.avgRating  = content.avgRating;
         }
         /** End of private methods **/
 

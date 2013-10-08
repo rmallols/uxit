@@ -12,8 +12,8 @@
                 content         : '=ngModel',
                 customPanels    : '=panels',
                 options         : '=',
-                onBlur          : '=',
                 placeholder     : '@',
+                onBlur          : '&',
                 uxChange        : '&'
             },
             replace: true,

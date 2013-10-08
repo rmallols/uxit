@@ -12,21 +12,21 @@
          * @param {object}      element     The pointer to the root object of the app that is being fullscreened
          * @param {number}      _id         The ID of the app that is being fullscreened
          * @param {number}      currentSize The current size of the columns that is wrapping the app that is being fullscreened
-         * @param {function}    onResized   The callback function to be executed once the app that is being fullscreened
+         * @param {function}    onResize    The callback function to be executed once the app that is being fullscreened
          */
-        function enableFullscreen(element, _id, currentSize, onResized) {
+        function enableFullscreen(element, _id, currentSize, onResize) {
             if(!isFullscreen()) {
                 $('html').addClass('fullscreen');
                 fullscreen = true;
                 if (portalService.isRealFullscreen()) {
-                    enableRealFullscreen(element, onResized);
+                    enableRealFullscreen(element, onResize);
                 } else if(portalService.isMaximizedFullscreen()) {
                     enableMaximizedFullscreen(element, _id);
                 } else if(portalService.isTemplateFullscreen()) {
                     enableTemplateFullscreen(element, _id, currentSize);
                 }
-                triggerOnResizeEvent(onResized);
-                registerKeyboardEvents(element, onResized);
+                triggerOnResizeEvent(onResize);
+                registerKeyboardEvents(element, onResize);
             }
         }
 
@@ -34,9 +34,9 @@
          *  Disables the fullscreen state of a given app
          *
          * @param {object}      element     The pointer to the root object of the app that was fullscreened
-         * @param {function}    onResized   The callback function to be executed once the app that was fullscreened
+         * @param {function}    onResize   The callback function to be executed once the app that was fullscreened
          */
-        function disableFullscreen(element, onResized) {
+        function disableFullscreen(element, onResize) {
             $('html').removeClass('fullscreen');
             fullscreen = false;
             if (portalService.isRealFullscreen()) {
@@ -46,7 +46,7 @@
             } else if(portalService.isTemplateFullscreen()) {
                 disableTemplateFullscreen(element);
             }
-            triggerOnResizeEvent(onResized);
+            triggerOnResizeEvent(onResize);
             unregisterKeyboardEvents();
         }
 
@@ -62,11 +62,13 @@
         /**
          * Triggers the onResize event of an app
          *
-         * @param {function} onResized The function to be triggered
+         * @param {function} onResizeEvent The function to be triggered
          */
-        function triggerOnResizeEvent(onResized) {
-            //Give some delay to the onResized callback as it could be affected by the asnync html5 fullscreen event
-            if (onResized) { setTimeout(function () { onResized(); }, 100); }
+        function triggerOnResizeEvent(onResizeEvent) {
+            //Give some delay to the onResize callback as it could be affected by the asnync html5 fullscreen event
+            if (onResizeEvent) {
+                setTimeout(function () { onResizeEvent(); }, 100);
+            }
         }
 
         /**
@@ -93,7 +95,7 @@
         }
 
         /** Private methods **/
-        function enableRealFullscreen(element, onResized) {
+        function enableRealFullscreen(element, onResize) {
             $('html').addClass('appRealFullscreen'); //Allow CSS setup from ancestor DOM elements
             element.addClass('realFullscreen');
             element.fullScreen(true);
@@ -101,7 +103,7 @@
             //Consequently, we need to manually disable the fullscreen state is it's not longer fullscreen
             $(document).bind("fullscreenchange", function () {
                 if (!$(document).fullScreen()) {
-                    disableFullscreen(element, onResized);
+                    disableFullscreen(element, onResize);
                 }
             });
         }
@@ -144,9 +146,9 @@
             updateSearchId(null);
         }
 
-        function registerKeyboardEvents(element, onResized) {
+        function registerKeyboardEvents(element, onResize) {
             keyboardService.register('esc', directiveId, function () {
-                disableFullscreen(element, onResized);
+                disableFullscreen(element, onResize);
                 $rootScope.$apply();
             });
         }

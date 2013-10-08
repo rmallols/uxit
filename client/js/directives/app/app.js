@@ -16,10 +16,11 @@
                 templateApp : '@'
             },
             controller: ['$scope', function controller($scope) {
-                //Initialize the view and internalData resources in the controller instead of
+                //Initialize the app bridge resources in the controller instead of
                 //in the link function in order to ensure they're available in the bridge app
                 $scope.view = 'view';
                 $scope.internalData = {};
+                $scope.onEvent = {};
             }],
             link: function link(scope, element) {
 
@@ -52,7 +53,7 @@
                 scope.removeApp = function () {
                     element.hide("explode", { direction: "horizontal" }, window.speed, function () {
                         if (appService.isFullscreen()) {
-                            appService.disableFullscreen(element, scope.onResized);
+                            appService.disableFullscreen(element, scope.onEvent.resize);
                         }
                         appService.deleteApp(element, scope.$parent.$index);
                         $(this).remove();
@@ -72,7 +73,7 @@
                 scope.$watch('width', function (newVal) {
                     if (newVal) {
                         if (hasWidthChanged) { //The width has changed -> trigger resize event
-                            appService.triggerOnResizeEvent(scope.onResized);
+                            appService.triggerOnResizeEvent(scope.onEvent.resize);
                         } else { //The first time is the init, not the resizing one
                             hasWidthChanged = true;
                         }
