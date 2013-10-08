@@ -16,6 +16,8 @@
                 templateApp : '@'
             },
             controller: ['$scope', function controller($scope) {
+                //Initialize the view and internalData resources in the controller instead of
+                //in the link function in order to ensure they're available in the bridge app
                 $scope.view = 'view';
                 $scope.internalData = {};
             }],
@@ -25,9 +27,10 @@
                 element.addClass(scope.type);
 
                 scope.setAppStyles = function () {
-                    if (scope.model && portalService.getPortal()) {
+                    var portal = portalService.getPortal();
+                    if (scope.model && portal) {
                         //1. Set the default app styles from the portal settings
-                        var styles  = styleService.getNormalizedStyles(portalService.getPortal().app.styles, null);
+                        var styles  = styleService.getNormalizedStyles(portal.app.styles, null);
                         //2. Overwrite the app styles with the app specific settings
                         styles = styleService.getNormalizedStyles(scope.model.styles, styles);
                         return styles;

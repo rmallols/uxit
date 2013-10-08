@@ -52,6 +52,24 @@
             });
         }
 
+        function add(scope) {
+            scope.internalData.displayAddedContent = true;
+        }
+
+        function onAddSave(scope, callback) {
+            contentService.createContent(scope.content, function (newContent) {
+                //1. Update the current selected ID
+                scope.model.selectedContentId = newContent._id;
+                //2. Display the newly added content
+                //It's necessary to store each field to avoid breaking the pointer referenced by angular
+                scope.internalData.title    = newContent.title;
+                scope.internalData.summary  = newContent.summary;
+                scope.internalData.content  = newContent.content;
+                //3. Return control to the app
+                callback();
+            });
+        }
+
         /** Private methods **/
         function loadContent(scope) {
             contentService.getContent(scope.model.selectedContentId, null, function (content) {
@@ -71,6 +89,8 @@
             view: view,
             edit: edit,
             onEditSave: onEditSave,
+            add: add,
+            onAddSave: onAddSave,
             selectContent: selectContent
         };
     }]);

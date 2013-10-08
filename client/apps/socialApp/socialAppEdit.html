@@ -1,19 +1,34 @@
 <div>
     <div>
-        <div class="columns large-25"><input checkbox ng-model="model.showEmail" label="Show e-mail?"/></div>
-        <div class="columns large-25"><input type="text" ng-model="model.email" ng-show="model.showEmail" /></div>
+        <div class="columns large-25">
+            <input checkbox ng-model="model.show.email" label="Show e-mail?"/>
+        </div>
+        <div class="columns large-25">
+            <input type="text" ng-model="model.email" ng-show="model.show.email" />
+        </div>
     </div>
     <div>
-        <div class="columns large-25"><input checkbox ng-model="model.showFacebook" label="Show Facebook?"/></div>
-        <div class="columns large-25"><input type="text" ng-model="model.facebook" ng-show="model.showFacebook" /></div>
+        <div class="columns large-25">
+            <input checkbox ng-model="model.show.facebook" label="Show Facebook?"/></div>
+        <div class="columns large-25">
+            <input type="text" ng-model="model.facebook" ng-show="model.show.facebook" />
+        </div>
     </div>
     <div>
-        <div class="columns large-25"><input checkbox ng-model="model.showTwitter" label="Show Twitter?"/></div>
-        <div class="columns large-25"><input type="text" ng-model="model.twitter" ng-show="model.showTwitter" /></div>
+        <div class="columns large-25">
+            <input checkbox ng-model="model.show.twitter" label="Show Twitter?"/>
+        </div>
+        <div class="columns large-25">
+            <input type="text" ng-model="model.twitter" ng-show="model.show.twitter" />
+        </div>
     </div>
     <div>
-        <div class="columns large-25"><input checkbox ng-model="model.showLinkedIn" label="Show LinkedIn?"/></div>
-        <div class="columns large-25"><input type="text" ng-model="model.linkedIn" ng-show="model.showLinkedIn" /></div>
+        <div class="columns large-25">
+            <input checkbox ng-model="model.show.linkedIn" label="Show LinkedIn?"/>
+        </div>
+        <div class="columns large-25">
+            <input type="text" ng-model="model.linkedIn" ng-show="model.show.linkedIn" />
+        </div>
     </div>
     <div class="columns large-25">
         Icon size:

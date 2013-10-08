@@ -115,11 +115,9 @@
                     /** Private methods **/
                     function save() {
                         var processedPanels = 0;
-                        console.log("OOUT!", scope.panels)
                         scope.panels.forEach(function (panel) {
-                            panel.onLayerSave(function () {
+                            panel.onLayer.save(function () {
                                 processedPanels += 1;
-                                console.log("PROCESSED!");
                                 if (processedPanels === scope.panels.length) {
                                     scope.onSave();
                                 }
@@ -166,7 +164,8 @@
 
                     function createEditLayer(panel) {
                         var htmlElm, directiveElement;
-                        panel.onLayerSave = function(callback) { callback(); };
+                        panel.onLayer = {};
+                        panel.onLayer.save = function(callback) { callback(); };
                         htmlElm = getEditLayerHtmlElm(panel, i);
                         directiveElement = $compile(htmlElm)(scope);
                         if (panel.active) {
@@ -180,7 +179,7 @@
                         var directiveName, htmlElm;
                         htmlElm = $('<div id="' + panel.type + scope.$id + '" ' +
                                         'model="model" ng-style="getLayerHeight()" internal-data="internalData" ' +
-                                        'on-layer-save="panels[' + index + '].onLayerSave" on-cancel="onCancel()" ' +
+                                        'on-layer="panels[' + index + '].onLayer" on-cancel="onCancel()" ' +
                                         'on-change="onChange()" ux-show="isLayerShown(' + index + ')" ' +
                                         'persist="true">' +
                                     '</div>');

@@ -33,7 +33,16 @@
         "desc": "",
         "disabled": false,
         "provider": "",
-        "category": ""
+        "category": "",
+        "defaultModel": {
+            "iconSize": "medium",
+            "show": {
+                "email": true,
+                "twitter": true,
+                "facebook": true,
+                "linkedIn": true
+            }
+        }
     },{
         "id": "imageApp",
         "title": "Image",
@@ -86,7 +95,11 @@
         "comments": [  ],
         "templates": [ "view", "edit", "help" ],
         "defaultTemplate": "view",
-        "actions": [ "minimize", "maximize", "remove" ]
+        "actions": [ "minimize", "maximize", "remove" ],
+        "defaultModel": {
+            "height": 400,
+            "videoId": "3f7l-Z4NF70"
+        }
     },
     {
         "id": "mapApp",

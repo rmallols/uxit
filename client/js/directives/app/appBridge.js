@@ -8,31 +8,33 @@
                 scope: {
                     model           : '=',
                     internalData    : '=',
-                    onLayerSave     : '=',
+                    onLayer         : '=',
                     src             : '@',
                     view            : '@'
                 },
                 link: function link(scope, element) {
 
-                    //var childScope = scope.$new();
                     var childScope = scope.$new(true);
-                    childScope.internalData = scope.internalData;
-                    childScope.model = scope.model;
-                    childScope.onLayerSave = scope.onLayerSave;
 
-                    scope.$watch('src', function(src) {
-
-                        if(src && scope.view) {
-                            childScope.src = scope.src;
-                            childScope.view = scope.view;
-                            executeServiceMethod(src, childScope.view)
+                    $timeout(function() {
+                        inheritParentScopeModel();
+                        if(childScope.src && childScope.view) {
+                            executeServiceMethod(childScope.src, childScope.view)
                         }
                     });
 
                     /** Private methods **/
+                    function inheritParentScopeModel() {
+                        childScope.internalData = scope.internalData;
+                        childScope.model = scope.model;
+                        childScope.onLayer = scope.onLayer;
+                        childScope.src = scope.src;
+                        childScope.view = scope.view;
+                    }
+
                     function executeServiceMethod(src, view) {
-                        manageServiceFns(src, view);
-                        compileTemplate(src, view);
+                        var appElm = compileTemplate(src, view);
+                        manageServiceFns(src, view, appElm);
                     }
 
                     function compileTemplate(src, view) {
@@ -43,30 +45,22 @@
                         return appElm;
                     }
 
-                    function manageServiceFns(src, view) {
-                        $timeout(function() {
-                            var appService = $injector.get(src + 'Service');
-                            defineOnLayerSaveFn(appService, view);
-                            if(appService[view]) {
-                                appService[view](childScope);
-                            }
-                        })
-                    }
-
-                    function defineOnLayerSaveFn(appService, view) {
-                        if(childScope.onLayerSave) {
-                            childScope.onLayerSave = function (callback) {
-                                onLayerSave(appService, view, callback);
-                            };
+                    function manageServiceFns(src, view, appElm) {
+                        var appService = $injector.get(src + 'Service');
+                        defineOnLayerSaveFn(appService, view);
+                        if(appService[view]) {
+                            appService[view](childScope, appElm);
                         }
                     }
 
-                    function onLayerSave(appService, view, callback) {
+                    function defineOnLayerSaveFn(appService, view) {
                         var onSaveFn = 'on' + sS.capitalize(view) + 'Save';
-                        if(appService[onSaveFn]) {
-                            appService[onSaveFn](childScope, function() {
-                                callback();
-                            });
+                        if(childScope.onLayer && childScope.onLayer.save && appService[onSaveFn]) {
+                            childScope.onLayer.save = function (callback) {
+                                appService[onSaveFn](childScope, function() {
+                                    callback();
+                                });
+                            };
                         }
                     }
                     /** End of private methods **/

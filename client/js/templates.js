@@ -436,20 +436,35 @@ angular.module("socialAppEdit.html", []).run(["$templateCache", function($templa
   $templateCache.put("socialAppEdit.html",
     "<div>\n" +
     "    <div>\n" +
-    "        <div class=\"columns large-25\"><input checkbox ng-model=\"model.showEmail\" label=\"Show e-mail?\"/></div>\n" +
-    "        <div class=\"columns large-25\"><input type=\"text\" ng-model=\"model.email\" ng-show=\"model.showEmail\" /></div>\n" +
+    "        <div class=\"columns large-25\">\n" +
+    "            <input checkbox ng-model=\"model.show.email\" label=\"Show e-mail?\"/>\n" +
+    "        </div>\n" +
+    "        <div class=\"columns large-25\">\n" +
+    "            <input type=\"text\" ng-model=\"model.email\" ng-show=\"model.show.email\" />\n" +
+    "        </div>\n" +
     "    </div>\n" +
     "    <div>\n" +
-    "        <div class=\"columns large-25\"><input checkbox ng-model=\"model.showFacebook\" label=\"Show Facebook?\"/></div>\n" +
-    "        <div class=\"columns large-25\"><input type=\"text\" ng-model=\"model.facebook\" ng-show=\"model.showFacebook\" /></div>\n" +
+    "        <div class=\"columns large-25\">\n" +
+    "            <input checkbox ng-model=\"model.show.facebook\" label=\"Show Facebook?\"/></div>\n" +
+    "        <div class=\"columns large-25\">\n" +
+    "            <input type=\"text\" ng-model=\"model.facebook\" ng-show=\"model.show.facebook\" />\n" +
+    "        </div>\n" +
     "    </div>\n" +
     "    <div>\n" +
-    "        <div class=\"columns large-25\"><input checkbox ng-model=\"model.showTwitter\" label=\"Show Twitter?\"/></div>\n" +
-    "        <div class=\"columns large-25\"><input type=\"text\" ng-model=\"model.twitter\" ng-show=\"model.showTwitter\" /></div>\n" +
+    "        <div class=\"columns large-25\">\n" +
+    "            <input checkbox ng-model=\"model.show.twitter\" label=\"Show Twitter?\"/>\n" +
+    "        </div>\n" +
+    "        <div class=\"columns large-25\">\n" +
+    "            <input type=\"text\" ng-model=\"model.twitter\" ng-show=\"model.show.twitter\" />\n" +
+    "        </div>\n" +
     "    </div>\n" +
     "    <div>\n" +
-    "        <div class=\"columns large-25\"><input checkbox ng-model=\"model.showLinkedIn\" label=\"Show LinkedIn?\"/></div>\n" +
-    "        <div class=\"columns large-25\"><input type=\"text\" ng-model=\"model.linkedIn\" ng-show=\"model.showLinkedIn\" /></div>\n" +
+    "        <div class=\"columns large-25\">\n" +
+    "            <input checkbox ng-model=\"model.show.linkedIn\" label=\"Show LinkedIn?\"/>\n" +
+    "        </div>\n" +
+    "        <div class=\"columns large-25\">\n" +
+    "            <input type=\"text\" ng-model=\"model.linkedIn\" ng-show=\"model.show.linkedIn\" />\n" +
+    "        </div>\n" +
     "    </div>\n" +
     "    <div class=\"columns large-25\">\n" +
     "        Icon size:\n" +
@@ -466,16 +481,16 @@ angular.module("socialAppHelp.html", []).run(["$templateCache", function($templa
 angular.module("socialAppView.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("socialAppView.html",
     "<div>\n" +
-    "    <div class=\"item\" ng-class=\"model.iconSize\" ng-show=\"model.showEmail\">\n" +
+    "    <div class=\"item\" ng-class=\"model.iconSize\" ng-show=\"model.show.email\">\n" +
     "       <a ng-href=\"mailto:{{model.email}}\" target=\"_blank\"><img src=\"/client/images/email2.svg\" title=\"e-mail\" /></a>\n" +
     "    </div>\n" +
-    "    <div class=\"item\" ng-class=\"model.iconSize\" ng-show=\"model.showFacebook\">\n" +
+    "    <div class=\"item\" ng-class=\"model.iconSize\" ng-show=\"model.show.facebook\">\n" +
     "        <a ng-href=\"{{model.facebook}}\" target=\"_blank\"><img src=\"/client/images/facebook.svg\" title=\"Facebook\" /></a>\n" +
     "    </div>\n" +
-    "    <div class=\"item\" ng-class=\"model.iconSize\" ng-show=\"model.showTwitter\">\n" +
+    "    <div class=\"item\" ng-class=\"model.iconSize\" ng-show=\"model.show.twitter\">\n" +
     "        <a ng-href=\"{{model.twitter}}\" target=\"_blank\"><img src=\"/client/images/twitter.svg\" title=\"Twitter\" /></a>\n" +
     "    </div>\n" +
-    "    <div class=\"item\" ng-class=\"model.iconSize\" ng-show=\"model.showLinkedIn\">\n" +
+    "    <div class=\"item\" ng-class=\"model.iconSize\" ng-show=\"model.show.linkedIn\">\n" +
     "        <a ng-href=\"{{model.linkedIn}}\" target=\"_blank\"><img src=\"/client/images/linkedin.svg\" title=\"LinkedIn\" /></a>\n" +
     "    </div>\n" +
     "</div>");
@@ -531,7 +546,6 @@ angular.module("staticContentAppSelectContent.html", []).run(["$templateCache", 
 angular.module("staticContentAppView.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("staticContentAppView.html",
     "<div>\n" +
-    "    --{{model.selectedContentId}} --{{model.selectedContentId}}\n" +
     "    <div ng-show=\"!model.selectedContentId\"><em>Please select a content from the edit panel</em></div>\n" +
     "    <div ng-show=\"model.selectedContentId\">\n" +
     "        <div class=\"contentHeader cf\">\n" +
