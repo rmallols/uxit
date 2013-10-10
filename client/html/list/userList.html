@@ -1,13 +1,6 @@
 <div class="userList">
     <div list="items" collection="collection" config="config" projection="projection"
-     on-select-panels="onSelectPanels" search-targets="searchTargets" transcluded-data="transcludedData">
-        <div class="avatar columns large-3">
-            <img ng-src="{{transcludedData.getUserAvatarUrl(item)}}" />
-        </div>
-        <div class="columns large-22">
-            <h3><a href="#">{{item.fullName}}</a></h3>
-            <div list-expanded-view class="email" ng-bind-html-unsafe="item.email"></div>
-            {{item.create.date}}
-        </div>
+         template="template" on-select-panels="onSelectPanels" search-targets="searchTargets"
+         transcluded-data="transcludedData">
     </div>
 </div>

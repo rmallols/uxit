@@ -1,6 +1,7 @@
 (function (Number) {
     'use strict';
-    COMPONENTS.directive('listActions', ['arrayService', function (arrayService) {
+    COMPONENTS.directive('listActions', ['arrayService', 'listService',
+    function (arrayService, listService) {
         return {
             restrict: 'A',
             replace: true,
@@ -18,11 +19,12 @@
                 };
 
                 scope.showPrevPageLink = function () {
-                    return scope.getDefaultedValue('pageSize') && scope.currentPage > 0;
+                    return listService.getDefaultValue('pageSize', scope.config) && scope.currentPage > 0;
                 };
 
                 scope.showNextPageLink = function () {
-                    return (scope.currentPage + 1) * Number(scope.getDefaultedValue('pageSize')) < scope.totalSize;
+                    var pageSize = Number(listService.getDefaultValue('pageSize', scope.config));
+                    return (scope.currentPage + 1) * pageSize < scope.totalSize;
                 };
 
                 scope.toggleSelectAll = function () {

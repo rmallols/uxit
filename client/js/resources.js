@@ -120,6 +120,7 @@ window.speed = 150;
     getScript(directivePath + '/utils/uxShow.js');
     getScript(directivePath + '/utils/multipleFiles.js');
     getScript(directivePath + '/list/list.js');
+    getScript(directivePath + '/list/listArray.js');
     getScript(directivePath + '/list/mediaList.js');
     getScript(directivePath + '/list/userList.js');
     getScript(directivePath + '/list/contentList.js');

@@ -1,4 +1,4 @@
-angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'bannerAppView.html', 'contentListAppAdd.html', 'contentListAppEdit.html', 'contentListAppHelp.html', 'contentListAppView.html', 'iframeAppEdit.html', 'iframeAppHelp.html', 'iframeAppView.html', 'imageAppEdit.html', 'imageAppHelp.html', 'imageAppView.html', 'languageSelectAppEdit.html', 'languageSelectAppHelp.html', 'languageSelectAppView.html', 'linksAppEdit.html', 'linksAppHelp.html', 'linksAppView.html', 'loginAppEdit.html', 'loginAppHelp.html', 'loginAppView.html', 'mapAppEdit.html', 'mapAppHelp.html', 'mapAppView.html', 'mediaCarouselAppEdit.html', 'mediaCarouselAppHelp.html', 'mediaCarouselAppSelectMedia.html', 'mediaCarouselAppView.html', 'mediaListAppAdd.html', 'mediaListAppEdit.html', 'mediaListAppHelp.html', 'mediaListAppView.html', 'menuAppEdit.html', 'menuAppHelp.html', 'menuAppView.html', 'example.html', 'slidesAppEdit.html', 'slidesAppHelp.html', 'slidesAppView.html', 'socialAppEdit.html', 'socialAppHelp.html', 'socialAppView.html', 'staticContentAppAdd.html', 'staticContentAppEdit.html', 'staticContentAppHelp.html', 'staticContentAppSelectContent.html', 'staticContentAppView.html', 'userListAppAdd.html', 'userListAppEdit.html', 'userListAppHelp.html', 'userListAppView.html', 'videoAppEdit.html', 'videoAppHelp.html', 'videoAppView.html', 'webGlAppEdit.html', 'webGlAppHelp.html', 'webGlAppView.html', 'addAppPanel.html', 'adminPanel.html', 'createMedia.html', 'edit.html', 'editAppGeneral.html', 'editAppStyles.html', 'editBox.html', 'editContent.html', 'editContentList.html', 'editCurrentUser.html', 'editGeneral.html', 'editMedia.html', 'editMediaList.html', 'editNotifications.html', 'editPages.html', 'editStyles.html', 'editTag.html', 'editTagList.html', 'editUser.html', 'editUserList.html', 'stats.html', 'styles.html', 'app.html', 'appHeader.html', 'bannerCanvas.html', 'bannerItem.html', 'comment.html', 'comments.html', 'contentEditable.html', 'richContent.html', 'selectMedia.html', 'fileUploader.html', 'password.html', 'rating.html', 'contentList.html', 'list.html', 'mediaList.html', 'tagList.html', 'userList.html', 'login.html', 'mediaPicker.html', 'mediaPopup.html', 'pages.html', 'errorPage.html', 'loginPage.html', 'portalPage.html', 'listActions.html', 'listEdit.html']);
+angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'bannerAppView.html', 'contentListAppAdd.html', 'contentListAppEdit.html', 'contentListAppHelp.html', 'contentListAppView.html', 'iframeAppEdit.html', 'iframeAppHelp.html', 'iframeAppView.html', 'imageAppEdit.html', 'imageAppHelp.html', 'imageAppView.html', 'languageSelectAppEdit.html', 'languageSelectAppHelp.html', 'languageSelectAppView.html', 'linksAppEdit.html', 'linksAppHelp.html', 'linksAppView.html', 'loginAppEdit.html', 'loginAppHelp.html', 'loginAppView.html', 'mapAppEdit.html', 'mapAppHelp.html', 'mapAppView.html', 'mediaCarouselAppEdit.html', 'mediaCarouselAppHelp.html', 'mediaCarouselAppSelectMedia.html', 'mediaCarouselAppView.html', 'mediaListAppAdd.html', 'mediaListAppEdit.html', 'mediaListAppHelp.html', 'mediaListAppView.html', 'menuAppEdit.html', 'menuAppHelp.html', 'menuAppView.html', 'example.html', 'slidesAppEdit.html', 'slidesAppHelp.html', 'slidesAppView.html', 'socialAppEdit.html', 'socialAppHelp.html', 'socialAppView.html', 'staticContentAppAdd.html', 'staticContentAppEdit.html', 'staticContentAppHelp.html', 'staticContentAppSelectContent.html', 'staticContentAppView.html', 'userListAppAdd.html', 'userListAppEdit.html', 'userListAppHelp.html', 'userListAppView.html', 'videoAppEdit.html', 'videoAppHelp.html', 'videoAppView.html', 'webGlAppEdit.html', 'webGlAppHelp.html', 'webGlAppView.html', 'addAppPanel.html', 'adminPanel.html', 'createMedia.html', 'edit.html', 'editAppGeneral.html', 'editAppStyles.html', 'editBox.html', 'editContent.html', 'editContentList.html', 'editCurrentUser.html', 'editGeneral.html', 'editMedia.html', 'editMediaList.html', 'editNotifications.html', 'editPages.html', 'editStyles.html', 'editTag.html', 'editTagList.html', 'editUser.html', 'editUserList.html', 'stats.html', 'styles.html', 'app.html', 'appHeader.html', 'bannerCanvas.html', 'bannerItem.html', 'comment.html', 'comments.html', 'contentEditable.html', 'richContent.html', 'selectMedia.html', 'fileUploader.html', 'password.html', 'rating.html', 'contentList.html', 'list.html', 'listArray.html', 'mediaList.html', 'tagList.html', 'userList.html', 'login.html', 'mediaPicker.html', 'mediaPopup.html', 'pages.html', 'errorPage.html', 'loginPage.html', 'portalPage.html', 'listActions.html', 'listEdit.html']);
 
 angular.module("bannerAppEdit.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerAppEdit.html",
@@ -1307,31 +1307,43 @@ angular.module("contentList.html", []).run(["$templateCache", function($template
 
 angular.module("list.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("list.html",
-    "<div ng-class=\"getWrapperClass()\" class=\"scrollable\">\n" +
-    "    <div ng-show=\"isSearchable() && !detailId\">\n" +
-    "        <label i18n=\"list.search\"></label><input type=\"text\" ng-model=\"searchText\" ux-keyup=\"search()\"/>\n" +
-    "    </div>\n" +
-    "    <div ng-show=\"isPageActionsTop()\" list-actions class=\"top\"></div>\n" +
-    "    <div ng-show=\"items.length == 0\"><i><label i18n=\"list.noItems\"></label></i></div>\n" +
-    "    <div ng-show=\"items.length > 0\" ng-hide=\"detailId && detailId!=item._id\" id=\"{{item._id}}\" ng-repeat=\"item in items\"\n" +
-    "         class=\"item columns\" ng-class=\"getItemStyleClasses(item)\">\n" +
-    "        <div class=\"selectFromCheckbox\" ng-show=\"isMultiSelectable()\">\n" +
-    "            <input checkbox class=\"white\" ng-model=\"item.isSelected\" ng-click=\"clickOnItem(item, $index, $event, false)\"\n" +
-    "                   block-update-model=\"true\" />\n" +
-    "        </div>\n" +
-    "        <div class=\"text\" ng-click=\"clickOnItem(item, $index, $event, true)\">\n" +
-    "            <div ng-transclude></div>\n" +
-    "        </div>\n" +
-    "        <button class=\"remove removeIcon\" ng-click=\"clickOnItem(item, $index, $event, false)\" ng-show=\"isDeletable()\"\n" +
-    "                title confirm-action=\"delete(item._id)\">\n" +
-    "            <label i18n=\"list.deleteItem\"></label>\n" +
-    "        </button>\n" +
-    "    </div>\n" +
-    "    <a href=\"#\" ng-show=\"detailId\" ng-click=\"deleteDetailId()\" class=\"floatRight\">\n" +
-    "        &lt;&lt; <label i18n=\"list.goBack\"></label>\n" +
-    "    </a>\n" +
-    "    <div ng-show=\"isPageActionsBottom()\" list-actions class=\"bottom\"></div>\n" +
+    "<div>\n" +
+    "    <div list-array=\"items\" id=\"_id\" config=\"config\" projection=\"projection\" transcluded-data=\"transcludedData\"\n" +
+    "         search-text=\"searchText\" current-page=\"currentPage\" template=\"template\"\n" +
+    "         internal-data=\"internalData\" on-select-panels=\"onSelectPanels\" on-delete=\"deleteItem($id)\"></div>\n" +
     "</div>");
+}]);
+
+angular.module("listArray.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("listArray.html",
+    "<div>\n" +
+    "    <div ng-class=\"getWrapperClass()\" class=\"scrollable\">\n" +
+    "        <div ng-show=\"isSearchable() && !detailId\">\n" +
+    "            <label i18n=\"list.search\"></label><input type=\"text\" ng-model=\"searchText\" ux-keyup=\"search()\"/>\n" +
+    "        </div>\n" +
+    "        <div ng-show=\"isPageActionsTop()\" list-actions class=\"top\"></div>\n" +
+    "        <div ng-show=\"items.length == 0\"><i><label i18n=\"list.noItems\"></label></i></div>\n" +
+    "        <div ng-show=\"items.length > 0\" ng-hide=\"detailId && detailId!=item._id\" id=\"{{item._id}}\" ng-repeat=\"item in items\"\n" +
+    "             class=\"item columns\" ng-class=\"getItemStyleClasses(item)\">\n" +
+    "            <div class=\"selectFromCheckbox\" ng-show=\"isMultiSelectable()\">\n" +
+    "                <input checkbox class=\"white\" ng-model=\"item.isSelected\" ng-click=\"clickOnItem(item, $index, $event, false)\"\n" +
+    "                       block-update-model=\"true\" />\n" +
+    "            </div>\n" +
+    "            <div class=\"text\" ng-click=\"clickOnItem(item, $index, $event, true)\">\n" +
+    "                 <div ux-transclude=\"template\"></div>\n" +
+    "             </div>\n" +
+    "            <button class=\"remove removeIcon\" ng-click=\"clickOnItem(item, $index, $event, false)\" ng-show=\"isDeletable()\"\n" +
+    "                    title confirm-action=\"deleteItem(item._id)\">\n" +
+    "                <label i18n=\"list.deleteItem\"></label>\n" +
+    "            </button>\n" +
+    "        </div>\n" +
+    "        <a href=\"#\" ng-show=\"detailId\" ng-click=\"deleteDetailId()\" class=\"floatRight\">\n" +
+    "            &lt;&lt; <label i18n=\"list.goBack\"></label>\n" +
+    "        </a>\n" +
+    "        <div ng-show=\"isPageActionsBottom()\" list-actions class=\"bottom\"></div>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "");
 }]);
 
 angular.module("mediaList.html", []).run(["$templateCache", function($templateCache) {
@@ -1360,15 +1372,8 @@ angular.module("userList.html", []).run(["$templateCache", function($templateCac
   $templateCache.put("userList.html",
     "<div class=\"userList\">\n" +
     "    <div list=\"items\" collection=\"collection\" config=\"config\" projection=\"projection\"\n" +
-    "     on-select-panels=\"onSelectPanels\" search-targets=\"searchTargets\" transcluded-data=\"transcludedData\">\n" +
-    "        <div class=\"avatar columns large-3\">\n" +
-    "            <img ng-src=\"{{transcludedData.getUserAvatarUrl(item)}}\" />\n" +
-    "        </div>\n" +
-    "        <div class=\"columns large-22\">\n" +
-    "            <h3><a href=\"#\">{{item.fullName}}</a></h3>\n" +
-    "            <div list-expanded-view class=\"email\" ng-bind-html-unsafe=\"item.email\"></div>\n" +
-    "            {{item.create.date}}\n" +
-    "        </div>\n" +
+    "         template=\"template\" on-select-panels=\"onSelectPanels\" search-targets=\"searchTargets\"\n" +
+    "         transcluded-data=\"transcludedData\">\n" +
     "    </div>\n" +
     "</div>");
 }]);

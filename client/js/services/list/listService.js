@@ -1,6 +1,10 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('listService', ['crudService', 'dbService', 'i18nService', function (crudService, dbService, i18nService) {
+    COMPONENTS.factory('listService', ['crudService', 'dbService', 'i18nService', 'objectService',
+    function (crudService, dbService, i18nService, objectService) {
+
+        var defaultOptions = {  pageSize: 10, skip: 0, pageActionPos: 2, searchable : true,
+                                sort: { field: 'create.date', order : '1' } };
 
         /**
          * Gets a list of items from a given collection
@@ -33,6 +37,17 @@
          */
         function deleteItem(collection, itemId) {
             crudService.delete(collection, itemId, null);
+        }
+
+        /**
+         * Gets the default value of a given property
+         *
+         * @param   {string} prop   The property of which the default value is going to be retrieved
+         * @param   {object} config The object that stores the list setup
+         * @returns {*}             The default value of the given property
+         */
+        function getDefaultValue(prop, config) {
+            return (!objectService.isEmpty(config[prop])) ? config[prop] : defaultOptions[prop];
         }
 
         /**
@@ -74,7 +89,8 @@
         return {
             loadList : loadList,
             deleteItem: deleteItem,
-            setDetailId: setDetailId
+            setDetailId: setDetailId,
+            getDefaultValue: getDefaultValue
         };
     }]);
 })();
