@@ -13,6 +13,12 @@ COMPONENTS.directive('contentList', ['constantsService', function (constantsServ
             scope.collection        = constantsService.collections.content;
             scope.searchTargets     = ['title', 'summary', 'content'];
             scope.onSelectPanels    = [{ title: 'Edit content', type: 'editContent'}];
+            scope.template          =   '<h3><a href="#"><label i18n-db="item.title"></label></a></h3>' +
+                                        '<div class="summary" i18n-db="item.summary"></div>' +
+                                        '<div list-expanded-view>' +
+                                            '<div class="content" i18n-db="item.content"></div>' +
+                                        '</div>' +
+                                        '{{item.update.date}}'
 		}
 	};
 }]);

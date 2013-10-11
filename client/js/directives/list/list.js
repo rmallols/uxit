@@ -21,8 +21,17 @@
             },
             link: function link(scope) {
 
-                scope.searchText = '';
+                console.log("WE NEED TO STORE SEARCH AND CURRENTPAGE IN AN OBJECT EACH IN ORDER TO ALLOW SENDING IT FROM THE LIST-ARRAY AND SO APPLY A WATCH AND AVOID FOR INSTANCE THE EXECUTESEARCH() METHOD THERE")
+                scope.search = {
+                   text: ''
+                };
                 scope.currentPage = 0;
+
+                console.log("SEET!");
+
+                setTimeout(function() {
+                       console.log("AA", scope.searchText)
+                }, 1000)
 
                 scope.loadList = function () {
                     var options = {

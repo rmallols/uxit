@@ -1,4 +1,4 @@
-COMPONENTS.directive('userList', ['mediaService', 'constantsService', function (mediaService, constantsService) {
+COMPONENTS.directive('userList', ['mediaService', 'userService', function (mediaService, userService) {
 	'use strict';
     return {
 		restrict: 'E',
@@ -8,10 +8,7 @@ COMPONENTS.directive('userList', ['mediaService', 'constantsService', function (
             config: '='
         },
 		link: function link(scope) {
-            scope.items             = [];
-            scope.collection        = constantsService.collections.users;
-            scope.projection        = { password: 0 }; //Avoid sending the password to the frontend
-            scope.searchTargets     = ['fullName', 'email'];
+            scope.items = userService.getUsers();
             scope.onSelectPanels    = [{ title: 'Edit users', type: 'editUser'}];
             scope.transcludedData = {};
             scope.transcludedData.getUserAvatarUrl = function(item) {

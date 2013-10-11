@@ -9,26 +9,22 @@
             replace: true,
             transclude: true,
             templateUrl: 'listArray.html',
-            priority: -1,
-            //require: '?ngModel, config',
             scope : {
                 items           : '=listArray',
                 config          : '=',
                 projection      : '=',
+                searchText      : '=',
+                currentPage     : '=',
                 transcludedData : '=',
                 onSelectPanels  : '=',
                 template        : '=',
-                //searchText      : '=',
-                //currentPage     : '=',
                 onSelect        : '&',
-                onDelete        : '&'
+                onDelete        : '&',
+                dbSource        : '@'
             },
             link: function link(scope, element) {
 
                 var userSession = sessionService.getUserSession();
-
-                console.log("A VER QUE HACEMOS CON LA BUSQUEDA")
-                //scope.search = function () { scope.loadList(); };
 
                 scope.isPageActionsTop = function () {
                     var pageActionPos = listService.getDefaultValue('pageActionPos', scope.config),
@@ -85,8 +81,16 @@
                 scope.isDeletable = function () { return allowIfHasAdminRole(scope.config.deletable); };
                 scope.isCreatable = function () { return allowIfHasAdminRole(scope.config.creatable); };
 
-                scope.searchText = '';
-                scope.currentPage = 0;
+                scope.getFilter = function() {
+                    return (scope.dbSource == 'true') ? '' : scope.search;
+                };
+
+                scope.search = '';
+                scope.page = 0;
+                console.log("OOUT", scope.searchText);
+                if(scope.searchText !== undefined)  { console.log("JJ"); scope.searchText = scope.search; }
+                if(scope.currentPage !== undefined) { scope.currentPage = scope.page; }
+
                 listService.setDetailId(scope, $location.search().detailId);
                 scope.$on('$routeUpdate', function(){
                     listService.setDetailId(scope, $location.search().detailId);
@@ -97,21 +101,6 @@
 
                 function isAdmin() { return roleService.hasAdminRole(userSession); }
                 /** End of private methods **/
-            }
-        };
-    }]);
-
-    COMPONENTS.directive('uxTransclude', ['$compile', function ($compile) {
-        return {
-            restrict: 'A',
-            scope: {
-                template: '=uxTransclude'
-            },
-            link: function link(scope, element) {
-                console.log("MOVERLO A UN NUEVO ARCHIVO!")
-                var newContent = $(scope.template);
-                element.html(newContent);
-                $compile(newContent)(scope.$parent);
             }
         };
     }]);

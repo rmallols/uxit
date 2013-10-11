@@ -1294,14 +1294,7 @@ angular.module("contentList.html", []).run(["$templateCache", function($template
   $templateCache.put("contentList.html",
     "<div>\n" +
     "    <div list=\"items\" id=\"_id\" collection=\"collection\" config=\"config\" on-select-panels=\"onSelectPanels\"\n" +
-    "         search-targets=\"searchTargets\" config=\"config\">\n" +
-    "            <h3><a href=\"#\"><label i18n-db=\"item.title\"></label></a></h3>\n" +
-    "            <div class=\"summary\" i18n-db=\"item.summary\"></div>\n" +
-    "            <div list-expanded-view>\n" +
-    "                <div class=\"content\" i18n-db=\"item.content\"></div>\n" +
-    "            </div>\n" +
-    "            {{item.update.date}}\n" +
-    "    </div>\n" +
+    "         search-targets=\"searchTargets\" config=\"config\" template=\"template\"></div>\n" +
     "</div>");
 }]);
 
@@ -1309,8 +1302,8 @@ angular.module("list.html", []).run(["$templateCache", function($templateCache) 
   $templateCache.put("list.html",
     "<div>\n" +
     "    <div list-array=\"items\" id=\"_id\" config=\"config\" projection=\"projection\" transcluded-data=\"transcludedData\"\n" +
-    "         search-text=\"searchText\" current-page=\"currentPage\" template=\"template\"\n" +
-    "         internal-data=\"internalData\" on-select-panels=\"onSelectPanels\" on-delete=\"deleteItem($id)\"></div>\n" +
+    "         search-text=\"searchText\" search-text=\"searchText\" current-page=\"currentPage\" db-source=\"true\"\n" +
+    "         template=\"template\" internal-data=\"internalData\" on-select-panels=\"onSelectPanels\" on-delete=\"deleteItem($id)\"></div>\n" +
     "</div>");
 }]);
 
@@ -1319,12 +1312,16 @@ angular.module("listArray.html", []).run(["$templateCache", function($templateCa
     "<div>\n" +
     "    <div ng-class=\"getWrapperClass()\" class=\"scrollable\">\n" +
     "        <div ng-show=\"isSearchable() && !detailId\">\n" +
-    "            <label i18n=\"list.search\"></label><input type=\"text\" ng-model=\"searchText\" ux-keyup=\"search()\"/>\n" +
+    "            <label i18n=\"list.search\"></label>\n" +
+    "            <input type=\"text\" ng-model=\"search\" ux-keyup=\"executeSearch()\"/>\n" +
     "        </div>\n" +
     "        <div ng-show=\"isPageActionsTop()\" list-actions class=\"top\"></div>\n" +
     "        <div ng-show=\"items.length == 0\"><i><label i18n=\"list.noItems\"></label></i></div>\n" +
-    "        <div ng-show=\"items.length > 0\" ng-hide=\"detailId && detailId!=item._id\" id=\"{{item._id}}\" ng-repeat=\"item in items\"\n" +
-    "             class=\"item columns\" ng-class=\"getItemStyleClasses(item)\">\n" +
+    "        <div ng-show=\"items.length > 0\" ng-hide=\"detailId && detailId!=item._id\" id=\"{{item._id}}\"\n" +
+    "             ng-repeat=\"item in items | filter: getFilter()\"\n" +
+    "             class=\"item columns\"\n" +
+    "             ng-class=\n" +
+    "                \"getItemStyleClasses(item)\">\n" +
     "            <div class=\"selectFromCheckbox\" ng-show=\"isMultiSelectable()\">\n" +
     "                <input checkbox class=\"white\" ng-model=\"item.isSelected\" ng-click=\"clickOnItem(item, $index, $event, false)\"\n" +
     "                       block-update-model=\"true\" />\n" +
@@ -1371,10 +1368,12 @@ angular.module("tagList.html", []).run(["$templateCache", function($templateCach
 angular.module("userList.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("userList.html",
     "<div class=\"userList\">\n" +
-    "    <div list=\"items\" collection=\"collection\" config=\"config\" projection=\"projection\"\n" +
+    "    <!--<div list=\"items\" collection=\"collection\" config=\"config\" projection=\"projection\"\n" +
     "         template=\"template\" on-select-panels=\"onSelectPanels\" search-targets=\"searchTargets\"\n" +
     "         transcluded-data=\"transcludedData\">\n" +
-    "    </div>\n" +
+    "    </div>-->\n" +
+    "    <div list-array=\"items\" config=\"config\" transcluded-data=\"transcludedData\" template=\"template\"\n" +
+    "         internal-data=\"internalData\" on-select-panels=\"onSelectPanels\"></div>\n" +
     "</div>");
 }]);
 
