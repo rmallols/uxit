@@ -55,61 +55,10 @@
                 function deleteSelected() {
                     var selectedIds = arrayService.copy(scope.selectedIds);
                     selectedIds.forEach(function (id) {
-                        scope.delete(id);
+                        scope.deleteItem(id);
                     });
                 }
                 /** End of private methods **/
-            }
-        };
-    }]);
-
-    COMPONENTS.directive('createItemButton', ['$injector', 'crudService', 'editBoxUtilsService',
-    function ($injector, crudService, editBoxUtilsService) {
-        return {
-            restrict: 'A',
-            scope: {},
-            link: function link(scope, element) {
-
-                var collection = scope.$parent.collection;
-                scope.createItem = function () {
-                    createItem();
-                };
-
-                scope.$parent.$watch('collection', function(newVal) {
-                    if(newVal) {
-                        collection = scope.$parent.collection;
-                    }
-                });
-
-                /** Private methods **/
-                function createItem() {
-                    scope.panels = [{ title: 'Create item', type: 'createItem' }];
-                    scope.internalData = {
-                        collection: collection,
-                        data: {}
-                    };
-                    scope.onSave = function() {
-                        crudService.create(collection, scope.internalData.data);
-                    };
-                    editBoxUtilsService.showEditBox(scope, element, element);
-                }
-                /** End of private methods **/
-            }
-        };
-    }]);
-
-    COMPONENTS.directive('createItem', ['$compile', function ($compile) {
-        return {
-            restrict: 'A',
-            replace: false,
-            template: '<div></div>',
-            scope: {
-                internalData: '='
-            },
-            link: function link(scope, element) {
-                var layerElm = $('<div create-' + scope.internalData.collection + ' model="internalData.data"></div>');
-                element.html(layerElm);
-                $compile(layerElm)(scope);
             }
         };
     }]);

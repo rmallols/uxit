@@ -8,7 +8,7 @@
             templateUrl: 'editNotifications.html',
             scope: {
                 model: '=',
-                onLayerSave : '='
+                onLayer : '='
             },
             link: function link(scope) {
 
@@ -19,7 +19,7 @@
                     { title: 'editNotifications.liveMessage',   styleClass : 'infoIcon' }
                 ];
 
-                scope.onLayerSave = function (callback) {
+                scope.onLayer.save = function (callback) {
                     sendEmail(function () {
                         sendLiveMessage(function () {
                             scope.model.notifications = {}; //Cleanup the notifications object to avoid saving it

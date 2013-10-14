@@ -1,4 +1,4 @@
-angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'bannerAppView.html', 'contentListAppAdd.html', 'contentListAppEdit.html', 'contentListAppHelp.html', 'contentListAppView.html', 'iframeAppEdit.html', 'iframeAppHelp.html', 'iframeAppView.html', 'imageAppEdit.html', 'imageAppHelp.html', 'imageAppView.html', 'languageSelectAppEdit.html', 'languageSelectAppHelp.html', 'languageSelectAppView.html', 'linksAppEdit.html', 'linksAppHelp.html', 'linksAppView.html', 'loginAppEdit.html', 'loginAppHelp.html', 'loginAppView.html', 'mapAppEdit.html', 'mapAppHelp.html', 'mapAppView.html', 'mediaCarouselAppEdit.html', 'mediaCarouselAppHelp.html', 'mediaCarouselAppSelectMedia.html', 'mediaCarouselAppView.html', 'mediaListAppAdd.html', 'mediaListAppEdit.html', 'mediaListAppHelp.html', 'mediaListAppView.html', 'menuAppEdit.html', 'menuAppHelp.html', 'menuAppView.html', 'example.html', 'slidesAppEdit.html', 'slidesAppHelp.html', 'slidesAppView.html', 'socialAppEdit.html', 'socialAppHelp.html', 'socialAppView.html', 'staticContentAppAdd.html', 'staticContentAppEdit.html', 'staticContentAppHelp.html', 'staticContentAppSelectContent.html', 'staticContentAppView.html', 'userListAppAdd.html', 'userListAppEdit.html', 'userListAppHelp.html', 'userListAppView.html', 'videoAppEdit.html', 'videoAppHelp.html', 'videoAppView.html', 'webGlAppEdit.html', 'webGlAppHelp.html', 'webGlAppView.html', 'addAppPanel.html', 'adminPanel.html', 'createMedia.html', 'edit.html', 'editAppGeneral.html', 'editAppStyles.html', 'editBox.html', 'editContent.html', 'editContentList.html', 'editCurrentUser.html', 'editGeneral.html', 'editMedia.html', 'editMediaList.html', 'editNotifications.html', 'editPages.html', 'editStyles.html', 'editTag.html', 'editTagList.html', 'editUser.html', 'editUserList.html', 'stats.html', 'styles.html', 'app.html', 'appHeader.html', 'bannerCanvas.html', 'bannerItem.html', 'comment.html', 'comments.html', 'contentEditable.html', 'richContent.html', 'selectMedia.html', 'fileUploader.html', 'password.html', 'rating.html', 'contentList.html', 'list.html', 'listArray.html', 'mediaList.html', 'tagList.html', 'userList.html', 'login.html', 'mediaPicker.html', 'mediaPopup.html', 'pages.html', 'errorPage.html', 'loginPage.html', 'portalPage.html', 'listActions.html', 'listEdit.html']);
+angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'bannerAppView.html', 'contentListAppAdd.html', 'contentListAppEdit.html', 'contentListAppHelp.html', 'contentListAppView.html', 'iframeAppEdit.html', 'iframeAppHelp.html', 'iframeAppView.html', 'imageAppEdit.html', 'imageAppHelp.html', 'imageAppView.html', 'languageSelectAppEdit.html', 'languageSelectAppHelp.html', 'languageSelectAppView.html', 'linksAppEdit.html', 'linksAppHelp.html', 'linksAppView.html', 'loginAppEdit.html', 'loginAppHelp.html', 'loginAppView.html', 'mapAppEdit.html', 'mapAppHelp.html', 'mapAppView.html', 'mediaCarouselAppEdit.html', 'mediaCarouselAppHelp.html', 'mediaCarouselAppSelectMedia.html', 'mediaCarouselAppView.html', 'mediaListAppAdd.html', 'mediaListAppEdit.html', 'mediaListAppHelp.html', 'mediaListAppView.html', 'menuAppEdit.html', 'menuAppHelp.html', 'menuAppView.html', 'example.html', 'slidesAppEdit.html', 'slidesAppHelp.html', 'slidesAppView.html', 'socialAppEdit.html', 'socialAppHelp.html', 'socialAppView.html', 'staticContentAppAdd.html', 'staticContentAppEdit.html', 'staticContentAppHelp.html', 'staticContentAppSelectContent.html', 'staticContentAppView.html', 'userListAppAdd.html', 'userListAppEdit.html', 'userListAppHelp.html', 'userListAppView.html', 'videoAppEdit.html', 'videoAppHelp.html', 'videoAppView.html', 'webGlAppEdit.html', 'webGlAppHelp.html', 'webGlAppView.html', 'addAppPanel.html', 'adminPanel.html', 'createMedia.html', 'edit.html', 'editAppGeneral.html', 'editAppStyles.html', 'editBox.html', 'editContent.html', 'editContentList.html', 'editCurrentUser.html', 'editGeneral.html', 'editMedia.html', 'editMediaList.html', 'editNotifications.html', 'editPages.html', 'editStyles.html', 'editTag.html', 'editTagList.html', 'editUser.html', 'editUserList.html', 'stats.html', 'styles.html', 'app.html', 'appHeader.html', 'bannerCanvas.html', 'bannerItem.html', 'comment.html', 'comments.html', 'contentEditable.html', 'richContent.html', 'selectMedia.html', 'fileUploader.html', 'password.html', 'rating.html', 'contentList.html', 'list.html', 'listDb.html', 'mediaList.html', 'tagList.html', 'userList.html', 'login.html', 'mediaPicker.html', 'pages.html', 'errorPage.html', 'loginPage.html', 'portalPage.html', 'listActions.html', 'listEdit.html']);
 
 angular.module("bannerAppEdit.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerAppEdit.html",
@@ -783,7 +783,7 @@ angular.module("editCurrentUser.html", []).run(["$templateCache", function($temp
     "    <div class=\"actions\">\n" +
     "        <button ng-click=\"logout()\">Logout</button>\n" +
     "    </div>\n" +
-    "    <div edit-user model=\"userSession\" on-layer-save=\"onLayerSave\" class=\"clearBoth\"></div>\n" +
+    "    <div edit-user model=\"userSession\" on-layer=\"onLayer\" class=\"clearBoth\"></div>\n" +
     "</div>");
 }]);
 
@@ -1293,65 +1293,61 @@ angular.module("rating.html", []).run(["$templateCache", function($templateCache
 angular.module("contentList.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("contentList.html",
     "<div>\n" +
-    "    <div list=\"items\" id=\"_id\" collection=\"collection\" config=\"config\" on-select-panels=\"onSelectPanels\"\n" +
-    "         search-targets=\"searchTargets\" config=\"config\" template=\"template\"></div>\n" +
+    "    <div list-db=\"items\" id=\"_id\" collection=\"collection\" config=\"config\" template=\"template\"\n" +
+    "         on-select-panels=\"onSelectPanels\" search-targets=\"searchTargets\" config=\"config\"></div>\n" +
     "</div>");
 }]);
 
 angular.module("list.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("list.html",
-    "<div>\n" +
-    "    <div list-array=\"items\" id=\"_id\" config=\"config\" projection=\"projection\" transcluded-data=\"transcludedData\"\n" +
-    "         search-text=\"searchText\" search-text=\"searchText\" current-page=\"currentPage\" db-source=\"true\"\n" +
-    "         template=\"template\" internal-data=\"internalData\" on-select-panels=\"onSelectPanels\" on-delete=\"deleteItem($id)\"></div>\n" +
-    "</div>");
-}]);
-
-angular.module("listArray.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("listArray.html",
-    "<div>\n" +
-    "    <div ng-class=\"getWrapperClass()\" class=\"scrollable\">\n" +
-    "        <div ng-show=\"isSearchable() && !detailId\">\n" +
-    "            <label i18n=\"list.search\"></label>\n" +
-    "            <input type=\"text\" ng-model=\"search\" ux-keyup=\"executeSearch()\"/>\n" +
-    "        </div>\n" +
-    "        <div ng-show=\"isPageActionsTop()\" list-actions class=\"top\"></div>\n" +
-    "        <div ng-show=\"items.length == 0\"><i><label i18n=\"list.noItems\"></label></i></div>\n" +
-    "        <div ng-show=\"items.length > 0\" ng-hide=\"detailId && detailId!=item._id\" id=\"{{item._id}}\"\n" +
-    "             ng-repeat=\"item in items | filter: getFilter()\"\n" +
-    "             class=\"item columns\"\n" +
-    "             ng-class=\n" +
-    "                \"getItemStyleClasses(item)\">\n" +
-    "            <div class=\"selectFromCheckbox\" ng-show=\"isMultiSelectable()\">\n" +
-    "                <input checkbox class=\"white\" ng-model=\"item.isSelected\" ng-click=\"clickOnItem(item, $index, $event, false)\"\n" +
-    "                       block-update-model=\"true\" />\n" +
-    "            </div>\n" +
-    "            <div class=\"text\" ng-click=\"clickOnItem(item, $index, $event, true)\">\n" +
-    "                 <div ux-transclude=\"template\"></div>\n" +
-    "             </div>\n" +
-    "            <button class=\"remove removeIcon\" ng-click=\"clickOnItem(item, $index, $event, false)\" ng-show=\"isDeletable()\"\n" +
-    "                    title confirm-action=\"deleteItem(item._id)\">\n" +
-    "                <label i18n=\"list.deleteItem\"></label>\n" +
-    "            </button>\n" +
-    "        </div>\n" +
-    "        <a href=\"#\" ng-show=\"detailId\" ng-click=\"deleteDetailId()\" class=\"floatRight\">\n" +
-    "            &lt;&lt; <label i18n=\"list.goBack\"></label>\n" +
-    "        </a>\n" +
-    "        <div ng-show=\"isPageActionsBottom()\" list-actions class=\"bottom\"></div>\n" +
+    "<div ng-class=\"getWrapperClass()\" class=\"scrollable\">\n" +
+    "    <div class=\"searchArea\" ng-show=\"isSearchable() && !detailId\">\n" +
+    "        <label i18n=\"list.search\"></label>\n" +
+    "        <input type=\"text\" ng-model=\"searchText\" ux-keyup=\"executeSearch()\"/>\n" +
     "    </div>\n" +
+    "    <div ng-show=\"isPageActionsTop()\" list-actions class=\"top\" collection=\"collection\"></div>\n" +
+    "    <div class=\"noItems\" ng-show=\"items.length == 0\"><i><label i18n=\"list.noItems\"></label></i></div>\n" +
+    "    <div ng-show=\"items.length > 0\" ng-hide=\"detailId && detailId!=item._id\" id=\"{{item._id}}\"\n" +
+    "         ng-repeat=\"item in items | filter: getFilter()\" class=\"item columns\"\n" +
+    "         ng-class=\"getItemStyleClasses(item)\">\n" +
+    "        <div class=\"selectFromCheckbox\" ng-show=\"isMultiSelectable()\">\n" +
+    "            <input checkbox class=\"white\" ng-model=\"item.isSelected\" ng-click=\"clickOnItem(item, $index, $event, false)\"\n" +
+    "                   block-update-model=\"true\" />\n" +
+    "        </div>\n" +
+    "        <div class=\"text\" ng-click=\"clickOnItem(item, $index, $event, true)\">\n" +
+    "             <div ux-transclude=\"template\"></div>\n" +
+    "         </div>\n" +
+    "        <button class=\"remove removeIcon\" ng-click=\"clickOnItem(item, $index, $event, false)\" ng-show=\"isDeletable()\"\n" +
+    "                title confirm-action=\"deleteItem(item._id)\">\n" +
+    "            <label i18n=\"list.deleteItem\"></label>\n" +
+    "        </button>\n" +
+    "    </div>\n" +
+    "    <a href=\"#\" ng-show=\"detailId\" ng-click=\"deleteDetailId()\" class=\"floatRight\">\n" +
+    "        &lt;&lt; <label i18n=\"list.goBack\"></label>\n" +
+    "    </a>\n" +
+    "    <div ng-show=\"isPageActionsBottom()\" list-actions class=\"bottom\" collection=\"collection\"></div>\n" +
     "</div>\n" +
     "");
+}]);
+
+angular.module("listDb.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("listDb.html",
+    "<div>\n" +
+    "    <div list=\"items\" collection=\"collection\" id=\"_id\" config=\"config\" projection=\"projection\"\n" +
+    "         transcluded-data=\"transcludedData\" on-search=\"onSearch($text)\"\n" +
+    "         on-create=\"createItem($item)\" on-delete=\"deleteItem($id)\"\n" +
+    "         current-page=\"currentPage\" db-source=\"true\" template=\"template\"\n" +
+    "         internal-data=\"internalData\" on-select-panels=\"onSelectPanels\"></div>\n" +
+    "</div>");
 }]);
 
 angular.module("mediaList.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("mediaList.html",
     "<div>\n" +
     "    <file-uploader ux-show=\"config.uploadable\" on-upload=\"onUpload()\" multiple=\"true\"></file-uploader>\n" +
-    "    <media-popup media-index=\"popupMediaIndex\" media-list=\"items\"></media-popup>\n" +
-    "    <div list=\"items\" collection=\"collection\" config=\"config\" projection=\"projection\" on-select=\"onSelectMedia($item, $index, $selectable)\"\n" +
-    "         on-select-panels=\"onSelectPanels\" search-targets=\"searchTargets\" transcluded-data=\"transcludedData\">\n" +
-    "            <img ng-src=\"{{transcludedData.getDownloadUrl(item)}}\" title=\"{{transcludedData.getMediaTitle(item)}}\"\n" +
-    "                 class=\"cursorPointer\" edit-on-click=\"true\" />\n" +
+    "    <div list-db=\"items\" collection=\"collection\" config=\"config\" projection=\"projection\"\n" +
+    "         template=\"template\" on-select-panels=\"onSelectPanels\" search-targets=\"searchTargets\"\n" +
+    "         transcluded-data=\"transcludedData\">\n" +
     "    </div>\n" +
     "</div>");
 }]);
@@ -1359,7 +1355,8 @@ angular.module("mediaList.html", []).run(["$templateCache", function($templateCa
 angular.module("tagList.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("tagList.html",
     "<div>\n" +
-    "    <div list=\"items\" collection=\"collection\" config=\"config\" on-select-panels=\"onSelectPanels\" search-targets=\"searchTargets\">\n" +
+    "    <div list-db=\"items\" collection=\"collection\" config=\"config\" on-select-panels=\"onSelectPanels\"\n" +
+    "         search-targets=\"searchTargets\">\n" +
     "        <h3><a href=\"#\">{{item.text}}</a></h3>\n" +
     "    </div>\n" +
     "</div>");
@@ -1368,12 +1365,9 @@ angular.module("tagList.html", []).run(["$templateCache", function($templateCach
 angular.module("userList.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("userList.html",
     "<div class=\"userList\">\n" +
-    "    <!--<div list=\"items\" collection=\"collection\" config=\"config\" projection=\"projection\"\n" +
-    "         template=\"template\" on-select-panels=\"onSelectPanels\" search-targets=\"searchTargets\"\n" +
-    "         transcluded-data=\"transcludedData\">\n" +
-    "    </div>-->\n" +
-    "    <div list-array=\"items\" config=\"config\" transcluded-data=\"transcludedData\" template=\"template\"\n" +
-    "         internal-data=\"internalData\" on-select-panels=\"onSelectPanels\"></div>\n" +
+    "    <div list=\"userList\" collection=\"collection\" config=\"config\" transcluded-data=\"transcludedData\"\n" +
+    "         template=\"template\" internal-data=\"internalData\" on-select-panels=\"onSelectPanels\"\n" +
+    "         on-create=\"onCreate($item)\" on-delete=\"onDelete($id)\"></div>\n" +
     "</div>");
 }]);
 
@@ -1415,30 +1409,6 @@ angular.module("mediaPicker.html", []).run(["$templateCache", function($template
     "        <label i18n=\"fileUploader.deleteSelection\"></label>\n" +
     "    </button>\n" +
     "</div>");
-}]);
-
-angular.module("mediaPopup.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("mediaPopup.html",
-    "<div class=\"mediaPopupContainer\">\n" +
-    "    <div class=\"overlay\" ng-show=\"showPopup\" ng-click=\"closePopup()\" title=\"Click here to close the popup\"></div>\n" +
-    "    <div class=\"mediaPopup\" ng-style=\"setCenterPosition()\">\n" +
-    "        <div class=\"header\">\n" +
-    "            <div class=\"metadata\" ng-bind-html-unsafe=\"getMediaHtmlDetails()\">\n" +
-    "            </div>\n" +
-    "            <div class=\"actions\">\n" +
-    "                <button class=\"removeIcon\" ng-click=\"closePopup()\"></button>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"imgWrapper\" ng-class=\"getImgWrapperClass()\">\n" +
-    "            <img ng-src=\"{{getDownloadUrl(mediaList[0])}}\" />\n" +
-    "        </div>\n" +
-    "        <div class=\"navigationActions\" ng-style=\"setNavigationActionsPosition()\">\n" +
-    "            <div class=\"prev\" ng-click=\"getPrevMedia()\" ng-show=\"mediaIndex > 0\"></div>\n" +
-    "            <div class=\"next\" ng-click=\"getNextMedia()\" ng-show=\"mediaIndex < (mediaList.length - 1)\"></div>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</div>\n" +
-    "");
 }]);
 
 angular.module("pages.html", []).run(["$templateCache", function($templateCache) {
@@ -1517,7 +1487,10 @@ angular.module("listActions.html", []).run(["$templateCache", function($template
     "        </button>\n" +
     "    </div>\n" +
     "    <div class=\"leftActions floatLeft\" ng-show=\"isCreatable()\">\n" +
-    "        <button create-item-button class=\"addIcon\" ng-click=\"createItem()\"><label i18n=\"list.createItem\"></label></button>\n" +
+    "        <button create-item-button class=\"addIcon\" ng-click=\"createItem()\"\n" +
+    "                collection=\"collection\" on-create=\"createItem($item)\">\n" +
+    "            <label i18n=\"list.createItem\"></label>\n" +
+    "        </button>\n" +
     "    </div>\n" +
     "    <div class=\"rightActions floatRight getPage\" ng-show=\"showPrevPageLink()||showNextPageLink()\">\n" +
     "        <button class=\"getPrevPage\" ng-click=\"getPrevPage()\" ng-show=\"showPrevPageLink()\">&lt;</button>\n" +

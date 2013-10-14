@@ -17,6 +17,9 @@ function ($rootScope, mediaService, constantsService) {
             scope.projection        = { data: 0 };
             scope.searchTargets     = ['name'];
             scope.onSelectPanels    = [{ title: 'Edit media', type: 'editMedia'}];
+            scope.template          = '<img ng-src="{{transcludedData.getDownloadUrl(item)}}" ' +
+                                      'title="{{transcludedData.getMediaTitle(item)}}" ' +
+                                      'class="cursorPointer" edit-on-click="true" />';
 
             scope.$watch('config', function(newConfig) {
                 if(newConfig && !newConfig.columns) {
@@ -29,24 +32,9 @@ function ($rootScope, mediaService, constantsService) {
                 scope.$apply();
             };
 
-            scope.onSelectMedia = function (item, index, selectable) {
-                if (!selectable) { //Show the popup just if the item is not selectable
-                    scope.popupMediaIndex = index;
-                }
-                if (scope.onSelect) { scope.onSelect({$item: item}); }
-            };
-
             scope.transcludedData = {};
             scope.transcludedData.getDownloadUrl = function (media) {
                 return mediaService.getDownloadUrl(media);
-            };
-
-            scope.transcludedData.getMediaHtmlDetails = function (media) {
-                return mediaService.getMediaHtmlDetails(media);
-            };
-
-            scope.transcludedData.showMediaPopup = function (index) {
-                scope.popupMediaIndex = index;
             };
 
             scope.transcludedData.getMediaTitle = function (media) {

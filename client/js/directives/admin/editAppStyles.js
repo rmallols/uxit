@@ -6,7 +6,7 @@ COMPONENTS.directive('editAppStyles', [function () {
 		templateUrl: 'editAppStyles.html',
         scope: {
             model       : '=',
-            onLayerSave : '='
+            onLayer : '='
         }
 	};
 }]);

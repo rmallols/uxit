@@ -9,7 +9,7 @@
             replace: true,
             templateUrl: 'editPages.html',
             scope: {
-                onLayerSave : '='
+                onLayer : '='
             },
             link: function link(scope) {
 
@@ -93,7 +93,7 @@
                     }, 0);
                 };
 
-                scope.onLayerSave = function (callback) {
+                scope.onLayer.save = function (callback) {
                     savePages(function () {
                         var currentPageIndex = getCurrentPageIndex();
                         $location.path($routeParams.portal + '/' + scope.pages[currentPageIndex].url);

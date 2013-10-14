@@ -83,11 +83,6 @@
             if (!scope.model.navigationPos) {
                 scope.model.navigationPos = scope.navigationPos[0].value;
             }
-            //noinspection JSUnresolvedVariable
-
-            scope.onLayerSave = function (callback) {
-
-            };
         }
 
         function onEditSave(scope, callback) {

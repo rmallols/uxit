@@ -7,7 +7,10 @@
         </button>
     </div>
     <div class="leftActions floatLeft" ng-show="isCreatable()">
-        <button create-item-button class="addIcon" ng-click="createItem()"><label i18n="list.createItem"></label></button>
+        <button create-item-button class="addIcon" ng-click="createItem()"
+                collection="collection" on-create="createItem($item)">
+            <label i18n="list.createItem"></label>
+        </button>
     </div>
     <div class="rightActions floatRight getPage" ng-show="showPrevPageLink()||showNextPageLink()">
         <button class="getPrevPage" ng-click="getPrevPage()" ng-show="showPrevPageLink()">&lt;</button>

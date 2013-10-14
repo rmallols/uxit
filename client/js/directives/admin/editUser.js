@@ -7,7 +7,7 @@ function ($routeParams, userService, mediaService, tagService, roleService, i18n
         templateUrl: 'editUser.html',
         scope: {
             user        : '=model',
-            onLayerSave : '='
+            onLayer     : '='
         },
         link: function link(scope) {
             scope.availableTags = tagService.getTags();
@@ -22,7 +22,7 @@ function ($routeParams, userService, mediaService, tagService, roleService, i18n
                     scope.user.media = {};
                 }
             }
-            scope.onLayerSave = function (callback) {
+            scope.onLayer.save = function (callback) {
                 userService.updateUser(scope.user, function (result) {
                     callback(result);
                 });

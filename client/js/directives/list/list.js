@@ -1,70 +1,112 @@
 (function (Math, Number, COMPONENTS) {
     'use strict';
-    COMPONENTS.directive('list', ['$rootScope', '$location', 'rowService', 'listService',
-    function ($rootScope, $location, rowService, listService) {
+    COMPONENTS.directive('list', ['$rootScope', '$location', '$compile', '$timeout', 'rowService', 'listService', 'listSelectService',
+    'roleService', 'sessionService', 'objectService', 'tooltipService',
+    function ($rootScope, $location, $compile, $timeout, rowService, listService, listSelectService,
+              roleService, sessionService, objectService, tooltipService) {
         return {
             restrict: 'A',
             replace: true,
             transclude: true,
             templateUrl: 'list.html',
             scope : {
-                _id             : '=id',   //???
-                collection      : '=',
                 items           : '=list',
+                collection      : '=',
                 config          : '=',
                 projection      : '=',
-                searchTargets   : '=',
-                template        : '=',
+                currentPage     : '=',
                 transcludedData : '=',
                 onSelectPanels  : '=',
-                onSelect        : '&'
+                template        : '=',
+                onSelect        : '&',
+                onCreate        : '&',
+                onDelete        : '&',
+                onSearch        : '&',
+                dbSource        : '@'
             },
-            link: function link(scope) {
+            link: function link(scope, element) {
 
-                console.log("WE NEED TO STORE SEARCH AND CURRENTPAGE IN AN OBJECT EACH IN ORDER TO ALLOW SENDING IT FROM THE LIST-ARRAY AND SO APPLY A WATCH AND AVOID FOR INSTANCE THE EXECUTESEARCH() METHOD THERE")
-                scope.search = {
-                   text: ''
+                var userSession = sessionService.getUserSession();
+
+                scope.isPageActionsTop = function () {
+                    var pageActionPos = listService.getDefaultValue('pageActionPos', scope.config),
+                        normalizedPageActionPos = Number(pageActionPos);
+                    return normalizedPageActionPos === 0 || normalizedPageActionPos === 2;
                 };
-                scope.currentPage = 0;
 
-                console.log("SEET!");
+                scope.isPageActionsBottom = function () {
+                    var pageActionPos = listService.getDefaultValue('pageActionPos', scope.config),
+                        normalizedPageActionPos = Number(pageActionPos);
+                    return normalizedPageActionPos === 1 || normalizedPageActionPos === 2;
+                };
 
-                setTimeout(function() {
-                       console.log("AA", scope.searchText)
-                }, 1000)
+                scope.select = function (item) {
+                    listSelectService.selectItem(scope, item);
+                };
 
-                scope.loadList = function () {
-                    var options = {
-                        collection      : scope.collection,
-                        searchText      : scope.searchText,
-                        searchTargets   : scope.searchTargets,
-                        currentPage     : scope.currentPage,
-                        pageSize        : listService.getDefaultValue('pageSize', scope.config),
-                        skip            : listService.getDefaultValue('skip', scope.config),
-                        sort            : listService.getDefaultValue('sort', scope.config),
-                        projection      : scope.projection
-                    };
-                    listService.loadList(options, function(list) {
-                        scope.totalSize = list.totalSize;
-                        scope.items = list.results;
-                    });
+                scope.unselect = function (item) {
+                    listSelectService.unselectItem(scope, item);
+                };
+
+                scope.clickOnItem = function (item, $index, $event, editOnSelect) {
+                    listSelectService.clickOnItem(scope, element, item, $index, $event, editOnSelect);
+                };
+
+                scope.getWrapperClass = function () {
+                    var isSelectable    = (scope.isSelectable()) ? 'selectable' : '',
+                        isEditable      = (scope.isEditable()) ? 'editable' : '';
+                    return isSelectable +  ' '  + isEditable;
+                };
+
+                scope.getItemStyleClasses = function (item) {
+                    var maxColSize = rowService.getMaxSlots(),
+                        columnWidth = (scope.config.columns) ? Math.floor(maxColSize / scope.config.columns) : maxColSize,
+                        viewMode = (scope.detailId) ? 'detailView': 'listView';
+                    return 'large-' + columnWidth + ' ' + viewMode + ' ' + (item.isSelected ? 'active' : '');
+                };
+
+                scope.createItem = function(item) {
+                    scope.onCreate({$item: item});
                 };
 
                 scope.deleteItem = function (id) {
-                    listService.deleteItem(scope.collection, id);
-                    scope.loadList();
+                    listSelectService.dropFromSelectedList(scope, id);
+                    tooltipService.hide();
+                    scope.onDelete({$id: id});
                 };
 
-                //Load the list just once some meaningful data is provided as otherwise the current directive
-                //could try to get data before it's provided from the invoking function
-                scope.$watch('collection', function () {
-                    scope.loadList();
-                    //Reload changes everytime the change flag is received
-                    $rootScope.$on(scope.collection + 'Changed', function () { scope.loadList(); });
+                scope.deleteDetailId = function() {
+                    $location.search('detailId', null);
+                };
+
+                scope.isSearchable = function () { return listService.getDefaultValue('searchable', scope.config); };
+                scope.isSelectable = function () { return scope.isSingleSelectable() || scope.isMultiSelectable(); };
+                scope.isSingleSelectable = function () { return allowIfHasAdminRole(scope.config.selectable); };
+                scope.isMultiSelectable = function () { return allowIfHasAdminRole(scope.config.multiSelectable); };
+                scope.isEditable = function () { return allowIfHasAdminRole(scope.config.editable); };
+                scope.isDeletable = function () { return allowIfHasAdminRole(scope.config.deletable); };
+                scope.isCreatable = function () { return allowIfHasAdminRole(scope.config.creatable); };
+
+                scope.getFilter = function() {
+                    return (scope.dbSource == 'true') ? '' : scope.searchText;
+                };
+
+                scope.executeSearch = function() {
+                    scope.onSearch({$text: scope.searchText});
+                };
+
+                scope.page = 0;
+                if(scope.currentPage !== undefined) { scope.currentPage = scope.page; }
+
+                listService.setDetailId(scope, $location.search().detailId);
+                scope.$on('$routeUpdate', function(){
+                    listService.setDetailId(scope, $location.search().detailId);
                 });
 
                 /** Private methods **/
+                function allowIfHasAdminRole(action) { return (isAdmin()) ? action : false; }
 
+                function isAdmin() { return roleService.hasAdminRole(userSession); }
                 /** End of private methods **/
             }
         };

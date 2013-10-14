@@ -54,7 +54,7 @@
                         var targetObj = $('> .header > .actions > .editIcon', element);
                         scope.panels = getEditPanels();
                         scope.onSave = function () {
-                            if (scope.onLayerSave) { scope.onLayerSave(); }
+                            if (scope.onLayer && scope.onLayer.save) { scope.onLayer.save(); }
                             pageService.updateCurrentPage(null);
                             portalService.updatePortal(null);
                         };

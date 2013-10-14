@@ -1,43 +1,9 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('listService', ['crudService', 'dbService', 'i18nService', 'objectService',
-    function (crudService, dbService, i18nService, objectService) {
+    COMPONENTS.factory('listService', [function () {
 
         var defaultOptions = {  pageSize: 10, skip: 0, pageActionPos: 2, searchable : true,
                                 sort: { field: 'create.date', order : '1' } };
-
-        /**
-         * Gets a list of items from a given collection
-         *
-         * @param {object}      options     The settings that will define the query to execute (collection, filters...)
-         * @param {function}    callback    The function to execute once the list has been loaded
-         */
-        function loadList(options, callback) {
-            var filter = {
-                q           :   { $and: [
-                                    { $or: getFilterOptions(options.searchText, options.searchTargets) },
-                                    { $or: getTagOptions(options.tags) }
-                                ]},
-                currentPage :   options.currentPage,
-                pageSize    :   options.pageSize,
-                skip        :   options.skip,
-                sort        :   options.sort,
-                projection  :   options.projection
-            };
-            crudService.get(options.collection, null, filter, function (list) {
-                if(callback) { callback(list); }
-            });
-        }
-
-        /**
-         * Deletes an item from the list
-         *
-         * @param {string} collection   The collection where the item to be removed is
-         * @param {string} itemId       The Id of the item that is going to be removed
-         */
-        function deleteItem(collection, itemId) {
-            crudService.delete(collection, itemId, null);
-        }
 
         /**
          * Gets the default value of a given property
@@ -47,7 +13,7 @@
          * @returns {*}             The default value of the given property
          */
         function getDefaultValue(prop, config) {
-            return (!objectService.isEmpty(config[prop])) ? config[prop] : defaultOptions[prop];
+            return (config[prop] !== undefined) ? config[prop] : defaultOptions[prop];
         }
 
         /**
@@ -60,35 +26,7 @@
             listScope.detailId = detailId;
         }
 
-        /** Private methods **/
-        function getFilterOptions(searchText, searchTargets) {
-            var filterOptions = [], currentLanguage = i18nService.getCurrentLanguage(),
-                inexactSelector = dbService.getInexactSelector(searchText);
-            searchTargets.forEach(function (searchTarget) {
-                var filterOption = {}, i18nFilterOption = {}, i18nSearchTarget;
-                filterOption[searchTarget] = inexactSelector;
-                filterOptions.push(filterOption);     //Add plain text filter
-                i18nSearchTarget = searchTarget + '.' + currentLanguage + '.text';
-                i18nFilterOption[i18nSearchTarget] = inexactSelector;
-                filterOptions.push(i18nFilterOption); //Add i18n text filter
-            });
-            return filterOptions;
-        }
-
-        function getTagOptions(tags) {
-            var tagOptions = [];
-            if (tags) {
-                tags.forEach(function (tag) {
-                    tagOptions[tagOptions.length] = { tag: tag };
-                });
-            }
-            return tagOptions;
-        }
-        /** End of private methods **/
-
         return {
-            loadList : loadList,
-            deleteItem: deleteItem,
             setDetailId: setDetailId,
             getDefaultValue: getDefaultValue
         };

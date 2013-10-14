@@ -7,7 +7,7 @@
             templateUrl: 'editUser.html',
             scope : {
                 user : '=model',
-                onLayerSave : '='
+                onLayer : '='
             },
             link: function link(scope) {
                 scope.availableTags     = tagService.getTags();

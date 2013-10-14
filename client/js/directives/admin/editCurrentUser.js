@@ -7,13 +7,13 @@ function ($rootScope, userService, sessionService) {
         templateUrl: 'editCurrentUser.html',
         scope: {
             model: '=',
-            onLayerSave : '='
+            onLayer : '='
         },
         link: function link(scope) {
 
             scope.userSession = sessionService.getUserSession();
 
-            scope.onLayerSave = function (callback) {
+            scope.onLayer.save = function (callback) {
                 userService.updateUser(scope.userSession, function () {
                     callback();
                 });

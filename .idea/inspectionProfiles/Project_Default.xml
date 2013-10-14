@@ -5,7 +5,7 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="53">
+          <list size="63">
             <item index="0" class="java.lang.String" itemvalue="ng-app" />
             <item index="1" class="java.lang.String" itemvalue="ng-view" />
             <item index="2" class="java.lang.String" itemvalue="i18n" />
@@ -59,6 +59,16 @@
             <item index="50" class="java.lang.String" itemvalue="on-delete" />
             <item index="51" class="java.lang.String" itemvalue="on-select-panels" />
             <item index="52" class="java.lang.String" itemvalue="internal-data" />
+            <item index="53" class="java.lang.String" itemvalue="list-db" />
+            <item index="54" class="java.lang.String" itemvalue="list" />
+            <item index="55" class="java.lang.String" itemvalue="ng-repeat" />
+            <item index="56" class="java.lang.String" itemvalue="template" />
+            <item index="57" class="java.lang.String" itemvalue="collection" />
+            <item index="58" class="java.lang.String" itemvalue="search-targets" />
+            <item index="59" class="java.lang.String" itemvalue="on-create" />
+            <item index="60" class="java.lang.String" itemvalue="ng-src" />
+            <item index="61" class="java.lang.String" itemvalue="ng-bind-html-unsafe" />
+            <item index="62" class="java.lang.String" itemvalue="transcluded-data" />
           </list>
         </value>
       </option>

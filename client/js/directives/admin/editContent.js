@@ -6,11 +6,11 @@ COMPONENTS.directive('editContent', ['contentService', 'tagService', function (c
         templateUrl: 'editContent.html',
         scope: {
             content     : '=model',
-            onLayerSave : '='
+            onLayer : '='
         },
         link: function link(scope) {
             scope.availableTags = tagService.getTags();
-            scope.onLayerSave = function (callback) {
+            scope.onLayer.save = function (callback) {
                 contentService.updateContent(scope.content, function () {
                     callback();
                 });
