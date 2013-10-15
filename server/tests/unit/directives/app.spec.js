@@ -3,13 +3,13 @@ describe('app directive', function () {
     var $rootScope, $scope, $compile, $httpBackend, appDirective, data, sessionService, roleService;
 
     beforeEach(module('components', 'templates-main', 'mocks.$timeout'));
-    beforeEach(inject(["$rootScope", "$compile", "$document", "$httpBackend", "portalService", "pageService", "roleService", "sessionService", "availableAppsService",
-    function ($rootScope_, $compile_, $document_, $httpBackend_, portalService_, pageService_, roleService_, sessionService_, availableAppsService_) {
+    beforeEach(inject(["$rootScope", "$compile", "$httpBackend", "portalService", "pageService", "roleService", "sessionService", "availableAppsService",
+    function ($rootScope_, $compile_, $httpBackend_, portalService_, pageService_, roleService_, sessionService_, availableAppsService_) {
         var template;
         $rootScope      = $rootScope_;
         $httpBackend    = $httpBackend_;
         $scope          = $rootScope.$new();
-        $compile        = compileFn($compile_, $scope/*, $document_*/);
+        $compile        = compileFn($compile_, $scope);
         sessionService  = sessionService_;
         roleService     = roleService_;
         loadRoles($httpBackend, roleService, null);

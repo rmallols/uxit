@@ -4,14 +4,13 @@ describe('app directive', function () {
         actionsPos, templateText;
 
     beforeEach(module('components', 'templates-main', 'mocks.$timeout'));
-    beforeEach(inject(["$rootScope", "$compile", "$document", "$httpBackend", "roleService",
-    "sessionService",
-    function ($rootScope_, $compile_, $document_, $httpBackend_, roleService_, sessionService_) {
+    beforeEach(inject(["$rootScope", "$compile", "$httpBackend", "roleService", "sessionService",
+    function ($rootScope_, $compile_, $httpBackend_, roleService_, sessionService_) {
         var template;
         $rootScope      = $rootScope_;
         $httpBackend    = $httpBackend_;
         $scope          = $rootScope.$new();
-        $compile        = compileFn($compile_, $scope/*, $document_*/);
+        $compile        = compileFn($compile_, $scope);
         roleService     = roleService_;
         sessionService  = sessionService_;
         $scope.config   = {};

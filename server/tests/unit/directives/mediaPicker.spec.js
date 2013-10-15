@@ -3,12 +3,12 @@ describe('mediaPicker directive', function () {
     var $rootScope, $scope, $compile, $timeout, compile, template, objectService;
 
     beforeEach(module('components', 'templates-main', 'mocks.$timeout'));
-    beforeEach(inject(["$rootScope", "$compile", "$document", "objectService", "$timeout",
-    function ($rootScope_, $compile_, $document_, objectService_, $timeout_) {
+    beforeEach(inject(["$rootScope", "$compile", "objectService", "$timeout",
+    function ($rootScope_, $compile_, objectService_, $timeout_) {
         $rootScope      = $rootScope_;
         $scope          = $rootScope_.$new();
         $timeout        = $timeout_;
-        compile         = compileFn($compile_, $scope, $document_);
+        compile         = compileFn($compile_, $scope);
         template        = '<media-picker preview="{{preview}}" ng-model="user.media" default-media-url="defaultAvatarUrl"></media-picker>';
     }]));
 

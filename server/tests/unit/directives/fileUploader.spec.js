@@ -3,10 +3,10 @@ describe('fileuploader directive', function () {
     var $rootScope, $scope, $compile;
 
     beforeEach(module('components', 'templates-main', 'mocks.$timeout'));
-    beforeEach(inject(["$rootScope", "$compile", "$document", function ($rootScope_, $compile_, $document_) {
+    beforeEach(inject(["$rootScope", "$compile", function ($rootScope_, $compile_) {
         $rootScope      = $rootScope_;
         $scope          = $rootScope.$new();
-        $compile        = compileFn($compile_, $scope, $document_);
+        $compile        = compileFn($compile_, $scope);
     }]));
 
     describe('root element', function () {

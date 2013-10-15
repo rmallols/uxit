@@ -3,13 +3,13 @@ describe('bannerCanvas directive', function () {
     var $rootScope, $scope, $compile, bannerCanvasDirective, gridSize = 50, model;
 
     beforeEach(module('components', 'templates-main', 'mocks.$timeout'));
-    beforeEach(inject(["$rootScope", "$compile", "$document", function ($rootScope_, $compile_, $document_) {
+    beforeEach(inject(["$rootScope", "$compile", function ($rootScope_, $compile_) {
         var template            = '<div banner-canvas ng-model="model" style="height: 320px;"></div>';
         model                   = [{"id":1380531241893,"type":"text","value":"sample test","size":{"width":100,"height":100},"position":{"top":50,"left":300}}];
         $rootScope              = $rootScope_;
         $scope                  = $rootScope.$new();
         $scope.model            = model;
-        $compile                = compileFn($compile_, $scope, $document_);
+        $compile                = compileFn($compile_, $scope);
         bannerCanvasDirective   = $compile(template);
         $rootScope.$digest();
     }]));

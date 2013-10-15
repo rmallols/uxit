@@ -3,11 +3,11 @@ describe('caret service', function () {
     var $rootScope, $scope, $compile, caretService;
 
     beforeEach(module('components', 'templates-main', 'mocks.$timeout'));
-    beforeEach(inject(["$rootScope", "$compile", "$document", "caretService",
-    function ($rootScope_, $compile_, $document_, caretService_) {
+    beforeEach(inject(["$rootScope", "$compile", "caretService",
+    function ($rootScope_, $compile_, caretService_) {
         $rootScope      = $rootScope_;
         $scope          = $rootScope.$new();
-        $compile        = compileFn($compile_, $scope, $document_);
+        $compile        = compileFn($compile_, $scope);
         caretService    = caretService_;
     }]));
 

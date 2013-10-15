@@ -3,11 +3,11 @@ describe('tooltip directive and service', function () {
     var $rootScope, $scope, $compile, tS, iS, template, titleDirective, tooltipObj;
 
     beforeEach(module('components', 'mocks.$timeout'));
-    beforeEach(inject(["$rootScope", "$compile", "$document", "tooltipService", "i18nService",
-    function ($rootScope_, $compile_, $document_, tooltipService_, i18nService_) {
+    beforeEach(inject(["$rootScope", "$compile", "tooltipService", "i18nService",
+    function ($rootScope_, $compile_, tooltipService_, i18nService_) {
         $rootScope      = $rootScope_;
         $scope          = $rootScope.$new();
-        $compile        = compileFn($compile_, $scope, $document_);
+        $compile        = compileFn($compile_, $scope);
         tS              = tooltipService_;
         iS              = i18nService_;
     }]));
