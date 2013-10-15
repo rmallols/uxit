@@ -26,8 +26,6 @@
             },
             link: function link(scope, element) {
 
-                var userSession = sessionService.getUserSession();
-
                 scope.isPageActionsTop = function () {
                     var pageActionPos = listService.getDefaultValue('pageActionPos', scope.config),
                         normalizedPageActionPos = Number(pageActionPos);
@@ -106,7 +104,10 @@
                 /** Private methods **/
                 function allowIfHasAdminRole(action) { return (isAdmin()) ? action : false; }
 
-                function isAdmin() { return roleService.hasAdminRole(userSession); }
+                function isAdmin() {
+                    var userSession = sessionService.getUserSession();
+                    return roleService.hasAdminRole(userSession);
+                }
                 /** End of private methods **/
             }
         };

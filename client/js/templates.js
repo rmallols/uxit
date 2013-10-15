@@ -1322,7 +1322,7 @@ angular.module("list.html", []).run(["$templateCache", function($templateCache) 
     "            <label i18n=\"list.deleteItem\"></label>\n" +
     "        </button>\n" +
     "    </div>\n" +
-    "    <a href=\"#\" ng-show=\"detailId\" ng-click=\"deleteDetailId()\" class=\"floatRight\">\n" +
+    "    <a href=\"#\" class=\"detailArea floatRight\" ng-show=\"detailId\" ng-click=\"deleteDetailId()\">\n" +
     "        &lt;&lt; <label i18n=\"list.goBack\"></label>\n" +
     "    </a>\n" +
     "    <div ng-show=\"isPageActionsBottom()\" list-actions class=\"bottom\" collection=\"collection\"></div>\n" +

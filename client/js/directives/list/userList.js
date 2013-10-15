@@ -18,7 +18,7 @@ function ($rootScope, mediaService, userService, constantsService, listDbService
             scope.transcludedData.getUserAvatarUrl = getUserAvatarUrl;
             scope.template = getTemplate();
             $rootScope.$on(scope.collection + 'Changed', function () { loadUserList(); });
-
+            scope.config.pageActionPos = 0;
             /** Private methods**/
             function getUserList() {
                 scope.userList = userService.getUsers();
