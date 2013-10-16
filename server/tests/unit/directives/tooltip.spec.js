@@ -55,8 +55,8 @@ describe('tooltip directive and service', function () {
         iS.changeLanguage('en');
         tS.show(titleDirective);
         expect(tooltipObj.text()).toBe('test value');
-        iS.changeLanguage('es');
         tS.hide();
+        iS.changeLanguage('es');
         $scope.$digest();
         tS.show(titleDirective);
         expect(tooltipObj.text()).toBe('test valor');
@@ -74,8 +74,8 @@ describe('tooltip directive and service', function () {
         tS.hide();
         titleDirective.click();
         $scope.$digest();
-        expect(tooltipObj.text()).toBe('[areYouSure]');
         tS.hide();
+        expect(tooltipObj.text()).toBe('[areYouSure]');
         iS.changeLanguage('es');
         $scope.$digest();
         tS.show(titleDirective);
