@@ -1,6 +1,18 @@
 (function (COMPONENTS) {
     'use strict';
-    COMPONENTS.factory('dbService', [function () {
+    COMPONENTS.factory('dbService', ['crudService', function (crudService) {
+
+        /**
+         * Gets all the databases available in the system
+         *
+         */
+        function getDatabases(callback) {
+            crudService.getDatabases(function(databases) {
+                if(callback) {
+                    callback(databases);
+                }
+            })
+        }
 
         /**
          * Generates a database selector that will execute an insesitive search based on the given selector
@@ -25,6 +37,7 @@
         }
 
         return {
+            getDatabases: getDatabases,
             getInsensitiveSelector: getInsensitiveSelector,
             getInexactSelector: getInexactSelector
         };

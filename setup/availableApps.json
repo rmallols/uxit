@@ -315,5 +315,19 @@
         "noCustomEditPanel": false,
         "defaultModel": { "slides": [ { "content": "Hello!" }, { "content": "Slides!" } ] },
         "avgRating": ""
+    },
+    {
+        "id"                : "portalsAdminApp",
+        "title"	    		: "Portals admin app",
+        "desc"	            : "",
+        "disabled"          : false,
+        "provider"          : "",
+        "category"          : "",
+        "avgRating"         : "",
+        "version"           : "1.0",
+        "editPanels"        : null,
+        "noCustomEditPanel"	: false,
+        "defaultModel"      : {},
+        "collections"		: []
     }
 ]

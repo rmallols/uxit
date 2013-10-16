@@ -45,6 +45,12 @@ app.post('/rest/getSession', function (req, res) {
     });
 });
 
+app.get('/rest/getDatabases', checkAuth, function (req, res) {
+    crudService.getDatabases(req.session, function (result) {
+        res.send(result)
+    });
+});
+
 app.get('/logout', function (req, res) {
     crudService.logout(req.session, function() {
         res.redirect('/login');

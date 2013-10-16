@@ -5,9 +5,16 @@ module.exports = {
 
     _initializedCollectionsCounter: 0,
 
-    connect: function () {
-        var databaseUrl = "uxit";
-        this.dbConnection = require("mongojs").connect(databaseUrl);
+    connect: function (dbUrl) {
+        this.dbConnection = require("mongojs").connect(dbUrl);
+    },
+
+    runCommand: function(command, callback) {
+        var adminDbUrl = 'admin',
+            adminDbConnection = require("mongojs").connect(adminDbUrl);
+        adminDbConnection.runCommand(command, function(err, result) {
+            callback(err, result);
+        });
     },
 
     getDbConnection: function() {

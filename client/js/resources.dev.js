@@ -206,4 +206,5 @@ window.speed = 150;
     getScript('/client/apps/iframeApp/iframeAppService.js');
     getScript('/client/apps/languageSelectApp/languageSelectAppService.js');
     getScript('/client/apps/slidesApp/slidesAppService.js');
+    getScript('/client/apps/portalsAdminApp/portalsAdminAppService.js');
 }());

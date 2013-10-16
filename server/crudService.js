@@ -13,7 +13,7 @@ var dbService           = require("./dbService"),
     downloadService     = require("./crud/downloadService"),
     mediaService        = require("./crud/mediaService");
 
-dbService.connect();
+dbService.connect('uxit');
 
 dbService.initializeCollections(function() {
     getService.cacheResources();
@@ -93,6 +93,12 @@ module.exports = {
     logout: function(session, callback) {
         sessionService.logout(session, function () {
             callback({});
+        });
+    },
+
+    getDatabases: function(session, callback) {
+        dbService.runCommand({listDatabases:1}, function(err, result) {
+            callback(result);
         });
     }
 };

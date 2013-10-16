@@ -97,6 +97,23 @@
         }
 
         /**
+         * Retrieves the databases available in the system
+         *
+         * @param {function}    callback    The function that will be executed once the databases have been retrieved
+         */
+        function getDatabases(callback) {
+            ajaxService.ajax({
+                url     : '/rest/getDatabases',
+                method  : 'GET',
+                success	: function (databases) {
+                    if (callback) {
+                        callback(databases);
+                    }
+                }
+            });
+        }
+
+        /**
          * Retrieves the stats of a given resource
          *
          * @param {string}      collection  The name of the collection that will serve the stats about
@@ -165,6 +182,7 @@
             get         : get,
             update      : update,
             delete      : remove,
+            getDatabases: getDatabases,
             getStats    : getStats,
             rate        : rate,
             undeployApp : undeployApp
