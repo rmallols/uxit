@@ -19,11 +19,8 @@
         return {
             restrict: 'A',
             priority: -1,
-            compile: function (tElement, tAttrs) {
-                //noinspection JSUnresolvedVariable
-                if(tAttrs.confirmAction) {
-                    tAttrs.keepTitleOnTooltipHover = 'true';
-                }
+            compile: function () {
+
                 return function link(scope, element, attrs) {
 
                     var isDialog = false;
@@ -51,7 +48,7 @@
                     tooltipService.onClose(element, function() {
                         if(isDialog) {
                             isDialog = false;
-                            setTitle(attrs.title);
+                            initialize(attrs.title);
                             if(!$rootScope.$$phase) {
                                 scope.$apply();
                             }
@@ -59,27 +56,32 @@
                     });
 
                     $rootScope.$on('languageChanged', function () {
-                        setTitle(attrs.title);
+                        initialize(attrs.title);
                     });
 
                     /** Private methods **/
-                    function initialize(title, isHtml) {
-                        var customOptions = {};
-                        tooltipService.initialize(element, title, customOptions, isHtml);
-                    }
-
-                    function setTitle(newTitle) {
-                        tooltipService.setTitle(newTitle, element, false);
+                    function initialize(title, customOptions, isHtml) {
+                        var options = {
+                            fadeInTime: 0,
+                            fadeOutTime: 0,
+                            smartPlacement: true,
+                            mouseOnToPopup: true
+                        };
+                        angular.extend(options, customOptions);
+                        tooltipService.initialize(element, title, options, isHtml);
                     }
 
                     function showConfirmMessage() {
                         //noinspection JSUnresolvedVariable
                         var labelHtml   = '<label i18n="' + (attrs.confirmText || 'areYouSure') + '"></label>',
-                            buttonHtml  = '<button class="okIcon" ng-click="executeConfirmAction(\'' + attrs.confirmAction + '\')"></button>',
-                            messageHtml = '<div class="confirmText">' + labelHtml + buttonHtml + '</div>';
-                        var messageObj  = $compile($(messageHtml))(scope);
+                            ngClickFn   = 'executeConfirmAction(\'' + attrs.confirmAction + '\')',
+                            buttonHtml  = '<button class="okIcon" ng-click="' + ngClickFn + '"></button>',
+                            messageHtml = '<div class="confirmText">' + labelHtml + buttonHtml + '</div>',
+                            messageObj  = $compile($(messageHtml))(scope),
+                            customOptions = { manual: true };
                         scope.$apply();
-                        initialize(messageObj, true);
+                        tooltipService.hide();
+                        initialize(messageObj, customOptions, true);
                         tooltipService.show(element);
                         isDialog = true;
                     }
