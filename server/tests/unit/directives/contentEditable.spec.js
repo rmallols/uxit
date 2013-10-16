@@ -73,7 +73,7 @@ describe('caret service', function () {
 
         it('should show the actions area if the editable area is focused and the user has the proper permissions', function () {
             loadRoles($httpBackend, roleService, null);
-            loadUserSession($httpBackend, sessionService, true, null);
+            loadUserSession($httpBackend, sessionService, 3, null);
             var template =  '<div content-editable ng-model="content"></div>',
                 contentEditableDirective = $compile(template, { content: 'test content'}),
                 actionsArea, contentEditable;
@@ -87,7 +87,7 @@ describe('caret service', function () {
 
         it('should not show the actions area if the editable area was focused and blurred afterwards and the user has the proper permissions', function () {
             loadRoles($httpBackend, roleService, null);
-            loadUserSession($httpBackend, sessionService, true, null);
+            loadUserSession($httpBackend, sessionService, 3, null);
             var template =  '<div content-editable ng-model="content"></div>',
                 contentEditableDirective = $compile(template, { content: 'test content'}),
                 actionsArea, contentEditable;
@@ -136,7 +136,7 @@ describe('caret service', function () {
 
         it('should set the "editability" of the contenteditable element to true if the user is logged as admin', function () {
             loadRoles($httpBackend, roleService, null);
-            loadUserSession($httpBackend, sessionService, true, null);
+            loadUserSession($httpBackend, sessionService, 3, null);
             var template =  '<div content-editable ng-model="content"></div>',
                 contentEditableDirective = $compile(template, { content: 'test content'}),
                 contentEditable;
@@ -147,7 +147,7 @@ describe('caret service', function () {
 
         it('should set the "editability" of the contenteditable element to false if the user is logged as non admin', function () {
             loadRoles($httpBackend, roleService, null);
-            loadUserSession($httpBackend, sessionService, true, null);
+            loadUserSession($httpBackend, sessionService, 3, null);
             var useSession = sessionService.getUserSession();
             useSession.role = 2;
             var template =  '<div content-editable ng-model="content"></div>',
@@ -160,7 +160,7 @@ describe('caret service', function () {
 
         it('should set the "editability" of the contenteditable element to false if the user is logged as admin but the component is set as readonly', function () {
             loadRoles($httpBackend, roleService, null);
-            loadUserSession($httpBackend, sessionService, true, null);
+            loadUserSession($httpBackend, sessionService, 3, null);
             var template =  '<div content-editable ng-model="content" readonly></div>',
                 contentEditableDirective = $compile(template, { content: 'test content'}),
                 contentEditable;
@@ -171,7 +171,7 @@ describe('caret service', function () {
 
         it('should set the "editability" of the contenteditable element to false if the user is logged as admin but the component is set as disabled', function () {
             loadRoles($httpBackend, roleService, null);
-            loadUserSession($httpBackend, sessionService, true, null);
+            loadUserSession($httpBackend, sessionService, 3, null);
             var template =  '<div content-editable ng-model="content" disabled></div>',
                 contentEditableDirective = $compile(template, { content: 'test content'}),
                 contentEditable;

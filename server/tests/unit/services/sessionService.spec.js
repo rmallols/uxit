@@ -14,7 +14,7 @@
         describe('getUserSession', function () {
 
             it('Should return the current user session', function () {
-                loadUserSession($httpBackend, sessionService, true, null);
+                loadUserSession($httpBackend, sessionService, 3, null);
                 var userSession = sessionService.getUserSession();
                 expect(userSession._id).toBe('51421324e24e9dc015000001');
                 expect(userSession.language).toBe('en');
@@ -25,7 +25,7 @@
 
             it('Should add the session object to the given model', function () {
                 var model;
-                loadUserSession($httpBackend, sessionService, true, null);
+                loadUserSession($httpBackend, sessionService, 3, null);
                 model = { test: 'model', authorId: 'testAuthorId', create: {} };
                 sessionService.addSessionDataToModel(model);
                 expect(model.create.author._id).not.toBe(undefined);
@@ -34,7 +34,7 @@
 
             it('Should delete the authorId information from the given model', function () {
                 var model;
-                loadUserSession($httpBackend, sessionService, true, null);
+                loadUserSession($httpBackend, sessionService, 3, null);
                 model = { test: 'model', authorId: 'testAuthorId', create: {} };
                 sessionService.addSessionDataToModel(model);
                 expect(model.create.authorId).toBe(undefined);
@@ -45,14 +45,14 @@
 
             it('Should recognize the user is logged', function () {
                 var isLoggedUser;
-                loadUserSession($httpBackend, sessionService, true, null);
+                loadUserSession($httpBackend, sessionService, 3, null);
                 isLoggedUser = sessionService.isUserLogged();
                 expect(isLoggedUser).toBe(true);
             });
 
             it('Should recognize the user is not logged', function () {
                 var isLoggedUser;
-                loadUserSession($httpBackend, sessionService, false, null);
+                loadUserSession($httpBackend, sessionService, null, null);
                 isLoggedUser = sessionService.isUserLogged();
                 expect(isLoggedUser).toBe(false);
             });

@@ -7,7 +7,7 @@
         <div class="actions">
             <button class="editIcon" ng-click="showEditTemplate()" ng-show="showEditActions()" title="app.edit" i18n-title></button>
             <button class="fullscreenIcon" ng-click="toggleFullscreen()" ng-show="showAdminActions()" title="app.fullscreen"
-                    ng-disabled="templateApp=='true' && isTemplateFullscreen" i18n-title></button>
+                    ng-disabled="templateApp=='true' && isTemplateFullscreen" i18n-title>{{templateApp}}--{{isTemplateFullscreen}}</button>
             <button class="removeIcon" ng-click="removeApp()" ng-show="showAdminActions()" title="app.remove" i18n-title></button>
         </div>
     </div>

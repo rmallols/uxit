@@ -146,7 +146,7 @@ describe('app directive', function () {
             $scope.config.selectable = false;
             $scope.config.multiSelectable = true;
             $rootScope.$digest();
-            loadUserSession($httpBackend, sessionService, true, null);
+            loadUserSession($httpBackend, sessionService, 3, null);
             expect(isVisible($('.selectFromCheckbox', listDirective))).toBe(true);
         });
     });
@@ -174,7 +174,7 @@ describe('app directive', function () {
         'and the user has the proper privileges', function () {
             $scope.config.deletable = true;
             $rootScope.$digest();
-            loadUserSession($httpBackend, sessionService, true, null);
+            loadUserSession($httpBackend, sessionService, 3, null);
             expect(isVisible($('button.remove', listDirective))).toBe(true);
         });
     });

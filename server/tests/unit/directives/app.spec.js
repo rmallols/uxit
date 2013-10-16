@@ -3,8 +3,10 @@ describe('app directive', function () {
     var $rootScope, $scope, $compile, $httpBackend, appDirective, data, sessionService, roleService;
 
     beforeEach(module('components', 'templates-main', 'mocks.$timeout'));
-    beforeEach(inject(["$rootScope", "$compile", "$httpBackend", "portalService", "pageService", "roleService", "sessionService", "availableAppsService",
-    function ($rootScope_, $compile_, $httpBackend_, portalService_, pageService_, roleService_, sessionService_, availableAppsService_) {
+    beforeEach(inject(["$rootScope", "$compile", "$httpBackend", "portalService", "pageService",
+    "roleService", "sessionService", "availableAppsService",
+    function ($rootScope_, $compile_, $httpBackend_, portalService_, pageService_, roleService_,
+    sessionService_, availableAppsService_) {
         var template;
         $rootScope      = $rootScope_;
         $httpBackend    = $httpBackend_;
@@ -47,7 +49,7 @@ describe('app directive', function () {
         });
 
         it('should have an admin related class if the user has the proper privileges', function () {
-            loadUserSession($httpBackend, sessionService, true, null);
+            loadUserSession($httpBackend, sessionService, 3, null);
             expect(appDirective.hasClass('adminAccess')).toBe(true);
         });
     });

@@ -163,12 +163,12 @@ describe('roleService', function() {
     describe('getCurrentUserAdminAccessStyleClass', function() {
 
         it('should not retrieve any admin related class if the user doesn\'t have admin role', function() {
-            loadUserSession($httpBackend, sessionService, false, null);
+            loadUserSession($httpBackend, sessionService, null, null);
             expect(rS.getCurrentUserAdminAccessStyleClass()).toBe('');
         });
 
         it('should retrieve an admin related class if the user has admin role', function() {
-            loadUserSession($httpBackend, sessionService, true, null);
+            loadUserSession($httpBackend, sessionService, 3, null);
             expect(rS.getCurrentUserAdminAccessStyleClass()).toBe('adminAccess');
         });
     });

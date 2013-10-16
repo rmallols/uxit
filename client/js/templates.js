@@ -1112,7 +1112,7 @@ angular.module("appHeader.html", []).run(["$templateCache", function($templateCa
     "        <div class=\"actions\">\n" +
     "            <button class=\"editIcon\" ng-click=\"showEditTemplate()\" ng-show=\"showEditActions()\" title=\"app.edit\" i18n-title></button>\n" +
     "            <button class=\"fullscreenIcon\" ng-click=\"toggleFullscreen()\" ng-show=\"showAdminActions()\" title=\"app.fullscreen\"\n" +
-    "                    ng-disabled=\"templateApp=='true' && isTemplateFullscreen\" i18n-title></button>\n" +
+    "                    ng-disabled=\"templateApp=='true' && isTemplateFullscreen\" i18n-title>{{templateApp}}--{{isTemplateFullscreen}}</button>\n" +
     "            <button class=\"removeIcon\" ng-click=\"removeApp()\" ng-show=\"showAdminActions()\" title=\"app.remove\" i18n-title></button>\n" +
     "        </div>\n" +
     "    </div>\n" +

@@ -1,5 +1,5 @@
 'use strict';
-function loadUserSession($httpBackend, sessionService, isLogged, callback) {
+function loadUserSession($httpBackend, sessionService, role, callback) {
     var mockedLoggedResponse = {
             "_id": "51421324e24e9dc015000001",
             "createAuthorId": "511e68853bcdab0405000001",
@@ -9,11 +9,11 @@ function loadUserSession($httpBackend, sessionService, isLogged, callback) {
             "language": "en",
             "media": { "name": "ricardo_3.jpg" },
             "portalId": "uxitDev",
-            "role": 3,
+            "role": role,
             "tags": ["5228261dadf1c93400000001"]
         },
         mockedNonLoggedResponse = null,
-        response = (isLogged) ? mockedLoggedResponse: mockedNonLoggedResponse;
+        response = (role) ? mockedLoggedResponse: mockedNonLoggedResponse;
     $httpBackend.when('POST', '/rest/getSession/').respond(response);
     sessionService.loadUserSession(function (userSession) {
         if (callback) {
