@@ -71,7 +71,6 @@
                     email       : user.email,
                     role        : user.role,
                     language    : user.language,
-                    portalId    : $routeParams.portal,
                     tags        : user.tags
                 };
                 data.mediaId = (user.media && user.media._id) ? user.media._id : null;

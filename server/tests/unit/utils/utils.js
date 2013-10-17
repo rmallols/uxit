@@ -1,6 +1,6 @@
 'use strict';
 var routeParams = {
-    portal: 'uxitDev',
+    portal: 'testPortal',
     page: 'Home'
 }, NProgress = {
     configure: function(){},

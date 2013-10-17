@@ -16,7 +16,8 @@
                 searchTargets   : '=',
                 template        : '=',
                 transcludedData : '=',
-                onSelectPanels  : '=',
+                onCreatePanels  : '=',
+                onEditPanels    : '=',
                 onSelect        : '&'
             },
             link: function link(scope) {

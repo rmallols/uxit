@@ -11,7 +11,7 @@ function ($rootScope, mediaService, userService, constantsService, listDbService
 		link: function link(scope) {
             getUserList();
             scope.collection = constantsService.collections.users;
-            scope.onSelectPanels = [{ title: 'Edit users', type: 'editUser'}];
+            scope.onEditPanels = [{ title: 'Edit users', type: 'editUser'}];
             scope.onCreate = onCreate;
             scope.onDelete = onDelete;
             scope.transcludedData = {};

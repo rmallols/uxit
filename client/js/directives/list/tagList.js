@@ -8,10 +8,10 @@ COMPONENTS.directive('tagList', ['constantsService', function (constantsService)
             config: '='
         },
 		link: function link(scope) {
-            scope.items             = [];
-            scope.collection        = constantsService.collections.tags;
-            scope.searchTargets     = ['text'];
-            scope.onSelectPanels    = [{ title: 'Edit tag', type: 'editTag'}];
+            scope.items         = [];
+            scope.collection    = constantsService.collections.tags;
+            scope.searchTargets = ['text'];
+            scope.onEditPanels  = [{ title: 'Edit tag', type: 'editTag'}];
 		}
 	};
 }]);

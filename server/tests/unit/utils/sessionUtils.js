@@ -8,7 +8,7 @@ function loadUserSession($httpBackend, sessionService, role, callback) {
             "fullName": "Ricardo Mallols",
             "language": "en",
             "media": { "name": "ricardo_3.jpg" },
-            "portalId": "uxitDev",
+            "portalId": "testPortal",
             "role": role,
             "tags": ["5228261dadf1c93400000001"]
         },

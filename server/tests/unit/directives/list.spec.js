@@ -26,7 +26,7 @@ describe('app directive', function () {
         });
         template        = '<div list="roleList" collection="collection" config="config" ' +
                           'transcluded-data="transcludedData" template="template" ' +
-                          'internal-data="internalData" on-select-panels="onSelectPanels" ' +
+                          'internal-data="internalData" on-edit-panels="onEditPanels" ' +
                           'on-create="onCreate($item)" on-delete="onDelete($id)"></div>';
         listDirective    = $compile(template, {});
         $rootScope.$digest();

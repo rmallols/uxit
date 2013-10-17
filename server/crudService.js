@@ -13,16 +13,16 @@ var dbService           = require("./dbService"),
     downloadService     = require("./crud/downloadService"),
     mediaService        = require("./crud/mediaService");
 
-dbService.connect('uxit');
 
-dbService.initializeCollections(function() {
-    getService.cacheResources();
-});
 
 module.exports = {
 
+    createDbConnection: function(databaseId) {
+        dbService.connect(databaseId);
+    },
+
     create: function (collection, body, session, callback) {
-        createService.create(collection, body, session, callback);
+        createService.create(dbService.getDbConnection(), collection, body, session, callback);
     },
 
     //Give a special handling to the create user action as it requires password crypting
@@ -98,6 +98,12 @@ module.exports = {
 
     getDatabases: function(session, callback) {
         dbService.getDatabases(session, function(result) {
+            callback(result);
+        });
+    },
+
+    createDatabase: function(body, session, callback) {
+        dbService.createDatabase(body, session, function(result) {
             callback(result);
         });
     },

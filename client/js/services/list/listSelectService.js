@@ -122,7 +122,7 @@
         function showEditBox(listScope, element, item) {
             var targetObj = $('#' + item._id + ' > *:first-child', element);
             hideEditBox(); //Hide any other previous instance of the edit box component
-            listScope.panels = listScope.onSelectPanels;
+            listScope.panels = listScope.onEditPanels;
             listScope.model = item;
             listScope.onSave = function() { listScope.onEdit({$item: listScope.model}); };
             listScope.onClose = function () { listScope.unselect(item); };

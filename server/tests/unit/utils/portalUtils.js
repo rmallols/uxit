@@ -2,7 +2,7 @@
 function loadPortal($httpBackend, portalService, callback) {
     var mockedResponse = {
         "id"    : routeParams.portal,
-        "title"	: "UXIT dev",
+        "title"	: "Title of the portal",
         "desc"	: "This is the description of the portal!",
         "styles": {
             "background": ""

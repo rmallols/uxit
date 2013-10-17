@@ -29,12 +29,13 @@ function goToIndex(res) {
     res.sendfile(absPath + '/index.html');
 }
 
-app.post('/rest/login', function (req, res) {
+app.post('/:portalId/rest/login', function (req, res) {
+    crudService.createDbConnection(req.params.portalId);
     crudService.login(req.body, req.session, function(success) {
         if (success) {
-            res.redirect('/default'); //Redirect to user default portal
+            res.redirect(req.params.portalId); //Redirect to user default portal
         } else {
-            res.redirect('/login?error');
+            res.redirect(req.params.portalId + '/login?error');
         }
     });
 });
@@ -51,8 +52,13 @@ app.get('/rest/databases', checkAuth, function (req, res) {
     });
 });
 
+app.post('/rest/databases/create', checkAuth, function (req, res) {
+    crudService.createDatabase(req.body, req.session, function (result) {
+        res.send(result);
+    });
+});
+
 app.put('/rest/databases/:id/update', checkAuth, function (req, res) {
-    console.log("FIRST CHECK!", req.params.id, req.body);
     crudService.updateDatabase(req.params.id, req.body, req.session, function (result) {
         res.send(result);
     });
@@ -61,12 +67,6 @@ app.put('/rest/databases/:id/update', checkAuth, function (req, res) {
 app.delete('/rest/databases/:id/delete', checkAuth, function (req, res) {
     crudService.deleteDatabase(req.params.id, req.session, function (result) {
         res.send(result)
-    });
-});
-
-app.get('/logout', function (req, res) {
-    crudService.logout(req.session, function() {
-        res.redirect('/login');
     });
 });
 
@@ -182,13 +182,14 @@ app.get('/default', function (req, res) {
     });
 });
 
-app.get('/login', function (req, res) { goToIndex(res); });
+app.get('/:portalId/login', function (req, res) { goToIndex(res); });
 
 app.get('/error', function (req, res) { goToIndex(res); });
 
 app.get('/:portalId', function (req, res) {
-    existsPortal(req.params.portalId, function(existsPortal) {
+    existsPortal(req.params.portalId, req.session, function(existsPortal) {
         if(existsPortal) {
+            crudService.createDbConnection(req.params.portalId);
             var params = {
                 q : { position : 0 },
                 projection : { url: 1, type: 1, externalLinkUrl: 1}
@@ -206,8 +207,9 @@ app.get('/:portalId', function (req, res) {
 });
 
 app.get('/:portalId/:pageId', function (req, res) {
-    existsPortal(req.params.portalId, function(existsPortal) {
+    existsPortal(req.params.portalId, req.session, function(existsPortal) {
         if(existsPortal) {
+            crudService.createDbConnection(req.params.portalId);
             var params = {
                 q : { url : req.params.pageId },
                 projection : { url: 1, type: 1, externalLinkUrl: 1}
@@ -229,13 +231,15 @@ app.get('/:portalId/:pageId', function (req, res) {
     });
 });
 
-function existsPortal(portalId, callback) {
-    var params = {
-        q : { _id : portalId },
-        projection : { create: 1 }
-    };
-    crudService.getFirst(constantsService.collections.portal, params, function (firstPortal) {
-        if(callback) { callback(firstPortal !== null && firstPortal !== undefined); }
+function existsPortal(portalId, session, callback) {
+    var exists = false;
+    crudService.getDatabases(session, function(databases) {
+        databases.results.forEach(function(database) {
+            if(database.name === portalId) {
+                exists = true;
+            }
+        });
+        callback(exists);
     });
 }
 

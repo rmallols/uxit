@@ -16,12 +16,12 @@
                 url     : '/rest/' + collection + '/create',
                 data	: data,
                 method  : 'POST',
-                success	: function (newItem) {
+                success	: function (result) {
                     if (!blockBroadcastEvent) {
                         $rootScope.$broadcast(collection + 'Changed', 'create');
                     }
                     if (callback) {
-                        callback(newItem);
+                        callback(result);
                     }
                 }
             });

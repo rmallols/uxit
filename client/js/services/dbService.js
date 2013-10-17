@@ -18,10 +18,24 @@
         }
 
         /**
+         * Creates a databases available in the system
+         *
+         * @param {object}      data        The info of the database that is going to be created
+         * @param {function}    callback    The function that will be executed once the databases have been retrieved
+         */
+        function createDatabase(data, callback) {
+            crudService.create(databasesKey, data, function(databases) {
+                if(callback) {
+                    callback(databases);
+                }
+            })
+        }
+
+        /**
          * Updates the database available in the system
          *
          * @param {string}      databaseId  The id of the database that is going to be deleted
-         * @param {string}      data        The info of the database that is going to be updated
+         * @param {object}      data        The info of the database that is going to be updated
          * @param {function}    callback    The function that will be executed once the database have been updated
          */
         function updateDatabase(databaseId, data, callback) {
@@ -70,6 +84,7 @@
 
         return {
             getDatabases: getDatabases,
+            createDatabase: createDatabase,
             updateDatabase: updateDatabase,
             deleteDatabase: deleteDatabase,
             getInsensitiveSelector: getInsensitiveSelector,

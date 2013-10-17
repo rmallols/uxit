@@ -57,7 +57,7 @@
          * Closes the session of the current user
          */
         function logout() {
-            window.open('/' + $routeParams.portal + '/logout', '_self');
+            window.open('logout', '_self');
         }
 
         /** Private methods **/

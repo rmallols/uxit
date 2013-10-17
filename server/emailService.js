@@ -7,7 +7,7 @@ module.exports = {
 
     sendEmail: function (body, session, callback) {
         var params = { projection : { email: 1}}, data;
-        crudService.get(constantsService.collections.portal, session.user.portalId, params, function (portal) {
+        crudService.getFirst(constantsService.collections.portal, params, function (portal) {
             var server  = email.server.connect({
                 user        : portal.email.user,
                 password    : portal.email.password,

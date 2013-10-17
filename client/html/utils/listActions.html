@@ -7,8 +7,8 @@
         </button>
     </div>
     <div class="leftActions floatLeft" ng-show="isCreatable()">
-        <button create-item-button class="addIcon" ng-click="createItem()"
-                collection="collection" on-create="createItem($item)">
+        <button create-item-button class="addIcon" ng-click="createItem()" collection="collection"
+                on-create="createItem($item)" on-create-panels="onCreatePanels">
             <label i18n="list.createItem"></label>
         </button>
     </div>

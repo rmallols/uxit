@@ -48,25 +48,27 @@ module.exports = {
         }
 
         function createDocument(setupObj, callback) {
-            var data, query;
+            var data, query, dbConnection;
             data = setDbData(setupObj);
             query = { q: [{ text: setupObj.id, targets: ['id'] }] };
+            dbConnection = dbService.getDbConnection();
             getService.exists(constantsService.collections.availableApps, query, function (id) {
                 if (id) {
                     updateService.update(constantsService.collections.availableApps, id, data, session, callback);
                 } else {
                     data.avgRating = '';
-                    createService.create(constantsService.collections.availableApps, data, session, callback);
+                    createService.create(dbConnection, constantsService.collections.availableApps, data, session, callback);
                 }
             });
         }
 
         function createCollections(collections) {
+            var dbConnection = dbService.getDbConnection();
             collections.forEach(function (collection) {
                 // Create a capped collection with a maximum of 1000 documents
                 //noinspection JSUnresolvedFunction
                 dbService.getDbConnection().createCollection(collection, {capped: true, size: 10000, max: 1000, w: 1}, function (/*err, collection*/) {
-                    createService.create(collection, { hello: 'world' + Math.floor(Math.random()*11)}, session, callback);
+                    createService.create(dbConnection, collection, { hello: 'world' + Math.floor(Math.random()*11)}, session, callback);
                 });
             });
         }

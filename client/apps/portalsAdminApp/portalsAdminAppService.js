@@ -15,24 +15,25 @@
                 deletable       : true
             };
 
-            scope.onSelectPanels = [{   title: 'Edit database', type: 'editDb',
-                                        src:scope.src, view:'editDb', appBridge: true}];
-            scope.onCreate = onCreate;
-            scope.onEdit    = onEdit;
-            scope.onDelete = onDelete;
-            scope.transcludedData = {};
-            scope.template = getTemplate();
-            scope.config.pageActionPos = 0;
+            scope.onEditPanels      = [{ title: 'Edit database', type: 'editDb',
+                                         src:scope.src, view:'editDb', appBridge: true}];
+            scope.onCreatePanels    = [{ title: 'Edit database', type: 'createDb',
+                                         src:scope.src, view:'createDb', appBridge: true}];
+            scope.onCreate          = onCreate;
+            scope.onEdit            = onEdit;
+            scope.onDelete          = onDelete;
+            scope.template          = getTemplate();
+            scope.transcludedData   = {};
 
             /** Private methods**/
             function updateModel(databases) {
                 scope.databases = databases.results;
             }
 
-            function onCreate(user) {
-                /*userService.createUser(user, function() {
-                    loadUserList();
-                });*/
+            function onCreate(database) {
+                dbService.createDatabase(database, function(databases) {
+                    updateModel(databases);
+                });
             }
 
             function onEdit(database) {
@@ -52,13 +53,14 @@
                         '</div>'
             }
         }
+
+        function createDb(scope) {}
 		
-		function editDb(scope) {
-			console.log("hello portals admin editDb");
-        }
+		function editDb(scope) {}
 
         return {
             view: view,
+            createDb: createDb,
             editDb: editDb
         };
     }]);

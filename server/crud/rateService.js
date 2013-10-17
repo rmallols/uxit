@@ -1,8 +1,9 @@
 'use strict';
-var createService   = require("./createService");
-var countService    = require("./countService");
-var getService      = require("./getService");
-var updateService   = require("./updateService");
+var createService   = require("./createService"),
+    countService    = require("./countService"),
+    getService      = require("./getService"),
+    updateService   = require("./updateService"),
+    dbService       = require("../dbService");
 
 module.exports = {
     rate : function (collection, body, session, callback) {
@@ -15,7 +16,7 @@ module.exports = {
             if (document) {
                 updateService.update(collection, document._id, data, session, function () { updateAvgRating(document.rating); });
             } else {
-                createService.create(collection, data, session, function () { updateAvgRating(null); });
+                createService.create(dbService.getDbConnection(), collection, data, session, function () { updateAvgRating(null); });
             }
         });
 

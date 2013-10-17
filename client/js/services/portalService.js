@@ -7,26 +7,24 @@
 
         /**
          * Loads the current portal data in the context of a given page
-         * 
-         * @param {string}      portalId    The identifier of the portal which data is going to be retrieved
+         *
          * @param {string}      pageId      The identifier of the page which data is going to be retrieved
          * @param {function}    callback    The callback function to be executed once the process finishes
          */
-        function loadPortal(portalId, pageId, callback) {
+        function loadPortal(pageId, callback) {
             var bodyObj;
-            if (portalId) {
-                bodyObj = $('body');
-                domService.addLoadingFeedback(bodyObj);
-                crudService.get(constantsService.collections.portal, portalId, null, function (loadedPortal) {
-                    var pageModel = pageService.getPage(pageId);
-                    domService.removeLoadingFeedback(bodyObj);
-                    portal = loadedPortal;
-                    updatePageDataFromTemplate(portal, pageModel.rows);
-                    pageService.setCurrentPage(pageModel);
-                    $rootScope.$broadcast('portalLoaded');
-                    if (callback) { callback(portal); }
-                });
-            }
+            bodyObj = $('body');
+            domService.addLoadingFeedback(bodyObj);
+            crudService.get(constantsService.collections.portal, null, null, function (loadedPortal) {
+                console.log("X", loadedPortal);
+                var pageModel = pageService.getPage(pageId);
+                domService.removeLoadingFeedback(bodyObj);
+                portal = loadedPortal.results[0];
+                updatePageDataFromTemplate(portal, pageModel.rows);
+                pageService.setCurrentPage(pageModel);
+                $rootScope.$broadcast('portalLoaded');
+                if (callback) { callback(portal); }
+            });
         }
 
         /**
