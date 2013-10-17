@@ -6,9 +6,11 @@ module.exports = {
     addCreateSignature : function (body, session) {
         this.addSignature('create', body, session);
     },
+
     addUpdateSignature : function (body, session) {
         this.addSignature('update', body, session);
     },
+
     addSignature : function (event, body, session) {
         var currentDate = new Date();
         //Right now, we're skipping storing 'time' metadata because of chart / reporting incompatibility problems
@@ -20,6 +22,7 @@ module.exports = {
             authorId: session.user._id
         }
     },
+
     //Get the formatted of the mongodb collection, as it will usually be a native object id,
     //but in some specific situations, it could be a plain string (for instance, in the case of the portal names)
     getFormattedId: function (originalId) {
@@ -31,15 +34,19 @@ module.exports = {
         }
         return _id;
     },
+
     ne: function (str) {
         return { $ne: str };
     },
+
     like: function (str) {
         return new RegExp("^.*" + str + ".*", 'i');
     },
+
     insensitive: function (str) {
         return new RegExp("^" + str + "$", 'i');
     },
+
     //Normalize the way the model is going to be updated
     normalizeModel: function (body) {
         var key, updatedModel = {};
@@ -50,7 +57,15 @@ module.exports = {
         }
         return updatedModel;
     },
+
     isArray: function (item) {
         return Object.prototype.toString.call( item ) === '[object Array]';
+    },
+
+    normalizeQueryResultsFormat: function(results, totalSize) {
+        return {
+            totalSize   : totalSize || results.length,
+            results     : results
+        }
     }
 };

@@ -85,29 +85,12 @@
             ajaxService.ajax({
                 url     : '/rest/' + collection + '/' + id + '/delete',
                 method  : 'DELETE',
-                success	: function () {
+                success	: function (result) {
                     if (!blockBroadcastEvent) {
                         $rootScope.$broadcast(collection + 'Changed', id);
                     }
                     if (callback) {
-                        callback();
-                    }
-                }
-            });
-        }
-
-        /**
-         * Retrieves the databases available in the system
-         *
-         * @param {function}    callback    The function that will be executed once the databases have been retrieved
-         */
-        function getDatabases(callback) {
-            ajaxService.ajax({
-                url     : '/rest/getDatabases',
-                method  : 'GET',
-                success	: function (databases) {
-                    if (callback) {
-                        callback(databases);
+                        callback(result);
                     }
                 }
             });
@@ -178,14 +161,13 @@
         }
 
         return {
-            create      : create,
-            get         : get,
-            update      : update,
-            delete      : remove,
-            getDatabases: getDatabases,
-            getStats    : getStats,
-            rate        : rate,
-            undeployApp : undeployApp
+            create          : create,
+            get             : get,
+            update          : update,
+            delete          : remove,
+            getStats        : getStats,
+            rate            : rate,
+            undeployApp     : undeployApp
         };
     }]);
 })(window.COMPONENTS);

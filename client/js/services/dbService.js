@@ -2,14 +2,46 @@
     'use strict';
     COMPONENTS.factory('dbService', ['crudService', function (crudService) {
 
+        var databasesKey = 'databases';
+
         /**
-         * Gets all the databases available in the system
+         * Retrieves the databases available in the system
          *
+         * @param {function} callback The function that will be executed once the databases have been retrieved
          */
         function getDatabases(callback) {
-            crudService.getDatabases(function(databases) {
+            crudService.get(databasesKey, null, null, function(databases) {
                 if(callback) {
                     callback(databases);
+                }
+            })
+        }
+
+        /**
+         * Updates the database available in the system
+         *
+         * @param {string}      databaseId  The id of the database that is going to be deleted
+         * @param {string}      data        The info of the database that is going to be updated
+         * @param {function}    callback    The function that will be executed once the database have been updated
+         */
+        function updateDatabase(databaseId, data, callback) {
+            crudService.update(databasesKey, databaseId, data, function(result) {
+                if(callback) {
+                    callback(result);
+                }
+            })
+        }
+
+        /**
+         * Physically deletes a given database
+         *
+         * @param {string}      databaseId  The id of the database that is going to be deleted
+         * @param {function}    callback    The function that will be executed once the database have been deleted
+         */
+        function deleteDatabase(databaseId, callback) {
+            crudService.delete(databasesKey, databaseId, function(result) {
+                if(callback) {
+                    callback(result);
                 }
             })
         }
@@ -38,6 +70,8 @@
 
         return {
             getDatabases: getDatabases,
+            updateDatabase: updateDatabase,
+            deleteDatabase: deleteDatabase,
             getInsensitiveSelector: getInsensitiveSelector,
             getInexactSelector: getInexactSelector
         };

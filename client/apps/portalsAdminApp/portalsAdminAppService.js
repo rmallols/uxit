@@ -3,33 +3,31 @@
     COMPONENTS.service('portalsAdminAppService', ['dbService', function (dbService) {
 
         function view(scope) {
+
             dbService.getDatabases(function (databases) {
-                scope.databases = databases;
-                console.log("PASAR A ARRAY NORMALIZADO!");
-            })
+                updateModel(databases);
+            });
 
+            scope.config = {
+                multiSelectable : true,
+                creatable       : true,
+                editable        : true,
+                deletable       : true
+            };
 
-            //getUserList();
-            //scope.collection = constantsService.collections.users;
-            scope.config = {};
-            scope.onSelectPanels = [{ title: 'Edit users', type: 'editUser'}];
+            scope.onSelectPanels = [{   title: 'Edit database', type: 'editDb',
+                                        src:scope.src, view:'editDb', appBridge: true}];
             scope.onCreate = onCreate;
+            scope.onEdit    = onEdit;
             scope.onDelete = onDelete;
             scope.transcludedData = {};
-            //scope.transcludedData.getUserAvatarUrl = getUserAvatarUrl;
             scope.template = getTemplate();
-            //$rootScope.$on(scope.collection + 'Changed', function () { loadUserList(); });
             scope.config.pageActionPos = 0;
-            /** Private methods**/
-            /*function getUserList() {
-                scope.userList = userService.getUsers();
-            }*/
 
-            /*function loadUserList() {
-                userService.loadUsers(function(users) {
-                    scope.userList = users;
-                });
-            }*/
+            /** Private methods**/
+            function updateModel(databases) {
+                scope.databases = databases.results;
+            }
 
             function onCreate(user) {
                 /*userService.createUser(user, function() {
@@ -37,24 +35,31 @@
                 });*/
             }
 
-            function onDelete(userId) {
-                //listDbService.deleteItem(scope.collection, userId);
-                //loadUserList();
+            function onEdit(database) {
+                dbService.updateDatabase(database._id, database);
+            }
+
+            function onDelete(databaseId) {
+                dbService.deleteDatabase(databaseId, function(databases) {
+                    updateModel(databases);
+                });
             }
 
             function getTemplate() {
-                return  '<div class="columns large-25">{{item}}' +
+                return  '<div class="columns large-25">' +
+                            '<h5>{{item.name}}</h5>' +
+                            'Size on disk; {{item.sizeOnDisk}} - empty: {{item.empty}}' +
                         '</div>'
             }
         }
 		
-		function edit(scope) {
-			console.log("hello portals admin edit");
+		function editDb(scope) {
+			console.log("hello portals admin editDb");
         }
 
         return {
             view: view,
-			edit: edit
+            editDb: editDb
         };
     }]);
 })();

@@ -68,10 +68,7 @@ module.exports = {
                             cacheService.setJoins(document);
                         });
                     }
-                    callback({
-                        totalSize   : totalSize,
-                        results     : documents
-                    });
+                    callback(utilsService.normalizeQueryResultsFormat(documents, totalSize));
                 });
             });
         }

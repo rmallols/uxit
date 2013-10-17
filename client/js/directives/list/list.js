@@ -20,6 +20,7 @@
                 template        : '=',
                 onSelect        : '&',
                 onCreate        : '&',
+                onEdit          : '&',
                 onDelete        : '&',
                 onSearch        : '&',
                 dbSource        : '@'

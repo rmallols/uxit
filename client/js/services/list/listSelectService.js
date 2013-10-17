@@ -124,6 +124,7 @@
             hideEditBox(); //Hide any other previous instance of the edit box component
             listScope.panels = listScope.onSelectPanels;
             listScope.model = item;
+            listScope.onSave = function() { listScope.onEdit({$item: listScope.model}); };
             listScope.onClose = function () { listScope.unselect(item); };
             editBoxUtilsService.showEditBox(listScope, targetObj, targetObj);
         }

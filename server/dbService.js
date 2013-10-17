@@ -1,4 +1,6 @@
 'use strict';
+var utilsService = require("./utilsService");
+
 module.exports = {
 
     dbConnection: null,
@@ -9,11 +11,28 @@ module.exports = {
         this.dbConnection = require("mongojs").connect(dbUrl);
     },
 
-    runCommand: function(command, callback) {
-        var adminDbUrl = 'admin',
-            adminDbConnection = require("mongojs").connect(adminDbUrl);
-        adminDbConnection.runCommand(command, function(err, result) {
-            callback(err, result);
+    getDatabases: function(session, callback) {
+        this._runCommand({listDatabases: 1}, 'admin', function(err, result) {
+            var normalizedDbs = [];
+            //Convert results to an index-based array
+            result.databases.forEach(function(database) {
+                database._id = database.name; //Keep the normalized _id syntax
+                normalizedDbs.push(database);
+            });
+            callback(utilsService.normalizeQueryResultsFormat(normalizedDbs));
+        });
+    },
+
+    updateDatabase: function(databaseId, body, session, callback) {
+        console.log("UPDATING DATABASE!!!!", databaseId, body);
+    },
+
+    deleteDatabase: function(databaseId, session, callback) {
+        var self = this;
+        self._runCommand({dropDatabase: 1}, databaseId, function(/*err, result*/) {
+            self.getDatabases(session, function(result) {
+                callback(result);
+            });
         });
     },
 
@@ -34,6 +53,13 @@ module.exports = {
                     });
                 }
             });
+        });
+    },
+
+    _runCommand: function(command, databaseId, callback) {
+        var adminDbConnection = require("mongojs").connect(databaseId);
+        adminDbConnection.runCommand(command, function(err, result) {
+            callback(err, result);
         });
     },
 

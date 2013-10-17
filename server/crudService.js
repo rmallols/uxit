@@ -97,7 +97,19 @@ module.exports = {
     },
 
     getDatabases: function(session, callback) {
-        dbService.runCommand({listDatabases:1}, function(err, result) {
+        dbService.getDatabases(session, function(result) {
+            callback(result);
+        });
+    },
+
+    updateDatabase: function(databaseId, body, session, callback) {
+        dbService.updateDatabase(databaseId, body, session, function(result) {
+            callback(result);
+        });
+    },
+
+    deleteDatabase: function(databaseId, session, callback) {
+        dbService.deleteDatabase(databaseId, session, function(result) {
             callback(result);
         });
     }

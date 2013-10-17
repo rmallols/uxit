@@ -45,8 +45,21 @@ app.post('/rest/getSession', function (req, res) {
     });
 });
 
-app.get('/rest/getDatabases', checkAuth, function (req, res) {
+app.get('/rest/databases', checkAuth, function (req, res) {
     crudService.getDatabases(req.session, function (result) {
+        res.send(result)
+    });
+});
+
+app.put('/rest/databases/:id/update', checkAuth, function (req, res) {
+    console.log("FIRST CHECK!", req.params.id, req.body);
+    crudService.updateDatabase(req.params.id, req.body, req.session, function (result) {
+        res.send(result);
+    });
+});
+
+app.delete('/rest/databases/:id/delete', checkAuth, function (req, res) {
+    crudService.deleteDatabase(req.params.id, req.session, function (result) {
         res.send(result)
     });
 });
