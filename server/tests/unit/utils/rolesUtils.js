@@ -34,6 +34,14 @@ function loadRoles($httpBackend, roleService, callback) {
                 "description": "Admin user in portal",
                 "code": "admin",
                 "create": {}
+            },
+            {
+                "_id": "51193c257091c10032000007",
+                "title": "Super admin user",
+                "karma": 4,
+                "description": "Admin user in all the portals",
+                "code": "superAdmin",
+                "create": {}
             }
         ]
     };

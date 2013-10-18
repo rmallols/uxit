@@ -22,9 +22,4 @@ function ($locationProvider, $routeProvider) {
             reloadOnSearch: false
         })
         .otherwise({ redirectTo: '/' });
-}]).run(["$rootScope", "$routeParams", "$location", "portalService", "userService", "pageService", "roleService", "sessionService", "tagService",
-    "availableAppsService", "i18nService", "metaService",
-    function ($rootScope, $routeParams, $location, portalService, userService, pageService, roleService, sessionService,
-    tagService, availableAppsService, i18nService, metaService) {
-
-}]);
+}]).run([function () {}]);

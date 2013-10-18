@@ -16,7 +16,6 @@
             bodyObj = $('body');
             domService.addLoadingFeedback(bodyObj);
             crudService.get(constantsService.collections.portal, null, null, function (loadedPortal) {
-                console.log("X", loadedPortal);
                 var pageModel = pageService.getPage(pageId);
                 domService.removeLoadingFeedback(bodyObj);
                 portal = loadedPortal.results[0];

@@ -14,20 +14,7 @@
         function loadRoles(callback) {
             var params = { sort: { field: 'karma', order : '1' }};
             crudService.get(constantsService.collections.roles, null, params, function (serverRoles) {
-                var idx, role = {};
-                //Initialize the array just once the service is done in order to ease the has*Role actions checks
-                keyBasedRoles = [];
-                for (idx in serverRoles.results) {
-                    if (serverRoles.results.hasOwnProperty(idx)) {
-                        role = serverRoles.results[idx];
-                        keyBasedRoles[role.code] = {
-                            karma       : role.karma,
-                            title       : role.title,
-                            description : role.description
-                        };
-                    }
-                }
-                indexBasedRoles = serverRoles.results;
+                normalizeRoles(serverRoles);
                 if (callback) { callback(getRoles()); }
             });
         }
@@ -92,6 +79,16 @@
         }
 
         /**
+         * Determines if the user has super admin role or not
+         *
+         * @param   {object}    user    The user that is going to be analyzed if he has the role or not
+         * @returns {boolean}           True if the user has super admin role. False otherwise
+         */
+        function hasSuperAdminRole(user) {
+            return (user && keyBasedRoles && user) ? user.role >= keyBasedRoles[constantsService.roles.superAdmin].karma : false;
+        }
+
+        /**
          * Gets the admin style class of the current user
          *
          * @returns {string} A key that identifies that the current user has the admin role. Empty string otherwise
@@ -100,14 +97,30 @@
             return hasAdminRole(sessionService.getUserSession()) ? 'adminAccess' : '';
         }
 
+        /** Private methods **/
+        function normalizeRoles(serverRoles) {
+            //Initialize the array just once the service is done in order to ease the has*Role actions checks
+            keyBasedRoles = [];
+            serverRoles.results.forEach(function(serverRole) {
+                keyBasedRoles[serverRole.code] = {
+                    karma       : serverRole.karma,
+                    title       : serverRole.title,
+                    description : serverRole.description
+                };
+            });
+            indexBasedRoles = serverRoles.results;
+        }
+        /** End of private methods **/
+
         return {
-            loadRoles       : loadRoles,
-            getRoles        : getRoles,
-            getRole         : getRole,
-            hasGuestRole    : hasGuestRole,
-            hasReaderRole   : hasReaderRole,
-            hasCreatorRole  : hasCreatorRole,
-            hasAdminRole    : hasAdminRole,
+            loadRoles           : loadRoles,
+            getRoles            : getRoles,
+            getRole             : getRole,
+            hasGuestRole        : hasGuestRole,
+            hasReaderRole       : hasReaderRole,
+            hasCreatorRole      : hasCreatorRole,
+            hasAdminRole        : hasAdminRole,
+            hasSuperAdminRole   : hasSuperAdminRole,
             getCurrentUserAdminAccessStyleClass : getCurrentUserAdminAccessStyleClass
         };
     }]);

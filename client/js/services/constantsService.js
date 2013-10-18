@@ -22,7 +22,8 @@
                 guest       : 'guest',
                 reader      : 'reader',
                 creator     : 'creator',
-                admin       : 'admin'
+                admin       : 'admin',
+                superAdmin  : 'superAdmin'
             },
             templates		: {
                 view		: 'view',

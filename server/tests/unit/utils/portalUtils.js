@@ -1,67 +1,70 @@
 'use strict';
 function loadPortal($httpBackend, portalService, callback) {
     var mockedResponse = {
-        "id"    : routeParams.portal,
-        "title"	: "Title of the portal",
-        "desc"	: "This is the description of the portal!",
-        "styles": {
-            "background": ""
-        },
-        "app": {
-            "showTitle" : false,
-            "showComments" : false,
-            "styles" : {
-                "background": "#fff"
-            }
-        },
-        "template": {
-            "rows": [
-                {
-                    "template": true,
-                    "columns": [
-                        { "size": 25, "apps": [] }
-                    ]
-                },
-                {
-                    "columns": [
-                        {
-                            "size": 25, "rows": []
-                        }
-                    ]
-                },
-                {
-                    "template": true,
-                    "columns": [
-                        { "size": 25, "apps": [] }
-                    ]
+        "totalSize" : 1,
+        "results"   : [{
+            "id"    : routeParams.portal,
+            "title"	: "Title of the portal",
+            "desc"	: "This is the description of the portal!",
+            "styles": {
+                "background": ""
+            },
+            "app": {
+                "showTitle" : false,
+                "showComments" : false,
+                "styles" : {
+                    "background": "#fff"
                 }
-            ]
-        },
-        "pages"	:
-            [
-                {
-                    "page": "Home",
-                    "text": "Inicio",
-                    "rows": [
-                        {
-                            "columns": [
-                                {
-                                    "size": 25,
-                                    "apps": [
-                                        {
-                                            "type": "login"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-        "fullscreenMode": "maximized"
+            },
+            "template": {
+                "rows": [
+                    {
+                        "template": true,
+                        "columns": [
+                            { "size": 25, "apps": [] }
+                        ]
+                    },
+                    {
+                        "columns": [
+                            {
+                                "size": 25, "rows": []
+                            }
+                        ]
+                    },
+                    {
+                        "template": true,
+                        "columns": [
+                            { "size": 25, "apps": [] }
+                        ]
+                    }
+                ]
+            },
+            "pages"	:
+                [
+                    {
+                        "page": "Home",
+                        "text": "Inicio",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "size": 25,
+                                        "apps": [
+                                            {
+                                                "type": "login"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+            "fullscreenMode": "maximized"
+        }]
     };
-    $httpBackend.when('GET', '/rest/portal/' + routeParams.portal + '?').respond(mockedResponse);
-    portalService.loadPortal(routeParams.portal, routeParams.page, function (portal) {
+    $httpBackend.when('GET', '/rest/portal?').respond(mockedResponse);
+    portalService.loadPortal(routeParams.page, function (portal) {
         if (callback) {
             callback(portal);
         }
