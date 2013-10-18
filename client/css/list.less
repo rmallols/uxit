@@ -1,3 +1,6 @@
+@selectFromCheckboxWidth: 32px;
+@halfSelectFromCheckboxWidth: @selectFromCheckboxWidth / 2;
+
 [list] .item {
   float: left;
 }
@@ -17,10 +20,34 @@
   overflow: visible;
 }
 
-@selectFromCheckboxWidth: 32px;
+[list] .item .selectFromCheckbox {
+  width: @selectFromCheckboxWidth;
+  float: left;
+}
+
+[list] .item .selectFromCheckbox > * {
+  margin: @padding @padding 0 0;
+}
+
+[list] .item.boxedItems.multiSelectable .selectFromCheckbox {
+  padding: @halfSelectFromCheckboxWidth;
+}
+
 [list] .item > .text {
   float: left;
   margin-bottom: @padding;
+  .offsettedWidth(-@selectFromCheckboxWidth);
+}
+
+[list] .item.boxedItems > .text {
+  height: 100%;
+  padding-left: @halfSelectFromCheckboxWidth;
+  .offsettedWidth(-@halfSelectFromCheckboxWidth);
+  .alignCenter;
+}
+
+[list] .item.boxedItems.multiSelectable > .text {
+  padding-right: @selectFromCheckboxWidth;
   .offsettedWidth(-@selectFromCheckboxWidth);
 }
 
@@ -34,13 +61,4 @@
 [list] .item.active > button.remove,
 [list] .item:hover > button.remove {
   right:@padding;
-}
-
-[list] .item .selectFromCheckbox {
-  width: @selectFromCheckboxWidth;
-  float: left;
-}
-
-[list] .item .selectFromCheckbox > * {
-  margin: @padding @padding 0 0;
 }

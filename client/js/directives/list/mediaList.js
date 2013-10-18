@@ -22,6 +22,7 @@ function ($rootScope, mediaService, constantsService) {
                                   'class="cursorPointer" edit-on-click="true" />';
 
             scope.$watch('config', function(newConfig) {
+                newConfig.boxedItems = true;
                 if(newConfig && !newConfig.columns) {
                     newConfig.columns = 4;
                 }

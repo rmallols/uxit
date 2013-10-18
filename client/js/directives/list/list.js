@@ -59,10 +59,20 @@
                 };
 
                 scope.getItemStyleClasses = function (item) {
-                    var maxColSize = rowService.getMaxSlots(),
-                        columnWidth = (scope.config.columns) ? Math.floor(maxColSize / scope.config.columns) : maxColSize,
-                        viewMode = (scope.detailId) ? 'detailView': 'listView';
-                    return 'large-' + columnWidth + ' ' + viewMode + ' ' + (item.isSelected ? 'active' : '');
+                    var maxColSize      = rowService.getMaxSlots(),
+                        viewMode        = (scope.detailId) ? 'detailView': 'listView',
+                        itemClassesObj  = {},
+                        colWidthStyleClass;
+                    scope.colWidth      = (scope.config.columns)
+                                            ? Math.floor(maxColSize / scope.config.columns)
+                                            : maxColSize;
+                    colWidthStyleClass = 'large-' + scope.colWidth;
+                    itemClassesObj[colWidthStyleClass]  = true;
+                    itemClassesObj['active']            = item.isSelected;
+                    itemClassesObj[viewMode]            = true;
+                    itemClassesObj['boxedItems']        = scope.config.boxedItems;
+                    itemClassesObj['multiSelectable']   = scope.isMultiSelectable();
+                    return itemClassesObj;
                 };
 
                 scope.createItem = function(item) {
@@ -95,6 +105,10 @@
                     scope.onSearch({$text: scope.searchText});
                 };
 
+                scope.setItemHeight = function() {
+                    return (scope.config.boxedItems) ? { height: getItemsHeight() } : {}
+                };
+
                 scope.page = 0;
                 if(scope.currentPage !== undefined) { scope.currentPage = scope.page; }
 
@@ -109,6 +123,12 @@
                 function isAdmin() {
                     var userSession = sessionService.getUserSession();
                     return roleService.hasAdminRole(userSession);
+                }
+
+                function getItemsHeight() {
+                    var rowSlots     = rowService.getMaxSlots(),
+                        itemsPerFile = Math.floor(rowSlots / scope.colWidth);
+                    return element.width() / itemsPerFile;
                 }
                 /** End of private methods **/
             }

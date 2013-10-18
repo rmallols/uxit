@@ -1344,7 +1344,7 @@ angular.module("list.html", []).run(["$templateCache", function($templateCache) 
     "    <div class=\"noItems\" ng-show=\"items.length == 0\"><i><label i18n=\"list.noItems\"></label></i></div>\n" +
     "    <div ng-show=\"items.length > 0\" ng-hide=\"detailId && detailId!=item._id\" id=\"{{item._id}}\"\n" +
     "         ng-repeat=\"item in items | filter: getFilter()\" class=\"item columns\"\n" +
-    "         ng-class=\"getItemStyleClasses(item)\">\n" +
+    "         ng-class=\"getItemStyleClasses(item)\" ng-style=\"setItemHeight()\">\n" +
     "        <div class=\"selectFromCheckbox\" ng-show=\"isMultiSelectable()\">\n" +
     "            <input checkbox class=\"white\" ng-model=\"item.isSelected\" ng-click=\"clickOnItem(item, $index, $event, false)\"\n" +
     "                   block-update-model=\"true\" />\n" +
