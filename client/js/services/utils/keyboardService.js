@@ -71,7 +71,11 @@
                 }
                 return false;
             };
-            Mousetrap.bindGlobal(shortcut, normalizedBindFn); //Use bind global to enable events even inside of inputs
+            //Use "bindGlobal" instead of "bind" to enable events even inside of inputs
+            //This has been DISABLED as causes a lot of problem.
+            //For instance, it blocks the keyboard navigation in forms using the TAB key,
+            //and blocks the possibility to type ENTER for a break line in a rich editor
+            Mousetrap.bind(shortcut, normalizedBindFn);
         }
 
         function unbind(shortcut) {
