@@ -33,7 +33,7 @@ app.post('/:portalId/rest/login', function (req, res) {
     crudService.createDbConnection(req.params.portalId);
     crudService.login(req.body, req.session, function(success) {
         if (success) {
-            res.redirect(req.params.portalId); //Redirect to user default portal
+            res.redirect(req.params.portalId);
         } else {
             res.redirect(req.params.portalId + '/login?error');
         }
@@ -176,9 +176,17 @@ app.get('/initializeApp', checkAuth, function (req, res) {
 
 app.use('/', express.static('../'));
 
-app.get('/default', function (req, res) {
-    crudService.getFirst(constantsService.collections.portal, {}, function (firstPortal) {
-        res.redirect('/' + firstPortal._id);
+app.get('/', function (req, res) {
+    crudService.getDatabases(req.session, function (databases) {
+        var adminDbId;
+        if(databases.totalSize > 0) {
+            res.redirect('/' + databases.results[0].name);
+        } else {
+            adminDbId = crudService.getAdminDbId();
+            crudService.createDatabase({ name: adminDbId}, req.session, function() {
+                res.redirect('/' + adminDbId);
+            });
+        }
     });
 });
 
@@ -232,13 +240,7 @@ app.get('/:portalId/:pageId', function (req, res) {
 });
 
 function existsPortal(portalId, session, callback) {
-    var exists = false;
-    crudService.getDatabases(session, function(databases) {
-        databases.results.forEach(function(database) {
-            if(database.name === portalId) {
-                exists = true;
-            }
-        });
+    crudService.existsDatabase(portalId, session, function(exists) {
         callback(exists);
     });
 }

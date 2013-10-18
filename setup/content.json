@@ -10,8 +10,8 @@
             "es": { "text": "¡Felicidades! Acabas de crear un nuevo portal con éxito." }
         },
         "content": {
-            "en": { "text": "<a href='/login'>Click here to authenticate in the system.</a><br/>The default credentials are:<br/><ul><li>User: <b>admin@menzit.com</b><li>Password: <b>admin1admin</b></li></ul>" },
-            "es": { "text": "<a href='/login'>Haz click aquí para autenticarte en el sistema.</a><br/>Las credenciales por defecto son:<br/><ul><li>Usuario: <b>admin@menzit.com</b><li>Contraseña: <b>admin1admin</b></li></ul>" }
+            "en": { "text": "<a href='login'>Click here to authenticate in the system.</a><br/>The default credentials are:<br/><ul><li>User: <b>admin@menzit.com</b><li>Password: <b>admin1admin</b></li></ul>" },
+            "es": { "text": "<a href='login'>Haz click aquí para autenticarte en el sistema.</a><br/>Las credenciales por defecto son:<br/><ul><li>Usuario: <b>admin@menzit.com</b><li>Contraseña: <b>admin1admin</b></li></ul>" }
         }
     },
     {

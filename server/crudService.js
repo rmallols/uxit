@@ -96,8 +96,18 @@ module.exports = {
         });
     },
 
+    getAdminDbId: function() {
+        return dbService.getAdminDbId();
+    },
+
     getDatabases: function(session, callback) {
         dbService.getDatabases(session, function(result) {
+            callback(result);
+        });
+    },
+
+    existsDatabase: function(databaseId, session, callback) {
+        dbService.existsDatabase(databaseId, session, function(result) {
             callback(result);
         });
     },

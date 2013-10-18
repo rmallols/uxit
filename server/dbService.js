@@ -9,15 +9,33 @@ module.exports = {
         this.dbConnection = mongoJsService.connect(databaseId);
     },
 
+    getAdminDbId: function() {
+        return this._adminDbId;
+    },
+
     getDatabases: function(session, callback) {
-        this._runCommand({listDatabases: 1}, this._adminDbId, function(err, result) {
-            var normalizedDbs = [];
+        var normalizedDbs = [], self = this;
+        self._runCommand({listDatabases: 1}, this._adminDbId, function(err, result) {
             //Convert results to an index-based array
             result.databases.forEach(function(database) {
-                database._id = database.name; //Keep the normalized _id syntax
-                normalizedDbs.push(database);
+                if(!self._isPrivateDatabase(database.name)) { //Don't include private databases
+                    database._id = database.name; //Keep the normalized _id syntax
+                    normalizedDbs.push(database);
+                }
             });
             callback(utilsService.normalizeQueryResultsFormat(normalizedDbs));
+        });
+    },
+
+    existsDatabase: function(databaseId, session, callback) {
+        var exists = false;
+        this.getDatabases(session, function(databases) {
+            databases.results.forEach(function(database) {
+                if(database.name === databaseId) {
+                    exists = true;
+                }
+            });
+            callback(exists);
         });
     },
 
@@ -62,6 +80,16 @@ module.exports = {
 
     getDbConnection: function() {
         return this.dbConnection;
+    },
+
+    _isPrivateDatabase: function(databaseId) {
+        var privateDbs = ['mydb', 'local'], isPrivate = false;
+        privateDbs.forEach(function(privateDb) {
+            if(databaseId === privateDb) {
+                isPrivate = true;
+            }
+        });
+        return isPrivate;
     },
 
     _initializeCollections: function(databaseId, callback) {

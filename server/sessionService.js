@@ -8,7 +8,6 @@ var bcrypt = require('bcrypt-nodejs');
 module.exports = {
 
     login: function (body, session, callback) {
-        console.log("OOUT!!", body.email, body.password);
         /*var cryptPassword = bcrypt.hashSync(body.password);*/
         userService.get(body.email, function (user) {
             if (user && bcrypt.compareSync(body.password, user.password)) {
