@@ -1156,18 +1156,21 @@ angular.module("appHeader.html", []).run(["$templateCache", function($templateCa
 
 angular.module("bannerCanvas.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerCanvas.html",
-    "<div class=\"bannerCanvas\">\n" +
-    "    <button class=\"addImage addIcon\" ng-click=\"addImage()\">Add image</button>\n" +
-    "    <button class=\"addText addIcon\" ng-click=\"addText()\">Add text</button>\n" +
+    "<div class=\"bannerCanvas\" ng-class=\"{readOnly: isReadOnly()}\">\n" +
+    "    <div class=\"addArea\" ux-show=\"!isReadOnly()\">\n" +
+    "        <button class=\"addImage addIcon\" ng-click=\"addImage()\">Add image</button>\n" +
+    "        <button class=\"addText addIcon\" ng-click=\"addText()\">Add text</button>\n" +
+    "    </div>\n" +
     "    <div class=\"grid\" ng-class=\"{overflowVisible: overflowVisible}\">\n" +
-    "        <div banner-item ng-repeat=\"item in items.data\" data=\"item\" on-change=\"onItemChange()\" overflow-visible=\"overflowVisible\"></div>\n" +
+    "        <div banner-item ng-repeat=\"item in items.data\" data=\"item\" on-change=\"onItemChange()\"\n" +
+    "             overflow-visible=\"overflowVisible\" read-only=\"isReadOnly()\"></div>\n" +
     "    </div>\n" +
     "</div>");
 }]);
 
 angular.module("bannerItem.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerItem.html",
-    "<div id=\"{{item.id}}\" class=\"bannerItem\">\n" +
+    "<div id=\"{{item.id}}\" class=\"bannerItem\" ng-class=\"{readOnly: readOnly}\">\n" +
     "    <button class=\"edit editIcon\" ng-click=\"editItem()\"></button>\n" +
     "    <div class=\"item text\" ux-show=\"item.type=='text'\">\n" +
     "        <div>{{item.value}}</div>\n" +

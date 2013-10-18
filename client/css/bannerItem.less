@@ -2,11 +2,14 @@
 .bannerItem {
   position: absolute;
   display: block;
-  cursor: pointer;
   text-align: center;
   border: @borderWidth dashed transparent;
   box-sizing: content-box;
   .alignCenter;
+}
+
+.bannerItem:not(.readOnly) {
+  cursor: pointer;
 }
 
 .bannerItem > button.edit {

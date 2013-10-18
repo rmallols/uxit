@@ -1,6 +1,7 @@
 (function() {
     COMPONENTS.directive('bannerCanvas', ['$compile', 'timerService', 'arrayService', 'keyboardService',
-    function ($compile, timerService, arrayService, keyboardService) {
+    'roleService', 'sessionService',
+    function ($compile, timerService, arrayService, keyboardService, roleService, sessionService) {
         'use strict';
         return {
             restrict: 'A',
@@ -12,11 +13,15 @@
             },
             link: function link(scope, element) {
 
-                var gridElm = $(' > .grid', element),
+                console.log("testear el nuevo elemento addArea, con floatRight, que el root tiene readOnly cuando toca")
+
+                var gridElm     = $(' > .grid', element),
                     directiveId = 'bannerCanvas',
-                    gridSize = 50,
-                    totalCols = Math.floor(element.width() / gridSize),
-                    totalRows = Math.floor(element.height() / gridSize);
+                    gridSize    = 50,
+                    totalCols   = Math.floor(element.width() / gridSize),
+                    totalRows   = Math.floor(element.height() / gridSize),
+                    userSession = sessionService.getUserSession(),
+                    isAdmin     = roleService.hasAdminRole(userSession);
 
                 createGrid();
                 registerKeyboardEvents();
@@ -40,6 +45,10 @@
 
                 scope.onItemChange = function() {
                     propagateChanges();
+                };
+
+                scope.isReadOnly = function() {
+                    return !isAdmin || element.attr('readonly') || element.attr('disabled');
                 };
 
                 /** Private methods **/

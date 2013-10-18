@@ -8,7 +8,8 @@
             scope: {
                 item: '=data',
                 overflowVisible: '=',
-                onItemChange: '&onChange'
+                onItemChange: '&onChange',
+                readOnly: '='
             },
             templateUrl: 'bannerItem.html',
             link: function link(scope, element) {
@@ -22,67 +23,76 @@
                     originalBoxSize;
 
                 setDomCoordinatesFromModel();
-                originalBoxSize = getBoxSize(); //Calculate the original box size once the DOM is ready
 
-                element.draggable({
-                    grid: [ 50,50 ],
-                    start: function() {
-                        select();
-                    },
-                    stop: function() {
-                        setModelCoordinatesFromDom(); //Update the model before propagating the changes
-                        propagateChanges();
-                    }
-                });
+                console.log("REFACTORIZAR defineListeners para que quede más limpio y añadir el test de readonly", scope.readOnly);
 
-                element.resizable({
-                    //aspectRatio: true,
-                    grid: 50,
-                    handles: 'ne, nw, se, sw',
-                    resize: function() {
-                        var newBoxSize  = getBoxSize(),
-                            newFontSize = (newBoxSize / originalBoxSize) * 100;
-                        element.css('font-size', newFontSize + '%');
-                    },
-                    stop: function() {
-                        setModelCoordinatesFromDom(); //Update the model before propagating the changes
-                        propagateChanges();
-                    }
-                });
-
-                element.click(function() {
-                    select();
-                });
-
-                inputElm.focus(function() {
-                    element.addClass('active');
-                });
-
-                inputElm.blur(function() {
-                    unselect();
-                });
-
-                scope.editItem = function() {
-                    keepItemSelected = true;
-                    var defaultPanels = [{ title: 'Select media', type: 'selectMedia' }];
-                    scope.internalData = {};
-                    scope.panels = defaultPanels;
-                    scope.onChange = function(model, id, selectedMedia) {
-                        scope.item.value = mediaService.getDownloadUrl(selectedMedia);
-                    };
-                    scope.onSave = function() {
-                        propagateChanges();
-                    };
-                    scope.onClose = function() {
-                        keepItemSelected = false;
-                        unselect();
-                        hideOverflow();
-                    };
-                    showOverflow();
-                    editBoxUtilsService.showEditBox(scope, editButtonElm, editButtonElm);
-                };
+                if(!scope.readOnly) {
+                    defineListeners();
+                }
 
                 /** Private methods **/
+                function defineListeners() {
+                    originalBoxSize = getBoxSize(); //Calculate the original box size once the DOM is ready
+
+                    element.draggable({
+                        grid: [ 50,50 ],
+                        start: function() {
+                            select();
+                        },
+                        stop: function() {
+                            setModelCoordinatesFromDom(); //Update the model before propagating the changes
+                            propagateChanges();
+                        }
+                    });
+
+                    element.resizable({
+                        //aspectRatio: true,
+                        grid: 50,
+                        handles: 'ne, nw, se, sw',
+                        resize: function() {
+                            var newBoxSize  = getBoxSize(),
+                                newFontSize = (newBoxSize / originalBoxSize) * 100;
+                            element.css('font-size', newFontSize + '%');
+                        },
+                        stop: function() {
+                            setModelCoordinatesFromDom(); //Update the model before propagating the changes
+                            propagateChanges();
+                        }
+                    });
+
+                    element.click(function() {
+                        select();
+                    });
+
+                    inputElm.focus(function() {
+                        element.addClass('active');
+                    });
+
+                    inputElm.blur(function() {
+                        unselect();
+                    });
+
+                    scope.editItem = function() {
+                        keepItemSelected = true;
+                        var defaultPanels = [{ title: 'Select media', type: 'selectMedia' }];
+                        scope.internalData = {};
+                        scope.panels = defaultPanels;
+                        scope.onChange = function(model, id, selectedMedia) {
+                            scope.item.value = mediaService.getDownloadUrl(selectedMedia);
+                        };
+                        scope.onSave = function() {
+                            propagateChanges();
+                        };
+                        scope.onClose = function() {
+                            keepItemSelected = false;
+                            unselect();
+                            hideOverflow();
+                        };
+                        showOverflow();
+                        editBoxUtilsService.showEditBox(scope, editButtonElm, editButtonElm);
+                    };
+                }
+
                 function setDomCoordinatesFromModel() {
                     element.css('width', scope.item.size.width - horizontalBorderWidth);
                     element.css('height', scope.item.size.height - verticalBorderWidth);

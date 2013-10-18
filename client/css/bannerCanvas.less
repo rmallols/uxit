@@ -2,6 +2,10 @@
   overflow: visible;
 }
 
+.bannerCanvas > .addArea {
+  float: right;
+}
+
 .bannerCanvas > .grid {
   position: relative;
   width: 100%;
@@ -11,7 +15,7 @@
   box-sizing: content-box;
 }
 
-.bannerCanvas:hover > .grid {
+.bannerCanvas:not(.readOnly):hover > .grid {
   border-color: @high;
 }
 
@@ -25,7 +29,7 @@
   visibility: hidden;
 }
 
-.bannerCanvas:hover > .grid .ruler {
+.bannerCanvas:not(.readOnly):hover > .grid .ruler {
   visibility: visible;
 }
 
@@ -41,6 +45,6 @@
   border-top: 1px solid #ccc;
 }
 
-.bannerCanvas:hover .bannerItem {
+.bannerCanvas:not(.readOnly):hover .bannerItem {
   border-color: @high;
 }
