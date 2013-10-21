@@ -1,6 +1,5 @@
 'use strict';
-var cacheService        = require("../cacheService"),
-    utilsService        = require("../utilsService"),
+var utilsService        = require("../utilsService"),
     fileSystemService   = require("../fileSystemService"),
     consoleService      = require('../consoleService'),
     constantsService    = require('../constantsService'),
@@ -18,7 +17,6 @@ module.exports = {
                 dbService.getDbConnection().collection(constantsService.collections.media).save(saveObj, function (err, newContent) {
                     saveObj._id = newContent._id;
                     delete saveObj.data;
-                    cacheService.updateCachedMedia(saveObj);
                     callback(saveObj);
                 });
             }
@@ -29,7 +27,6 @@ module.exports = {
                     params = {$set: saveObj};
                 utilsService.addUpdateSignature(saveObj, session);
                 dbService.getDbConnection().collection(collection).update(id, params, function () {
-                    cacheService.updateCachedMedia(saveObj);
                     callback(saveObj);
                 });
             }

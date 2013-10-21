@@ -1,7 +1,8 @@
 'use strict';
-var cacheService    = require("../cacheService"),
-    dbService       = require("../dbService");
+var getService  = require("./getService"),
+    dbService   = require("../dbService");
 module.exports = {
+
     getStats : function (collection, query, session, callback) {
         var key = {}; //Specify the grouping key
         if (query.groupBy) { key[query.groupBy] = 1; }
@@ -18,10 +19,19 @@ module.exports = {
             initial: {count: 0},
             reduce: function (obj, prev) { prev.count += 1; }
         }, function (err, stats) {
-            stats.forEach(function (stat) {
-                cacheService.setJoins(stat);
-            });
-            callback(stats);
+            var processedItems = 0;
+            if(stats.length > 0) {
+                stats.forEach(function (stat) {
+                    getService.setJoins(stat, function() {
+                        processedItems++;
+                        if(processedItems === stats.length) {
+                            callback(stats);
+                        }
+                    });
+                });
+            } else {
+                callback(stats);
+            }
         });
     }
 };

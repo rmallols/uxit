@@ -1,6 +1,5 @@
 'use strict';
 var utilsService        = require("../utilsService"),
-    cacheService        = require("../cacheService"),
     constantsService    = require('../constantsService'),
     dbService           = require("../dbService");
 
@@ -46,15 +45,18 @@ module.exports = {
         var projection      = {}, sort = {}, currentPage = parseInt(query.currentPage, 10) || 0,
             pageSize        = Number(query.pageSize) || 0, getFirstQuery,
             skip            = (currentPage * pageSize) + Number(query.skip) || (currentPage * pageSize),
-            dbConnection    = dbService.getDbConnection();
+            dbConnection    = dbService.getDbConnection(),
+            self            = this,
+            processedItems  = 0;
         if (id) {
             getFirstQuery = { q: { _id: utilsService.getFormattedId(id)} }; //Normalize the way the Ids are set
             if (query.projection) { //Add the query projection, if case
                 getFirstQuery.projection = query.projection;
             }
-            this.getFirst(collection, getFirstQuery, function (document) {
-                cacheService.setJoins(document);
-                callback(document);
+            self.getFirst(collection, getFirstQuery, function (document) {
+                self.setJoins(document, function() {
+                    callback(document);
+                });
             });
         } else {
             //Normalize the projection to ensure that the projection value is an integer, an not probably an string
@@ -63,25 +65,71 @@ module.exports = {
             //noinspection JSUnresolvedVariable
             dbConnection.collection(collection).count(query.q, function (err, totalSize) {
                 dbConnection.collection(collection).find(query.q, projection).sort(sort).skip(skip).limit(pageSize, function (err, documents) {
-                    if (documents) {
+                    if (documents && documents.length > 0) {
                         documents.forEach(function (document) {
-                            cacheService.setJoins(document);
+                            self.setJoins(document, function() {
+                                processedItems++;
+                                if(processedItems === documents.length) {
+                                    callback(utilsService.normalizeQueryResultsFormat(documents, totalSize));
+                                }
+                            });
                         });
+                    } else {
+                        callback(utilsService.normalizeQueryResultsFormat(documents, totalSize));
                     }
-                    callback(utilsService.normalizeQueryResultsFormat(documents, totalSize));
                 });
             });
         }
     },
 
-    cacheResources: function() {
+    setJoins: function (document, callback) {
         var self = this;
-        self.get(constantsService.collections.media, null, { projection : { data : 0}}, function (documents) {
-            cacheService.initCachedMedia(documents);
-            //Cache user once all the media is cached as the former could have references to the latest
-            self.get(constantsService.collections.users, null, { projection : { password : 0}}, function (documents) {
-                cacheService.initCachedUsers(documents);
+        self.joinUserData(document, function() {
+            self.joinMediaData(document, function() {
+                if(callback) { callback(); }
             });
         });
+    },
+
+    joinUserData: function (sourceDoc, callback) {
+        var filter = { projection : { password : 0}}, self = this;
+        if (sourceDoc && sourceDoc.authorId) {
+            self.get(constantsService.collections.media, sourceDoc.mediaId, filter, function(userDoc) {
+                self._handleUserDataJoin(sourceDoc, userDoc);
+                if(callback) { callback(); }
+            });
+        } else {
+            if(callback) { callback(); }
+        }
+    },
+
+    joinMediaData: function (sourceDoc, callback) {
+        var filter = { projection : { data : 0}}, self = this;
+        if (sourceDoc && sourceDoc.mediaId) {
+            self.get(constantsService.collections.media, sourceDoc.mediaId, filter, function(mediaDoc) {
+                self._handleMediaDataJoin(sourceDoc, mediaDoc);
+                if(callback) { callback(); }
+            });
+        } else {
+            if(callback) { callback(); }
+        }
+    },
+
+    _handleUserDataJoin: function(sourceDoc, userDoc) {
+        if (!sourceDoc.create) {
+            sourceDoc.create = {
+                authorId : sourceDoc['create.authorId']
+            };
+            delete sourceDoc['create.authorId'];
+        }
+        if (sourceDoc && sourceDoc.create) {
+            sourceDoc.create.author = userDoc;
+            delete sourceDoc.create.authorId;
+        }
+    },
+
+    _handleMediaDataJoin: function(sourceDoc, mediaDoc) {
+        sourceDoc.media = mediaDoc;
+        delete sourceDoc.mediaId;
     }
 };

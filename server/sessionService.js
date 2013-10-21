@@ -1,9 +1,9 @@
 'use strict';
 /*SERVICES*/
-var userService = require('./crud/userService');
-var cacheService = require('./cacheService');
+var userService = require('./crud/userService'),
+    getService  = require('./crud/getService'),
 /*CRYPT MODULE*/
-var bcrypt = require('bcrypt-nodejs');
+    bcrypt = require('bcrypt-nodejs');
 
 module.exports = {
 
@@ -13,8 +13,9 @@ module.exports = {
             if (user && bcrypt.compareSync(body.password, user.password)) {
                 delete user.password;
                 session.user = user;
-                cacheService.setJoins(session.user);
-                callback(true);
+                getService.setJoins(session.user, function() {
+                    callback(true);
+                });
             } else {
                 callback(false);
             }
@@ -27,8 +28,9 @@ module.exports = {
             userService.get(session.user.email, function (user) {
                 delete user.password;
                 session.user = user;
-                cacheService.joinMediaData(session.user);
-                callback(session.user);
+                getService.joinMediaData(session.user, function() {
+                    callback(session.user);
+                });
             });
         } else {
             callback(undefined);
