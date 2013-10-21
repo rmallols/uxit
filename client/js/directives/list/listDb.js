@@ -43,6 +43,10 @@
                     scope.loadList();
                 };
 
+                scope.selectItem = function(item) {
+                    scope.onSelect({$item: item});
+                };
+
                 //Load the list just once some meaningful data is provided as otherwise the current directive
                 //could try to get data before it's provided from the invoking function
                 scope.$watch('collection', function () {

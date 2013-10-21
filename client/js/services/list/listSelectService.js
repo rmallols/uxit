@@ -20,9 +20,7 @@
             } else {
                 handleNavigationMechanism(listScope, item);
             }
-            if (listScope.onSelect) {
-                handleCustomSelectionMechanism(listScope, item, $index);
-            }
+            handleCustomSelectionMechanism(listScope, item, $index);
         }
 
         /**
@@ -97,8 +95,8 @@
             }
         }
 
-        function handleCustomSelectionMechanism(listScope, item, $index) {
-            listScope.onSelect({$item: item, $index: $index, $selectable: listScope.isSelectable()});
+        function handleCustomSelectionMechanism(listScope, item) {
+            listScope.onSelect({$item: item});
         }
 
         function handleNavigationMechanism(listScope, item) {

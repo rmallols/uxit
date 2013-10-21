@@ -66,7 +66,7 @@ angular.module("iframeAppView.html", []).run(["$templateCache", function($templa
 angular.module("imageAppEdit.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("imageAppEdit.html",
     "<div>\n" +
-    "    <media-list config=\"config\" on-select=\"onSelect()\"></media-list>\n" +
+    "    <media-list config=\"config\" on-select=\"onSelect($item)\"></media-list>\n" +
     "</div>");
 }]);
 
@@ -1372,7 +1372,7 @@ angular.module("listDb.html", []).run(["$templateCache", function($templateCache
   $templateCache.put("listDb.html",
     "<div>\n" +
     "    <div list=\"items\" collection=\"collection\" id=\"_id\" config=\"config\" projection=\"projection\"\n" +
-    "         transcluded-data=\"transcludedData\" on-search=\"onSearch($text)\"\n" +
+    "         transcluded-data=\"transcludedData\" on-search=\"onSearch($text)\" on-select=\"selectItem($item)\"\n" +
     "         on-create=\"createItem($item)\" on-delete=\"deleteItem($id)\" internal-data=\"internalData\"\n" +
     "         current-page=\"currentPage\" db-source=\"true\" template=\"template\"\n" +
     "         on-create-panels=\"onCreatePanels\" on-edit-panels=\"onEditPanels\"></div>\n" +
@@ -1385,7 +1385,7 @@ angular.module("mediaList.html", []).run(["$templateCache", function($templateCa
     "    <file-uploader ux-show=\"config.uploadable\" on-upload=\"onUpload()\" multiple=\"true\"></file-uploader>\n" +
     "    <div list-db=\"items\" collection=\"collection\" config=\"config\" projection=\"projection\"\n" +
     "         template=\"template\" on-edit-panels=\"onEditPanels\" search-targets=\"searchTargets\"\n" +
-    "         transcluded-data=\"transcludedData\">\n" +
+    "         transcluded-data=\"transcludedData\" on-select=\"selectItem($item)\">\n" +
     "    </div>\n" +
     "</div>");
 }]);

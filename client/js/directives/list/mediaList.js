@@ -33,6 +33,11 @@ function ($rootScope, mediaService, constantsService) {
                 scope.$apply();
             };
 
+
+            scope.selectItem = function(item) {
+                scope.onSelect({$item: item});
+            };
+
             scope.transcludedData = {};
             scope.transcludedData.getDownloadUrl = function (media) {
                 return mediaService.getDownloadUrl(media);

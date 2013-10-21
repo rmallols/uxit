@@ -29,7 +29,6 @@
                 uploadable  : true,
                 columns     : 2
             };
-            console.log("HERE IS", scope.config);
             scope.onSelect = function (media) {
                 scope.model.mediaId = media._id;
                 scope.internalData.media = media;
