@@ -24,16 +24,21 @@
 
                 setDomCoordinatesFromModel();
 
-                console.log("REFACTORIZAR defineListeners para que quede más limpio y añadir el test de readonly", scope.readOnly);
-
                 if(!scope.readOnly) {
                     defineListeners();
                 }
 
                 /** Private methods **/
                 function defineListeners() {
-                    originalBoxSize = getBoxSize(); //Calculate the original box size once the DOM is ready
+                    setDraggable();
+                    setResizable();
+                    element.click(onClickFn);
+                    inputElm.focus(onFocusFn);
+                    inputElm.blur(onBlurFn);
+                    scope.editItem = onEditItemFn;
+                }
 
+                function setDraggable() {
                     element.draggable({
                         grid: [ 50,50 ],
                         start: function() {
@@ -44,7 +49,10 @@
                             propagateChanges();
                         }
                     });
+                }
 
+                function setResizable() {
+                    originalBoxSize = getBoxSize(); //Calculate the original box size once the DOM is ready
                     element.resizable({
                         //aspectRatio: true,
                         grid: 50,
@@ -59,38 +67,38 @@
                             propagateChanges();
                         }
                     });
+                }
 
-                    element.click(function() {
-                        select();
-                    });
+                function onClickFn() {
+                    select();
+                }
 
-                    inputElm.focus(function() {
-                        element.addClass('active');
-                    });
+                function onFocusFn() {
+                    element.addClass('active');
+                }
 
-                    inputElm.blur(function() {
-                        unselect();
-                    });
+                function onBlurFn() {
+                    unselect();
+                }
 
-                    scope.editItem = function() {
-                        keepItemSelected = true;
-                        var defaultPanels = [{ title: 'Select media', type: 'selectMedia' }];
-                        scope.internalData = {};
-                        scope.panels = defaultPanels;
-                        scope.onChange = function(model, id, selectedMedia) {
-                            scope.item.value = mediaService.getDownloadUrl(selectedMedia);
-                        };
-                        scope.onSave = function() {
-                            propagateChanges();
-                        };
-                        scope.onClose = function() {
-                            keepItemSelected = false;
-                            unselect();
-                            hideOverflow();
-                        };
-                        showOverflow();
-                        editBoxUtilsService.showEditBox(scope, editButtonElm, editButtonElm);
+                function onEditItemFn() {
+                    keepItemSelected = true;
+                    var defaultPanels = [{ title: 'Select media', type: 'selectMedia' }];
+                    scope.internalData = {};
+                    scope.panels = defaultPanels;
+                    scope.onChange = function(model, id, selectedMedia) {
+                        scope.item.value = mediaService.getDownloadUrl(selectedMedia);
                     };
+                    scope.onSave = function() {
+                        propagateChanges();
+                    };
+                    scope.onClose = function() {
+                        keepItemSelected = false;
+                        unselect();
+                        hideOverflow();
+                    };
+                    showOverflow();
+                    editBoxUtilsService.showEditBox(scope, editButtonElm, editButtonElm);
                 }
 
                 function setDomCoordinatesFromModel() {

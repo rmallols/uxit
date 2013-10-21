@@ -145,11 +145,11 @@ describe('caret service', function () {
             expect(contentEditable.attr('contenteditable')).toBe('true');
         });
 
-        it('should set the "editability" of the contenteditable element to false if the user is logged as non admin', function () {
+        it('should set the "editability" of the contenteditable element to false if the user is logged as non creator', function () {
             loadRoles($httpBackend, roleService, null);
             loadUserSession($httpBackend, sessionService, 3, null);
             var useSession = sessionService.getUserSession();
-            useSession.role = 2;
+            useSession.role = 1;
             var template =  '<div content-editable ng-model="content"></div>',
                 contentEditableDirective = $compile(template, { content: 'test content'}),
                 contentEditable;

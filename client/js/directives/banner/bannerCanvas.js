@@ -13,15 +13,13 @@
             },
             link: function link(scope, element) {
 
-                console.log("testear el nuevo elemento addArea, con floatRight, que el root tiene readOnly cuando toca")
-
                 var gridElm     = $(' > .grid', element),
                     directiveId = 'bannerCanvas',
                     gridSize    = 50,
                     totalCols   = Math.floor(element.width() / gridSize),
                     totalRows   = Math.floor(element.height() / gridSize),
                     userSession = sessionService.getUserSession(),
-                    isAdmin     = roleService.hasAdminRole(userSession);
+                    isCreator   = roleService.hasCreatorRole(userSession);
 
                 createGrid();
                 registerKeyboardEvents();
@@ -48,7 +46,7 @@
                 };
 
                 scope.isReadOnly = function() {
-                    return !isAdmin || element.attr('readonly') || element.attr('disabled');
+                    return !isCreator || element.attr('readonly') || element.attr('disabled');
                 };
 
                 /** Private methods **/

@@ -1,21 +1,20 @@
 describe('bannerItem directive', function () {
 
-    var $rootScope, $scope, $compile, $timeout, bannerItemDirective, model, template, sH;
+    var $rootScope, $scope, $compile, $timeout, bannerItemDirective, model, sH;
 
     beforeEach(module('components', 'templates-main', 'mocks.$timeout'));
     beforeEach(inject(["$rootScope", "$compile", "$document", "$timeout", "stringService",
     function ($rootScope_, $compile_, $document_, $timeout_, stringService_) {
-        template                = '<div banner-item data="model" overflow-visible="overflowVisible"></div>';
-        model                   = {"id":1380531241893,"type":"text","value":"sample test","size":{"width":100,"height":100},"position":{"top":50,"left":300}};
+        model                   = {"id":1380531241893,"type":"text","value":"sample test",
+                                   "size":{"width":100,"height":100},"position":{"top":50,"left":300}};
         $rootScope              = $rootScope_;
         $scope                  = $rootScope.$new();
         $scope.model            = model;
         $scope.overflowVisible  = false;
         $compile                = compileFn($compile_, $scope, $document_);
         $timeout                = $timeout_;
-        bannerItemDirective     = $compile(template);
         sH                      = stringService_;
-        $rootScope.$digest();
+        compile();
     }]));
 
     describe('main DOM structure', function () {
@@ -40,6 +39,62 @@ describe('bannerItem directive', function () {
         it('should set the select handler input to manage the active status', function () {
             var selectHandlerInputElm = $('input.selectHandler', bannerItemDirective);
             expect(selectHandlerInputElm.length).toBe(1);
+        });
+    });
+
+    describe('component editability', function () {
+
+        describe('readOnly style class', function () {
+
+            it('should not have the readonly class by default', function () {
+                expect(bannerItemDirective.hasClass('readOnly')).toBe(false);
+            });
+
+            it('should have the readonly class whenever the readonly attr is set', function () {
+                $scope.readOnly = true;
+                $rootScope.$digest();
+                expect(bannerItemDirective.hasClass('readOnly')).toBe(true);
+            });
+        });
+
+        describe('draggable style class', function () {
+
+            it('should have the ui-draggable class by default', function () {
+                expect(bannerItemDirective.hasClass('ui-draggable')).toBe(true);
+            });
+
+            it('should have the ui-draggable class even if the readonly attr is set after compilation ' +
+            '(caching purposes)', function () {
+                $scope.readOnly = true;
+                $rootScope.$digest();
+                expect(bannerItemDirective.hasClass('ui-draggable')).toBe(true);
+            });
+
+            it('should not have the ui-draggable class if the readonly attr is set before compilation', function () {
+                $scope.readOnly = true;
+                compile();
+                expect(bannerItemDirective.hasClass('ui-draggable')).toBe(false);
+            });
+        });
+
+        describe('resizable style class', function () {
+
+            it('should have the ui-resizable class by default', function () {
+                expect(bannerItemDirective.hasClass('ui-resizable')).toBe(true);
+            });
+
+            it('should have the ui-resizable class even if the readonly attr is set after compilation ' +
+            '(caching purposes)', function () {
+                $scope.readOnly = true;
+                $rootScope.$digest();
+                expect(bannerItemDirective.hasClass('ui-resizable')).toBe(true);
+            });
+
+            it('should not have the ui-resizable class if the readonly attr is set before compilation', function () {
+                $scope.readOnly = true;
+                compile();
+                expect(bannerItemDirective.hasClass('ui-resizable')).toBe(false);
+            });
         });
     });
 
@@ -100,8 +155,7 @@ describe('bannerItem directive', function () {
 
         it('should add the text component', function () {
             $scope.model.type   = 'image';
-            bannerItemDirective = $compile(template);
-            $rootScope.$digest();
+            compile();
             expect($(' > .item.text', bannerItemDirective).length).toBe(0);
             expect($(' > .item.image', bannerItemDirective).length).toBe(1);
         });
@@ -109,9 +163,14 @@ describe('bannerItem directive', function () {
         it('should set the specified image source', function () {
             $scope.model.type   = 'image';
             $scope.model.value  = 'testImage.png';
-            bannerItemDirective = $compile(template);
-            $rootScope.$digest();
+            compile();
             expect($(' > .item.image', bannerItemDirective).attr('src')).toBe($scope.model.value);
         });
     });
+
+    function compile() {
+        var template = '<div banner-item data="model" overflow-visible="overflowVisible" read-only="readOnly"></div>';
+        bannerItemDirective = $compile(template);
+        $rootScope.$digest();
+    }
 });

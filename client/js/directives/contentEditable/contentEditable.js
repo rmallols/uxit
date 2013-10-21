@@ -23,7 +23,7 @@
                 var cEDomObj = $(' > .editableArea > [contenteditable]', element),
                     userSession = sessionService.getUserSession();
 
-                scope.isAdmin = function () { return roleService.hasAdminRole(userSession); };
+                scope.isCreator = function () { return roleService.hasCreatorRole(userSession); };
 
                 // view -> model
                 scope.onKeyup = function () {
@@ -33,7 +33,7 @@
 
                 scope.isEditable = function() {
                     //noinspection JSValidateTypes
-                    var hasRights = (scope.contentEditable !== undefined) ? scope.contentEditable : scope.isAdmin();
+                    var hasRights = (scope.contentEditable !== undefined) ? scope.contentEditable : scope.isCreator();
                     return hasRights && !element.attr('readonly') && !element.attr('disabled');
                 };
 
