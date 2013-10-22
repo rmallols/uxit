@@ -1289,12 +1289,14 @@ angular.module("selectMedia.html", []).run(["$templateCache", function($template
     "            <media-picker ng-model=\"internalData.updatedMedia\" multiple=\"false\" on-change=\"onMediaChange()\"></media-picker>\n" +
     "        </div>\n" +
     "    </div>\n" +
-    "    <div class=\"columns large-10 textAlignRight\">\n" +
-    "        <label i18n=\"selectMedia.size\"></label>\n" +
-    "    </div>\n" +
-    "    <div class=\"columns large-15\">\n" +
-    "        <select ng-model=\"internalData.mediaSize\" ng-init=\"internalData.mediaSize=internalData.mediaSize||'original'\"\n" +
-    "                ng-options=\"obj.id as obj.text for obj in internalData.mediaSizes\" ng-change=\"propagateChanges()\"></select>\n" +
+    "    <div ng-hide=\"config.editSize==false\">\n" +
+    "        <div class=\"columns large-10 textAlignRight\">\n" +
+    "            <label i18n=\"selectMedia.size\"></label>\n" +
+    "        </div>\n" +
+    "        <div class=\"columns large-15\">\n" +
+    "            <select ng-model=\"internalData.mediaSize\" ng-init=\"internalData.mediaSize=internalData.mediaSize||'original'\"\n" +
+    "                    ng-options=\"obj.id as obj.text for obj in internalData.mediaSizes\" ng-change=\"propagateChanges()\"></select>\n" +
+    "        </div>\n" +
     "    </div>\n" +
     "</div>");
 }]);

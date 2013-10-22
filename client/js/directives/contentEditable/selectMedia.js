@@ -7,6 +7,7 @@
             templateUrl: 'selectMedia.html',
             scope: {
                 internalData    : '=',
+                config          : '=',
                 onChange        : '='
             },
             link: function link(scope) {

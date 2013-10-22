@@ -7,11 +7,13 @@
             <media-picker ng-model="internalData.updatedMedia" multiple="false" on-change="onMediaChange()"></media-picker>
         </div>
     </div>
-    <div class="columns large-10 textAlignRight">
-        <label i18n="selectMedia.size"></label>
-    </div>
-    <div class="columns large-15">
-        <select ng-model="internalData.mediaSize" ng-init="internalData.mediaSize=internalData.mediaSize||'original'"
-                ng-options="obj.id as obj.text for obj in internalData.mediaSizes" ng-change="propagateChanges()"></select>
+    <div ng-hide="config.editSize==false">
+        <div class="columns large-10 textAlignRight">
+            <label i18n="selectMedia.size"></label>
+        </div>
+        <div class="columns large-15">
+            <select ng-model="internalData.mediaSize" ng-init="internalData.mediaSize=internalData.mediaSize||'original'"
+                    ng-options="obj.id as obj.text for obj in internalData.mediaSizes" ng-change="propagateChanges()"></select>
+        </div>
     </div>
 </div>

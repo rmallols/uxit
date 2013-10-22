@@ -178,10 +178,11 @@
                     function getEditLayerHtmlElm(panel, index) {
                         var directiveName, htmlElm;
                         htmlElm = $('<div id="' + panel.type + scope.$id + '" ' +
-                                        'model="model" ng-style="getLayerHeight()" internal-data="internalData" ' +
+                                        'model="model" internal-data="internalData" ' +
                                         'on-layer="panels[' + index + '].onLayer" on-cancel="onCancel()" ' +
                                         'on-change="onChange()" ux-show="isLayerShown(' + index + ')" ' +
-                                        'persist="true">' +
+                                        'persist="true" ng-style="getLayerHeight()"' +
+                                        'config="panels[' + index + '].config">' +
                                     '</div>');
                         if(panel.appBridge) {
                             directiveName =  'app-bridge';

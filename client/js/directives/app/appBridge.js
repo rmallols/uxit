@@ -9,6 +9,7 @@
                 scope: {
                     model           : '=',
                     internalData    : '=',
+                    config          : '=',
                     onLayer         : '=',
                     onEvent         : '=',
                     src             : '@',

@@ -83,7 +83,8 @@
 
                 function onEditItemFn() {
                     keepItemSelected = true;
-                    var defaultPanels = [{ title: 'Select media', type: 'selectMedia' }];
+                    var defaultPanels = [{  title: 'Select media', type: 'selectMedia',
+                                            config: { editSize: false } }];
                     scope.internalData = {};
                     scope.panels = defaultPanels;
                     scope.onChange = function(model, id, selectedMedia) {
