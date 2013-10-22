@@ -5,11 +5,11 @@ module.exports = function(grunt) {
         app_js: 'client/js/',
         app_css: 'client/css',
         min: 'client/min/',
-        clean: ['<%= min %>js.min.js', '<%= min %>css.min.css'],
+        clean: ['<%= min %>js.min.js', '<%= min %>css.min.css', '<%= app_js %>/resources-<%= pkg.version %>.js'],
         jshint: {
             all: ['<%= app_js %>*.js', '<%= app_js %>controllers/*.js',
-                  '<%= app_js %>directives/*.js', '<%= app_js %>directives/*/*.js',
-                  '<%= app_js %>services/*.js', '<%= app_js %>services/*/*.js'],
+                '<%= app_js %>directives/*.js', '<%= app_js %>directives/*/*.js',
+                '<%= app_js %>services/*.js', '<%= app_js %>services/*/*.js'],
             options: {
                 '-W014': false, //Bad line breaking,
                 '-W060': false //Document.write can be a form of eval (enable once we have a script loader)
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
             run: {
                 configFile: 'server/config/karma.conf.js',
                 singleRun: true/*,
-                background: true*/
+                 background: true*/
             },
             watch: {
                 configFile: 'server/config/karma.conf.js',
@@ -27,42 +27,48 @@ module.exports = function(grunt) {
             }
         },
         preprocess : {
-            dev : {
-                src : '<%= app_js %>/resources.dev.js',
-                dest : '<%= app_js %>/resources.js'
-            },
-            prod : {
-                src : '<%= app_js %>/resources.prod.js',
-                dest : '<%= app_js %>/resources.js',
+            htmlDev : {
+                src : 'index.tpl.html',
+                dest : 'index.html',
                 options : {
                     context : {
-                        name : '<%= pkg.name %>',
-                        version : '<%= pkg.version %>',
-                        now : '<%= now %>',
-                        ver : '<%= ver %>'
+                        version : 'dev'
                     }
                 }
+            },
+            htmlProd : {
+                src : 'index.tpl.html',
+                dest : 'index.html',
+                options : {
+                    context : {
+                        version : '<%= pkg.version %>'
+                    }
+                }
+            },
+            jsProd: {
+                src : '<%= app_js %>/resources-prod.js',
+                dest : '<%= app_js %>/resources-<%= pkg.version %>.js'
             }
         },
         concat: {
             buildFormLets: {
                 files: {
                     '<%= min %>js.min.js': ['<%= app_js %>controllers/*.js',
-                                            '<%= app_js %>directives/*.js', '<%= app_js %>directives/*/*.js',
-                                            '<%= app_js %>services/*.js', '<%= app_js %>services/*/*.js',
-                                            '<%= app_js %>errorHandler.js', '<%= app_js %>templates.js'],
+                        '<%= app_js %>directives/*.js', '<%= app_js %>directives/*/*.js',
+                        '<%= app_js %>services/*.js', '<%= app_js %>services/*/*.js',
+                        '<%= app_js %>errorHandler.js', '<%= app_js %>templates.js'],
                     '<%= min %>lib.min.js': ['<%= app_lib %>i18n/*.js',
-                                             '<%= app_lib %>yepnope/*.js',
-                                             '<%= app_lib %>rangy/*.js',
-                                             '<%= app_lib %>form/*.js',
-                                             '<%= app_lib %>morrisJs/*.js',
-                                             '<%= app_lib %>select2/*.js',
-                                             '<%= app_lib %>powerTip/*.js',
-                                             '<%= app_lib %>mousetrap/mousetrap.min.js',
-                                             '<%= app_lib %>mousetrap/mousetrap-global-bind.min.js',
-                                             '<%= app_lib %>fullscreen/*.js',
-                                             '<%= app_lib %>miniColors/*.js',
-                                             '<%= app_lib %>iCheck/*.js']
+                        '<%= app_lib %>yepnope/*.js',
+                        '<%= app_lib %>rangy/*.js',
+                        '<%= app_lib %>form/*.js',
+                        '<%= app_lib %>morrisJs/*.js',
+                        '<%= app_lib %>select2/*.js',
+                        '<%= app_lib %>powerTip/*.js',
+                        '<%= app_lib %>mousetrap/mousetrap.min.js',
+                        '<%= app_lib %>mousetrap/mousetrap-global-bind.min.js',
+                        '<%= app_lib %>fullscreen/*.js',
+                        '<%= app_lib %>miniColors/*.js',
+                        '<%= app_lib %>iCheck/*.js']
                 }
             }
         },
@@ -106,6 +112,14 @@ module.exports = function(grunt) {
                     async: true
                 }
             }
+        },
+        bumpup: {
+            file: 'package.json',
+            options: {
+                updateProps: {
+                    pkg: 'package.json'
+                }
+            }
         }
     });
 
@@ -118,12 +132,15 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-html2js');
+    grunt.loadNpmTasks('grunt-bumpup');
 
-    //grunt.registerTask('default', []);
-    //grunt.registerTask('krm', ['karma']);
     grunt.registerTask('startMongo', ['shell']);
     grunt.registerTask('startKarma', ['karma:watch']);
     grunt.registerTask('generateTemplates', ['html2js']);
-    grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'preprocess:dev', 'generateTemplates']);
-    grunt.registerTask('prod', ['clean', 'jshint', 'karma:run', 'preprocess:prod', 'generateTemplates', 'concat', 'uglify', 'less:prod']);
+    grunt.registerTask('devPreprocess', ['preprocess:htmlDev']);
+    grunt.registerTask('prodPreprocess', ['preprocess:htmlProd', 'preprocess:jsProd']);
+    grunt.registerTask('bump', ['bumpup:' + grunt.option('type')]);
+    grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'devPreprocess', 'generateTemplates']);
+    grunt.registerTask('prod', ['clean', 'jshint', 'karma:run', 'bump', 'prodPreprocess',
+        'generateTemplates', 'concat', 'uglify', 'less:prod']);
 };

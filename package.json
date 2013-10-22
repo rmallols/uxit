@@ -1,8 +1,7 @@
 {
     "name": "menzit",
     "author": "menzit",
-    "version": "0.1.0",
-    "releaseVersion": "S30",
+    "version": "0.32.0",
     "devDependencies": {
         "grunt": "~0.4.1",
         "grunt-contrib-jshint": "~0.5.4",
@@ -23,6 +22,7 @@
         "bcrypt-nodejs": "~0.0.2",
         "mongodb": "~1.2.7",
         "gm": "~1.8.1",
-        "express": "~3.0.0rc2"
+        "express": "~3.0.0rc2",
+        "grunt-bumpup": "~0.4.2"
     }
 }

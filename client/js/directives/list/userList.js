@@ -54,7 +54,7 @@ function ($rootScope, mediaService, userService, constantsService, listDbService
                             '<h3><a href="#">{{item.fullName}}</a></h3>' +
                             '<div list-expanded-view class="email" ng-bind-html-unsafe="item.email"></div>' +
                             '{{item.create.date}}' +
-                        '</div>'
+                        '</div>';
             }
             /** End of private methods**/
 		}

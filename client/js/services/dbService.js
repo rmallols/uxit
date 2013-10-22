@@ -14,7 +14,7 @@
                 if(callback) {
                     callback(databases);
                 }
-            })
+            });
         }
 
         /**
@@ -28,7 +28,7 @@
                 if(callback) {
                     callback(databases);
                 }
-            })
+            });
         }
 
         /**
@@ -43,7 +43,7 @@
                 if(callback) {
                     callback(result);
                 }
-            })
+            });
         }
 
         /**
@@ -57,7 +57,7 @@
                 if(callback) {
                     callback(result);
                 }
-            })
+            });
         }
 
         /**

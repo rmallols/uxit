@@ -18,7 +18,7 @@ COMPONENTS.directive('contentList', ['constantsService', function (constantsServ
                                     '<div list-expanded-view>' +
                                         '<div class="content" i18n-db="item.content"></div>' +
                                     '</div>' +
-                                    '{{item.update.date}}'
+                                    '{{item.update.date}}';
 		}
 	};
 }]);

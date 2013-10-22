@@ -68,10 +68,10 @@
                                             : maxColSize;
                     colWidthStyleClass = 'large-' + scope.colWidth;
                     itemClassesObj[colWidthStyleClass]  = true;
-                    itemClassesObj['active']            = item.isSelected;
+                    itemClassesObj.active               = item.isSelected;
                     itemClassesObj[viewMode]            = true;
-                    itemClassesObj['boxedItems']        = scope.config.boxedItems;
-                    itemClassesObj['multiSelectable']   = scope.isMultiSelectable();
+                    itemClassesObj.boxedItems           = scope.config.boxedItems;
+                    itemClassesObj.multiSelectable      = scope.isMultiSelectable();
                     return itemClassesObj;
                 };
 
@@ -106,7 +106,7 @@
                 };
 
                 scope.setItemHeight = function() {
-                    return (scope.config.boxedItems) ? { height: getItemsHeight() } : {}
+                    return (scope.config.boxedItems) ? { height: getItemsHeight() } : {};
                 };
 
                 scope.page = 0;
