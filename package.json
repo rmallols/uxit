@@ -23,6 +23,7 @@
         "mongodb": "~1.2.7",
         "gm": "~1.8.1",
         "express": "~3.0.0rc2",
-        "grunt-bumpup": "~0.4.2"
+        "grunt-bumpup": "~0.4.2",
+        "protractor": "~0.11.0"
     }
 }

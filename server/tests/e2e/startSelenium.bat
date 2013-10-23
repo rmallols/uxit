@@ -1,0 +1,1 @@
+java -jar ../../../node_modules/protractor/bin/selenium/selenium-server-standalone-2.35.0.jar -Dwebdriver.chrome.driver=../../../node_modules/protractor/bin/selenium/chromedriver.exe
