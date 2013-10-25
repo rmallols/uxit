@@ -36,7 +36,11 @@ function checkAuth(req, res, next) {
 }
 
 function setupDb(req, res, next) {
-    req.db = dbService.connect(req.params.portalId);
+    if(!req.params.portalId) {
+        console.log("IN SETUPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP!!!", req.params.portalId)
+    }
+
+    req.dbCon = dbService.connect(req.params.portalId);
     next();
 }
 
@@ -45,9 +49,8 @@ function goToIndex(res) {
     res.sendfile(absPath + '/index.html');
 }
 
-app.post('/:portalId/rest/login', function (req, res) {
-    dbService.connect(req.params.portalId);
-    sessionService.login(req.body, req.session, function (success) {
+app.post('/:portalId/rest/login', setupDb, function (req, res) {
+    sessionService.login(req.dbCon, req.body, req.session, function (success) {
         if (success) {
             res.redirect(req.params.portalId);
         } else {
@@ -56,8 +59,8 @@ app.post('/:portalId/rest/login', function (req, res) {
     });
 });
 
-app.post('/:portalId/rest/getSession', function (req, res) {
-    sessionService.getSession(req.session, function (user) {
+app.post('/:portalId/rest/getSession', setupDb, function (req, res) {
+    sessionService.getSession(req.dbCon, req.session, function (user) {
         res.send(user);
     });
 });
@@ -68,100 +71,100 @@ app.get('/:portalId/logout', function (req, res) {
     });
 });
 
-app.get('/:portalId/rest/databases', checkAuth, function (req, res) {
-    dbService.getDatabases(req.session, function(result) {
+app.get('/:portalId/rest/databases', checkAuth, setupDb, function (req, res) {
+    dbService.getDatabases(req.dbCon, req.session, function(result) {
         res.send(result)
     });
 });
 
-app.post('/:portalId/rest/databases/create', checkAuth, function (req, res) {
-    dbService.createDatabase(req.body, req.session, function(result) {
+app.post('/:portalId/rest/databases/create', checkAuth, setupDb, function (req, res) {
+    dbService.createDatabase(req.dbCon, req.body, req.session, function(result) {
         res.send(result);
     });
 });
 
-app.put('/:portalId/rest/databases/:id/update', checkAuth, function (req, res) {
-    dbService.updateDatabase(req.params.id, req.body, req.session, function(result) {
+app.put('/:portalId/rest/databases/:id/update', checkAuth, setupDb, function (req, res) {
+    dbService.updateDatabase(req.dbCon, req.params.id, req.body, req.session, function(result) {
         res.send(result);
     });
 });
 
-app.delete('/:portalId/rest/databases/:id/delete', checkAuth, function (req, res) {
-    dbService.deleteDatabase(req.params.id, req.session, function(result) {
+app.delete('/:portalId/rest/databases/:id/delete', checkAuth, setupDb, function (req, res) {
+    dbService.deleteDatabase(req.dbCon, req.params.id, req.session, function(result) {
         res.send(result)
     });
 });
 
-app.post('/:portalId/rest/users/create', checkAuth, function (req, res) {
-    userService.create(req.body, req.session, function (newUser) {
+app.post('/:portalId/rest/users/create', checkAuth, setupDb, function (req, res) {
+    userService.create(req.dbCon, req.body, req.session, function (newUser) {
         if (!newUser)   { res.send('The e-mail address already exists. Please select a new one', 403); }
         else            { res.send(newUser); }
     });
 });
 
-app.post('/:portalId/rest/:collection/create', checkAuth, function (req, res) {
-    createService.create(dbService.getDbConnection(), req.params.collection, req.body, req.session, function (newItem) {
+app.post('/:portalId/rest/:collection/create', checkAuth, setupDb, function (req, res) {
+    createService.create(req.dbCon, req.params.collection, req.body, req.session, function (newItem) {
         res.send(newItem);
     });
 });
 
-app.post('/:portalId/rest/:collection/rate', checkAuth, function (req, res) {
-    rateService.rate(req.params.collection, req.body, req.session, function (result) {
+app.post('/:portalId/rest/:collection/rate', checkAuth, setupDb, function (req, res) {
+    rateService.rate(req.dbCon, req.params.collection, req.body, req.session, function (result) {
         res.send(result);
     });
 });
 
-app.get('/:portalId/rest/:collection/getStats', function (req, res) {
-    statsService.getStats(req.params.collection, req.query, req.session, function (stats) {
+app.get('/:portalId/rest/:collection/getStats', setupDb, function (req, res) {
+    statsService.getStats(req.dbCon, req.params.collection, req.query, req.session, function (stats) {
         res.send(stats);
     });
 });
 
-app.get('/:portalId/rest/:collection/:id?*', function (req, res) {
-    getService.get(req.params.collection, req.params.id, req.query, function (documents) {
+app.get('/:portalId/rest/:collection/:id?*', setupDb, function (req, res) {
+    getService.get(req.dbCon, req.params.collection, req.params.id, req.query, function (documents) {
         res.send(documents);
     });
 });
 
-app.put('/:portalId/rest/users/:id/update', checkAuth, function (req, res) {
-    userService.update(req.params.id, req.body, req.session, function (updatedUser) {
+app.put('/:portalId/rest/users/:id/update', checkAuth, setupDb, function (req, res) {
+    userService.update(req.dbCon, req.params.id, req.body, req.session, function (updatedUser) {
         if (!updatedUser)   { res.send('The e-mail address already exists. Please select a new one', 403); }
         else                { res.send(updatedUser); }
     });
 });
 
-app.put('/:portalId/rest/:collection/:id/update', checkAuth, function (req, res) {
-    updateService.update(req.params.collection, req.params.id, req.body, req.session, function (result) {
+app.put('/:portalId/rest/:collection/:id/update', checkAuth, setupDb, function (req, res) {
+    updateService.update(req.dbCon, req.params.collection, req.params.id, req.body, req.session, function (result) {
         res.send(result);
     });
 });
 
-app.delete('/:portalId/rest/:collection/:id/delete', checkAuth, function (req, res) {
-    deleteService.delete(req.params.collection, req.params.id, function (result) {
+app.delete('/:portalId/rest/:collection/:id/delete', checkAuth, setupDb, function (req, res) {
+    deleteService.delete(req.dbCon, req.params.collection, req.params.id, function (result) {
         res.send(result);
     });
 });
 
-app.post('/:portalId/rest/availableApps/deploy', checkAuth, function (req, res) {
-    appService.deploy(req.files, req.session, function (result) {
+app.post('/:portalId/rest/availableApps/deploy', checkAuth, setupDb, function (req, res) {
+    appService.deploy(req.dbCon, req.files, req.session, function (result) {
         res.send(result);
     });
 });
 
-app.post('/:portalId/rest/availableApps/:id/undeploy', checkAuth, function (req, res) {
-    appService.undeploy(req.params.id, req.body, req.session, function (result) {
+app.post('/:portalId/rest/availableApps/:id/undeploy', checkAuth, setupDb, function (req, res) {
+    appService.undeploy(req.dbCon, req.params.id, req.body, req.session, function (result) {
         res.send(result);
     });
 });
 
-app.post('/media/upload/:id?*', checkAuth, function (req, res) {
-    mediaService.upload(req.params.id, req.files, req.session, function (images) {
+app.post('/:portalId/media/upload/:id?*', checkAuth, setupDb, function (req, res) {
+    mediaService.upload(req.dbCon, req.params.id, req.files, req.session, function (images) {
         res.send(images);
     });
 });
 
-app.get('/media/:id/:name', function (req, res) {
-    downloadService.download(req.params.id, function (content) {
+app.get('/:portalId/media/:id/:name', setupDb, function (req, res) {
+    downloadService.download(req.dbCon, req.params.id, function (content) {
         if(content && content[0]) {
             //Try to get the file name from the URL in order to keep the document name once it's going to be downloaded
             // Otherwise, take it from database
@@ -176,8 +179,8 @@ app.get('/media/:id/:name', function (req, res) {
     });
 });
 
-app.post('/:portalId/rest/sendEmail', function (req, res) {
-    emailService.sendEmail(req.body, req.session, function (result) {
+app.post('/:portalId/rest/sendEmail', setupDb, function (req, res) {
+    emailService.sendEmail(req.dbCon, req.body, req.session, function (result) {
         res.send(result);
     });
 });
@@ -198,19 +201,18 @@ app.get('/', function (req, res) {
     });
 });
 
-app.get('/:portalId/login', function (req, res) { goToIndex(res); });
+app.get('/:portalId/login', setupDb, function (req, res) { goToIndex(res); });
 
 app.get('/error', function (req, res) { goToIndex(res); });
 
-app.get('/:portalId', function (req, res) {
-    existsPortal(req.params.portalId, req.session, function(existsPortal) {
+app.get('/:portalId', setupDb, function (req, res) {
+    existsPortal(req.dbCon, req.params.portalId, req.session, function(existsPortal) {
         if(existsPortal) {
-            dbService.connect(req.params.portalId);
             var params = {
                 q : { position : 0 },
                 projection : { url: 1, type: 1, externalLinkUrl: 1}
             };
-            getService.getFirst(constantsService.collections.pages, params, function (firstPage) {
+            getService.getFirst(req.dbCon, constantsService.collections.pages, params, function (firstPage) {
                 if(firstPage) {
                     if (firstPage.type === 'externalLink') { res.redirect(firstPage.externalLinkUrl); }
                     else { res.redirect(req.params.portalId + '/' + firstPage.url); }
@@ -222,15 +224,14 @@ app.get('/:portalId', function (req, res) {
     });
 });
 
-app.get('/:portalId/:pageId', function (req, res) {
-    existsPortal(req.params.portalId, req.session, function(existsPortal) {
+app.get('/:portalId/:pageId', setupDb, function (req, res) {
+    existsPortal(req.dbCon, req.params.portalId, req.session, function(existsPortal) {
         if(existsPortal) {
-            dbService.connect(req.params.portalId);
             var params = {
                 q : { url : req.params.pageId },
                 projection : { url: 1, type: 1, externalLinkUrl: 1}
             };
-            getService.getFirst(constantsService.collections.pages, params, function (page) {
+            getService.getFirst(req.dbCon, constantsService.collections.pages, params, function (page) {
                 if(page) {
                     if (page.type === 'externalLink') {
                         res.redirect(pages.results[0].externalLinkUrl);
@@ -247,8 +248,8 @@ app.get('/:portalId/:pageId', function (req, res) {
     });
 });
 
-function existsPortal(portalId, session, callback) {
-    dbService.existsDatabase(portalId, session, function(result) {
+function existsPortal(dbCon, portalId, session, callback) {
+    dbService.existsDatabase(dbCon, portalId, session, function(result) {
         callback(result);
     });
 }

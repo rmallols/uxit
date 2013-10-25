@@ -8,13 +8,13 @@ var utilsService        = require("../utilsService"),
 
 module.exports = {
 
-    upload : function (id, files, session, callback) {
+    upload : function (dbCon, id, files, session, callback) {
 
         function uploadFile(file, callback) {
 
             function createNewFile(saveObj, callback) {
                 utilsService.addCreateSignature(saveObj, session);
-                dbService.getDbConnection().collection(constantsService.collections.media).save(saveObj, function (err, newContent) {
+                dbCon.collection(constantsService.collections.media).save(saveObj, function (err, newContent) {
                     saveObj._id = newContent._id;
                     delete saveObj.data;
                     callback(saveObj);
@@ -23,10 +23,10 @@ module.exports = {
 
             function updateExistingFile(saveObj, callback) {
                 var collection = constantsService.collections.media,
-                    id = {_id: dbService.getFormattedId(id)},
+                    id = {_id: dbService.getFormattedId(dbCon, id)},
                     params = {$set: saveObj};
                 utilsService.addUpdateSignature(saveObj, session);
-                dbService.getDbConnection().collection(collection).update(id, params, function () {
+                dbCon.collection(collection).update(id, params, function () {
                     callback(saveObj);
                 });
             }

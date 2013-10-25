@@ -6,8 +6,6 @@ module.exports = {
     _initializedCollectionsCounter: 0,
 
     connect: function (databaseId) {
-        this.dbConnection = mongoJsService.connect(databaseId);
-        console.log("JIJIJI...esto solo deberia ocurrir DENTRO de DB service, quitando el this.");
         return mongoJsService.connect(databaseId);
     },
 
@@ -15,9 +13,9 @@ module.exports = {
         return this._adminDbId;
     },
 
-    getDatabases: function(session, callback) {
+    getDatabases: function(dbCon, session, callback) {
         var normalizedDbs = [], self = this;
-        self._runCommand({listDatabases: 1}, this._adminDbId, function(err, result) {
+        self._runCommand(dbCon, {listDatabases: 1}, this._adminDbId, function(err, result) {
             //Convert results to an index-based array
             result.databases.forEach(function(database) {
                 if(!self._isPrivateDatabase(database.name)) { //Don't include private databases
@@ -29,9 +27,9 @@ module.exports = {
         });
     },
 
-    existsDatabase: function(databaseId, session, callback) {
+    existsDatabase: function(dbCon, databaseId, session, callback) {
         var exists = false;
-        this.getDatabases(session, function(databases) {
+        this.getDatabases(dbCon, session, function(databases) {
             databases.results.forEach(function(database) {
                 if(database.name === databaseId) {
                     exists = true;
@@ -41,59 +39,55 @@ module.exports = {
         });
     },
 
-    createDatabase: function(body, session, callback) {
-        var self = this;
-        mongoJsService.connect(body.name); //Create the database explicitly
-        self._initializeCollections(body.name, function() { //Initialize their collections
-            self.getDatabases(session, function(result) {
+    createDatabase: function(dbCon, body, session, callback) {
+        var self = this,
+            dbConnection = self.connect(body.name); //Create the database explicitly
+        self._initializeCollections(dbConnection, body.name, function() { //Initialize their collections
+            self.getDatabases(dbCon, session, function(result) {
                 callback(result);
             });
         });
     },
 
-    updateDatabase: function(databaseId, body, session, callback) {
+    updateDatabase: function(dbCon, databaseId, body, session, callback) {
         var self = this, dstDbId = body.name;
-        self.copyDatabase(databaseId, dstDbId, function(result) {
+        self._copyDatabase(dbCon, databaseId, dstDbId, function(result) {
             self.deleteDatabase(databaseId, session, function() {
                 callback(result);
             })
         });
     },
 
-    copyDatabase: function(srcDbId, dstDbId, callback) {
-        var commandOptions = {
-            copydb: 1,
-            fromdb: srcDbId,
-            todb: dstDbId
-        };
-        this._runCommand(commandOptions, this._adminDbId, function(err, result) {
-            callback(result);
-        });
-    },
-
-    deleteDatabase: function(databaseId, session, callback) {
+    deleteDatabase: function(dbCon, databaseId, session, callback) {
         var self = this;
-        self._runCommand({dropDatabase: 1}, databaseId, function(/*err, result*/) {
-            self.getDatabases(session, function(result) {
+        self._runCommand(dbCon, {dropDatabase: 1}, databaseId, function(/*err, result*/) {
+            self.getDatabases(dbCon, session, function(result) {
                 callback(result);
             });
         });
     },
 
-    getDbConnection: function() {
-        return this.dbConnection;
-    },
-
     //Get the formatted of the mongodb collection, as it will usually be a native object id,
     //but in some specific situations, it could be a plain string (for instance, in the case of the portal names)
-    getFormattedId: function (originalId) {
+    getFormattedId: function (dbCon, originalId) {
         var _id;
         try {
-            _id = this.getDbConnection().ObjectId(originalId);
+            _id = dbCon.ObjectId(originalId);
         } catch (ex) {
             _id = originalId;
         }
         return _id;
+    },
+
+    _copyDatabase: function(dbCon, srcDbId, dstDbId, callback) {
+        var commandOptions = {
+            copydb: 1,
+            fromdb: srcDbId,
+            todb: dstDbId
+        };
+        this._runCommand(dbCon, commandOptions, this._adminDbId, function(err, result) {
+            callback(result);
+        });
     },
 
     _isPrivateDatabase: function(databaseId) {
@@ -106,11 +100,11 @@ module.exports = {
         return isPrivate;
     },
 
-    _initializeCollections: function(databaseId, callback) {
+    _initializeCollections: function(dbCon, databaseId, callback) {
         var self = this;
         Object.keys(constantsService.collections).forEach(function(collectionKey) {
             var collection = constantsService.collections[collectionKey];
-            self._existsCollection(collection, databaseId, function(exists) {
+            self._existsCollection(dbCon, collection, databaseId, function(exists) {
                 if(exists) {    //The collection already exists -> return
                     if(self._registerInitializationAndFinish() && callback) { callback() }
                 } else {        //The collection doesn't exists yet -> initialize it
@@ -131,15 +125,15 @@ module.exports = {
         return false;
     },
 
-    _existsCollection: function(collection, database, callback) {
-        this._runCommand({ count: collection }, database, function(err, result) {
+    _existsCollection: function(dbCon, collection, database, callback) {
+        this._runCommand(dbCon, { count: collection }, database, function(err, result) {
             var exists = !err && result.ok && result.n > 0;
             if(callback) { callback(exists); }
         });
     },
 
     _initializeCollection: function (databaseId, collection, callback) {
-        var self = this, dbConnection = mongoJsService.connect(databaseId);
+        var self = this, dbConnection = self.connect(databaseId);
         fileSystemService.readFile('../setup/' + collection + '.json', function (err, data) {
             if(data && data.length) {
                 self._createDocuments(dbConnection, collection, data, function() {
@@ -183,12 +177,12 @@ module.exports = {
         });
     },
 
-    _runCommand: function(command, databaseId, callback) {
+    _runCommand: function(dbCon, command, databaseId, callback) {
         var dbConnection;
         if(databaseId) { //Check if the command has to be executed in a specific db (i.e. admin)
-            dbConnection = mongoJsService.connect(databaseId);
+            dbConnection = this.connect(databaseId);
         } else { //Otherwise, use the current db connection
-            dbConnection = this.dbConnection;
+            dbConnection = dbCon;
         }
         dbConnection.runCommand(command, function(err, result) {
             callback(err, result);

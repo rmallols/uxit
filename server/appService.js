@@ -10,7 +10,7 @@ var deleteService       = require('./crud/deleteService'),
 
 module.exports = {
 
-    deploy: function (files, session, callback) {
+    deploy: function (dbCon, files, session, callback) {
 
         function getSetupObj(setupStr) {
             var setupObj;
@@ -48,26 +48,24 @@ module.exports = {
         }
 
         function createDocument(setupObj, callback) {
-            var data, query, dbConnection;
+            var data, query;
             data = setDbData(setupObj);
             query = { q: [{ text: setupObj.id, targets: ['id'] }] };
-            dbConnection = dbService.getDbConnection();
-            getService.exists(constantsService.collections.availableApps, query, function (id) {
+            getService.exists(dbCon, constantsService.collections.availableApps, query, function (id) {
                 if (id) {
-                    updateService.update(constantsService.collections.availableApps, id, data, session, callback);
+                    updateService.update(dbCon, constantsService.collections.availableApps, id, data, session, callback);
                 } else {
                     data.avgRating = '';
-                    createService.create(dbConnection, constantsService.collections.availableApps, data, session, callback);
+                    createService.create(dbCon, constantsService.collections.availableApps, data, session, callback);
                 }
             });
         }
 
         function createCollections(collections) {
-            var dbConnection = dbService.getDbConnection();
             collections.forEach(function (collection) {
                 // Create a capped collection with a maximum of 1000 documents
                 //noinspection JSUnresolvedFunction
-                dbService.getDbConnection().createCollection(collection, {capped: true, size: 10000, max: 1000, w: 1}, function (/*err, collection*/) {
+                dbCon.createCollection(collection, {capped: true, size: 10000, max: 1000, w: 1}, function (/*err, collection*/) {
                     createService.create(dbConnection, collection, { hello: 'world' + Math.floor(Math.random()*11)}, session, callback);
                 });
             });
@@ -105,8 +103,8 @@ module.exports = {
         }
     },
 
-    undeploy: function (id, data, session, callback) {
-        deleteService.delete(constantsService.collections.availableApps, id, function () {
+    undeploy: function (dbCon, id, data, session, callback) {
+        deleteService.delete(dbCon, constantsService.collections.availableApps, id, function () {
             fileSystemService.deleteFolderRecursive('../client/apps/' + data.id + '/');
             callback();
         });

@@ -3,11 +3,11 @@ var getService  = require("./getService"),
     dbService   = require("../dbService");
 module.exports = {
 
-    getStats : function (collection, query, session, callback) {
+    getStats : function (dbCon, collection, query, session, callback) {
         var key = {}; //Specify the grouping key
         if (query.groupBy) { key[query.groupBy] = 1; }
         else { key['create.date'] = 1; } //By default, group by creation date
-        dbService.getDbConnection().collection(collection).group({
+        dbCon.collection(collection).group({
             keyf: function (doc) {
                 var date = new Date(doc.create.date),
                     dateKey = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear() + '';
@@ -22,7 +22,7 @@ module.exports = {
             var processedItems = 0;
             if(stats.length > 0) {
                 stats.forEach(function (stat) {
-                    getService.setJoins(stat, function() {
+                    getService.setJoins(dbCon, stat, function() {
                         processedItems++;
                         if(processedItems === stats.length) {
                             callback(stats);

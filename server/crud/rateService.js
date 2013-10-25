@@ -6,27 +6,29 @@ var createService   = require("./createService"),
     dbService       = require("../dbService");
 
 module.exports = {
-    rate : function (collection, body, session, callback) {
+    rate : function (dbCon, collection, body, session, callback) {
         var query = {
             q: { $and: [{ targetId: body.target.id }, { 'create.authorId': session.user._id }]}
         };
         //Only one rate by user and target will be allowed. If it exists -> update it. Otherwise -> Create it
-        getService.getFirst(collection, query, function (document) {
+        getService.getFirst(dbCon, collection, query, function (document) {
             var data = {rating: body.rating, targetId: body.target.id};
             if (document) {
-                updateService.update(collection, document._id, data, session, function () { updateAvgRating(document.rating); });
+                updateService.update(dbCon, collection, document._id, data, session, function () {
+                    updateAvgRating(document.rating); }
+                );
             } else {
-                createService.create(dbService.getDbConnection(), collection, data, session, function () { updateAvgRating(null); });
+                createService.create(dbCon, collection, data, session, function () { updateAvgRating(null); });
             }
         });
 
         function updateAvgRating(previousUserRating) {
             var avgRating, filter;
-            getService.get(body.target.collection, body.target.id, {}, function (document) {
+            getService.get(dbCon, body.target.collection, body.target.id, {}, function (document) {
                 filter = { targetId : body.target.id};
-                countService.count(collection, filter, function (numberOfRatings) {
+                countService.count(dbCon, collection, filter, function (numberOfRatings) {
                     avgRating = getNewAvgRating(document.avgRating, previousUserRating, numberOfRatings);
-                    updateService.update(body.target.collection, body.target.id, { avgRating: avgRating.toFixed(2) }, session,
+                    updateService.update(dbCon, body.target.collection, body.target.id, { avgRating: avgRating.toFixed(2) }, session,
                         function () {
                             callback({ avgRating: avgRating });
                         }

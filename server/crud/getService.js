@@ -25,36 +25,35 @@ module.exports = {
         return normalizedSort;
     },
 
-    exists: function (collection, query, callback) {
-        this.getFirst(collection, query, function (document) {
+    exists: function (dbCon, collection, query, callback) {
+        this.getFirst(dbCon, collection, query, function (document) {
             callback((document) ? document._id : null);
         });
     },
 
-    getFirst: function (collection, query, callback) {
+    getFirst: function (dbCon, collection, query, callback) {
         var projection;
         //Normalize the projection to ensure that the projection value is an integer, an not probably an string
         projection = this._normalizeProjection(query.projection);
         //noinspection JSUnresolvedFunction
-        dbService.getDbConnection().collection(collection).findOne(query.q, projection, function (err, document) {
+        dbCon.collection(collection).findOne(query.q, projection, function (err, document) {
             callback(document);
         });
     },
 
-    get : function (collection, id, query, callback) {
+    get : function (dbCon, collection, id, query, callback) {
         var projection      = {}, sort = {}, currentPage = parseInt(query.currentPage, 10) || 0,
             pageSize        = Number(query.pageSize) || 0, getFirstQuery,
             skip            = (currentPage * pageSize) + Number(query.skip) || (currentPage * pageSize),
-            dbConnection    = dbService.getDbConnection(),
             self            = this,
             processedItems  = 0;
         if (id) {
-            getFirstQuery = { q: { _id: dbService.getFormattedId(id)} }; //Normalize the way the Ids are set
+            getFirstQuery = { q: { _id: dbService.getFormattedId(dbCon, id)} }; //Normalize the way the Ids are set
             if (query.projection) { //Add the query projection, if case
                 getFirstQuery.projection = query.projection;
             }
-            self.getFirst(collection, getFirstQuery, function (document) {
-                self.setJoins(document, function() {
+            self.getFirst(dbCon, collection, getFirstQuery, function (document) {
+                self.setJoins(dbCon, document, function() {
                     callback(document);
                 });
             });
@@ -63,11 +62,11 @@ module.exports = {
             projection = this._normalizeProjection(query.projection);
             sort = this._normalizeSort(query.sort);
             //noinspection JSUnresolvedVariable
-            dbConnection.collection(collection).count(query.q, function (err, totalSize) {
-                dbConnection.collection(collection).find(query.q, projection).sort(sort).skip(skip).limit(pageSize, function (err, documents) {
+            dbCon.collection(collection).count(query.q, function (err, totalSize) {
+                dbCon.collection(collection).find(query.q, projection).sort(sort).skip(skip).limit(pageSize, function (err, documents) {
                     if (documents && documents.length > 0) {
                         documents.forEach(function (document) {
-                            self.setJoins(document, function() {
+                            self.setJoins(dbCon, document, function() {
                                 processedItems++;
                                 if(processedItems === documents.length) {
                                     callback(utilsService.normalizeQueryResultsFormat(documents, totalSize));
@@ -82,19 +81,19 @@ module.exports = {
         }
     },
 
-    setJoins: function (document, callback) {
+    setJoins: function (dbCon, document, callback) {
         var self = this;
-        self.joinUserData(document, function() {
-            self.joinMediaData(document, function() {
+        self.joinUserData(dbCon, document, function() {
+            self.joinMediaData(dbCon, document, function() {
                 if(callback) { callback(); }
             });
         });
     },
 
-    joinUserData: function (sourceDoc, callback) {
+    joinUserData: function (dbCon, sourceDoc, callback) {
         var filter = { projection : { password : 0}}, self = this;
         if (sourceDoc && sourceDoc.authorId) {
-            self.get(constantsService.collections.media, sourceDoc.mediaId, filter, function(userDoc) {
+            self.get(dbCon, constantsService.collections.media, sourceDoc.mediaId, filter, function(userDoc) {
                 self._handleUserDataJoin(sourceDoc, userDoc);
                 if(callback) { callback(); }
             });
@@ -103,10 +102,10 @@ module.exports = {
         }
     },
 
-    joinMediaData: function (sourceDoc, callback) {
+    joinMediaData: function (dbCon, sourceDoc, callback) {
         var filter = { projection : { data : 0}}, self = this;
         if (sourceDoc && sourceDoc.mediaId) {
-            self.get(constantsService.collections.media, sourceDoc.mediaId, filter, function(mediaDoc) {
+            self.get(dbCon, constantsService.collections.media, sourceDoc.mediaId, filter, function(mediaDoc) {
                 self._handleMediaDataJoin(sourceDoc, mediaDoc);
                 if(callback) { callback(); }
             });

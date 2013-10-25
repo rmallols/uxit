@@ -68,7 +68,7 @@
         function getDownloadUrl(media) {
             //noinspection JSHint
             if(media && media._id) {
-                return '/media/' + media._id + '/' + media.name;
+                return 'media/' + media._id + '/' + media.name;
             }
             return null;
         }

@@ -56,13 +56,13 @@ describe('mediaPicker directive', function () {
         it('should have a specific src attribute if the specific media is provided - default not defined', function () {
             var mediaPickerDirective = compile(template, { user: { media: { _id: '_testId', name: 'bla.png'}}});
             $rootScope.$digest();
-            expect($(' > img.current', mediaPickerDirective).attr('src')).toBe('/media/_testId/bla.png');
+            expect($(' > img.current', mediaPickerDirective).attr('src')).toBe('media/_testId/bla.png');
         });
 
         it('should have a specific src attribute if the specific media is provided - default defined', function () {
             var mediaPickerDirective = compile(template, { user: { media: { _id: '_testId', name: 'bla.png'}}, defaultAvatarUrl: 'test.png'});
             $rootScope.$digest();
-            expect($(' > img.current', mediaPickerDirective).attr('src')).toBe('/media/_testId/bla.png');
+            expect($(' > img.current', mediaPickerDirective).attr('src')).toBe('media/_testId/bla.png');
         });
     });
 

@@ -7,13 +7,13 @@ var userService = require('./crud/userService'),
 
 module.exports = {
 
-    login: function (body, session, callback) {
+    login: function (dbCon, body, session, callback) {
         /*var cryptPassword = bcrypt.hashSync(body.password);*/
-        userService.get(body.email, function (user) {
+        userService.get(dbCon, body.email, function (user) {
             if (user && bcrypt.compareSync(body.password, user.password)) {
                 delete user.password;
                 session.user = user;
-                getService.setJoins(session.user, function() {
+                getService.setJoins(dbCon, session.user, function() {
                     callback(true);
                 });
             } else {
@@ -22,13 +22,13 @@ module.exports = {
         });
     },
 
-    getSession: function (session, callback) {
+    getSession: function (dbCon, session, callback) {
         //Look for the user data in database to always have fresh data
         if (session.user) {
-            userService.get(session.user.email, function (user) {
+            userService.get(dbCon, session.user.email, function (user) {
                 delete user.password;
                 session.user = user;
-                getService.joinMediaData(session.user, function() {
+                getService.joinMediaData(dbCon, session.user, function() {
                     callback(session.user);
                 });
             });

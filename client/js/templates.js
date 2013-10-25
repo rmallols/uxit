@@ -895,7 +895,7 @@ angular.module("editMedia.html", []).run(["$templateCache", function($templateCa
   $templateCache.put("editMedia.html",
     "<div>\n" +
     "    <label i18n=\"editMedia.name\"></label>: <input type=\"text\" ng-model=\"media.name\" mandatory ng-show=\"!multipleFilesUploaded\" />\n" +
-    "    <label i18n=\"editMedia.content\"></label>: <file-uploader on-upload=\"onUpload()\" endpoint=\"/media/upload/{{media._id}}\"></file-uploader>\n" +
+    "    <label i18n=\"editMedia.content\"></label>: <file-uploader on-upload=\"onUpload()\" endpoint=\"media/upload/{{media._id}}\"></file-uploader>\n" +
     "    <label i18n=\"tags\"></label>:\n" +
     "    <auto-complete ng-model=\"media.tags\" ng-options=\"availableTags\" label-key=\"text\"\n" +
     "                   placeholder=\"tags.placeholder\" multiple=\"true\"></auto-complete>\n" +
@@ -1303,7 +1303,7 @@ angular.module("selectMedia.html", []).run(["$templateCache", function($template
 
 angular.module("fileUploader.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("fileUploader.html",
-    "<form enctype=\"multipart/form-data\" action=\"{{endpoint||'/media/upload/'}}\" method=\"post\" class=\"fileUploader\">\n" +
+    "<form enctype=\"multipart/form-data\" action=\"{{endpoint||'media/upload/'}}\" method=\"post\" class=\"fileUploader\">\n" +
     "    <input type=\"file\" ng-model=\"files\" ux-change=\"submit()\" name=\"upload\" multiple-files=\"{{multiple}}\" />\n" +
     "</form>");
 }]);

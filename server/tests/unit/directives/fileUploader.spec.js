@@ -43,7 +43,7 @@ describe('fileuploader directive', function () {
             var template =  '<file-uploader></file-uploader>',
                 fileUploaderDirective = $compile(template, {});
             $rootScope.$digest();
-            expect(fileUploaderDirective.attr('action')).toBe('/media/upload/');
+            expect(fileUploaderDirective.attr('action')).toBe('media/upload/');
         });
 
         it('should point to a specific endpoint if it\'s specified', function () {

@@ -5,9 +5,9 @@ var email               = require("emailjs"),
 
 module.exports = {
 
-    sendEmail: function (body, session, callback) {
+    sendEmail: function (dbCon, body, session, callback) {
         var params = { projection : { email: 1}}, data;
-        getService.getFirst(constantsService.collections.portal, params, function (portal) {
+        getService.getFirst(dbCon, constantsService.collections.portal, params, function (portal) {
             var server  = email.server.connect({
                 user        : portal.email.user,
                 password    : portal.email.password,
