@@ -71,26 +71,26 @@ app.get('/:portalId/logout', function (req, res) {
     });
 });
 
-app.get('/:portalId/rest/databases', checkAuth, setupDb, function (req, res) {
-    dbService.getDatabases(req.dbCon, req.session, function(result) {
+app.get('/:portalId/rest/databases', checkAuth, function (req, res) {
+    dbService.getDatabases(req.session, function(result) {
         res.send(result)
     });
 });
 
-app.post('/:portalId/rest/databases/create', checkAuth, setupDb, function (req, res) {
-    dbService.createDatabase(req.dbCon, req.body, req.session, function(result) {
+app.post('/:portalId/rest/databases/create', checkAuth, function (req, res) {
+    dbService.createDatabase(req.body, req.session, function(result) {
         res.send(result);
     });
 });
 
-app.put('/:portalId/rest/databases/:id/update', checkAuth, setupDb, function (req, res) {
-    dbService.updateDatabase(req.dbCon, req.params.id, req.body, req.session, function(result) {
+app.put('/:portalId/rest/databases/:id/update', checkAuth, function (req, res) {
+    dbService.updateDatabase(req.params.id, req.body, req.session, function(result) {
         res.send(result);
     });
 });
 
-app.delete('/:portalId/rest/databases/:id/delete', checkAuth, setupDb, function (req, res) {
-    dbService.deleteDatabase(req.dbCon, req.params.id, req.session, function(result) {
+app.delete('/:portalId/rest/databases/:id/delete', checkAuth, function (req, res) {
+    dbService.deleteDatabase(req.params.id, req.session, function(result) {
         res.send(result)
     });
 });

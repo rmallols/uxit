@@ -8,14 +8,13 @@
         /**
          * Loads the available apps from the repository
          *
-         * @param {Object} callback function with the retrieved available apps list
+         * @param {function} callback function with the retrieved available apps list
          */
         function loadAvailableApps(callback) {
             var filter  = { sort: { field: 'category', order : '-1' } };
             crudService.get(constantsService.collections.availableApps, null, filter, function (availableApps) {
                 setAvailableApps(availableApps.results);
                 if (callback) { callback(getAvailableApps()); }
-                $rootScope.$broadcast('availableAppsLoaded');
             });
         }
 

@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+    var devKey = 'dev', prodKey = 'prod';
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         app_lib: 'client/lib/',
@@ -115,6 +116,28 @@ module.exports = function(grunt) {
         },
         bumpup: {
             file: 'package.json',
+            setters: {
+                version: function (oldVersion, releaseType, options) {
+                    var semver = require('./node_modules/semver'),
+                        type = (grunt.option('env') === prodKey) ? 'minor' : 'patch';
+                    return semver.inc(oldVersion, type);
+                },
+                timestamp: function () {
+                    return +new Date();
+                },
+                dbHost: function () {
+                    return (grunt.option('env') === prodKey) ? 'ds051858.mongolab.com' : 'localhost';
+                },
+                dbPort: function () {
+                    return (grunt.option('env') === prodKey) ? '51858' : '27017';
+                },
+                dbUser: function () {
+                    return (grunt.option('env') === prodKey) ? 'test' : 'test';
+                },
+                dbPassword: function () {
+                    return (grunt.option('env') === prodKey) ? 'test' : 'test';
+                }
+            },
             options: {
                 updateProps: {
                     pkg: 'package.json'
@@ -139,7 +162,7 @@ module.exports = function(grunt) {
     grunt.registerTask('generateTemplates', ['html2js']);
     grunt.registerTask('devPreprocess', ['preprocess:htmlDev']);
     grunt.registerTask('prodPreprocess', ['preprocess:htmlProd', 'preprocess:jsProd']);
-    grunt.registerTask('bump', ['bumpup:' + grunt.option('type')]);
+    grunt.registerTask('bump', ['bumpup:minor']);
     grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'devPreprocess', 'generateTemplates']);
     grunt.registerTask('prod', ['clean', 'jshint', 'karma:run', 'bump', 'prodPreprocess',
         'generateTemplates', 'concat', 'uglify', 'less:prod']);

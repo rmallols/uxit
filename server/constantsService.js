@@ -1,6 +1,9 @@
 'use strict';
 module.exports = {
-
+    modes: {
+        cloud   : 'cloud',
+        host    : 'host'
+    },
     collections     : {
         portal          : 'portal',
         pages           : 'pages',

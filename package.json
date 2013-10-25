@@ -1,7 +1,13 @@
 {
     "name": "menzit",
     "author": "menzit",
-    "version": "0.32.0",
+    "version": "0.33.0",
+    "timestamp": 1382726502240,
+    "mode": "cloud",
+    "dbHost": "ds051858.mongolab.com",
+    "dbPort": "51858",
+    "dbUser": "test",
+    "dbPassword": "test",
     "devDependencies": {
         "grunt": "~0.4.1",
         "grunt-contrib-jshint": "~0.5.4",
@@ -24,6 +30,7 @@
         "gm": "~1.8.1",
         "express": "~3.0.0rc2",
         "grunt-bumpup": "~0.4.2",
-        "protractor": "~0.11.0"
+        "protractor": "~0.11.0",
+        "semver": "~2.1.0"
     }
 }

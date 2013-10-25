@@ -1,21 +1,27 @@
 'use strict';
 module.exports = {
 
-    dbConnection: null,
     _adminDbId: 'admin',
     _initializedCollectionsCounter: 0,
 
     connect: function (databaseId) {
-        return mongoJsService.connect(databaseId);
+        var host = pkg.dbHost,
+            port = pkg.dbPort,
+            user = pkg.dbUser,
+            password = pkg.dbPassword,
+            credentials = user + ':' + password,
+            endpoint = host + ':' + port + '/' + databaseId,
+            url = 'mongodb://' + credentials + '@' + endpoint;
+        return mongoJsService.connect(url);
     },
 
     getAdminDbId: function() {
         return this._adminDbId;
     },
 
-    getDatabases: function(dbCon, session, callback) {
-        var normalizedDbs = [], self = this;
-        self._runCommand(dbCon, {listDatabases: 1}, this._adminDbId, function(err, result) {
+    getDatabases: function(session, callback) {
+        var normalizedDbs = [], self = this, dbCon = self.connect(self._adminDbId);
+        self._runCommand(dbCon, {listDatabases: 1}, function(err, result) {
             //Convert results to an index-based array
             result.databases.forEach(function(database) {
                 if(!self._isPrivateDatabase(database.name)) { //Don't include private databases
@@ -28,40 +34,44 @@ module.exports = {
     },
 
     existsDatabase: function(dbCon, databaseId, session, callback) {
-        var exists = false;
-        this.getDatabases(dbCon, session, function(databases) {
-            databases.results.forEach(function(database) {
-                if(database.name === databaseId) {
-                    exists = true;
-                }
+        if(pkg.mode === constantsService.modes.host) {
+            var exists = false;
+            this.getDatabases(session, function(databases) {
+                databases.results.forEach(function(database) {
+                    if(database.name === databaseId) {
+                        exists = true;
+                    }
+                });
+                callback(exists);
             });
-            callback(exists);
-        });
+        } else {
+            callback(true);
+        }
     },
 
-    createDatabase: function(dbCon, body, session, callback) {
+    createDatabase: function(body, session, callback) {
         var self = this,
-            dbConnection = self.connect(body.name); //Create the database explicitly
-        self._initializeCollections(dbConnection, body.name, function() { //Initialize their collections
-            self.getDatabases(dbCon, session, function(result) {
+            dbCon = self.connect(body.name); //Create the database explicitly
+        self._initializeCollections(dbCon, function() { //Initialize their collections
+            self.getDatabases(session, function(result) {
                 callback(result);
             });
         });
     },
 
-    updateDatabase: function(dbCon, databaseId, body, session, callback) {
+    updateDatabase: function(databaseId, body, session, callback) {
         var self = this, dstDbId = body.name;
-        self._copyDatabase(dbCon, databaseId, dstDbId, function(result) {
+        self._copyDatabase(databaseId, dstDbId, function(result) {
             self.deleteDatabase(databaseId, session, function() {
                 callback(result);
             })
         });
     },
 
-    deleteDatabase: function(dbCon, databaseId, session, callback) {
-        var self = this;
-        self._runCommand(dbCon, {dropDatabase: 1}, databaseId, function(/*err, result*/) {
-            self.getDatabases(dbCon, session, function(result) {
+    deleteDatabase: function(databaseId, session, callback) {
+        var self = this, dbCon = self.connect(databaseId);
+        self._runCommand(dbCon, {dropDatabase: 1}, function(/*err, result*/) {
+            self.getDatabases(session, function(result) {
                 callback(result);
             });
         });
@@ -79,13 +89,14 @@ module.exports = {
         return _id;
     },
 
-    _copyDatabase: function(dbCon, srcDbId, dstDbId, callback) {
+    _copyDatabase: function(srcDbId, dstDbId, callback) {
         var commandOptions = {
-            copydb: 1,
-            fromdb: srcDbId,
-            todb: dstDbId
-        };
-        this._runCommand(dbCon, commandOptions, this._adminDbId, function(err, result) {
+                copydb: 1,
+                fromdb: srcDbId,
+                todb: dstDbId
+            },
+            dbCon = this.connect(this._adminDbId);
+        this._runCommand(dbCon, commandOptions, function(err, result) {
             callback(result);
         });
     },
@@ -100,15 +111,15 @@ module.exports = {
         return isPrivate;
     },
 
-    _initializeCollections: function(dbCon, databaseId, callback) {
+    _initializeCollections: function(dbCon, callback) {
         var self = this;
         Object.keys(constantsService.collections).forEach(function(collectionKey) {
             var collection = constantsService.collections[collectionKey];
-            self._existsCollection(dbCon, collection, databaseId, function(exists) {
+            self._existsCollection(dbCon, collection, function(exists) {
                 if(exists) {    //The collection already exists -> return
                     if(self._registerInitializationAndFinish() && callback) { callback() }
                 } else {        //The collection doesn't exists yet -> initialize it
-                    self._initializeCollection(databaseId, collection, function() {
+                    self._initializeCollection(dbCon, collection, function() {
                         if(self._registerInitializationAndFinish() && callback) { callback() }
                     });
                 }
@@ -125,18 +136,18 @@ module.exports = {
         return false;
     },
 
-    _existsCollection: function(dbCon, collection, database, callback) {
-        this._runCommand(dbCon, { count: collection }, database, function(err, result) {
+    _existsCollection: function(dbCon, collection, callback) {
+        this._runCommand(dbCon, { count: collection }, function(err, result) {
             var exists = !err && result.ok && result.n > 0;
             if(callback) { callback(exists); }
         });
     },
 
-    _initializeCollection: function (databaseId, collection, callback) {
-        var self = this, dbConnection = self.connect(databaseId);
+    _initializeCollection: function (dbCon, collection, callback) {
+        var self = this;
         fileSystemService.readFile('../setup/' + collection + '.json', function (err, data) {
             if(data && data.length) {
-                self._createDocuments(dbConnection, collection, data, function() {
+                self._createDocuments(dbCon, collection, data, function() {
                     consoleService.success(collection + " database initialized");
                     if(callback) { callback() }
                 })
@@ -146,23 +157,23 @@ module.exports = {
         });
     },
 
-    _createDocuments: function(dbConnection, collection, data, callback) {
+    _createDocuments: function(dbCon, collection, data, callback) {
         var documents = JSON.parse(data), session = { user: {} };
         if(utilsService.isArray(documents)) {
-            this._createMultipleDocuments(dbConnection, collection, documents, session, function() {
+            this._createMultipleDocuments(dbCon, collection, documents, session, function() {
                 callback();
             });
         } else {
-            this._createSingleDocument(dbConnection, collection, documents, session, function() {
+            this._createSingleDocument(dbCon, collection, documents, session, function() {
                 callback();
             });
         }
     },
 
-    _createMultipleDocuments: function(dbConnection, collection, documents, session, callback) {
+    _createMultipleDocuments: function(dbCon, collection, documents, session, callback) {
         var createdDocuments = 0;
         documents.forEach(function(document) { //Create each document of the given collection
-            createService.create(dbConnection, collection, document, session, function() {
+            createService.create(dbCon, collection, document, session, function() {
                 createdDocuments++;
                 if(createdDocuments === documents.length) {
                     callback();
@@ -171,20 +182,14 @@ module.exports = {
         });
     },
 
-    _createSingleDocument: function(dbConnection, collection, document, session, callback) {
-        createService.create(dbConnection, collection, document, session, function() {
+    _createSingleDocument: function(dbCon, collection, document, session, callback) {
+        createService.create(dbCon, collection, document, session, function() {
             callback();
         });
     },
 
-    _runCommand: function(dbCon, command, databaseId, callback) {
-        var dbConnection;
-        if(databaseId) { //Check if the command has to be executed in a specific db (i.e. admin)
-            dbConnection = this.connect(databaseId);
-        } else { //Otherwise, use the current db connection
-            dbConnection = dbCon;
-        }
-        dbConnection.runCommand(command, function(err, result) {
+    _runCommand: function(dbCon, command, callback) {
+        dbCon.runCommand(command, function(err, result) {
             callback(err, result);
         });
     }
@@ -197,4 +202,5 @@ var mongoJsService      = require("mongojs"),
     fileSystemService   = require("./fileSystemService"),
     constantsService    = require('./constantsService'),
     consoleService      = require('./consoleService'),
-    utilsService        = require("./utilsService");
+    utilsService        = require("./utilsService"),
+    pkg                 = require('../package.json');
