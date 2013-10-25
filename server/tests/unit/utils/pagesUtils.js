@@ -79,7 +79,7 @@ function loadPages($httpBackend, pageService, callback) {
             }
         ]
     };
-    $httpBackend.when('GET', '/rest/pages?sort[field]=position&sort[order]=1').respond(mockedResponse);
+    $httpBackend.when('GET', 'rest/pages?sort[field]=position&sort[order]=1').respond(mockedResponse);
     pageService.loadPages(function (pages) {
         if (callback) {
             callback(pages);

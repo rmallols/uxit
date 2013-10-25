@@ -63,7 +63,7 @@ function loadPortal($httpBackend, portalService, callback) {
             "fullscreenMode": "maximized"
         }]
     };
-    $httpBackend.when('GET', '/rest/portal?').respond(mockedResponse);
+    $httpBackend.when('GET', 'rest/portal?').respond(mockedResponse);
     portalService.loadPortal(routeParams.page, function (portal) {
         if (callback) {
             callback(portal);

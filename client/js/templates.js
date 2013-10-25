@@ -669,7 +669,7 @@ angular.module("addAppPanel.html", []).run(["$templateCache", function($template
   $templateCache.put("addAppPanel.html",
     "<div id=\"addAppPanel\" class=\"addAppPanel\" state=\"hidden\">\n" +
     "    <div class=\"collapsedView\">\n" +
-    "        <file-uploader endpoint=\"/rest/availableApps/deploy/\" on-upload=\"onAvailableAppDeployed()\"></file-uploader>\n" +
+    "        <file-uploader endpoint=\"rest/availableApps/deploy/\" on-upload=\"onAvailableAppDeployed()\"></file-uploader>\n" +
     "        <div class=\"filterContainer\"><input type=\"text\" ng-model=\"filter\"></div>\n" +
     "        <ul class=\"apps\">\n" +
     "            <div ng-repeat=\"availableApp in availableApps.model | filter: filter\" ng-class=\"getBlockStyleClass(availableApp.id)\">\n" +

@@ -20,7 +20,7 @@
          */
         function sendEmail(data, callback) {
             ajaxService.ajax({
-                url     : '/rest/sendEmail',
+                url     : 'rest/sendEmail',
                 method  : 'POST',
                 data    : data,
                 success	: function (response) {

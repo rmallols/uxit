@@ -105,7 +105,7 @@ function loadAvailableApps($httpBackend, availableAppsService, callback) {
             }
         ]
     };
-    $httpBackend.when('GET', '/rest/availableApps?sort[field]=category&sort[order]=-1').respond(mockedResponse);
+    $httpBackend.when('GET', 'rest/availableApps?sort[field]=category&sort[order]=-1').respond(mockedResponse);
     availableAppsService.loadAvailableApps(function (availableApps) {
         if (callback) {
             callback(availableApps);

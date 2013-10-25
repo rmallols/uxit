@@ -45,7 +45,7 @@ function loadRoles($httpBackend, roleService, callback) {
             }
         ]
     };
-    $httpBackend.when('GET', '/rest/roles?sort[field]=karma&sort[order]=1').respond(mockedResponse);
+    $httpBackend.when('GET', 'rest/roles?sort[field]=karma&sort[order]=1').respond(mockedResponse);
     roleService.loadRoles(function (roles) {
         if (callback) {
             callback(roles);

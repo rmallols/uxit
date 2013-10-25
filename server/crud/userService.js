@@ -12,7 +12,7 @@ module.exports = {
     existsOtherUserWithSameEmail : function (id, email, callback) {
         var query = {}, emailFilter = { email: utilsService.insensitive(email) };
         if (id) { //If the user already existed, it's necessary to ensure that the query doesn't return the user itself
-            query.q = { $and: [ emailFilter, { _id: { $ne : utilsService.getFormattedId(id) }}]};
+            query.q = { $and: [ emailFilter, { _id: { $ne : dbService.getFormattedId(id) }}]};
         } else {
             query.q = emailFilter;
         }

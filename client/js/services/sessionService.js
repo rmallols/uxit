@@ -12,7 +12,7 @@
          */
         function loadUserSession(callback) {
             ajaxService.ajax({
-                url     : '/rest/getSession/',
+                url     : 'rest/getSession/',
                 method  : 'POST',
                 data    : {},
                 success	: function (loadedUserSession) {

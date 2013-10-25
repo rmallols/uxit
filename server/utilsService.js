@@ -1,5 +1,4 @@
 'use strict';
-var dbService = require("./dbService");
 
 module.exports = {
 
@@ -21,18 +20,6 @@ module.exports = {
             date: currentDate,
             authorId: session.user._id
         }
-    },
-
-    //Get the formatted of the mongodb collection, as it will usually be a native object id,
-    //but in some specific situations, it could be a plain string (for instance, in the case of the portal names)
-    getFormattedId: function (originalId) {
-        var _id;
-        try {
-            _id = dbService.getDbConnection().ObjectId(originalId);
-        } catch (ex) {
-            _id = originalId;
-        }
-        return _id;
     },
 
     ne: function (str) {

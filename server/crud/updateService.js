@@ -8,7 +8,7 @@ module.exports = {
         //Normalize the way the model is going to be updated
         var updatedModel = utilsService.normalizeModel(body);
         //noinspection JSUnresolvedVariable
-        dbService.getDbConnection().collection(collection).update({_id: utilsService.getFormattedId(id)}, {$set: updatedModel}, function (result) {
+        dbService.getDbConnection().collection(collection).update({_id: dbService.getFormattedId(id)}, {$set: updatedModel}, function (result) {
             callback({})
         });
     }

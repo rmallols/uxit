@@ -1,13 +1,13 @@
 'use strict';
 var email               = require("emailjs"),
-    crudService         = require('./crudService'),
+    getService          = require('./crud/getService'),
     constantsService    = require('./dbService');
 
 module.exports = {
 
     sendEmail: function (body, session, callback) {
         var params = { projection : { email: 1}}, data;
-        crudService.getFirst(constantsService.collections.portal, params, function (portal) {
+        getService.getFirst(constantsService.collections.portal, params, function (portal) {
             var server  = email.server.connect({
                 user        : portal.email.user,
                 password    : portal.email.password,

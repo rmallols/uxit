@@ -49,7 +49,7 @@ module.exports = {
             self            = this,
             processedItems  = 0;
         if (id) {
-            getFirstQuery = { q: { _id: utilsService.getFormattedId(id)} }; //Normalize the way the Ids are set
+            getFirstQuery = { q: { _id: dbService.getFormattedId(id)} }; //Normalize the way the Ids are set
             if (query.projection) { //Add the query projection, if case
                 getFirstQuery.projection = query.projection;
             }

@@ -23,7 +23,7 @@ module.exports = {
 
             function updateExistingFile(saveObj, callback) {
                 var collection = constantsService.collections.media,
-                    id = {_id: utilsService.getFormattedId(id)},
+                    id = {_id: dbService.getFormattedId(id)},
                     params = {$set: saveObj};
                 utilsService.addUpdateSignature(saveObj, session);
                 dbService.getDbConnection().collection(collection).update(id, params, function () {

@@ -13,7 +13,7 @@
          */
         function create(collection, data, callback, blockBroadcastEvent) {
             ajaxService.ajax({
-                url     : '/rest/' + collection + '/create',
+                url     : 'rest/' + collection + '/create',
                 data	: data,
                 method  : 'POST',
                 success	: function (result) {
@@ -37,7 +37,7 @@
          */
         function get(collection, id, data, callback) {
             ajaxService.ajax({
-                url     : '/rest/' + collection + ((id) ? '/' + id : ''),
+                url     : 'rest/' + collection + ((id) ? '/' + id : ''),
                 data	: (data) ? data : {},
                 method  : 'GET',
                 success	: function (retrievedItem) {
@@ -59,7 +59,7 @@
          */
         function update(collection, id, data, callback, blockBroadcastEvent) {
             ajaxService.ajax({
-                url     : '/rest/' + collection + '/' + id + '/update',
+                url     : 'rest/' + collection + '/' + id + '/update',
                 data	: data,
                 method  : 'PUT',
                 success	: function (updatedItem) {
@@ -83,7 +83,7 @@
          */
         function remove(collection, id, callback, blockBroadcastEvent) {
             ajaxService.ajax({
-                url     : '/rest/' + collection + '/' + id + '/delete',
+                url     : 'rest/' + collection + '/' + id + '/delete',
                 method  : 'DELETE',
                 success	: function (result) {
                     if (!blockBroadcastEvent) {
@@ -105,7 +105,7 @@
          */
         function getStats(collection, data, callback) {
             ajaxService.ajax({
-                url     : '/rest/' + collection + '/getStats',
+                url     : 'rest/' + collection + '/getStats',
                 data	: (data) ? data : {},
                 method  : 'GET',
                 success	: function (newItem) {
@@ -125,7 +125,7 @@
          */
         function rate(collection, data, callback) {
             ajaxService.ajax({
-                url     : '/rest/' + collection + '/rate',
+                url     : 'rest/' + collection + '/rate',
                 data	: data,
                 method  : 'POST',
                 success	: function (newItem) {
@@ -146,7 +146,7 @@
          */
         function undeployApp(id, data, callback, blockBroadcastEvent) {
             ajaxService.ajax({
-                url     : '/rest/' + constantsService.collections.availableApps + '/' + id + '/undeploy',
+                url     : 'rest/' + constantsService.collections.availableApps + '/' + id + '/undeploy',
                 data	: data,
                 method  : 'POST',
                 success	: function () {

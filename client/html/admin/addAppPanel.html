@@ -1,6 +1,6 @@
 <div id="addAppPanel" class="addAppPanel" state="hidden">
     <div class="collapsedView">
-        <file-uploader endpoint="/rest/availableApps/deploy/" on-upload="onAvailableAppDeployed()"></file-uploader>
+        <file-uploader endpoint="rest/availableApps/deploy/" on-upload="onAvailableAppDeployed()"></file-uploader>
         <div class="filterContainer"><input type="text" ng-model="filter"></div>
         <ul class="apps">
             <div ng-repeat="availableApp in availableApps.model | filter: filter" ng-class="getBlockStyleClass(availableApp.id)">

@@ -7,7 +7,7 @@ function loadLanguages($httpBackend, i18nService, callback) {
             { "code": "es", "text": "español" }
         ]
     };
-    $httpBackend.when('GET', '/rest/languages?').respond(mockedResponse);
+    $httpBackend.when('GET', 'rest/languages?').respond(mockedResponse);
     i18nService.loadLanguages(function (languages) {
         if (callback) {
             callback(languages);

@@ -7,6 +7,8 @@ module.exports = {
 
     connect: function (databaseId) {
         this.dbConnection = mongoJsService.connect(databaseId);
+        console.log("JIJIJI...esto solo deberia ocurrir DENTRO de DB service, quitando el this.");
+        return mongoJsService.connect(databaseId);
     },
 
     getAdminDbId: function() {
@@ -80,6 +82,18 @@ module.exports = {
 
     getDbConnection: function() {
         return this.dbConnection;
+    },
+
+    //Get the formatted of the mongodb collection, as it will usually be a native object id,
+    //but in some specific situations, it could be a plain string (for instance, in the case of the portal names)
+    getFormattedId: function (originalId) {
+        var _id;
+        try {
+            _id = this.getDbConnection().ObjectId(originalId);
+        } catch (ex) {
+            _id = originalId;
+        }
+        return _id;
     },
 
     _isPrivateDatabase: function(databaseId) {

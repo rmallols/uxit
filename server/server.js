@@ -6,10 +6,21 @@ var express             = require('express'),
     io                  = require('socket.io').listen(server, { log: false }),
     path                = require('path'),
     /*SERVICES */
-    crudService         = require('./crudService'),
     emailService        = require('./emailService'),
     constantsService    = require('./constantsService'),
-    liveMessageService  = require("./liveMessageService");
+    liveMessageService  = require("./liveMessageService"),
+    dbService           = require("./dbService"),
+    sessionService      = require("./sessionService"),
+    appService          = require("./appService"),
+    createService       = require("./crud/createService"),
+    userService         = require("./crud/userService"),
+    rateService         = require("./crud/rateService"),
+    statsService        = require("./crud/statsService"),
+    getService          = require("./crud/getService"),
+    updateService       = require("./crud/updateService"),
+    deleteService       = require("./crud/deleteService"),
+    mediaService        = require("./crud/mediaService"),
+    downloadService     = require("./crud/downloadService");
 
 //noinspection JSUnresolvedFunction
 app.use(express.bodyParser());
@@ -24,14 +35,19 @@ function checkAuth(req, res, next) {
     }
 }
 
+function setupDb(req, res, next) {
+    req.db = dbService.connect(req.params.portalId);
+    next();
+}
+
 function goToIndex(res) {
     var absPath = path.resolve('../');
     res.sendfile(absPath + '/index.html');
 }
 
 app.post('/:portalId/rest/login', function (req, res) {
-    crudService.createDbConnection(req.params.portalId);
-    crudService.login(req.body, req.session, function(success) {
+    dbService.connect(req.params.portalId);
+    sessionService.login(req.body, req.session, function (success) {
         if (success) {
             res.redirect(req.params.portalId);
         } else {
@@ -40,112 +56,112 @@ app.post('/:portalId/rest/login', function (req, res) {
     });
 });
 
-app.post('/rest/getSession', function (req, res) {
-    crudService.getSession(req.session, function(user) {
+app.post('/:portalId/rest/getSession', function (req, res) {
+    sessionService.getSession(req.session, function (user) {
         res.send(user);
     });
 });
 
-app.get('/rest/databases', checkAuth, function (req, res) {
-    crudService.getDatabases(req.session, function (result) {
+app.get('/:portalId/logout', function (req, res) {
+    sessionService.logout(req.session, function () {
+        res.redirect('/' + req.params.portalId);
+    });
+});
+
+app.get('/:portalId/rest/databases', checkAuth, function (req, res) {
+    dbService.getDatabases(req.session, function(result) {
         res.send(result)
     });
 });
 
-app.post('/rest/databases/create', checkAuth, function (req, res) {
-    crudService.createDatabase(req.body, req.session, function (result) {
+app.post('/:portalId/rest/databases/create', checkAuth, function (req, res) {
+    dbService.createDatabase(req.body, req.session, function(result) {
         res.send(result);
     });
 });
 
-app.put('/rest/databases/:id/update', checkAuth, function (req, res) {
-    crudService.updateDatabase(req.params.id, req.body, req.session, function (result) {
+app.put('/:portalId/rest/databases/:id/update', checkAuth, function (req, res) {
+    dbService.updateDatabase(req.params.id, req.body, req.session, function(result) {
         res.send(result);
     });
 });
 
-app.delete('/rest/databases/:id/delete', checkAuth, function (req, res) {
-    crudService.deleteDatabase(req.params.id, req.session, function (result) {
+app.delete('/:portalId/rest/databases/:id/delete', checkAuth, function (req, res) {
+    dbService.deleteDatabase(req.params.id, req.session, function(result) {
         res.send(result)
     });
 });
 
-app.get('/:portal/logout', function (req, res) {
-    crudService.logout(req.session, function() {
-        res.redirect('/' + req.params.portal);
-    });
-});
-
-app.post('/rest/users/create', checkAuth, function (req, res) {
-    crudService.createUser(req.body, req.session, function (newUser) {
+app.post('/:portalId/rest/users/create', checkAuth, function (req, res) {
+    userService.create(req.body, req.session, function (newUser) {
         if (!newUser)   { res.send('The e-mail address already exists. Please select a new one', 403); }
         else            { res.send(newUser); }
     });
 });
 
-app.post('/rest/:collection/create', checkAuth, function (req, res) {
-    crudService.create(req.params.collection, req.body, req.session, function (newItem) {
+app.post('/:portalId/rest/:collection/create', checkAuth, function (req, res) {
+    createService.create(dbService.getDbConnection(), req.params.collection, req.body, req.session, function (newItem) {
         res.send(newItem);
     });
 });
 
-app.post('/rest/:collection/rate', checkAuth, function (req, res) {
-    crudService.rate(req.params.collection, req.body, req.session, function (result) {
+app.post('/:portalId/rest/:collection/rate', checkAuth, function (req, res) {
+    rateService.rate(req.params.collection, req.body, req.session, function (result) {
         res.send(result);
     });
 });
 
-app.get('/rest/:collection/getStats', function (req, res) {
-    crudService.getStats(req.params.collection, req.query, req.session, function (stats) {
+app.get('/:portalId/rest/:collection/getStats', function (req, res) {
+    statsService.getStats(req.params.collection, req.query, req.session, function (stats) {
         res.send(stats);
     });
 });
 
-app.get('/rest/:collection/:id?*', function (req, res) {
-    crudService.get(req.params.collection, req.params.id, req.query, function (documents) {
+app.get('/:portalId/rest/:collection/:id?*', function (req, res) {
+    getService.get(req.params.collection, req.params.id, req.query, function (documents) {
         res.send(documents);
     });
 });
 
-app.put('/rest/users/:id/update', checkAuth, function (req, res) {
-    crudService.updateUser(req.params.id, req.body, req.session, function (updatedUser) {
+app.put('/:portalId/rest/users/:id/update', checkAuth, function (req, res) {
+    userService.update(req.params.id, req.body, req.session, function (updatedUser) {
         if (!updatedUser)   { res.send('The e-mail address already exists. Please select a new one', 403); }
         else                { res.send(updatedUser); }
     });
 });
 
-app.put('/rest/:collection/:id/update', checkAuth, function (req, res) {
-    crudService.update(req.params.collection, req.params.id, req.body, req.session, function (result) {
+app.put('/:portalId/rest/:collection/:id/update', checkAuth, function (req, res) {
+    updateService.update(req.params.collection, req.params.id, req.body, req.session, function (result) {
         res.send(result);
     });
 });
 
-app.delete('/rest/:collection/:id/delete', checkAuth, function (req, res) {
-    crudService.delete(req.params.collection, req.params.id, function (result) {
+app.delete('/:portalId/rest/:collection/:id/delete', checkAuth, function (req, res) {
+    deleteService.delete(req.params.collection, req.params.id, function (result) {
         res.send(result);
     });
 });
 
-app.post('/rest/availableApps/deploy', checkAuth, function (req, res) {
-    crudService.deployApp(req.files, req.session, function (result) {
+app.post('/:portalId/rest/availableApps/deploy', checkAuth, function (req, res) {
+    appService.deploy(req.files, req.session, function (result) {
         res.send(result);
     });
 });
 
-app.post('/rest/availableApps/:id/undeploy', checkAuth, function (req, res) {
-    crudService.undeployApp(req.params.id, req.body, req.session, function (result) {
+app.post('/:portalId/rest/availableApps/:id/undeploy', checkAuth, function (req, res) {
+    appService.undeploy(req.params.id, req.body, req.session, function (result) {
         res.send(result);
     });
 });
 
 app.post('/media/upload/:id?*', checkAuth, function (req, res) {
-    crudService.uploadMedia(req.params.id, req.files, req.session, function (images) {
+    mediaService.upload(req.params.id, req.files, req.session, function (images) {
         res.send(images);
     });
 });
 
 app.get('/media/:id/:name', function (req, res) {
-    crudService.download(req.params.id, function (content) {
+    downloadService.download(req.params.id, function (content) {
         if(content && content[0]) {
             //Try to get the file name from the URL in order to keep the document name once it's going to be downloaded
             // Otherwise, take it from database
@@ -153,8 +169,6 @@ app.get('/media/:id/:name', function (req, res) {
             //noinspection JSUnresolvedFunction
             res.attachment(filename);
             res.header("Content-Type", content.mime);
-            //var buffer = new Buffer(content[0].data, "binary");
-            //res.end(buffer, 'binary');
             //noinspection JSUnresolvedFunction,JSCheckFunctionSignatures
             buffer = new Buffer(content[0].data.toString('base64'), "base64")
             res.end(buffer, 'base64');
@@ -162,28 +176,22 @@ app.get('/media/:id/:name', function (req, res) {
     });
 });
 
-app.post('/rest/sendEmail', function (req, res) {
+app.post('/:portalId/rest/sendEmail', function (req, res) {
     emailService.sendEmail(req.body, req.session, function (result) {
         res.send(result);
-    });
-});
-
-app.get('/initializeApp', checkAuth, function (req, res) {
-    crudService.initializeApp(req.session, function (result) {
-        res.send(result)
     });
 });
 
 app.use('/', express.static('../'));
 
 app.get('/', function (req, res) {
-    crudService.getDatabases(req.session, function (databases) {
+    dbService.getDatabases(req.session, function (databases) {
         var adminDbId;
         if(databases.totalSize > 0) {
             res.redirect('/' + databases.results[0].name);
         } else {
-            adminDbId = crudService.getAdminDbId();
-            crudService.createDatabase({ name: adminDbId}, req.session, function() {
+            adminDbId = dbService.getAdminDbId();
+            dbService.createDatabase({ name: adminDbId}, req.session, function() {
                 res.redirect('/' + adminDbId);
             });
         }
@@ -197,12 +205,12 @@ app.get('/error', function (req, res) { goToIndex(res); });
 app.get('/:portalId', function (req, res) {
     existsPortal(req.params.portalId, req.session, function(existsPortal) {
         if(existsPortal) {
-            crudService.createDbConnection(req.params.portalId);
+            dbService.connect(req.params.portalId);
             var params = {
                 q : { position : 0 },
                 projection : { url: 1, type: 1, externalLinkUrl: 1}
             };
-            crudService.getFirst(constantsService.collections.pages, params, function (firstPage) {
+            getService.getFirst(constantsService.collections.pages, params, function (firstPage) {
                 if(firstPage) {
                     if (firstPage.type === 'externalLink') { res.redirect(firstPage.externalLinkUrl); }
                     else { res.redirect(req.params.portalId + '/' + firstPage.url); }
@@ -217,12 +225,12 @@ app.get('/:portalId', function (req, res) {
 app.get('/:portalId/:pageId', function (req, res) {
     existsPortal(req.params.portalId, req.session, function(existsPortal) {
         if(existsPortal) {
-            crudService.createDbConnection(req.params.portalId);
+            dbService.connect(req.params.portalId);
             var params = {
                 q : { url : req.params.pageId },
                 projection : { url: 1, type: 1, externalLinkUrl: 1}
             };
-            crudService.getFirst(constantsService.collections.pages, params, function (page) {
+            getService.getFirst(constantsService.collections.pages, params, function (page) {
                 if(page) {
                     if (page.type === 'externalLink') {
                         res.redirect(pages.results[0].externalLinkUrl);
@@ -240,8 +248,8 @@ app.get('/:portalId/:pageId', function (req, res) {
 });
 
 function existsPortal(portalId, session, callback) {
-    crudService.existsDatabase(portalId, session, function(exists) {
-        callback(exists);
+    dbService.existsDatabase(portalId, session, function(result) {
+        callback(result);
     });
 }
 

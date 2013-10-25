@@ -14,7 +14,7 @@ function loadUserSession($httpBackend, sessionService, role, callback) {
         },
         mockedNonLoggedResponse = null,
         response = (role) ? mockedLoggedResponse: mockedNonLoggedResponse;
-    $httpBackend.when('POST', '/rest/getSession/').respond(response);
+    $httpBackend.when('POST', 'rest/getSession/').respond(response);
     sessionService.loadUserSession(function (userSession) {
         if (callback) {
             callback(userSession);
