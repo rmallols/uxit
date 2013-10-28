@@ -14,6 +14,7 @@
             var filter  = { sort: { field: 'category', order : '-1' } };
             crudService.get(constantsService.collections.availableApps, null, filter, function (availableApps) {
                 setAvailableApps(availableApps.results);
+                $rootScope.$broadcast('availableAppsLoaded');
                 if (callback) { callback(getAvailableApps()); }
             });
         }

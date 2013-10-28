@@ -36,18 +36,23 @@ function checkAuth(req, res, next) {
 }
 
 function setupDb(req, res, next) {
-    if(!req.params.portalId) {
-        console.log("IN SETUPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP!!!", req.params.portalId)
-    }
-
-    req.dbCon = dbService.connect(req.params.portalId);
-    next();
+    /*req.dbCon = dbService.connect(req.params.portalId);
+    next();*/
+    dbService.connect2(req.params.portalId, function(err, db) {
+        req.dbCon = dbService.connect(req.params.portalId);
+        next();
+    });
 }
 
 function goToIndex(res) {
     var absPath = path.resolve('../');
     res.sendfile(absPath + '/index.html');
 }
+
+app.get('/favicon.ico', function (req, res) {
+    res.writeHead(200, {'Content-Type': 'image/x-icon'} );
+    res.end();
+});
 
 app.post('/:portalId/rest/login', setupDb, function (req, res) {
     sessionService.login(req.dbCon, req.body, req.session, function (success) {
@@ -216,6 +221,8 @@ app.get('/:portalId', setupDb, function (req, res) {
                 if(firstPage) {
                     if (firstPage.type === 'externalLink') { res.redirect(firstPage.externalLinkUrl); }
                     else { res.redirect(req.params.portalId + '/' + firstPage.url); }
+                } else {
+                    res.redirect('/error?title=errorPage.portalNotFound&targetId=' + req.params.portalId);
                 }
             });
         } else {

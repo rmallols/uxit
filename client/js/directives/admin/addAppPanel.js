@@ -67,6 +67,11 @@
 
                 scope.collection    = constantsService.collections.comments;
                 scope.availableApps = availableAppsService.getAvailableApps();
+                if(!scope.availableApps) {
+                    $rootScope.$on('availableAppsLoaded', function() {
+                        scope.availableApps = availableAppsService.getAvailableApps();
+                    });
+                }
 
                 function registerKeyboardEvents() {
                     keyboardService.register(['tab', 'down'], directiveId, function () {

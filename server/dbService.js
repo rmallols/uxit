@@ -1,18 +1,19 @@
 'use strict';
 module.exports = {
 
-    _adminDbId: 'admin',
+    _adminDbId: 'administration',
     _initializedCollectionsCounter: 0,
 
     connect: function (databaseId) {
-        var host = pkg.dbHost,
-            port = pkg.dbPort,
-            user = pkg.dbUser,
-            password = pkg.dbPassword,
-            credentials = user + ':' + password,
-            endpoint = host + ':' + port + '/' + databaseId,
-            url = 'mongodb://' + credentials + '@' + endpoint;
-        return mongoJsService.connect(url);
+        var connectionUrl = this._getConnectionUrl(databaseId);
+        return mongoJsService.connect(connectionUrl);
+    },
+
+    connect2: function(databaseId, callback) {
+        var connectionUrl = this._getConnectionUrl(databaseId);
+        MongoDbService.connect(connectionUrl, function(err, db) {
+            callback(err, db);
+        });
     },
 
     getAdminDbId: function() {
@@ -20,8 +21,8 @@ module.exports = {
     },
 
     getDatabases: function(session, callback) {
-        var normalizedDbs = [], self = this, dbCon = self.connect(self._adminDbId);
-        self._runCommand(dbCon, {listDatabases: 1}, function(err, result) {
+        var normalizedDbs = [], self = this;
+        /*self._runCommand(dbCon, {listDatabases: 1}, function(err, result) {
             //Convert results to an index-based array
             result.databases.forEach(function(database) {
                 if(!self._isPrivateDatabase(database.name)) { //Don't include private databases
@@ -30,19 +31,47 @@ module.exports = {
                 }
             });
             callback(utilsService.normalizeQueryResultsFormat(normalizedDbs));
+        });*/
+
+        self.connect2(self._adminDbId, function(err, db) {
+            if(db) {
+                db.admin().listDatabases(function(err, dbs) {
+                    if(dbs.databases && dbs.databases.length > 0) {
+                        //Convert results to an index-based array
+                        dbs.databases.forEach(function(database) {
+                            if(!self._isPrivateDatabase(database.name)) { //Don't include private databases
+                                database._id = database.name; //Keep the normalized _id syntax
+                                normalizedDbs.push(database);
+                            }
+                        });
+                    }
+                    callback(utilsService.normalizeQueryResultsFormat(normalizedDbs));
+                });
+            } else {
+                callback(utilsService.normalizeQueryResultsFormat(normalizedDbs));
+            }
         });
+
+
+
+        //callback({ totalSize: 0, results: []});
     },
 
     existsDatabase: function(dbCon, databaseId, session, callback) {
-        if(pkg.mode === constantsService.modes.host) {
+        if(pkg.dbHost === 'localhost') {
             var exists = false;
             this.getDatabases(session, function(databases) {
-                databases.results.forEach(function(database) {
-                    if(database.name === databaseId) {
-                        exists = true;
-                    }
-                });
-                callback(exists);
+                if(databases.results.length) {
+                    databases.results.forEach(function(database) {
+                        if(database.name === databaseId) {
+                            exists = true;
+                        }
+                    });
+                    callback(exists);
+                } else {
+                    callback(false);
+                }
+
             });
         } else {
             callback(true);
@@ -50,12 +79,15 @@ module.exports = {
     },
 
     createDatabase: function(body, session, callback) {
-        var self = this,
-            dbCon = self.connect(body.name); //Create the database explicitly
-        self._initializeCollections(dbCon, function() { //Initialize their collections
-            self.getDatabases(session, function(result) {
-                callback(result);
-            });
+        var self = this;
+        self.connect2(body.name, function(err, dbCon) {
+            //db.addUser('test', 'test', function() {
+                self._initializeCollections(dbCon, function() { //Initialize their collections
+                    self.getDatabases(session, function(result) {
+                        callback(result);
+                    });
+                });
+            //});
         });
     },
 
@@ -69,12 +101,23 @@ module.exports = {
     },
 
     deleteDatabase: function(databaseId, session, callback) {
-        var self = this, dbCon = self.connect(databaseId);
-        self._runCommand(dbCon, {dropDatabase: 1}, function(/*err, result*/) {
+        var self = this;
+
+        self.connect2(databaseId, function(err, db) {
+            db.dropDatabase(function(err, dbs) {
+                self.getDatabases(session, function(result) {
+                    callback(result);
+                });
+            });
+        });
+
+
+        /*self._runCommand(dbCon, {dropDatabase: 1}, function(err, result) {
+            console.log("RESULT", result);
             self.getDatabases(session, function(result) {
                 callback(result);
             });
-        });
+        });*/
     },
 
     //Get the formatted of the mongodb collection, as it will usually be a native object id,
@@ -89,20 +132,32 @@ module.exports = {
         return _id;
     },
 
+    _getConnectionUrl: function(databaseId) {
+        var host = pkg.dbHost,
+            port = pkg.dbPort,
+            user = pkg.dbUser,
+            password = pkg.dbPassword,
+            credentials = (user && password) ? user + ':' + password + '@': '',
+            endpoint = host + ':' + port + '/' + databaseId;
+        return 'mongodb://' + credentials + endpoint;
+    },
+
     _copyDatabase: function(srcDbId, dstDbId, callback) {
         var commandOptions = {
                 copydb: 1,
                 fromdb: srcDbId,
                 todb: dstDbId
             },
-            dbCon = this.connect(this._adminDbId);
-        this._runCommand(dbCon, commandOptions, function(err, result) {
-            callback(result);
+            self = this;
+        self.connect2(self._adminDbId, function(err, dbCon) {
+            self._runCommand(dbCon, commandOptions, function(err, result) {
+                callback(result);
+            });
         });
     },
 
     _isPrivateDatabase: function(databaseId) {
-        var privateDbs = ['mydb', 'local'], isPrivate = false;
+        var privateDbs = ['mydb', 'local', 'admin'], isPrivate = false;
         privateDbs.forEach(function(privateDb) {
             if(databaseId === privateDb) {
                 isPrivate = true;
@@ -146,9 +201,9 @@ module.exports = {
     _initializeCollection: function (dbCon, collection, callback) {
         var self = this;
         fileSystemService.readFile('../setup/' + collection + '.json', function (err, data) {
+            consoleService.success(collection + ' collection initialized');
             if(data && data.length) {
                 self._createDocuments(dbCon, collection, data, function() {
-                    consoleService.success(collection + " database initialized");
                     if(callback) { callback() }
                 })
             } else {
@@ -189,15 +244,22 @@ module.exports = {
     },
 
     _runCommand: function(dbCon, command, callback) {
-        dbCon.runCommand(command, function(err, result) {
-            callback(err, result);
-        });
+        if(dbCon.command) {
+            dbCon.command(command, function(err, result) {
+                callback(err, result);
+            });
+        } else {
+            dbCon.runCommand(command, function(err, result) {
+                callback(err, result);
+            });
+        }
     }
 };
 
 //Load all the dependencies AFTER the module has been defined in order to guarantee
 //that the database connection has been properly initialized
-var mongoJsService      = require("mongojs"),
+var MongoDbService      = require('mongodb').MongoClient,
+    mongoJsService      = require("mongojs"),
     createService       = require("./crud/createService"),
     fileSystemService   = require("./fileSystemService"),
     constantsService    = require('./constantsService'),

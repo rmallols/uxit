@@ -126,16 +126,16 @@ module.exports = function(grunt) {
                     return +new Date();
                 },
                 dbHost: function () {
-                    return (grunt.option('env') === prodKey) ? 'ds051858.mongolab.com' : 'localhost';
+                    return (grunt.option('env') === prodKey) ? 'ds053168.mongolab.com' : 'localhost';
                 },
                 dbPort: function () {
-                    return (grunt.option('env') === prodKey) ? '51858' : '27017';
+                    return (grunt.option('env') === prodKey) ? '53168' : '27017';
                 },
                 dbUser: function () {
-                    return (grunt.option('env') === prodKey) ? 'test' : 'test';
+                    return (grunt.option('env') === prodKey) ? '' : '';
                 },
                 dbPassword: function () {
-                    return (grunt.option('env') === prodKey) ? 'test' : 'test';
+                    return (grunt.option('env') === prodKey) ? '' : '';
                 }
             },
             options: {
@@ -163,7 +163,7 @@ module.exports = function(grunt) {
     grunt.registerTask('devPreprocess', ['preprocess:htmlDev']);
     grunt.registerTask('prodPreprocess', ['preprocess:htmlProd', 'preprocess:jsProd']);
     grunt.registerTask('bump', ['bumpup:minor']);
-    grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'devPreprocess', 'generateTemplates']);
+    grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'bump', 'devPreprocess', 'generateTemplates']);
     grunt.registerTask('prod', ['clean', 'jshint', 'karma:run', 'bump', 'prodPreprocess',
         'generateTemplates', 'concat', 'uglify', 'less:prod']);
 };
