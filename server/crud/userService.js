@@ -4,6 +4,7 @@ var getService          = require("./getService"),
 /*CRYPT MODULE*/
     bcrypt              = require('bcrypt-nodejs'),
     dbService           = require("../dbService"),
+    collectionService   = require("../collectionService"),
     constantsService    = require("../constantsService");
 
 module.exports = {
@@ -12,7 +13,7 @@ module.exports = {
     existsOtherUserWithSameEmail : function (dbCon, id, email, callback) {
         var query = {}, emailFilter = { email: utilsService.insensitive(email) };
         if (id) { //If the user already existed, it's necessary to ensure that the query doesn't return the user itself
-            query.q = { $and: [ emailFilter, { _id: { $ne : dbService.getFormattedId(dbCon, id) }}]};
+            query.q = { $and: [ emailFilter, { _id: { $ne : collectionService.getFormattedId(dbCon, id) }}]};
         } else {
             query.q = emailFilter;
         }
@@ -24,12 +25,12 @@ module.exports = {
 
     create : function (dbCon, body, session, callback) {
         this.existsOtherUserWithSameEmail(dbCon, null, body.email, function (existsUser) {
+            var collection = constantsService.collections.users;
             if (existsUser) {  //Avoid create new user with already existing mails
                 callback(null);
             } else {
-                utilsService.addCreateSignature(body, session);
                 body.password = bcrypt.hashSync(body.password); //Crypt the password
-                dbCon.collection(constantsService.collections.users).save(body, function (err, newUser) {
+                collectionService.create(dbCon, collection, body, session, function (err, newUser) {
                     callback(newUser);
                 });
             }
@@ -46,10 +47,11 @@ module.exports = {
                     body.password = bcrypt.hashSync(body.password);
                 }
                 //Normalize the way the model is going to be updated
-                var updatedModel = utilsService.normalizeModel(body);
+                var updatedModel    = utilsService.normalizeModel(body),
+                    _id             = collectionService.getFormattedId(dbCon, id);
                 utilsService.addUpdateSignature(body, session);
                 //noinspection JSUnresolvedVariable
-                dbCon.collection(collection).update({_id: dbService.getFormattedId(dbCon, id)}, {$set: updatedModel}, function () {
+                collectionService.update(dbCon, collection, _id, updatedModel, session, function () {
                     callback({});
                 });
             }
@@ -59,7 +61,7 @@ module.exports = {
     get: function (dbCon, email, callback) {
         var filter      = { $and: [{email: email}]},
             collection  = constantsService.collections.users;
-        dbCon.collection(collection).findOne(filter, function (err, user) {
+        collectionService.findOne(dbCon, collection, filter, null, function (err, user) {
             callback(user);
         });
     }

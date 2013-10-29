@@ -10,6 +10,7 @@ var express             = require('express'),
     constantsService    = require('./constantsService'),
     liveMessageService  = require("./liveMessageService"),
     dbService           = require("./dbService"),
+    collectionService   = require("./collectionService"),
     sessionService      = require("./sessionService"),
     appService          = require("./appService"),
     createService       = require("./crud/createService"),
@@ -36,10 +37,8 @@ function checkAuth(req, res, next) {
 }
 
 function setupDb(req, res, next) {
-    /*req.dbCon = dbService.connect(req.params.portalId);
-    next();*/
-    dbService.connect2(req.params.portalId, function(err, db) {
-        req.dbCon = dbService.connect(req.params.portalId);
+    dbService.connect(req.params.portalId, function(err, db) {
+        req.dbCon = db;
         next();
     });
 }
@@ -209,7 +208,7 @@ app.get('/', function (req, res) {
 app.get('/:portalId/login', setupDb, function (req, res) { goToIndex(res); });
 
 app.get('/error', function (req, res) { goToIndex(res); });
-
+console.log("VOLVER A DESCOMENTAR LAS INICIALIZACIONES!")
 app.get('/:portalId', setupDb, function (req, res) {
     existsPortal(req.dbCon, req.params.portalId, req.session, function(existsPortal) {
         if(existsPortal) {
@@ -222,6 +221,10 @@ app.get('/:portalId', setupDb, function (req, res) {
                     if (firstPage.type === 'externalLink') { res.redirect(firstPage.externalLinkUrl); }
                     else { res.redirect(req.params.portalId + '/' + firstPage.url); }
                 } else {
+                    /*collectionService.initializeCollections(req.dbCon, function() { //Initialize their collections
+                        console.log("INIT??");
+                        goToIndex(res);
+                    });*/
                     res.redirect('/error?title=errorPage.portalNotFound&targetId=' + req.params.portalId);
                 }
             });
@@ -247,6 +250,9 @@ app.get('/:portalId/:pageId', setupDb, function (req, res) {
                 } else {
                     res.redirect('/error?title=errorPage.pageNotFound&targetId=' + req.params.pageId +
                         '&portalId=' + req.params.portalId + '&showPortalHomeButton=true');
+                    /*collectionService.initializeCollections(req.dbCon, function() { //Initialize their collections
+                        goToIndex(res);
+                    });*/
                 }
             });
         } else {

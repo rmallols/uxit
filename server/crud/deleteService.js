@@ -1,9 +1,8 @@
 'use strict';
-var dbService = require("../dbService");
+var collectionService   = require("../collectionService");
 module.exports = {
     delete : function (dbCon, collection, id, callback) {
-        //noinspection JSUnresolvedVariable,JSUnresolvedFunction
-        dbCon.collection(collection).remove({_id: dbService.getFormattedId(dbCon, id.toString())}, function () {
+        collectionService.delete(dbCon, collection, id, function() {
             callback({});
         });
     }

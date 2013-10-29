@@ -1,6 +1,7 @@
 'use strict';
-var utilsService = require("../utilsService"),
-    dbService = require("../dbService");
+var utilsService        = require("../utilsService"),
+    dbService           = require("../dbService"),
+    collectionService   = require("../collectionService");
 module.exports = {
     create : function (dbConnection, collection, body, session, callback) {
         if(utilsService.isArray(body)) {
@@ -15,8 +16,7 @@ module.exports = {
     },
 
     _createSingleDocument: function (dbConnection, document, collection, session, callback) {
-        utilsService.addCreateSignature(document, session);
-        dbConnection.collection(collection).save(document, function (err, newItem) {
+        collectionService.create(dbConnection, collection, document, session, function (err, newItem) {
             callback(newItem);
         });
     },

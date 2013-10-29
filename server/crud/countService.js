@@ -1,9 +1,9 @@
 'use strict';
-var dbService = require("../dbService");
+var collectionService = require("../collectionService");
 
 module.exports = {
     count : function (dbCon, collection, filter, callback) {
-        dbCon.collection(collection).count(filter, function (err, totalSize) {
+        collectionService.count(dbCon, collection, filter, function (err, totalSize) {
             callback(totalSize);
         });
     }

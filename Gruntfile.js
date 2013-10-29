@@ -126,16 +126,20 @@ module.exports = function(grunt) {
                     return +new Date();
                 },
                 dbHost: function () {
-                    return (grunt.option('env') === prodKey) ? 'ds053168.mongolab.com' : 'localhost';
+                    return (grunt.option('env') === prodKey) ? 'ds053218.mongolab.com' : 'localhost';
                 },
                 dbPort: function () {
-                    return (grunt.option('env') === prodKey) ? '53168' : '27017';
+                    return (grunt.option('env') === prodKey) ? '53218' : '27017';
                 },
                 dbUser: function () {
-                    return (grunt.option('env') === prodKey) ? '' : '';
+                    return (grunt.option('env') === prodKey) ? 'test' : '';
                 },
                 dbPassword: function () {
-                    return (grunt.option('env') === prodKey) ? '' : '';
+                    return (grunt.option('env') === prodKey) ? 'test' : '';
+                },
+                mode: function () {
+                    var constantsService = require('./server/constantsService');
+                    return (grunt.option('env') === prodKey) ? constantsService.modes.cloud : constantsService.modes.host;
                 }
             },
             options: {

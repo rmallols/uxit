@@ -1,9 +1,9 @@
 {
     "name": "menzit",
     "author": "menzit",
-    "version": "0.36.1",
-    "timestamp": 1382987488014,
-    "mode": "cloud",
+    "version": "0.41.1",
+    "timestamp": 1383074356810,
+    "mode": "host",
     "dbHost": "localhost",
     "dbPort": "27017",
     "dbUser": "",

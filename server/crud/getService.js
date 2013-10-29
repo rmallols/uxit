@@ -1,7 +1,8 @@
 'use strict';
 var utilsService        = require("../utilsService"),
     constantsService    = require('../constantsService'),
-    dbService           = require("../dbService");
+    dbService           = require("../dbService"),
+    collectionService   = require("../collectionService");
 
 module.exports = {
 
@@ -36,7 +37,7 @@ module.exports = {
         //Normalize the projection to ensure that the projection value is an integer, an not probably an string
         projection = this._normalizeProjection(query.projection);
         //noinspection JSUnresolvedFunction
-        dbCon.collection(collection).findOne(query.q, projection, function (err, document) {
+        collectionService.findOne(dbCon, collection, query.q, projection, function (err, document) {
             callback(document);
         });
     },
@@ -48,7 +49,7 @@ module.exports = {
             self            = this,
             processedItems  = 0;
         if (id) {
-            getFirstQuery = { q: { _id: dbService.getFormattedId(dbCon, id)} }; //Normalize the way the Ids are set
+            getFirstQuery = { q: { _id: collectionService.getFormattedId(dbCon, id)} }; //Normalize the way the Ids are set
             if (query.projection) { //Add the query projection, if case
                 getFirstQuery.projection = query.projection;
             }
@@ -61,9 +62,9 @@ module.exports = {
             //Normalize the projection to ensure that the projection value is an integer, an not probably an string
             projection = this._normalizeProjection(query.projection);
             sort = this._normalizeSort(query.sort);
-            //noinspection JSUnresolvedVariable
-            dbCon.collection(collection).count(query.q, function (err, totalSize) {
-                dbCon.collection(collection).find(query.q, projection).sort(sort).skip(skip).limit(pageSize, function (err, documents) {
+            collectionService.count(dbCon, collection, query.q, function (err, totalSize) {
+                //dbCon.collection(collection).find(query.q, projection).sort(sort).skip(skip).limit(pageSize, function (err, documents) {
+                collectionService.find(dbCon, collection, query.q, projection, sort, skip, pageSize, function(err, documents) {
                     if (documents && documents.length > 0) {
                         documents.forEach(function (document) {
                             self.setJoins(dbCon, document, function() {
