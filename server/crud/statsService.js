@@ -1,6 +1,6 @@
 'use strict';
-var getService  = require("./getService"),
-    dbService   = require("../dbService");
+var getService  = require("./getService");
+
 module.exports = {
 
     getStats : function (dbCon, collection, query, session, callback) {

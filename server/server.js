@@ -1,16 +1,11 @@
 'use strict';
-/*EXPRESS SETTINGS*/
 var express             = require('express'),
     app                 = express(),
     server              = require('http').createServer(app),
     io                  = require('socket.io').listen(server, { log: false }),
-    path                = require('path'),
-    /*SERVICES */
     emailService        = require('./emailService'),
-    constantsService    = require('./constantsService'),
     liveMessageService  = require("./liveMessageService"),
     dbService           = require("./dbService"),
-    collectionService   = require("./collectionService"),
     sessionService      = require("./sessionService"),
     appService          = require("./appService"),
     createService       = require("./crud/createService"),
@@ -21,9 +16,9 @@ var express             = require('express'),
     updateService       = require("./crud/updateService"),
     deleteService       = require("./crud/deleteService"),
     mediaService        = require("./crud/mediaService"),
-    downloadService     = require("./crud/downloadService");
+    downloadService     = require("./crud/downloadService"),
+    redirectionService  = require("./redirectionService");
 
-//noinspection JSUnresolvedFunction
 app.use(express.bodyParser());
 app.use(express.cookieParser());
 app.use(express.session({ secret: "ch0pSuey" }));
@@ -43,23 +38,14 @@ function setupDb(req, res, next) {
     });
 }
 
-function goToIndex(res) {
-    var absPath = path.resolve('../');
-    res.sendfile(absPath + '/index.html');
-}
-
 app.get('/favicon.ico', function (req, res) {
-    res.writeHead(200, {'Content-Type': 'image/x-icon'} );
-    res.end();
+    redirectionService.goToFavicon(res);
 });
 
 app.post('/:portalId/rest/login', setupDb, function (req, res) {
     sessionService.login(req.dbCon, req.body, req.session, function (success) {
-        if (success) {
-            res.redirect(req.params.portalId);
-        } else {
-            res.redirect(req.params.portalId + '/login?error');
-        }
+        if (success)    { redirectionService.goToUrl(res, req.params.portalId); }
+        else            { redirectionService.goToUrl(res, req.params.portalId + '/login?error'); }
     });
 });
 
@@ -71,7 +57,7 @@ app.post('/:portalId/rest/getSession', setupDb, function (req, res) {
 
 app.get('/:portalId/logout', function (req, res) {
     sessionService.logout(req.session, function () {
-        res.redirect('/' + req.params.portalId);
+        redirectionService.goToUrl(res, '/' + req.params.portalId);
     });
 });
 
@@ -169,17 +155,7 @@ app.post('/:portalId/media/upload/:id?*', checkAuth, setupDb, function (req, res
 
 app.get('/:portalId/media/:id/:name', setupDb, function (req, res) {
     downloadService.download(req.dbCon, req.params.id, function (content) {
-        if(content && content[0]) {
-            //Try to get the file name from the URL in order to keep the document name once it's going to be downloaded
-            // Otherwise, take it from database
-            var filename = req.params.name || content.name, buffer;
-            //noinspection JSUnresolvedFunction
-            res.attachment(filename);
-            res.header("Content-Type", content.mime);
-            //noinspection JSUnresolvedFunction,JSCheckFunctionSignatures
-            buffer = new Buffer(content[0].data.toString('base64'), "base64")
-            res.end(buffer, 'base64');
-        }
+        redirectionService.goToMedia(req, res, content);
     });
 });
 
@@ -192,80 +168,24 @@ app.post('/:portalId/rest/sendEmail', setupDb, function (req, res) {
 app.use('/', express.static('../'));
 
 app.get('/', function (req, res) {
-    dbService.getDatabases(req.session, function (databases) {
-        var adminDbId;
-        if(databases.totalSize > 0) {
-            res.redirect('/' + databases.results[0].name);
-        } else {
-            adminDbId = dbService.getAdminDbId();
-            dbService.createDatabase({ name: adminDbId}, req.session, function() {
-                res.redirect('/' + adminDbId);
-            });
-        }
-    });
+    redirectionService.goToHomePageFromRoot(req, res);
 });
 
-app.get('/:portalId/login', setupDb, function (req, res) { goToIndex(res); });
+app.get('/:portalId/login', setupDb, function (req, res) {
+    redirectionService.goToIndex(res);
+});
 
-app.get('/error', function (req, res) { goToIndex(res); });
-console.log("VOLVER A DESCOMENTAR LAS INICIALIZACIONES!")
+app.get('/error', function (req, res) {
+    redirectionService.goToIndex(res);
+});
+
 app.get('/:portalId', setupDb, function (req, res) {
-    existsPortal(req.dbCon, req.params.portalId, req.session, function(existsPortal) {
-        if(existsPortal) {
-            var params = {
-                q : { position : 0 },
-                projection : { url: 1, type: 1, externalLinkUrl: 1}
-            };
-            getService.getFirst(req.dbCon, constantsService.collections.pages, params, function (firstPage) {
-                if(firstPage) {
-                    if (firstPage.type === 'externalLink') { res.redirect(firstPage.externalLinkUrl); }
-                    else { res.redirect(req.params.portalId + '/' + firstPage.url); }
-                } else {
-                    /*collectionService.initializeCollections(req.dbCon, function() { //Initialize their collections
-                        console.log("INIT??");
-                        goToIndex(res);
-                    });*/
-                    res.redirect('/error?title=errorPage.portalNotFound&targetId=' + req.params.portalId);
-                }
-            });
-        } else {
-            res.redirect('/error?title=errorPage.portalNotFound&targetId=' + req.params.portalId);
-        }
-    });
+    redirectionService.goToHomePageFromPortalRoot(req, res);
 });
 
 app.get('/:portalId/:pageId', setupDb, function (req, res) {
-    existsPortal(req.dbCon, req.params.portalId, req.session, function(existsPortal) {
-        if(existsPortal) {
-            var params = {
-                q : { url : req.params.pageId },
-                projection : { url: 1, type: 1, externalLinkUrl: 1}
-            };
-            getService.getFirst(req.dbCon, constantsService.collections.pages, params, function (page) {
-                if(page) {
-                    if (page.type === 'externalLink') {
-                        res.redirect(pages.results[0].externalLinkUrl);
-                    }
-                    else { goToIndex(res); }
-                } else {
-                    res.redirect('/error?title=errorPage.pageNotFound&targetId=' + req.params.pageId +
-                        '&portalId=' + req.params.portalId + '&showPortalHomeButton=true');
-                    /*collectionService.initializeCollections(req.dbCon, function() { //Initialize their collections
-                        goToIndex(res);
-                    });*/
-                }
-            });
-        } else {
-            res.redirect('/error?title=errorPage.portalNotFound&targetId=' + req.params.portalId);
-        }
-    });
+    redirectionService.goToPageFromPage(req, res);
 });
-
-function existsPortal(dbCon, portalId, session, callback) {
-    dbService.existsDatabase(dbCon, portalId, session, function(result) {
-        callback(result);
-    });
-}
 
 liveMessageService.init(io);
 

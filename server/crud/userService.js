@@ -1,9 +1,8 @@
 'use strict';
 var getService          = require("./getService"),
     utilsService        = require("../utilsService"),
-/*CRYPT MODULE*/
+    /*CRYPT MODULE*/
     bcrypt              = require('bcrypt-nodejs'),
-    dbService           = require("../dbService"),
     collectionService   = require("../collectionService"),
     constantsService    = require("../constantsService");
 

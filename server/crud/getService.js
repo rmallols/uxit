@@ -1,7 +1,6 @@
 'use strict';
 var utilsService        = require("../utilsService"),
     constantsService    = require('../constantsService'),
-    dbService           = require("../dbService"),
     collectionService   = require("../collectionService");
 
 module.exports = {

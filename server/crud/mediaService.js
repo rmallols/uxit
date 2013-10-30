@@ -1,10 +1,8 @@
 'use strict';
-var utilsService        = require("../utilsService"),
-    fileSystemService   = require("../fileSystemService"),
+var fileSystemService   = require("../fileSystemService"),
     consoleService      = require('../consoleService'),
     constantsService    = require('../constantsService'),
     gm                  = require('gm'),
-    dbService           = require("../dbService"),
     collectionService   = require("../collectionService");
 
 module.exports = {

@@ -1,7 +1,7 @@
 'use strict';
 var email               = require("emailjs"),
     getService          = require('./crud/getService'),
-    constantsService    = require('./dbService');
+    constantsService    = require('./constantsService');
 
 module.exports = {
 

@@ -136,7 +136,7 @@ module.exports = {
     getFormattedId: function (dbCon, originalId) {
         var _id;
         try {
-            _id = dbCon.ObjectId(originalId);
+            _id = new ObjectID(originalId);
         } catch (ex) {
             _id = originalId;
         }
@@ -148,4 +148,5 @@ var createService       = require("./crud/createService"),
     fileSystemService   = require("./fileSystemService"),
     consoleService      = require('./consoleService'),
     utilsService        = require("./utilsService"),
-    constantsService    = require("./constantsService")
+    constantsService    = require("./constantsService"),
+    ObjectID            = require('mongodb').ObjectID;

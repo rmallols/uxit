@@ -1,6 +1,5 @@
 'use strict';
 var utilsService        = require("../utilsService"),
-    dbService           = require("../dbService"),
     collectionService   = require("../collectionService");
 module.exports = {
     create : function (dbConnection, collection, body, session, callback) {

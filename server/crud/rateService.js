@@ -2,8 +2,7 @@
 var createService   = require("./createService"),
     countService    = require("./countService"),
     getService      = require("./getService"),
-    updateService   = require("./updateService"),
-    dbService       = require("../dbService");
+    updateService   = require("./updateService");
 
 module.exports = {
     rate : function (dbCon, collection, body, session, callback) {

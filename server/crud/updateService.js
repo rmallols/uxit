@@ -1,7 +1,6 @@
 'use strict';
-var utilsService    = require("../utilsService"),
-    dbService       = require("../dbService"),
-    collectionService = require("../collectionService");
+var utilsService        = require("../utilsService"),
+    collectionService   = require("../collectionService");
 
 module.exports = {
     update : function (dbCon, collection, id, body, session, callback) {

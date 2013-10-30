@@ -37,9 +37,9 @@ module.exports = {
     },
 
     existsDatabase: function(dbCon, databaseId, session, callback) {
-        if(pkg.dbHost === constantsService.modes.host) {
-            var exists = false;
+        if(this._isHostDb()) {
             this.getDatabases(session, function(databases) {
+                var exists = false;
                 if(databases.results.length) {
                     databases.results.forEach(function(database) {
                         if(database.name === databaseId) {
@@ -100,6 +100,14 @@ module.exports = {
         return 'mongodb://' + credentials + endpoint;
     },
 
+    _isHostDb: function() {
+        return pkg.mode === constantsService.modes.host;
+    },
+
+    _isCloudDb: function() {
+        return pkg.mode === constantsService.modes.cloud;
+    },
+
     _copyDatabase: function(srcDbId, dstDbId, callback) {
         var self = this, commandOptions = { copydb: 1, fromdb: srcDbId, todb: dstDbId };
         self.connect(self._defaultDbId, function(err, db) {
@@ -136,7 +144,6 @@ module.exports = {
 //Load all the dependencies AFTER the module has been defined in order to guarantee
 //that the database connection has been properly initialized
 var MongoDbService      = require('mongodb').MongoClient,
-    mongoJsService      = require("mongojs"),
     collectionService   = require('./collectionService'),
     constantsService    = require('./constantsService'),
     utilsService        = require("./utilsService"),

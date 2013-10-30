@@ -1,6 +1,5 @@
 'use strict';
-var dbService = require("../dbService"),
-    collectionService = require("../collectionService"),
+var collectionService = require("../collectionService"),
     constantsService = require("../constantsService");
 module.exports = {
     download : function (dbCon, id, callback) {
