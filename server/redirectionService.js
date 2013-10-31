@@ -8,7 +8,7 @@ var path                = require('path'),
 module.exports = {
 
     goToIndex: function(res) {
-        res.sendfile('./index.html');
+        res.sendfile('index.html');
     },
 
     goToUrl: function (res, url) {
