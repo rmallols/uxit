@@ -8,8 +8,7 @@ var path                = require('path'),
 module.exports = {
 
     goToIndex: function(res) {
-        var absPath = path.resolve('../');
-        res.sendfile(absPath + '/index.html');
+        res.sendfile('./index.html');
     },
 
     goToUrl: function (res, url) {

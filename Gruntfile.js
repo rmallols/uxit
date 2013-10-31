@@ -29,8 +29,8 @@ module.exports = function(grunt) {
         },
         preprocess : {
             htmlDev : {
-                src : 'index.tpl.html',
-                dest : 'index.html',
+                src : 'server/index.tpl.html',
+                dest : 'server/index.html',
                 options : {
                     context : {
                         version : 'dev'
@@ -38,8 +38,8 @@ module.exports = function(grunt) {
                 }
             },
             htmlProd : {
-                src : 'index.tpl.html',
-                dest : 'index.html',
+                src : 'server/index.tpl.html',
+                dest : 'server/index.html',
                 options : {
                     context : {
                         version : '<%= pkg.version %>'
