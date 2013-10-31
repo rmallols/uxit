@@ -12,7 +12,7 @@
         "node": "0.8.19",
         "npm":  "1.2.21"
     },
-    "devDependencies": {
+    "depependencies": {
         "grunt": "~0.4.1",
         "grunt-contrib-jshint": "~0.5.4",
         "grunt-contrib-nodeunit": "~0.1.2",
