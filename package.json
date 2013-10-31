@@ -1,16 +1,16 @@
 {
     "name": "menzit",
     "author": "menzit",
-    "version": "0.45.1",
-    "timestamp": 1383157436162,
-    "mode": "host",
-    "dbHost": "localhost",
-    "dbPort": "27017",
-    "dbUser": "",
-    "dbPassword": "",
+    "version": "0.46.0",
+    "timestamp": 1383244431037,
+    "mode": "cloud",
+    "dbHost": "ds053188.mongolab.com",
+    "dbPort": "53188",
+    "dbUser": "test",
+    "dbPassword": "test",
     "engines": {
         "node": "0.8.19",
-        "npm":  "1.2.21"
+        "npm": "1.2.21"
     },
     "dependencies": {
         "grunt": "~0.4.1",
