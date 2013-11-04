@@ -38,10 +38,15 @@ function setupDb(req, res, next) {
     });
 }
 
+/*
 app.get('/client/*', function (req, res) {
     redirectionService.bla(req, res);
+});*/
 
-});
+//app.use('/client/*', express.static('/bla/client/'));
+
+//console.log("X0", __dirname, app.router);
+app.use('/app', express.static('../'));
 
 app.get('/favicon.ico', function (req, res) {
     redirectionService.goToFavicon(res);
