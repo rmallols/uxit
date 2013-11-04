@@ -11,7 +11,7 @@ module.exports = {
     goToIndex: function(res) {
         console.log("CHECKING DIRNAME", __dirname);
         console.log("CHECKING", fs.readdirSync('./'));
-        res.send(fs.readFileSync('./server/index.html').toString());
+        res.send(fs.readFileSync(__dirname + '/index.html').toString());
     },
 
     goToUrl: function (res, url) {

@@ -1,8 +1,8 @@
 {
     "name": "menzit",
     "author": "menzit",
-    "version": "0.47.0",
-    "timestamp": 1383550484935,
+    "version": "0.48.0",
+    "timestamp": 1383578758221,
     "mode": "cloud",
     "dbHost": "ds053188.mongolab.com",
     "dbPort": "53188",
@@ -21,7 +21,7 @@
         "gm": "~1.8.1",
         "express": "~3.0.0rc2"
     },
-    "devDependencies" : {
+    "devDependencies": {
         "grunt": "~0.4.1",
         "grunt-contrib-jshint": "~0.5.4",
         "grunt-contrib-nodeunit": "~0.1.2",
