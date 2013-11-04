@@ -4,13 +4,17 @@ var path                = require('path'),
     dbService           = require("./dbService"),
     collectionService   = require("./collectionService"),
     constantsService    = require("./constantsService"),
+    pkg                 = require('../package.json'),
     getService          = require("./crud/getService");
 
 module.exports = {
 
+    /*bla: function(req, res) {
+        console.log("YEA!", req.path);
+        res.send(fs.readFileSync(__dirname + '/' + pkg.context + '/' + req.path).toString());
+    },*/
+
     goToIndex: function(res) {
-        console.log("CHECKING DIRNAME", __dirname);
-        console.log("CHECKING", fs.readdirSync('./'));
         res.send(fs.readFileSync(__dirname + '/index.html').toString());
     },
 
