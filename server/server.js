@@ -47,8 +47,7 @@ app.get('/client/*', function (req, res) {
 
 //console.log("X0", __dirname, app.router);
 //app.use('/app', express.static('../'));
-console.log("X", __dirname + '\\..\\');
-app.use(express.static(__dirname + '\\..\\'));
+app.use(express.static(__dirname + '/../'));
 
 app.get('/favicon.ico', function (req, res) {
     redirectionService.goToFavicon(res);
