@@ -1,5 +1,6 @@
 'use strict';
 var path                = require('path'),
+    fs                  = require('fs'),
     dbService           = require("./dbService"),
     collectionService   = require("./collectionService"),
     constantsService    = require("./constantsService"),
@@ -8,7 +9,7 @@ var path                = require('path'),
 module.exports = {
 
     goToIndex: function(res) {
-        res.sendfile('index.html');
+        res.send(fs.readFileSync('index.html').toString());
     },
 
     goToUrl: function (res, url) {
