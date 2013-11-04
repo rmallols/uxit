@@ -37,10 +37,10 @@ function setupDb(req, res, next) {
         next();
     });
 }
-/*
+
 app.get('/client/*', function (req, res) {
     redirectionService.bla(req, res);
-});*/
+});
 
 app.get('/favicon.ico', function (req, res) {
     redirectionService.goToFavicon(res);

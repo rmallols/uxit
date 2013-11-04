@@ -2,6 +2,7 @@
     "name": "menzit",
     "author": "menzit",
     "version": "0.48.0",
+    "context": "app",
     "timestamp": 1383578758221,
     "mode": "cloud",
     "dbHost": "ds053188.mongolab.com",

@@ -9,10 +9,10 @@ var path                = require('path'),
 
 module.exports = {
 
-    /*bla: function(req, res) {
-        console.log("YEA!", req.path);
-        res.send(fs.readFileSync(__dirname + '/' + pkg.context + '/' + req.path).toString());
-    },*/
+    bla: function(req, res) {
+        console.log("YEA!", __dirname + '/../' + pkg.context + '/' + req.path);
+        res.send(fs.readFileSync(__dirname + '/../' + pkg.context + '/' + req.path).toString());
+    },
 
     goToIndex: function(res) {
         res.send(fs.readFileSync(__dirname + '/index.html').toString());
