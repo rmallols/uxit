@@ -9,8 +9,9 @@ var path                = require('path'),
 module.exports = {
 
     goToIndex: function(res) {
+        console.log("CHECKING DIRNAME", __dirname);
         console.log("CHECKING", fs.readdirSync('./'));
-        res.send(fs.readFileSync('index.html').toString());
+        res.send(fs.readFileSync('./server/index.html').toString());
     },
 
     goToUrl: function (res, url) {
