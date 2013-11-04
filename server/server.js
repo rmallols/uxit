@@ -46,7 +46,9 @@ app.get('/client/*', function (req, res) {
 //app.use('/client/*', express.static('/bla/client/'));
 
 //console.log("X0", __dirname, app.router);
-app.use('/app', express.static('../'));
+//app.use('/app', express.static('../'));
+console.log("X", __dirname + '\\..\\');
+app.use(express.static(__dirname + '\\..\\'));
 
 app.get('/favicon.ico', function (req, res) {
     redirectionService.goToFavicon(res);
@@ -175,7 +177,7 @@ app.post('/:portalId/rest/sendEmail', setupDb, function (req, res) {
     });
 });
 
-app.use('/', express.static('../'));
+//app.use('/', express.static('../'));
 
 app.get('/', function (req, res) {
     redirectionService.goToHomePageFromRoot(req, res);
