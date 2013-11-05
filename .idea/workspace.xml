@@ -4,8 +4,6 @@
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.33.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.52.0.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\usr\menzit\client\min\css.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\usr\menzit\client\min\js.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="uxit.iws" />
@@ -31,10 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="99" selection-start="424" selection-end="424" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="782">
+            <state line="12" column="91" selection-start="302" selection-end="302" vertical-scroll-proportion="0.41717792" vertical-offset="0" max-vertical-offset="782">
               <folding />
             </state>
           </provider>
@@ -58,10 +56,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="81" selection-start="5457" selection-end="5457" vertical-scroll-proportion="0.5408163" vertical-offset="2081" max-vertical-offset="3128">
+            <state line="138" column="81" selection-start="5457" selection-end="5457" vertical-scroll-proportion="-45.28" vertical-offset="1214" max-vertical-offset="3128">
               <folding />
             </state>
           </provider>
@@ -813,16 +811,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="99" selection-start="424" selection-end="424" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="782">
+        <state line="138" column="81" selection-start="5457" selection-end="5457" vertical-scroll-proportion="-45.28" vertical-offset="1214" max-vertical-offset="3128">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="81" selection-start="5457" selection-end="5457" vertical-scroll-proportion="0.5408163" vertical-offset="2081" max-vertical-offset="3128">
+        <state line="12" column="91" selection-start="302" selection-end="302" vertical-scroll-proportion="0.41717792" vertical-offset="0" max-vertical-offset="782">
           <folding />
         </state>
       </provider>
