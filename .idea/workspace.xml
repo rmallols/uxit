@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-results.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/tests/unit/test-results.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,7 +86,7 @@
       <file leaf-file-name="test-results.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test-results.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="25" selection-start="2880" selection-end="2880" vertical-scroll-proportion="0.7450199" vertical-offset="0" max-vertical-offset="6443">
+            <state line="26" column="17" selection-start="3592" selection-end="3592" vertical-scroll-proportion="0.8804781" vertical-offset="0" max-vertical-offset="6443">
               <folding />
             </state>
           </provider>
@@ -734,7 +732,11 @@
       <created>1383642657363</created>
       <updated>1383642657363</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="#149 MongoLab integration - layer mechanism changed">
+      <created>1383642825378</created>
+      <updated>1383642825378</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -942,7 +944,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test-results.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="25" selection-start="2880" selection-end="2880" vertical-scroll-proportion="0.7450199" vertical-offset="0" max-vertical-offset="6443">
+        <state line="26" column="17" selection-start="3592" selection-end="3592" vertical-scroll-proportion="0.8804781" vertical-offset="0" max-vertical-offset="6443">
           <folding />
         </state>
       </provider>
