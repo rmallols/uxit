@@ -57,7 +57,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="45" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="255">
+            <state line="9" column="34" selection-start="302" selection-end="302" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
@@ -84,7 +84,7 @@
       <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="69" selection-start="6472" selection-end="6472" vertical-scroll-proportion="0.37551022" vertical-offset="2638" max-vertical-offset="3128">
+            <state line="154" column="42" selection-start="6030" selection-end="6030" vertical-scroll-proportion="0.37995338" vertical-offset="2455" max-vertical-offset="3128">
               <folding />
             </state>
           </provider>
@@ -275,7 +275,7 @@
       <recent name="C:\usr\menzit" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.grunt dev">
+  <component name="RunManager" selected="Node.js.grunt prod">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -752,7 +752,7 @@
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25276244" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25276244" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712707" order="1" side_tool="false" content_ui="tabs" />
@@ -760,7 +760,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-324" y="-1082" width="1911" height="1067" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-324" y="-1082" width="1911" height="1067" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -882,13 +882,6 @@
         <state line="0" column="56" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="45" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="54" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255">
@@ -899,13 +892,6 @@
     <entry file="file://$PROJECT_DIR$/test-results.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="17" selection-start="3592" selection-end="3592" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="6443">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="54" selection-start="403" selection-end="403" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="782">
           <folding />
         </state>
       </provider>
@@ -931,9 +917,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="34" selection-start="302" selection-end="302" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="54" selection-start="403" selection-end="403" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="69" selection-start="6472" selection-end="6472" vertical-scroll-proportion="0.37551022" vertical-offset="2638" max-vertical-offset="3128">
+        <state line="154" column="42" selection-start="6030" selection-end="6030" vertical-scroll-proportion="0.37995338" vertical-offset="2455" max-vertical-offset="3128">
           <folding />
         </state>
       </provider>

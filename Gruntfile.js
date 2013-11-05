@@ -173,7 +173,7 @@ module.exports = function(grunt) {
     grunt.registerTask('bump', ['bumpup:minor']);
     grunt.registerTask('github', ['shell:githubAdd', 'shell:githubCommit', 'shell:githubPush']);
     grunt.registerTask('heroku', ['shell:herokuPush']);
-    grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'bump', 'devPreprocess', 'generateTemplates']);
+    grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'bump', 'devPreprocess', 'generateTemplates', 'github']);
     grunt.registerTask('prod', ['clean', 'jshint', 'karma:run', 'bump', 'prodPreprocess',
         'generateTemplates', 'concat', 'uglify', 'less:prod', 'github', 'heroku']);
 };

@@ -1,370 +1,370 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="Chrome 30.0 (Windows)" package="undefined" timestamp="2013-11-05T08:52:06" id="0" hostname="RicardoMallols" tests="362" errors="0" failures="0" time="16.124">
+  <testsuite name="Chrome 30.0 (Windows)" package="undefined" timestamp="2013-11-05T09:49:52" id="0" hostname="RicardoMallols" tests="362" errors="0" failures="0" time="24.041">
     <properties>
       <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.101 Safari/537.36"/>
     </properties>
-    <testcase name="should have the app generic style class" time="0.128" classname="Chrome 30.0 (Windows).app directive root element"/>
-    <testcase name="should have the app specific style class" time="0.052" classname="Chrome 30.0 (Windows).app directive root element"/>
-    <testcase name="should have the clearfix style class" time="0.043" classname="Chrome 30.0 (Windows).app directive root element"/>
-    <testcase name="should not have any admin related class by default" time="0.044" classname="Chrome 30.0 (Windows).app directive root element"/>
-    <testcase name="should have an admin related class if the user has the proper privileges" time="0.046" classname="Chrome 30.0 (Windows).app directive root element"/>
-    <testcase name="should have the reference to the app header directive" time="0.052" classname="Chrome 30.0 (Windows).app directive header area"/>
-    <testcase name="should have the clearfix style class in the reference to the app header directive" time="0.056" classname="Chrome 30.0 (Windows).app directive header area"/>
-    <testcase name="should have the reference to the content area" time="0.042" classname="Chrome 30.0 (Windows).app directive content area"/>
-    <testcase name="should have the clearfix style class in the reference to the content area" time="0.048" classname="Chrome 30.0 (Windows).app directive content area"/>
-    <testcase name="should have a reference to the app bridge area" time="0.042" classname="Chrome 30.0 (Windows).app directive content area - app bridge"/>
-    <testcase name="should specify the model attribute" time="0.05" classname="Chrome 30.0 (Windows).app directive content area - app bridge"/>
-    <testcase name="should specify the internal data attribute" time="0.043" classname="Chrome 30.0 (Windows).app directive content area - app bridge"/>
-    <testcase name="should specify the src attribute" time="0.048" classname="Chrome 30.0 (Windows).app directive content area - app bridge"/>
-    <testcase name="should specify the view attribute" time="0.066" classname="Chrome 30.0 (Windows).app directive content area - app bridge"/>
-    <testcase name="should specify the onEvent attribute" time="0.07" classname="Chrome 30.0 (Windows).app directive content area - app bridge"/>
-    <testcase name="should have a reference to the title area in the reference to the content area" time="0.049" classname="Chrome 30.0 (Windows).app directive content area - title handling"/>
-    <testcase name="should have a reference to the title type area in the reference to the content area" time="0.054" classname="Chrome 30.0 (Windows).app directive content area - title handling"/>
-    <testcase name="should not show the title area by default" time="0.045" classname="Chrome 30.0 (Windows).app directive content area - title handling"/>
-    <testcase name="should show the title area if it&apos;s the model says that" time="0.055" classname="Chrome 30.0 (Windows).app directive content area - title handling"/>
-    <testcase name="should show the default app title if the app is not specifying a specific one" time="0.049" classname="Chrome 30.0 (Windows).app directive content area - title handling"/>
-    <testcase name="should show the specific app title if the app overwrites it" time="0.045" classname="Chrome 30.0 (Windows).app directive content area - title handling"/>
-    <testcase name="should have the micro clearfix styleclass" time="0.052" classname="Chrome 30.0 (Windows).app header directive general structure"/>
-    <testcase name="should have header toggle element" time="0.064" classname="Chrome 30.0 (Windows).app header directive header toggle structure"/>
-    <testcase name="should not show the header toggle if the user doesn&apos;t have the proper privileges" time="0.063" classname="Chrome 30.0 (Windows).app header directive header toggle structure"/>
+    <testcase name="should have the app generic style class" time="0.471" classname="Chrome 30.0 (Windows).app directive root element"/>
+    <testcase name="should have the app specific style class" time="0.113" classname="Chrome 30.0 (Windows).app directive root element"/>
+    <testcase name="should have the clearfix style class" time="0.05" classname="Chrome 30.0 (Windows).app directive root element"/>
+    <testcase name="should not have any admin related class by default" time="0.037" classname="Chrome 30.0 (Windows).app directive root element"/>
+    <testcase name="should have an admin related class if the user has the proper privileges" time="0.051" classname="Chrome 30.0 (Windows).app directive root element"/>
+    <testcase name="should have the reference to the app header directive" time="0.189" classname="Chrome 30.0 (Windows).app directive header area"/>
+    <testcase name="should have the clearfix style class in the reference to the app header directive" time="0.097" classname="Chrome 30.0 (Windows).app directive header area"/>
+    <testcase name="should have the reference to the content area" time="0.062" classname="Chrome 30.0 (Windows).app directive content area"/>
+    <testcase name="should have the clearfix style class in the reference to the content area" time="0.059" classname="Chrome 30.0 (Windows).app directive content area"/>
+    <testcase name="should have a reference to the app bridge area" time="0.055" classname="Chrome 30.0 (Windows).app directive content area - app bridge"/>
+    <testcase name="should specify the model attribute" time="0.054" classname="Chrome 30.0 (Windows).app directive content area - app bridge"/>
+    <testcase name="should specify the internal data attribute" time="0.054" classname="Chrome 30.0 (Windows).app directive content area - app bridge"/>
+    <testcase name="should specify the src attribute" time="0.045" classname="Chrome 30.0 (Windows).app directive content area - app bridge"/>
+    <testcase name="should specify the view attribute" time="0.055" classname="Chrome 30.0 (Windows).app directive content area - app bridge"/>
+    <testcase name="should specify the onEvent attribute" time="0.045" classname="Chrome 30.0 (Windows).app directive content area - app bridge"/>
+    <testcase name="should have a reference to the title area in the reference to the content area" time="0.056" classname="Chrome 30.0 (Windows).app directive content area - title handling"/>
+    <testcase name="should have a reference to the title type area in the reference to the content area" time="0.049" classname="Chrome 30.0 (Windows).app directive content area - title handling"/>
+    <testcase name="should not show the title area by default" time="0.05" classname="Chrome 30.0 (Windows).app directive content area - title handling"/>
+    <testcase name="should show the title area if it&apos;s the model says that" time="0.045" classname="Chrome 30.0 (Windows).app directive content area - title handling"/>
+    <testcase name="should show the default app title if the app is not specifying a specific one" time="0.066" classname="Chrome 30.0 (Windows).app directive content area - title handling"/>
+    <testcase name="should show the specific app title if the app overwrites it" time="0.047" classname="Chrome 30.0 (Windows).app directive content area - title handling"/>
+    <testcase name="should have the micro clearfix styleclass" time="0.057" classname="Chrome 30.0 (Windows).app header directive general structure"/>
+    <testcase name="should have header toggle element" time="0.041" classname="Chrome 30.0 (Windows).app header directive header toggle structure"/>
+    <testcase name="should not show the header toggle if the user doesn&apos;t have the proper privileges" time="0.044" classname="Chrome 30.0 (Windows).app header directive header toggle structure"/>
     <testcase name="should not show the header toggle even if the user has the proper privilegeswhenever they have been got dynamically (this is for caching pourposes)" time="0.059" classname="Chrome 30.0 (Windows).app header directive header toggle structure"/>
-    <testcase name="should show the header toggle if the user had the proper privileges before compilation" time="0.075" classname="Chrome 30.0 (Windows).app header directive header toggle structure"/>
-    <testcase name="should have header area element" time="0.098" classname="Chrome 30.0 (Windows).app header directive header area structure"/>
-    <testcase name="should have the micro clearfix styleclass" time="0.143" classname="Chrome 30.0 (Windows).app header directive header area structure"/>
-    <testcase name="should not show the header area if the user doesn&apos;t have the proper privileges" time="0.188" classname="Chrome 30.0 (Windows).app header directive header area structure"/>
-    <testcase name="should not show the header area even if the user has the proper privilegeswhenever they have been got dynamically (this is for caching pourposes)" time="0.214" classname="Chrome 30.0 (Windows).app header directive header area structure"/>
-    <testcase name="should show the header toggle if the user had the proper privileges before compilation" time="0.174" classname="Chrome 30.0 (Windows).app header directive header area structure"/>
-    <testcase name="should have the title element" time="0.156" classname="Chrome 30.0 (Windows).app header directive header area title"/>
-    <testcase name="should take the app default title if the model doesn&apos;t specify a new one" time="0.072" classname="Chrome 30.0 (Windows).app header directive header area title"/>
-    <testcase name="should take the specific title if the model specifies it" time="0.063" classname="Chrome 30.0 (Windows).app header directive header area title"/>
-    <testcase name="should have the actions element" time="0.042" classname="Chrome 30.0 (Windows).app header directive actions"/>
-    <testcase name="should have the edit action element" time="0.049" classname="Chrome 30.0 (Windows).app header directive actions edit"/>
-    <testcase name="should not show the edit action by default" time="0.048" classname="Chrome 30.0 (Windows).app header directive actions edit"/>
-    <testcase name="should show the edit action whenever the use has the proper privileges before compiling" time="0.042" classname="Chrome 30.0 (Windows).app header directive actions edit"/>
-    <testcase name="should have the fullscreen action element" time="0.036" classname="Chrome 30.0 (Windows).app header directive actions fullscreen"/>
-    <testcase name="should not show the fullscreen action by default" time="0.044" classname="Chrome 30.0 (Windows).app header directive actions fullscreen"/>
-    <testcase name="should not show the fullscreen action whenever the use has&apos;nt the proper privileges before compiling (i.e. he&apos;s creator but not admin user" time="0.054" classname="Chrome 30.0 (Windows).app header directive actions fullscreen"/>
-    <testcase name="should show the fullscreen action whenever the use has the proper privileges before compiling" time="0.042" classname="Chrome 30.0 (Windows).app header directive actions fullscreen"/>
-    <testcase name="should not mark the fullscreen action as disabled if fullscreen mode is not template and the app doesn&apos; belong to the template area" time="0.053" classname="Chrome 30.0 (Windows).app header directive actions fullscreen disabled state"/>
-    <testcase name="should not mark the fullscreen action as disabled if fullscreen mode is template but the app doesn&apos; belong to the template area" time="0.101" classname="Chrome 30.0 (Windows).app header directive actions fullscreen disabled state"/>
-    <testcase name="should not mark the fullscreen action as disabled if fullscreen mode is not template and the app belongs to the template area" time="0.268" classname="Chrome 30.0 (Windows).app header directive actions fullscreen disabled state"/>
-    <testcase name="should mark the fullscreen action as disabled if fullscreen mode is template and the app belongs to the template area" time="0.052" classname="Chrome 30.0 (Windows).app header directive actions fullscreen disabled state"/>
-    <testcase name="should have the remove action element" time="0.044" classname="Chrome 30.0 (Windows).app header directive actions remove"/>
-    <testcase name="should not show the remove action by default" time="0.054" classname="Chrome 30.0 (Windows).app header directive actions remove"/>
-    <testcase name="should show the remove action whenever the use has the proper privileges before compiling" time="0.055" classname="Chrome 30.0 (Windows).app header directive actions remove"/>
-    <testcase name="should have the &apos;bannerCanvas&apos; styleclass" time="0.056" classname="Chrome 30.0 (Windows).bannerCanvas directive main DOM structure"/>
-    <testcase name="should have a grid container" time="0.051" classname="Chrome 30.0 (Windows).bannerCanvas directive main DOM structure"/>
-    <testcase name="should have the readonly class whenever the user doesn&apos;t have the creator role" time="0.065" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability readonly style class"/>
-    <testcase name="should have the readonly class whenever the user got the creator role after the element was created (for caching purposes)" time="0.046" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability readonly style class"/>
-    <testcase name="should have the readonly class whenever the user has have the creator role before the element was created" time="0.062" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability readonly style class"/>
-    <testcase name="should not have a global actions container without popper privileges" time="0.051" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability elements visibility"/>
-    <testcase name="should have a global actions container with popper privileges" time="0.054" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability elements visibility"/>
-    <testcase name="should have a button to add images without popper privileges" time="0.044" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability elements visibility"/>
-    <testcase name="should have a button to add images with popper privileges" time="0.091" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability elements visibility"/>
-    <testcase name="should not have a button to add text without popper privileges" time="0.041" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability elements visibility"/>
-    <testcase name="should have a button to add text with popper privileges" time="0.102" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability elements visibility"/>
-    <testcase name="should have the proper amount of column rulers" time="0.118" classname="Chrome 30.0 (Windows).bannerCanvas directive rulers structure"/>
-    <testcase name="should have the proper amount of row rulers" time="0.067" classname="Chrome 30.0 (Windows).bannerCanvas directive rulers structure"/>
-    <testcase name="should have the proper amount of added items" time="0.092" classname="Chrome 30.0 (Windows).bannerCanvas directive initial model state"/>
-    <testcase name="should wire the item Id with the Id attribute of the DOM" time="0.069" classname="Chrome 30.0 (Windows).bannerItem directive main DOM structure"/>
-    <testcase name="should set the draggable main style class" time="0.088" classname="Chrome 30.0 (Windows).bannerItem directive main DOM structure"/>
-    <testcase name="should set the resizable main style class" time="0.043" classname="Chrome 30.0 (Windows).bannerItem directive main DOM structure"/>
-    <testcase name="should set the edit item button" time="0.154" classname="Chrome 30.0 (Windows).bannerItem directive main DOM structure"/>
-    <testcase name="should set the select handler input to manage the active status" time="0.173" classname="Chrome 30.0 (Windows).bannerItem directive main DOM structure"/>
-    <testcase name="should not have the readonly class by default" time="0.144" classname="Chrome 30.0 (Windows).bannerItem directive component editability readOnly style class"/>
-    <testcase name="should have the readonly class whenever the readonly attr is set" time="0.079" classname="Chrome 30.0 (Windows).bannerItem directive component editability readOnly style class"/>
-    <testcase name="should have the ui-draggable class by default" time="0.042" classname="Chrome 30.0 (Windows).bannerItem directive component editability draggable style class"/>
-    <testcase name="should have the ui-draggable class even if the readonly attr is set after compilation (caching purposes)" time="0.042" classname="Chrome 30.0 (Windows).bannerItem directive component editability draggable style class"/>
-    <testcase name="should not have the ui-draggable class if the readonly attr is set before compilation" time="0.05" classname="Chrome 30.0 (Windows).bannerItem directive component editability draggable style class"/>
-    <testcase name="should have the ui-resizable class by default" time="0.056" classname="Chrome 30.0 (Windows).bannerItem directive component editability resizable style class"/>
-    <testcase name="should have the ui-resizable class even if the readonly attr is set after compilation (caching purposes)" time="0.049" classname="Chrome 30.0 (Windows).bannerItem directive component editability resizable style class"/>
-    <testcase name="should not have the ui-resizable class if the readonly attr is set before compilation" time="0.05" classname="Chrome 30.0 (Windows).bannerItem directive component editability resizable style class"/>
-    <testcase name="should set the proper width" time="0.039" classname="Chrome 30.0 (Windows).bannerItem directive item size"/>
-    <testcase name="should set the proper height" time="0.045" classname="Chrome 30.0 (Windows).bannerItem directive item size"/>
-    <testcase name="should set the proper top position" time="0.045" classname="Chrome 30.0 (Windows).bannerItem directive item position"/>
-    <testcase name="should set the proper left position" time="0.072" classname="Chrome 30.0 (Windows).bannerItem directive item position"/>
-    <testcase name="should not mark the item as selected by default" time="0.053" classname="Chrome 30.0 (Windows).bannerItem directive item selection"/>
+    <testcase name="should show the header toggle if the user had the proper privileges before compilation" time="0.073" classname="Chrome 30.0 (Windows).app header directive header toggle structure"/>
+    <testcase name="should have header area element" time="0.232" classname="Chrome 30.0 (Windows).app header directive header area structure"/>
+    <testcase name="should have the micro clearfix styleclass" time="0.067" classname="Chrome 30.0 (Windows).app header directive header area structure"/>
+    <testcase name="should not show the header area if the user doesn&apos;t have the proper privileges" time="0.046" classname="Chrome 30.0 (Windows).app header directive header area structure"/>
+    <testcase name="should not show the header area even if the user has the proper privilegeswhenever they have been got dynamically (this is for caching pourposes)" time="0.042" classname="Chrome 30.0 (Windows).app header directive header area structure"/>
+    <testcase name="should show the header toggle if the user had the proper privileges before compilation" time="0.063" classname="Chrome 30.0 (Windows).app header directive header area structure"/>
+    <testcase name="should have the title element" time="0.039" classname="Chrome 30.0 (Windows).app header directive header area title"/>
+    <testcase name="should take the app default title if the model doesn&apos;t specify a new one" time="0.039" classname="Chrome 30.0 (Windows).app header directive header area title"/>
+    <testcase name="should take the specific title if the model specifies it" time="0.045" classname="Chrome 30.0 (Windows).app header directive header area title"/>
+    <testcase name="should have the actions element" time="0.046" classname="Chrome 30.0 (Windows).app header directive actions"/>
+    <testcase name="should have the edit action element" time="0.044" classname="Chrome 30.0 (Windows).app header directive actions edit"/>
+    <testcase name="should not show the edit action by default" time="0.06" classname="Chrome 30.0 (Windows).app header directive actions edit"/>
+    <testcase name="should show the edit action whenever the use has the proper privileges before compiling" time="0.067" classname="Chrome 30.0 (Windows).app header directive actions edit"/>
+    <testcase name="should have the fullscreen action element" time="0.038" classname="Chrome 30.0 (Windows).app header directive actions fullscreen"/>
+    <testcase name="should not show the fullscreen action by default" time="0.046" classname="Chrome 30.0 (Windows).app header directive actions fullscreen"/>
+    <testcase name="should not show the fullscreen action whenever the use has&apos;nt the proper privileges before compiling (i.e. he&apos;s creator but not admin user" time="0.049" classname="Chrome 30.0 (Windows).app header directive actions fullscreen"/>
+    <testcase name="should show the fullscreen action whenever the use has the proper privileges before compiling" time="0.044" classname="Chrome 30.0 (Windows).app header directive actions fullscreen"/>
+    <testcase name="should not mark the fullscreen action as disabled if fullscreen mode is not template and the app doesn&apos; belong to the template area" time="0.045" classname="Chrome 30.0 (Windows).app header directive actions fullscreen disabled state"/>
+    <testcase name="should not mark the fullscreen action as disabled if fullscreen mode is template but the app doesn&apos; belong to the template area" time="0.068" classname="Chrome 30.0 (Windows).app header directive actions fullscreen disabled state"/>
+    <testcase name="should not mark the fullscreen action as disabled if fullscreen mode is not template and the app belongs to the template area" time="0.08" classname="Chrome 30.0 (Windows).app header directive actions fullscreen disabled state"/>
+    <testcase name="should mark the fullscreen action as disabled if fullscreen mode is template and the app belongs to the template area" time="0.062" classname="Chrome 30.0 (Windows).app header directive actions fullscreen disabled state"/>
+    <testcase name="should have the remove action element" time="0.042" classname="Chrome 30.0 (Windows).app header directive actions remove"/>
+    <testcase name="should not show the remove action by default" time="0.044" classname="Chrome 30.0 (Windows).app header directive actions remove"/>
+    <testcase name="should show the remove action whenever the use has the proper privileges before compiling" time="0.067" classname="Chrome 30.0 (Windows).app header directive actions remove"/>
+    <testcase name="should have the &apos;bannerCanvas&apos; styleclass" time="0.074" classname="Chrome 30.0 (Windows).bannerCanvas directive main DOM structure"/>
+    <testcase name="should have a grid container" time="0.04" classname="Chrome 30.0 (Windows).bannerCanvas directive main DOM structure"/>
+    <testcase name="should have the readonly class whenever the user doesn&apos;t have the creator role" time="0.19" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability readonly style class"/>
+    <testcase name="should have the readonly class whenever the user got the creator role after the element was created (for caching purposes)" time="0.064" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability readonly style class"/>
+    <testcase name="should have the readonly class whenever the user has have the creator role before the element was created" time="0.099" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability readonly style class"/>
+    <testcase name="should not have a global actions container without popper privileges" time="0.069" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability elements visibility"/>
+    <testcase name="should have a global actions container with popper privileges" time="0.059" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability elements visibility"/>
+    <testcase name="should have a button to add images without popper privileges" time="0.064" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability elements visibility"/>
+    <testcase name="should have a button to add images with popper privileges" time="0.229" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability elements visibility"/>
+    <testcase name="should not have a button to add text without popper privileges" time="0.046" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability elements visibility"/>
+    <testcase name="should have a button to add text with popper privileges" time="0.067" classname="Chrome 30.0 (Windows).bannerCanvas directive component editability elements visibility"/>
+    <testcase name="should have the proper amount of column rulers" time="0.045" classname="Chrome 30.0 (Windows).bannerCanvas directive rulers structure"/>
+    <testcase name="should have the proper amount of row rulers" time="0.043" classname="Chrome 30.0 (Windows).bannerCanvas directive rulers structure"/>
+    <testcase name="should have the proper amount of added items" time="0.065" classname="Chrome 30.0 (Windows).bannerCanvas directive initial model state"/>
+    <testcase name="should wire the item Id with the Id attribute of the DOM" time="0.08" classname="Chrome 30.0 (Windows).bannerItem directive main DOM structure"/>
+    <testcase name="should set the draggable main style class" time="0.165" classname="Chrome 30.0 (Windows).bannerItem directive main DOM structure"/>
+    <testcase name="should set the resizable main style class" time="0.188" classname="Chrome 30.0 (Windows).bannerItem directive main DOM structure"/>
+    <testcase name="should set the edit item button" time="0.07" classname="Chrome 30.0 (Windows).bannerItem directive main DOM structure"/>
+    <testcase name="should set the select handler input to manage the active status" time="0.042" classname="Chrome 30.0 (Windows).bannerItem directive main DOM structure"/>
+    <testcase name="should not have the readonly class by default" time="0.041" classname="Chrome 30.0 (Windows).bannerItem directive component editability readOnly style class"/>
+    <testcase name="should have the readonly class whenever the readonly attr is set" time="0.056" classname="Chrome 30.0 (Windows).bannerItem directive component editability readOnly style class"/>
+    <testcase name="should have the ui-draggable class by default" time="0.129" classname="Chrome 30.0 (Windows).bannerItem directive component editability draggable style class"/>
+    <testcase name="should have the ui-draggable class even if the readonly attr is set after compilation (caching purposes)" time="0.082" classname="Chrome 30.0 (Windows).bannerItem directive component editability draggable style class"/>
+    <testcase name="should not have the ui-draggable class if the readonly attr is set before compilation" time="0.048" classname="Chrome 30.0 (Windows).bannerItem directive component editability draggable style class"/>
+    <testcase name="should have the ui-resizable class by default" time="0.052" classname="Chrome 30.0 (Windows).bannerItem directive component editability resizable style class"/>
+    <testcase name="should have the ui-resizable class even if the readonly attr is set after compilation (caching purposes)" time="0.045" classname="Chrome 30.0 (Windows).bannerItem directive component editability resizable style class"/>
+    <testcase name="should not have the ui-resizable class if the readonly attr is set before compilation" time="0.055" classname="Chrome 30.0 (Windows).bannerItem directive component editability resizable style class"/>
+    <testcase name="should set the proper width" time="0.044" classname="Chrome 30.0 (Windows).bannerItem directive item size"/>
+    <testcase name="should set the proper height" time="0.057" classname="Chrome 30.0 (Windows).bannerItem directive item size"/>
+    <testcase name="should set the proper top position" time="0.056" classname="Chrome 30.0 (Windows).bannerItem directive item position"/>
+    <testcase name="should set the proper left position" time="0.069" classname="Chrome 30.0 (Windows).bannerItem directive item position"/>
+    <testcase name="should not mark the item as selected by default" time="0.059" classname="Chrome 30.0 (Windows).bannerItem directive item selection"/>
     <testcase name="should mark the item as selected whenever it&apos;s clicked" time="0.097" classname="Chrome 30.0 (Windows).bannerItem directive item selection"/>
-    <testcase name="should unmark the item whenever it&apos;s blurred" time="0.058" classname="Chrome 30.0 (Windows).bannerItem directive item selection"/>
-    <testcase name="should add the text component" time="0.054" classname="Chrome 30.0 (Windows).bannerItem directive text based item"/>
-    <testcase name="should set the specified text" time="0.05" classname="Chrome 30.0 (Windows).bannerItem directive text based item"/>
-    <testcase name="should add the text component" time="0.07" classname="Chrome 30.0 (Windows).bannerItem directive image based item"/>
-    <testcase name="should set the specified image source" time="0.168" classname="Chrome 30.0 (Windows).bannerItem directive image based item"/>
-    <testcase name="should have a wrapping class" time="0.069" classname="Chrome 30.0 (Windows).checkbox directive"/>
-    <testcase name="should have an Id" time="0.039" classname="Chrome 30.0 (Windows).checkbox directive"/>
-    <testcase name="should have the proper stylesheet class" time="0.049" classname="Chrome 30.0 (Windows).checkbox directive"/>
-    <testcase name="should mark as checked the component whenever the model is set to true" time="0.042" classname="Chrome 30.0 (Windows).checkbox directive"/>
-    <testcase name="should mark as unchecked the component whenever the model is set to false" time="0.05" classname="Chrome 30.0 (Windows).checkbox directive"/>
-    <testcase name="should mark as checked the component whenever the model is set to false but it&apos;s clicked afterwards" time="0.039" classname="Chrome 30.0 (Windows).checkbox directive"/>
+    <testcase name="should unmark the item whenever it&apos;s blurred" time="0.239" classname="Chrome 30.0 (Windows).bannerItem directive item selection"/>
+    <testcase name="should add the text component" time="0.04" classname="Chrome 30.0 (Windows).bannerItem directive text based item"/>
+    <testcase name="should set the specified text" time="0.043" classname="Chrome 30.0 (Windows).bannerItem directive text based item"/>
+    <testcase name="should add the text component" time="0.053" classname="Chrome 30.0 (Windows).bannerItem directive image based item"/>
+    <testcase name="should set the specified image source" time="0.048" classname="Chrome 30.0 (Windows).bannerItem directive image based item"/>
+    <testcase name="should have a wrapping class" time="0.113" classname="Chrome 30.0 (Windows).checkbox directive"/>
+    <testcase name="should have an Id" time="0.038" classname="Chrome 30.0 (Windows).checkbox directive"/>
+    <testcase name="should have the proper stylesheet class" time="0.057" classname="Chrome 30.0 (Windows).checkbox directive"/>
+    <testcase name="should mark as checked the component whenever the model is set to true" time="0.034" classname="Chrome 30.0 (Windows).checkbox directive"/>
+    <testcase name="should mark as unchecked the component whenever the model is set to false" time="0.043" classname="Chrome 30.0 (Windows).checkbox directive"/>
+    <testcase name="should mark as checked the component whenever the model is set to false but it&apos;s clicked afterwards" time="0.048" classname="Chrome 30.0 (Windows).checkbox directive"/>
     <testcase name="should mark as unchecked the component whenever the model is set to true but it&apos;s clicked afterwards" time="0.045" classname="Chrome 30.0 (Windows).checkbox directive"/>
-    <testcase name="should mark as unchecked the component whenever the model is set to false but it&apos;s clicked afterwards twice" time="0.046" classname="Chrome 30.0 (Windows).checkbox directive"/>
+    <testcase name="should mark as unchecked the component whenever the model is set to false but it&apos;s clicked afterwards twice" time="0.041" classname="Chrome 30.0 (Windows).checkbox directive"/>
     <testcase name="should mark as checked the component whenever the model is set to true but it&apos;s clicked afterwards twice" time="0.046" classname="Chrome 30.0 (Windows).checkbox directive"/>
-    <testcase name="should display the label just after the checkbox" time="0.04" classname="Chrome 30.0 (Windows).checkbox directive"/>
-    <testcase name="should wire the label with the input" time="0.049" classname="Chrome 30.0 (Windows).checkbox directive"/>
+    <testcase name="should display the label just after the checkbox" time="0.044" classname="Chrome 30.0 (Windows).checkbox directive"/>
+    <testcase name="should wire the label with the input" time="0.045" classname="Chrome 30.0 (Windows).checkbox directive"/>
     <testcase name="should use ng-show instead of ux-show to avoid problems with the ID of the scope" time="0.043" classname="Chrome 30.0 (Windows).checkbox directive"/>
-    <testcase name="should nest labels avoid problems with the ID of the scope" time="0.042" classname="Chrome 30.0 (Windows).checkbox directive"/>
-    <testcase name="should have the content-editable attribute" time="0.059" classname="Chrome 30.0 (Windows).caret service root element"/>
-    <testcase name="should have the proper ng-model attribute" time="0.046" classname="Chrome 30.0 (Windows).caret service root element"/>
+    <testcase name="should nest labels avoid problems with the ID of the scope" time="0.116" classname="Chrome 30.0 (Windows).checkbox directive"/>
+    <testcase name="should have the content-editable attribute" time="0.103" classname="Chrome 30.0 (Windows).caret service root element"/>
+    <testcase name="should have the proper ng-model attribute" time="0.039" classname="Chrome 30.0 (Windows).caret service root element"/>
     <testcase name="should have the actions area wrapper" time="0.044" classname="Chrome 30.0 (Windows).caret service actions area"/>
-    <testcase name="should have the mediaPicker area wrapper" time="0.069" classname="Chrome 30.0 (Windows).caret service actions area"/>
-    <testcase name="should not show the actions area by default" time="0.11" classname="Chrome 30.0 (Windows).caret service actions area"/>
-    <testcase name="should not show the actions area if the editable area is focused but the user doesn&apos;t have the proper permissions" time="0.044" classname="Chrome 30.0 (Windows).caret service actions area"/>
-    <testcase name="should show the actions area if the editable area is focused and the user has the proper permissions" time="0.049" classname="Chrome 30.0 (Windows).caret service actions area"/>
-    <testcase name="should not show the actions area if the editable area was focused and blurred afterwards and the user has the proper permissions" time="0.048" classname="Chrome 30.0 (Windows).caret service actions area"/>
-    <testcase name="should have the editable area wrapper" time="0.045" classname="Chrome 30.0 (Windows).caret service editable area"/>
-    <testcase name="should have the contenteditable element" time="0.044" classname="Chrome 30.0 (Windows).caret service editable area"/>
-    <testcase name="should set the &quot;editability&quot; of the contenteditable element to false by default" time="0.044" classname="Chrome 30.0 (Windows).caret service &quot;editability&quot; of the component"/>
-    <testcase name="should set the &quot;editability&quot; of the contenteditable element to true if the user is logged as admin" time="0.044" classname="Chrome 30.0 (Windows).caret service &quot;editability&quot; of the component"/>
-    <testcase name="should set the &quot;editability&quot; of the contenteditable element to false if the user is logged as non creator" time="0.044" classname="Chrome 30.0 (Windows).caret service &quot;editability&quot; of the component"/>
-    <testcase name="should set the &quot;editability&quot; of the contenteditable element to false if the user is logged as admin but the component is set as readonly" time="0.06" classname="Chrome 30.0 (Windows).caret service &quot;editability&quot; of the component"/>
-    <testcase name="should set the &quot;editability&quot; of the contenteditable element to false if the user is logged as admin but the component is set as disabled" time="0.046" classname="Chrome 30.0 (Windows).caret service &quot;editability&quot; of the component"/>
-    <testcase name="should set the proper content to the component" time="0.041" classname="Chrome 30.0 (Windows).caret service content of the component"/>
-    <testcase name="should define a placeholder element" time="0.044" classname="Chrome 30.0 (Windows).caret service placeholder"/>
-    <testcase name="should not show the placeholder element by default" time="0.048" classname="Chrome 30.0 (Windows).caret service placeholder"/>
-    <testcase name="should not show the placeholder element if it&apos;s defined but the content is not empty" time="0.04" classname="Chrome 30.0 (Windows).caret service placeholder"/>
-    <testcase name="should show the placeholder element if it&apos;s defined and the content is empty" time="0.053" classname="Chrome 30.0 (Windows).caret service placeholder"/>
-    <testcase name="should set the proper value to the placeholder" time="0.036" classname="Chrome 30.0 (Windows).caret service placeholder"/>
-    <testcase name="should have the form tag" time="0.009" classname="Chrome 30.0 (Windows).fileuploader directive root element"/>
-    <testcase name="should have the proper enctype attribute" time="0.03" classname="Chrome 30.0 (Windows).fileuploader directive root element"/>
+    <testcase name="should have the mediaPicker area wrapper" time="0.045" classname="Chrome 30.0 (Windows).caret service actions area"/>
+    <testcase name="should not show the actions area by default" time="0.049" classname="Chrome 30.0 (Windows).caret service actions area"/>
+    <testcase name="should not show the actions area if the editable area is focused but the user doesn&apos;t have the proper permissions" time="0.045" classname="Chrome 30.0 (Windows).caret service actions area"/>
+    <testcase name="should show the actions area if the editable area is focused and the user has the proper permissions" time="0.045" classname="Chrome 30.0 (Windows).caret service actions area"/>
+    <testcase name="should not show the actions area if the editable area was focused and blurred afterwards and the user has the proper permissions" time="0.046" classname="Chrome 30.0 (Windows).caret service actions area"/>
+    <testcase name="should have the editable area wrapper" time="0.057" classname="Chrome 30.0 (Windows).caret service editable area"/>
+    <testcase name="should have the contenteditable element" time="0.062" classname="Chrome 30.0 (Windows).caret service editable area"/>
+    <testcase name="should set the &quot;editability&quot; of the contenteditable element to false by default" time="0.05" classname="Chrome 30.0 (Windows).caret service &quot;editability&quot; of the component"/>
+    <testcase name="should set the &quot;editability&quot; of the contenteditable element to true if the user is logged as admin" time="0.045" classname="Chrome 30.0 (Windows).caret service &quot;editability&quot; of the component"/>
+    <testcase name="should set the &quot;editability&quot; of the contenteditable element to false if the user is logged as non creator" time="0.042" classname="Chrome 30.0 (Windows).caret service &quot;editability&quot; of the component"/>
+    <testcase name="should set the &quot;editability&quot; of the contenteditable element to false if the user is logged as admin but the component is set as readonly" time="0.045" classname="Chrome 30.0 (Windows).caret service &quot;editability&quot; of the component"/>
+    <testcase name="should set the &quot;editability&quot; of the contenteditable element to false if the user is logged as admin but the component is set as disabled" time="0.048" classname="Chrome 30.0 (Windows).caret service &quot;editability&quot; of the component"/>
+    <testcase name="should set the proper content to the component" time="0.054" classname="Chrome 30.0 (Windows).caret service content of the component"/>
+    <testcase name="should define a placeholder element" time="0.057" classname="Chrome 30.0 (Windows).caret service placeholder"/>
+    <testcase name="should not show the placeholder element by default" time="0.061" classname="Chrome 30.0 (Windows).caret service placeholder"/>
+    <testcase name="should not show the placeholder element if it&apos;s defined but the content is not empty" time="0.061" classname="Chrome 30.0 (Windows).caret service placeholder"/>
+    <testcase name="should show the placeholder element if it&apos;s defined and the content is empty" time="0.044" classname="Chrome 30.0 (Windows).caret service placeholder"/>
+    <testcase name="should set the proper value to the placeholder" time="0.049" classname="Chrome 30.0 (Windows).caret service placeholder"/>
+    <testcase name="should have the form tag" time="0.014" classname="Chrome 30.0 (Windows).fileuploader directive root element"/>
+    <testcase name="should have the proper enctype attribute" time="0.012" classname="Chrome 30.0 (Windows).fileuploader directive root element"/>
     <testcase name="should set the submit method to POST" time="0.011" classname="Chrome 30.0 (Windows).fileuploader directive root element"/>
     <testcase name="should set the &apos;fileUploader&apos; style class" time="0.009" classname="Chrome 30.0 (Windows).fileuploader directive root element"/>
-    <testcase name="should point to a default endpoint if it&apos;s not specified" time="0.011" classname="Chrome 30.0 (Windows).fileuploader directive root element"/>
+    <testcase name="should point to a default endpoint if it&apos;s not specified" time="0.009" classname="Chrome 30.0 (Windows).fileuploader directive root element"/>
     <testcase name="should point to a specific endpoint if it&apos;s specified" time="0.01" classname="Chrome 30.0 (Windows).fileuploader directive root element"/>
-    <testcase name="should wrap a single input file" time="0.01" classname="Chrome 30.0 (Windows).fileuploader directive input file"/>
-    <testcase name="should have the proper ng-model attribute" time="0.013" classname="Chrome 30.0 (Windows).fileuploader directive input file"/>
-    <testcase name="should have the proper ux-change attribute" time="0.01" classname="Chrome 30.0 (Windows).fileuploader directive input file"/>
-    <testcase name="should have the proper name attribute" time="0.012" classname="Chrome 30.0 (Windows).fileuploader directive input file"/>
-    <testcase name="should not have the multiple files tag if it&apos;s not defined" time="0.014" classname="Chrome 30.0 (Windows).fileuploader directive input file"/>
-    <testcase name="should have the multiple files tag if it&apos;s defined" time="0.011" classname="Chrome 30.0 (Windows).fileuploader directive input file"/>
+    <testcase name="should wrap a single input file" time="0.009" classname="Chrome 30.0 (Windows).fileuploader directive input file"/>
+    <testcase name="should have the proper ng-model attribute" time="0.01" classname="Chrome 30.0 (Windows).fileuploader directive input file"/>
+    <testcase name="should have the proper ux-change attribute" time="0.008" classname="Chrome 30.0 (Windows).fileuploader directive input file"/>
+    <testcase name="should have the proper name attribute" time="0.011" classname="Chrome 30.0 (Windows).fileuploader directive input file"/>
+    <testcase name="should not have the multiple files tag if it&apos;s not defined" time="0.038" classname="Chrome 30.0 (Windows).fileuploader directive input file"/>
+    <testcase name="should have the multiple files tag if it&apos;s defined" time="0.012" classname="Chrome 30.0 (Windows).fileuploader directive input file"/>
     <testcase name="should have the globalMsg Id" time="0.009" classname="Chrome 30.0 (Windows).globalMsg directive"/>
-    <testcase name="should not have the active class by default" time="0.008" classname="Chrome 30.0 (Windows).globalMsg directive"/>
-    <testcase name="should have the active class whenever the show service is invoked" time="0.008" classname="Chrome 30.0 (Windows).globalMsg directive"/>
-    <testcase name="should have the proper title" time="0.01" classname="Chrome 30.0 (Windows).globalMsg directive"/>
-    <testcase name="should have the proper details" time="0.006" classname="Chrome 30.0 (Windows).globalMsg directive"/>
-    <testcase name="should not show the details by default" time="0.009" classname="Chrome 30.0 (Windows).globalMsg directive"/>
-    <testcase name="should show the details once the details link is clicked" time="0.014" classname="Chrome 30.0 (Windows).globalMsg directive"/>
-    <testcase name="should hide the details once the details link is clicked twice" time="0.009" classname="Chrome 30.0 (Windows).globalMsg directive"/>
-    <testcase name="should publish the proper i18n label" time="0.006" classname="Chrome 30.0 (Windows).i18n directive"/>
-    <testcase name="should publish the original label" time="0.048" classname="Chrome 30.0 (Windows).i18nDb directive if there isn&apos;t i18n info present"/>
-    <testcase name="should publish the default i18n label" time="0.056" classname="Chrome 30.0 (Windows).i18nDb directive if there&apos;s i18n info present just in the default language"/>
-    <testcase name="should publish the translated i18n label after language change" time="0.291" classname="Chrome 30.0 (Windows).i18nDb directive if there&apos;s i18n info present just in the default language"/>
-    <testcase name="should publish the proper i18n label after language change" time="0.065" classname="Chrome 30.0 (Windows).i18nDb directive if there&apos;s i18n info present in all languages"/>
+    <testcase name="should not have the active class by default" time="0.006" classname="Chrome 30.0 (Windows).globalMsg directive"/>
+    <testcase name="should have the active class whenever the show service is invoked" time="0.007" classname="Chrome 30.0 (Windows).globalMsg directive"/>
+    <testcase name="should have the proper title" time="0.006" classname="Chrome 30.0 (Windows).globalMsg directive"/>
+    <testcase name="should have the proper details" time="0.007" classname="Chrome 30.0 (Windows).globalMsg directive"/>
+    <testcase name="should not show the details by default" time="0.006" classname="Chrome 30.0 (Windows).globalMsg directive"/>
+    <testcase name="should show the details once the details link is clicked" time="0.009" classname="Chrome 30.0 (Windows).globalMsg directive"/>
+    <testcase name="should hide the details once the details link is clicked twice" time="0.007" classname="Chrome 30.0 (Windows).globalMsg directive"/>
+    <testcase name="should publish the proper i18n label" time="0.005" classname="Chrome 30.0 (Windows).i18n directive"/>
+    <testcase name="should publish the original label" time="0.046" classname="Chrome 30.0 (Windows).i18nDb directive if there isn&apos;t i18n info present"/>
+    <testcase name="should publish the default i18n label" time="0.04" classname="Chrome 30.0 (Windows).i18nDb directive if there&apos;s i18n info present just in the default language"/>
+    <testcase name="should publish the translated i18n label after language change" time="0.043" classname="Chrome 30.0 (Windows).i18nDb directive if there&apos;s i18n info present just in the default language"/>
+    <testcase name="should publish the proper i18n label after language change" time="0.044" classname="Chrome 30.0 (Windows).i18nDb directive if there&apos;s i18n info present in all languages"/>
     <testcase name="should publish the original value, already with the proper i18n format" time="0.047" classname="Chrome 30.0 (Windows).i18nDbInput directive if there isn&apos;t i18n info present"/>
-    <testcase name="should publish the original value, already with the proper i18n format, once a language change happens" time="0.042" classname="Chrome 30.0 (Windows).i18nDbInput directive if there isn&apos;t i18n info present"/>
-    <testcase name="should publish the original value, already with the proper i18n format" time="0.044" classname="Chrome 30.0 (Windows).i18nDbInput directive if there&apos;s i18n info present in just the default language"/>
-    <testcase name="should publish the original value, already with the proper i18n format, once a language change happens" time="0.044" classname="Chrome 30.0 (Windows).i18nDbInput directive if there&apos;s i18n info present in just the default language"/>
-    <testcase name="should publish the original value, already with the proper i18n format" time="0.089" classname="Chrome 30.0 (Windows).i18nDbInput directive if there&apos;s i18n info present in different languages"/>
+    <testcase name="should publish the original value, already with the proper i18n format, once a language change happens" time="0.043" classname="Chrome 30.0 (Windows).i18nDbInput directive if there isn&apos;t i18n info present"/>
+    <testcase name="should publish the original value, already with the proper i18n format" time="0.046" classname="Chrome 30.0 (Windows).i18nDbInput directive if there&apos;s i18n info present in just the default language"/>
+    <testcase name="should publish the original value, already with the proper i18n format, once a language change happens" time="0.042" classname="Chrome 30.0 (Windows).i18nDbInput directive if there&apos;s i18n info present in just the default language"/>
+    <testcase name="should publish the original value, already with the proper i18n format" time="0.09" classname="Chrome 30.0 (Windows).i18nDbInput directive if there&apos;s i18n info present in different languages"/>
     <testcase name="should publish the translated value, already with the proper i18n format, once a language change happens" time="0.044" classname="Chrome 30.0 (Windows).i18nDbInput directive if there&apos;s i18n info present in different languages"/>
-    <testcase name="should not block the edit capabilities in languages where there&apos;s available content" time="0.045" classname="Chrome 30.0 (Windows).i18nDbInput directive if there&apos;s i18n info present in different languages"/>
-    <testcase name="should add the &apos;scrollable&apos; styleclass to the root element" time="0.119" classname="Chrome 30.0 (Windows).app directive general DOM structure"/>
-    <testcase name="should not show the &apos;no items&apos; block if there&apos;re available content to show" time="0.093" classname="Chrome 30.0 (Windows).app directive items size"/>
-    <testcase name="should add to the DOM the proper amount of items" time="0.107" classname="Chrome 30.0 (Windows).app directive items size"/>
-    <testcase name="should show the search area by default" time="0.094" classname="Chrome 30.0 (Windows).app directive search"/>
-    <testcase name="should show the search area if it has been explicitly marked as visible" time="0.108" classname="Chrome 30.0 (Windows).app directive search"/>
-    <testcase name="should not show the search area if it has been explicitly marked as invisible" time="0.102" classname="Chrome 30.0 (Windows).app directive search"/>
-    <testcase name="should show the actions area on top by default" time="0.134" classname="Chrome 30.0 (Windows).app directive actions position top"/>
-    <testcase name="should show the actions area on top if it has been explicitly defined (top)" time="0.092" classname="Chrome 30.0 (Windows).app directive actions position top"/>
-    <testcase name="should show the actions area on top if it has been explicitly defined (top and bottom)" time="0.112" classname="Chrome 30.0 (Windows).app directive actions position top"/>
-    <testcase name="should not show the actions area on top if it has been explicitly defined (bottom)" time="0.092" classname="Chrome 30.0 (Windows).app directive actions position top"/>
-    <testcase name="should show the actions area on bottom by default" time="0.084" classname="Chrome 30.0 (Windows).app directive actions position bottom"/>
-    <testcase name="should show the actions area on bottom if it has been explicitly defined (bottom)" time="0.12" classname="Chrome 30.0 (Windows).app directive actions position bottom"/>
-    <testcase name="should show the actions area on bottom if it has been explicitly defined (top and bottom)" time="0.101" classname="Chrome 30.0 (Windows).app directive actions position bottom"/>
-    <testcase name="should not show the actions area on top if it has been explicitly defined (top)" time="0.079" classname="Chrome 30.0 (Windows).app directive actions position bottom"/>
-    <testcase name="should not show the checkbox selector by default" time="0.101" classname="Chrome 30.0 (Windows).app directive item selection"/>
-    <testcase name="should not show the checkbox selector if selection mode is set to single" time="0.077" classname="Chrome 30.0 (Windows).app directive item selection"/>
-    <testcase name="should not show the checkbox selector if selection mode is set to multiplebut the user doesn&apos;t have the proper privileges" time="0.09" classname="Chrome 30.0 (Windows).app directive item selection"/>
-    <testcase name="should not show the checkbox selector if selection mode is set to multipleand the user has the proper privileges" time="0.105" classname="Chrome 30.0 (Windows).app directive item selection"/>
-    <testcase name="should not show the item remove button by default" time="0.126" classname="Chrome 30.0 (Windows).app directive item deletion"/>
-    <testcase name="should not show the item remove button if the deletable flag is set to false" time="0.086" classname="Chrome 30.0 (Windows).app directive item deletion"/>
-    <testcase name="should not show the item remove button if the deletable flag is set to truebut the user doesn&apos;t have the proper privileges" time="0.088" classname="Chrome 30.0 (Windows).app directive item deletion"/>
-    <testcase name="should show the item remove button if the deletable flag is set to trueand the user has the proper privileges" time="0.131" classname="Chrome 30.0 (Windows).app directive item deletion"/>
-    <testcase name="should add the transcluded content defined in the template" time="0.099" classname="Chrome 30.0 (Windows).app directive content transclussion"/>
-    <testcase name="should not show the detailId area by default" time="0.149" classname="Chrome 30.0 (Windows).app directive detailId area"/>
-    <testcase name="should have the specific class on the root element" time="0.032" classname="Chrome 30.0 (Windows).mediaPicker directive DOM structure"/>
-    <testcase name="should have a media selection button" time="0.047" classname="Chrome 30.0 (Windows).mediaPicker directive DOM structure"/>
-    <testcase name="should have a image container" time="0.041" classname="Chrome 30.0 (Windows).mediaPicker directive DOM structure"/>
-    <testcase name="should have a remove selected media button" time="0.113" classname="Chrome 30.0 (Windows).mediaPicker directive DOM structure"/>
-    <testcase name="should not have any src attribute if no default image is set" time="0.048" classname="Chrome 30.0 (Windows).mediaPicker directive Image url"/>
-    <testcase name="should have a default src attribute if the specific media is not provided but the default one is" time="0.063" classname="Chrome 30.0 (Windows).mediaPicker directive Image url"/>
+    <testcase name="should not block the edit capabilities in languages where there&apos;s available content" time="0.044" classname="Chrome 30.0 (Windows).i18nDbInput directive if there&apos;s i18n info present in different languages"/>
+    <testcase name="should add the &apos;scrollable&apos; styleclass to the root element" time="0.142" classname="Chrome 30.0 (Windows).app directive general DOM structure"/>
+    <testcase name="should not show the &apos;no items&apos; block if there&apos;re available content to show" time="0.135" classname="Chrome 30.0 (Windows).app directive items size"/>
+    <testcase name="should add to the DOM the proper amount of items" time="0.088" classname="Chrome 30.0 (Windows).app directive items size"/>
+    <testcase name="should show the search area by default" time="0.091" classname="Chrome 30.0 (Windows).app directive search"/>
+    <testcase name="should show the search area if it has been explicitly marked as visible" time="0.109" classname="Chrome 30.0 (Windows).app directive search"/>
+    <testcase name="should not show the search area if it has been explicitly marked as invisible" time="0.082" classname="Chrome 30.0 (Windows).app directive search"/>
+    <testcase name="should show the actions area on top by default" time="0.084" classname="Chrome 30.0 (Windows).app directive actions position top"/>
+    <testcase name="should show the actions area on top if it has been explicitly defined (top)" time="0.107" classname="Chrome 30.0 (Windows).app directive actions position top"/>
+    <testcase name="should show the actions area on top if it has been explicitly defined (top and bottom)" time="0.395" classname="Chrome 30.0 (Windows).app directive actions position top"/>
+    <testcase name="should not show the actions area on top if it has been explicitly defined (bottom)" time="0.083" classname="Chrome 30.0 (Windows).app directive actions position top"/>
+    <testcase name="should show the actions area on bottom by default" time="0.129" classname="Chrome 30.0 (Windows).app directive actions position bottom"/>
+    <testcase name="should show the actions area on bottom if it has been explicitly defined (bottom)" time="0.11" classname="Chrome 30.0 (Windows).app directive actions position bottom"/>
+    <testcase name="should show the actions area on bottom if it has been explicitly defined (top and bottom)" time="0.084" classname="Chrome 30.0 (Windows).app directive actions position bottom"/>
+    <testcase name="should not show the actions area on top if it has been explicitly defined (top)" time="0.11" classname="Chrome 30.0 (Windows).app directive actions position bottom"/>
+    <testcase name="should not show the checkbox selector by default" time="0.135" classname="Chrome 30.0 (Windows).app directive item selection"/>
+    <testcase name="should not show the checkbox selector if selection mode is set to single" time="0.082" classname="Chrome 30.0 (Windows).app directive item selection"/>
+    <testcase name="should not show the checkbox selector if selection mode is set to multiplebut the user doesn&apos;t have the proper privileges" time="0.097" classname="Chrome 30.0 (Windows).app directive item selection"/>
+    <testcase name="should not show the checkbox selector if selection mode is set to multipleand the user has the proper privileges" time="0.097" classname="Chrome 30.0 (Windows).app directive item selection"/>
+    <testcase name="should not show the item remove button by default" time="0.093" classname="Chrome 30.0 (Windows).app directive item deletion"/>
+    <testcase name="should not show the item remove button if the deletable flag is set to false" time="0.091" classname="Chrome 30.0 (Windows).app directive item deletion"/>
+    <testcase name="should not show the item remove button if the deletable flag is set to truebut the user doesn&apos;t have the proper privileges" time="0.141" classname="Chrome 30.0 (Windows).app directive item deletion"/>
+    <testcase name="should show the item remove button if the deletable flag is set to trueand the user has the proper privileges" time="0.138" classname="Chrome 30.0 (Windows).app directive item deletion"/>
+    <testcase name="should add the transcluded content defined in the template" time="0.068" classname="Chrome 30.0 (Windows).app directive content transclussion"/>
+    <testcase name="should not show the detailId area by default" time="0.104" classname="Chrome 30.0 (Windows).app directive detailId area"/>
+    <testcase name="should have the specific class on the root element" time="0.08" classname="Chrome 30.0 (Windows).mediaPicker directive DOM structure"/>
+    <testcase name="should have a media selection button" time="0.05" classname="Chrome 30.0 (Windows).mediaPicker directive DOM structure"/>
+    <testcase name="should have a image container" time="0.04" classname="Chrome 30.0 (Windows).mediaPicker directive DOM structure"/>
+    <testcase name="should have a remove selected media button" time="0.048" classname="Chrome 30.0 (Windows).mediaPicker directive DOM structure"/>
+    <testcase name="should not have any src attribute if no default image is set" time="0.049" classname="Chrome 30.0 (Windows).mediaPicker directive Image url"/>
+    <testcase name="should have a default src attribute if the specific media is not provided but the default one is" time="0.076" classname="Chrome 30.0 (Windows).mediaPicker directive Image url"/>
     <testcase name="should have a specific src attribute if the specific media is provided - default not defined" time="0.048" classname="Chrome 30.0 (Windows).mediaPicker directive Image url"/>
-    <testcase name="should have a specific src attribute if the specific media is provided - default defined" time="0.107" classname="Chrome 30.0 (Windows).mediaPicker directive Image url"/>
-    <testcase name="should not show the image preview if it has not been explicitly defined" time="0.048" classname="Chrome 30.0 (Windows).mediaPicker directive Image preview visibility"/>
-    <testcase name="should not show the image preview if it has been explicitly defined as false" time="0.038" classname="Chrome 30.0 (Windows).mediaPicker directive Image preview visibility"/>
-    <testcase name="should not show the image preview if it has been explicitly defined as true" time="0.046" classname="Chrome 30.0 (Windows).mediaPicker directive Image preview visibility"/>
-    <testcase name="should not show the remove selected media button if there isn&apos;t any selected media" time="0.044" classname="Chrome 30.0 (Windows).mediaPicker directive Remove selected media"/>
-    <testcase name="should show the remove selected media button if there is a selected media" time="0.045" classname="Chrome 30.0 (Windows).mediaPicker directive Remove selected media"/>
-    <testcase name="should detect the correct amount of items" time="0.101" classname="Chrome 30.0 (Windows).nestedItemsWrapper directive"/>
-    <testcase name="should have the link to switch the password change as a direct child of the root element" time="0.06" classname="Chrome 30.0 (Windows).password directive DOM structure"/>
-    <testcase name="should have a single password input to set the password as a direct child of the root element" time="0.039" classname="Chrome 30.0 (Windows).password directive DOM structure"/>
-    <testcase name="should have the password mandatory validation attribute" time="0.045" classname="Chrome 30.0 (Windows).password directive DOM structure"/>
-    <testcase name="should have the ng-model attribute" time="0.043" classname="Chrome 30.0 (Windows).password directive DOM structure"/>
-    <testcase name="should not show the click to change stuff (and show the input) if it has not been explicitly defined" time="0.049" classname="Chrome 30.0 (Windows).password directive DOM visibility"/>
-    <testcase name="should show the click to change stuff (and hide the input) if it has been explicitly defined" time="0.051" classname="Chrome 30.0 (Windows).password directive DOM visibility"/>
-    <testcase name="should show the password change label by default if it has been explicitly defined" time="0.035" classname="Chrome 30.0 (Windows).password directive DOM visibility"/>
-    <testcase name="should show the cancel password  changes label if it has been explicitly defined and it&apos;s active" time="0.046" classname="Chrome 30.0 (Windows).password directive DOM visibility changes"/>
-    <testcase name="should show the password input if the change has been explicitly defined and it&apos;s active" time="0.066" classname="Chrome 30.0 (Windows).password directive DOM visibility changes"/>
-    <testcase name="should revert to the original state if the change has been explicitly defined and it&apos;s not active anymore" time="0.045" classname="Chrome 30.0 (Windows).password directive DOM visibility changes"/>
-    <testcase name="should have a wrapping class" time="0.045" classname="Chrome 30.0 (Windows).radio directive"/>
-    <testcase name="should have an Id" time="0.048" classname="Chrome 30.0 (Windows).radio directive"/>
-    <testcase name="should have the proper stylesheet class" time="0.049" classname="Chrome 30.0 (Windows).radio directive"/>
-    <testcase name="should mark as checked the option of the component that is defined in the model" time="0.043" classname="Chrome 30.0 (Windows).radio directive"/>
-    <testcase name="should mark as checked the option of the component that has been clicked" time="0.048" classname="Chrome 30.0 (Windows).radio directive"/>
-    <testcase name="should display the label just after the radio" time="0.042" classname="Chrome 30.0 (Windows).radio directive"/>
-    <testcase name="should wire the label with the input" time="0.048" classname="Chrome 30.0 (Windows).radio directive"/>
-    <testcase name="should use ng-show instead of ux-show to avoid problems with the ID of the scope" time="0.055" classname="Chrome 30.0 (Windows).radio directive"/>
-    <testcase name="should nest labels avoid problems with the ID of the scope" time="0.042" classname="Chrome 30.0 (Windows).radio directive"/>
-    <testcase name="should add a tooltip object to the DOM" time="0.049" classname="Chrome 30.0 (Windows).tooltip directive and service"/>
-    <testcase name="should add the static title to the DOM whenever the tooltip is shown" time="0.059" classname="Chrome 30.0 (Windows).tooltip directive and service"/>
-    <testcase name="should add the dynamic title to the DOM whenever the tooltip is shown" time="0.065" classname="Chrome 30.0 (Windows).tooltip directive and service"/>
-    <testcase name="should add the dynamic title (i18n based) to the DOM whenever the tooltip is shown" time="0.157" classname="Chrome 30.0 (Windows).tooltip directive and service"/>
-    <testcase name="should show the confirm action whenever the element is clicked" time="0.442" classname="Chrome 30.0 (Windows).tooltip directive and service"/>
-    <testcase name="should not add any fullscreen style class by default" time="0.05" classname="Chrome 30.0 (Windows).app service enableFullscreen"/>
-    <testcase name="should add the real fullscreen style class whenever this is the active mode" time="0.038" classname="Chrome 30.0 (Windows).app service enableFullscreen"/>
-    <testcase name="should add the maximized fullscreen style class whenever this is the active mode" time="0.046" classname="Chrome 30.0 (Windows).app service enableFullscreen"/>
-    <testcase name="should add the template fullscreen style class whenever this is the active mode" time="0.04" classname="Chrome 30.0 (Windows).app service enableFullscreen"/>
-    <testcase name="should remove the real fullscreen style class whenever this is the active mode but is disabled afterwards" time="0.05" classname="Chrome 30.0 (Windows).app service disableFullscreen"/>
-    <testcase name="should remove the maximized fullscreen style class whenever this is the active mode but is disabled afterwards" time="0.065" classname="Chrome 30.0 (Windows).app service disableFullscreen"/>
-    <testcase name="should remove the template fullscreen style class whenever this is the active mode but is disabled afterwards" time="0.04" classname="Chrome 30.0 (Windows).app service disableFullscreen"/>
-    <testcase name="should return false if the fullscreen is not enabled" time="0.045" classname="Chrome 30.0 (Windows).app service isFullscreen"/>
-    <testcase name="should return true if the real fullscreen is enabled" time="0.042" classname="Chrome 30.0 (Windows).app service isFullscreen"/>
-    <testcase name="should return true if the maximized fullscreen is enabled" time="0.045" classname="Chrome 30.0 (Windows).app service isFullscreen"/>
-    <testcase name="should return true if the template fullscreen is enabled" time="0.046" classname="Chrome 30.0 (Windows).app service isFullscreen"/>
-    <testcase name="[should detect an empty array as valid" time="0.001" classname="Chrome 30.0 (Windows).arrayService isArray"/>
-    <testcase name="should detect a string array as valid" time="0.006" classname="Chrome 30.0 (Windows).arrayService isArray"/>
-    <testcase name="should detect an object array as valid" time="0.002" classname="Chrome 30.0 (Windows).arrayService isArray"/>
+    <testcase name="should have a specific src attribute if the specific media is provided - default defined" time="0.105" classname="Chrome 30.0 (Windows).mediaPicker directive Image url"/>
+    <testcase name="should not show the image preview if it has not been explicitly defined" time="0.046" classname="Chrome 30.0 (Windows).mediaPicker directive Image preview visibility"/>
+    <testcase name="should not show the image preview if it has been explicitly defined as false" time="0.04" classname="Chrome 30.0 (Windows).mediaPicker directive Image preview visibility"/>
+    <testcase name="should not show the image preview if it has been explicitly defined as true" time="0.047" classname="Chrome 30.0 (Windows).mediaPicker directive Image preview visibility"/>
+    <testcase name="should not show the remove selected media button if there isn&apos;t any selected media" time="0.042" classname="Chrome 30.0 (Windows).mediaPicker directive Remove selected media"/>
+    <testcase name="should show the remove selected media button if there is a selected media" time="0.043" classname="Chrome 30.0 (Windows).mediaPicker directive Remove selected media"/>
+    <testcase name="should detect the correct amount of items" time="0.098" classname="Chrome 30.0 (Windows).nestedItemsWrapper directive"/>
+    <testcase name="should have the link to switch the password change as a direct child of the root element" time="0.041" classname="Chrome 30.0 (Windows).password directive DOM structure"/>
+    <testcase name="should have a single password input to set the password as a direct child of the root element" time="0.041" classname="Chrome 30.0 (Windows).password directive DOM structure"/>
+    <testcase name="should have the password mandatory validation attribute" time="0.073" classname="Chrome 30.0 (Windows).password directive DOM structure"/>
+    <testcase name="should have the ng-model attribute" time="0.036" classname="Chrome 30.0 (Windows).password directive DOM structure"/>
+    <testcase name="should not show the click to change stuff (and show the input) if it has not been explicitly defined" time="0.067" classname="Chrome 30.0 (Windows).password directive DOM visibility"/>
+    <testcase name="should show the click to change stuff (and hide the input) if it has been explicitly defined" time="0.044" classname="Chrome 30.0 (Windows).password directive DOM visibility"/>
+    <testcase name="should show the password change label by default if it has been explicitly defined" time="0.046" classname="Chrome 30.0 (Windows).password directive DOM visibility"/>
+    <testcase name="should show the cancel password  changes label if it has been explicitly defined and it&apos;s active" time="0.044" classname="Chrome 30.0 (Windows).password directive DOM visibility changes"/>
+    <testcase name="should show the password input if the change has been explicitly defined and it&apos;s active" time="0.044" classname="Chrome 30.0 (Windows).password directive DOM visibility changes"/>
+    <testcase name="should revert to the original state if the change has been explicitly defined and it&apos;s not active anymore" time="0.044" classname="Chrome 30.0 (Windows).password directive DOM visibility changes"/>
+    <testcase name="should have a wrapping class" time="0.049" classname="Chrome 30.0 (Windows).radio directive"/>
+    <testcase name="should have an Id" time="0.049" classname="Chrome 30.0 (Windows).radio directive"/>
+    <testcase name="should have the proper stylesheet class" time="0.07" classname="Chrome 30.0 (Windows).radio directive"/>
+    <testcase name="should mark as checked the option of the component that is defined in the model" time="0.175" classname="Chrome 30.0 (Windows).radio directive"/>
+    <testcase name="should mark as checked the option of the component that has been clicked" time="0.221" classname="Chrome 30.0 (Windows).radio directive"/>
+    <testcase name="should display the label just after the radio" time="0.227" classname="Chrome 30.0 (Windows).radio directive"/>
+    <testcase name="should wire the label with the input" time="0.258" classname="Chrome 30.0 (Windows).radio directive"/>
+    <testcase name="should use ng-show instead of ux-show to avoid problems with the ID of the scope" time="0.179" classname="Chrome 30.0 (Windows).radio directive"/>
+    <testcase name="should nest labels avoid problems with the ID of the scope" time="0.29" classname="Chrome 30.0 (Windows).radio directive"/>
+    <testcase name="should add a tooltip object to the DOM" time="0.668" classname="Chrome 30.0 (Windows).tooltip directive and service"/>
+    <testcase name="should add the static title to the DOM whenever the tooltip is shown" time="0.785" classname="Chrome 30.0 (Windows).tooltip directive and service"/>
+    <testcase name="should add the dynamic title to the DOM whenever the tooltip is shown" time="0.413" classname="Chrome 30.0 (Windows).tooltip directive and service"/>
+    <testcase name="should add the dynamic title (i18n based) to the DOM whenever the tooltip is shown" time="1.272" classname="Chrome 30.0 (Windows).tooltip directive and service"/>
+    <testcase name="should show the confirm action whenever the element is clicked" time="0.897" classname="Chrome 30.0 (Windows).tooltip directive and service"/>
+    <testcase name="should not add any fullscreen style class by default" time="0.512" classname="Chrome 30.0 (Windows).app service enableFullscreen"/>
+    <testcase name="should add the real fullscreen style class whenever this is the active mode" time="0.286" classname="Chrome 30.0 (Windows).app service enableFullscreen"/>
+    <testcase name="should add the maximized fullscreen style class whenever this is the active mode" time="0.187" classname="Chrome 30.0 (Windows).app service enableFullscreen"/>
+    <testcase name="should add the template fullscreen style class whenever this is the active mode" time="0.258" classname="Chrome 30.0 (Windows).app service enableFullscreen"/>
+    <testcase name="should remove the real fullscreen style class whenever this is the active mode but is disabled afterwards" time="0.402" classname="Chrome 30.0 (Windows).app service disableFullscreen"/>
+    <testcase name="should remove the maximized fullscreen style class whenever this is the active mode but is disabled afterwards" time="0.684" classname="Chrome 30.0 (Windows).app service disableFullscreen"/>
+    <testcase name="should remove the template fullscreen style class whenever this is the active mode but is disabled afterwards" time="0.357" classname="Chrome 30.0 (Windows).app service disableFullscreen"/>
+    <testcase name="should return false if the fullscreen is not enabled" time="0.339" classname="Chrome 30.0 (Windows).app service isFullscreen"/>
+    <testcase name="should return true if the real fullscreen is enabled" time="0.208" classname="Chrome 30.0 (Windows).app service isFullscreen"/>
+    <testcase name="should return true if the maximized fullscreen is enabled" time="0.199" classname="Chrome 30.0 (Windows).app service isFullscreen"/>
+    <testcase name="should return true if the template fullscreen is enabled" time="0.194" classname="Chrome 30.0 (Windows).app service isFullscreen"/>
+    <testcase name="[should detect an empty array as valid" time="0.002" classname="Chrome 30.0 (Windows).arrayService isArray"/>
+    <testcase name="should detect a string array as valid" time="0.002" classname="Chrome 30.0 (Windows).arrayService isArray"/>
+    <testcase name="should detect an object array as valid" time="0.001" classname="Chrome 30.0 (Windows).arrayService isArray"/>
     <testcase name="should detect an invalid object array (string) as invalid" time="0.002" classname="Chrome 30.0 (Windows).arrayService isArray"/>
     <testcase name="should detect an invalid object array (object) as invalid" time="0.002" classname="Chrome 30.0 (Windows).arrayService isArray"/>
     <testcase name="should add an element to an array - length test" time="0.002" classname="Chrome 30.0 (Windows).arrayService add"/>
     <testcase name="should add an element to an array - initial position test" time="0.001" classname="Chrome 30.0 (Windows).arrayService add"/>
     <testcase name="should add an element to an array - middle position test" time="0.002" classname="Chrome 30.0 (Windows).arrayService add"/>
-    <testcase name="should add an element to an array - final position test" time="0.003" classname="Chrome 30.0 (Windows).arrayService add"/>
-    <testcase name="should fully copy an array" time="0.002" classname="Chrome 30.0 (Windows).arrayService copy"/>
+    <testcase name="should add an element to an array - final position test" time="0.002" classname="Chrome 30.0 (Windows).arrayService add"/>
+    <testcase name="should fully copy an array" time="0.001" classname="Chrome 30.0 (Windows).arrayService copy"/>
     <testcase name="should copy the first part of an array" time="0.003" classname="Chrome 30.0 (Windows).arrayService copy"/>
-    <testcase name="should copy the last part of an array" time="0.003" classname="Chrome 30.0 (Windows).arrayService copy"/>
-    <testcase name="should switch the position of an element of an array" time="0.003" classname="Chrome 30.0 (Windows).arrayService move"/>
+    <testcase name="should copy the last part of an array" time="0.002" classname="Chrome 30.0 (Windows).arrayService copy"/>
+    <testcase name="should switch the position of an element of an array" time="0.002" classname="Chrome 30.0 (Windows).arrayService move"/>
     <testcase name="should remove an element of an array" time="0.002" classname="Chrome 30.0 (Windows).arrayService delete"/>
     <testcase name="should return the proper size of available apps" time="0.003" classname="Chrome 30.0 (Windows).availableAppsService getAvailableApps"/>
     <testcase name="should return the proper type of available apps" time="0.003" classname="Chrome 30.0 (Windows).availableAppsService getAvailableApps"/>
     <testcase name="should register the first app attached to a category" time="0.002" classname="Chrome 30.0 (Windows).availableAppsService app categorization"/>
     <testcase name="should get the proper category list" time="0.002" classname="Chrome 30.0 (Windows).availableAppsService getCategories"/>
-    <testcase name="should add two sibling cols (prev and next) to a given one" time="0.002" classname="Chrome 30.0 (Windows).colService addEmptyCols"/>
+    <testcase name="should add two sibling cols (prev and next) to a given one" time="0.003" classname="Chrome 30.0 (Windows).colService addEmptyCols"/>
     <testcase name="should delete a given column and its two sibling cols (prev and next)" time="0.002" classname="Chrome 30.0 (Windows).colService deleteColAndDependencies"/>
     <testcase name="should get the affected col of a given one" time="0.002" classname="Chrome 30.0 (Windows).colService getAffectedCol"/>
-    <testcase name="should get the proper structure of an empty col" time="0.029" classname="Chrome 30.0 (Windows).colService getEmptyCol"/>
-    <testcase name="[should return a formatted date" time="0.003" classname="Chrome 30.0 (Windows).dateService getFormattedDate"/>
-    <testcase name="should generate an insensitive selector based on a regular expression" time="0.003" classname="Chrome 30.0 (Windows).dbService getInsensitiveSelector"/>
-    <testcase name="should generate an inexact selector based on a regular expression" time="0.003" classname="Chrome 30.0 (Windows).dbService getInexactSelector"/>
-    <testcase name="should get [0, 0] as the default coordinates (position and size)" time="0.034" classname="Chrome 30.0 (Windows).dom service getCoordinates"/>
-    <testcase name="should get the custom coordinates if they&apos;re defined (position and size)" time="0.007" classname="Chrome 30.0 (Windows).dom service getCoordinates"/>
-    <testcase name="should get 0 as the default padding" time="0.005" classname="Chrome 30.0 (Windows).dom service getObjPadding"/>
-    <testcase name="should get the custom padding if it&apos;s defined" time="0.005" classname="Chrome 30.0 (Windows).dom service getObjPadding"/>
-    <testcase name="should get 0 as the default border width" time="0.006" classname="Chrome 30.0 (Windows).dom service getObjBorderWidth"/>
-    <testcase name="should get the custom padding if it&apos;s defined" time="0.005" classname="Chrome 30.0 (Windows).dom service getObjBorderWidth"/>
-    <testcase name="should detect element types" time="0.006" classname="Chrome 30.0 (Windows).dom service getElementType"/>
-    <testcase name="should get 0 as the default dom percent width" time="0.007" classname="Chrome 30.0 (Windows).dom service getDomPercent"/>
-    <testcase name="should detect element types" time="0.007" classname="Chrome 30.0 (Windows).dom service getDomPercent"/>
-    <testcase name="should not have the loading styleclass by default" time="0.004" classname="Chrome 30.0 (Windows).dom service addLoadingFeedback"/>
-    <testcase name="should have the loading styleclass once it has been added" time="0.004" classname="Chrome 30.0 (Windows).dom service addLoadingFeedback"/>
-    <testcase name="should not have the loading styleclass once it has been remove" time="0.012" classname="Chrome 30.0 (Windows).dom service removeLoadingFeedback"/>
-    <testcase name="should convert a given DOM object into a string" time="0.009" classname="Chrome 30.0 (Windows).dom service convertDomObjToStr"/>
-    <testcase name="should validate email formats" time="0.004" classname="Chrome 30.0 (Windows).emailService validateEmail"/>
-    <testcase name="should get the corresponding i18n property (no i18n structure)" time="0.022" classname="Chrome 30.0 (Windows).i18nDbService getI18nProperty"/>
-    <testcase name="should get the corresponding i18n property (i18n structure present for all languages)" time="0.052" classname="Chrome 30.0 (Windows).i18nDbService getI18nProperty"/>
-    <testcase name="should get the corresponding i18n property (i18n structure present just for the default language)" time="0.037" classname="Chrome 30.0 (Windows).i18nDbService getI18nProperty"/>
-    <testcase name="should detect that an object doesn&apos;t have i18n structure" time="0.056" classname="Chrome 30.0 (Windows).i18nDbService hasI18nStructure"/>
-    <testcase name="should detect that an object has i18n structure in the default language" time="0.09" classname="Chrome 30.0 (Windows).i18nDbService hasI18nStructure"/>
-    <testcase name="should detect that an object doesn&apos;t have i18n structure in a non default language" time="0.044" classname="Chrome 30.0 (Windows).i18nDbService hasI18nStructure"/>
-    <testcase name="should detect that an object has i18n structure in a non default language" time="0.048" classname="Chrome 30.0 (Windows).i18nDbService hasI18nStructure"/>
-    <testcase name="should initialize in the default language the i18n structure of a non i18n related string" time="0.04" classname="Chrome 30.0 (Windows).i18nDbService setInitI18nStructure"/>
-    <testcase name="should initialize in the default language the i18n structure of a non i18n related string even changing the language" time="0.106" classname="Chrome 30.0 (Windows).i18nDbService setInitI18nStructure"/>
-    <testcase name="should retrieve languages with the proper structure" time="0.172" classname="Chrome 30.0 (Windows).i18nService getLanguages"/>
-    <testcase name="should detect the language change" time="0.101" classname="Chrome 30.0 (Windows).i18nService language detection"/>
-    <testcase name="should set a page title based on the provided token" time="0.086" classname="Chrome 30.0 (Windows).metaService Page title"/>
-    <testcase name="should detect the default favicon url" time="0.047" classname="Chrome 30.0 (Windows).metaService Favicon"/>
-    <testcase name="should get the proper window dimensions" time="0.05" classname="Chrome 30.0 (Windows).metaService Window dimensions"/>
-    <testcase name="should detect valid objects as objects" time="0.006" classname="Chrome 30.0 (Windows).objectService isObject"/>
-    <testcase name="should detect invalid objects as non objects" time="0.007" classname="Chrome 30.0 (Windows).objectService isObject"/>
-    <testcase name="should identify an empty string (&apos;&apos;)" time="0.004" classname="Chrome 30.0 (Windows).objectService isEmpty"/>
-    <testcase name="should identify an empty string (null)" time="0.005" classname="Chrome 30.0 (Windows).objectService isEmpty"/>
-    <testcase name="should identify an empty string (undefined)" time="0.006" classname="Chrome 30.0 (Windows).objectService isEmpty"/>
-    <testcase name="should identify an empty string (non empty)" time="0.005" classname="Chrome 30.0 (Windows).objectService isEmpty"/>
-    <testcase name="should detect the real fullscreen mode" time="0.025" classname="Chrome 30.0 (Windows).portalService Fullscreen"/>
-    <testcase name="should detect the maximized fullscreen mode" time="0.044" classname="Chrome 30.0 (Windows).portalService Fullscreen"/>
+    <testcase name="should get the proper structure of an empty col" time="0.002" classname="Chrome 30.0 (Windows).colService getEmptyCol"/>
+    <testcase name="[should return a formatted date" time="0.007" classname="Chrome 30.0 (Windows).dateService getFormattedDate"/>
+    <testcase name="should generate an insensitive selector based on a regular expression" time="0.002" classname="Chrome 30.0 (Windows).dbService getInsensitiveSelector"/>
+    <testcase name="should generate an inexact selector based on a regular expression" time="0.002" classname="Chrome 30.0 (Windows).dbService getInexactSelector"/>
+    <testcase name="should get [0, 0] as the default coordinates (position and size)" time="0.029" classname="Chrome 30.0 (Windows).dom service getCoordinates"/>
+    <testcase name="should get the custom coordinates if they&apos;re defined (position and size)" time="0.034" classname="Chrome 30.0 (Windows).dom service getCoordinates"/>
+    <testcase name="should get 0 as the default padding" time="0.007" classname="Chrome 30.0 (Windows).dom service getObjPadding"/>
+    <testcase name="should get the custom padding if it&apos;s defined" time="0.008" classname="Chrome 30.0 (Windows).dom service getObjPadding"/>
+    <testcase name="should get 0 as the default border width" time="0.004" classname="Chrome 30.0 (Windows).dom service getObjBorderWidth"/>
+    <testcase name="should get the custom padding if it&apos;s defined" time="0.008" classname="Chrome 30.0 (Windows).dom service getObjBorderWidth"/>
+    <testcase name="should detect element types" time="0.008" classname="Chrome 30.0 (Windows).dom service getElementType"/>
+    <testcase name="should get 0 as the default dom percent width" time="0.006" classname="Chrome 30.0 (Windows).dom service getDomPercent"/>
+    <testcase name="should detect element types" time="0.006" classname="Chrome 30.0 (Windows).dom service getDomPercent"/>
+    <testcase name="should not have the loading styleclass by default" time="0.005" classname="Chrome 30.0 (Windows).dom service addLoadingFeedback"/>
+    <testcase name="should have the loading styleclass once it has been added" time="0.005" classname="Chrome 30.0 (Windows).dom service addLoadingFeedback"/>
+    <testcase name="should not have the loading styleclass once it has been remove" time="0.01" classname="Chrome 30.0 (Windows).dom service removeLoadingFeedback"/>
+    <testcase name="should convert a given DOM object into a string" time="0.007" classname="Chrome 30.0 (Windows).dom service convertDomObjToStr"/>
+    <testcase name="should validate email formats" time="0.005" classname="Chrome 30.0 (Windows).emailService validateEmail"/>
+    <testcase name="should get the corresponding i18n property (no i18n structure)" time="0.013" classname="Chrome 30.0 (Windows).i18nDbService getI18nProperty"/>
+    <testcase name="should get the corresponding i18n property (i18n structure present for all languages)" time="0.013" classname="Chrome 30.0 (Windows).i18nDbService getI18nProperty"/>
+    <testcase name="should get the corresponding i18n property (i18n structure present just for the default language)" time="0.112" classname="Chrome 30.0 (Windows).i18nDbService getI18nProperty"/>
+    <testcase name="should detect that an object doesn&apos;t have i18n structure" time="0.047" classname="Chrome 30.0 (Windows).i18nDbService hasI18nStructure"/>
+    <testcase name="should detect that an object has i18n structure in the default language" time="0.111" classname="Chrome 30.0 (Windows).i18nDbService hasI18nStructure"/>
+    <testcase name="should detect that an object doesn&apos;t have i18n structure in a non default language" time="0.077" classname="Chrome 30.0 (Windows).i18nDbService hasI18nStructure"/>
+    <testcase name="should detect that an object has i18n structure in a non default language" time="0.082" classname="Chrome 30.0 (Windows).i18nDbService hasI18nStructure"/>
+    <testcase name="should initialize in the default language the i18n structure of a non i18n related string" time="0.063" classname="Chrome 30.0 (Windows).i18nDbService setInitI18nStructure"/>
+    <testcase name="should initialize in the default language the i18n structure of a non i18n related string even changing the language" time="0.078" classname="Chrome 30.0 (Windows).i18nDbService setInitI18nStructure"/>
+    <testcase name="should retrieve languages with the proper structure" time="0.078" classname="Chrome 30.0 (Windows).i18nService getLanguages"/>
+    <testcase name="should detect the language change" time="0.072" classname="Chrome 30.0 (Windows).i18nService language detection"/>
+    <testcase name="should set a page title based on the provided token" time="0.171" classname="Chrome 30.0 (Windows).metaService Page title"/>
+    <testcase name="should detect the default favicon url" time="0.044" classname="Chrome 30.0 (Windows).metaService Favicon"/>
+    <testcase name="should get the proper window dimensions" time="0.081" classname="Chrome 30.0 (Windows).metaService Window dimensions"/>
+    <testcase name="should detect valid objects as objects" time="0.002" classname="Chrome 30.0 (Windows).objectService isObject"/>
+    <testcase name="should detect invalid objects as non objects" time="0.002" classname="Chrome 30.0 (Windows).objectService isObject"/>
+    <testcase name="should identify an empty string (&apos;&apos;)" time="0.003" classname="Chrome 30.0 (Windows).objectService isEmpty"/>
+    <testcase name="should identify an empty string (null)" time="0.031" classname="Chrome 30.0 (Windows).objectService isEmpty"/>
+    <testcase name="should identify an empty string (undefined)" time="0.002" classname="Chrome 30.0 (Windows).objectService isEmpty"/>
+    <testcase name="should identify an empty string (non empty)" time="0.003" classname="Chrome 30.0 (Windows).objectService isEmpty"/>
+    <testcase name="should detect the real fullscreen mode" time="0.066" classname="Chrome 30.0 (Windows).portalService Fullscreen"/>
+    <testcase name="should detect the maximized fullscreen mode" time="0.09" classname="Chrome 30.0 (Windows).portalService Fullscreen"/>
     <testcase name="should detect the template fullscreen mode" time="0.045" classname="Chrome 30.0 (Windows).portalService Fullscreen"/>
-    <testcase name="should return the proper role karma" time="0.004" classname="Chrome 30.0 (Windows).roleService getRoles"/>
-    <testcase name="should return the proper role codes" time="0.005" classname="Chrome 30.0 (Windows).roleService getRoles"/>
-    <testcase name="should return the guest role" time="0.006" classname="Chrome 30.0 (Windows).roleService getRole"/>
+    <testcase name="should return the proper role karma" time="0.011" classname="Chrome 30.0 (Windows).roleService getRoles"/>
+    <testcase name="should return the proper role codes" time="0.006" classname="Chrome 30.0 (Windows).roleService getRoles"/>
+    <testcase name="should return the guest role" time="0.007" classname="Chrome 30.0 (Windows).roleService getRole"/>
     <testcase name="should return the reader role" time="0.006" classname="Chrome 30.0 (Windows).roleService getRole"/>
-    <testcase name="should return the creator role" time="0.004" classname="Chrome 30.0 (Windows).roleService getRole"/>
-    <testcase name="should return the admin role" time="0.005" classname="Chrome 30.0 (Windows).roleService getRole"/>
-    <testcase name="should return the super admin role" time="0.005" classname="Chrome 30.0 (Windows).roleService getRole"/>
-    <testcase name="should determine that non logged users doesn&apos;t have the guest role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasGuestRole"/>
-    <testcase name="should determine that users without role have the guest role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasGuestRole"/>
-    <testcase name="should determine that guest users have the guest role" time="0.007" classname="Chrome 30.0 (Windows).roleService hasGuestRole"/>
-    <testcase name="should determine that reader users have the guest role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasGuestRole"/>
+    <testcase name="should return the creator role" time="0.005" classname="Chrome 30.0 (Windows).roleService getRole"/>
+    <testcase name="should return the admin role" time="0.006" classname="Chrome 30.0 (Windows).roleService getRole"/>
+    <testcase name="should return the super admin role" time="0.006" classname="Chrome 30.0 (Windows).roleService getRole"/>
+    <testcase name="should determine that non logged users doesn&apos;t have the guest role" time="0.01" classname="Chrome 30.0 (Windows).roleService hasGuestRole"/>
+    <testcase name="should determine that users without role have the guest role" time="0.012" classname="Chrome 30.0 (Windows).roleService hasGuestRole"/>
+    <testcase name="should determine that guest users have the guest role" time="0.006" classname="Chrome 30.0 (Windows).roleService hasGuestRole"/>
+    <testcase name="should determine that reader users have the guest role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasGuestRole"/>
     <testcase name="should determine that creator users have the guest role" time="0.005" classname="Chrome 30.0 (Windows).roleService hasGuestRole"/>
-    <testcase name="should determine that admin users have the guest role" time="0.005" classname="Chrome 30.0 (Windows).roleService hasGuestRole"/>
-    <testcase name="should determine that super admin users have the guest role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasGuestRole"/>
+    <testcase name="should determine that admin users have the guest role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasGuestRole"/>
+    <testcase name="should determine that super admin users have the guest role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasGuestRole"/>
     <testcase name="should determine that non logged users doesn&apos;t have the reader role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasReaderRole"/>
-    <testcase name="should determine that users without role doesn&apos;t have the reader role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasReaderRole"/>
-    <testcase name="should determine that guest users doesn&apos;t have the reader role" time="0.006" classname="Chrome 30.0 (Windows).roleService hasReaderRole"/>
-    <testcase name="should determine that reader users have the reader role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasReaderRole"/>
+    <testcase name="should determine that users without role doesn&apos;t have the reader role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasReaderRole"/>
+    <testcase name="should determine that guest users doesn&apos;t have the reader role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasReaderRole"/>
+    <testcase name="should determine that reader users have the reader role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasReaderRole"/>
     <testcase name="should determine that creator users have the reader role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasReaderRole"/>
-    <testcase name="should determine that admin users have the reader role" time="0.009" classname="Chrome 30.0 (Windows).roleService hasReaderRole"/>
-    <testcase name="should determine that super admin users have the reader role" time="0.041" classname="Chrome 30.0 (Windows).roleService hasReaderRole"/>
-    <testcase name="should determine that non logged users doesn&apos;t have the creator role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasCreatorRole"/>
-    <testcase name="should determine that users without role have the creator role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasCreatorRole"/>
-    <testcase name="should determine that guest users doesn&apos;t have the creator role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasCreatorRole"/>
+    <testcase name="should determine that admin users have the reader role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasReaderRole"/>
+    <testcase name="should determine that super admin users have the reader role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasReaderRole"/>
+    <testcase name="should determine that non logged users doesn&apos;t have the creator role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasCreatorRole"/>
+    <testcase name="should determine that users without role have the creator role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasCreatorRole"/>
+    <testcase name="should determine that guest users doesn&apos;t have the creator role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasCreatorRole"/>
     <testcase name="should determine that reader users doesn&apos;t have the creator role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasCreatorRole"/>
-    <testcase name="should determine that creator users have the creator role" time="0.005" classname="Chrome 30.0 (Windows).roleService hasCreatorRole"/>
-    <testcase name="should determine that admin users have the creator role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasCreatorRole"/>
+    <testcase name="should determine that creator users have the creator role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasCreatorRole"/>
+    <testcase name="should determine that admin users have the creator role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasCreatorRole"/>
     <testcase name="should determine that super admin users have the creator role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasCreatorRole"/>
-    <testcase name="should determine that non logged users doesn&apos;t have the admin role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasAdminRole"/>
-    <testcase name="should determine that users without role have the admin role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasAdminRole"/>
+    <testcase name="should determine that non logged users doesn&apos;t have the admin role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasAdminRole"/>
+    <testcase name="should determine that users without role have the admin role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasAdminRole"/>
     <testcase name="should determine that guest users doesn&apos;t have the admin role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasAdminRole"/>
-    <testcase name="should determine that reader users have the admin role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasAdminRole"/>
-    <testcase name="should determine that creator users doesn&apos;t have the admin role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasAdminRole"/>
+    <testcase name="should determine that reader users have the admin role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasAdminRole"/>
+    <testcase name="should determine that creator users doesn&apos;t have the admin role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasAdminRole"/>
     <testcase name="should determine that admin users have the admin role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasAdminRole"/>
-    <testcase name="should determine that super admin users have the admin role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasAdminRole"/>
-    <testcase name="should determine that non logged users doesn&apos;t have the super admin role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasSuperAdminRole"/>
-    <testcase name="should determine that users without role have the super admin role" time="0.005" classname="Chrome 30.0 (Windows).roleService hasSuperAdminRole"/>
-    <testcase name="should determine that guest users doesn&apos;t have the super admin role" time="0.002" classname="Chrome 30.0 (Windows).roleService hasSuperAdminRole"/>
-    <testcase name="should determine that reader users have the super admin role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasSuperAdminRole"/>
-    <testcase name="should determine that creator users doesn&apos;t have the super admin role" time="0.005" classname="Chrome 30.0 (Windows).roleService hasSuperAdminRole"/>
-    <testcase name="should determine that admin users doesn&apos;t have the super admin role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasSuperAdminRole"/>
-    <testcase name="should determine that super admin users have the super admin role" time="0.006" classname="Chrome 30.0 (Windows).roleService hasSuperAdminRole"/>
-    <testcase name="should not retrieve any admin related class if the user doesn&apos;t have admin role" time="0.005" classname="Chrome 30.0 (Windows).roleService getCurrentUserAdminAccessStyleClass"/>
-    <testcase name="should retrieve an admin related class if the user has admin role" time="0.003" classname="Chrome 30.0 (Windows).roleService getCurrentUserAdminAccessStyleClass"/>
-    <testcase name="should mark an empty original row as empty, if case" time="0.003" classname="Chrome 30.0 (Windows).rowService isOriginalRowEmpty"/>
-    <testcase name="should mark an empty drop row as empty, if case" time="0.004" classname="Chrome 30.0 (Windows).rowService isDropRowEmpty"/>
-    <testcase name="should add a new row and dependencies" time="0.005" classname="Chrome 30.0 (Windows).rowService addRowAndDependencies"/>
-    <testcase name="should add a new row and dependencies" time="0.004" classname="Chrome 30.0 (Windows).rowService addEmptyRow"/>
-    <testcase name="should get the proper format of an empty row" time="0.003" classname="Chrome 30.0 (Windows).rowService getEmptyRow"/>
+    <testcase name="should determine that super admin users have the admin role" time="0.004" classname="Chrome 30.0 (Windows).roleService hasAdminRole"/>
+    <testcase name="should determine that non logged users doesn&apos;t have the super admin role" time="0.005" classname="Chrome 30.0 (Windows).roleService hasSuperAdminRole"/>
+    <testcase name="should determine that users without role have the super admin role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasSuperAdminRole"/>
+    <testcase name="should determine that guest users doesn&apos;t have the super admin role" time="0.039" classname="Chrome 30.0 (Windows).roleService hasSuperAdminRole"/>
+    <testcase name="should determine that reader users have the super admin role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasSuperAdminRole"/>
+    <testcase name="should determine that creator users doesn&apos;t have the super admin role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasSuperAdminRole"/>
+    <testcase name="should determine that admin users doesn&apos;t have the super admin role" time="0.003" classname="Chrome 30.0 (Windows).roleService hasSuperAdminRole"/>
+    <testcase name="should determine that super admin users have the super admin role" time="0.005" classname="Chrome 30.0 (Windows).roleService hasSuperAdminRole"/>
+    <testcase name="should not retrieve any admin related class if the user doesn&apos;t have admin role" time="0.003" classname="Chrome 30.0 (Windows).roleService getCurrentUserAdminAccessStyleClass"/>
+    <testcase name="should retrieve an admin related class if the user has admin role" time="0.004" classname="Chrome 30.0 (Windows).roleService getCurrentUserAdminAccessStyleClass"/>
+    <testcase name="should mark an empty original row as empty, if case" time="0.004" classname="Chrome 30.0 (Windows).rowService isOriginalRowEmpty"/>
+    <testcase name="should mark an empty drop row as empty, if case" time="0.003" classname="Chrome 30.0 (Windows).rowService isDropRowEmpty"/>
+    <testcase name="should add a new row and dependencies" time="0.004" classname="Chrome 30.0 (Windows).rowService addRowAndDependencies"/>
+    <testcase name="should add a new row and dependencies" time="0.009" classname="Chrome 30.0 (Windows).rowService addEmptyRow"/>
+    <testcase name="should get the proper format of an empty row" time="0.004" classname="Chrome 30.0 (Windows).rowService getEmptyRow"/>
     <testcase name="should delete a given row and its dependencies" time="0.004" classname="Chrome 30.0 (Windows).rowService deleteRowAndDependencies"/>
-    <testcase name="Should return the current user session" time="0.004" classname="Chrome 30.0 (Windows).sessionService getUserSession"/>
-    <testcase name="Should add the session object to the given model" time="0.007" classname="Chrome 30.0 (Windows).sessionService addSessionDataToModel"/>
-    <testcase name="Should delete the authorId information from the given model" time="0.003" classname="Chrome 30.0 (Windows).sessionService addSessionDataToModel"/>
-    <testcase name="Should recognize the user is logged" time="0.004" classname="Chrome 30.0 (Windows).sessionService isUserLogged"/>
-    <testcase name="Should recognize the user is not logged" time="0.005" classname="Chrome 30.0 (Windows).sessionService isUserLogged"/>
-    <testcase name="should replace the first token char" time="0.002" classname="Chrome 30.0 (Windows).stringService replaceToken"/>
-    <testcase name="should replace the last token char" time="0.002" classname="Chrome 30.0 (Windows).stringService replaceToken"/>
-    <testcase name="should replace an internal token char" time="0.004" classname="Chrome 30.0 (Windows).stringService replaceToken"/>
-    <testcase name="should replace multiple token chars" time="0.002" classname="Chrome 30.0 (Windows).stringService replaceToken"/>
+    <testcase name="Should return the current user session" time="0.003" classname="Chrome 30.0 (Windows).sessionService getUserSession"/>
+    <testcase name="Should add the session object to the given model" time="0.004" classname="Chrome 30.0 (Windows).sessionService addSessionDataToModel"/>
+    <testcase name="Should delete the authorId information from the given model" time="0.004" classname="Chrome 30.0 (Windows).sessionService addSessionDataToModel"/>
+    <testcase name="Should recognize the user is logged" time="0.003" classname="Chrome 30.0 (Windows).sessionService isUserLogged"/>
+    <testcase name="Should recognize the user is not logged" time="0.004" classname="Chrome 30.0 (Windows).sessionService isUserLogged"/>
+    <testcase name="should replace the first token char" time="0.003" classname="Chrome 30.0 (Windows).stringService replaceToken"/>
+    <testcase name="should replace the last token char" time="0.003" classname="Chrome 30.0 (Windows).stringService replaceToken"/>
+    <testcase name="should replace an internal token char" time="0.002" classname="Chrome 30.0 (Windows).stringService replaceToken"/>
+    <testcase name="should replace multiple token chars" time="0.003" classname="Chrome 30.0 (Windows).stringService replaceToken"/>
     <testcase name="should capitalize the given string" time="0.002" classname="Chrome 30.0 (Windows).stringService capitalize"/>
-    <testcase name="should decapitalize the given string" time="0.002" classname="Chrome 30.0 (Windows).stringService decapitalize"/>
+    <testcase name="should decapitalize the given string" time="0.003" classname="Chrome 30.0 (Windows).stringService decapitalize"/>
     <testcase name="should convert to snake case the given string" time="0.003" classname="Chrome 30.0 (Windows).stringService toSnakeCase"/>
-    <testcase name="should convert to snake case the given string" time="0.003" classname="Chrome 30.0 (Windows).stringService toCamelCase"/>
+    <testcase name="should convert to snake case the given string" time="0.004" classname="Chrome 30.0 (Windows).stringService toCamelCase"/>
     <testcase name="should trim the given string" time="0.002" classname="Chrome 30.0 (Windows).stringService trim"/>
-    <testcase name="should identify an external url as valid" time="0.007" classname="Chrome 30.0 (Windows).stringService isExternalUrl"/>
-    <testcase name="should identify an internal url as non valid" time="0.045" classname="Chrome 30.0 (Windows).stringService isExternalUrl"/>
-    <testcase name="should normalizes the format of a given external url, adding the http:// preffix, if necessary" time="0.005" classname="Chrome 30.0 (Windows).stringService normalizeExternalUrl"/>
-    <testcase name="should detect the proper styles of a given leaf element taking as a reference a given root element - the property is defined at multiple levels" time="0.003" classname="Chrome 30.0 (Windows).styleService getComputedStyleInRange"/>
-    <testcase name="should detect the proper styles of a given leaf element taking as a reference a given root element - the property is defined just at root level" time="0.002" classname="Chrome 30.0 (Windows).styleService getComputedStyleInRange"/>
+    <testcase name="should identify an external url as valid" time="0.006" classname="Chrome 30.0 (Windows).stringService isExternalUrl"/>
+    <testcase name="should identify an internal url as non valid" time="0.003" classname="Chrome 30.0 (Windows).stringService isExternalUrl"/>
+    <testcase name="should normalizes the format of a given external url, adding the http:// preffix, if necessary" time="0.003" classname="Chrome 30.0 (Windows).stringService normalizeExternalUrl"/>
+    <testcase name="should detect the proper styles of a given leaf element taking as a reference a given root element - the property is defined at multiple levels" time="0.004" classname="Chrome 30.0 (Windows).styleService getComputedStyleInRange"/>
+    <testcase name="should detect the proper styles of a given leaf element taking as a reference a given root element - the property is defined just at root level" time="0.003" classname="Chrome 30.0 (Windows).styleService getComputedStyleInRange"/>
     <testcase name="should detect the proper styles of a given leaf element taking as a reference a given root element - the property is defined just at an intermediate level" time="0.002" classname="Chrome 30.0 (Windows).styleService getComputedStyleInRange"/>
     <testcase name="should not detect any kind of styles of a given leaf element taking as a reference a given root element - the property is not defined anywhere" time="0.003" classname="Chrome 30.0 (Windows).styleService getComputedStyleInRange"/>
-    <testcase name="should convert a rgb string into a rgb object - no spaces in the string expression" time="0.003" classname="Chrome 30.0 (Windows).styleService rgbStrToRgbObj"/>
-    <testcase name="should convert a rgb string into a rgb object - spaces in the string expression" time="0.004" classname="Chrome 30.0 (Windows).styleService rgbStrToRgbObj"/>
+    <testcase name="should convert a rgb string into a rgb object - no spaces in the string expression" time="0.002" classname="Chrome 30.0 (Windows).styleService rgbStrToRgbObj"/>
+    <testcase name="should convert a rgb string into a rgb object - spaces in the string expression" time="0.003" classname="Chrome 30.0 (Windows).styleService rgbStrToRgbObj"/>
     <testcase name="should convert to an hexadecimal value a given RGB object - RGB values set as numbers" time="0.003" classname="Chrome 30.0 (Windows).styleService rgbObjToHexStr"/>
     <system-out><![CDATA[
 ]]></system-out>
