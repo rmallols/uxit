@@ -130,10 +130,10 @@ module.exports = function(grunt) {
                     return +new Date();
                 },
                 dbHost: function () {
-                    return (grunt.option('env') === prodKey) ? 'ds053188.mongolab.com' : 'localhost';
+                    return (grunt.option('env') === prodKey) ? 'ds053978.mongolab.com' : 'localhost';
                 },
                 dbPort: function () {
-                    return (grunt.option('env') === prodKey) ? '53188' : '27017';
+                    return (grunt.option('env') === prodKey) ? '53978' : '27017';
                 },
                 dbUser: function () {
                     return (grunt.option('env') === prodKey) ? 'test' : '';
