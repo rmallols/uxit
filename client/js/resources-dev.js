@@ -140,7 +140,7 @@ window.speed = 150;
     getScript(directivePath + '/feedback/tooltip.js');
     getScript(directivePath + '/comments/comments.js');
     getScript(directivePath + '/comments/comment.js');
-    getScript(directivePath + '/contentEditable/contenteditable.js');
+    getScript(directivePath + '/contentEditable/contentEditable.js');
     getScript(directivePath + '/contentEditable/richContent.js');
     getScript(directivePath + '/contentEditable/toggleStyle.js');
     getScript(directivePath + '/contentEditable/selectMedia.js');
