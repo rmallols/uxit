@@ -23,7 +23,6 @@ app.use(express.bodyParser());
 app.use(express.cookieParser());
 app.use(express.session({ secret: "ch0pSuey" }));
 
-
 function checkAuth(req, res, next) {
     if (!req.session.user) {
         res.send('You don\'t have permissions to execute this action', 403);
