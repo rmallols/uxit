@@ -38,15 +38,6 @@ function setupDb(req, res, next) {
     });
 }
 
-/*
-app.get('/client/*', function (req, res) {
-    redirectionService.bla(req, res);
-});*/
-
-//app.use('/client/*', express.static('/bla/client/'));
-
-//console.log("X0", __dirname, app.router);
-//app.use('/app', express.static('../'));
 app.use(express.static(__dirname + '/../'));
 
 app.get('/favicon.ico', function (req, res) {
@@ -175,8 +166,6 @@ app.post('/:portalId/rest/sendEmail', setupDb, function (req, res) {
         res.send(result);
     });
 });
-
-//app.use('/', express.static('../'));
 
 app.get('/', function (req, res) {
     redirectionService.goToHomePageFromRoot(req, res);
