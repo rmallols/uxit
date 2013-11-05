@@ -113,9 +113,10 @@ module.exports = function(grunt) {
                     async: true
                 }
             },
-            prodPush: {
-                command: 'git push heroku master'
-            }
+            githubAdd:      { command: 'git add .' },
+            githubCommit:   { command: 'git commit -m "#0 prod update"' },
+            githubPush:     { command: 'git push' },
+            herokuPush:     { command: 'git push heroku master' }
         },
         bumpup: {
             file: 'package.json',
@@ -170,8 +171,9 @@ module.exports = function(grunt) {
     grunt.registerTask('devPreprocess', ['preprocess:htmlDev']);
     grunt.registerTask('prodPreprocess', ['preprocess:htmlProd', 'preprocess:jsProd']);
     grunt.registerTask('bump', ['bumpup:minor']);
-    grunt.registerTask('prodPush', ['shell:prodPush']);
+    grunt.registerTask('github', ['shell:githubAdd', 'shell:githubCommit', 'shell:githubPush']);
+    grunt.registerTask('heroku', ['shell:herokuPush']);
     grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'bump', 'devPreprocess', 'generateTemplates']);
     grunt.registerTask('prod', ['clean', 'jshint', 'karma:run', 'bump', 'prodPreprocess',
-        'generateTemplates', 'concat', 'uglify', 'less:prod', 'shell:prodPush']);
+        'generateTemplates', 'concat', 'uglify', 'less:prod', 'heroku']);
 };
