@@ -175,5 +175,5 @@ module.exports = function(grunt) {
     grunt.registerTask('heroku', ['shell:herokuPush']);
     grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'bump', 'devPreprocess', 'generateTemplates']);
     grunt.registerTask('prod', ['clean', 'jshint', 'karma:run', 'bump', 'prodPreprocess',
-        'generateTemplates', 'concat', 'uglify', 'less:prod', 'heroku']);
+        'generateTemplates', 'concat', 'uglify', 'less:prod', 'github', 'heroku']);
 };
