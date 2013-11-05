@@ -1,13 +1,13 @@
 {
     "name": "menzit",
     "author": "menzit",
-    "version": "0.33.0",
-    "timestamp": 1383678167726,
-    "mode": "cloud",
-    "dbHost": "ds053978.mongolab.com",
-    "dbPort": "53978",
-    "dbUser": "test",
-    "dbPassword": "test",
+    "version": "0.33.1",
+    "timestamp": 1383678335789,
+    "mode": "host",
+    "dbHost": "localhost",
+    "dbPort": "27017",
+    "dbUser": "",
+    "dbPassword": "",
     "engines": {
         "node": "0.8.19",
         "npm": "1.2.21"

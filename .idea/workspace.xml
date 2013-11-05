@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.33.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.52.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\min\css.min.css" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\min\js.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +33,7 @@
       <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="90" selection-start="187" selection-end="187" vertical-scroll-proportion="0.24335378" vertical-offset="0" max-vertical-offset="782">
+            <state line="13" column="91" selection-start="309" selection-end="309" vertical-scroll-proportion="0.45194274" vertical-offset="0" max-vertical-offset="782">
               <folding />
             </state>
           </provider>
@@ -167,7 +165,7 @@
       <recent name="C:\usr\menzit" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.grunt prod">
+  <component name="RunManager" selected="Node.js.grunt dev">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -823,7 +821,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="90" selection-start="187" selection-end="187" vertical-scroll-proportion="0.24335378" vertical-offset="0" max-vertical-offset="782">
+        <state line="13" column="91" selection-start="309" selection-end="309" vertical-scroll-proportion="0.45194274" vertical-offset="0" max-vertical-offset="782">
           <folding />
         </state>
       </provider>
