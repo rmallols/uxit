@@ -29,8 +29,8 @@ module.exports = function(grunt) {
         },
         preprocess : {
             htmlDev : {
-                src : 'server/index.tpl.html',
-                dest : 'server/index.html',
+                src : './index.tpl.html',
+                dest : './index.html',
                 options : {
                     context : {
                         version : 'dev'
@@ -38,8 +38,8 @@ module.exports = function(grunt) {
                 }
             },
             htmlProd : {
-                src : 'server/index.tpl.html',
-                dest : 'server/index.html',
+                src : './index.tpl.html',
+                dest : './index.html',
                 options : {
                     context : {
                         version : '<%= pkg.version %>'
@@ -112,6 +112,9 @@ module.exports = function(grunt) {
                 options: {
                     async: true
                 }
+            },
+            prodPush: {
+                command: 'git push heroku master'
             }
         },
         bumpup: {
@@ -161,13 +164,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-bumpup');
 
-    grunt.registerTask('startMongo', ['shell']);
+    grunt.registerTask('startMongo', ['shell:mongo']);
     grunt.registerTask('startKarma', ['karma:watch']);
     grunt.registerTask('generateTemplates', ['html2js']);
     grunt.registerTask('devPreprocess', ['preprocess:htmlDev']);
     grunt.registerTask('prodPreprocess', ['preprocess:htmlProd', 'preprocess:jsProd']);
     grunt.registerTask('bump', ['bumpup:minor']);
+    grunt.registerTask('prodPush', ['shell:prodPush']);
     grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'bump', 'devPreprocess', 'generateTemplates']);
     grunt.registerTask('prod', ['clean', 'jshint', 'karma:run', 'bump', 'prodPreprocess',
-        'generateTemplates', 'concat', 'uglify', 'less:prod']);
+        'generateTemplates', 'concat', 'uglify', 'less:prod', 'shell:prodPush']);
 };
