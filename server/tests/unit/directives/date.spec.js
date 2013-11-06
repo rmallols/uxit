@@ -31,7 +31,7 @@ describe('date directive', function () {
     function compile() {
         var template    = '<div date ng-model="user.birthDate"></div>',
             compile     = compileFn($compile, $scope);
-        dateDirective = compile(template);
+        dateDirective   = compile(template);
         $rootScope.$digest();
     }
 });
