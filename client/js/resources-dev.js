@@ -41,6 +41,8 @@ window.speed = 150;
     getScript(libPath + '/miniColors/jquery.minicolors.js');
     getScript(libPath + '/iCheck/jquery.icheck-0.9.1.min.js');
     getScript(libPath + '/nprogress/nprogress.js');
+    getScript(libPath + '/date/date.js');
+    getScript(libPath + '/date/i18n/jquery.ui.datepicker-es.js');
 
     //Core resources
     getStyleSheet(styleSheetPath + '/main.less');
@@ -153,6 +155,7 @@ window.speed = 150;
     getScript(directivePath + '/input/checkbox.js');
     getScript(directivePath + '/input/radio.js');
     getScript(directivePath + '/input/password.js');
+    getScript(directivePath + '/input/date.js');
     getScript(directivePath + '/validation/mandatory.js');
     getScript(directivePath + '/validation/emailMandatory.js');
     getScript(directivePath + '/validation/passwordMandatory.js');

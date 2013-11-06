@@ -1043,6 +1043,7 @@ angular.module("editUser.html", []).run(["$templateCache", function($templateCac
     "    <div class=\"columns large-16\">\n" +
     "        <div><label i18n=\"editUser.fullName\"></label>: <input type=\"text\" ng-model=\"user.fullName\" mandatory /></div>\n" +
     "        <div><label i18n=\"editUser.email\"></label>: <input type=\"text\" ng-model=\"user.email\" email-mandatory mandatory /></div>\n" +
+    "        <div><label i18n=\"editUser.birthDate\"></label>: <input date ng-model=\"user.birthDate\" mandatory /></div>\n" +
     "        <div>\n" +
     "            <label i18n=\"editUser.password\"></label>:\n" +
     "            <input password ng-model=\"user.password\" click-to-change=\"clickToChangePassword\" />\n" +
@@ -1511,6 +1512,7 @@ angular.module("loginPage.html", []).run(["$templateCache", function($templateCa
 
 angular.module("portalPage.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("portalPage.html",
+    "<input date ng-model=\"user.birthDate\" mandatory />\n" +
     "<div global-msg></div>\n" +
     "<admin-panel ux-show=\"isAdmin()\"></admin-panel>\n" +
     "<pages></pages>");

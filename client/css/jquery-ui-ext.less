@@ -1,1 +1,55 @@
+.ui-datepicker {
+  z-index: 10 !important;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  width: 10em;
+}
 
+.ui-datepicker .ui-datepicker-header {
+  color: @fontColor;
+  background: @highComp;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid @high;
+}
+
+.ui-datepicker select.ui-datepicker-year {
+  width: 36%;
+}
+
+.ui-datepicker .ui-datepicker-calendar {
+  width: 90%;
+  margin: 0 5% 5% 5%;
+}
+
+.ui-datepicker .ui-datepicker-title,
+.ui-datepicker th {
+  font-weight: normal;
+  font-size: @fontSize;
+}
+
+.ui-datepicker .ui-state-default {
+  background: @highComp;
+}
+
+.ui-datepicker .ui-state-highlight {
+  border-color: @high;
+  color: @high;
+}
+
+.ui-datepicker .ui-state-active {
+  background: @high;
+  border-color: @high;
+  color: @highComp;
+}
+
+.ui-datepicker .ui-datepicker-next {
+  background-color: @highComp;
+}
+
+.ui-datepicker .ui-icon-circle-triangle-e {
+  .nextIcon;
+  background-size: 16px;
+  background-position: 0px 0px;
+}

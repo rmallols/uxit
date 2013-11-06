@@ -5,6 +5,7 @@
     <div class="columns large-16">
         <div><label i18n="editUser.fullName"></label>: <input type="text" ng-model="user.fullName" mandatory /></div>
         <div><label i18n="editUser.email"></label>: <input type="text" ng-model="user.email" email-mandatory mandatory /></div>
+        <div><label i18n="editUser.birthDate"></label>: <input date ng-model="user.birthDate" mandatory /></div>
         <div>
             <label i18n="editUser.password"></label>:
             <input password ng-model="user.password" click-to-change="clickToChangePassword" />

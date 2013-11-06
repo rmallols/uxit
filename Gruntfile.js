@@ -69,7 +69,8 @@ module.exports = function(grunt) {
                         '<%= app_lib %>mousetrap/mousetrap-global-bind.min.js',
                         '<%= app_lib %>fullscreen/*.js',
                         '<%= app_lib %>miniColors/*.js',
-                        '<%= app_lib %>iCheck/*.js']
+                        '<%= app_lib %>iCheck/*.js',
+                        '<%= app_lib %>date/date.js', '<%= app_lib %>date/i18n/*.js']
                 }
             }
         },

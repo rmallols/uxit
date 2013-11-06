@@ -44,7 +44,8 @@
                     password    : user.password,
                     role        : user.role,
                     language    : user.language,
-                    tags        : user.tags
+                    tags        : user.tags,
+                    birthDate   : user.birthDate
                 };
                 data.mediaId = (user.media && user.media._id) ? user.media._id : null;
                 crudService.create(constantsService.collections.users, data, function (newUser) {
@@ -71,7 +72,8 @@
                     email       : user.email,
                     role        : user.role,
                     language    : user.language,
-                    tags        : user.tags
+                    tags        : user.tags,
+                    birthDate   : user.birthDate
                 };
                 data.mediaId = (user.media && user.media._id) ? user.media._id : null;
                 if (user.password) { //Update the password, just in case it's being entered by the user

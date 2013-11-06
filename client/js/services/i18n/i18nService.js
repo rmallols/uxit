@@ -77,9 +77,12 @@
          * @param {string} langCode The language that is going to be set as the current one
          */
         i18n.changeLanguage = function changeLanguage(langCode) {
+            var datePickerLangCode;
             if (langCode !== settings.language) {
                 settings.language = langCode;
                 $.i18n.properties(settings);
+                datePickerLangCode = (langCode === defaultLanguage) ? '' : langCode;
+                $.datepicker.setDefaults( $.datepicker.regional[datePickerLangCode] );
                 $rootScope.$broadcast('languageChanged', langCode);
             }
         };
