@@ -4,12 +4,12 @@ COMPONENTS.directive('date', [function () {
         require: 'ngModel',
 		restrict: 'A',
         replace: true,
-        //template: '<input type="text" ui-date="dateOptions" ui-date-format="mm-dd-yy" />',
-        template: '<div ui-date="dateOptions" ui-date-format="mm-dd-yy" ></div>',
+        template: '<input type="text" ui-date="dateOptions" ui-date-format="yy-mm-dd" />',
         controller: ['$scope', function($scope) {
             $scope.dateOptions = {
                 dateFormat: 'dd-mm-yy',
-                changeYear: true
+                changeYear: true,
+                showAnim: false
             };
         }]
 	};

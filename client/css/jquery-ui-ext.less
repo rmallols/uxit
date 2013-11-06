@@ -1,9 +1,20 @@
+.ui-widget,
+.ui-widget select {
+  font: @font !important;
+}
+
 .ui-datepicker {
   z-index: 10 !important;
   padding: 0;
-  border: 0;
   border-radius: 0;
-  width: 10em;
+  width: 250px;
+  border: 1px solid @high;
+}
+
+.ui-datepicker select {
+  line-height: 1em !important;
+  padding: 3px;
+  height: 26px;
 }
 
 .ui-datepicker .ui-datepicker-header {
@@ -11,11 +22,12 @@
   background: @highComp;
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid @high;
+  padding: 5px 0 5px 0;
 }
 
 .ui-datepicker select.ui-datepicker-year {
   width: 36%;
+  margin-left: 5px;
 }
 
 .ui-datepicker .ui-datepicker-calendar {
@@ -26,11 +38,18 @@
 .ui-datepicker .ui-datepicker-title,
 .ui-datepicker th {
   font-weight: normal;
-  font-size: @fontSize;
+}
+
+.ui-datepicker td {
+  line-height: 1.2em;
 }
 
 .ui-datepicker .ui-state-default {
   background: @highComp;
+}
+
+.ui-datepicker .ui-state-hover {
+  border-color: @high;
 }
 
 .ui-datepicker .ui-state-highlight {
@@ -48,8 +67,37 @@
   background-color: @highComp;
 }
 
-.ui-datepicker .ui-icon-circle-triangle-e {
-  .nextIcon;
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  margin-top: 4px;
+  border: 0;
+  border-radius: 0;
+  top: 0px;
+  cursor: pointer;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+  left: 0px;
+}
+
+.ui-datepicker .ui-datepicker-next {
+  right: 0px;
+}
+
+.ui-datepicker .ui-datepicker-prev:hover,
+.ui-datepicker .ui-datepicker-next:hover {
+  background: transparent;
+}
+
+.ui-datepicker .ui-icon {
   background-size: 16px;
   background-position: 0px 0px;
+}
+
+.ui-datepicker .ui-icon-circle-triangle-w {
+  .prevIcon;
+}
+
+.ui-datepicker .ui-icon-circle-triangle-e {
+  .nextIcon;
 }
