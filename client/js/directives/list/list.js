@@ -1,9 +1,9 @@
 (function (Math, Number, COMPONENTS) {
     'use strict';
     COMPONENTS.directive('list', ['$rootScope', '$location', '$compile', '$timeout', 'rowService', 'listService', 'listSelectService',
-    'roleService', 'sessionService', 'objectService', 'tooltipService',
+    'roleService', 'sessionService', 'objectService', 'tooltipService', 'arrayService',
     function ($rootScope, $location, $compile, $timeout, rowService, listService, listSelectService,
-              roleService, sessionService, objectService, tooltipService) {
+              roleService, sessionService, objectService, tooltipService, arrayService) {
         return {
             restrict: 'A',
             replace: true,
@@ -81,6 +81,7 @@
 
                 scope.deleteItem = function (id) {
                     listSelectService.dropFromSelectedList(scope, id);
+                    deleteItemFromList(id);
                     tooltipService.hide();
                     scope.onDelete({$id: id});
                 };
@@ -129,6 +130,14 @@
                     var rowSlots     = rowService.getMaxSlots(),
                         itemsPerFile = Math.floor(rowSlots / scope.colWidth);
                     return element.width() / itemsPerFile;
+                }
+
+                function deleteItemFromList(id) {
+                    scope.items.forEach(function (item, index) {
+                        if(item._id === id) {
+                            arrayService.delete(scope.items, index);
+                        }
+                    });
                 }
                 /** End of private methods **/
             }
