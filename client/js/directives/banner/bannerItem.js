@@ -28,6 +28,9 @@
                     defineListeners();
                 }
 
+                scope.isImage   = function() { return scope.item.type === 'image' };
+                scope.isText    = function() { return scope.item.type === 'text' };
+
                 /** Private methods **/
                 function defineListeners() {
                     setDraggable();
@@ -83,10 +86,8 @@
 
                 function onEditItemFn() {
                     keepItemSelected = true;
-                    var defaultPanels = [{  title: 'Select media', type: 'selectMedia',
-                                            config: { editSize: false } }];
                     scope.internalData = {};
-                    scope.panels = defaultPanels;
+                    scope.panels = getEditPanels();
                     scope.onChange = function(model, id, selectedMedia) {
                         scope.item.value = mediaService.getDownloadUrl(selectedMedia);
                     };
@@ -150,6 +151,19 @@
                     if(scope.onItemChange) {
                         scope.onItemChange();
                     }
+                }
+
+                function getEditPanels() {
+                    var editPanels;
+                    if(scope.isImage()) {
+                        editPanels = [{ title: 'Select media', type: 'selectMedia',
+                                        config: { editSize: false } }]
+                    } else if(scope.isText()) {
+                        editPanels = [{ title: 'Edit text', type: 'selectMedia',
+                                        config: { editSize: false } }]
+                        console.log("WIRE HERE WITH CONTENT EDIT AND EDIT STYLES!!!");
+                    }
+                    return editPanels;
                 }
                 /** End of private methods **/
             }
