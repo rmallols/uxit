@@ -42,9 +42,10 @@
                     }
 
                     function compileTemplate(src, view) {
-                        var templateId = src + sS.capitalize(view) + '.html',
-                            appElm = $($templateCache.get(templateId));
+                        var templateId  = src + sS.capitalize(view),
+                            appElm      = $($templateCache.get(src + sS.capitalize(view)  + '.html'));
                         element.html(appElm);
+                        element.addClass(templateId);
                         $compile(appElm)(childScope);
                         return appElm;
                     }

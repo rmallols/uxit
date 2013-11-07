@@ -1,4 +1,4 @@
-angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'bannerAppView.html', 'contentListAppAdd.html', 'contentListAppEdit.html', 'contentListAppHelp.html', 'contentListAppView.html', 'iframeAppEdit.html', 'iframeAppHelp.html', 'iframeAppView.html', 'imageAppEdit.html', 'imageAppHelp.html', 'imageAppView.html', 'languageSelectAppEdit.html', 'languageSelectAppHelp.html', 'languageSelectAppView.html', 'linksAppEdit.html', 'linksAppHelp.html', 'linksAppView.html', 'loginAppEdit.html', 'loginAppHelp.html', 'loginAppView.html', 'mapAppEdit.html', 'mapAppHelp.html', 'mapAppView.html', 'mediaCarouselAppEdit.html', 'mediaCarouselAppHelp.html', 'mediaCarouselAppSelectMedia.html', 'mediaCarouselAppView.html', 'mediaListAppAdd.html', 'mediaListAppEdit.html', 'mediaListAppHelp.html', 'mediaListAppView.html', 'menuAppEdit.html', 'menuAppHelp.html', 'menuAppView.html', 'portalsAdminAppCreateDb.html', 'portalsAdminAppEditDb.html', 'portalsAdminAppHelp.html', 'portalsAdminAppView.html', 'example.html', 'slidesAppEdit.html', 'slidesAppHelp.html', 'slidesAppView.html', 'socialAppEdit.html', 'socialAppHelp.html', 'socialAppView.html', 'staticContentAppAdd.html', 'staticContentAppEdit.html', 'staticContentAppHelp.html', 'staticContentAppSelectContent.html', 'staticContentAppView.html', 'userListAppAdd.html', 'userListAppEdit.html', 'userListAppHelp.html', 'userListAppView.html', 'videoAppEdit.html', 'videoAppHelp.html', 'videoAppView.html', 'webGlAppEdit.html', 'webGlAppHelp.html', 'webGlAppView.html', 'addAppPanel.html', 'adminPanel.html', 'createMedia.html', 'edit.html', 'editAppGeneral.html', 'editAppStyles.html', 'editBox.html', 'editContent.html', 'editContentList.html', 'editCurrentUser.html', 'editGeneral.html', 'editMedia.html', 'editMediaList.html', 'editNotifications.html', 'editPages.html', 'editStyles.html', 'editTag.html', 'editTagList.html', 'editUser.html', 'editUserList.html', 'stats.html', 'styles.html', 'app.html', 'appHeader.html', 'bannerCanvas.html', 'bannerItem.html', 'comment.html', 'comments.html', 'contentEditable.html', 'richContent.html', 'selectMedia.html', 'fileUploader.html', 'password.html', 'rating.html', 'contentList.html', 'list.html', 'listDb.html', 'mediaList.html', 'tagList.html', 'userList.html', 'login.html', 'mediaPicker.html', 'pages.html', 'errorPage.html', 'loginPage.html', 'portalPage.html', 'listActions.html', 'listEdit.html']);
+angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'bannerAppView.html', 'contentListAppAdd.html', 'contentListAppEdit.html', 'contentListAppHelp.html', 'contentListAppView.html', 'iframeAppEdit.html', 'iframeAppHelp.html', 'iframeAppView.html', 'imageAppEdit.html', 'imageAppHelp.html', 'imageAppView.html', 'languageSelectAppEdit.html', 'languageSelectAppHelp.html', 'languageSelectAppView.html', 'linksAppEdit.html', 'linksAppHelp.html', 'linksAppView.html', 'loginAppEdit.html', 'loginAppHelp.html', 'loginAppView.html', 'mapAppEdit.html', 'mapAppHelp.html', 'mapAppView.html', 'mediaCarouselAppEdit.html', 'mediaCarouselAppHelp.html', 'mediaCarouselAppSelectMedia.html', 'mediaCarouselAppView.html', 'mediaListAppAdd.html', 'mediaListAppEdit.html', 'mediaListAppHelp.html', 'mediaListAppView.html', 'menuAppEdit.html', 'menuAppHelp.html', 'menuAppView.html', 'portalsAdminAppCreateDb.html', 'portalsAdminAppEditDb.html', 'portalsAdminAppHelp.html', 'portalsAdminAppView.html', 'example.html', 'slidesAppEdit.html', 'slidesAppEditSlide.html', 'slidesAppHelp.html', 'slidesAppView.html', 'socialAppEdit.html', 'socialAppHelp.html', 'socialAppView.html', 'staticContentAppAdd.html', 'staticContentAppEdit.html', 'staticContentAppHelp.html', 'staticContentAppSelectContent.html', 'staticContentAppView.html', 'userListAppAdd.html', 'userListAppEdit.html', 'userListAppHelp.html', 'userListAppView.html', 'videoAppEdit.html', 'videoAppHelp.html', 'videoAppView.html', 'webGlAppEdit.html', 'webGlAppHelp.html', 'webGlAppView.html', 'addAppPanel.html', 'adminPanel.html', 'createMedia.html', 'edit.html', 'editAppGeneral.html', 'editAppStyles.html', 'editBox.html', 'editContent.html', 'editContentList.html', 'editCurrentUser.html', 'editGeneral.html', 'editMedia.html', 'editMediaList.html', 'editNotifications.html', 'editPages.html', 'editStyles.html', 'editTag.html', 'editTagList.html', 'editUser.html', 'editUserList.html', 'stats.html', 'styles.html', 'app.html', 'appHeader.html', 'bannerCanvas.html', 'bannerItem.html', 'comment.html', 'comments.html', 'contentEditable.html', 'richContent.html', 'selectMedia.html', 'fileUploader.html', 'password.html', 'rating.html', 'contentList.html', 'list.html', 'listDb.html', 'mediaList.html', 'tagList.html', 'userList.html', 'login.html', 'mediaPicker.html', 'pages.html', 'errorPage.html', 'loginPage.html', 'portalPage.html', 'listActions.html', 'listEdit.html']);
 
 angular.module("bannerAppEdit.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerAppEdit.html",
@@ -445,7 +445,20 @@ angular.module("example.html", []).run(["$templateCache", function($templateCach
 angular.module("slidesAppEdit.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("slidesAppEdit.html",
     "<div>\n" +
-    "    Hello edit!\n" +
+    "    <!--<div list=\"userList\" collection=\"collection\" config=\"config\" transcluded-data=\"transcludedData\"\n" +
+    "         template=\"template\" internal-data=\"internalData\" on-edit-panels=\"onEditPanels\"\n" +
+    "         on-create=\"onCreate($item)\" on-delete=\"onDelete($id)\"></div>-->\n" +
+    "    <div list=\"model.slides\" config=\"config\" transcluded-data=\"transcludedData\"\n" +
+    "         internal-data=\"internalData\" on-create-panels=\"onCreatePanels\" on-edit-panels=\"onEditPanels\"\n" +
+    "         template=\"template\" on-create=\"onCreate($item)\" on-delete=\"onDelete($id)\"></div>\n" +
+    "</div>");
+}]);
+
+angular.module("slidesAppEditSlide.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("slidesAppEditSlide.html",
+    "<div>\n" +
+    "    <!--<div content-editable ng-model=\"model.content\" i18n-db-input></div>-->\n" +
+    "    Esto para el create: <div content-editable ng-model=\"internalData.data.content\" i18n-db-input></div>\n" +
     "</div>");
 }]);
 
@@ -460,7 +473,7 @@ angular.module("slidesAppView.html", []).run(["$templateCache", function($templa
     "    <div class=\"reveal\">\n" +
     "        <div class=\"slides\">\n" +
     "            <section ng-repeat=\"slide in model.slides\" ng-show=\"show\">\n" +
-    "                <div ng-bind-html-unsafe=\"slide.content\"></div>\n" +
+    "                <label i18n-db=\"slide.content\"></label>\n" +
     "            </section>\n" +
     "        </div>\n" +
     "    </div>\n" +
@@ -784,7 +797,7 @@ angular.module("editAppStyles.html", []).run(["$templateCache", function($templa
 
 angular.module("editBox.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("editBox.html",
-    "<div id=\"editBox{{target.id}}\" class=\"editBox cf\" arrowPos=\"{{arrowPos}}\" ng-style=\"getStyles()\" type=\"{{target.type}}\">\n" +
+    "<div id=\"{{target.id}}\" class=\"editBox cf\" arrowPos=\"{{arrowPos}}\" ng-style=\"getStyles()\" type=\"{{target.type}}\">\n" +
     "    <div class=\"content cf\">\n" +
     "        <edit ng-model=\"model\" internal-data=\"internalData\" panels=\"panels\" active-tab=\"activeTab\"\n" +
     "              on-save=\"save()\" on-change=\"change()\" on-cancel=\"cancel()\" limit-layer-height=\"true\"></edit>\n" +
@@ -1341,7 +1354,7 @@ angular.module("contentList.html", []).run(["$templateCache", function($template
 
 angular.module("list.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("list.html",
-    "<div ng-class=\"getWrapperClass()\" class=\"scrollable\">\n" +
+    "<div ng-class=\"getWrapperClass()\" class=\"\">\n" +
     "    <div class=\"searchArea\" ng-show=\"isSearchable() && !detailId\">\n" +
     "        <label i18n=\"list.search\"></label>\n" +
     "        <input type=\"text\" ng-model=\"searchText\" ux-keyup=\"executeSearch()\"/>\n" +
@@ -1512,7 +1525,6 @@ angular.module("loginPage.html", []).run(["$templateCache", function($templateCa
 
 angular.module("portalPage.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("portalPage.html",
-    "<input date ng-model=\"user.birthDate\" mandatory />\n" +
     "<div global-msg></div>\n" +
     "<admin-panel ux-show=\"isAdmin()\"></admin-panel>\n" +
     "<pages></pages>");

@@ -76,7 +76,7 @@
         function hideEditBox(textBoxId) {
             if (!isHideActionBlocked) { //Hide the edit box if the mutex is not enabled
                 if (textBoxId) {
-                    $('#editBox' + textBoxId).remove();
+                    $('#' + textBoxId).remove();
                 } else {
                     $('.editBox').remove();
                 }

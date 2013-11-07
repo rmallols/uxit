@@ -22,6 +22,7 @@
                         data: {}
                     };
                     scope.onSave = function() {
+                        console.log("DEVOLVIENDO!", scope.internalData.data);
                         scope.onCreate({$item: scope.internalData.data});
                     };
                     editBoxUtilsService.showEditBox(scope, element, element);

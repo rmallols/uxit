@@ -1,8 +1,9 @@
 (function () {
     'use strict';
 
-    COMPONENTS.factory('listSelectService', ['$rootScope', '$location', 'listService', 'editBoxUtilsService', 'arrayService',
-    function ($rootScope, $location, listService, editBoxUtilsService, arrayService) {
+    COMPONENTS.factory('listSelectService', ['$rootScope', '$location', 'listService',
+    'editBoxUtilsService', 'arrayService', 'stdService',
+    function ($rootScope, $location, listService, editBoxUtilsService, arrayService, stdService) {
 
         /**
          * Action to execute whenever an item is clicked
@@ -15,6 +16,7 @@
          * @param {boolean} editOnSelect    The flag to identify if the item has to be edited while selecting or not
          */
         function clickOnItem(listScope, element, item, $index, $event, editOnSelect) {
+            checkItemId(item);
             if (listScope.isSelectable() || listScope.isEditable()) {
                 handleDefaultSelectionMechanism(listScope, element, item, editOnSelect, $event);
             } else {
@@ -30,6 +32,7 @@
          * @param {object}  item        The model of the element that is going to be selected
          */
         function selectItem(listScope, item) {
+            checkItemId(item);
             if (listScope.isMultiSelectable()) {
                 if (!listScope.selectedIds) { listScope.selectedIds = []; }
                 if (!item.isSelected) { //Select the item if it wasn't selected before
@@ -56,6 +59,7 @@
          * @param {object}  item        The model of the element that is going to be unselected
          */
         function unselectItem(listScope, item) {
+            checkItemId(item);
             if (listScope.isMultiSelectable()) {
                 if (item.isSelected) {
                     dropFromSelectedList(listScope, item._id);
@@ -84,6 +88,12 @@
         }
 
         /** Private methods **/
+        function checkItemId(item) {
+            if(!item._id) {
+                stdService.error('The matched element has to contain an _id attribute');
+            }
+        }
+
         function handleDefaultSelectionMechanism(listScope, element, item, editOnSelect, $event) {
             if (!item.isSelected) {
                 listScope.select(item);
@@ -91,7 +101,7 @@
                 //Close edit box it the user click has been outside of it
             } else if (!$event || !editBoxUtilsService.isEditBoxClicked($event)) {
                 listScope.unselect(item);
-                if (listScope.isEditable()) { hideEditBox(); }
+                if (listScope.isEditable()) { hideSiblingEditBox(); }
             }
         }
 
@@ -119,7 +129,7 @@
 
         function showEditBox(listScope, element, item) {
             var targetObj = $('#' + item._id + ' > *:first-child', element);
-            hideEditBox(); //Hide any other previous instance of the edit box component
+            hideSiblingEditBox(element); //Hide any other previous instance of the edit box component
             listScope.panels = listScope.onEditPanels;
             listScope.model = item;
             listScope.onSave = function() { listScope.onEdit({$item: listScope.model}); };
@@ -127,8 +137,15 @@
             editBoxUtilsService.showEditBox(listScope, targetObj, targetObj);
         }
 
-        function hideEditBox() {
-            editBoxUtilsService.hideEditBox(null);
+        function hideSiblingEditBox(element) {
+            var parentEditBox, siblingEditBoxId;
+            if(element) {
+                parentEditBox = element.closest('.editBox');
+                siblingEditBoxId = $('.editBox', parentEditBox).attr('id');
+                if(siblingEditBoxId) {
+                    editBoxUtilsService.hideEditBox(siblingEditBoxId);
+                }
+            }
         }
         /** End of private methods **/
 

@@ -105,8 +105,15 @@
     background: inherit !important;
 }
 
-.editBox .content.level1 .active:not(button) {
+.editBox .content.level1 .active:not(button),
+.editBox .content.level1 .active h1,
+.editBox .content.level1 .active h2,
+.editBox .content.level1 .active h3,
+.editBox .content.level1 .active h4,
+.editBox .content.level1 .active h5,
+.editBox .content.level1 .active h6 {
   background-color: @highComp !important;
+  color: @high !important;
 }
 
 .editBox.child[arrowPos="top"]:after { border-bottom-color: @highDarken !important; }

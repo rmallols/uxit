@@ -1,15 +1,18 @@
 (function () {
     'use strict';
-    COMPONENTS.service('slidesAppService', [function () {
+    COMPONENTS.service('slidesAppService', ['timerService', function (timerService) {
 
         function view(scope) {
             var appPath = '/client/apps/slidesApp/';
 
             scope.model.slides = [
-                { content:  '<h1>Hello slides app!</h1>' +
+                {
+                    _id: timerService.getRandomNumber(),
+                    content:  '<h1>Hello slides app!</h1>' +
                             '<h3>Welcome to the fancy app to show presentations</h3>(In progress...)'
-                },
-                { content: '<h3>Discramiler</h3>' +
+                }, {
+                    _id: timerService.getRandomNumber(),
+                    content: '<h3>Discramiler</h3>' +
                             'This is a harcoded example about how to add cool stuff with small effort'
                 }
             ];
@@ -76,8 +79,32 @@
             /** End of private methods **/
         }
 
+        function edit(scope) {
+            console.log("le hemos quitado la clase 'scrollable' al list.html");
+            console.log("HAY QUE NORMALIZAR COMO SE ENVIAN LOS ATRIBUTOS!!");
+            //scope.template = '<div ng-bind-html-unsafe="item.content"></div>';
+            scope.collection = 'slides';
+            scope.template = '<label i18n-db="item.content"></label>';
+            scope.onCreatePanels = [{ title: 'Edit database', type: 'createDb',
+                                    appBridge: true, src:'slidesApp', view:'editSlide' }];
+            scope.onEditPanels = [{ title: 'Edit slide', type: 'slidesAppEditSlide',
+                                    appBridge: true, src:'slidesApp', view:'editSlide'}];
+            scope.config = {
+                creatable: true,
+                editable: true,
+                multiSelectable: true
+            };
+            scope.onCreate = function($item) {
+                scope.model.slides.push({
+                    _id     : timerService.getRandomNumber(),
+                    content : $item.content
+                });
+            }
+        }
+
         return {
-            view: view
+            view: view,
+            edit: edit
         };
     }]);
 })();

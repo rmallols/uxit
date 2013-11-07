@@ -2,7 +2,7 @@
     <div class="reveal">
         <div class="slides">
             <section ng-repeat="slide in model.slides" ng-show="show">
-                <div ng-bind-html-unsafe="slide.content"></div>
+                <label i18n-db="slide.content"></label>
             </section>
         </div>
     </div>
