@@ -313,7 +313,10 @@
         "version": "1.0",
         "editPanels": null,
         "noCustomEditPanel": false,
-        "defaultModel": { "slides": [ { "content": "Hello!" }, { "content": "Slides!" } ] },
+        "defaultModel": { "slides": [
+            { "_id": 1383849853091, "content": "<div id='heading1' class='heading'>Hello!</div>This is the first example slide" },
+            { "_id": 1383849879252, "content": "<div id='heading1' class='heading'>Slides!</div>This is the second example slide" }
+        ]},
         "avgRating": ""
     },
     {

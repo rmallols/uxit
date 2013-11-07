@@ -5,7 +5,7 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="72">
+          <list size="73">
             <item index="0" class="java.lang.String" itemvalue="ng-app" />
             <item index="1" class="java.lang.String" itemvalue="ng-view" />
             <item index="2" class="java.lang.String" itemvalue="i18n" />
@@ -78,6 +78,7 @@
             <item index="69" class="java.lang.String" itemvalue="on-search" />
             <item index="70" class="java.lang.String" itemvalue="db-source" />
             <item index="71" class="java.lang.String" itemvalue="ng-hide" />
+            <item index="72" class="java.lang.String" itemvalue="i18n-db" />
           </list>
         </value>
       </option>

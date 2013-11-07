@@ -10,10 +10,10 @@
   overflow: hidden;
 }
 
-[list] .item.listView:hover {
-  background: @highCompDarken;
-  cursor:pointer;
-}
+[list] .item.listView:hover { background: @highCompDarken; cursor:pointer; }
+
+.editBox [list] .item.listView:hover { color: @fontColor; }
+.editBox [list] .item.listView:hover .heading, .editBox [list] .item.listView:hover a { color: @high; }
 
 [list].selectable .item.active,
 [list].editable .item.active{

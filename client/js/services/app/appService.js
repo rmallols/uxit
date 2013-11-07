@@ -94,6 +94,16 @@
             portalService.updatePortal(null);
         }
 
+        /**
+         * Gets the pointer to the DOM element where the root node of the app is from a given element
+         *
+         * @param   {object}    elem    The pointer to the DOM element of the root node of the app
+         * @returns {object}            The pointer to the DOM element of an internal node of the app
+         */
+        function getAppRootElem(elem) {
+            return elem.closest('.app');
+        }
+
         /** Private methods **/
         function enableRealFullscreen(element, onResize) {
             $('html').addClass('appRealFullscreen'); //Allow CSS setup from ancestor DOM elements
@@ -163,11 +173,12 @@
         /** End of private methods **/
 
         return {
-            enableFullscreen: enableFullscreen,
-            disableFullscreen: disableFullscreen,
-            isFullscreen: isFullscreen,
+            enableFullscreen    : enableFullscreen,
+            disableFullscreen   : disableFullscreen,
+            isFullscreen        : isFullscreen,
             triggerOnResizeEvent: triggerOnResizeEvent,
-            deleteApp: deleteApp
+            deleteApp           : deleteApp,
+            getAppRootElem      : getAppRootElem
         };
     }]);
 })();

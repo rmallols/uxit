@@ -122,4 +122,25 @@ describe('app service', function () {
             expect(appService.isFullscreen()).toBe(false);
         });
     });
+
+    describe('getAppRootElem', function () {
+
+        it('should return the pointer to the root element of an app - direct child', function () {
+            var childElem   = $('[app-header]', appDirective),
+                rootElem    = appService.getAppRootElem(childElem);
+            expect(rootElem.hasClass(data.type)).toBe(true);
+        });
+
+        it('should return the pointer to the root element of an app - non direct child', function () {
+            var childElem   = $('.removeIcon', appDirective),
+                rootElem    = appService.getAppRootElem(childElem);
+            expect(rootElem.hasClass(data.type)).toBe(true);
+        });
+
+        it('should not return the pointer to the root element of an app - element dont\'t exist', function () {
+            var childElem   = $('.fake-selector', appDirective),
+                rootElem    = appService.getAppRootElem(childElem);
+            expect(rootElem.length).toBe(0);
+        });
+    });
 });
