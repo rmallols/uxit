@@ -8,7 +8,8 @@
             scope: {
                 internalData    : '=',
                 config          : '=',
-                onChange        : '='
+                onChange        : '&',
+                onLayer         : '='
             },
             link: function link(scope) {
 
@@ -20,11 +21,13 @@
                 ];
 
                 scope.propagateChanges = function (media) {
-                    if (scope.onChange) { scope.onChange(media); }
+                    console.log("SENDING!", media, scope.onLayer)
+                    scope.onLayer.change(media);
+                    //if (scope.onChange) { scope.onChange({$data: media}); }
                 };
 
-                scope.onMediaChange = function(media) {
-                    scope.propagateChanges(media);
+                scope.onMediaChange = function($media) {
+                    scope.propagateChanges($media);
                 };
             }
         };

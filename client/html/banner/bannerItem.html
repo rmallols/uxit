@@ -1,8 +1,5 @@
 <div id="{{item.id}}" class="bannerItem" ng-class="{readOnly: readOnly}">
     <button class="edit editIcon" ng-click="editItem()"></button>
-    <div class="item text" ux-show="isText()">
-        <div>{{item.value}}</div>
-    </div>
-    <img class="item image" ux-show="isImage()" ng-src="{{item.value}}" />
+    <div ux-transclude="template"></div>
     <input type="text" class="selectHandler" />
 </div>

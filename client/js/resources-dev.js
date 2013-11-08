@@ -148,6 +148,8 @@ window.speed = 150;
     getScript(directivePath + '/contentEditable/selectMedia.js');
     getScript(directivePath + '/banner/bannerCanvas.js');
     getScript(directivePath + '/banner/bannerItem.js');
+    getScript(directivePath + '/banner/types/bannerTextService.js');
+    getScript(directivePath + '/banner/types/bannerImageService.js');
     getScript(directivePath + '/input/autoComplete.js');
     getScript(directivePath + '/input/fileUploader.js');
     getScript(directivePath + '/input/rating.js');

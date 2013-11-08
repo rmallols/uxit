@@ -9,8 +9,8 @@ module.exports = function(grunt) {
         clean: ['<%= min %>js.min.js', '<%= min %>css.min.css', '<%= app_js %>/resources-<%= pkg.version %>.js'],
         jshint: {
             all: ['<%= app_js %>*.js', '<%= app_js %>controllers/*.js',
-                '<%= app_js %>directives/*.js', '<%= app_js %>directives/*/*.js',
-                '<%= app_js %>services/*.js', '<%= app_js %>services/*/*.js'],
+                '<%= app_js %>directives/*.js', '<%= app_js %>directives/**/*.js',
+                '<%= app_js %>services/*.js', '<%= app_js %>services/**/*.js'],
             options: {
                 '-W014': false, //Bad line breaking,
                 '-W060': false //Document.write can be a form of eval (enable once we have a script loader)

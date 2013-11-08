@@ -164,7 +164,9 @@
 
                     function createEditLayer(panel) {
                         var htmlElm, directiveElement;
-                        panel.onLayer = {};
+                        if(!panel.onLayer) {
+                            panel.onLayer = {};
+                        }
                         panel.onLayer.save = function(callback) { callback(); };
                         htmlElm = getEditLayerHtmlElm(panel, i);
                         directiveElement = $compile(htmlElm)(scope);
@@ -178,7 +180,7 @@
                     function getEditLayerHtmlElm(panel, index) {
                         var directiveName, htmlElm;
                         htmlElm = $('<div id="' + panel.type + scope.$id + '" ' +
-                                        'model="model" internal-data="internalData" ' +
+                                        'new-model="panels[' + index + '].newModel" model="model" internal-data="internalData" ' +
                                         'on-layer="panels[' + index + '].onLayer" on-cancel="onCancel()" ' +
                                         'on-change="onChange()" ux-show="isLayerShown(' + index + ')" ' +
                                         'persist="true" ng-style="getLayerHeight()"' +

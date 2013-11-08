@@ -62,7 +62,7 @@
                         scope.onUpload(file);
                     }
                     if(scope.onMediaChange) {
-                        scope.onMediaChange(file);
+                        scope.onMediaChange({$media: file});
                     }
                 }
                 /** End of private methods **/

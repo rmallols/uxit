@@ -28,6 +28,7 @@
                     scope.model = [];
                 }
 
+                scope.overflow = { visible: false };
                 scope.items = {
                     index: {},
                     data: scope.model

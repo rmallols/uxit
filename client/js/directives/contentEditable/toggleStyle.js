@@ -4,7 +4,7 @@
         return {
             restrict: 'A',
             replace: true,
-            template: '<button ng-click="toggleState()" ng-class="{active:isActive()}" on-change="onChange($data)"></button>',
+            template: '<button ng-click="toggleState()" ng-class="{active:isActive()}" on-change="propagateChanges()"></button>',
             scope: {
                 model       : '=ngModel',
                 onChange    : '&'

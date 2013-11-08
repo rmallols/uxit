@@ -4,7 +4,7 @@
             <label i18n="selectMedia.source"></label>
         </div>
         <div class="columns large-15">
-            <media-picker ng-model="internalData.updatedMedia" multiple="false" on-change="onMediaChange()"></media-picker>
+            <media-picker ng-model="internalData.updatedMedia" multiple="false" on-change="onMediaChange($media)"></media-picker>
         </div>
     </div>
     <div ng-hide="config.editSize==false">

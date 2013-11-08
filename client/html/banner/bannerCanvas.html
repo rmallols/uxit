@@ -3,8 +3,8 @@
         <button class="addImage addIcon" ng-click="addImage()">Add image</button>
         <button class="addText addIcon" ng-click="addText()">Add text</button>
     </div>
-    <div class="grid" ng-class="{overflowVisible: overflowVisible}">
+    <div class="grid" ng-class="{overflowVisible: overflow.visible}">
         <div banner-item ng-repeat="item in items.data" data="item" on-change="onItemChange()"
-             overflow-visible="overflowVisible" read-only="isReadOnly()"></div>
+             overflow="overflow" read-only="isReadOnly()"></div>
     </div>
 </div>

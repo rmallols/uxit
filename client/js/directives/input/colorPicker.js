@@ -47,6 +47,7 @@ COMPONENTS.directive('colorPicker', ['styleService', 'i18nService', function (st
                     }
                     scope.model = hex;
                     scope.$apply();
+                    if (scope.onChange) { scope.onChange(); }
                 }
             });
 
@@ -63,12 +64,6 @@ COMPONENTS.directive('colorPicker', ['styleService', 'i18nService', function (st
                     try { inputElm.minicolors('value', newVal); }
                     catch (ex) {}
                 }
-            });
-
-            inputElm.blur(function () {
-                //The onChange event won't be triggered inmediatelly ('change' event of the colorPicker)
-                //to prevent problems with the focus of the component
-                if (scope.onChange) { scope.onChange(); }
             });
 
             scope.getI18nPlaceholder = function () {

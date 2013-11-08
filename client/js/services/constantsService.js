@@ -39,7 +39,8 @@
                 externalLink: 'externalLink'
             },
             blurOpacity     : 0.3,
-            keyboardInterval: 100 //minimum time between different keyboard events
+            keyboardInterval: 100, //minimum time between different keyboard events
+            defaultFontSize : 16
         };
     }]);
 })();

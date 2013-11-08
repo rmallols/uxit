@@ -1,37 +1,55 @@
 (function() {
-    COMPONENTS.directive('bannerItem', ['$rootScope', '$timeout', 'mediaService', 'editBoxUtilsService', 'domService',
-    function ($rootScope, $timeout, mediaService, editBoxUtilsService, domService) {
+    COMPONENTS.directive('bannerItem', ['$rootScope', '$timeout', '$injector', 'editBoxUtilsService',
+    'domService', 'stringService',
+    function ($rootScope, $timeout, $injector, editBoxUtilsService, domService, stringService) {
         'use strict';
         return {
             restrict: 'A',
             replace: true,
             scope: {
                 item: '=data',
-                overflowVisible: '=',
+                overflow: '=',
                 onItemChange: '&onChange',
                 readOnly: '='
             },
             templateUrl: 'bannerItem.html',
+            controller: function controller() {
+
+            },
             link: function link(scope, element) {
 
-                var inputElm = $(' > input.selectHandler', element),
+                var itemServiceId = 'banner' + stringService.capitalize(scope.item.type) + 'Service',
+                    itemService = $injector.get(itemServiceId),
+                    inputElm = $(' > input.selectHandler', element),
                     editButtonElm = $(' > button.edit', element),
                     keepItemSelected = false,
                     borderWidth = domService.getObjBorderWidth(element),
                     horizontalBorderWidth = borderWidth.left + borderWidth.right,
                     verticalBorderWidth = borderWidth.top + borderWidth.bottom,
-                    originalBoxSize;
+                    gridSize = 50,
+                    oldBoxSize;
 
+                scope.template = getItemTemplate();
+                initItemModel();
                 setDomCoordinatesFromModel();
 
                 if(!scope.readOnly) {
                     defineListeners();
                 }
 
-                scope.isImage   = function() { return scope.item.type === 'image' };
-                scope.isText    = function() { return scope.item.type === 'text' };
-
                 /** Private methods **/
+                function getItemTemplate() {
+                    var template = $(itemService.getTemplate());
+                    template.addClass('item ' + scope.item.type);
+                    return template;
+                }
+
+                function initItemModel() {
+                    if(itemService.initItemModel) {
+                        itemService.initItemModel(scope.item);
+                    }
+                }
+
                 function defineListeners() {
                     setDraggable();
                     setResizable();
@@ -43,7 +61,7 @@
 
                 function setDraggable() {
                     element.draggable({
-                        grid: [ 50,50 ],
+                        grid: [ gridSize,gridSize ],
                         start: function() {
                             select();
                         },
@@ -54,26 +72,25 @@
                     });
                 }
 
+                function removeDraggable() {
+                    element.draggable( "destroy" );
+                }
+
                 function setResizable() {
-                    originalBoxSize = getBoxSize(); //Calculate the original box size once the DOM is ready
+                    oldBoxSize = getBoxSize(); //Calculate the original box size once the DOM is ready
                     element.resizable({
                         //aspectRatio: true,
-                        grid: 50,
+                        grid: gridSize,
                         handles: 'ne, nw, se, sw',
-                        resize: function() {
-                            var newBoxSize  = getBoxSize(),
-                                newFontSize = (newBoxSize / originalBoxSize) * 100;
-                            element.css('font-size', newFontSize + '%');
-                        },
-                        stop: function() {
-                            setModelCoordinatesFromDom(); //Update the model before propagating the changes
-                            propagateChanges();
-                        }
+                        resize: onResizeItemFn,
+                        stop: onStopResizeItemFn
                     });
                 }
 
-                function onClickFn() {
-                    select();
+                function onClickFn(e) {
+                    if(!editBoxUtilsService.isEditBoxClicked(e)) {
+                        select();
+                    }
                 }
 
                 function onFocusFn() {
@@ -88,9 +105,6 @@
                     keepItemSelected = true;
                     scope.internalData = {};
                     scope.panels = getEditPanels();
-                    scope.onChange = function(model, id, selectedMedia) {
-                        scope.item.value = mediaService.getDownloadUrl(selectedMedia);
-                    };
                     scope.onSave = function() {
                         propagateChanges();
                     };
@@ -98,12 +112,42 @@
                         keepItemSelected = false;
                         unselect();
                         hideOverflow();
+                        setDraggable(); //Enable dragging again once the edit box is closed
+
+
+                        console.log("ESTO ESTÁ DUPLICADO DE onStopResizeItemFn, NORMALIZARLO!!!")
+                        setModelCoordinatesFromDom(); //Update the model before propagating the changes
+                        //Here, the model is updated, but its still necessary to update the DOM
+                        //in order to get the changes refreshed
+                        setDomCoordinatesFromModel();
+                        propagateChanges();
                     };
                     showOverflow();
+                    //Avoid dragging while the edit box is opened to avoid problems with content editable
+                    removeDraggable();
                     editBoxUtilsService.showEditBox(scope, editButtonElm, editButtonElm);
                 }
 
+                function onResizeItemFn() {
+                    var newBoxSize;
+                    if(itemService.onResizeItem) {
+                        newBoxSize  = getBoxSize();
+                        itemService.onResizeItem(scope.template, scope.item, newBoxSize, oldBoxSize);
+                        oldBoxSize = getBoxSize(); //Recalculate the box size
+                        scope.$apply();
+                    }
+                }
+
+                function onStopResizeItemFn() {
+                    setModelCoordinatesFromDom(); //Update the model before propagating the changes
+                    //Here, the model is updated, but its still necessary to update the DOM
+                    //in order to get the changes refreshed
+                    setDomCoordinatesFromModel();
+                    propagateChanges();
+                }
+
                 function setDomCoordinatesFromModel() {
+                    console.log("setting!", scope.item.size.width);
                     element.css('width', scope.item.size.width - horizontalBorderWidth);
                     element.css('height', scope.item.size.height - verticalBorderWidth);
                     element.css('top', scope.item.position.top);
@@ -111,13 +155,18 @@
                 }
 
                 function setModelCoordinatesFromDom() {
-                    scope.item.size.width    = parseInt(element.css('width'), 10) + horizontalBorderWidth;
-                    scope.item.size.height   = parseInt(element.css('height'), 10) + verticalBorderWidth;
+                    scope.item.size.width    = getNormalizedSize(scope.template.width());
+                    scope.item.size.height   = getNormalizedSize(scope.template.height());
                     scope.item.position.top  = parseInt(element.css('top'), 10);
                     scope.item.position.left = parseInt(element.css('left'), 10);
                     if(!$rootScope.$$phase) {
                         scope.$apply();
                     }
+                }
+
+                function getNormalizedSize(currentSize) {
+                    var heightSlots = Math.ceil(currentSize / gridSize);
+                    return heightSlots * gridSize;
                 }
 
                 function select() {
@@ -140,11 +189,11 @@
                 }
 
                 function showOverflow() {
-                    scope.overflowVisible = true;
+                    scope.overflow.visible = true;
                 }
 
                 function hideOverflow() {
-                    scope.overflowVisible = false;
+                    scope.overflow.visible = false;
                 }
 
                 function propagateChanges() {
@@ -154,16 +203,7 @@
                 }
 
                 function getEditPanels() {
-                    var editPanels;
-                    if(scope.isImage()) {
-                        editPanels = [{ title: 'Select media', type: 'selectMedia',
-                                        config: { editSize: false } }]
-                    } else if(scope.isText()) {
-                        editPanels = [{ title: 'Edit text', type: 'selectMedia',
-                                        config: { editSize: false } }]
-                        console.log("WIRE HERE WITH CONTENT EDIT AND EDIT STYLES!!!");
-                    }
-                    return editPanels;
+                    return itemService.getEditPanels(scope.item, scope.template);
                 }
                 /** End of private methods **/
             }

@@ -7,6 +7,7 @@
                 restrict: 'A',
                 replace: true,
                 scope: {
+                    newModel        : '=',
                     model           : '=',
                     internalData    : '=',
                     config          : '=',
@@ -29,6 +30,7 @@
                     /** Private methods **/
                     function inheritParentScopeModel() {
                         childScope.internalData = scope.internalData;
+                        childScope.newModel     = scope.newModel;
                         childScope.model        = scope.model;
                         childScope.onLayer      = scope.onLayer;
                         childScope.src          = scope.src;

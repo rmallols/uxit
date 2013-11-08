@@ -7,9 +7,14 @@
                 template: '=uxTransclude'
             },
             link: function link(scope, element) {
-                var newContent = $(scope.template);
-                element.html(newContent);
-                $compile(newContent)(scope.$parent);
+
+                scope.$watch('template', function(newVal) {
+                    if(newVal) {
+                        var newContent = $(newVal);
+                        element.html(newContent);
+                        $compile(newContent)(scope.$parent);
+                    }
+                });
             }
         };
     }]);
