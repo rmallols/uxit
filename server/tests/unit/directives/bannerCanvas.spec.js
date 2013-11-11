@@ -67,24 +67,24 @@ describe('bannerCanvas directive', function () {
             });
 
             it('should have a button to add images without popper privileges', function () {
-                var addImageSel = ' > .addArea > button.addImage[ng-click="addImage()"]';
+                var addImageSel = ' > .addArea > button.addImage[ng-click="addItem(\'image\')"]';
                 expect($(addImageSel, bannerCanvasDirective).length).toBe(0);
             });
 
             it('should have a button to add images with popper privileges', function () {
-                var addImageSel = ' > .addArea > button.addImage[ng-click="addImage()"]';
+                var addImageSel = ' > .addArea > button.addImage[ng-click="addItem(\'image\')"]';
                 loadUserSession($httpBackend, sessionService, 2, null);
                 compile();
                 expect($(addImageSel, bannerCanvasDirective).length).toBe(1);
             });
 
             it('should not have a button to add text without popper privileges', function () {
-                var addTextSel = ' > .addArea > button.addText[ng-click="addText()"]';
+                var addTextSel = ' > .addArea > button.addText[ng-click="addItem(\'text\')"]';
                 expect($(addTextSel, bannerCanvasDirective).length).toBe(0);
             });
 
             it('should have a button to add text with popper privileges', function () {
-                var addTextSel = ' > .addArea > button.addText[ng-click="addText()"]';
+                var addTextSel = ' > .addArea > button.addText[ng-click="addItem(\'text\')"]';
                 loadUserSession($httpBackend, sessionService, 2, null);
                 compile();
                 expect($(addTextSel, bannerCanvasDirective).length).toBe(1);

@@ -1,12 +1,13 @@
 (function () {
     'use strict';
     COMPONENTS.directive('appBridge', ['$injector', '$compile', '$timeout', '$templateCache',
-    'stringService',
-    function ($injector, $compile, $timeout, $templateCache, sS) {
+    'objectService', 'stringService',
+    function ($injector, $compile, $timeout, $templateCache, oS, sS) {
             return {
                 restrict: 'A',
                 replace: true,
                 scope: {
+                    bindings        : '=',
                     newModel        : '=',
                     model           : '=',
                     internalData    : '=',
@@ -36,6 +37,17 @@
                         childScope.src          = scope.src;
                         childScope.view         = scope.view;
                         childScope.onEvent      = scope.onEvent;
+                        setCustomBindings(childScope, scope.bindings);
+                    }
+
+                    function setCustomBindings(childScope, bindings) {
+                        var customBindingKeys;
+                        if(bindings) {
+                            customBindingKeys = oS.getRootKeys(bindings);
+                            customBindingKeys.forEach(function(customBindingKey) {
+                                childScope[customBindingKey] = scope.bindings[customBindingKey];
+                            });
+                        }
                     }
 
                     function executeServiceMethod(src, view) {

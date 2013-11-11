@@ -1,78 +1,77 @@
 (function () {
     'use strict';
 
-    COMPONENTS.factory('bannerTextService', ['constantsService', function (cS) {
+    COMPONENTS.factory('bannerTextService', ['bannerItemService', function (bIS) {
 
+        /**
+         * Gets the Html template of the text item
+         *
+         * @returns {string} The Html template of the text item
+         */
         function getTemplate() {
-            //return '<div>--{{item}}<div ng-bind-html-unsafe="item.value" ng-style="item.styles"></div></div>';
-            //return '<div ng-style="item.styles"><label i18n-db="item.value"></label></div>';
             return '<div><label i18n-db="item.value"></label></div>';
         }
 
-        function initItemModel(item) {
-              if(!item.styles) {
-                  item.styles = {};
-              }
+        /**
+         * Gets the default value of the text item
+         *
+         * @returns {string} The default value of the text item
+         */
+        function getDefaultValue() {
+            return 'menzit portal!';
         }
 
-        function getEditPanels(item) {
+        /**
+         * Gets the edit panels of the given text item
+         *
+         * @param {object}  item        The model of the text item which edit panels
+         *                              are going to be retrieved
+         * @param {object}  contentElm  The pointer to the DOM object where the content
+         *                              of the edit element is
+         * @param {object}  boxElm      The pointer to the DOM object where the box
+         *                              that wraps the text element is
+         * @param {object}  borders     The object that contains the information about
+         *                              the vertical and horizontal border widths
+         * @returns {Array}             The array of edit panels of the given text item
+         */
+        function getEditPanels(item, contentElm, boxElm, borders) {
             return  [
                 {
                     title: 'Content',
-                    type: 'richContent',
                     appBridge: true,
                     src:'bannerText',
                     view:'editText',
-                    newModel: item,
+                    bindings: {
+                        item: item
+                    },
                     onLayer: {
-                        change: function (bla) {
-                            console.log("CHANGE!!", bla);
+                        change: function () {
+                            bIS.refresh(item, contentElm, boxElm, borders);
                         }
                     }
-                }/*,
-                {
-                    title: 'Content',
-                    type: 'richContent',
-                    onLayer: {
-                        change: function (styles) {
-                            angular.extend(item.styles, styles);
-                        }
-                    }
-                }*/
+                }
             ];
         }
 
-        function onResizeItem(elem, item, newBoxSize, oldSize) {
-            var prevFontSize    = getPrevFontSize(item, elem),
-                changeRatio     = (newBoxSize / oldSize),
-                newFontSize     = parseInt(prevFontSize) * changeRatio,
-                newLineHeight   = 1 + ((changeRatio - 1) * 0.02);
-            item.styles.fontSize    = newFontSize + '%';
-            item.styles.lineHeight  = newLineHeight + 'em';
-
-            console.log("ITEM.VALUE?", item.value);
-        }
-
-        function getPrevFontSize(item, elem) {
-            var prevFontSize;
-            if(item.styles.fontSize) {
-                prevFontSize    = item.styles.fontSize
-            } else {
-                prevFontSize = (parseInt(elem.css('font-size')) / cS.defaultFontSize) * 100;
+        /**
+         * Executes the controller business logic of the bannerTextEditText template
+         *
+         * @param {object} scope The scope of the bannerTextEditText template
+         */
+        function editText(scope) {
+            scope.contentChanged = function() {
+                scope.onLayer.change();
             }
-            return prevFontSize;
         }
 
-        function editText() {
-            console.log("YEAAA EDIT!")
-        }
+        /** Private methods **/
+        /** End of private methods **/
 
         return {
             getTemplate     : getTemplate,
+            getDefaultValue : getDefaultValue,
             getEditPanels   : getEditPanels,
-            onResizeItem    : onResizeItem,
-            editText        : editText,
-            initItemModel   : initItemModel
+            editText        : editText
         };
     }]);
 })();

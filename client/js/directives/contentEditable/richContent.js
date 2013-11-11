@@ -21,7 +21,6 @@
                 ];
 
                 scope.propagateChanges = function () {
-                    console.log("propagating!", scope.model);
                     if (scope.onLayer && scope.onLayer.change) { scope.onLayer.change(scope.model); }
                     if (scope.onChange) { scope.onChange(); }
                 };

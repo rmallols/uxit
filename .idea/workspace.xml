@@ -2,27 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/directives/banner/types/bannerImageService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/directives/banner/types/bannerTextEditText.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/tests/unit/services/bannerImageService.spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/services/banner/bannerItemService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/tests/unit/services/bannerItemService.spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/html/banner/types/bannerTextEditText.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/tests/unit/services/bannerTextService.spec.js" />
+      <change type="DELETED" beforePath="C:\usr\menzit\client\js\directives\banner\types\bannerTextEditText.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/app/appBridge.js" afterPath="$PROJECT_DIR$/client/js/directives/app/appBridge.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/banner/bannerCanvas.html" afterPath="$PROJECT_DIR$/client/html/banner/bannerCanvas.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/banner/bannerCanvas.js" afterPath="$PROJECT_DIR$/client/js/directives/banner/bannerCanvas.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/banner/bannerItem.html" afterPath="$PROJECT_DIR$/client/html/banner/bannerItem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/directives/bannerCanvas.spec.js" afterPath="$PROJECT_DIR$/server/tests/unit/directives/bannerCanvas.spec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/banner/types/bannerImageService.js" afterPath="$PROJECT_DIR$/client/js/directives/banner/types/bannerImageService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/banner/bannerItem.js" afterPath="$PROJECT_DIR$/client/js/directives/banner/bannerItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/input/colorPicker.js" afterPath="$PROJECT_DIR$/client/js/directives/input/colorPicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/constantsService.js" afterPath="$PROJECT_DIR$/client/js/services/constantsService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/bannerItem.less" afterPath="$PROJECT_DIR$/client/css/bannerItem.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/directives/bannerItem.spec.js" afterPath="$PROJECT_DIR$/server/tests/unit/directives/bannerItem.spec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js" afterPath="$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/edit.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/edit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/media/mediaPicker.js" afterPath="$PROJECT_DIR$/client/js/directives/media/mediaPicker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/editBox.less" afterPath="$PROJECT_DIR$/client/css/editBox.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/config/karma.conf.js" afterPath="$PROJECT_DIR$/server/config/karma.conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_en.properties" afterPath="$PROJECT_DIR$/client/messages/messages_en.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_es.properties" afterPath="$PROJECT_DIR$/client/messages/messages_es.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/utils/objectService.js" afterPath="$PROJECT_DIR$/client/js/services/utils/objectService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/services/objectService.spec.js" afterPath="$PROJECT_DIR$/server/tests/unit/services/objectService.spec.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/resources-dev.js" afterPath="$PROJECT_DIR$/client/js/resources-dev.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/contentEditable/richContent.js" afterPath="$PROJECT_DIR$/client/js/directives/contentEditable/richContent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/contentEditable/selectMedia.html" afterPath="$PROJECT_DIR$/client/html/contentEditable/selectMedia.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/contentEditable/selectMedia.js" afterPath="$PROJECT_DIR$/client/js/directives/contentEditable/selectMedia.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/contentEditable/toggleStyle.js" afterPath="$PROJECT_DIR$/client/js/directives/contentEditable/toggleStyle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/utils/uxTransclude.js" afterPath="$PROJECT_DIR$/client/js/directives/utils/uxTransclude.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/test-results.xml" afterPath="$PROJECT_DIR$/server/tests/unit/test-results.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -48,58 +53,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bannerItem.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/banner/bannerItem.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="88" selection-start="4378" selection-end="4378" vertical-scroll-proportion="0.66346157" vertical-offset="1765" max-vertical-offset="3689">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="richContent.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/contentEditable/richContent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="96" selection-start="870" selection-end="870" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1700">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="bannerCanvas.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/directives/banner/bannerCanvas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="21" selection-start="984" selection-end="984" vertical-scroll-proportion="-4.76" vertical-offset="255" max-vertical-offset="2210">
+            <state line="58" column="88" selection-start="2314" selection-end="2314" vertical-scroll-proportion="-12.64" vertical-offset="670" max-vertical-offset="2057">
               <folding>
-                <marker date="1383935040555" expanded="true" signature="2101:2115" placeholder="..." />
-                <marker date="1383935040555" expanded="true" signature="2345:2350" placeholder="..." />
+                <marker date="1384193875541" expanded="false" signature="1989:2003" placeholder="..." />
+                <marker date="1384193875541" expanded="false" signature="2233:2238" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bannerCanvas.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/banner/bannerCanvas.html">
+      <file leaf-file-name="bannerItem.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/banner/bannerItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="37" selection-start="532" selection-end="532" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="255">
+            <state line="20" column="31" selection-start="635" selection-end="646" vertical-scroll-proportion="-13.6" vertical-offset="0" max-vertical-offset="2890">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bannerItem.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/banner/bannerItem.html">
+      <file leaf-file-name="bannerItemService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/services/banner/bannerItemService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="42" selection-start="235" selection-end="235" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="170">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bannerItem.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/css/bannerItem.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="50" selection-start="231" selection-end="231" vertical-scroll-proportion="-2.4605262" vertical-offset="0" max-vertical-offset="1139">
+            <state line="21" column="62" selection-start="687" selection-end="687" vertical-scroll-proportion="-4.2" vertical-offset="252" max-vertical-offset="2329">
               <folding />
             </state>
           </provider>
@@ -108,16 +86,54 @@
       <file leaf-file-name="bannerTextService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="64" selection-start="572" selection-end="572" vertical-scroll-proportion="-8.28" vertical-offset="65" max-vertical-offset="1428">
+            <state line="16" column="95" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1411">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bannerTextEditText.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerTextEditText.html">
+      <file leaf-file-name="bannerTextService.spec.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/unit/services/bannerTextService.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="59" selection-start="85" selection-end="85" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+            <state line="38" column="8" selection-start="1591" selection-end="1591" vertical-scroll-proportion="0.0" vertical-offset="431" max-vertical-offset="1768">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bannerImageService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerImageService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="29" selection-start="1580" selection-end="1592" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1122">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bannerImageService.spec.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/unit/services/bannerImageService.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="78" column="90" selection-start="3041" selection-end="3041" vertical-scroll-proportion="0.0" vertical-offset="917" max-vertical-offset="1615">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bannerCanvas.spec.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/bannerCanvas.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="73" column="13" selection-start="3256" selection-end="3256" vertical-scroll-proportion="0.0" vertical-offset="1077" max-vertical-offset="2193">
+              <folding>
+                <marker date="1384194974051" expanded="false" signature="5386:5400" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bannerItemService.spec.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/tests/unit/services/bannerItemService.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="8" selection-start="1334" selection-end="1334" vertical-scroll-proportion="0.8397626" vertical-offset="278" max-vertical-offset="2805">
               <folding />
             </state>
           </provider>
@@ -141,22 +157,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/js/directives/contentEditable/selectMedia.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/contentEditable/toggleStyle.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/input/colorPicker.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/banner/types/bannerTextEdit.html" />
-        <option value="$PROJECT_DIR$/client/js/directives/admin/edit.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/app/appBridge.js" />
-        <option value="$PROJECT_DIR$/client/js/services/constantsService.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/banner/types/bannerImageService.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/banner/bannerCanvas.js" />
+        <option value="$PROJECT_DIR$/server/tests/unit/services/objectService.spec.js" />
+        <option value="$PROJECT_DIR$/server/config/karma.conf.js" />
+        <option value="$PROJECT_DIR$/server/tests/unit/directives/bannerItem.spec.js" />
         <option value="$PROJECT_DIR$/client/html/banner/bannerCanvas.html" />
-        <option value="$PROJECT_DIR$/client/html/banner/bannerItem.html" />
-        <option value="$PROJECT_DIR$/client/js/directives/contentEditable/richContent.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/banner/types/bannerTextEditText.html" />
-        <option value="$PROJECT_DIR$/client/css/bannerItem.less" />
-        <option value="$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js" />
         <option value="$PROJECT_DIR$/client/js/directives/banner/bannerItem.js" />
+        <option value="$PROJECT_DIR$/client/js/services/banner/bannerItemService.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/banner/bannerCanvas.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/banner/types/bannerImageService.js" />
+        <option value="$PROJECT_DIR$/client/messages/messages_es.properties" />
+        <option value="$PROJECT_DIR$/client/messages/messages_en.properties" />
+        <option value="$PROJECT_DIR$/server/tests/unit/services/i18nService.spec.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js" />
+        <option value="$PROJECT_DIR$/server/tests/unit/services/bannerTextService.spec.js" />
+        <option value="$PROJECT_DIR$/server/tests/unit/services/bannerImageService.spec.js" />
+        <option value="$PROJECT_DIR$/server/tests/unit/directives/bannerCanvas.spec.js" />
+        <option value="$PROJECT_DIR$/server/tests/unit/services/bannerItemService.spec.js" />
       </list>
     </option>
   </component>
@@ -197,6 +213,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -273,6 +290,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="directives" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -323,94 +366,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jQuery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="date" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="date" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="i18n" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -433,7 +388,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="directives" />
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -455,33 +410,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="directives" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="contentEditable" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="directives" />
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -508,6 +437,64 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="banner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -519,78 +506,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slidesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="Settings.JavaScript.Linters.JSHint" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
+    <property name="options.lastSelected" value="Settings.JavaScript.Linters.JSHint" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\usr\menzit\server\tests\unit\services" />
+      <recent name="C:\usr\menzit\client\js\services\banner" />
       <recent name="C:\usr\menzit\client\js\directives\banner\types" />
       <recent name="C:\usr\menzit\client\apps\slidesApp" />
       <recent name="C:\usr\menzit\server\tests\unit\directives" />
-      <recent name="C:\usr\menzit\client\lib\jQuery\images" />
-      <recent name="C:\usr\menzit\client\js\directives\input" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\usr\menzit\client\html\banner\types" />
       <recent name="C:\usr\menzit\client\lib\date\i18n" />
       <recent name="C:\usr\menzit" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Generate templates">
+  <component name="RunManager" selected="Node.js.Karma server">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -601,12 +556,8 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true">
+      <setting name="config_file" value="" />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -614,10 +565,6 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true">
-      <setting name="config_file" value="" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -1072,7 +1019,11 @@
       <created>1383852655846</created>
       <updated>1383852655846</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="#141 [bannerCanvas] Text support">
+      <created>1383939714860</created>
+      <updated>1383939714860</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1108,7 +1059,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-324" y="-1082" width="1911" height="1067" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-321" y="-1077" width="1911" height="1067" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1134,9 +1085,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712707" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22162576" sideWeight="0.7030387" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-323" y="-1066" width="1911" height="1067" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1181,117 +1132,119 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/edit.js">
+    <entry file="file://$PROJECT_DIR$/client/css/bannerItem.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="182" column="82" selection-start="9063" selection-end="9071" vertical-scroll-proportion="-8.96" vertical-offset="2870" max-vertical-offset="3570">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/app/appBridge.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="46" selection-start="665" selection-end="665" vertical-scroll-proportion="-6.8" vertical-offset="102" max-vertical-offset="1666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/constantsService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="98" selection-start="1306" selection-end="1306" vertical-scroll-proportion="-15.36" vertical-offset="194" max-vertical-offset="884">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/contentEditable/selectMedia.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="40" selection-start="160" selection-end="160" vertical-scroll-proportion="-2.44" vertical-offset="7" max-vertical-offset="680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerImageService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="116" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/admin/editContent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="77" selection-start="580" selection-end="580" vertical-scroll-proportion="0.15178572" vertical-offset="0" max-vertical-offset="672">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/banner/bannerCanvas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="37" selection-start="532" selection-end="532" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="255">
+        <state line="24" column="73" selection-start="395" selection-end="395" vertical-scroll-proportion="-1.3815789" vertical-offset="303" max-vertical-offset="1309">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/banner/bannerCanvas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="21" selection-start="984" selection-end="984" vertical-scroll-proportion="-4.76" vertical-offset="255" max-vertical-offset="2210">
+        <state line="58" column="88" selection-start="2314" selection-end="2314" vertical-scroll-proportion="-12.64" vertical-offset="670" max-vertical-offset="2057">
           <folding>
-            <marker date="1383935040555" expanded="true" signature="2101:2115" placeholder="..." />
-            <marker date="1383935040555" expanded="true" signature="2345:2350" placeholder="..." />
+            <marker date="1384193875541" expanded="false" signature="1989:2003" placeholder="..." />
+            <marker date="1384193875541" expanded="false" signature="2233:2238" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerTextEditText.html">
+    <entry file="file://$PROJECT_DIR$/client/messages/messages_es.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="59" selection-start="85" selection-end="85" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+        <state line="6" column="57" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2941">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/contentEditable/richContent.js">
+    <entry file="file://$PROJECT_DIR$/client/js/services/banner/bannerItemService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="96" selection-start="870" selection-end="870" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1700">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/contentEditable/contentEditable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="95" selection-start="3323" selection-end="3328" vertical-scroll-proportion="0.33283803" vertical-offset="915" max-vertical-offset="1768">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="33" selection-start="4571" selection-end="4587" vertical-scroll-proportion="0.40861812" vertical-offset="1544" max-vertical-offset="2533">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/bannerItem.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="50" selection-start="231" selection-end="231" vertical-scroll-proportion="-2.4605262" vertical-offset="0" max-vertical-offset="1139">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/banner/bannerItem.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="42" selection-start="235" selection-end="235" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="170">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="64" selection-start="572" selection-end="572" vertical-scroll-proportion="-8.28" vertical-offset="65" max-vertical-offset="1428">
+        <state line="21" column="62" selection-start="687" selection-end="687" vertical-scroll-proportion="-4.2" vertical-offset="252" max-vertical-offset="2329">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/banner/bannerItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="88" selection-start="4378" selection-end="4378" vertical-scroll-proportion="0.66346157" vertical-offset="1765" max-vertical-offset="3689">
+        <state line="20" column="31" selection-start="635" selection-end="646" vertical-scroll-proportion="-13.6" vertical-offset="0" max-vertical-offset="2890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/i18n/i18nService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.1690544" vertical-offset="816" max-vertical-offset="1666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/messages/messages_en.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="97" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2992">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/i18n/i18n.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/i18n.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="51" selection-start="127" selection-end="142" vertical-scroll-proportion="0.09742121" vertical-offset="0" max-vertical-offset="698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/services/i18nService.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="34" selection-start="112" selection-end="112" vertical-scroll-proportion="0.09742121" vertical-offset="0" max-vertical-offset="698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="95" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1411">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/services/bannerTextService.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="8" selection-start="1591" selection-end="1591" vertical-scroll-proportion="0.0" vertical-offset="431" max-vertical-offset="1768">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerImageService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="29" selection-start="1580" selection-end="1592" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1122">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/services/bannerImageService.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="90" selection-start="3041" selection-end="3041" vertical-scroll-proportion="0.0" vertical-offset="917" max-vertical-offset="1615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/bannerCanvas.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="13" selection-start="3256" selection-end="3256" vertical-scroll-proportion="0.0" vertical-offset="1077" max-vertical-offset="2193">
+          <folding>
+            <marker date="1384194974051" expanded="false" signature="5386:5400" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/services/bannerItemService.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="8" selection-start="1334" selection-end="1334" vertical-scroll-proportion="0.8397626" vertical-offset="278" max-vertical-offset="2805">
           <folding />
         </state>
       </provider>

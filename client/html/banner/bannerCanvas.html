@@ -1,7 +1,7 @@
 <div class="bannerCanvas" ng-class="{readOnly: isReadOnly()}">
     <div class="addArea" ux-show="!isReadOnly()">
-        <button class="addImage addIcon" ng-click="addImage()">Add image</button>
-        <button class="addText addIcon" ng-click="addText()">Add text</button>
+        <button class="addImage addIcon" ng-click="addItem('image')">Add image</button>
+        <button class="addText addIcon" ng-click="addItem('text')">Add text</button>
     </div>
     <div class="grid" ng-class="{overflowVisible: overflow.visible}">
         <div banner-item ng-repeat="item in items.data" data="item" on-change="onItemChange()"

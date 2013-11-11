@@ -81,6 +81,7 @@ window.speed = 150;
     getScript(servicePath + '/app/addAppService.js');
     getScript(servicePath + '/app/sortableAppService.js');
     getScript(servicePath + '/app/resizableAppService.js');
+    getScript(servicePath + '/banner/bannerItemService.js');
     getScript(servicePath + '/list/listService.js');
     getScript(servicePath + '/list/listDbService.js');
     getScript(servicePath + '/list/listSelectService.js');

@@ -34,9 +34,20 @@
             return true;
         }
 
+        function getRootKeys(object) {
+            var keys = [];
+            for(var key in object) {
+                if(object.hasOwnProperty(key)) {
+                    keys.push(key);
+                }
+            }
+            return keys;
+        }
+
         return {
-            isObject: isObject,
-            isEmpty: isEmpty
+            isObject    : isObject,
+            isEmpty     : isEmpty,
+            getRootKeys : getRootKeys
         };
     }]);
 })();

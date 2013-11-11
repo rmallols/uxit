@@ -6,6 +6,7 @@
   border: @borderWidth dashed transparent;
   box-sizing: content-box;
   .alignCenter;
+  font-size: 200%;
 }
 
 .bannerItem:not(.readOnly) {
@@ -35,6 +36,10 @@
   visibility: visible;
 }
 
+.bannerItem.active .heading {
+  color: @highComp;
+}
+
 .bannerItem input.selectHandler {
   position: absolute;
   visibility: hidden;
@@ -59,4 +64,9 @@
 .bannerItem .ui-resizable-se {
   right: -5px;
   bottom: -5px;
+}
+
+.bannerItem .heading {
+  border-bottom: 0;
+  line-height: 1em;
 }

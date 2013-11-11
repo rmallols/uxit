@@ -1,7 +1,8 @@
 (function() {
     COMPONENTS.directive('bannerCanvas', ['$compile', 'timerService', 'arrayService', 'keyboardService',
-    'roleService', 'sessionService',
-    function ($compile, timerService, arrayService, keyboardService, roleService, sessionService) {
+    'roleService', 'sessionService', 'bannerItemService',
+    function ($compile, timerService, arrayService, keyboardService, roleService, sessionService,
+      bannerItemService) {
         'use strict';
         return {
             restrict: 'A',
@@ -34,13 +35,7 @@
                     data: scope.model
                 };
 
-                scope.addImage = function() {
-                    createImage();
-                };
-
-                scope.addText = function() {
-                    createText();
-                };
+                scope.addItem = addItem;
 
                 scope.onItemChange = function() {
                     propagateChanges();
@@ -63,12 +58,8 @@
                     }
                 }
 
-                function createImage() {
-                    createItem('image', '/client/images/logo.svg');
-                }
-
-                function createText() {
-                    createItem('text', 'Ouuuh Yeaaah!');
+                function addItem(type) {
+                    createItem(type, bannerItemService.getDefaultValue(type));
                 }
 
                 function createItem(type, value) {
