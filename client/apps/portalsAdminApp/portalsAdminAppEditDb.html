@@ -1,6 +1,12 @@
 <div>
-    <div class="columns large-10">Database name:<br/>(Without spaces)</div>
-    <div class="columns large-15">
-        <input type="text" ng-model="model.name" />
+    <div class="cf">
+        <div class="columns large-10">Portal Url</div>
+        <div class="columns large-15">
+            <label url-token input="model.typedName" output="model.name"></label>
+        </div>
+    </div>
+    <div class="cf">
+        <div class="columns large-10">Database name:<br/>(Without spaces)</div>
+        <div class="columns large-15"><input type="text" ng-model="model.typedName" /></div>
     </div>
 </div>

@@ -7,11 +7,13 @@
         <ul ng-form="editPages">
             <li class="layer" id="currentLayout{{$id}}">
                 <div class="columns large-9 textAlignRight"><label i18n="editPages.id"></label></div>
-                <div class="columns large-16">/{{selectedPage.url}}</div>
+                <div class="columns large-16">
+                    /<label url-token input="selectedPage.text" output="selectedPage.url"></label>
+                </div>
                 <div class="columns large-9 textAlignRight"><label i18n="editPages.text"></label></div>
                 <div class="columns large-16">
-                    <input type="text" ng-model="selectedPage.text" i18n-db-input ng-change="updateSelectedPageUrl()"
-                           mandatory placeholder="editPages.text.placeholder" />
+                    <input type="text" ng-model="selectedPage.text" i18n-db-input mandatory
+                           placeholder="editPages.text.placeholder" />
                 </div>
                 <div class="columns large-9 textAlignRight"><label i18n="editPages.description"></label></div>
                 <div class="columns large-16">

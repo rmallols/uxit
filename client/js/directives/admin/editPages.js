@@ -71,26 +71,12 @@
                     saveItems(null);
                 }
 
-                scope.updateSelectedPageUrl = function () {
-                    var url;
-                    if (scope.selectedPage) {
-                        url = stringService.replaceToken(i18nDbService.getI18nProperty(scope.selectedPage.text).text, ' ', '-');
-                        scope.selectedPage.url = stringService.toCamelCase(url);
-                    }
-                    scope.registerSelectedPageChange();
-                };
-
                 scope.registerSelectedPageChange = function () {
                     if (scope.selectedPage) { scope.selectedPage.updated = true; }
                 };
 
                 scope.onAddPage = function ($page) {
                     $page.type = scope.pageTypes[0].id;
-                    //It's necessary to apply a delay as otherwise the selectedPage
-                    //will still be pointing to the previously selected item
-                    $timeout(function () {
-                        scope.updateSelectedPageUrl();
-                    }, 0);
                 };
 
                 scope.onLayer.save = function (callback) {

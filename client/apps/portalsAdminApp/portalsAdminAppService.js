@@ -56,7 +56,9 @@
 
         function createDb(scope) {}
 		
-		function editDb(scope) {}
+		function editDb(scope) {
+            scope.model.typedName = scope.model.name;
+        }
 
         return {
             view: view,

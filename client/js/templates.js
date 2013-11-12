@@ -307,9 +307,15 @@ angular.module("menuAppView.html", []).run(["$templateCache", function($template
 angular.module("portalsAdminAppCreateDb.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("portalsAdminAppCreateDb.html",
     "<div>\n" +
-    "    <div class=\"columns large-10\">Database name:<br/>(Without spaces)</div>\n" +
-    "    <div class=\"columns large-15\">\n" +
-    "        <input type=\"text\" ng-model=\"internalData.data.name\" />\n" +
+    "    <div class=\"cf\">\n" +
+    "        <div class=\"columns large-10\">Portal Url</div>\n" +
+    "        <div class=\"columns large-15\">\n" +
+    "            <label url-token input=\"internalData.data.typedName\" output=\"internalData.data.name\"></label>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"cf\">\n" +
+    "        <div class=\"columns large-10\">Database name:<br/>(Without spaces)</div>\n" +
+    "        <div class=\"columns large-15\"><input type=\"text\" ng-model=\"internalData.data.typedName\" /></div>\n" +
     "    </div>\n" +
     "</div>");
 }]);
@@ -317,9 +323,15 @@ angular.module("portalsAdminAppCreateDb.html", []).run(["$templateCache", functi
 angular.module("portalsAdminAppEditDb.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("portalsAdminAppEditDb.html",
     "<div>\n" +
-    "    <div class=\"columns large-10\">Database name:<br/>(Without spaces)</div>\n" +
-    "    <div class=\"columns large-15\">\n" +
-    "        <input type=\"text\" ng-model=\"model.name\" />\n" +
+    "    <div class=\"cf\">\n" +
+    "        <div class=\"columns large-10\">Portal Url</div>\n" +
+    "        <div class=\"columns large-15\">\n" +
+    "            <label url-token input=\"model.typedName\" output=\"model.name\"></label>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"cf\">\n" +
+    "        <div class=\"columns large-10\">Database name:<br/>(Without spaces)</div>\n" +
+    "        <div class=\"columns large-15\"><input type=\"text\" ng-model=\"model.typedName\" /></div>\n" +
     "    </div>\n" +
     "</div>");
 }]);
@@ -974,11 +986,13 @@ angular.module("editPages.html", []).run(["$templateCache", function($templateCa
     "        <ul ng-form=\"editPages\">\n" +
     "            <li class=\"layer\" id=\"currentLayout{{$id}}\">\n" +
     "                <div class=\"columns large-9 textAlignRight\"><label i18n=\"editPages.id\"></label></div>\n" +
-    "                <div class=\"columns large-16\">/{{selectedPage.url}}</div>\n" +
+    "                <div class=\"columns large-16\">\n" +
+    "                    /<label url-token input=\"selectedPage.text\" output=\"selectedPage.url\"></label>\n" +
+    "                </div>\n" +
     "                <div class=\"columns large-9 textAlignRight\"><label i18n=\"editPages.text\"></label></div>\n" +
     "                <div class=\"columns large-16\">\n" +
-    "                    <input type=\"text\" ng-model=\"selectedPage.text\" i18n-db-input ng-change=\"updateSelectedPageUrl()\"\n" +
-    "                           mandatory placeholder=\"editPages.text.placeholder\" />\n" +
+    "                    <input type=\"text\" ng-model=\"selectedPage.text\" i18n-db-input mandatory\n" +
+    "                           placeholder=\"editPages.text.placeholder\" />\n" +
     "                </div>\n" +
     "                <div class=\"columns large-9 textAlignRight\"><label i18n=\"editPages.description\"></label></div>\n" +
     "                <div class=\"columns large-16\">\n" +

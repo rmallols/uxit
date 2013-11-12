@@ -141,6 +141,7 @@ window.speed = 150;
     getScript(directivePath + '/media/mediaPicker.js');
     getScript(directivePath + '/feedback/globalMsg.js');
     getScript(directivePath + '/feedback/tooltip.js');
+    getScript(directivePath + '/feedback/urlToken.js');
     getScript(directivePath + '/comments/comments.js');
     getScript(directivePath + '/comments/comment.js');
     getScript(directivePath + '/contentEditable/contentEditable.js');
