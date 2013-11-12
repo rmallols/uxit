@@ -12,7 +12,7 @@
                     <li ng-repeat="subPage in pages" class="page" ng-class="getPageStyleClass(subPage)"
                         ux-show="isSubPageOf(subPage, page)">
                         <h6>
-                            <a href="{{getPageUrl(subPage)}}" target="{{getPageTarget(subPage)}}" title="{{subPage.description}}">
+                            <a href="{{getPageUrl(subPage)}}" target="{{getPageTarget(subPage)}}" title="{{subPage.description}}" i18n-db-title>
                                 <label i18n-db="subPage.text"></label>
                             </a>
                         </h6>

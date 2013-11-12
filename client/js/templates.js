@@ -292,7 +292,7 @@ angular.module("menuAppView.html", []).run(["$templateCache", function($template
     "                    <li ng-repeat=\"subPage in pages\" class=\"page\" ng-class=\"getPageStyleClass(subPage)\"\n" +
     "                        ux-show=\"isSubPageOf(subPage, page)\">\n" +
     "                        <h6>\n" +
-    "                            <a href=\"{{getPageUrl(subPage)}}\" target=\"{{getPageTarget(subPage)}}\" title=\"{{subPage.description}}\">\n" +
+    "                            <a href=\"{{getPageUrl(subPage)}}\" target=\"{{getPageTarget(subPage)}}\" title=\"{{subPage.description}}\" i18n-db-title>\n" +
     "                                <label i18n-db=\"subPage.text\"></label>\n" +
     "                            </a>\n" +
     "                        </h6>\n" +
