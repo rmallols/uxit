@@ -1,10 +1,15 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('roleService', ['$rootScope', 'sessionService', 'crudService', 'constantsService',
-    function ($rootScope, sessionService, crudService, constantsService) {
+    COMPONENTS.factory('roleService', ['$rootScope', 'sessionService', 'crudService',
+    'constantsService', 'i18nService',
+    function ($rootScope, sessionService, crudService, constantsService, i18nS) {
 
-        var keyBasedRoles,    //Store an associative array to make the role validation process as easy as possible
-            indexBasedRoles;  //Store the public, index-based role data
+        var keyBasedRoles,      //Store an associative array to make the role validation process as easy as possible
+            indexBasedRoles;    //Store the public, index-based role data
+
+        $rootScope.$on('languageChanged', function() {
+            regenerateRoleKeys();
+        });
 
         /**
          * Loads all the system roles from the backend
@@ -14,7 +19,7 @@
         function loadRoles(callback) {
             var params = { sort: { field: 'karma', order : '1' }};
             crudService.get(constantsService.collections.roles, null, params, function (serverRoles) {
-                normalizeRoles(serverRoles);
+                normalizeRoles(serverRoles.results);
                 if (callback) { callback(getRoles()); }
             });
         }
@@ -98,17 +103,33 @@
         }
 
         /** Private methods **/
-        function normalizeRoles(serverRoles) {
+        function normalizeRoles(roles) {
             //Initialize the array just once the service is done in order to ease the has*Role actions checks
             keyBasedRoles = [];
-            serverRoles.results.forEach(function(serverRole) {
-                keyBasedRoles[serverRole.code] = {
-                    karma       : serverRole.karma,
-                    title       : serverRole.title,
-                    description : serverRole.description
+            indexBasedRoles = [];
+            roles.forEach(function(role) {
+                var roleItem = {
+                    code        : role.code,
+                    karma       : role.karma,
+                    title       : i18nS('role.' + role.code),
+                    description : i18nS('role.' + role.code + '.description')
                 };
+                keyBasedRoles[role.code] = roleItem;
+                indexBasedRoles.push(roleItem);
             });
-            indexBasedRoles = serverRoles.results;
+        }
+
+        function regenerateRoleKeys() {
+            indexBasedRoles.forEach(function(role, index) {
+                var title                   = i18nS('role.' + role.code),
+                    description             = i18nS('role.' + role.code + '.description'),
+                    keyBasedRole            = keyBasedRoles[role.code],
+                    indexBasedRole          = indexBasedRoles[index];
+                keyBasedRole.title          = title;
+                indexBasedRole.title        = title;
+                keyBasedRole.description    = description;
+                indexBasedRole.description  = description;
+            });
         }
         /** End of private methods **/
 
