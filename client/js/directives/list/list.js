@@ -80,7 +80,9 @@
                 };
 
                 scope.deleteItem = function (id) {
-                    listSelectService.dropFromSelectedList(scope, id);
+                    if(scope.isMultiSelectable()) {
+                        listSelectService.dropFromSelectedList(scope, id);
+                    }
                     deleteItemFromList(id);
                     tooltipService.hide();
                     scope.onDelete({$id: id});

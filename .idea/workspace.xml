@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_en.properties" afterPath="$PROJECT_DIR$/client/messages/messages_en.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_es.properties" afterPath="$PROJECT_DIR$/client/messages/messages_es.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/roleService.js" afterPath="$PROJECT_DIR$/client/js/services/roleService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup/roles.json" afterPath="$PROJECT_DIR$/setup/roles.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/test-results.xml" afterPath="$PROJECT_DIR$/server/tests/unit/test-results.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/list/list.js" afterPath="$PROJECT_DIR$/client/js/directives/list/list.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -32,55 +28,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="roleService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/services/roleService.js">
+      <file leaf-file-name="listSelectService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/services/list/listSelectService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="17" selection-start="1214" selection-end="1214" vertical-scroll-proportion="0.0" vertical-offset="295" max-vertical-offset="2618">
+            <state line="84" column="73" selection-start="3675" selection-end="3675" vertical-scroll-proportion="-6.92" vertical-offset="1255" max-vertical-offset="2805">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="i18nService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/services/i18n/i18nService.js">
+      <file leaf-file-name="editContentList.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editContentList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="33" selection-start="155" selection-end="155" vertical-scroll-proportion="-2.72" vertical-offset="0" max-vertical-offset="1666">
+            <state line="14" column="104" selection-start="491" selection-end="491" vertical-scroll-proportion="0.7062315" vertical-offset="0" max-vertical-offset="391">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="i18n.spec.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/i18n.spec.js">
+      <file leaf-file-name="list.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/list/list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="27" selection-start="564" selection-end="579" vertical-scroll-proportion="-9.52" vertical-offset="0" max-vertical-offset="442">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="roleService.spec.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/tests/unit/services/roleService.spec.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="252" column="69" selection-start="9264" selection-end="9264" vertical-scroll-proportion="0.98397434" vertical-offset="3977" max-vertical-offset="4675">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messages_en.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/messages/messages_en.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="323" selection-end="684" vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="3179">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messages_es.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/messages/messages_es.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="40" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3128">
+            <state line="121" column="62" selection-start="5949" selection-end="5949" vertical-scroll-proportion="-6.36" vertical-offset="1898" max-vertical-offset="2618">
               <folding />
             </state>
           </provider>
@@ -104,10 +73,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/apps/menuApp/menuApp.less" />
-        <option value="$PROJECT_DIR$/client/js/resources-dev.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/admin/editPages.js" />
-        <option value="$PROJECT_DIR$/client/html/pages/portalPage.html" />
         <option value="$PROJECT_DIR$/client/html/admin/editPages.html" />
         <option value="$PROJECT_DIR$/client/js/controllers/PortalController.js" />
         <option value="$PROJECT_DIR$/client/apps/portalsAdminApp/portalsAdminAppEditDb.html" />
@@ -120,6 +85,10 @@
         <option value="$PROJECT_DIR$/client/messages/messages_es.properties" />
         <option value="$PROJECT_DIR$/client/js/services/roleService.js" />
         <option value="$PROJECT_DIR$/server/tests/unit/services/roleService.spec.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/list/list.js" />
+        <option value="$PROJECT_DIR$/client/js/services/list/listSelectService.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/admin/editUserList.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/admin/editContentList.js" />
       </list>
     </option>
   </component>
@@ -148,7 +117,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -159,369 +128,7 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="unit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="unit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="unit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="directives" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="banner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="directives" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="directives" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="feedback" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="banner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="banner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="types" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uxit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menzit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portalsAdminApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -550,7 +157,7 @@
       <recent name="C:\usr\menzit" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Karma server">
+  <component name="RunManager" selected="Node.js.Start NodeJs">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -1048,7 +655,11 @@
       <created>1384279790710</created>
       <updated>1384279790710</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="#172 Role names translation">
+      <created>1384285189906</created>
+      <updated>1384285189906</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1075,21 +686,21 @@
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4281768" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712707" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22162576" sideWeight="0.74723756" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-321" y="-1077" width="1911" height="1067" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-321" y="-1077" width="1911" height="1067" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4281768" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1124,7 +735,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="#148 [Unit tests] Remove the compilation on the DOM when possible" />
     <MESSAGE value="#146 [Unit tests] appHeader" />
     <MESSAGE value="#155 The floating 'are you sure' action is broken" />
     <MESSAGE value="#155 The floating 'are you sure' action is broken - fixed tests" />
@@ -1149,7 +759,8 @@
     <MESSAGE value="#141 [bannerCanvas] Text support" />
     <MESSAGE value="#63 [menuApp] The i18n messages are not working for subpages" />
     <MESSAGE value="#166 [portalsAdmin] Normalize the name of the portal name" />
-    <option name="LAST_COMMIT_MESSAGE" value="#166 [portalsAdmin] Normalize the name of the portal name" />
+    <MESSAGE value="#172 Role names translation" />
+    <option name="LAST_COMMIT_MESSAGE" value="#172 Role names translation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1157,81 +768,24 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/date.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="81" selection-start="833" selection-end="833" vertical-scroll-proportion="0.5358166" vertical-offset="0" max-vertical-offset="714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/feedback/urlToken.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="81" selection-start="323" selection-end="323" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/i18nDb.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="12" selection-start="2011" selection-end="2044" vertical-scroll-proportion="0.73209167" vertical-offset="186" max-vertical-offset="884">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/urlToken.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="34" selection-start="287" selection-end="287" vertical-scroll-proportion="-1.526003" vertical-offset="1129" max-vertical-offset="1802">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/crud/createService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="47" selection-start="598" selection-end="598" vertical-scroll-proportion="0.2922636" vertical-offset="0" max-vertical-offset="714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editUser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="50" selection-start="569" selection-end="569" vertical-scroll-proportion="-8.84" vertical-offset="0" max-vertical-offset="629">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/messages/messages_en.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="323" selection-end="684" vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="3179">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup/roles.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="68" selection-start="175" selection-end="175" vertical-scroll-proportion="0.30357143" vertical-offset="0" max-vertical-offset="672">
-          <folding />
-        </state>
+        <state line="12" column="68" selection-start="175" selection-end="175" vertical-scroll-proportion="0.30357143" vertical-offset="0" max-vertical-offset="672" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="23" selection-start="21" selection-end="23" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="673">
-          <folding />
-        </state>
+        <state line="0" column="23" selection-start="21" selection-end="23" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="673" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/controllers/PortalController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="77" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.58098066" vertical-offset="0" max-vertical-offset="673">
-          <folding />
-        </state>
+        <state line="23" column="77" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.58098066" vertical-offset="0" max-vertical-offset="673" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/messages/messages_es.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="40" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3128">
-          <folding />
-        </state>
+        <state line="12" column="40" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3128" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/roleService.js">
@@ -1243,28 +797,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/i18n/i18nService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="33" selection-start="155" selection-end="155" vertical-scroll-proportion="-2.72" vertical-offset="0" max-vertical-offset="1666">
-          <folding />
-        </state>
+        <state line="4" column="33" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1666" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/unit/services/i18nService.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="32" selection-start="897" selection-end="905" vertical-scroll-proportion="0.58098066" vertical-offset="0" max-vertical-offset="673">
-          <folding />
-        </state>
+        <state line="23" column="32" selection-start="897" selection-end="905" vertical-scroll-proportion="0.58098066" vertical-offset="0" max-vertical-offset="673" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/i18n.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="27" selection-start="564" selection-end="579" vertical-scroll-proportion="-9.52" vertical-offset="0" max-vertical-offset="442">
-          <folding />
-        </state>
+        <state line="14" column="27" selection-start="564" selection-end="579" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="442" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/unit/services/roleService.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="252" column="69" selection-start="9264" selection-end="9264" vertical-scroll-proportion="0.98397434" vertical-offset="3977" max-vertical-offset="4675">
+        <state line="249" column="72" selection-start="9134" selection-end="9134" vertical-scroll-proportion="0.7596439" vertical-offset="3977" max-vertical-offset="4675" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editUser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="40" selection-start="462" selection-end="462" vertical-scroll-proportion="0.2679083" vertical-offset="0" max-vertical-offset="698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/list/userList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="73" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.512894" vertical-offset="50" max-vertical-offset="1156">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/list/listService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="13" selection-start="99" selection-end="100" vertical-scroll-proportion="0.10104012" vertical-offset="0" max-vertical-offset="680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/list/list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="62" selection-start="5949" selection-end="5949" vertical-scroll-proportion="-6.36" vertical-offset="1898" max-vertical-offset="2618">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editUserList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="98" selection-start="271" selection-end="271" vertical-scroll-proportion="0.19484241" vertical-offset="0" max-vertical-offset="698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/list/listSelectService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="73" selection-start="3675" selection-end="3675" vertical-scroll-proportion="-6.92" vertical-offset="1255" max-vertical-offset="2805">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editContentList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="104" selection-start="491" selection-end="491" vertical-scroll-proportion="0.7062315" vertical-offset="0" max-vertical-offset="391">
           <folding />
         </state>
       </provider>
