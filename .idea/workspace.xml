@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/list/list.js" afterPath="$PROJECT_DIR$/client/js/directives/list/list.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/addAppPanel.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/addAppPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/crud/statsService.js" afterPath="$PROJECT_DIR$/server/crud/statsService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -28,28 +30,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="listSelectService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/services/list/listSelectService.js">
+      <file leaf-file-name="resources-dev.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/js/resources-dev.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="73" selection-start="3675" selection-end="3675" vertical-scroll-proportion="-6.92" vertical-offset="1255" max-vertical-offset="2805">
+            <state line="189" column="28" selection-start="10014" selection-end="10014" vertical-scroll-proportion="0.45697328" vertical-offset="3059" max-vertical-offset="3774">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="undeployService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/services/undeployService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="61" selection-start="564" selection-end="564" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editContentList.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editContentList.js">
+      <file leaf-file-name="addAppPanel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/addAppPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="104" selection-start="491" selection-end="491" vertical-scroll-proportion="0.7062315" vertical-offset="0" max-vertical-offset="391">
+            <state line="40" column="89" selection-start="1907" selection-end="1907" vertical-scroll-proportion="-3.8" vertical-offset="585" max-vertical-offset="1717">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/list/list.js">
+      <file leaf-file-name="appService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/services/app/appService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="62" selection-start="5949" selection-end="5949" vertical-scroll-proportion="-6.36" vertical-offset="1898" max-vertical-offset="2618">
+            <state line="174" column="70" selection-start="7804" selection-end="7804" vertical-scroll-proportion="-16.72" vertical-offset="2540" max-vertical-offset="3213">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="statsService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/crud/statsService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="65" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/app/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="22" selection-start="2446" selection-end="2446" vertical-scroll-proportion="-8.96" vertical-offset="660" max-vertical-offset="2057">
               <folding />
             </state>
           </provider>
@@ -73,10 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/html/admin/editPages.html" />
-        <option value="$PROJECT_DIR$/client/js/controllers/PortalController.js" />
-        <option value="$PROJECT_DIR$/client/apps/portalsAdminApp/portalsAdminAppEditDb.html" />
-        <option value="$PROJECT_DIR$/client/apps/portalsAdminApp/portalsAdminAppCreateDb.html" />
         <option value="$PROJECT_DIR$/client/apps/portalsAdminApp/portalsAdminAppService.js" />
         <option value="$PROJECT_DIR$/client/js/directives/feedback/urlToken.js" />
         <option value="$PROJECT_DIR$/server/tests/unit/directives/urlToken.spec.js" />
@@ -89,6 +116,10 @@
         <option value="$PROJECT_DIR$/client/js/services/list/listSelectService.js" />
         <option value="$PROJECT_DIR$/client/js/directives/admin/editUserList.js" />
         <option value="$PROJECT_DIR$/client/js/directives/admin/editContentList.js" />
+        <option value="$PROJECT_DIR$/server/crud/statsService.js" />
+        <option value="$PROJECT_DIR$/client/js/services/app/appService.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/admin/addAppPanel.js" />
+        <option value="$PROJECT_DIR$/client/js/resources-dev.js" />
       </list>
     </option>
   </component>
@@ -117,7 +148,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -128,7 +159,83 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helloWorldApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -157,7 +264,7 @@
       <recent name="C:\usr\menzit" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Start NodeJs">
+  <component name="RunManager" selected="Node.js.Generate templates">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -659,7 +766,11 @@
       <created>1384285189906</created>
       <updated>1384285189906</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="#161 [List] The delete action fails in single selection mode">
+      <created>1384328305856</created>
+      <updated>1384328305856</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -686,6 +797,7 @@
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -695,12 +807,11 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-321" y="-1077" width="1911" height="1067" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-321" y="-1077" width="1911" height="1067" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -735,7 +846,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="#146 [Unit tests] appHeader" />
     <MESSAGE value="#155 The floating 'are you sure' action is broken" />
     <MESSAGE value="#155 The floating 'are you sure' action is broken - fixed tests" />
     <MESSAGE value="#145 Create a portal manager app" />
@@ -760,7 +870,8 @@
     <MESSAGE value="#63 [menuApp] The i18n messages are not working for subpages" />
     <MESSAGE value="#166 [portalsAdmin] Normalize the name of the portal name" />
     <MESSAGE value="#172 Role names translation" />
-    <option name="LAST_COMMIT_MESSAGE" value="#172 Role names translation" />
+    <MESSAGE value="#161 [List] The delete action fails in single selection mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="#161 [List] The delete action fails in single selection mode" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -768,99 +879,110 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/setup/roles.json">
+    <entry file="file://$PROJECT_DIR$/client/js/services/app/addAppService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="68" selection-start="175" selection-end="175" vertical-scroll-proportion="0.30357143" vertical-offset="0" max-vertical-offset="672" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="23" selection-start="21" selection-end="23" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="673" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/controllers/PortalController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="77" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.58098066" vertical-offset="0" max-vertical-offset="673" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/messages/messages_es.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="40" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3128" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/roleService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="17" selection-start="1214" selection-end="1214" vertical-scroll-proportion="0.0" vertical-offset="295" max-vertical-offset="2618">
+        <state line="0" column="4" selection-start="2" selection-end="4" vertical-scroll-proportion="-1.0713224" vertical-offset="721" max-vertical-offset="1394">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/i18n/i18nService.js">
+    <entry file="file://$PROJECT_DIR$/client/js/directives/app/appBridge.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="33" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1666" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/unit/services/i18nService.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="32" selection-start="897" selection-end="905" vertical-scroll-proportion="0.58098066" vertical-offset="0" max-vertical-offset="673" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/i18n.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="27" selection-start="564" selection-end="579" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="442" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/unit/services/roleService.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="249" column="72" selection-start="9134" selection-end="9134" vertical-scroll-proportion="0.7596439" vertical-offset="3977" max-vertical-offset="4675" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editUser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="40" selection-start="462" selection-end="462" vertical-scroll-proportion="0.2679083" vertical-offset="0" max-vertical-offset="698">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/list/userList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="73" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.512894" vertical-offset="50" max-vertical-offset="1156">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/list/listService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="99" selection-end="100" vertical-scroll-proportion="0.10104012" vertical-offset="0" max-vertical-offset="680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/list/list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="62" selection-start="5949" selection-end="5949" vertical-scroll-proportion="-6.36" vertical-offset="1898" max-vertical-offset="2618">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editUserList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="98" selection-start="271" selection-end="271" vertical-scroll-proportion="0.19484241" vertical-offset="0" max-vertical-offset="698">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/list/listSelectService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="73" selection-start="3675" selection-end="3675" vertical-scroll-proportion="-6.92" vertical-offset="1255" max-vertical-offset="2805">
+        <state line="35" column="76" selection-start="1515" selection-end="1515" vertical-scroll-proportion="0.41404012" vertical-offset="306" max-vertical-offset="1870">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editContentList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="104" selection-start="491" selection-end="491" vertical-scroll-proportion="0.7062315" vertical-offset="0" max-vertical-offset="391">
+        <state line="12" column="83" selection-start="437" selection-end="437" vertical-scroll-proportion="0.2922636" vertical-offset="0" max-vertical-offset="698">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/list/listSelectService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="73" selection-start="3675" selection-end="3675" vertical-scroll-proportion="0.25705793" vertical-offset="1255" max-vertical-offset="2805">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/list/list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="62" selection-start="5949" selection-end="5949" vertical-scroll-proportion="0.23625557" vertical-offset="1898" max-vertical-offset="2618">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/availableAppsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="11" selection-start="1248" selection-end="1250" vertical-scroll-proportion="0.33283803" vertical-offset="371" max-vertical-offset="1343">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/portalService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="33" selection-start="961" selection-end="967" vertical-scroll-proportion="-1.8291234" vertical-offset="1554" max-vertical-offset="2227">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup/availableApps.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5797">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/admin/addAppPanel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="69" selection-start="1398" selection-end="1406" vertical-scroll-proportion="0.33230293" vertical-offset="159" max-vertical-offset="833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="22" selection-start="2446" selection-end="2446" vertical-scroll-proportion="-8.96" vertical-offset="660" max-vertical-offset="2057">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/crud/statsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="65" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/app/appService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="174" column="70" selection-start="7804" selection-end="7804" vertical-scroll-proportion="-16.72" vertical-offset="2540" max-vertical-offset="3213">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/undeployService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="61" selection-start="564" selection-end="564" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/addAppPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="89" selection-start="1907" selection-end="1907" vertical-scroll-proportion="-3.8" vertical-offset="585" max-vertical-offset="1717">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/resources-dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="28" selection-start="10014" selection-end="10014" vertical-scroll-proportion="0.45697328" vertical-offset="3059" max-vertical-offset="3774">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

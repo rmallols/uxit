@@ -7,7 +7,8 @@ module.exports = {
         var key = {}; //Specify the grouping key
         if (query.groupBy) { key[query.groupBy] = 1; }
         else { key['create.date'] = 1; } //By default, group by creation date
-        dbCon.collection(collection).group({
+        console.log("OOUT", collection, query, dbCon);
+        /*dbCon.collection(collection).group({
             keyf: function (doc) {
                 var date = new Date(doc.create.date),
                     dateKey = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear() + '';
@@ -32,6 +33,6 @@ module.exports = {
             } else {
                 callback(stats);
             }
-        });
+        });*/
     }
 };

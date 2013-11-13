@@ -1,8 +1,9 @@
 (function () {
     'use strict';
-    COMPONENTS.directive('addAppPanel', ['$rootScope', 'availableAppsService', 'undeployService', 'constantsService',
-    'addAppService', 'statsService', 'keyboardService',
-    function ($rootScope, availableAppsService, undeployService, constantsService, addAppService, statsService, keyboardService) {
+    COMPONENTS.directive('addAppPanel', ['$rootScope', 'availableAppsService', 'undeployService',
+    'constantsService', 'addAppService', 'statsService', 'keyboardService',
+    function ($rootScope, availableAppsService, undeployService, constantsService,
+    addAppService, statsService, keyboardService) {
         return {
             restrict: 'E',
             transclude: true,
