@@ -1,4 +1,4 @@
-angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'bannerAppView.html', 'contentListAppAdd.html', 'contentListAppEdit.html', 'contentListAppHelp.html', 'contentListAppView.html', 'helloWorldAppEdit.html', 'helloWorldAppHelp.html', 'helloWorldAppView.html', 'iframeAppEdit.html', 'iframeAppHelp.html', 'iframeAppView.html', 'imageAppEdit.html', 'imageAppHelp.html', 'imageAppView.html', 'languageSelectAppEdit.html', 'languageSelectAppHelp.html', 'languageSelectAppView.html', 'linksAppEdit.html', 'linksAppHelp.html', 'linksAppView.html', 'loginAppEdit.html', 'loginAppHelp.html', 'loginAppView.html', 'mapAppEdit.html', 'mapAppHelp.html', 'mapAppView.html', 'mediaCarouselAppEdit.html', 'mediaCarouselAppHelp.html', 'mediaCarouselAppSelectMedia.html', 'mediaCarouselAppView.html', 'mediaListAppAdd.html', 'mediaListAppEdit.html', 'mediaListAppHelp.html', 'mediaListAppView.html', 'menuAppEdit.html', 'menuAppHelp.html', 'menuAppView.html', 'portalsAdminAppCreateDb.html', 'portalsAdminAppEditDb.html', 'portalsAdminAppHelp.html', 'portalsAdminAppView.html', 'example.html', 'slidesAppCreateSlide.html', 'slidesAppEdit.html', 'slidesAppEditSlide.html', 'slidesAppHelp.html', 'slidesAppView.html', 'socialAppEdit.html', 'socialAppHelp.html', 'socialAppView.html', 'staticContentAppAdd.html', 'staticContentAppEdit.html', 'staticContentAppHelp.html', 'staticContentAppSelectContent.html', 'staticContentAppView.html', 'userListAppAdd.html', 'userListAppEdit.html', 'userListAppHelp.html', 'userListAppView.html', 'videoAppEdit.html', 'videoAppHelp.html', 'videoAppView.html', 'webGlAppEdit.html', 'webGlAppHelp.html', 'webGlAppView.html', 'addAppPanel.html', 'adminPanel.html', 'createMedia.html', 'edit.html', 'editAppGeneral.html', 'editAppStyles.html', 'editBox.html', 'editContent.html', 'editContentList.html', 'editCurrentUser.html', 'editGeneral.html', 'editMedia.html', 'editMediaList.html', 'editNotifications.html', 'editPages.html', 'editStyles.html', 'editTag.html', 'editTagList.html', 'editUser.html', 'editUserList.html', 'stats.html', 'styles.html', 'app.html', 'appHeader.html', 'bannerCanvas.html', 'bannerItem.html', 'bannerTextEditText.html', 'comment.html', 'comments.html', 'contentEditable.html', 'richContent.html', 'selectMedia.html', 'fileUploader.html', 'password.html', 'rating.html', 'contentList.html', 'list.html', 'listDb.html', 'mediaList.html', 'tagList.html', 'userList.html', 'login.html', 'mediaPicker.html', 'pages.html', 'errorPage.html', 'loginPage.html', 'portalPage.html', 'listActions.html', 'listEdit.html']);
+angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'bannerAppView.html', 'contentListAppAdd.html', 'contentListAppEdit.html', 'contentListAppHelp.html', 'contentListAppView.html', 'iframeAppEdit.html', 'iframeAppHelp.html', 'iframeAppView.html', 'imageAppEdit.html', 'imageAppHelp.html', 'imageAppView.html', 'languageSelectAppEdit.html', 'languageSelectAppHelp.html', 'languageSelectAppView.html', 'linksAppEdit.html', 'linksAppHelp.html', 'linksAppView.html', 'loginAppEdit.html', 'loginAppHelp.html', 'loginAppView.html', 'mapAppEdit.html', 'mapAppHelp.html', 'mapAppView.html', 'mediaCarouselAppEdit.html', 'mediaCarouselAppHelp.html', 'mediaCarouselAppSelectMedia.html', 'mediaCarouselAppView.html', 'mediaListAppAdd.html', 'mediaListAppEdit.html', 'mediaListAppHelp.html', 'mediaListAppView.html', 'menuAppEdit.html', 'menuAppHelp.html', 'menuAppView.html', 'portalsAdminAppHelp.html', 'portalsAdminAppView.html', 'example.html', 'slidesAppCreateSlide.html', 'slidesAppEdit.html', 'slidesAppEditSlide.html', 'slidesAppHelp.html', 'slidesAppView.html', 'socialAppEdit.html', 'socialAppHelp.html', 'socialAppView.html', 'staticContentAppAdd.html', 'staticContentAppEdit.html', 'staticContentAppHelp.html', 'staticContentAppSelectContent.html', 'staticContentAppView.html', 'userListAppAdd.html', 'userListAppEdit.html', 'userListAppHelp.html', 'userListAppView.html', 'videoAppEdit.html', 'videoAppHelp.html', 'videoAppView.html', 'webGlAppEdit.html', 'webGlAppHelp.html', 'webGlAppView.html', 'addAppPanel.html', 'adminPanel.html', 'createMedia.html', 'edit.html', 'editAppGeneral.html', 'editAppStyles.html', 'editBox.html', 'editContent.html', 'editContentList.html', 'editCurrentUser.html', 'editGeneral.html', 'editMedia.html', 'editMediaList.html', 'editNotifications.html', 'editPages.html', 'editStyles.html', 'editTag.html', 'editTagList.html', 'editUser.html', 'editUserList.html', 'portalsAdminCreateDb.html', 'portalsAdminEditDb.html', 'portalsAdminView.html', 'stats.html', 'styles.html', 'app.html', 'appHeader.html', 'bannerCanvas.html', 'bannerItem.html', 'bannerTextEditText.html', 'comment.html', 'comments.html', 'contentEditable.html', 'richContent.html', 'selectMedia.html', 'fileUploader.html', 'password.html', 'rating.html', 'contentList.html', 'list.html', 'listDb.html', 'mediaList.html', 'tagList.html', 'userList.html', 'login.html', 'mediaPicker.html', 'pages.html', 'errorPage.html', 'loginPage.html', 'portalPage.html', 'listActions.html', 'listEdit.html']);
 
 angular.module("bannerAppEdit.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerAppEdit.html",
@@ -38,25 +38,6 @@ angular.module("contentListAppView.html", []).run(["$templateCache", function($t
   $templateCache.put("contentListAppView.html",
     "<div>\n" +
     "    <content-list id=\"_id\" config=\"model\"></content-list>\n" +
-    "</div>");
-}]);
-
-angular.module("helloWorldAppEdit.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("helloWorldAppEdit.html",
-    "<div>\n" +
-    "	Hello world edit!!!\n" +
-    "</div>");
-}]);
-
-angular.module("helloWorldAppHelp.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("helloWorldAppHelp.html",
-    "<b>This is</b>The HELP! page :)");
-}]);
-
-angular.module("helloWorldAppView.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("helloWorldAppView.html",
-    "<div>\n" +
-    "	Hello world view!\n" +
     "</div>");
 }]);
 
@@ -323,38 +304,6 @@ angular.module("menuAppView.html", []).run(["$templateCache", function($template
     "</div>");
 }]);
 
-angular.module("portalsAdminAppCreateDb.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("portalsAdminAppCreateDb.html",
-    "<div>\n" +
-    "    <div class=\"cf\">\n" +
-    "        <div class=\"columns large-10\">Portal Url</div>\n" +
-    "        <div class=\"columns large-15\">\n" +
-    "            <label url-token input=\"internalData.data.typedName\" output=\"internalData.data.name\"></label>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "    <div class=\"cf\">\n" +
-    "        <div class=\"columns large-10\">Database name:<br/>(Without spaces)</div>\n" +
-    "        <div class=\"columns large-15\"><input type=\"text\" ng-model=\"internalData.data.typedName\" /></div>\n" +
-    "    </div>\n" +
-    "</div>");
-}]);
-
-angular.module("portalsAdminAppEditDb.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("portalsAdminAppEditDb.html",
-    "<div>\n" +
-    "    <div class=\"cf\">\n" +
-    "        <div class=\"columns large-10\">Portal Url</div>\n" +
-    "        <div class=\"columns large-15\">\n" +
-    "            <label url-token input=\"model.typedName\" output=\"model.name\"></label>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "    <div class=\"cf\">\n" +
-    "        <div class=\"columns large-10\">Database name:<br/>(Without spaces)</div>\n" +
-    "        <div class=\"columns large-15\"><input type=\"text\" ng-model=\"model.typedName\" /></div>\n" +
-    "    </div>\n" +
-    "</div>");
-}]);
-
 angular.module("portalsAdminAppHelp.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("portalsAdminAppHelp.html",
     "<b>This is</b>The HELP! page :)");
@@ -363,10 +312,7 @@ angular.module("portalsAdminAppHelp.html", []).run(["$templateCache", function($
 angular.module("portalsAdminAppView.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("portalsAdminAppView.html",
     "<div>\n" +
-    "    <div list=\"databases\" config=\"config\" transcluded-data=\"transcludedData\"\n" +
-    "         template=\"template\" internal-data=\"internalData\"\n" +
-    "         on-create-panels=\"onCreatePanels\" on-edit-panels=\"onEditPanels\"\n" +
-    "         on-create=\"onCreate($item)\" on-edit=\"onEdit($item)\" on-delete=\"onDelete($id)\"></div>\n" +
+    "    <div app-bridge src=\"portalsAdmin\" view=\"view\"></div>\n" +
     "</div>");
 }]);
 
@@ -1120,6 +1066,48 @@ angular.module("editUserList.html", []).run(["$templateCache", function($templat
   $templateCache.put("editUserList.html",
     "<div>\n" +
     "    <user-list config=\"config\"></user-list>\n" +
+    "</div>");
+}]);
+
+angular.module("portalsAdminCreateDb.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("portalsAdminCreateDb.html",
+    "<div>\n" +
+    "    <div class=\"cf\">\n" +
+    "        <div class=\"columns large-10\">Portal Url</div>\n" +
+    "        <div class=\"columns large-15\">\n" +
+    "            <label url-token input=\"internalData.data.typedName\" output=\"internalData.data.name\"></label>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"cf\">\n" +
+    "        <div class=\"columns large-10\">Database name:<br/>(Without spaces)</div>\n" +
+    "        <div class=\"columns large-15\"><input type=\"text\" ng-model=\"internalData.data.typedName\" /></div>\n" +
+    "    </div>\n" +
+    "</div>");
+}]);
+
+angular.module("portalsAdminEditDb.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("portalsAdminEditDb.html",
+    "<div>\n" +
+    "    <div class=\"cf\">\n" +
+    "        <div class=\"columns large-10\">Portal Url</div>\n" +
+    "        <div class=\"columns large-15\">\n" +
+    "            <label url-token input=\"model.typedName\" output=\"model.name\"></label>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"cf\">\n" +
+    "        <div class=\"columns large-10\">Database name:<br/>(Without spaces)</div>\n" +
+    "        <div class=\"columns large-15\"><input type=\"text\" ng-model=\"model.typedName\" /></div>\n" +
+    "    </div>\n" +
+    "</div>");
+}]);
+
+angular.module("portalsAdminView.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("portalsAdminView.html",
+    "<div>\n" +
+    "    <div list=\"databases\" config=\"config\" transcluded-data=\"transcludedData\"\n" +
+    "         template=\"template\" internal-data=\"internalData\"\n" +
+    "         on-create-panels=\"onCreatePanels\" on-edit-panels=\"onEditPanels\"\n" +
+    "         on-create=\"onCreate($item)\" on-edit=\"onEdit($item)\" on-delete=\"onDelete($id)\"></div>\n" +
     "</div>");
 }]);
 

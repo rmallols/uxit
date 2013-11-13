@@ -9,7 +9,7 @@
          *
          * @param {function} callback The function that will be executed once the databases have been retrieved
          */
-        function getDatabases(callback) {
+        function loadDatabases(callback) {
             crudService.get(databasesKey, null, null, function(databases) {
                 if(callback) {
                     callback(databases);
@@ -83,7 +83,7 @@
         }
 
         return {
-            getDatabases: getDatabases,
+            loadDatabases: loadDatabases,
             createDatabase: createDatabase,
             updateDatabase: updateDatabase,
             deleteDatabase: deleteDatabase,
