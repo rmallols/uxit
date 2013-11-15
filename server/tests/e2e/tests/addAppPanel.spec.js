@@ -1,4 +1,4 @@
-/*var execSetup = require('../execSetup.js');
+var execSetup = require('../execSetup.js');
 
 describe('menzit homepage', function() {
 
@@ -22,4 +22,4 @@ describe('menzit homepage', function() {
             expect(availableAppsElms.length).toEqual(18);
         });
     });
-}); */
+});

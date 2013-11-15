@@ -7,7 +7,7 @@ describe('login test', function() {
         ptor = execSetup.getPtor();
     });
 
-    /*it('should execute a fail login if the credentials are not valid, ' +
+    it('should execute a fail login if the credentials are not valid, ' +
         'keeping the context on the same login page', function() {
         var emailElm, passwordElm, submitElm;
         ptor.get('http://localhost:3000/menzit/login');
@@ -20,12 +20,12 @@ describe('login test', function() {
         passwordElm.sendKeys('failLogin');
         submitElm.click();
         ptor.getCurrentUrl().then(function(url) {
-            expect(url).toBe('http://localhost:3000/menzit/login/error');
+            expect(url).toBe('http://localhost:3000/menzit/login?error');
         })
-    });*/
+    });
 
     it('should execute a successful login if the credentials are valid, ' +
-        'redirecting to the home page of the portal', function() {
+    'redirecting to the home page of the portal', function() {
         var emailElm, passwordElm, submitElm;
         emailElm = ptor.findElement(protractor.By.input("email"));
         passwordElm = ptor.findElement(protractor.By.input("password"));
