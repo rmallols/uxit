@@ -91,9 +91,10 @@ module.exports = {
     },
 
     joinUserData: function (dbCon, sourceDoc, callback) {
-        var filter = { projection : { password : 0}}, self = this;
-        if (sourceDoc && sourceDoc.authorId) {
-            self.get(dbCon, constantsService.collections.media, sourceDoc.mediaId, filter, function(userDoc) {
+        var filter      = { projection : { password : 0}}, self = this,
+            authorId    = (sourceDoc) ? sourceDoc.authorId || sourceDoc['create.authorId'] : null;
+        if (sourceDoc && authorId) {
+            self.get(dbCon, constantsService.collections.users, authorId, filter, function(userDoc) {
                 self._handleUserDataJoin(sourceDoc, userDoc);
                 if(callback) { callback(); }
             });

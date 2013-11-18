@@ -12,6 +12,10 @@
         "content": {
             "en": { "text": "<a href='login'>Click here to authenticate in the system.</a><br/>The default credentials are:<br/><ul><li>User: <b>admin@menzit.com</b><li>Password: <b>admin1admin</b></li></ul>" },
             "es": { "text": "<a href='login'>Haz click aquí para autenticarte en el sistema.</a><br/>Las credenciales por defecto son:<br/><ul><li>Usuario: <b>admin@menzit.com</b><li>Contraseña: <b>admin1admin</b></li></ul>" }
+        },
+        "create": {
+            "date" : "2013-11-17T23:00:00.000Z",
+            "authorId" : "527be03a93cc82b828000033"
         }
     },
     {
@@ -23,6 +27,10 @@
         "summary": {
             "en": { "text": "Copyright© menzit. All rights reserved." },
             "es": { "text": "Copyright© menzit. Todos los derechos reservados." }
+        },
+        "create": {
+            "date" : "2013-11-17T23:00:00.000Z",
+            "authorId" : "527be03a93cc82b828000033"
         }
     }
 ]

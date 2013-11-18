@@ -19,10 +19,12 @@ function($rootScope, statsService, roleService, constantsService) {
             function normalizeUserData(stats) {
                 var normalizedData = [];
                 stats.forEach(function (stat) {
-                    normalizedData.push({
-                        label: (stat.create.author) ? stat.create.author.fullName : undefined,
-                        value: stat.count
-                    });
+                    if(normalizeUserData.create) {
+                        normalizedData.push({
+                            label: (stat.create.author) ? stat.create.author.fullName : undefined,
+                            value: stat.count
+                        });
+                    }
                 });
                 return normalizedData;
             }
