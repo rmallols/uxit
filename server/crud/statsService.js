@@ -7,11 +7,6 @@ module.exports = {
         var key = {}, condition, initial, reduceFn, finalizeFn, command, options, callbackFn;
         if (query.groupBy) { key[query.groupBy] = 1; }
         else { key['create.date'] = 1; } //By default, group by creation date
-        /*var keyf = function (doc) {
-            var date = new Date(doc.create.date),
-                dateKey = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear() + '';
-            return {'day': dateKey};
-        };*/
         condition   = query.cond;
         initial     = { count: 0 };
         reduceFn    = function (obj, prev) { prev.count += 1; };
