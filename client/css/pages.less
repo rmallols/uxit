@@ -6,8 +6,10 @@ ul.pages {
 }
 
 ul.pages.adminAccess {
-  margin-top: @tabsHeight;
+  margin-top: 0;
+  margin-left: @tabsWidth;
   .offsettedHeight(-@tabsHeight);
+  height: 100%;
 }
 
 ul.pages > li.page {
@@ -70,4 +72,3 @@ html:not(.fullscreen) .columns .appContainer {
 @media only screen and (max-width: 767px) {
   .rows, .columns { padding: 0px;}
 }
-

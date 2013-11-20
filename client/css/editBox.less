@@ -1,7 +1,7 @@
 @arrowWidth   :30px;
-@borderWidth  :5px;
-@arrowTopPos  :60px;
-@editBoxWidth :500px;
+@borderWidth  :8px;
+@arrowTopPos  :@padding + @normalButtonSize + @arrowWidth;
+@editBoxWidth :600px;
 
 .editBox {
     position:absolute;
@@ -9,19 +9,16 @@
     left:0px;
     /*margin-top:-@arrowTopPos;*/
     margin-top: -(@arrowTopPos + @borderWidth);
-    background: @high;
+    background-color: transparent;
     width:@editBoxWidth;
-    .padding;
-    z-index:4;
-    border:@borderWidth solid @highComp;
+    z-index:11;
+    border:0;
+    padding: 0;
     cursor: default;
+    color: @fontColor;
 }
 
-.editBox.child {
-  background: @highDarken;
-}
-
-.editBox:after, .editBox:before {
+.editBox:after {
     position: absolute;
     right: 100%;
     border: @arrowWidth solid transparent;
@@ -32,24 +29,9 @@
     pointer-events: none;
 }
 
-.editBox h1, .editBox h2, .editBox h3, .editBox h4, .editBox h5, .editBox h6, .editBox .heading, .editBox a {
-  color: @highComp;
-}
-
-.editBox [content-editable] .heading, .editBox [content-editable] a {
-  color: @high !important;
-}
-
 .editBox[arrowPos="top"]:after {
   top: -@arrowWidth;
   .offsettedLeft(50%, @arrowWidth);
-  border-bottom-color: @high;
-}
-
-.editBox[arrowPos="top"]:before {
-  top: -(@arrowWidth + 3 * @borderWidth - 2);
-  border-width:(@borderWidth + @arrowWidth);
-  .offsettedLeft(50%, @arrowWidth - @borderWidth);
   border-bottom-color: @highComp;
 }
 
@@ -60,29 +42,13 @@
 .editBox[arrowPos="right"]:after {
   top: @arrowTopPos;
   left:100%;
-  border-left-color: @high;
-  .offsettedLeft(2 * @arrowWidth);
-}
-
-.editBox[arrowPos="right"]:before {
-  top: @arrowTopPos;
-  left:100%;
   border-left-color: @highComp;
-  border-width:(@borderWidth + @arrowWidth);
-  margin-top:-(@borderWidth + @arrowWidth);
-  .offsettedLeft(2 * @arrowWidth + 3);
+  .offsettedLeft(2 * @arrowWidth);
 }
 
 .editBox[arrowPos="bottom"]:after {
   bottom: -(2 * @arrowWidth);
   .offsettedLeft(50%, @arrowWidth);
-  border-top-color: @high;
-}
-
-.editBox[arrowPos="bottom"]:before {
-  bottom: -(2 * @arrowWidth + 3 * @borderWidth - 2);
-  border-width:(@borderWidth + @arrowWidth);
-  .offsettedLeft(50%, @arrowWidth - @borderWidth);
   border-top-color: @highComp;
 }
 
@@ -93,20 +59,28 @@
 .editBox[arrowPos="left"]:after {
     top: @arrowTopPos;
     left:0;
-    border-right-color: @high;
-}
-
-.editBox[arrowPos="left"]:before {
-  top: @arrowTopPos;
-  left:-(2* @borderWidth + 2);
-  border-right-color: @highComp;
-  border-width:(@borderWidth + @arrowWidth);
-  margin-top:-(@borderWidth + @arrowWidth);
+    border-right-color: @highComp;
 }
 
 .editBox .content {
-    clear:both;
     background: inherit !important;
+}
+
+.editBox .edit .tabs.level1 {
+  margin-top: @padding + @normalButtonSize;
+}
+
+.editBox .edit .tabs.level1 > .tab {
+  height: @tabsHeight !important;
+  .editIcon;
+}
+
+.editBox .edit .content.level1 {
+  background-color: @highComp !important;
+}
+
+.editBox.multiLayer > .content > .edit > .content.level1 {
+  .offsettedWidth(-@tabsWidth);
 }
 
 .editBox .content.level1 .active:not(button),
@@ -120,11 +94,6 @@
   color: @high !important;
 }
 
-.editBox.child[arrowPos="top"]:after { border-bottom-color: @highDarken !important; }
-.editBox.child[arrowPos="right"]:after { border-left-color: @highDarken !important; }
-.editBox.child[arrowPos="bottom"]:after { border-top-color: @highDarken !important; }
-.editBox.child[arrowPos="left"]:after { border-right-color: @highDarken !important; }
-
 .editBox .checkContainer .check {
   background-image: url('../images/checkWhite.png');
 }
@@ -133,4 +102,15 @@
   overflow-y: auto;
   height: 100%;
   max-height: 350px;
+}
+
+.editBox .edit .level1 > ul > .layer {
+  padding: @padding !important;
+}
+
+.editBox .edit > .actions {
+  float: right;
+  width: auto;
+  padding: @padding @padding 0 @padding;
+  background-color: @highComp;
 }

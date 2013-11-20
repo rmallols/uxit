@@ -8,20 +8,24 @@
 	list-style:none;
 }
 
-.edit ul.tabs > li {
-	display:inline-block;
-	float:left;
+.edit ul.tabs {
+  position: relative;
+  z-index: 2;
 }
 
 .edit ul.tabs.level1 {
 	float:left;
-	width:100%;
-	height:10%;
+    width: @tabsWidth;
+    height: 100%;
 }
 
-.edit ul.tabs.level1,
 .edit ul.tabs.level1 > .tab {
     height:@tabsHeight;
+}
+
+.edit ul.tabs > li {
+  display: block;
+  float:none;
 }
 
 .edit ul.tabs.level1 > li {
@@ -43,7 +47,6 @@
 .content.level2 {
 	position:relative;
 	float:left;
-	color:@highComp;
 }
 .edit .content.level1 {
 	width:100%;
@@ -100,7 +103,12 @@ for instance if the data is never going to persist (i.e. search box change)*/
     height:100%;
 	float:left;
     overflow-y: visible;
-    padding:@padding;
+    padding: 0px;
+}
+
+.edit .level1 > ul > .layer > * {
+  background-color: @highComp;
+  padding: @padding;
 }
 
 .edit .level2 > ul > .layer {

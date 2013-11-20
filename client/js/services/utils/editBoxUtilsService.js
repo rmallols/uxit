@@ -39,14 +39,10 @@
 
             function addEditBoxToDom() {
                 if (!scope.model) { scope.model = {}; }
-                var editBoxObj, parentEditBoxObj;
+                var editBoxObj;
                 editBoxObj = $('<edit-box model="model" panels="panels" arrow-pos="arrowPos" ' +
                     'internal-data="internalData" on-save="onSave()" on-change="onChange()" on-cancel="onCancel()" ' +
                     'on-close="onClose()" target="target"></edit-box>');
-                parentEditBoxObj = element.closest('.editBox');
-                if (parentEditBoxObj.size()) {
-                    editBoxObj.addClass('child');
-                }
                 element.after(editBoxObj);
                 $compile(editBoxObj)(scope);
             }
@@ -65,6 +61,7 @@
                 blockHideEditBox();     //Block the hide action to avoid flickering efect from portal directive
                 addEditBoxToDom();
                 safeUnblockEditBox();   //Unblock the hidding action
+                addOverlay(element);
             }
         }
 
@@ -87,6 +84,7 @@
                 keyboardService.unregister('left', 'edit');
                 keyboardService.unregister('right', 'edit');
             }
+            removeOverlay();
             unregisterKeyboardEvents();
         }
 
@@ -126,6 +124,14 @@
         }
 
         /** Private methods **/
+        function addOverlay(element) {
+            element.after('<div class="overlay"></div>');
+        }
+
+        function removeOverlay() {
+            $('.overlay').remove();
+        }
+
         function isEditBoxVisible(element) {
             return element.next('.editBox').size() > 0;
         }

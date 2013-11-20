@@ -23,9 +23,10 @@
             link: function (scope, element, attrs) {
 
                 var directiveId = 'edit' + ((attrs.type) ? '-' + attrs.type : ''), i = 0, pristineModel = {},
-                    pristineInternalData = {}, formObjs = [], layersWrapper = $('> .content.level1 > ul', element);
+                    formObjs = [], layersWrapper = $('> .content.level1 > ul', element),
+                    pristineInternalData = {};
 
-                scope.showIfMultipleTabs = function () {
+                    scope.showIfMultipleTabs = function () {
                     return scope.panels.length > 1;
                 };
 
@@ -105,7 +106,7 @@
                 });
 
                 scope.$watch('panels', function () {
-                    scope.tabWidth = 100 / scope.panels.length;
+                    scope.tabHeight = 100 / scope.panels.length;
                     scope.panels[0].active = true;
                     angular.forEach(scope.panels, function (panel) {
                         createEditLayer(panel);

@@ -77,7 +77,7 @@
 
 /*@appsHeight: `($(window).height() - 150)`;
 @highlightContentHeight: `($(window).height() - 280)`;*/
-@appsHeight: 500;
+@appsHeight: 600;
 @highlightContentHeight: 370;
 
 .addAppPanel > .collapsedView .apps {
@@ -167,4 +167,21 @@
 
 .addAppPanel [sortable-add-app] {
   cursor: move;
+}
+
+/////////////////////////////////////////////////////////////////////
+.addAppPanel {
+  top: 0 !important;
+}
+
+.addAppPanel > .collapsedView {
+  left: @tabsWidth;
+}
+
+.addAppPanel > .expandedView {
+  width: 76%;
+}
+
+.addAppPanel[state="expanded"] > .expandedView {
+  left: @collapsedAddAppPanelWidth + @tabsWidth;
 }

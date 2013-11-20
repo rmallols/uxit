@@ -1,6 +1,7 @@
 .admin {
     .offsettedHeight(-60px);
-	width:100%;
+    .offsettedWidth(-@tabsWidth);
+    height: 100% !important;
 	position:fixed;
 	top:-100%;
 	left:0px;
@@ -8,7 +9,7 @@
     padding: @padding;
     background-color: @high;
     z-index:10;
-    .transition(top @speed);
+    .transition(left @speed);
 }
 
 .admin.hide {
@@ -16,7 +17,8 @@
 }
 
 .admin.show {
-  top: @tabsHeight;
+  top: 0;
+  left: @tabsWidth;
 }
 
 .admin > .edit > .actions {
@@ -42,7 +44,6 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  width:100%;
   z-index:1;
 }
 

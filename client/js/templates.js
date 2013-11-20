@@ -741,7 +741,7 @@ angular.module("edit.html", []).run(["$templateCache", function($templateCache) 
     "        <button class=\"cancelIcon\" ng-click=\"cancel()\"></button>\n" +
     "    </div>\n" +
     "	<ul class=\"tabs level1\" ng-show=\"showIfMultipleTabs()\">\n" +
-    "		<li ng-repeat=\"panel in panels\" style=\"width:{{tabWidth}}%\" ng-style=\"panel.ngStyle()\" ng-click=\"clickTab($index)\"\n" +
+    "		<li ng-repeat=\"panel in panels\" style=\"height:{{tabWidth}}%\" ng-style=\"panel.ngStyle()\" ng-click=\"clickTab($index)\"\n" +
     "            class=\"tab button\" ng-class=\"getTabClasses(panel, $index)\" title=\"{{panel.description}}\" i18n-title>\n" +
     "            <label i18n=\"{{panel.title}}\"></label>\n" +
     "            <label ux-show=\"isEditedMarkVisible($parent[panel.type])\" ng-class=\"getEditedMarkColor($parent[panel.type])\"\n" +
@@ -780,7 +780,8 @@ angular.module("editAppStyles.html", []).run(["$templateCache", function($templa
 
 angular.module("editBox.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("editBox.html",
-    "<div id=\"{{target.id}}\" class=\"editBox cf\" arrowPos=\"{{arrowPos}}\" ng-style=\"getStyles()\" type=\"{{target.type}}\">\n" +
+    "<div id=\"{{target.id}}\" class=\"editBox cf\" arrowPos=\"{{arrowPos}}\" ng-style=\"getStyles()\" type=\"{{target.type}}\"\n" +
+    "    ng-class=\"{multiLayer: panels.length > 1}\">\n" +
     "    <div class=\"content cf\">\n" +
     "        <edit ng-model=\"model\" internal-data=\"internalData\" panels=\"panels\" active-tab=\"activeTab\"\n" +
     "              on-save=\"save()\" on-change=\"change()\" on-cancel=\"cancel()\" limit-layer-height=\"true\"></edit>\n" +
