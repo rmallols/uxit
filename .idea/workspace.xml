@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/portalsAdminService.js" afterPath="$PROJECT_DIR$/client/js/services/portalsAdminService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/contentEditable/selectMedia.js" afterPath="$PROJECT_DIR$/client/js/directives/contentEditable/selectMedia.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="" />
     <ignored path="uxit.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="test-results.xml" />
@@ -32,7 +28,7 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="66" selection-start="174" selection-end="174" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="782">
+            <state line="7" column="66" selection-start="187" selection-end="187" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="782">
               <folding />
             </state>
           </provider>
@@ -68,7 +64,7 @@
       <file leaf-file-name="portalsAdminService.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/js/services/portalsAdminService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="73" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.31661892" vertical-offset="357" max-vertical-offset="1275">
+            <state line="43" column="49" selection-start="1620" selection-end="1620" vertical-scroll-proportion="0.50445104" vertical-offset="561" max-vertical-offset="1275">
               <folding />
             </state>
           </provider>
@@ -817,9 +813,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712707" order="1" side_tool="false" content_ui="tabs" />
@@ -827,7 +823,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-734" y="98" width="1911" height="1067" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-329" y="-1084" width="1911" height="1067" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -973,7 +969,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="66" selection-start="174" selection-end="174" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="782">
+        <state line="7" column="66" selection-start="187" selection-end="187" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="782">
           <folding />
         </state>
       </provider>
@@ -1008,7 +1004,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/portalsAdminService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="73" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.31661892" vertical-offset="357" max-vertical-offset="1275">
+        <state line="43" column="49" selection-start="1620" selection-end="1620" vertical-scroll-proportion="0.50445104" vertical-offset="561" max-vertical-offset="1275">
           <folding />
         </state>
       </provider>
