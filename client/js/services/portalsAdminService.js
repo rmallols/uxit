@@ -50,7 +50,7 @@
                 return  '<div class="columns large-25">' +
                             '<h5>{{item.name}}</h5>' +
                             'Size on disk; {{item.sizeOnDisk}} - empty: {{item.empty}}' +
-                        '</div>'
+                        '</div>';
             }
         }
 

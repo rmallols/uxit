@@ -21,7 +21,6 @@
                 ];
 
                 scope.propagateChanges = function (media) {
-                    console.log("SENDING!", media, scope.onLayer)
                     scope.onLayer.change(media);
                     //if (scope.onChange) { scope.onChange({$data: media}); }
                 };

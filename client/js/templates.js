@@ -741,7 +741,7 @@ angular.module("edit.html", []).run(["$templateCache", function($templateCache) 
     "        <button class=\"cancelIcon\" ng-click=\"cancel()\"></button>\n" +
     "    </div>\n" +
     "	<ul class=\"tabs level1\" ng-show=\"showIfMultipleTabs()\">\n" +
-    "		<li ng-repeat=\"panel in panels\" style=\"height:{{tabWidth}}%\" ng-style=\"panel.ngStyle()\" ng-click=\"clickTab($index)\"\n" +
+    "		<li ng-repeat=\"panel in panels\" style=\"height:{{tabHeight}}%\" ng-style=\"panel.ngStyle()\" ng-click=\"clickTab($index)\"\n" +
     "            class=\"tab button\" ng-class=\"getTabClasses(panel, $index)\" title=\"{{panel.description}}\" i18n-title>\n" +
     "            <label i18n=\"{{panel.title}}\"></label>\n" +
     "            <label ux-show=\"isEditedMarkVisible($parent[panel.type])\" ng-class=\"getEditedMarkColor($parent[panel.type])\"\n" +

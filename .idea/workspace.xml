@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js" afterPath="$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/portalsAdminService.js" afterPath="$PROJECT_DIR$/client/js/services/portalsAdminService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/contentEditable/selectMedia.js" afterPath="$PROJECT_DIR$/client/js/directives/contentEditable/selectMedia.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -49,16 +50,34 @@
       <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="161" column="53" selection-start="6336" selection-end="6336" vertical-scroll-proportion="-10.6" vertical-offset="2472" max-vertical-offset="3145">
+            <state line="113" column="64" selection-start="4366" selection-end="4366" vertical-scroll-proportion="-4.88" vertical-offset="1799" max-vertical-offset="3145">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bannerTextService.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="selectMedia.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/contentEditable/selectMedia.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="90" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="portalsAdminService.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/js/services/portalsAdminService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="73" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.31661892" vertical-offset="357" max-vertical-offset="1275">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bannerTextService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="14" selection-start="2349" selection-end="2349" vertical-scroll-proportion="1.2106825" vertical-offset="663" max-vertical-offset="1411">
+            <state line="48" column="54" selection-start="1900" selection-end="1900" vertical-scroll-proportion="0.0" vertical-offset="713" max-vertical-offset="1411">
               <folding />
             </state>
           </provider>
@@ -82,8 +101,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/html/pages.html" />
-        <option value="$PROJECT_DIR$/client/css/addAppPanel.less" />
         <option value="$PROJECT_DIR$/client/html/pages/portalPage.html" />
         <option value="$PROJECT_DIR$/client/html/admin/adminPanel.html" />
         <option value="$PROJECT_DIR$/client/css/utils.less" />
@@ -98,6 +115,8 @@
         <option value="$PROJECT_DIR$/client/js/directives/admin/edit.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/contentEditable/selectMedia.js" />
+        <option value="$PROJECT_DIR$/client/js/services/portalsAdminService.js" />
       </list>
     </option>
   </component>
@@ -238,7 +257,7 @@
       <recent name="C:\usr\menzit" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Generate templates">
+  <component name="RunManager" selected="Node.js.grunt prod">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -798,9 +817,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712707" order="1" side_tool="false" content_ui="tabs" />
@@ -882,20 +901,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/html/admin/editBox.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="221">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/utils.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="86" selection-start="61" selection-end="61" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="2601">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/css/edit.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="59" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="1799" max-vertical-offset="2771">
@@ -980,16 +985,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+    <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="53" selection-start="6336" selection-end="6336" vertical-scroll-proportion="-10.6" vertical-offset="2472" max-vertical-offset="3145">
+        <state line="48" column="54" selection-start="1900" selection-end="1900" vertical-scroll-proportion="0.0" vertical-offset="713" max-vertical-offset="1411">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js">
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="14" selection-start="2349" selection-end="2349" vertical-scroll-proportion="1.2106825" vertical-offset="663" max-vertical-offset="1411">
+        <state line="113" column="64" selection-start="4366" selection-end="4366" vertical-scroll-proportion="-4.88" vertical-offset="1799" max-vertical-offset="3145">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/contentEditable/selectMedia.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="90" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/portalsAdminService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="73" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.31661892" vertical-offset="357" max-vertical-offset="1275">
           <folding />
         </state>
       </provider>
