@@ -61,7 +61,7 @@
         function editText(scope) {
             scope.contentChanged = function() {
                 scope.onLayer.change();
-            }
+            };
         }
 
         /** Private methods **/
