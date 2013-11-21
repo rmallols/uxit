@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.34.0.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\usr\menzit\client\min\css.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\usr\menzit\client\min\js.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/admin/addAppPanel.html" afterPath="$PROJECT_DIR$/client/html/admin/addAppPanel.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/addAppPanel.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/addAppPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/addAppPanel.less" afterPath="$PROJECT_DIR$/client/css/addAppPanel.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/app/appBridge.js" afterPath="$PROJECT_DIR$/client/js/directives/app/appBridge.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
+    <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="#213 [addApp] The app preview mechanism is broken">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server.js" afterPath="$PROJECT_DIR$/server/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -35,64 +28,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="addAppPanel.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/css/addAppPanel.less">
+      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="99" selection-start="2045" selection-end="2045" vertical-scroll-proportion="-0.8947368" vertical-offset="1683" max-vertical-offset="3213">
+            <state line="52" column="55" selection-start="1966" selection-end="1966" vertical-scroll-proportion="-8.28" vertical-offset="677" max-vertical-offset="3451">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menuAppService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/apps/menuApp/menuAppService.js">
+      <file leaf-file-name="redirectionService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/redirectionService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="14" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="799">
+            <state line="42" column="43" selection-start="1501" selection-end="1501" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="2278">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="appBridge.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/app/appBridge.js">
+      <file leaf-file-name="sessionService.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/js/services/sessionService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="107" selection-start="4327" selection-end="4327" vertical-scroll-proportion="-12.64" vertical-offset="1265" max-vertical-offset="1938">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/app/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="21" selection-start="2275" selection-end="2275" vertical-scroll-proportion="-2.16" vertical-offset="745" max-vertical-offset="2057">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/app/app.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="77" selection-start="495" selection-end="495" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="255">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addAppPanel.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/html/admin/addAppPanel.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="52" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.9300699" vertical-offset="91" max-vertical-offset="833">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addAppPanel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/addAppPanel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="47" selection-start="1615" selection-end="1636" vertical-scroll-proportion="-17.12" vertical-offset="150" max-vertical-offset="1751">
+            <state line="19" column="61" selection-start="754" selection-end="754" vertical-scroll-proportion="0.63501483" vertical-offset="109" max-vertical-offset="1496">
               <folding />
             </state>
           </provider>
@@ -116,9 +73,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/css/editBox.less" />
-        <option value="$PROJECT_DIR$/client/css/pages.less" />
-        <option value="$PROJECT_DIR$/client/css/edit.less" />
         <option value="$PROJECT_DIR$/client/css/adminPanel.less" />
         <option value="$PROJECT_DIR$/client/html/admin/edit.html" />
         <option value="$PROJECT_DIR$/client/js/directives/admin/edit.js" />
@@ -132,6 +86,9 @@
         <option value="$PROJECT_DIR$/client/js/directives/app/appBridge.js" />
         <option value="$PROJECT_DIR$/client/js/directives/admin/addAppPanel.js" />
         <option value="$PROJECT_DIR$/client/html/admin/addAppPanel.html" />
+        <option value="$PROJECT_DIR$/client/js/services/sessionService.js" />
+        <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/server/redirectionService.js" />
       </list>
     </option>
   </component>
@@ -272,7 +229,7 @@
       <recent name="C:\usr\menzit" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Generate templates">
+  <component name="RunManager" selected="Node.js.Start NodeJs">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -807,7 +764,11 @@
       <created>1384846713699</created>
       <updated>1384846713699</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="#213 [addApp] The app preview mechanism is broken">
+      <created>1385058655716</created>
+      <updated>1385058655716</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -831,7 +792,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
+    <frame x="54" y="-8" width="1320" height="784" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
@@ -883,7 +844,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="#143 Create a super admin role" />
     <MESSAGE value="#150 [Media list] Provide the same height as the width for each thumbnail" />
     <MESSAGE value="#153 The TAB key to navigate between fields is broken" />
     <MESSAGE value="#140 [bannerCanvas] Integrate security" />
@@ -908,7 +868,8 @@
     <MESSAGE value="#163 Generalize the app-bridge mechanism to make it compatible with core resources" />
     <MESSAGE value="#175 [e2e] Investigate element (s) selector mechanisms, available properties and actions" />
     <MESSAGE value="#205 The stats mechanism is broken" />
-    <option name="LAST_COMMIT_MESSAGE" value="#205 The stats mechanism is broken" />
+    <MESSAGE value="#213 [addApp] The app preview mechanism is broken" />
+    <option name="LAST_COMMIT_MESSAGE" value="#213 [addApp] The app preview mechanism is broken" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -916,30 +877,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="54" selection-start="1900" selection-end="1900" vertical-scroll-proportion="0.305638" vertical-offset="713" max-vertical-offset="1411">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="64" selection-start="4366" selection-end="4366" vertical-scroll-proportion="0.39102563" vertical-offset="1799" max-vertical-offset="3145">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/contentEditable/selectMedia.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="90" selection-start="883" selection-end="883" vertical-scroll-proportion="1.0593472" vertical-offset="0" max-vertical-offset="663" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/portalsAdminService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="21" selection-start="1348" selection-end="1348" vertical-scroll-proportion="0.050445102" vertical-offset="561" max-vertical-offset="1275">
-          <folding />
-        </state>
+        <state line="34" column="21" selection-start="1348" selection-end="1348" vertical-scroll-proportion="0.050445102" vertical-offset="561" max-vertical-offset="1275" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
@@ -949,51 +889,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test-results.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="164" selection-start="2826" selection-end="2826" vertical-scroll-proportion="0.07445256" vertical-offset="306" max-vertical-offset="6443">
-          <folding />
-        </state>
+        <state line="21" column="164" selection-start="2826" selection-end="2826" vertical-scroll-proportion="0.07445256" vertical-offset="306" max-vertical-offset="6443" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/constants.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="55" selection-start="572" selection-end="572" vertical-scroll-proportion="0.42040184" vertical-offset="0" max-vertical-offset="647">
-          <folding />
-        </state>
+        <state line="16" column="55" selection-start="572" selection-end="572" vertical-scroll-proportion="0.42040184" vertical-offset="0" max-vertical-offset="647" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/addAppPanel.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="99" selection-start="2045" selection-end="2045" vertical-scroll-proportion="-0.8947368" vertical-offset="1683" max-vertical-offset="3213">
-          <folding />
-        </state>
+        <state line="103" column="99" selection-start="2045" selection-end="2045" vertical-scroll-proportion="-0.8947368" vertical-offset="1683" max-vertical-offset="3213" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/apps/menuApp/menuAppService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="14" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="799">
-          <folding />
-        </state>
+        <state line="17" column="14" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="799" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/app/addAppService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="72" selection-start="624" selection-end="627" vertical-scroll-proportion="0.33283803" vertical-offset="31" max-vertical-offset="1394">
-          <folding />
-        </state>
+        <state line="15" column="72" selection-start="624" selection-end="627" vertical-scroll-proportion="0.33283803" vertical-offset="31" max-vertical-offset="1394" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/html/app/app.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="77" selection-start="495" selection-end="495" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
+        <state line="6" column="77" selection-start="495" selection-end="495" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="255" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/app/app.js">
@@ -1005,21 +931,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/app/appBridge.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="107" selection-start="4327" selection-end="4327" vertical-scroll-proportion="-12.64" vertical-offset="1265" max-vertical-offset="1938">
-          <folding />
-        </state>
+        <state line="93" column="107" selection-start="4327" selection-end="4327" vertical-scroll-proportion="-12.64" vertical-offset="1265" max-vertical-offset="1938" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/admin/addAppPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="47" selection-start="1615" selection-end="1636" vertical-scroll-proportion="-17.12" vertical-offset="150" max-vertical-offset="1751">
-          <folding />
-        </state>
+        <state line="34" column="47" selection-start="1615" selection-end="1636" vertical-scroll-proportion="1.3717948" vertical-offset="150" max-vertical-offset="1751" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/html/admin/addAppPanel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="52" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.9300699" vertical-offset="91" max-vertical-offset="833">
+        <state line="21" column="52" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.9300699" vertical-offset="91" max-vertical-offset="833" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="55" selection-start="1966" selection-end="1966" vertical-scroll-proportion="-8.28" vertical-offset="677" max-vertical-offset="3451">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/redirectionService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="43" selection-start="1501" selection-end="1501" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="2278">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/sessionService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="61" selection-start="754" selection-end="754" vertical-scroll-proportion="0.63501483" vertical-offset="109" max-vertical-offset="1496">
           <folding />
         </state>
       </provider>

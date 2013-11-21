@@ -38,7 +38,7 @@ function setupDb(req, res, next) {
     });
 }
 
-app.use(express.static(__dirname + '/../'));
+
 
 app.get('/favicon.ico', function (req, res) {
     redirectionService.goToFavicon(res);
@@ -186,6 +186,8 @@ app.get('/:portalId', setupDb, function (req, res) {
 app.get('/:portalId/:pageId', setupDb, function (req, res) {
     redirectionService.goToPageFromPage(req, res);
 });
+
+app.use(express.static(__dirname + '/../'));
 
 liveMessageService.init(io);
 
