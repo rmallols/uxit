@@ -109,6 +109,7 @@
 
 .addAppPanel[state="expanded"] > .expandedView {
   visibility: visible;
+  margin-left: @tabsWidth;
   left: @collapsedAddAppPanelWidth;
 }
 
@@ -180,8 +181,4 @@
 
 .addAppPanel > .expandedView {
   width: 76%;
-}
-
-.addAppPanel[state="expanded"] > .expandedView {
-  left: @collapsedAddAppPanelWidth + @tabsWidth;
 }

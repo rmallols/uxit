@@ -25,12 +25,14 @@
                     scope.onAddedComment = function () { getStats(); };
                     scope.highlight             = availableApp;
                     scope.highlight.collection  = constantsService.collections.availableApps;
+                    scope.isExpandedViewVisible = true;
                     element.attr('state', expandedState);
                     getStats();
                 };
 
                 scope.hideExpandedView = function () {
                     scope.highlight = null;
+                    scope.isExpandedViewVisible = false;
                     element.attr('state', collapsedState);
                 };
 

@@ -19,12 +19,16 @@
                 },
                 link: function link(scope, element) {
 
-                    var childScope = scope.$new(true);
-
-                    $timeout(function() {
-                        inheritParentScopeModel();
-                        if(childScope.src && childScope.view) {
-                            executeServiceMethod(childScope.src, childScope.view);
+                    var childScope;
+                    scope.$watch('src', function(newSrc) {
+                        if(newSrc) {
+                            childScope = scope.$new(true);
+                            $timeout(function() {
+                                inheritParentScopeModel();
+                                if(childScope.src && childScope.view) {
+                                    executeServiceMethod(childScope.src, childScope.view);
+                                }
+                            });
                         }
                     });
 

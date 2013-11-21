@@ -677,7 +677,7 @@ angular.module("addAppPanel.html", []).run(["$templateCache", function($template
     "            </div>\n" +
     "        </ul>\n" +
     "    </div>\n" +
-    "    <div class=\"expandedView\">\n" +
+    "    <div class=\"expandedView\" ux-show=\"isExpandedViewVisible\">\n" +
     "        <div class=\"content\">\n" +
     "            <div class=\"header\">\n" +
     "                <div class=\"main\">\n" +
