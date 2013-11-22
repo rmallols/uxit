@@ -108,16 +108,17 @@ module.exports = function(grunt) {
             }
         },
         shell: {
-            mongo: {
-                command: grunt.option('path'),
-                options: {
-                    async: true
-                }
+            startSelenium: {
+                command: 'java -jar ./node_modules/protractor/bin/selenium/selenium-server-standalone-2.35.0.jar ' +
+                         '-Dwebdriver.chrome.driver=./node_modules/protractor/bin/selenium/chromedriver.exe',
+                options: { stdout: true }
             },
-            githubAdd:      { command: 'git add .' },
-            githubCommit:   { command: 'git commit -m "#0 prod update"' },
-            githubPush:     { command: 'git push' },
-            herokuPush:     { command: 'git push heroku master' }
+            startProtractor:{ command: '.\\node_modules\\.bin\\protractor .\\server\\tests\\e2e\\customConf.js', options: { stdout: true } },
+            startMongo:     { command: grunt.option('path'), options: { async: true, stdout: true }},
+            githubAdd:      { command: 'git add .', options: { stdout: true } },
+            githubCommit:   { command: 'git commit -m "#0 prod update"', options: { stdout: true } },
+            githubPush:     { command: 'git push', options: { stdout: true } },
+            herokuPush:     { command: 'git push heroku master', options: { stdout: true } }
         },
         bumpup: {
             file: 'package.json',
@@ -166,15 +167,17 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-bumpup');
 
-    grunt.registerTask('startMongo', ['shell:mongo']);
     grunt.registerTask('startKarma', ['karma:watch']);
+    grunt.registerTask('startMongo', ['shell:startMongo']);
+    grunt.registerTask('startSelenium', ['shell:startSelenium']);
+    grunt.registerTask('startProtractor', ['shell:startProtractor']);
     grunt.registerTask('generateTemplates', ['html2js']);
     grunt.registerTask('devPreprocess', ['preprocess:htmlDev']);
     grunt.registerTask('prodPreprocess', ['preprocess:htmlProd', 'preprocess:jsProd']);
     grunt.registerTask('bump', ['bumpup:minor']);
     grunt.registerTask('github', ['shell:githubAdd', 'shell:githubCommit', 'shell:githubPush']);
     grunt.registerTask('heroku', ['shell:herokuPush']);
-    grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'bump', 'devPreprocess', 'generateTemplates', 'github']);
+    grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'startProtractor', 'bump', 'devPreprocess', 'generateTemplates', 'github']);
     grunt.registerTask('prod', ['clean', 'jshint', 'karma:run', 'bump', 'prodPreprocess',
         'generateTemplates', 'concat', 'uglify', 'less:prod', 'github', 'heroku']);
 };
