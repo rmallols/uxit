@@ -9,18 +9,19 @@ function PortalController($scope, $routeParams, portalService, roleService, sess
 
     userService.loadUsers(null);    //Cache users
     pageService.loadPages(null);    //Cache pages
-    roleService.loadRoles(null);    //Cache roles
-    tagService.loadTags(null);      //Cache tags
-    i18nService.loadLanguages(null);//Cache languages
-    availableAppsService.loadAvailableApps(null); //Cache available apps
-    sessionService.loadUserSession(function (userSession) {
-        if (userSession && userSession.language) {
-            i18nService.changeLanguage(userSession.language);
-        }
-    });
-    portalService.loadPortal($routeParams.page, function() {
-        portalService.setHeader();
-        metaService.setWindowDimensions();
-        portalService.trackAnalytics();
-    });
+    roleService.loadRoles(function() {
+        tagService.loadTags(null);      //Cache tags
+        i18nService.loadLanguages(null);//Cache languages
+        availableAppsService.loadAvailableApps(null); //Cache available apps
+        sessionService.loadUserSession(function (userSession) {
+            if (userSession && userSession.language) {
+                i18nService.changeLanguage(userSession.language);
+            }
+        });
+        portalService.loadPortal($routeParams.page, function() {
+            portalService.setHeader();
+            metaService.setWindowDimensions();
+            portalService.trackAnalytics();
+        });
+    });    //Cache roles
 }

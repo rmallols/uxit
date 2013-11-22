@@ -11,7 +11,7 @@
             },
             link: function link(scope, element) {
                 var collection = scope.internalData.collection,
-                    layerElm = $('<div create-' + collection + ' model="internalData.data" on-layer="onLayer"></div>');
+                    layerElm = $('<div create-' + collection + ' model="internalData.data" on-layer="onLayer" class="cf"></div>');
                 element.html(layerElm);
                 $compile(layerElm)(scope);
             }

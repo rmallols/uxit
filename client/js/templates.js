@@ -671,7 +671,7 @@ angular.module("addAppPanel.html", []).run(["$templateCache", function($template
     "            <div ng-repeat=\"availableApp in availableApps.model | filter: filter\" ng-class=\"getBlockStyleClass(availableApp.id)\">\n" +
     "                <div class=\"category\" ng-show=\"availableApp.firstInCategory\">{{availableApp.category}}</div>\n" +
     "                <li sortable-add-app class=\"newItem\" type=\"{{availableApp.id}}\" ng-class=\"getAppClasses($index)\">\n" +
-    "                    <div class=\"text\">{{availableApp.title}}</div>\n" +
+    "                    <div class=\"text2\">{{availableApp.title}}</div>\n" +
     "                    <button class=\"infoIcon\" ng-click=\"toggleExpandedView(availableApp)\"></button>\n" +
     "                </li>\n" +
     "            </div>\n" +
@@ -1392,7 +1392,7 @@ angular.module("list.html", []).run(["$templateCache", function($templateCache) 
     "        <label i18n=\"list.search\"></label>\n" +
     "        <input type=\"text\" ng-model=\"searchText\" ux-keyup=\"executeSearch()\"/>\n" +
     "    </div>\n" +
-    "    <div ng-show=\"isPageActionsTop()\" list-actions class=\"top\" collection=\"collection\"></div>\n" +
+    "    <div ux-show=\"isPageActionsTop()\" list-actions class=\"top\" collection=\"collection\"></div>\n" +
     "    <div class=\"noItems\" ng-show=\"items.length == 0\"><i><label i18n=\"list.noItems\"></label></i></div>\n" +
     "    <div ng-show=\"items.length > 0\" ng-hide=\"detailId && detailId!=item._id\" id=\"{{item._id}}\"\n" +
     "         ng-repeat=\"item in items | filter: getFilter()\" class=\"item columns\"\n" +
@@ -1412,7 +1412,7 @@ angular.module("list.html", []).run(["$templateCache", function($templateCache) 
     "    <a href=\"#\" class=\"detailArea floatRight\" ng-show=\"detailId\" ng-click=\"deleteDetailId()\">\n" +
     "        &lt;&lt; <label i18n=\"list.goBack\"></label>\n" +
     "    </a>\n" +
-    "    <div ng-show=\"isPageActionsBottom()\" list-actions class=\"bottom\" collection=\"collection\"></div>\n" +
+    "    <div ux-show=\"isPageActionsBottom()\" list-actions class=\"bottom\" collection=\"collection\"></div>\n" +
     "</div>\n" +
     "");
 }]);
@@ -1574,7 +1574,7 @@ angular.module("listActions.html", []).run(["$templateCache", function($template
     "        </button>\n" +
     "    </div>\n" +
     "    <div class=\"leftActions floatLeft\" ng-show=\"isCreatable()\">\n" +
-    "        <button create-item-button class=\"addIcon\" ng-click=\"createItem()\" collection=\"collection\"\n" +
+    "        <button id=\"createItemButton\" create-item-button class=\"addIcon\" ng-click=\"createItem()\" collection=\"collection\"\n" +
     "                on-create=\"createItem($item)\" on-create-panels=\"onCreatePanels\">\n" +
     "            <label i18n=\"list.createItem\"></label>\n" +
     "        </button>\n" +

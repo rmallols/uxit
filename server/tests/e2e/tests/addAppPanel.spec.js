@@ -1,6 +1,6 @@
 var execSetup = require('../execSetup.js');
 
-describe('menzit homepage', function() {
+describe('add app panel', function() {
 
     var ptor;
     beforeEach(function() {

@@ -109,7 +109,7 @@ module.exports = function(grunt) {
         },
         shell: {
             startSelenium: {
-                command: 'java -jar ./node_modules/protractor/bin/selenium/selenium-server-standalone-2.35.0.jar ' +
+                command: 'java -jar ./node_modules/protractor/bin/selenium/selenium-server-standalone-2.37.0.jar ' +
                          '-Dwebdriver.chrome.driver=./node_modules/protractor/bin/selenium/chromedriver.exe',
                 options: { stdout: true }
             },
