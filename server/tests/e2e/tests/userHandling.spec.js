@@ -2,6 +2,7 @@
     'use strict';
 
     var execSetup       = require('../execSetup.js'),
+        adminPanelPO    = require('../pageObjects/adminPanel.pO.js'),
         userHandlingPO  = require('../pageObjects/userHandling.pO.js'),
         globalMsgPO     = require('../pageObjects/globalMsg.pO.js'),
         navigationPO    = require('../pageObjects/navigation.pO.js'),
@@ -12,7 +13,7 @@
 
         it('should show the user list from the admin panel', function() {
             var editUsersListPanelElm;
-            userHandlingPO.showAdminPanel('.userIcon');
+            adminPanelPO.showAdminPanel('.userIcon');
             editUsersListPanelElm = userHandlingPO.getEditUsersList();
             expect(editUsersListPanelElm.isDisplayed()).toBe(true);
         });
@@ -39,7 +40,7 @@
         });
 
         it('should be able to logout, redirecting to the home page of the portal', function() {
-            userHandlingPO.logout();
+            loginPO.logout();
             navigationPO.getCurrentUrl().then(function(url) {
                 expect(url).toBe('http://localhost:3000/menzit/Home');
             });
@@ -55,7 +56,7 @@
 
         it('should delete the current user', function() {
             var itemElm, deleteSelectedItemButtonElm;
-            userHandlingPO.showAdminPanel('.userIcon');
+            adminPanelPO.showAdminPanel('.userIcon');
             userHandlingPO.getItemsSelectors().then(function(itemsSelectors) {
                 itemsSelectors[itemsSelectors.length-1].click();
                 deleteSelectedItemButtonElm = userHandlingPO.getDeleteItemsButtom();
@@ -63,6 +64,8 @@
                 itemElm =  userHandlingPO.getItemsTitles();
                 itemElm.then(function(itemElms) {
                     expect(itemElms[itemElms.length-1].getText()).not.toBe(mockUserName);
+                    loginPO.logout();
+                    loginPO.loginAsAdmin();
                 });
             });
         });

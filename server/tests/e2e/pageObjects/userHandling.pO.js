@@ -38,13 +38,6 @@
             return  this._ptor.findElement(this._protractor.By.css("[create-users]"));
         },
 
-        showAdminPanel: function(adminPanelButtonId) {
-            var usersButtonAdminPanelElm;
-            usersButtonAdminPanelElm = this._ptor.findElement(this._protractor.By.css(".tab.button" + adminPanelButtonId));
-            usersButtonAdminPanelElm.click();
-            return this;
-        },
-
         getEditUsersList: function() {
             return this._ptor.findElement(this._protractor.By.css('[edit-user-list]'));
         },
@@ -59,14 +52,6 @@
 
         getDeleteItemsButtom: function() {
             return this._ptor.findElement(this._protractor.By.css("button[ng-click='deleteSelected()']"));
-        },
-
-        logout: function() {
-            var logoutButtonElm;
-            this.showAdminPanel('.currentUser');
-            logoutButtonElm = this._ptor.findElement(this._protractor.By.css("button[ng-click='logout()']"));
-            logoutButtonElm.click();
-            return this;
         }
     };
 })();

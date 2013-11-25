@@ -1,7 +1,8 @@
 (function() {
     'use strict';
 
-    var execSetup   = require('../execSetup.js');
+    var execSetup       = require('../execSetup.js'),
+        adminPanelPO    = require('../pageObjects/adminPanel.pO.js');
 
     module.exports = {
 
@@ -23,6 +24,14 @@
 
         loginAsAdmin: function() {
             this.login('admin@menzit.com', 'admin1admin');
+            return this;
+        },
+
+        logout: function() {
+            var logoutButtonElm;
+            adminPanelPO.showAdminPanel('.currentUser');
+            logoutButtonElm = this._ptor.findElement(this._protractor.By.css("button[ng-click='logout()']"));
+            logoutButtonElm.click();
             return this;
         }
     };
