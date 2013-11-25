@@ -2,14 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/controllers/PortalController.js" afterPath="$PROJECT_DIR$/client/js/controllers/PortalController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/tests/e2e/pageObjects/addAppPanel.pO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/tests/e2e/pageObjects/globalMsg.pO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/tests/e2e/pageObjects/login.pO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/tests/e2e/pageObjects/navigation.pO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/tests/e2e/pageObjects/userHandling.pO.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/e2e/tests/addAppPanel.spec.js" afterPath="$PROJECT_DIR$/server/tests/e2e/tests/addAppPanel.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/list/createItem.js" afterPath="$PROJECT_DIR$/client/js/directives/list/createItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/list/list.html" afterPath="$PROJECT_DIR$/client/html/list/list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/adminPanel.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/adminPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/e2e/execSetup.js" afterPath="$PROJECT_DIR$/server/tests/e2e/execSetup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/globalMsg.less" afterPath="$PROJECT_DIR$/client/css/globalMsg.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/e2e/tests/login.spec.js" afterPath="$PROJECT_DIR$/server/tests/e2e/tests/login.spec.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js" afterPath="$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -35,64 +41,88 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="userHandling.pO.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/userHandling.pO.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="31" selection-start="2788" selection-end="2803" vertical-scroll-proportion="-18.08" vertical-offset="636" max-vertical-offset="1309">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userHandling.spec.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="52" selection-start="1982" selection-end="1982" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1292">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="globalMsg.pO.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/globalMsg.pO.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="60" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="addAppPanel.spec.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/addAppPanel.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="28" selection-start="629" selection-end="645" vertical-scroll-proportion="-12.24" vertical-offset="0" max-vertical-offset="527">
+            <state line="14" column="73" selection-start="518" selection-end="518" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userHandling.spec.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js">
+      <file leaf-file-name="addAppPanel.pO.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/addAppPanel.pO.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="93" selection-start="2147" selection-end="2147" vertical-scroll-proportion="1.2852564" vertical-offset="364" max-vertical-offset="1054">
+            <state line="19" column="121" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+              <folding>
+                <marker date="1385401189332" expanded="true" signature="103:699" placeholder="{...}" />
+                <marker date="1385401189332" expanded="true" signature="216:424" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.pO.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/login.pO.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="113" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="navigation.pO.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/navigation.pO.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="92" selection-start="288" selection-end="288" vertical-scroll-proportion="-4.269231" vertical-offset="110" max-vertical-offset="782">
+            <state line="14" column="84" selection-start="323" selection-end="323" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+              <folding>
+                <marker date="1385400439975" expanded="true" signature="105:397" placeholder="{...}" />
+                <marker date="1385400439975" expanded="true" signature="227:285" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.spec.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/login.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="88" selection-start="718" selection-end="718" vertical-scroll-proportion="0.8575668" vertical-offset="0" max-vertical-offset="544">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <file leaf-file-name="execSetup.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/e2e/execSetup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="74" selection-start="4537" selection-end="4537" vertical-scroll-proportion="-10.32" vertical-offset="1663" max-vertical-offset="3196">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createItem.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/list/createItem.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="52" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="425">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="roleService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/services/roleService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="153" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="2618">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PortalController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/controllers/PortalController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="52" selection-start="832" selection-end="832" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="544">
+            <state line="20" column="8" selection-start="654" selection-end="654" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
               <folding />
             </state>
           </provider>
@@ -116,22 +146,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/js/directives/app/appBridge.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/admin/addAppPanel.js" />
-        <option value="$PROJECT_DIR$/client/js/services/sessionService.js" />
-        <option value="$PROJECT_DIR$/server/server.js" />
-        <option value="$PROJECT_DIR$/server/redirectionService.js" />
-        <option value="$PROJECT_DIR$/server/tests/e2e/tests/addAppPanel.spec.js" />
-        <option value="$PROJECT_DIR$/client/html/list/list.html" />
-        <option value="$PROJECT_DIR$/client/js/directives/list/createItem.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/feedback/globalMsg.js" />
-        <option value="$PROJECT_DIR$/client/html/admin/addAppPanel.html" />
-        <option value="$PROJECT_DIR$/client/html/utils/listActions.html" />
-        <option value="$PROJECT_DIR$/client/js/controllers/PortalController.js" />
-        <option value="$PROJECT_DIR$/client/js/services/roleService.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/client/css/globalMsg.less" />
+        <option value="$PROJECT_DIR$/client/js/directives/admin/adminPanel.js" />
+        <option value="$PROJECT_DIR$/server/tests/e2e/modules/login.js" />
+        <option value="$PROJECT_DIR$/server/tests/e2e/services/loginService.js" />
+        <option value="$PROJECT_DIR$/client/html/admin/editUser.html" />
+        <option value="$PROJECT_DIR$/server/tests/e2e/execSetup.js" />
+        <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/navigation.pO.js" />
+        <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/addAppPanel.pO.js" />
+        <option value="$PROJECT_DIR$/server/tests/e2e/tests/addAppPanel.spec.js" />
+        <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/globalMsg.pO.js" />
+        <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/userHandling.pO.js" />
         <option value="$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js" />
+        <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/login.pO.js" />
+        <option value="$PROJECT_DIR$/server/tests/e2e/tests/login.spec.js" />
       </list>
     </option>
   </component>
@@ -243,7 +273,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -342,8 +371,67 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e2e" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pageObjects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -351,7 +439,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="options.lastSelected" value="Settings.JavaScript.Linters.JSHint" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -362,11 +450,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\usr\menzit\server\tests\e2e\pageObjects" />
+      <recent name="C:\usr\menzit\server\tests\e2e\modules" />
       <recent name="C:\usr\menzit\server\tests\e2e\tests" />
       <recent name="C:\usr\menzit\server\tests\unit\utils" />
       <recent name="C:\usr\menzit\server\tests\unit\services" />
-      <recent name="C:\usr\menzit\client\html\admin" />
-      <recent name="C:\usr\menzit\client\js\services" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\usr\menzit\client\html\admin" />
@@ -936,7 +1024,11 @@
       <created>1385137964127</created>
       <updated>1385137964127</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="#210 [e2e] Prod &amp; Webstorm integration">
+      <created>1385148379088</created>
+      <updated>1385148379088</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -967,11 +1059,11 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712707" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22162576" sideWeight="0.74723756" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2208589" sideWeight="0.5718232" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-323" y="-1072" width="1911" height="1067" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-334" y="-1078" width="1911" height="1067" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1025,98 +1117,120 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/css/edit.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2771" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="56" selection-start="8400" selection-end="8400" vertical-scroll-proportion="0.26934096" vertical-offset="2940" max-vertical-offset="3638" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/admin/addAppPanel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="85" selection-start="959" selection-end="959" vertical-scroll-proportion="0.34375" vertical-offset="7" max-vertical-offset="833" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/list/createItemButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="76" selection-start="451" selection-end="451" vertical-scroll-proportion="0.2922636" vertical-offset="0" max-vertical-offset="816" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/utils/listActions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="16" selection-start="603" selection-end="603" vertical-scroll-proportion="0.23647605" vertical-offset="0" max-vertical-offset="647" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/list/createItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="52" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/feedback/globalMsg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="75" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0730659" vertical-offset="0" max-vertical-offset="918" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/list/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="11" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.6577381" vertical-offset="0" max-vertical-offset="672" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/login.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="8" selection-start="660" selection-end="696" vertical-scroll-proportion="0.41404012" vertical-offset="0" max-vertical-offset="816">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/e2e/customConf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="98" selection-start="2217" selection-end="2217" vertical-scroll-proportion="0.48439822" vertical-offset="541" max-vertical-offset="1921" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/controllers/PortalController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="52" selection-start="832" selection-end="832" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="544">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/roleService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="153" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="2618">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="92" selection-start="288" selection-end="288" vertical-scroll-proportion="-4.269231" vertical-offset="110" max-vertical-offset="782">
+        <state line="28" column="10" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.5157593" vertical-offset="116" max-vertical-offset="2618">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="74" selection-start="4537" selection-end="4537" vertical-scroll-proportion="-10.32" vertical-offset="1663" max-vertical-offset="3196">
+        <state line="113" column="41" selection-start="4537" selection-end="4537" vertical-scroll-proportion="0.3696275" vertical-offset="1663" max-vertical-offset="3196">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/e2e/customConf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="24" selection-start="3092" selection-end="3094" vertical-scroll-proportion="0.3209169" vertical-offset="1034" max-vertical-offset="1921">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/adminPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="22" selection-start="6005" selection-end="6005" vertical-scroll-proportion="0.5845272" vertical-offset="1683" max-vertical-offset="2703">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/admin/editUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="41" selection-start="357" selection-end="357" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="6" selection-start="288" selection-end="288" vertical-scroll-proportion="0.16517857" vertical-offset="110" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/globalMsg.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="19" selection-start="179" selection-end="179" vertical-scroll-proportion="0.17465223" vertical-offset="23" max-vertical-offset="714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/navigation.pO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="84" selection-start="323" selection-end="323" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <folding>
+            <marker date="1385400439975" expanded="true" signature="105:397" placeholder="{...}" />
+            <marker date="1385400439975" expanded="true" signature="227:285" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/addAppPanel.pO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="121" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+          <folding>
+            <marker date="1385401189332" expanded="true" signature="103:699" placeholder="{...}" />
+            <marker date="1385401189332" expanded="true" signature="216:424" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/addAppPanel.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="28" selection-start="629" selection-end="645" vertical-scroll-proportion="-12.24" vertical-offset="0" max-vertical-offset="527">
+        <state line="14" column="73" selection-start="518" selection-end="518" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/e2e/execSetup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="8" selection-start="654" selection-end="654" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/globalMsg.pO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="60" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/userHandling.pO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="31" selection-start="2788" selection-end="2803" vertical-scroll-proportion="-18.08" vertical-offset="636" max-vertical-offset="1309">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="93" selection-start="2147" selection-end="2147" vertical-scroll-proportion="1.2852564" vertical-offset="364" max-vertical-offset="1054">
+        <state line="42" column="52" selection-start="1982" selection-end="1982" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/login.pO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="113" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/login.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="88" selection-start="718" selection-end="718" vertical-scroll-proportion="0.8575668" vertical-offset="0" max-vertical-offset="544">
           <folding />
         </state>
       </provider>

@@ -130,7 +130,7 @@
                         type: 'stats',              ngClass: 'statsIcon',           onTabClicked: toggle
                     },{
                         title: 'adminPanel.you',    description: 'adminPanel.you.desc',
-                        type: 'editCurrentUser',    ngStyle: ngStyleAvatarFn,       onTabClicked: toggle
+                        type: 'editCurrentUser',    ngClass: 'currentUser', ngStyle: ngStyleAvatarFn, onTabClicked: toggle
                     }
                 ];
 

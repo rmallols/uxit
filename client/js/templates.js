@@ -671,7 +671,7 @@ angular.module("addAppPanel.html", []).run(["$templateCache", function($template
     "            <div ng-repeat=\"availableApp in availableApps.model | filter: filter\" ng-class=\"getBlockStyleClass(availableApp.id)\">\n" +
     "                <div class=\"category\" ng-show=\"availableApp.firstInCategory\">{{availableApp.category}}</div>\n" +
     "                <li sortable-add-app class=\"newItem\" type=\"{{availableApp.id}}\" ng-class=\"getAppClasses($index)\">\n" +
-    "                    <div class=\"text2\">{{availableApp.title}}</div>\n" +
+    "                    <div class=\"text\">{{availableApp.title}}</div>\n" +
     "                    <button class=\"infoIcon\" ng-click=\"toggleExpandedView(availableApp)\"></button>\n" +
     "                </li>\n" +
     "            </div>\n" +
@@ -1574,7 +1574,7 @@ angular.module("listActions.html", []).run(["$templateCache", function($template
     "        </button>\n" +
     "    </div>\n" +
     "    <div class=\"leftActions floatLeft\" ng-show=\"isCreatable()\">\n" +
-    "        <button id=\"createItemButton\" create-item-button class=\"addIcon\" ng-click=\"createItem()\" collection=\"collection\"\n" +
+    "        <button create-item-button class=\"addIcon\" ng-click=\"createItem()\" collection=\"collection\"\n" +
     "                on-create=\"createItem($item)\" on-create-panels=\"onCreatePanels\">\n" +
     "            <label i18n=\"list.createItem\"></label>\n" +
     "        </button>\n" +
