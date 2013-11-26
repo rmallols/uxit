@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/crud/mediaService.js" afterPath="$PROJECT_DIR$/server/crud/mediaService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/nestedItems.less" afterPath="$PROJECT_DIR$/client/css/nestedItems.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -28,10 +28,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mediaService.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/crud/mediaService.js">
+      <file leaf-file-name="editPages.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/admin/editPages.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="68" selection-start="322" selection-end="322" vertical-scroll-proportion="0.45400593" vertical-offset="0" max-vertical-offset="1207">
+            <state line="28" column="76" selection-start="1875" selection-end="1875" vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="1020">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nestedItems.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/css/nestedItems.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="49" selection-start="664" selection-end="664" vertical-scroll-proportion="0.57342654" vertical-offset="312" max-vertical-offset="1088">
               <folding />
             </state>
           </provider>
@@ -55,7 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/tests/e2e/tests/login.spec.js" />
         <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/userHandling.pO.js" />
         <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/adminPanel.pO.js" />
         <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/login.pO.js" />
@@ -71,6 +79,7 @@
         <option value="$PROJECT_DIR$/server/tests/unit/directives/list.spec.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/server/crud/mediaService.js" />
+        <option value="$PROJECT_DIR$/client/css/nestedItems.less" />
       </list>
     </option>
   </component>
@@ -796,7 +805,11 @@
       <created>1385459969142</created>
       <updated>1385459969142</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="#215 The media upload mechanism is broken">
+      <created>1385487468778</created>
+      <updated>1385487468778</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -823,6 +836,7 @@
     <frame x="54" y="-8" width="1320" height="784" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -831,13 +845,12 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-324" y="-811" width="1911" height="622" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-324" y="-811" width="1911" height="622" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4281768" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -885,21 +898,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/html/app/app.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="27" selection-start="389" selection-end="389" vertical-scroll-proportion="0.12648809" vertical-offset="0" max-vertical-offset="672" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/app.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="91" selection-start="371" selection-end="371" vertical-scroll-proportion="0.36755952" vertical-offset="144" max-vertical-offset="816" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/app.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="39" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2465" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/errorHandler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="23" selection-start="799" selection-end="804" vertical-scroll-proportion="0.34323922" vertical-offset="92" max-vertical-offset="765" />
@@ -982,7 +980,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/crud/mediaService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="68" selection-start="322" selection-end="322" vertical-scroll-proportion="0.45400593" vertical-offset="0" max-vertical-offset="1207">
+        <state line="4" column="81" selection-start="238" selection-end="238" vertical-scroll-proportion="0.09742121" vertical-offset="0" max-vertical-offset="1207">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/editPages.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/admin/editPages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="76" selection-start="1875" selection-end="1875" vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/nestedItems.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="49" selection-start="664" selection-end="664" vertical-scroll-proportion="0.57342654" vertical-offset="312" max-vertical-offset="1088">
           <folding />
         </state>
       </provider>
