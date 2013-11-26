@@ -2,6 +2,7 @@
 var fileSystemService   = require("../fileSystemService"),
     constantsService    = require('../constantsService'),
     gm                  = require('gm'),
+    sizeOf              = require('image-size'),
     collectionService   = require("../collectionService");
 
 module.exports = {
@@ -29,26 +30,21 @@ module.exports = {
             }
 
             fileSystemService.readFile(file.path, function (err, data) {
-                gm(data).size(function (err, size) {
-                    console.log("IN", err);
-                    if (!err) {
-                        var saveObj = {
-                            data    : data,
-                            name   : file.name,
-                            size   : file.size,
-                            mime   : file.mime,
-                            width  : size.width,
-                            height : size.height
-                        };
-                        if (id) { //Overwrite existing media
-                            updateExistingFile(saveObj, callback);
-                        } else { //Create new media
-                            createNewFile(saveObj, callback);
-                        }
-                    } else {
-                        callback("Graphics Magic was not able to get the media size");
-                    }
-                });
+                var dimensions, saveObj;
+                dimensions = sizeOf(file.path);
+                saveObj = {
+                    data    : data,
+                    name   : file.name,
+                    size   : file.size,
+                    mime   : file.mime,
+                    width  : dimensions.width,
+                    height : dimensions.height
+                };
+                if (id) { //Overwrite existing media
+                    updateExistingFile(saveObj, callback);
+                } else { //Create new media
+                    createNewFile(saveObj, callback);
+                }
             });
         }
 
