@@ -26,7 +26,6 @@
                                     ? domService.getCoordinates(selectedDomObj)
                                     : domService.getCoordinates(element)
                 };
-                console.log("XXX",  domService.getCoordinates(selectedDomObj), element[0]);
             }
 
             function setArrowPos() {

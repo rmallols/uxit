@@ -11,7 +11,7 @@
          */
         function getCoordinates(obj) {
             return {
-                top     : obj.offset().top + $('ul.pages').scrollTop(),
+                top     : obj.offset().top,
                 left    : obj.offset().left,
                 width   : obj.outerWidth(),
                 height  : obj.outerHeight()

@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\usr\menzit\client\js\services\utils\canvasService.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/utils/domService.js" afterPath="$PROJECT_DIR$/client/js/services/utils/domService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/editBox.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/editBox.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js" afterPath="$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/utils/listActions.html" afterPath="$PROJECT_DIR$/client/html/utils/listActions.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/listActions.less" afterPath="$PROJECT_DIR$/client/css/listActions.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/pages.less" afterPath="$PROJECT_DIR$/client/css/pages.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/resources-dev.js" afterPath="$PROJECT_DIR$/client/js/resources-dev.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -38,16 +33,16 @@
       <file leaf-file-name="editBoxUtilsService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="59" selection-start="1357" selection-end="1357" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2652">
+            <state line="23" column="41" selection-start="1238" selection-end="1245" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="2635">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editBox.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="editBox.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editBox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="94" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
+            <state line="19" column="187" selection-start="693" selection-end="693" vertical-scroll-proportion="0.99691355" vertical-offset="0" max-vertical-offset="1258">
               <folding />
             </state>
           </provider>
@@ -80,10 +75,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="domService.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="domService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/services/utils/domService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="59" selection-start="422" selection-end="422" vertical-scroll-proportion="0.60534126" vertical-offset="0" max-vertical-offset="2040">
+            <state line="8" column="69" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040">
               <folding />
             </state>
           </provider>
@@ -129,9 +124,9 @@
         <option value="$PROJECT_DIR$/client/css/pages.less" />
         <option value="$PROJECT_DIR$/client/html/utils/listActions.html" />
         <option value="$PROJECT_DIR$/client/css/listActions.less" />
-        <option value="$PROJECT_DIR$/client/js/directives/admin/editBox.js" />
-        <option value="$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js" />
         <option value="$PROJECT_DIR$/client/js/services/utils/domService.js" />
+        <option value="$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/admin/editBox.js" />
       </list>
     </option>
   </component>
@@ -967,7 +962,11 @@
       <created>1385487813115</created>
       <updated>1385487813116</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="#195 Move all the edit boxes as direct children of the body tag.">
+      <created>1385491757337</created>
+      <updated>1385491757337</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1023,7 +1022,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="#169 Provide a new approach for the cacheResources mechanism" />
     <MESSAGE value="#142 [bannerCanvas] Custom layer support" />
     <MESSAGE value="#34 [Grunt] Resources versioning" />
     <MESSAGE value="#156 [e2e] Investigate Protractor" />
@@ -1048,7 +1046,8 @@
     <MESSAGE value="#210 [e2e] Prod &amp; Webstorm integration" />
     <MESSAGE value="#218 [e2e] User handling" />
     <MESSAGE value="#215 The media upload mechanism is broken" />
-    <option name="LAST_COMMIT_MESSAGE" value="#215 The media upload mechanism is broken" />
+    <MESSAGE value="#195 Move all the edit boxes as direct children of the body tag." />
+    <option name="LAST_COMMIT_MESSAGE" value="#195 Move all the edit boxes as direct children of the body tag." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1147,23 +1146,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editBox.js">
+    <entry file="file://$PROJECT_DIR$/client/js/services/utils/domService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="94" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
+        <state line="8" column="69" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="59" selection-start="1357" selection-end="1357" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2652">
+        <state line="23" column="41" selection-start="1238" selection-end="1245" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="2635">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/utils/domService.js">
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editBox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="59" selection-start="422" selection-end="422" vertical-scroll-proportion="0.60534126" vertical-offset="0" max-vertical-offset="2040">
+        <state line="19" column="187" selection-start="693" selection-end="693" vertical-scroll-proportion="0.99691355" vertical-offset="0" max-vertical-offset="1258">
           <folding />
         </state>
       </provider>
