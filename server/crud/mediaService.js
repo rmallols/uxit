@@ -29,8 +29,8 @@ module.exports = {
             }
 
             fileSystemService.readFile(file.path, function (err, data) {
-                console.log("OUT", data, gm);
                 gm(data).size(function (err, size) {
+                    console.log("IN", err);
                     if (!err) {
                         var saveObj = {
                             data    : data,
