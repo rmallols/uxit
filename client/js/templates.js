@@ -1392,7 +1392,7 @@ angular.module("list.html", []).run(["$templateCache", function($templateCache) 
     "        <label i18n=\"list.search\"></label>\n" +
     "        <input type=\"text\" ng-model=\"searchText\" ux-keyup=\"executeSearch()\"/>\n" +
     "    </div>\n" +
-    "    <div ux-show=\"isPageActionsTop()\" list-actions class=\"top\" collection=\"collection\"></div>\n" +
+    "    <div ng-show=\"isPageActionsTop()\" list-actions class=\"top\" collection=\"collection\"></div>\n" +
     "    <div class=\"noItems\" ng-show=\"items.length == 0\"><i><label i18n=\"list.noItems\"></label></i></div>\n" +
     "    <div ng-show=\"items.length > 0\" ng-hide=\"detailId && detailId!=item._id\" id=\"{{item._id}}\"\n" +
     "         ng-repeat=\"item in items | filter: getFilter()\" class=\"item columns\"\n" +
@@ -1412,7 +1412,7 @@ angular.module("list.html", []).run(["$templateCache", function($templateCache) 
     "    <a href=\"#\" class=\"detailArea floatRight\" ng-show=\"detailId\" ng-click=\"deleteDetailId()\">\n" +
     "        &lt;&lt; <label i18n=\"list.goBack\"></label>\n" +
     "    </a>\n" +
-    "    <div ux-show=\"isPageActionsBottom()\" list-actions class=\"bottom\" collection=\"collection\"></div>\n" +
+    "    <div ng-show=\"isPageActionsBottom()\" list-actions class=\"bottom\" collection=\"collection\"></div>\n" +
     "</div>\n" +
     "");
 }]);

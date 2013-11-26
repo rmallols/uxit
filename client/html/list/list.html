@@ -4,7 +4,7 @@
         <label i18n="list.search"></label>
         <input type="text" ng-model="searchText" ux-keyup="executeSearch()"/>
     </div>
-    <div ux-show="isPageActionsTop()" list-actions class="top" collection="collection"></div>
+    <div ng-show="isPageActionsTop()" list-actions class="top" collection="collection"></div>
     <div class="noItems" ng-show="items.length == 0"><i><label i18n="list.noItems"></label></i></div>
     <div ng-show="items.length > 0" ng-hide="detailId && detailId!=item._id" id="{{item._id}}"
          ng-repeat="item in items | filter: getFilter()" class="item columns"
@@ -24,5 +24,5 @@
     <a href="#" class="detailArea floatRight" ng-show="detailId" ng-click="deleteDetailId()">
         &lt;&lt; <label i18n="list.goBack"></label>
     </a>
-    <div ux-show="isPageActionsBottom()" list-actions class="bottom" collection="collection"></div>
+    <div ng-show="isPageActionsBottom()" list-actions class="bottom" collection="collection"></div>
 </div>

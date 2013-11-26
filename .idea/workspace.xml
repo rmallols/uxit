@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/list/list.html" afterPath="$PROJECT_DIR$/client/html/list/list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/test-results.xml" afterPath="$PROJECT_DIR$/server/tests/unit/test-results.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -75,10 +78,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="41" selection-start="331" selection-end="331" vertical-scroll-proportion="0.46623793" vertical-offset="93" max-vertical-offset="782">
+            <state line="11" column="100" selection-start="278" selection-end="278" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="782">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.spec.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/list.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="91" column="13" selection-start="3868" selection-end="3868" vertical-scroll-proportion="0.5875371" vertical-offset="1349" max-vertical-offset="3400">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/list/list.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="107" selection-start="1285" selection-end="1285" vertical-scroll-proportion="-8.96" vertical-offset="269" max-vertical-offset="2618">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/list/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="75" selection-start="1667" selection-end="1667" vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="578">
               <folding />
             </state>
           </provider>
@@ -111,9 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/addAppPanel.pO.js" />
-        <option value="$PROJECT_DIR$/server/tests/e2e/tests/addAppPanel.spec.js" />
-        <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/globalMsg.pO.js" />
         <option value="$PROJECT_DIR$/server/tests/e2e/tests/login.spec.js" />
         <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/userHandling.pO.js" />
         <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/adminPanel.pO.js" />
@@ -127,6 +154,9 @@
         <option value="$PROJECT_DIR$/client/js/directives/feedback/globalMsg.js" />
         <option value="$PROJECT_DIR$/server/crud/mediaService.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/client/html/list/list.html" />
+        <option value="$PROJECT_DIR$/client/js/directives/list/list.js" />
+        <option value="$PROJECT_DIR$/server/tests/unit/directives/list.spec.js" />
       </list>
     </option>
   </component>
@@ -844,7 +874,11 @@
       <created>1385457305049</created>
       <updated>1385457305049</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="#215 The media upload mechanism is broken">
+      <created>1385457486976</created>
+      <updated>1385457486976</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -872,7 +906,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4281768" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -881,7 +915,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-299" y="-746" width="1911" height="622" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-324" y="-811" width="1911" height="622" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -933,25 +967,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/userHandling.pO.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="34" selection-start="1538" selection-end="1539" vertical-scroll-proportion="-8.96" vertical-offset="286" max-vertical-offset="1054" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="109" selection-start="3037" selection-end="3037" vertical-scroll-proportion="1.264095" vertical-offset="645" max-vertical-offset="1343">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/input/autoComplete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="57" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2380">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/html/app/app.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="27" selection-start="389" selection-end="389" vertical-scroll-proportion="0.12648809" vertical-offset="0" max-vertical-offset="672">
@@ -1040,7 +1055,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="41" selection-start="331" selection-end="331" vertical-scroll-proportion="0.46623793" vertical-offset="93" max-vertical-offset="782">
+        <state line="11" column="100" selection-start="278" selection-end="278" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/list/list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="107" selection-start="1285" selection-end="1285" vertical-scroll-proportion="-8.96" vertical-offset="269" max-vertical-offset="2618">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/list/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="75" selection-start="1667" selection-end="1667" vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="578">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/list.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="13" selection-start="3868" selection-end="3868" vertical-scroll-proportion="0.5875371" vertical-offset="1349" max-vertical-offset="3400">
           <folding />
         </state>
       </provider>
