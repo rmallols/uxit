@@ -118,7 +118,8 @@ module.exports = function(grunt) {
             githubAdd:      { command: 'git add .', options: { stdout: true } },
             githubCommit:   { command: 'git commit -m "#0 prod update"', options: { stdout: true } },
             githubPush:     { command: 'git push', options: { stdout: true } },
-            herokuPush:     { command: 'git push heroku master', options: { stdout: true } }
+            herokuPush:     { command: 'git push heroku master', options: { stdout: true } },
+            herokuLogs:     { command: 'heroku logs --tail', options: { stdout: true } }
         },
         bumpup: {
             file: 'package.json',
@@ -175,9 +176,10 @@ module.exports = function(grunt) {
     grunt.registerTask('devPreprocess', ['preprocess:htmlDev']);
     grunt.registerTask('prodPreprocess', ['preprocess:htmlProd', 'preprocess:jsProd']);
     grunt.registerTask('bump', ['bumpup:minor']);
-    grunt.registerTask('github', ['shell:githubAdd', 'shell:githubCommit', 'shell:githubPush']);
-    grunt.registerTask('heroku', ['shell:herokuPush']);
-    grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'startProtractor', 'bump', 'devPreprocess', 'generateTemplates', 'github']);
+    grunt.registerTask('githubPush', ['shell:githubAdd', 'shell:githubCommit', 'shell:githubPush']);
+    grunt.registerTask('herokuPush', ['shell:herokuPush']);
+    grunt.registerTask('herokuLogs', ['shell:herokuLogs']);
+    grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'startProtractor', 'bump', 'devPreprocess', 'generateTemplates', 'githubPush']);
     grunt.registerTask('prod', ['clean', 'jshint', 'karma:run', 'startProtractor', 'bump', 'prodPreprocess',
-        'generateTemplates', 'concat', 'uglify', 'less:prod', 'github', 'heroku']);
+                                'generateTemplates', 'concat', 'uglify', 'less:prod', 'githubPush', 'herokuPush']);
 };

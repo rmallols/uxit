@@ -37,7 +37,6 @@ function ($rootScope, globalMsgService, domService) {
             scope.isDetailsVisible = false;
 
             scope.hide = function () {
-                console.log("HIDDING MESSAGE!!");
                 globalMsgService.hide();
             };
 
