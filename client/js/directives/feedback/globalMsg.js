@@ -1,4 +1,5 @@
-COMPONENTS.directive('globalMsg', ['globalMsgService', 'domService', function (globalMsgService, domService) {
+COMPONENTS.directive('globalMsg', ['$rootScope', 'globalMsgService', 'domService',
+function ($rootScope, globalMsgService, domService) {
 	'use strict';
     return {
 		restrict: 'A',
@@ -23,6 +24,9 @@ COMPONENTS.directive('globalMsg', ['globalMsgService', 'domService', function (g
                     };
                     //Maybe the loading message is visible, so it's necessary to remove it
                     domService.removeLoadingFeedback($('body'));
+                    if(!$rootScope.$$phase) {
+                        scope.$apply();
+                    }
                 }
             });
 
@@ -33,6 +37,7 @@ COMPONENTS.directive('globalMsg', ['globalMsgService', 'domService', function (g
             scope.isDetailsVisible = false;
 
             scope.hide = function () {
+                console.log("HIDDING MESSAGE!!");
                 globalMsgService.hide();
             };
 

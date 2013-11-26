@@ -1,6 +1,5 @@
 'use strict';
 var fileSystemService   = require("../fileSystemService"),
-    consoleService      = require('../consoleService'),
     constantsService    = require('../constantsService'),
     gm                  = require('gm'),
     collectionService   = require("../collectionService");
@@ -16,7 +15,7 @@ module.exports = {
                 collectionService.create(dbCon, collection, saveObj, session, function (err, newContent) {
                     saveObj._id = newContent._id;
                     delete saveObj.data;
-                    callback(saveObj);
+                    callback(null, saveObj);
                 });
             }
 
@@ -25,11 +24,12 @@ module.exports = {
                     id = {_id: collectionService.getFormattedId(dbCon, id)},
                     params = {$set: saveObj};
                 collectionService.update(dbCon, collection, id, params, session, function() {
-                    callback(saveObj);
+                    callback(null, saveObj);
                 });
             }
 
             fileSystemService.readFile(file.path, function (err, data) {
+                console.log("OUT", data, gm);
                 gm(data).size(function (err, size) {
                     if (!err) {
                         var saveObj = {
@@ -46,7 +46,7 @@ module.exports = {
                             createNewFile(saveObj, callback);
                         }
                     } else {
-                        consoleService.error("ERROR, GRAPHICS MAGICK COULD NOT BE ABLE TO GET MEDIA SIZE");
+                        callback("Graphics Magic was not able to get the media size");
                     }
                 });
             });
@@ -63,8 +63,8 @@ module.exports = {
                 });
             }
         } else { //Single file
-            uploadFile(files.upload, function (uploadedFile) {
-                callback([uploadedFile]);
+            uploadFile(files.upload, function (err, uploadedFile) {
+                callback(err, [uploadedFile]);
             });
         }
     }

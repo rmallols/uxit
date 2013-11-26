@@ -12,8 +12,9 @@
          *                          that will be shown just whenever the user will click in the 'show details' link
          */
         function show(text, details) {
+            var normalizedMessage = normalizeMessage(text, details);
             onShowObservers.forEach(function (onShowObserver) {
-                onShowObserver(text, details);
+                onShowObserver(normalizedMessage.text, normalizedMessage.details);
             });
         }
 
@@ -44,6 +45,18 @@
         function onHide(observer) {
             onHideObservers.push(observer);
         }
+
+        /** Private methods **/
+        function normalizeMessage(text, details) {
+            var normalizedMessage = {};
+            try {
+                normalizedMessage = $.parseJSON(text);
+            } catch(ex) {
+                normalizedMessage = { text: text, details: details };
+            }
+            return normalizedMessage;
+        }
+        /** End of private methods **/
 
         return {
             show: show,

@@ -150,8 +150,12 @@ app.post('/:portalId/rest/availableApps/:id/undeploy', checkAuth, setupDb, funct
 });
 
 app.post('/:portalId/media/upload/:id?*', checkAuth, setupDb, function (req, res) {
-    mediaService.upload(req.dbCon, req.params.id, req.files, req.session, function (images) {
-        res.send(images);
+    mediaService.upload(req.dbCon, req.params.id, req.files, req.session, function (err, images) {
+        if(err) {
+            res.status(503).send({ text: 'There was a problem trying to upload the media', details: err});
+        } else {
+            res.send(images);
+        }
     });
 });
 

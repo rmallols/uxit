@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    COMPONENTS.directive('fileUploader', ['$rootScope', 'stdService', function ($rootScope, stdService) {
+    COMPONENTS.directive('fileUploader', ['$rootScope', 'globalMsgService', function ($rootScope, globalMsgService) {
         return {
             restrict: 'E',
             replace: true,
@@ -23,7 +23,7 @@
                     //Submit in progress...
                     element.ajaxSubmit({
                         error: function (xhr) {
-                            stdService.error('Error uploading file', xhr);
+                            globalMsgService.show(xhr.responseText);
                         },
                         success: function (uploadedFile) {
                             success(uploadedFile);
