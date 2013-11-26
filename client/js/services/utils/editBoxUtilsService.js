@@ -26,6 +26,7 @@
                                     ? domService.getCoordinates(selectedDomObj)
                                     : domService.getCoordinates(element)
                 };
+                console.log("XXX",  domService.getCoordinates(selectedDomObj), element[0]);
             }
 
             function setArrowPos() {
@@ -43,7 +44,7 @@
                 editBoxObj = $('<edit-box model="model" panels="panels" arrow-pos="arrowPos" ' +
                     'internal-data="internalData" on-save="onSave()" on-change="onChange()" on-cancel="onCancel()" ' +
                     'on-close="onClose()" target="target"></edit-box>');
-                element.after(editBoxObj);
+                $('body').append(editBoxObj);
                 $compile(editBoxObj)(scope);
             }
 

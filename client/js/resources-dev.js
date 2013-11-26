@@ -95,7 +95,6 @@ window.speed = 150;
     getScript(servicePath + '/communication/liveMessageService.js');
     getScript(servicePath + '/utils/keyboardService.js');
     getScript(servicePath + '/utils/domService.js');
-    getScript(servicePath + '/utils/canvasService.js');
     getScript(servicePath + '/utils/stringService.js');
     getScript(servicePath + '/utils/objectService.js');
     getScript(servicePath + '/utils/textSelectionService.js');

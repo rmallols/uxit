@@ -1,7 +1,6 @@
 <div class="cf">
     <div class="leftActions floatLeft" ng-show="isMultiSelectable() && items.length">
         <button class="okIcon" ng-click="toggleSelectAll()"><label i18n="list.selectItems"></label></button>
-        <label ng-show="selectedIds.length">{{selectedIds.length}} <label i18n="list.selectedItems"></label></label>
         <button class="removeIcon" ng-click="deleteSelected()" ng-show="selectedIds.length && isDeletable()">
             <label i18n="list.deleteSelected"></label>
         </button>
@@ -15,5 +14,8 @@
     <div class="rightActions floatRight getPage" ng-show="showPrevPageLink()||showNextPageLink()">
         <button class="getPrevPage" ng-click="getPrevPage()" ng-show="showPrevPageLink()">&lt;</button>
         <button class="getNextPage" ng-click="getNextPage()" ng-show="showNextPageLink()">&gt;</button>
+    </div>
+    <div class="selectedItems">
+        <label ng-class="{show: selectedIds.length}">{{selectedIds.length}} <label i18n="list.selectedItems"></label></label>
     </div>
 </div>

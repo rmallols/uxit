@@ -1568,7 +1568,6 @@ angular.module("listActions.html", []).run(["$templateCache", function($template
     "<div class=\"cf\">\n" +
     "    <div class=\"leftActions floatLeft\" ng-show=\"isMultiSelectable() && items.length\">\n" +
     "        <button class=\"okIcon\" ng-click=\"toggleSelectAll()\"><label i18n=\"list.selectItems\"></label></button>\n" +
-    "        <label ng-show=\"selectedIds.length\">{{selectedIds.length}} <label i18n=\"list.selectedItems\"></label></label>\n" +
     "        <button class=\"removeIcon\" ng-click=\"deleteSelected()\" ng-show=\"selectedIds.length && isDeletable()\">\n" +
     "            <label i18n=\"list.deleteSelected\"></label>\n" +
     "        </button>\n" +
@@ -1582,6 +1581,9 @@ angular.module("listActions.html", []).run(["$templateCache", function($template
     "    <div class=\"rightActions floatRight getPage\" ng-show=\"showPrevPageLink()||showNextPageLink()\">\n" +
     "        <button class=\"getPrevPage\" ng-click=\"getPrevPage()\" ng-show=\"showPrevPageLink()\">&lt;</button>\n" +
     "        <button class=\"getNextPage\" ng-click=\"getNextPage()\" ng-show=\"showNextPageLink()\">&gt;</button>\n" +
+    "    </div>\n" +
+    "    <div class=\"selectedItems\">\n" +
+    "        <label ng-class=\"{show: selectedIds.length}\">{{selectedIds.length}} <label i18n=\"list.selectedItems\"></label></label>\n" +
     "    </div>\n" +
     "</div>");
 }]);

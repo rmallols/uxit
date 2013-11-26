@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/nestedItems.less" afterPath="$PROJECT_DIR$/client/css/nestedItems.less" />
+      <change type="DELETED" beforePath="C:\usr\menzit\client\js\services\utils\canvasService.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/utils/domService.js" afterPath="$PROJECT_DIR$/client/js/services/utils/domService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js" afterPath="$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/utils/listActions.html" afterPath="$PROJECT_DIR$/client/html/utils/listActions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/listActions.less" afterPath="$PROJECT_DIR$/client/css/listActions.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/pages.less" afterPath="$PROJECT_DIR$/client/css/pages.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/resources-dev.js" afterPath="$PROJECT_DIR$/client/js/resources-dev.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -28,19 +35,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="editPages.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/admin/editPages.html">
+      <file leaf-file-name="editBoxUtilsService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="76" selection-start="1875" selection-end="1875" vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="1020">
+            <state line="25" column="59" selection-start="1357" selection-end="1357" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2652">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nestedItems.less" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/css/nestedItems.less">
+      <file leaf-file-name="editBox.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editBox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="49" selection-start="664" selection-end="664" vertical-scroll-proportion="0.57342654" vertical-offset="312" max-vertical-offset="1088">
+            <state line="20" column="94" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listActions.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/utils/listActions.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="10" selection-start="1216" selection-end="1216" vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="442">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listActions.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/css/listActions.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="61" selection-start="271" selection-end="271" vertical-scroll-proportion="-4.3333335" vertical-offset="0" max-vertical-offset="340">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editBox.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/admin/editBox.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="86" selection-start="77" selection-end="86" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="221">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="domService.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/js/services/utils/domService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="59" selection-start="422" selection-end="422" vertical-scroll-proportion="0.60534126" vertical-offset="0" max-vertical-offset="2040">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pages.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/css/pages.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="70" selection-start="161" selection-end="161" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="1326">
               <folding />
             </state>
           </provider>
@@ -64,13 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/userHandling.pO.js" />
-        <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/adminPanel.pO.js" />
-        <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/login.pO.js" />
-        <option value="$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js" />
-        <option value="$PROJECT_DIR$/client/js/errorHandler.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/input/fileUploader.js" />
-        <option value="$PROJECT_DIR$/client/js/services/feedback/globalMsgService.js" />
         <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/client/js/directives/feedback/globalMsg.js" />
@@ -80,6 +125,13 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/server/crud/mediaService.js" />
         <option value="$PROJECT_DIR$/client/css/nestedItems.less" />
+        <option value="$PROJECT_DIR$/client/js/resources-dev.js" />
+        <option value="$PROJECT_DIR$/client/css/pages.less" />
+        <option value="$PROJECT_DIR$/client/html/utils/listActions.html" />
+        <option value="$PROJECT_DIR$/client/css/listActions.less" />
+        <option value="$PROJECT_DIR$/client/js/directives/admin/editBox.js" />
+        <option value="$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js" />
+        <option value="$PROJECT_DIR$/client/js/services/utils/domService.js" />
       </list>
     </option>
   </component>
@@ -179,7 +231,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -190,7 +242,109 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -221,7 +375,7 @@
       <recent name="C:\usr\menzit" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Start NodeJs">
+  <component name="RunManager" selected="Node.js.Generate templates">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -809,7 +963,11 @@
       <created>1385487468778</created>
       <updated>1385487468778</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="#215 The media upload mechanism is broken">
+      <created>1385487813115</created>
+      <updated>1385487813116</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -840,6 +998,7 @@
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4281768" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712707" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2208589" sideWeight="0.5718232" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -850,7 +1009,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4281768" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -898,65 +1056,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/js/errorHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="23" selection-start="799" selection-end="804" vertical-scroll-proportion="0.34323922" vertical-offset="92" max-vertical-offset="765" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/portalService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="47" selection-start="4128" selection-end="4130" vertical-scroll-proportion="0.33283803" vertical-offset="1544" max-vertical-offset="2227" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/controllers/LoginController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="59" selection-start="454" selection-end="499" vertical-scroll-proportion="0.2191977" vertical-offset="0" max-vertical-offset="698" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/feedback/globalMsgService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="52" selection-start="544" selection-end="560" vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="1258">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/input/fileUploader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="95" selection-start="854" selection-end="854" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1020">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/feedback/globalMsg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="64" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="986">
-          <folding>
-            <marker date="1385455763575" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="32" selection-start="5147" selection-end="5147" vertical-scroll-proportion="0.0" vertical-offset="2258" max-vertical-offset="3519">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/list/list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="107" selection-start="1285" selection-end="1285" vertical-scroll-proportion="0.0" vertical-offset="269" max-vertical-offset="2618">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/list/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="75" selection-start="1667" selection-end="1667" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="578">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/list.spec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="84" column="34" selection-start="3523" selection-end="3523" vertical-scroll-proportion="0.0" vertical-offset="1349" max-vertical-offset="3400">
@@ -992,16 +1091,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/admin/editPages.html">
+    <entry file="file://$PROJECT_DIR$/client/css/nestedItems.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="76" selection-start="1875" selection-end="1875" vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="1020">
+        <state line="24" column="47" selection-start="579" selection-end="579" vertical-scroll-proportion="0.6306028" vertical-offset="0" max-vertical-offset="1088">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/nestedItems.less">
+    <entry file="file://$PROJECT_DIR$/client/html/admin/editPages.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="49" selection-start="664" selection-end="664" vertical-scroll-proportion="0.57342654" vertical-offset="312" max-vertical-offset="1088">
+        <state line="28" column="76" selection-start="1875" selection-end="1875" vertical-scroll-proportion="0.72230655" vertical-offset="0" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/resources-dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="52" selection-start="4918" selection-end="4918" vertical-scroll-proportion="0.18481375" vertical-offset="1486" max-vertical-offset="3757">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/pages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/pages.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="70" selection-start="161" selection-end="161" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="1326">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/admin/editBox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="86" selection-start="77" selection-end="86" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/utils/listActions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="10" selection-start="1216" selection-end="1216" vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/listActions.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="61" selection-start="271" selection-end="271" vertical-scroll-proportion="-4.3333335" vertical-offset="0" max-vertical-offset="340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="94" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="59" selection-start="1357" selection-end="1357" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2652">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/utils/domService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="59" selection-start="422" selection-end="422" vertical-scroll-proportion="0.60534126" vertical-offset="0" max-vertical-offset="2040">
           <folding />
         </state>
       </provider>
