@@ -1,7 +1,6 @@
 'use strict';
 var fileSystemService   = require("../fileSystemService"),
     constantsService    = require('../constantsService'),
-    gm                  = require('gm'),
     sizeOf              = require('image-size'),
     collectionService   = require("../collectionService");
 
