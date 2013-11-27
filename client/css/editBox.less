@@ -1,24 +1,34 @@
 @arrowWidth   :30px;
+@arrowContainerWidth : 2 * @arrowWidth;
 @borderWidth  :8px;
 @arrowTopPos  :@padding + @normalButtonSize + @arrowWidth;
 @editBoxWidth :600px;
+@zIndex       : 11; /*Force a higher z-index than the overlay*/
 
 .editBox {
     position:absolute;
-    top:0px;
     left:0px;
-    /*margin-top:-@arrowTopPos;*/
     margin-top: -(@arrowTopPos + @borderWidth);
     background-color: transparent;
     width:@editBoxWidth;
-    z-index:11;
     border:0;
     padding: 0;
+    z-index: @zIndex;
     cursor: default;
     color: @fontColor;
+    max-height: 80%;
 }
 
-.editBox:after {
+.editBox > .arrow {
+  width: @arrowContainerWidth;
+  height: @arrowContainerWidth;
+  position: absolute;
+  top: 0;
+  background-color: yellow;
+  z-index: @zIndex;
+}
+
+.editBox > .arrow:after {
     position: absolute;
     right: 100%;
     border: @arrowWidth solid transparent;
@@ -27,48 +37,60 @@
     height: 0;
     width: 0;
     pointer-events: none;
+    z-index: @zIndex;
 }
 
-.editBox[arrowPos="top"]:after {
+.editBox[arrowPos="top"]  > .arrow:after {
   top: -@arrowWidth;
   .offsettedLeft(50%, @arrowWidth);
   border-bottom-color: @highComp;
 }
 
-.editBox[arrowPos="right"] {
-  margin-left:-(@arrowWidth + @borderWidth);
+.editBox[arrowPos="right"] > .arrow {
+  margin-right: -@arrowContainerWidth;
+  right: 0;
 }
 
-.editBox[arrowPos="right"]:after {
-  top: @arrowTopPos;
+.editBox[arrowPos="right"] > .arrow:after {
+  /*top: @arrowTopPos;
   left:100%;
+  .offsettedLeft(2 * @arrowWidth);*/
+  left: 100%;
+  top: 50%;
   border-left-color: @highComp;
-  .offsettedLeft(2 * @arrowWidth);
 }
 
-.editBox[arrowPos="bottom"]:after {
+.editBox[arrowPos="bottom"] > .arrow:after {
   bottom: -(2 * @arrowWidth);
   .offsettedLeft(50%, @arrowWidth);
   border-top-color: @highComp;
 }
 
-.editBox[arrowPos="left"] {
-  margin-left:@arrowWidth + @borderWidth;
+.editBox[arrowPos="left"] > .arrow {
+  margin-left:-@arrowContainerWidth;
 }
 
-.editBox[arrowPos="left"]:after {
-    top: @arrowTopPos;
-    left:0;
+.editBox[arrowPos="left"] > .arrow:after {
+    top: 50%;
+    right:0;
     border-right-color: @highComp;
 }
 
-.editBox .content {
+.editBox > .content {
     background: inherit !important;
+    position: relative;
+    z-index: @zIndex;
+    min-height: 100px;
 }
 
+.editBox .edit {
+  overflow: hidden;
+}
+/*
 .editBox .edit .tabs.level1 {
   margin-top: @padding + @normalButtonSize;
 }
+*/
 
 .editBox .edit .tabs.level1 > .tab {
   height: @tabsHeight !important;
@@ -101,7 +123,7 @@
 .editBox .scrollable {
   overflow-y: auto;
   height: 100%;
-  max-height: 350px;
+  /*max-height: 350px;*/
 }
 
 .editBox .edit .level1 > ul > .layer {
@@ -113,4 +135,7 @@
   width: auto;
   padding: @padding @padding 0 @padding;
   background-color: @highComp;
+  position: absolute;
+  top:-(@padding + @normalButtonSize);
+  right: 0;
 }

@@ -26,6 +26,18 @@
                                     ? domService.getCoordinates(selectedDomObj)
                                     : domService.getCoordinates(element)
                 };
+
+
+
+                var editBoxHeight = parseInt('80%', 10) * 0.01;
+                //var offsetBottom = $(window).height() - scope.target.coordinates.top;
+                var spaceAtBottom = $(window).height() - scope.target.coordinates.top;
+                if(spaceAtBottom < $(window).height() * editBoxHeight) {  //Pegarlo abajo!
+                    scope.target.align = 'bottom';
+                    console.log("ABAJO!!");
+                } else {
+                    console.log("dejarlo como está, cambiar de 80% a 0.8", spaceAtBottom);
+                }
             }
 
             function setArrowPos() {
@@ -61,7 +73,7 @@
                 blockHideEditBox();     //Block the hide action to avoid flickering efect from portal directive
                 addEditBoxToDom();
                 safeUnblockEditBox();   //Unblock the hidding action
-                addOverlay(element);
+                //addOverlay(element);
             }
         }
 
@@ -84,7 +96,7 @@
                 keyboardService.unregister('left', 'edit');
                 keyboardService.unregister('right', 'edit');
             }
-            removeOverlay();
+            //removeOverlay();
             unregisterKeyboardEvents();
         }
 
