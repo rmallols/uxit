@@ -1,8 +1,8 @@
 (function () {
     'use strict';
 
-    COMPONENTS.factory('editBoxUtilsService', ['$compile', 'domService', 'keyboardService',
-    function ($compile, domService, keyboardService) {
+    COMPONENTS.factory('editBoxUtilsService', ['$compile', 'pageService', 'domService', 'keyboardService',
+    function ($compile, pageService, domService, keyboardService) {
 
         var isHideActionBlocked = false, isMoving = false, serviceId = 'editBoxUtilsService';
 
@@ -26,18 +26,6 @@
                                     ? domService.getCoordinates(selectedDomObj)
                                     : domService.getCoordinates(element)
                 };
-
-
-
-                var editBoxHeight = parseInt('80%', 10) * 0.01;
-                //var offsetBottom = $(window).height() - scope.target.coordinates.top;
-                var spaceAtBottom = $(window).height() - scope.target.coordinates.top;
-                if(spaceAtBottom < $(window).height() * editBoxHeight) {  //Pegarlo abajo!
-                    scope.target.align = 'bottom';
-                    console.log("ABAJO!!");
-                } else {
-                    console.log("dejarlo como está, cambiar de 80% a 0.8", spaceAtBottom);
-                }
             }
 
             function setArrowPos() {
@@ -55,8 +43,9 @@
                 editBoxObj = $('<edit-box model="model" panels="panels" arrow-pos="arrowPos" ' +
                     'internal-data="internalData" on-save="onSave()" on-change="onChange()" on-cancel="onCancel()" ' +
                     'on-close="onClose()" target="target"></edit-box>');
-                $('body').append(editBoxObj);
+                pageService.getMainScrollingElm().append(editBoxObj);
                 $compile(editBoxObj)(scope);
+                return editBoxObj;
             }
 
             function safeUnblockEditBox() {
@@ -67,13 +56,14 @@
                 }, 100);
             }
 
+            var editBoxObj;
             if(!isEditBoxVisible(element)) {
                 setTargetSettings();
                 setArrowPos();
                 blockHideEditBox();     //Block the hide action to avoid flickering efect from portal directive
-                addEditBoxToDom();
+                editBoxObj = addEditBoxToDom();
                 safeUnblockEditBox();   //Unblock the hidding action
-                //addOverlay(element);
+                addOverlay(editBoxObj);
             }
         }
 
@@ -83,21 +73,24 @@
          * @param {string} textBoxId Id of the edit box that is going to be closed.If not given, all edit boxes are closed
          */
         function hideEditBox(textBoxId) {
+            var editBoxObj;
             if (!isHideActionBlocked) { //Hide the edit box if the mutex is not enabled
                 if (textBoxId) {
-                    $('#' + textBoxId).remove();
+                    editBoxObj = $('#' + textBoxId);
                 } else {
-                    $('.editBox').remove();
+                    editBoxObj = $('.editBox').remove();
                 }
+                removeOverlay(editBoxObj);
+                unregisterKeyboardEvents();
+                editBoxObj.remove();
             }
+
             function unregisterKeyboardEvents() {
                 keyboardService.unregister('esc', serviceId);
                 //Unregister the edit events as well
                 keyboardService.unregister('left', 'edit');
                 keyboardService.unregister('right', 'edit');
             }
-            //removeOverlay();
-            unregisterKeyboardEvents();
         }
 
         /**
@@ -136,12 +129,13 @@
         }
 
         /** Private methods **/
-        function addOverlay(element) {
-            element.after('<div class="overlay"></div>');
+        function addOverlay(editBoxObj) {
+            var scrollingAreaHeight = pageService.getMainScrollingElm()[0].scrollHeight;
+            editBoxObj.before('<div class="overlay" style="height:' + scrollingAreaHeight + '"></div>');
         }
 
-        function removeOverlay() {
-            $('.overlay').remove();
+        function removeOverlay(editBoxObj) {
+            editBoxObj.prev('.overlay').remove();
         }
 
         function isEditBoxVisible(element) {

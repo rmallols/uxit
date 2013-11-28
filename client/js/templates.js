@@ -745,10 +745,10 @@ angular.module("edit.html", []).run(["$templateCache", function($templateCache) 
     "            class=\"tab button\" ng-class=\"getTabClasses(panel, $index)\" title=\"{{panel.description}}\" i18n-title>\n" +
     "            <label i18n=\"{{panel.title}}\"></label>\n" +
     "            <label ux-show=\"isEditedMarkVisible($parent[panel.type])\" ng-class=\"getEditedMarkColor($parent[panel.type])\"\n" +
-    "                   class=\"editedMark\">*</label>\n" +
+    "                   class=\"jsitedMark\">*</label>\n" +
     "		</li>\n" +
     "	</ul>\n" +
-    "	<div class=\"content level1\" ng-show=\"activeTab >= 0\">\n" +
+    "	<div class=\"content level1\" ng-show=\"activeTab >= 0\" ng-style=\"setMaxHeightContent()\">\n" +
     "		<ul></ul>\n" +
     "	</div>\n" +
     "</div>\n" +
@@ -782,7 +782,6 @@ angular.module("editBox.html", []).run(["$templateCache", function($templateCach
   $templateCache.put("editBox.html",
     "<div id=\"{{target.id}}\" class=\"editBox cf\" arrowPos=\"{{arrowPos}}\" ng-style=\"getStyles()\" type=\"{{target.type}}\"\n" +
     "    ng-class=\"{multiLayer: panels.length > 1}\">\n" +
-    "    <div class=\"overlay\"></div>\n" +
     "    <div class=\"content cf\">\n" +
     "        <edit ng-model=\"model\" internal-data=\"internalData\" panels=\"panels\" active-tab=\"activeTab\"\n" +
     "              on-save=\"save()\" on-change=\"change()\" on-cancel=\"cancel()\" limit-layer-height=\"true\"></edit>\n" +
@@ -1388,7 +1387,7 @@ angular.module("contentList.html", []).run(["$templateCache", function($template
 
 angular.module("list.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("list.html",
-    "<div ng-class=\"getWrapperClass()\" class=\"scrollable\">\n" +
+    "<div ng-class=\"getWrapperClass()\">\n" +
     "    <div class=\"searchArea\" ng-show=\"isSearchable() && !detailId\">\n" +
     "        <label i18n=\"list.search\"></label>\n" +
     "        <input type=\"text\" ng-model=\"searchText\" ux-keyup=\"executeSearch()\"/>\n" +

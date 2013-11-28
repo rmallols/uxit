@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.directive('editBox', ['editBoxUtilsService', 'keyboardService',
-    function (editBoxUtilsService, keyboardService) {
+    COMPONENTS.directive('editBox', ['editBoxUtilsService', 'pageService', 'keyboardService',
+    function (editBoxUtilsService, pageService, keyboardService) {
         return {
             restrict: 'E',
             transclude: true,
@@ -51,8 +51,12 @@
                 };
 
                 scope.getArrowPos = function () {
+                    var mainScrollingElm    = pageService.getMainScrollingElm(),
+                        topPos              = scope.target.coordinates.top,
+                        offsetTop           = element.offset().top,
+                        scrollTop           = mainScrollingElm.scrollTop();
                     return {
-                        top: scope.target.coordinates.top - element.offset().top
+                        top: topPos - offsetTop -  scrollTop
                     };
                 };
 

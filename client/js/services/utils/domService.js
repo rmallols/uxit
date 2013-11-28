@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    COMPONENTS.factory('domService', [function () {
+    COMPONENTS.factory('domService', ['pageService', function (pageService) {
 
         /**
          * Gets the coordinates of a given DOM object
@@ -11,7 +11,7 @@
          */
         function getCoordinates(obj) {
             return {
-                top     : obj.offset().top,
+                top     : obj.offset().top + pageService.getMainScrollingElm().scrollTop(),
                 left    : obj.offset().left,
                 width   : obj.outerWidth(),
                 height  : obj.outerHeight()

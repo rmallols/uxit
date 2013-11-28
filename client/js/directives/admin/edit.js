@@ -1,9 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.directive('edit', ['$rootScope', '$compile', 'portalService', 'validationService',
-    'keyboardService', 'stringService', 'objectService',
-    function ($rootScope, $compile, portalService, validationService, keyboardService, stringService,
-    objectService) {
+    COMPONENTS.directive('edit', ['$compile', 'validationService', 'keyboardService', 'stringService',
+    function ($compile, validationService, keyboardService, stringService) {
         return {
             restrict: 'E',
             require: 'ngModel',
@@ -35,7 +33,6 @@
                         //Adjust the height limit of the layer
                         //This is thought to ensure that the editBox is smaller than the current view
                         return {
-                            //maxHeight: $(window).height() * 0.6
                             height: $(window).height() * 0.5
                         };
                     }

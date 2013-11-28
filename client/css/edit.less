@@ -50,8 +50,8 @@
 }
 .edit .content.level1 {
 	width:100%;
-	/*height:50%;
-    height: 70%;*/
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .edit .content.level2 {
     overflow:hidden;
@@ -110,13 +110,16 @@ for instance if the data is never going to persist (i.e. search box change)*/
 .edit .level1 > ul > .layer > * {
   background-color: @highComp;
   padding: @padding;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 .edit .level2 > ul > .layer {
 	float:left;
 	width:100%;
 	height:@tabSize;
-	overflow:auto;
+	overflow-y:auto;
+    overflow-x: hidden;
 }
 
 .edit .submenu,

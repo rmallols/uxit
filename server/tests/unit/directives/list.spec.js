@@ -32,13 +32,6 @@ describe('app directive', function () {
         $rootScope.$digest();
     }]));
 
-    describe('general DOM structure', function () {
-
-        xit('should add the \'scrollable\' styleclass to the root element', function () {
-            expect(listDirective.hasClass('scrollable')).toBe(true);
-        });
-    });
-
     describe('items size', function () {
 
         it('should not show the \'no items\' block if there\'re available content to show', function () {

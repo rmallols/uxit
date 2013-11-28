@@ -8,10 +8,10 @@
             class="tab button" ng-class="getTabClasses(panel, $index)" title="{{panel.description}}" i18n-title>
             <label i18n="{{panel.title}}"></label>
             <label ux-show="isEditedMarkVisible($parent[panel.type])" ng-class="getEditedMarkColor($parent[panel.type])"
-                   class="editedMark">*</label>
+                   class="jsitedMark">*</label>
 		</li>
 	</ul>
-	<div class="content level1" ng-show="activeTab >= 0">
+	<div class="content level1" ng-show="activeTab >= 0" ng-style="setMaxHeightContent()">
 		<ul></ul>
 	</div>
 </div>

@@ -2,15 +2,14 @@
 @arrowContainerWidth : 2 * @arrowWidth;
 @borderWidth  :8px;
 @arrowTopPos  :@padding + @normalButtonSize + @arrowWidth;
-@editBoxWidth :600px;
-@zIndex       : 11; /*Force a higher z-index than the overlay*/
+@zIndex       : 10; /*Be aware of the z-index of the overlay*/
 
 .editBox {
     position:absolute;
     left:0px;
     margin-top: -(@arrowTopPos + @borderWidth);
     background-color: transparent;
-    width:@editBoxWidth;
+    max-width:75%;
     border:0;
     padding: 0;
     z-index: @zIndex;
@@ -24,7 +23,6 @@
   height: @arrowContainerWidth;
   position: absolute;
   top: 0;
-  background-color: yellow;
   z-index: @zIndex;
 }
 
@@ -52,9 +50,6 @@
 }
 
 .editBox[arrowPos="right"] > .arrow:after {
-  /*top: @arrowTopPos;
-  left:100%;
-  .offsettedLeft(2 * @arrowWidth);*/
   left: 100%;
   top: 50%;
   border-left-color: @highComp;
@@ -86,11 +81,6 @@
 .editBox .edit {
   overflow: hidden;
 }
-/*
-.editBox .edit .tabs.level1 {
-  margin-top: @padding + @normalButtonSize;
-}
-*/
 
 .editBox .edit .tabs.level1 > .tab {
   height: @tabsHeight !important;
@@ -118,12 +108,6 @@
 
 .editBox .checkContainer .check {
   background-image: url('../images/checkWhite.png');
-}
-
-.editBox .scrollable {
-  overflow-y: auto;
-  height: 100%;
-  /*max-height: 350px;*/
 }
 
 .editBox .edit .level1 > ul > .layer {

@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('addAppService', ['domService', function (domService) {
+    COMPONENTS.factory('addAppService', ['pageService', 'domService', function (pageService, domService) {
 
         var addAppPanelActive = false;
 
@@ -10,7 +10,7 @@
          */
         function showAddAppPanel() {
             var addAppPanelObj          = $('#addAppPanel'),
-                wrapperObj              = $('ul.pages'),
+                wrapperObj              = pageService.getMainScrollingElm(),
                 collapsedViewObj        = $('> .collapsedView', addAppPanelObj),
                 wrapperMarginLeft       = domService.getDomPercent(wrapperObj, 'margin-left'),
                 wrapperWidth            = domService.getDomPercent(wrapperObj, 'width'),

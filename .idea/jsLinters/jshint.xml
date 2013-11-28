@@ -62,7 +62,7 @@
     <option passfail="false" />
     <option white="false" />
     <option maxerr="50" />
-    <option predef="angular, $, jQuery, describe, ddescribe, it, iit, beforeEach, afterEach, require, expect, module, COMPONENTS" />
+    <option predef="angular, $, jQuery, describe, ddescribe, it, iit, beforeEach, afterEach, require, expect, inject, module, COMPONENTS" />
   </component>
 </project>
 

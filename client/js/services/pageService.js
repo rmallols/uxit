@@ -129,6 +129,15 @@
          */
         function isSubPageOf(subPage, page) { return subPage.parentPageId === page._id; }
 
+        /**
+         * Determines the main scrolling element of the page
+         *
+         * @returns {jQuery} The pointer to the DOM object where the scrolling area is
+         */
+        function getMainScrollingElm() {
+            return $('ul.pages');
+        }
+
         return {
             loadPages: loadPages,
             getPages: getPages,
@@ -139,7 +148,8 @@
             deletePage: deletePage,
             getCurrentPage: getCurrentPage,
             setCurrentPage: setCurrentPage,
-            isSubPageOf: isSubPageOf
+            isSubPageOf: isSubPageOf,
+            getMainScrollingElm: getMainScrollingElm
         };
     }]);
 })(window.COMPONENTS);

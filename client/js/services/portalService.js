@@ -119,7 +119,7 @@
             isMaximizedFullscreen: isMaximizedFullscreen,
             isTemplateFullscreen: isTemplateFullscreen,
             setHeader: setHeader,
-            trackAnalytics: trackAnalytics
+            trackAnalytics: trackAnalytics,
         };
     }]);
 })();
