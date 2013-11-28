@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/app/addAppService.js" afterPath="$PROJECT_DIR$/client/js/services/app/addAppService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/utils/domService.js" afterPath="$PROJECT_DIR$/client/js/services/utils/domService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/admin/edit.html" afterPath="$PROJECT_DIR$/client/html/admin/edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/edit.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/edit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/edit.less" afterPath="$PROJECT_DIR$/client/css/edit.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/admin/editBox.html" afterPath="$PROJECT_DIR$/client/html/admin/editBox.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/editBox.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/editBox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/editBox.less" afterPath="$PROJECT_DIR$/client/css/editBox.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js" afterPath="$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/list/list.html" afterPath="$PROJECT_DIR$/client/html/list/list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/directives/list.spec.js" afterPath="$PROJECT_DIR$/server/tests/unit/directives/list.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/pageService.js" afterPath="$PROJECT_DIR$/client/js/services/pageService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/pages.less" afterPath="$PROJECT_DIR$/client/css/pages.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/portalService.js" afterPath="$PROJECT_DIR$/client/js/services/portalService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/services/portalService.spec.js" afterPath="$PROJECT_DIR$/server/tests/unit/services/portalService.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/utils.less" afterPath="$PROJECT_DIR$/client/css/utils.less" />
+    <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="#195 Move all the edit boxes as direct children of the body tag.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/appHeader.less" afterPath="$PROJECT_DIR$/client/css/appHeader.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/test-results.xml" afterPath="$PROJECT_DIR$/server/tests/unit/test-results.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -45,55 +29,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="editBox.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/admin/editBox.html">
+      <file leaf-file-name="app.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/app/app.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="106" selection-start="469" selection-end="469" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="238">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editBox.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editBox.js">
+      <file leaf-file-name="app.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/css/app.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="99" selection-start="2053" selection-end="2053" vertical-scroll-proportion="-20.12" vertical-offset="296" max-vertical-offset="1428">
+            <state line="30" column="21" selection-start="480" selection-end="486" vertical-scroll-proportion="-4.1578946" vertical-offset="194" max-vertical-offset="816">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/list/list.html">
+      <file leaf-file-name="appHeader.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/css/appHeader.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="91" selection-start="602" selection-end="602" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="561">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/edit.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="197" column="151" selection-start="9369" selection-end="9369" vertical-scroll-proportion="1.3942307" vertical-offset="2914" max-vertical-offset="3587">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editBox.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/css/editBox.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="85" selection-start="2336" selection-end="2336" vertical-scroll-proportion="-5.352941" vertical-offset="1563" max-vertical-offset="2210">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.spec.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/list.spec.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="74" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.0" vertical-offset="483" max-vertical-offset="3281">
+            <state line="16" column="68" selection-start="292" selection-end="292" vertical-scroll-proportion="0.72796935" vertical-offset="82" max-vertical-offset="1190">
               <folding />
             </state>
           </provider>
@@ -118,7 +75,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/css/pages.less" />
         <option value="$PROJECT_DIR$/client/html/admin/edit.html" />
         <option value="$PROJECT_DIR$/client/css/utils.less" />
         <option value="$PROJECT_DIR$/client/css/edit.less" />
@@ -134,6 +90,7 @@
         <option value="$PROJECT_DIR$/client/css/editBox.less" />
         <option value="$PROJECT_DIR$/server/tests/unit/directives/list.spec.js" />
         <option value="$PROJECT_DIR$/client/js/directives/admin/edit.js" />
+        <option value="$PROJECT_DIR$/client/css/appHeader.less" />
       </list>
     </option>
   </component>
@@ -879,7 +836,11 @@
       <created>1385581360016</created>
       <updated>1385581360016</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="#195 Move all the edit boxes as direct children of the body tag.">
+      <created>1385665806703</created>
+      <updated>1385665806703</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -906,6 +867,7 @@
     <frame x="54" y="-8" width="1320" height="784" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -915,12 +877,11 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-324" y="-1079" width="1911" height="985" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-324" y="-1079" width="1911" height="985" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -968,27 +929,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/js/services/feedback/globalMsgService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="69" selection-start="971" selection-end="971" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/portalService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="111" selection-start="4407" selection-end="4407" vertical-scroll-proportion="0.0" vertical-offset="1529" max-vertical-offset="2227">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/app/addAppService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="54" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1394">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/pageService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="136" column="17" selection-start="5500" selection-end="5500" vertical-scroll-proportion="3.312321" vertical-offset="0" max-vertical-offset="2737">
@@ -1056,14 +996,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/editBox.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="85" selection-start="2336" selection-end="2336" vertical-scroll-proportion="-5.352941" vertical-offset="1563" max-vertical-offset="2210">
+        <state line="108" column="85" selection-start="2336" selection-end="2336" vertical-scroll-proportion="0.95454544" vertical-offset="1563" max-vertical-offset="2210">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/list.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="74" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.0" vertical-offset="483" max-vertical-offset="3281">
+        <state line="32" column="74" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.1810089" vertical-offset="483" max-vertical-offset="3281">
           <folding />
         </state>
       </provider>
@@ -1078,6 +1018,27 @@
     <entry file="file://$PROJECT_DIR$/client/js/directives/admin/edit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="197" column="151" selection-start="9369" selection-end="9369" vertical-scroll-proportion="1.3942307" vertical-offset="2914" max-vertical-offset="3587">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/app/app.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/app.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="21" selection-start="480" selection-end="486" vertical-scroll-proportion="-4.1578946" vertical-offset="194" max-vertical-offset="816">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/appHeader.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="68" selection-start="292" selection-end="292" vertical-scroll-proportion="0.72796935" vertical-offset="82" max-vertical-offset="1190">
           <folding />
         </state>
       </provider>

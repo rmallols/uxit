@@ -16,15 +16,11 @@
   .floatLeft;
 }
 
-.app > [app-header] > .header > .actions {
-  margin-right:@padding;
-}
-
-.app.maximizedFullscreen > [app-header] > .header > .actions {
-  margin-right: 2 * @padding + 5;
-}
-
 @headerToggleSize : 48px;
+.app > [app-header] > .header > .actions {
+  margin-right: @headerToggleSize;
+}
+
 .app .headerToggle {
   display: none;
   width:@headerToggleSize;
@@ -35,15 +31,22 @@
   background-position: center center;
   background-size: 32px 32px;
   top: 0px;
-  right:-@headerToggleSize;
+  right:0px;
   cursor: pointer;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0 0 3px 3px;
   z-index: 3;
   .settingsIcon;
   .transition(right @speed);
 }
 
-.app.hover .headerToggle {
+.app.hover .headerToggle, .app.enabledHeader .headerToggle {
   display: block;
+}
+
+.app.enabledHeader .headerToggle {
+  border-color: @highComp;
 }
 
 .app.maximizedFullscreen > [app-header] > .header {
