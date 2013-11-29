@@ -1,17 +1,19 @@
 <div class="cf">
-    <div class="leftActions floatLeft" ng-show="isMultiSelectable() && items.length">
-        <button class="okIcon" ng-click="toggleSelectAll()"><label i18n="list.selectItems"></label></button>
+    <div class="leftActions floatLeft onSelectActions" ng-show="isMultiSelectable() && items.length">
+        <button class="okIcon" ng-click="toggleSelectAll()">
+            <label i18n="list.selectItems"></label>
+        </button>
         <button class="removeIcon" ng-click="deleteSelected()" ng-show="selectedIds.length && isDeletable()">
             <label i18n="list.deleteSelected"></label>
         </button>
     </div>
-    <div class="leftActions floatLeft" ng-show="isCreatable()">
+    <div class="leftActions floatLeft createActions" ng-show="isCreatable()">
         <button create-item-button class="addIcon" ng-click="createItem()" collection="collection"
                 on-create="createItem($item)" on-create-panels="onCreatePanels">
             <label i18n="list.createItem"></label>
         </button>
     </div>
-    <div class="rightActions floatRight getPage" ng-show="showPrevPageLink()||showNextPageLink()">
+    <div class="rightActions floatRight getPageActions" ng-show="showPrevPageLink()||showNextPageLink()">
         <button class="getPrevPage" ng-click="getPrevPage()" ng-show="showPrevPageLink()">&lt;</button>
         <button class="getNextPage" ng-click="getNextPage()" ng-show="showNextPageLink()">&gt;</button>
     </div>

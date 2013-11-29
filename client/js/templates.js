@@ -1566,19 +1566,21 @@ angular.module("portalPage.html", []).run(["$templateCache", function($templateC
 angular.module("listActions.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("listActions.html",
     "<div class=\"cf\">\n" +
-    "    <div class=\"leftActions floatLeft\" ng-show=\"isMultiSelectable() && items.length\">\n" +
-    "        <button class=\"okIcon\" ng-click=\"toggleSelectAll()\"><label i18n=\"list.selectItems\"></label></button>\n" +
+    "    <div class=\"leftActions floatLeft onSelectActions\" ng-show=\"isMultiSelectable() && items.length\">\n" +
+    "        <button class=\"okIcon\" ng-click=\"toggleSelectAll()\">\n" +
+    "            <label i18n=\"list.selectItems\"></label>\n" +
+    "        </button>\n" +
     "        <button class=\"removeIcon\" ng-click=\"deleteSelected()\" ng-show=\"selectedIds.length && isDeletable()\">\n" +
     "            <label i18n=\"list.deleteSelected\"></label>\n" +
     "        </button>\n" +
     "    </div>\n" +
-    "    <div class=\"leftActions floatLeft\" ng-show=\"isCreatable()\">\n" +
+    "    <div class=\"leftActions floatLeft createActions\" ng-show=\"isCreatable()\">\n" +
     "        <button create-item-button class=\"addIcon\" ng-click=\"createItem()\" collection=\"collection\"\n" +
     "                on-create=\"createItem($item)\" on-create-panels=\"onCreatePanels\">\n" +
     "            <label i18n=\"list.createItem\"></label>\n" +
     "        </button>\n" +
     "    </div>\n" +
-    "    <div class=\"rightActions floatRight getPage\" ng-show=\"showPrevPageLink()||showNextPageLink()\">\n" +
+    "    <div class=\"rightActions floatRight getPageActions\" ng-show=\"showPrevPageLink()||showNextPageLink()\">\n" +
     "        <button class=\"getPrevPage\" ng-click=\"getPrevPage()\" ng-show=\"showPrevPageLink()\">&lt;</button>\n" +
     "        <button class=\"getNextPage\" ng-click=\"getNextPage()\" ng-show=\"showNextPageLink()\">&gt;</button>\n" +
     "    </div>\n" +
