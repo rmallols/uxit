@@ -20,14 +20,18 @@
             },
             link: function (scope, element) {
 
-                var arrowPosOptions = { top: 'top', right: 'right', bottom: 'bottom', left: 'left' }, directiveId = 'editBox';
+                var arrowPosOptions = { top: 'top', right: 'right', bottom: 'bottom', left: 'left' },
+                    directiveId     = 'editBox', mainScrollingElm = pageService.getMainScrollingElm(),
+                    mainScrollingElmMarginLeft = parseInt(mainScrollingElm.css('margin-left'), 10),
+                    arrowWidth = $(' > .arrow', element).width() / 2;
                 scope.activeTab = 0;
                 scope.getStyles = function () {
-
                     var topPos  = scope.target.coordinates.top + (scope.target.coordinates.height / 2),
                         leftPos = (scope.arrowPos === arrowPosOptions.left)
                                     ? scope.target.coordinates.width + scope.target.coordinates.left
-                                    : -(element.width() + scope.target.coordinates.width) + scope.target.coordinates.left;
+                                    - mainScrollingElmMarginLeft + arrowWidth
+                                    : -(element.width() + scope.target.coordinates.width)
+                                    + scope.target.coordinates.left - mainScrollingElmMarginLeft;
                     return {
                         top : topPos,
                         left: leftPos
@@ -51,8 +55,7 @@
                 };
 
                 scope.getArrowPos = function () {
-                    var mainScrollingElm    = pageService.getMainScrollingElm(),
-                        topPos              = scope.target.coordinates.top,
+                    var topPos              = scope.target.coordinates.top,
                         offsetTop           = element.offset().top,
                         scrollTop           = mainScrollingElm.scrollTop();
                     return {

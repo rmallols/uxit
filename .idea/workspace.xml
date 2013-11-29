@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/list/createItemButton.js" afterPath="$PROJECT_DIR$/client/js/directives/list/createItemButton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/editBox.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/editBox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/editBox.less" afterPath="$PROJECT_DIR$/client/css/editBox.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -28,46 +29,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="listActions.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/utils/listActions.html">
+      <file leaf-file-name="editBox.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/css/editBox.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="37" selection-start="648" selection-end="658" vertical-scroll-proportion="-3.6666667" vertical-offset="0" max-vertical-offset="476">
+            <state line="7" column="69" selection-start="237" selection-end="237" vertical-scroll-proportion="-1.5657895" vertical-offset="0" max-vertical-offset="2210">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listActions.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/list/listActions.js">
+      <file leaf-file-name="editBox.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editBox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="35" selection-start="146" selection-end="146" vertical-scroll-proportion="-2.04" vertical-offset="0" max-vertical-offset="1190">
+            <state line="23" column="85" selection-start="956" selection-end="956" vertical-scroll-proportion="0.55448717" vertical-offset="218" max-vertical-offset="1479">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userList.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/list/userList.js">
+      <file leaf-file-name="editBox.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/admin/editBox.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="29" selection-start="1255" selection-end="1263" vertical-scroll-proportion="0.35897437" vertical-offset="432" max-vertical-offset="1156">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createItemButton.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/list/createItemButton.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="79" selection-start="977" selection-end="977" vertical-scroll-proportion="-12.64" vertical-offset="126" max-vertical-offset="799">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createItem.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/list/createItem.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="22" selection-start="299" selection-end="305" vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="425">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="238">
               <folding />
             </state>
           </provider>
@@ -96,9 +79,7 @@
         <option value="$PROJECT_DIR$/client/js/services/utils/domService.js" />
         <option value="$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js" />
         <option value="$PROJECT_DIR$/client/html/admin/editBox.html" />
-        <option value="$PROJECT_DIR$/client/js/directives/admin/editBox.js" />
         <option value="$PROJECT_DIR$/client/html/list/list.html" />
-        <option value="$PROJECT_DIR$/client/css/editBox.less" />
         <option value="$PROJECT_DIR$/server/tests/unit/directives/list.spec.js" />
         <option value="$PROJECT_DIR$/client/js/directives/admin/edit.js" />
         <option value="$PROJECT_DIR$/client/css/appHeader.less" />
@@ -108,6 +89,8 @@
         <option value="$PROJECT_DIR$/client/js/directives/banner/bannerCanvas.js" />
         <option value="$PROJECT_DIR$/client/html/banner/bannerItem.html" />
         <option value="$PROJECT_DIR$/client/js/directives/list/createItemButton.js" />
+        <option value="$PROJECT_DIR$/client/css/editBox.less" />
+        <option value="$PROJECT_DIR$/client/js/directives/admin/editBox.js" />
       </list>
     </option>
   </component>
@@ -869,7 +852,11 @@
       <created>1385747229295</created>
       <updated>1385747229295</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="#151 [List] Provide a custom service-aware solution">
+      <created>1385749073866</created>
+      <updated>1385749073866</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -945,7 +932,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="#0 S32 production scripts" />
     <MESSAGE value="#149 MongoLab integration" />
     <MESSAGE value="#149 MongoLab integration - layer mechanism changed 2" />
     <MESSAGE value="#149 MongoLab integration - layer mechanism changed" />
@@ -970,7 +956,8 @@
     <MESSAGE value="#191  [App] Move the 'settings' icon inside of the box" />
     <MESSAGE value="#162 [Unit tests] listActions" />
     <MESSAGE value="#189 [Banner Item] The delete feature is broken" />
-    <option name="LAST_COMMIT_MESSAGE" value="#189 [Banner Item] The delete feature is broken" />
+    <MESSAGE value="#151 [List] Provide a custom service-aware solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="#151 [List] Provide a custom service-aware solution" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -978,41 +965,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/list.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="38" selection-start="2836" selection-end="2836" vertical-scroll-proportion="0.1991404" vertical-offset="1017" max-vertical-offset="3281">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/apps/contentListApp/contentListApp.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="29" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="388">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/list/userList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/listActions.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="9" selection-start="64" selection-end="65" vertical-scroll-proportion="-1.1184211" vertical-offset="0" max-vertical-offset="340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/list/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="28" selection-start="258" selection-end="262" vertical-scroll-proportion="0.13137558" vertical-offset="0" max-vertical-offset="647">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/input/checkbox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="20" selection-start="1230" selection-end="1238" vertical-scroll-proportion="0.63323784" vertical-offset="0" max-vertical-offset="1445">
@@ -1054,14 +1006,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/list/createItemButton.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="79" selection-start="977" selection-end="977" vertical-scroll-proportion="-12.64" vertical-offset="126" max-vertical-offset="799">
+        <state line="26" column="79" selection-start="977" selection-end="977" vertical-scroll-proportion="0.46953937" vertical-offset="126" max-vertical-offset="799">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/list/createItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="299" selection-end="305" vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="425">
+        <state line="9" column="22" selection-start="299" selection-end="305" vertical-scroll-proportion="0.22734027" vertical-offset="0" max-vertical-offset="673">
           <folding />
         </state>
       </provider>
@@ -1089,7 +1041,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/list/userList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="29" selection-start="1255" selection-end="1263" vertical-scroll-proportion="0.35897437" vertical-offset="432" max-vertical-offset="1156">
+        <state line="27" column="64" selection-start="1154" selection-end="1154" vertical-scroll-proportion="0.04011887" vertical-offset="432" max-vertical-offset="1156">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="63" selection-start="383" selection-end="383" vertical-scroll-proportion="0.2191977" vertical-offset="0" max-vertical-offset="3587">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/editBox.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="69" selection-start="237" selection-end="237" vertical-scroll-proportion="-1.5657895" vertical-offset="0" max-vertical-offset="2210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/utils/domService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="50" selection-start="2971" selection-end="2971" vertical-scroll-proportion="1.3937593" vertical-offset="286" max-vertical-offset="2040">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/admin/editBox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="85" selection-start="956" selection-end="956" vertical-scroll-proportion="0.55448717" vertical-offset="218" max-vertical-offset="1479">
           <folding />
         </state>
       </provider>
