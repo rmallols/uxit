@@ -1216,7 +1216,7 @@ angular.module("bannerItem.html", []).run(["$templateCache", function($templateC
     "<div id=\"{{item.id}}\" class=\"bannerItem\" ng-class=\"{readOnly: readOnly}\">\n" +
     "    <button class=\"edit editIcon\" ng-click=\"editItem()\"></button>\n" +
     "    <div ux-transclude=\"template\"></div>\n" +
-    "    <input type=\"text\" class=\"selectHandler\" />\n" +
+    "    <input type=\"text\" class=\"selectHandler mousetrap\" />\n" +
     "</div>");
 }]);
 
