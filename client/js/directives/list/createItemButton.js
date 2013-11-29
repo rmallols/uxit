@@ -1,6 +1,5 @@
 (function() {
-    COMPONENTS.directive('createItemButton', ['$injector', 'crudService', 'editBoxUtilsService',
-    function ($injector, crudService, editBoxUtilsService) {
+    COMPONENTS.directive('createItemButton', ['editBoxUtilsService', function (editBoxUtilsService) {
         return {
             restrict: 'A',
             scope: {
