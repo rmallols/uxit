@@ -15,7 +15,7 @@ COMPONENTS.directive('urlToken', ['i18nDbService', 'stringService', function (i1
                     updatedInput = (i18nDS.hasI18nStructure(newVal))
                                     ? i18nDS.getI18nProperty(newVal).text
                                     : newVal;
-                    output = stringService.replaceToken(updatedInput, ' ', '-');
+                    output = stringService.replaceToken(updatedInput, ' ', '-', false);
                     scope.output = stringService.toCamelCase(output);
                 }
             }, true);

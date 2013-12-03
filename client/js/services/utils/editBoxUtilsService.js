@@ -40,8 +40,8 @@
             function addEditBoxToDom() {
                 if (!scope.model) { scope.model = {}; }
                 var editBoxObj;
-                editBoxObj = $('<edit-box model="model" panels="panels" arrow-pos="arrowPos" ' +
-                    'internal-data="internalData" on-save="onSave()" on-change="onChange()" on-cancel="onCancel()" ' +
+                editBoxObj = $('<edit-box panels="panels" arrow-pos="arrowPos" ' +
+                    'on-save="onSave()" on-change="onChange()" on-cancel="onCancel()" ' +
                     'on-close="onClose()" target="target"></edit-box>');
                 pageService.getMainScrollingElm().append(editBoxObj);
                 $compile(editBoxObj)(scope);

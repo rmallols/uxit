@@ -28,10 +28,10 @@ describe('app directive', function () {
         loadRoles($httpBackend, roleService, function(roleList) {
             $scope.roleList = roleList;
         });
-        template        = '<div list="roleList" collection="collection" config="config" ' +
-                          'transcluded-data="transcludedData" template="template" ' +
-                          'internal-data="internalData" on-edit-panels="onEditPanels" ' +
-                          'on-create="onCreate($item)" on-delete="onDelete($id)"></div>';
+        template      = '<div list="roleList" collection="collection" config="config" ' +
+                        'transcluded-data="transcludedData" template="template" ' +
+                        'on-edit-panels="onEditPanels" on-create="onCreate($item)" ' +
+                        'on-delete="onDelete($id)"></div>';
         listDirective    = $compile(template, {});
         $rootScope.$digest();
         $timeout.flush();

@@ -87,10 +87,6 @@ describe('app directive', function () {
             expect($(appBridgeSelector, appDirective).attr('model')).toBe('model');
         });
 
-        it('should specify the internal data attribute', function () {
-            expect($(appBridgeSelector, appDirective).attr('internal-data')).toBe('internalData');
-        });
-
         it('should specify the src attribute', function () {
             expect($(appBridgeSelector, appDirective).attr('src')).toBe('loginApp');
         });

@@ -4,6 +4,8 @@
 
         function view(scope) {
 
+            var newDb = {};
+
             dbService.loadDatabases(function (databases) {
                 updateModel(databases);
             });
@@ -15,32 +17,50 @@
                 deletable       : true
             };
 
-            scope.onEditPanels      = [{ title: 'Edit database', type: 'editDb',
-                                         src:'portalsAdmin', view:'editDb', appBridge: true}];
-            scope.onCreatePanels    = [{ title: 'Edit database', type: 'createDb',
-                                         src:'portalsAdmin', view:'createDb', appBridge: true}];
-            scope.onCreate          = onCreate;
-            scope.onEdit            = onEdit;
-            scope.onDelete          = onDelete;
+            scope.onCreatePanels    = getCreatePanels();
+            scope.onEditPanels      = getEditPanels();
+            scope.onCreate          = function() { onCreateDb(newDb); };
+            scope.onEdit            = function() { onEditDb(scope.onEditPanels[0].bindings.model); };
+            scope.onDelete          = function(dbId) { onDeleteDb(dbId); };
             scope.template          = getTemplate();
             scope.transcludedData   = {};
 
             /** Private methods**/
+            function getCreatePanels() {
+                return [{
+                    title: 'Create database', type: 'editDb',
+                    src:'portalsAdmin', view:'editDb', appBridge: true,
+                    bindings: {
+                        model: newDb
+                    }
+                }];
+            }
+
+            function getEditPanels() {
+                return [{
+                    title: 'Edit database', type: 'editDb',
+                    src:'portalsAdmin', view:'editDb', appBridge: true,
+                    bindings : {
+                        model: scope.model
+                    }
+                }];
+            }
+
             function updateModel(databases) {
                 scope.databases = databases.results;
             }
 
-            function onCreate(database) {
+            function onCreateDb(database) {
                 dbService.createDatabase(database, function(databases) {
                     updateModel(databases);
                 });
             }
 
-            function onEdit(database) {
+            function onEditDb(database) {
                 dbService.updateDatabase(database._id, database);
             }
 
-            function onDelete(databaseId) {
+            function onDeleteDb(databaseId) {
                 dbService.deleteDatabase(databaseId, function(databases) {
                     updateModel(databases);
                 });
@@ -48,16 +68,19 @@
 
             function getTemplate() {
                 return  '<div class="columns large-25">' +
-                            '<h5>{{item.name}}</h5>' +
-                            'Size on disk; {{item.sizeOnDisk}} - empty: {{item.empty}}' +
-                        '</div>';
+                    '<h5>{{item.name}}</h5>' +
+                    'Size on disk; {{item.sizeOnDisk}} - empty: {{item.empty}}' +
+                    '</div>';
             }
+            /** Private methods**/
         }
 
         function createDb(scope) {}
 		
 		function editDb(scope) {
-            scope.model.typedName = scope.model.name;
+            if(scope.model) {
+                scope.model.typedName = scope.model.name;
+            }
         }
 
         return {

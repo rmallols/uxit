@@ -9,10 +9,12 @@
          * @param   {string}    string      The string that is going to be modified
          * @param   {string}    sourceToken The original token that is going to be replaced
          * @param   {string}    targetToken The new token that is going to replace the original one
+         * @param   {boolean}   escape      The flag that decides if the source string has to be scaped or not
          * @returns {string}                The string with the switched tokens
          */
-        function replaceToken(string, sourceToken, targetToken) {
+        function replaceToken(string, sourceToken, targetToken, escape) {
             var re = new RegExp(sourceToken, "g");
+            if(escape) { string = escapeRegExp(string); }
             return (string) ? string.replace(re, targetToken) : '';
         }
 
@@ -93,6 +95,11 @@
          */
         function normalizeExternalUrl(url) {
             return (url.indexOf('http://') < 0) ? 'http://' + url : url;
+        }
+
+        /** Private methods **/
+        function escapeRegExp(string) {
+            return string.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
         }
 
         return {
