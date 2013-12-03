@@ -125,7 +125,6 @@ describe('app directive', function () {
         });
 
         it('should not show the get page actions block by default', function () {
-            dump($(getPageActionsPath, listActionsDirective));
             expect(isVisible($(getPageActionsPath, listActionsDirective))).toBe(false);
         });
 

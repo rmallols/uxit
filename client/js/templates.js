@@ -1152,7 +1152,7 @@ angular.module("app.html", []).run(["$templateCache", function($templateCache) {
     "    <div app-header class=\"cf\"></div>\n" +
     "	<div class=\"content cf\">\n" +
     "        <div class=\"title\" ng-show=\"isTitleVisible()\"><h5>{{model.title || appInfo.title}}</h5></div>\n" +
-    "        <div ng-class=\"{alignCenter: model.align=='center', alignRight: model.align=='right'}\">\n" +
+    "        <div class=\"align\" ng-class=\"{alignCenter: model.align=='center', alignRight: model.align=='right'}\">\n" +
     "            <div app-bridge bindings=\"bindings\" src=\"{{type}}\" view=\"{{view}}\" on-event=\"onEvent\"></div>\n" +
     "        </div>\n" +
     "	</div>\n" +

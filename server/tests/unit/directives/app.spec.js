@@ -78,13 +78,9 @@ describe('app directive', function () {
 
     describe('content area - app bridge', function () {
 
-        var appBridgeSelector = ' > .content > [app-bridge]';
+        var appBridgeSelector = ' > .content > .align > [app-bridge]';
         it('should have a reference to the app bridge area', function () {
             expect($(appBridgeSelector, appDirective).length).toBe(1);
-        });
-
-        it('should specify the model attribute', function () {
-            expect($(appBridgeSelector, appDirective).attr('model')).toBe('model');
         });
 
         it('should specify the src attribute', function () {

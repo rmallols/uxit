@@ -2,7 +2,7 @@
     <div app-header class="cf"></div>
 	<div class="content cf">
         <div class="title" ng-show="isTitleVisible()"><h5>{{model.title || appInfo.title}}</h5></div>
-        <div ng-class="{alignCenter: model.align=='center', alignRight: model.align=='right'}">
+        <div class="align" ng-class="{alignCenter: model.align=='center', alignRight: model.align=='right'}">
             <div app-bridge bindings="bindings" src="{{type}}" view="{{view}}" on-event="onEvent"></div>
         </div>
 	</div>
