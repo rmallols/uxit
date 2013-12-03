@@ -24,7 +24,7 @@
                     directiveId     = 'editBox', mainScrollingElm = pageService.getMainScrollingElm(),
                     mainScrollingElmMarginLeft = parseInt(mainScrollingElm.css('margin-left'), 10),
                     arrowWidth = $(' > .arrow', element).width() / 2;
-                scope.activeTab = 0;
+                scope.activeTab = { current: 0};
                 scope.getStyles = function () {
                     var topPos  = scope.target.coordinates.top + (scope.target.coordinates.height / 2),
                         leftPos = (scope.arrowPos === arrowPosOptions.left)

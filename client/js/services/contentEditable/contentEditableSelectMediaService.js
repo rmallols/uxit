@@ -13,13 +13,21 @@
          * @param {object} ngModelCtrl  The controller of the ng-model directive attached to the content editable component
          */
         function showEditBox(cEScope, cEDomObj, sMDomObj, ngModelCtrl) {
-            var defaultPanels = [{ title: 'Select media', type: 'selectMedia' }];
+            var defaultPanels = [{
+                title: 'Select media',
+                type: 'selectMedia',
+                bindings: {
+                    mediaSize: getMediaSize(sMDomObj)
+                },
+                onLayer: {
+                    change: function(newMedia, mediaSize) {
+                        setMediaSrc(sMDomObj, newMedia);
+                        setMediaSize(sMDomObj, mediaSize);
+                    }
+                }}];
             if (cEScope.isEditable()) {
                 unselectItem($('img.active', cEDomObj));
                 editBoxUtilsService.hideEditBox(cEScope.$id);
-                cEScope.internalData = {
-                    mediaSize: getMediaSize(sMDomObj)
-                };
                 selectItem(sMDomObj);
                 cEScope.panels = defaultPanels;
                 cEScope.onSave = function() {
@@ -27,9 +35,6 @@
                 };
                 cEScope.onCancel = function() {
                     onCancelEditBox(sMDomObj);
-                };
-                cEScope.onChange = function(model, id, sMData) {
-                    onChangeEditBox(cEScope, sMDomObj, sMData);
                 };
                 editBoxUtilsService.showEditBox(cEScope, cEDomObj, sMDomObj);
                 cEScope.showActions = true;
@@ -45,11 +50,6 @@
 
         function onCancelEditBox(sMDomObj) {
             unselectItem(sMDomObj);
-        }
-
-        function onChangeEditBox(cEScope, sMDomObj, sMData) {
-            setMediaSrc(sMDomObj, sMData);
-            setMediaSize(sMDomObj, cEScope.internalData.mediaSize);
         }
 
         function selectItem(domObj) {

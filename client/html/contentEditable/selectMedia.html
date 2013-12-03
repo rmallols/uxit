@@ -12,8 +12,8 @@
             <label i18n="selectMedia.size"></label>
         </div>
         <div class="columns large-15">
-            <select ng-model="internalData.mediaSize" ng-init="internalData.mediaSize=internalData.mediaSize||'original'"
-                    ng-options="obj.id as obj.text for obj in internalData.mediaSizes" ng-change="propagateChanges()"></select>
+            <select ng-model="mediaSize" ng-init="mediaSize=mediaSize||'original'"
+                    ng-options="obj.id as obj.text for obj in mediaSizes" ng-change="propagateChanges()"></select>
         </div>
     </div>
 </div>

@@ -4,14 +4,14 @@
         <button class="cancelIcon" ng-click="cancel()"></button>
     </div>
 	<ul class="tabs level1" ng-show="showIfMultipleTabs()">
-		<li ng-repeat="panel in panels" style="height:{{tabHeight}}%" ng-style="panel.ngStyle()" ng-click="clickTab($index)"
+		<li ng-repeat="panel in panels" style="height:{{tabHeight}}%" ng-style="panel.ngStyleFn()" ng-click="clickTab($index)"
             class="tab button" ng-class="getTabClasses(panel, $index)" title="{{panel.description}}" i18n-title>
             <label i18n="{{panel.title}}"></label>
             <label ux-show="isEditedMarkVisible($parent[panel.type])" ng-class="getEditedMarkColor($parent[panel.type])"
                    class="jsitedMark">*</label>
 		</li>
 	</ul>
-	<div class="content level1" ng-show="activeTab >= 0" ng-style="setMaxHeightContent()">
+	<div class="content level1" ng-show="activeTab.current >= 0" ng-style="setMaxHeightContent()">
 		<ul></ul>
 	</div>
 </div>

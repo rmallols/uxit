@@ -14,6 +14,8 @@
                 var currentTabIndex, ngStyleAvatarFn, directiveId = 'adminPanel',
                     userSession = sessionService.getUserSession();
 
+                scope.activeTab = { current: '-1' };
+
                 function toggle(tabIndex) {
                     if (tabIndex !== currentTabIndex) {
                         show(tabIndex);
@@ -59,13 +61,13 @@
                     //so it's necessary to add some delay to the inactivation process to have time enough
                     //to update these ongoing processes
                     $timeout(function() {
-                        scope.activeTab = -1;
+                        scope.activeTab.current = -1;
                     }, 0);
                 }
 
                 function registerKeyboardEvents() {
                     keyboardService.register('ctrl+a', directiveId, function () {
-                        scope.activeTab = 0;
+                        scope.activeTab.current = 0;
                         toggleAddAppPanel();
                         scope.$apply();
                     });
@@ -86,8 +88,10 @@
                 }
 
                 ngStyleAvatarFn = function () {
+                    var userAvatarUrl;
                     if (userSession) {
-                        return { backgroundImage: 'url("' + mediaService.getDownloadUrl(userSession.media) + '")' };
+                        userAvatarUrl = mediaService.getDownloadUrl(userSession.media);
+                        return { backgroundImage: 'url("' + userAvatarUrl + '")' };
                     }
                     return null;
                 };
@@ -127,15 +131,14 @@
                     addPanel('editCurrentUser', 'currentUser', toggle, ngStyleAvatarFn);
                 }
 
-                function addPanel(panelId, ngClassFn, onTabClickedFn, ngStyleFn) {
-                    console.log("POR", scope.portal);
+                function addPanel(panelId, styleClasses, onTabClickedFn, ngStyleFn) {
                     var prefix = 'adminPanel.', title = prefix + panelId,
                         description = title + '.desc', bindings = { model: scope.portal };
                     scope.panels.push({
                         title       : title,
                         description : description,
                         type        : panelId,
-                        ngClass     : ngClassFn,
+                        ngClass     : styleClasses,
                         ngStyleFn   : ngStyleFn,
                         onTabClicked: onTabClickedFn,
                         bindings    : bindings

@@ -738,14 +738,14 @@ angular.module("edit.html", []).run(["$templateCache", function($templateCache) 
     "        <button class=\"cancelIcon\" ng-click=\"cancel()\"></button>\n" +
     "    </div>\n" +
     "	<ul class=\"tabs level1\" ng-show=\"showIfMultipleTabs()\">\n" +
-    "		<li ng-repeat=\"panel in panels\" style=\"height:{{tabHeight}}%\" ng-style=\"panel.ngStyle()\" ng-click=\"clickTab($index)\"\n" +
+    "		<li ng-repeat=\"panel in panels\" style=\"height:{{tabHeight}}%\" ng-style=\"panel.ngStyleFn()\" ng-click=\"clickTab($index)\"\n" +
     "            class=\"tab button\" ng-class=\"getTabClasses(panel, $index)\" title=\"{{panel.description}}\" i18n-title>\n" +
     "            <label i18n=\"{{panel.title}}\"></label>\n" +
     "            <label ux-show=\"isEditedMarkVisible($parent[panel.type])\" ng-class=\"getEditedMarkColor($parent[panel.type])\"\n" +
     "                   class=\"jsitedMark\">*</label>\n" +
     "		</li>\n" +
     "	</ul>\n" +
-    "	<div class=\"content level1\" ng-show=\"activeTab >= 0\" ng-style=\"setMaxHeightContent()\">\n" +
+    "	<div class=\"content level1\" ng-show=\"activeTab.current >= 0\" ng-style=\"setMaxHeightContent()\">\n" +
     "		<ul></ul>\n" +
     "	</div>\n" +
     "</div>\n" +
@@ -1338,8 +1338,8 @@ angular.module("selectMedia.html", []).run(["$templateCache", function($template
     "            <label i18n=\"selectMedia.size\"></label>\n" +
     "        </div>\n" +
     "        <div class=\"columns large-15\">\n" +
-    "            <select ng-model=\"internalData.mediaSize\" ng-init=\"internalData.mediaSize=internalData.mediaSize||'original'\"\n" +
-    "                    ng-options=\"obj.id as obj.text for obj in internalData.mediaSizes\" ng-change=\"propagateChanges()\"></select>\n" +
+    "            <select ng-model=\"mediaSize\" ng-init=\"mediaSize=mediaSize||'original'\"\n" +
+    "                    ng-options=\"obj.id as obj.text for obj in mediaSizes\" ng-change=\"propagateChanges()\"></select>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "</div>");

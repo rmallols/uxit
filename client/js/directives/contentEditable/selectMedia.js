@@ -6,14 +6,14 @@
             replace: true,
             templateUrl: 'selectMedia.html',
             scope: {
-                internalData    : '=',
+                mediaSize       : '=',
                 config          : '=',
                 onChange        : '&',
                 onLayer         : '='
             },
             link: function link(scope) {
 
-                scope.internalData.mediaSizes = [
+                scope.mediaSizes = [
                     { id: 'original',   text: i18nService('selectMedia.size.original') },
                     { id: 'small',      text: i18nService('selectMedia.size.small') },
                     { id: 'medium',     text:i18nService('selectMedia.size.medium') },
@@ -21,7 +21,7 @@
                 ];
 
                 scope.propagateChanges = function (media) {
-                    scope.onLayer.change(media);
+                    scope.onLayer.change(media, scope.mediaSize);
                     //if (scope.onChange) { scope.onChange({$data: media}); }
                 };
 

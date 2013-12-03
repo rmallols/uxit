@@ -2,14 +2,13 @@
     'use strict';
     COMPONENTS.directive('edit', ['$compile', 'validationService', 'keyboardService', 'stringService',
     'objectService',
-    function ($compile, validationService, keyboardService, stringService, oS) {
+    function ($compile, validationService, keyboardService, sS, oS) {
         return {
             restrict: 'E',
             transclude: true,
             templateUrl: 'edit.html',
             replace: true,
             scope : {
-                internalData        : '=',
                 panels              : '=',
                 activeTab           : '=',
                 limitLayerHeight    : '@',
@@ -19,14 +18,8 @@
             },
             link: function (scope, element, attrs) {
 
-                console.log("HAY QUE CAMBIAR TODA LA LÓGICA QUE TRABAJA CON MODEL PARA QUE LO HAGA CON BINDINGS")
-                console.log("Y TAMBIÉN QUITAR LAS REFERENCIAS A INTERNALDATA")
-                console.log("Y EL ICONO DE YOU NO SALE Y EL ASTERISCO DEBERÍA SALIR")
-                scope.model = {};
-
-                var directiveId = 'edit' + ((attrs.type) ? '-' + attrs.type : ''), i = 0, pristineModel = {},
-                    formObjs = [], layersWrapper = $('> .content.level1 > ul', element),
-                    pristineInternalData = {};
+                var directiveId = 'edit' + ((attrs.type) ? '-' + attrs.type : ''), pristineBindings = [],
+                    i = 0, formObjs = [], layersWrapper = $('> .content.level1 > ul', element);
 
                     scope.showIfMultipleTabs = function () {
                     return scope.panels.length > 1;
@@ -45,8 +38,7 @@
 
                 scope.cancel = function () {
                     //Restore the pristine state of the form
-                    $.extend(true, scope.model, pristineModel);
-                    $.extend(true, scope.internalData, pristineInternalData);
+                    revertToPristineBindings();
                     //Invoke cancel callback
                     if (scope.onCancel) {
                         scope.onCancel();
@@ -63,8 +55,7 @@
                         save();
                         //As the changes have been saved, the pristine state will be the current model state
                         //So if more changes are added and reverted afterwards, this will be the new original point
-                        $.extend(true, pristineModel, scope.model);
-                        $.extend(true, pristineInternalData, scope.internalData);
+                        initPristineBindings();
                         setPristine();
                     } else {
                         validationService.setFocusOnFirstError(element);
@@ -72,7 +63,7 @@
                 };
 
                 scope.clickTab = function (tabIndex) {
-                    scope.activeTab = tabIndex;
+                    scope.activeTab.current = tabIndex;
                     if (scope.panels[tabIndex].onTabClicked) {
                         scope.panels[tabIndex].onTabClicked(tabIndex);
                     }
@@ -82,29 +73,22 @@
                 };
 
                 scope.getTabClasses = function (panel, tabIndex) {
-                    return (tabIndex === scope.activeTab) ? 'active ' + panel.ngClass : panel.ngClass;
+                    return (tabIndex === scope.activeTab.current) ? 'active ' + panel.ngClass : panel.ngClass;
                 };
 
                 scope.isLayerShown = function (tabIndex) {
-                    return tabIndex === scope.activeTab;
+                    return tabIndex === scope.activeTab.current;
                 };
 
                 scope.isEditedMarkVisible = function (panelForm) {
-                    return scope.activeTab >= 0 && panelForm.$dirty;
+                    return scope.activeTab.current >= 0 && panelForm.$dirty;
                 };
 
                 scope.getEditedMarkColor = function (panelForm) {
                     return (panelForm.$valid) ? 'valid' : 'invalid';
                 };
 
-                //Save the pristine state of the form
-                scope.$watch('model', function (newVal) {
-                    if (newVal) { $.extend(true, pristineModel, scope.model); }
-                });
-
-                scope.$watch('internalData', function (newVal) {
-                    if (newVal) { $.extend(true, pristineInternalData, scope.internalData); }
-                });
+                initPristineBindings(); //Save the pristine state of the form
 
                 scope.$watch('panels', function () {
                     scope.tabHeight = 100 / scope.panels.length;
@@ -138,6 +122,19 @@
                     });
                 }
 
+                function initPristineBindings() {
+                    scope.panels.forEach(function (panel, i) {
+                        pristineBindings[i] = {};
+                        $.extend(true, pristineBindings[i], panel.bindings);
+                    });
+                }
+
+                function revertToPristineBindings() {
+                    scope.panels.forEach(function (panel, i) {
+                        $.extend(true, panel.bindings, pristineBindings[i]);
+                    });
+                }
+
                 function updateFormObjs() {
                     scope.panels.forEach(function (panel) {
                         formObjs.push(scope[panel.type]);
@@ -146,12 +143,12 @@
 
                 function registerKeyboardEvents() {
                     keyboardService.register('left', directiveId, function () {
-                        var newActiveTab = (scope.activeTab > 0) ? scope.activeTab - 1 : scope.panels.length - 1;
+                        var newActiveTab = (scope.activeTab.current > 0) ? scope.activeTab.current - 1 : scope.panels.length - 1;
                         scope.clickTab(newActiveTab);
                         scope.$apply();
                     });
                     keyboardService.register('right', directiveId, function () {
-                        var newActiveTab = (scope.activeTab < scope.panels.length - 1) ? scope.activeTab + 1 : 0;
+                        var newActiveTab = (scope.activeTab.current < scope.panels.length - 1) ? scope.activeTab.current + 1 : 0;
                         scope.clickTab(newActiveTab);
                         scope.$apply();
                     });
@@ -182,30 +179,45 @@
                 }
 
                 function getEditLayerHtmlElm(panel, index) {
-                    var directiveName, htmlElm, customBindingKeys;
-                    htmlElm = $('<div id="' + panel.type + scope.$id + '" ' +
-                                    'on-layer="panels[' + index + '].onLayer" on-cancel="onCancel()" ' +
-                                    'on-change="onChange()" ux-show="isLayerShown(' + index + ')" ' +
-                                    'persist="true" ng-style="getLayerHeight()" ' +
-                                    'config="panels[' + index + '].config">' +
-                                '</div>');
+                    var directiveName, htmlElm;
+                    htmlElm = getEditLayerHtmlGenericElm(panel, index);
                     if(panel.appBridge) {
                         directiveName =  'app-bridge';
-                        htmlElm.attr('src', panel.src);
-                        htmlElm.attr('view', panel.view);
-                        htmlElm.attr('bindings', 'panels[' + index + '].bindings');
+                        setAppBridgeProperties(htmlElm, panel, index);
                     } else {
-                        directiveName = stringService.toSnakeCase(panel.type);
-                        if(panel.bindings) {
-                            customBindingKeys = oS.getRootKeys(panel.bindings);
-                            customBindingKeys.forEach(function(customBindingKey) {
-                                htmlElm.attr(customBindingKey, 'panels[' + index + '].bindings.' + customBindingKey);
-                            });
-                        }
+                        directiveName = sS.toSnakeCase(panel.type);
+                        setNonAppBridgeProperties(htmlElm, panel, index);
                     }
                     htmlElm.attr(directiveName, '');
                     htmlElm.wrap('<li class="layer" ng-form name="' + panel.type + '"></li>');
                     return htmlElm.parent();
+                }
+
+                function getEditLayerHtmlGenericElm(panel, index) {
+                    return $('<div id="' + panel.type + scope.$id + '" ' +
+                                'on-layer="panels[' + index + '].onLayer" on-cancel="onCancel()" ' +
+                                'on-change="onChange()" ux-show="isLayerShown(' + index + ')" ' +
+                                'persist="true" ng-style="getLayerHeight()" ' +
+                                'config="panels[' + index + '].config">' +
+                            '</div>');
+                }
+
+                function setAppBridgeProperties(htmlElm, panel, index) {
+                    htmlElm.attr('src', panel.src);
+                    htmlElm.attr('view', panel.view);
+                    htmlElm.attr('bindings', 'panels[' + index + '].bindings');
+                }
+
+                function setNonAppBridgeProperties(htmlElm, panel, index) {
+                    var customBindingKeys, attrKey, attrVal;
+                    if(panel.bindings) {
+                        customBindingKeys = oS.getRootKeys(panel.bindings);
+                        customBindingKeys.forEach(function(customBindingKey) {
+                            attrKey = sS.toSnakeCase(customBindingKey);
+                            attrVal = 'panels[' + index + '].bindings.' + customBindingKey;
+                            htmlElm.attr(attrKey, attrVal);
+                        });
+                    }
                 }
                 /** End of private methods **/
             }
