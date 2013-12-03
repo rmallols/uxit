@@ -2,7 +2,8 @@
     'use strict';
     COMPONENTS.directive('appHeader', ['$rootScope', '$location', 'appService', 'portalService', 'pageService',
     'roleService', 'sessionService', 'stringService', 'editBoxUtilsService',
-    function ($rootScope, $location, appService, portalService, pageService, roleService, sessionService, stringService, editBoxUtilsService) {
+    function ($rootScope, $location, appService, portalService, pageService, roleService,
+              sessionService, stringService, editBoxUtilsService) {
             return {
                 restrict: 'A',
                 replace: true,
@@ -53,6 +54,7 @@
                     scope.showEditTemplate = function () {
                         var targetObj = $('> .header > .actions > .editIcon', element);
                         scope.panels = getEditPanels();
+                        setEditBindings(scope.panels, scope.bindings);
                         scope.onSave = function () {
                             if (scope.onLayer && scope.onLayer.save) { scope.onLayer.save(); }
                             pageService.updateCurrentPage(null);
@@ -133,6 +135,12 @@
                     }
 
                     function hideHeader() { appElm.removeClass('enabledHeader'); }
+
+                    function setEditBindings(panels, bindings) {
+                        panels.forEach(function (panel) {
+                            panel.bindings = bindings;
+                        });
+                    }
                     /** End of private methods */
                 }
             };

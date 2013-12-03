@@ -94,45 +94,8 @@
 
                 $rootScope.$on('portalLoaded', function() {
                     scope.portal = portalService.getPortal();
+                    addPanels();
                 });
-
-                scope.panels = [
-                    {
-                        title: 'adminPanel.addApp', description: 'adminPanel.addApp.desc',
-                        type: 'addApp',             ngClass: 'addIcon',             onTabClicked: toggleAddAppPanel
-                    },{
-                        title: 'adminPanel.settings',description: 'adminPanel.settings.desc',
-                        type: 'editGeneral',        ngClass: 'settingsIcon',        onTabClicked: toggle
-                    },{
-                        title: 'adminPanel.styles', description: 'adminPanel.styles.desc',
-                        type: 'editStyles',         ngClass: 'stylesIcon',          onTabClicked: toggle
-                    },{
-                        title: 'adminPanel.content',description: 'adminPanel.content.desc',
-                        type: 'editContentList',    ngClass: 'contentIcon hideEditedMark', onTabClicked: toggle
-                    },{
-                        title: 'adminPanel.users',  description: 'adminPanel.users.desc',
-                        type: 'editUserList',       ngClass: 'userIcon hideEditedMark', onTabClicked: toggle
-                    },{
-                        title: 'adminPanel.media',  description: 'adminPanel.media.desc',
-                        type: 'editMediaList',      ngClass: 'mediaIcon hideEditedMark', onTabClicked: toggle
-                    },{
-                        title: 'adminPanel.pages',  description: 'adminPanel.pages.desc',
-                        type: 'editPages',          ngClass: 'pageIcon',            onTabClicked: toggle
-                    },{
-                        title: 'tags',              description: 'adminPanel.tags.desc',
-                        type: 'editTagList',        ngClass: 'tagsIcon hideEditedMark', onTabClicked: toggle
-                    },
-                    {
-                        title: 'adminPanel.notifications', description: 'adminPanel.notifications.desc',
-                        type: 'editNotifications',  ngClass: 'notificationsIcon',   onTabClicked: toggle
-                    },{
-                        title: 'adminPanel.stats',  description: 'adminPanel.stats.desc',
-                        type: 'stats',              ngClass: 'statsIcon',           onTabClicked: toggle
-                    },{
-                        title: 'adminPanel.you',    description: 'adminPanel.you.desc',
-                        type: 'editCurrentUser',    ngClass: 'currentUser', ngStyle: ngStyleAvatarFn, onTabClicked: toggle
-                    }
-                ];
 
                 inactiveTab();
 
@@ -147,6 +110,38 @@
                         inactiveTab();
                     });
                 };
+
+                /** Private methods **/
+                function addPanels() {
+                    scope.panels = [];
+                    addPanel('addApp', 'addIcon', toggleAddAppPanel);
+                    addPanel('editGeneral', 'settingsIcon', toggle);
+                    addPanel('editStyles', 'stylesIcon', toggle);
+                    addPanel('editContentList', 'contentIcon hideEditedMark', toggle);
+                    addPanel('editUserList', 'userIcon hideEditedMark', toggle);
+                    addPanel('editMediaList', 'mediaIcon hideEditedMark', toggle);
+                    addPanel('editPages', 'pageIcon', toggle);
+                    addPanel('editTagList', 'tagsIcon hideEditedMark', toggle);
+                    addPanel('editNotifications', 'notificationsIcon', toggle);
+                    addPanel('stats', 'statsIcon', toggle);
+                    addPanel('editCurrentUser', 'currentUser', toggle, ngStyleAvatarFn);
+                }
+
+                function addPanel(panelId, ngClassFn, onTabClickedFn, ngStyleFn) {
+                    console.log("POR", scope.portal);
+                    var prefix = 'adminPanel.', title = prefix + panelId,
+                        description = title + '.desc', bindings = { model: scope.portal };
+                    scope.panels.push({
+                        title       : title,
+                        description : description,
+                        type        : panelId,
+                        ngClass     : ngClassFn,
+                        ngStyleFn   : ngStyleFn,
+                        onTabClicked: onTabClickedFn,
+                        bindings    : bindings
+                    });
+                }
+                /** End of private methods **/
             }
         };
     }]);

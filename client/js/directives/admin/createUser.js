@@ -6,7 +6,7 @@
             replace: true,
             templateUrl: 'editUser.html',
             scope : {
-                user : '=model',
+                user : '=',
                 onLayer : '='
             },
             link: function link(scope) {
@@ -17,11 +17,15 @@
                 //Duplicate the array to avoid infecting the original languages object
                 scope.languages = $.extend(true, [], i18nService.getLanguages());
                 scope.languages.unshift({ code: '', text: i18nService('editUser.language.inheritBrowser')});
-                scope.user = {
-                    role    : 1, //Set a default role
-                    language: scope.languages[0].code, //Set a default language
-                    media   : {}
-                };
+                initUserData();
+
+                /** Private methods **/
+                function initUserData() {
+                    scope.user.role = 1;
+                    scope.user.language = scope.languages[0].code;
+                    scope.user.role = {};
+                }
+                /** End of private methods **/
             }
         };
     }

@@ -9,6 +9,8 @@
             },
             link: function link(scope, element) {
 
+                var createItemDefBinding = {};
+
                 scope.createItem = function () {
                     createItem();
                 };
@@ -16,12 +18,9 @@
                 /** Private methods **/
                 function createItem() {
                     scope.panels = getCreatePanels();
-                    scope.internalData = {
-                        collection: scope.collection,
-                        data: {}
-                    };
+                    setSharedBindings(scope.panels);
                     scope.onSave = function() {
-                        scope.onCreate({$item: scope.internalData.data});
+                        scope.onCreate({$item: createItemDefBinding});
                     };
                     editBoxUtilsService.showEditBox(scope, element, element);
                 }
@@ -34,6 +33,16 @@
                         panels = [{ title: 'Create item', type: 'createItem' }];
                     }
                     return panels;
+                }
+
+                function setSharedBindings(panels) {
+                    panels.forEach(function (panel) {
+                        if(!panel.bindings) {
+                            panel.bindings = {};
+                        }
+                        panel.bindings.collection = scope.collection;
+                        panel.bindings.data = createItemDefBinding;
+                    });
                 }
                 /** End of private methods **/
             }

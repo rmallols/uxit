@@ -3,11 +3,10 @@
     COMPONENTS.service('slidesAppService', ['appService', 'timerService',
     function (appService, timerService) {
 
-        var appPath = '/client/apps/slidesApp/';
+        var appPath = '/client/apps/slidesApp/', Reveal;
 
         function view(scope) {
-
-            if(window.Reveal) { //Reveal library has been already loaded
+            if(Reveal) { //Reveal library has been already loaded
                 initializeWithoutResources();
             } else { //Reveal doesn't exists -> load it
                 initializeWithResources(function() {
@@ -18,15 +17,18 @@
         }
 
         function edit(scope, iElement) {
+            var newSlide = {};
             scope.collection = 'slides';
             scope.template = '<label i18n-db="item.content"></label>';
-            scope.onCreatePanels = [{ title: 'Edit database', type: 'createDb',
-                                    appBridge: true, src:'slidesApp', view:'createSlide' }];
+            scope.onCreatePanels = [{ title: 'Create slide', type: 'slidesAppCreateSlide',
+                                    appBridge: true, src:'slidesApp', view:'editSlide',
+                                    bindings: { model: newSlide}}];
             scope.onEditPanels = [{ title: 'Edit slide', type: 'slidesAppEditSlide',
-                                    appBridge: true, src:'slidesApp', view:'editSlide'}];
+                                    appBridge: true, src:'slidesApp', view:'editSlide',
+                                    bindings: { slide: {}}}];
             scope.config = getEditConfig();
-            scope.onCreate = function($item)    { onCreateSlide(scope.model, $item); };
-            scope.onDelete = function()         { onDeleteSlide(scope.model, iElement); };
+            scope.onCreate = function() { onCreateSlide(scope.model, newSlide); };
+            scope.onDelete = function() { onDeleteSlide(scope.model, iElement); };
         }
 
         /** Private methods **/
@@ -53,13 +55,14 @@
                     appPath + 'lib/js/head.min.js'
                 ],
                 complete: function () {
+                    Reveal = window.Reveal;
                     if(callback) { callback(); }
                 }
             });
         }
 
         function initializeReveal() {
-            window.Reveal.initialize({
+            Reveal.initialize({
                 controls: true,
                 progress: true,
                 history: false,
@@ -92,6 +95,7 @@
         }
 
         function onCreateSlide(model, $item) {
+            console.log("CREATING!!!", model, $item);
             model.slides.push({
                 _id     : timerService.getRandomNumber(),
                 content : $item.content

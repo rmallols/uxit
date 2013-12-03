@@ -8,6 +8,7 @@
             replace: true,
             templateUrl: 'richContent.html',
             scope: {
+                style       : '=',
                 model       : '=',
                 config      : '=',
                 onChange    : '&',

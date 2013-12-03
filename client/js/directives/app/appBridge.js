@@ -8,9 +8,6 @@
                 replace: true,
                 scope: {
                     bindings        : '=',
-                    newModel        : '=',
-                    model           : '=',
-                    internalData    : '=',
                     config          : '=',
                     onLayer         : '=',
                     onEvent         : '=',
@@ -35,7 +32,6 @@
                     /** Private methods **/
                     function inheritParentScopeModel() {
                         childScope.internalData = scope.internalData;
-                        childScope.newModel     = scope.newModel;
                         childScope.model        = scope.model;
                         childScope.onLayer      = scope.onLayer;
                         childScope.src          = scope.src;

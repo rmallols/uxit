@@ -19,7 +19,7 @@
                 //Initialize the app bridge resources in the controller instead of
                 //in the link function in order to ensure they're available in the bridge app
                 $scope.view = 'view';
-                $scope.internalData = {};
+                $scope.bindings = {};
                 $scope.onEvent = {};
             }],
             link: function link(scope, element) {
@@ -104,10 +104,16 @@
                         //noinspection JSUnresolvedVariable
                         scope.model = scope.appInfo.defaultModel || {}; //Set default model, if case
                     }
+                    setSharedBindings();
                 }
 
                 function getModelFromIndex(array, matcher) {
                     return (array) ? array.model[array.index[matcher]] : null;
+                }
+
+                function setSharedBindings() {
+                    scope.bindings.model = scope.model;
+                    scope.bindings.internalData = scope.internalData;
                 }
             }
         };

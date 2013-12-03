@@ -31,13 +31,15 @@
                 };
 
                 scope.selectFromMediaList = function() {
-                    scope.panels = [{ title: 'Media list selection', type: 'mediaListPicker' }];
-                    scope.internalData = {
-                        media: scope.model
-                    };
-                    scope.onChange = function() {
-                        success(scope.internalData.media);
-                    };
+                    scope.panels = [{
+                        title: 'Media list selection',
+                        type: 'mediaListPicker',
+                        onLayer: {
+                            change: function(selectedMedia) {
+                                success(selectedMedia);
+                            }
+                        }
+                    }];
                     scope.onClose = function() {
                         if(scope.onMediaClose) {
                             scope.onMediaClose();
@@ -76,8 +78,7 @@
             replace: false,
             template: '<media-list config="config" on-select="onSelect($item)"></media-list>',
             scope: {
-                internalData: '=',
-                onChange    : '&'
+                onLayer     : '='
             },
             link: function link(scope) {
                 scope.config = {
@@ -85,9 +86,8 @@
                     uploadable  : true,
                     columns     : 2
                 };
-                scope.onSelect = function ($item) {
-                    scope.internalData.media = $item;
-                    if (scope.onChange) { scope.onChange(); }
+                scope.onSelect = function (selectedMedia) {
+                    scope.onLayer.change(selectedMedia);
                 };
             }
         };

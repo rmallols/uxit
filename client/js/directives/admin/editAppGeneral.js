@@ -5,7 +5,7 @@ COMPONENTS.directive('editAppGeneral', ['i18nService', function (i18nService) {
 		replace: true,
 		templateUrl: 'editAppGeneral.html',
         scope: {
-            model       : '=',
+            model   : '=',
             onLayer : '='
         },
         link: function link(scope) {

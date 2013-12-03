@@ -14,9 +14,9 @@
          */
         function showEditBox(cEScope, cEDomObj, ngModelCtrl) {
             if (cEScope.isEditable() && textSelectionService.isSelection()) {
-                var selectedTextDomObj = textSelectionService.getSelectedTextDomObj(),
-                    defaultPanels = [{ title: 'Content', type: 'richContent' }];
-                cEScope.model = styleService.getComputedStyleInRange(cEDomObj, selectedTextDomObj);
+                var selectedTextDomObj = textSelectionService.getSelectedTextDomObj(), defaultPanels;
+                cEScope.style = styleService.getComputedStyleInRange(cEDomObj, selectedTextDomObj);
+                defaultPanels = [{ title: 'Content', type: 'richContent', bindings: { style: cEScope.style} }];
                 forceTextSelection();
                 cEScope.panels = (cEScope.customPanels) ? cEScope.customPanels : defaultPanels;
                 cEScope.onSave = function() {
@@ -26,7 +26,7 @@
                     onCancelEditBox(cEScope);
                 };
                 cEScope.onChange = function() {
-                    onChangeEditBox(cEScope, cEDomObj, ngModelCtrl, cEScope.model);
+                    onChangeEditBox(cEScope, cEDomObj, ngModelCtrl, cEScope.style);
                 };
                 editBoxUtilsService.showEditBox(cEScope, cEDomObj, selectedTextDomObj);
                 cEScope.showActions = true;

@@ -422,26 +422,23 @@ angular.module("example.html", []).run(["$templateCache", function($templateCach
 angular.module("slidesAppCreateSlide.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("slidesAppCreateSlide.html",
     "<div>\n" +
-    "    Create: <div content-editable ng-model=\"internalData.data.content\" i18n-db-input></div>\n" +
+    "    Create: <div content-editable ng-model=\"model.content\" i18n-db-input></div>\n" +
     "</div>");
 }]);
 
 angular.module("slidesAppEdit.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("slidesAppEdit.html",
     "<div>\n" +
-    "    <!--<div list=\"userList\" collection=\"collection\" config=\"config\" transcluded-data=\"transcludedData\"\n" +
-    "         template=\"template\" internal-data=\"internalData\" on-edit-panels=\"onEditPanels\"\n" +
-    "         on-create=\"onCreate($item)\" on-delete=\"onDelete($id)\"></div>-->\n" +
     "    <div list=\"model.slides\" config=\"config\" transcluded-data=\"transcludedData\"\n" +
     "         internal-data=\"internalData\" on-create-panels=\"onCreatePanels\" on-edit-panels=\"onEditPanels\"\n" +
-    "         template=\"template\" on-create=\"onCreate($item)\" on-delete=\"onDelete($id)\"></div>\n" +
+    "         template=\"template\" on-create=\"onCreate()\" on-delete=\"onDelete($id)\"></div>\n" +
     "</div>");
 }]);
 
 angular.module("slidesAppEditSlide.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("slidesAppEditSlide.html",
     "<div>\n" +
-    "    Edit: <div content-editable ng-model=\"model.content\" i18n-db-input></div>\n" +
+    "    <div content-editable ng-model=\"model.content\" i18n-db-input></div>\n" +
     "</div>");
 }]);
 
@@ -713,7 +710,7 @@ angular.module("adminPanel.html", []).run(["$templateCache", function($templateC
   $templateCache.put("adminPanel.html",
     "<div class=\"admin cf\">\n" +
     "    <add-app-panel></add-app-panel>\n" +
-    "    <edit ng-model=\"portal\" edit=\"edit\" panels=\"panels\" on-cancel=\"onCancel()\" on-save=\"onSave()\"\n" +
+    "    <edit ux-show=\"panels.length\" edit=\"edit\" panels=\"panels\" on-cancel=\"onCancel()\" on-save=\"onSave()\"\n" +
     "          active-tab=\"activeTab\" limit-layer-height=\"false\"></edit>\n" +
     "</div>\n" +
     "");
@@ -1043,7 +1040,7 @@ angular.module("editUser.html", []).run(["$templateCache", function($templateCac
     "    <div class=\"columns large-16\">\n" +
     "        <div><label i18n=\"editUser.fullName\"></label>: <input type=\"text\" ng-model=\"user.fullName\" mandatory /></div>\n" +
     "        <div><label i18n=\"editUser.email\"></label>: <input type=\"text\" ng-model=\"user.email\" email-mandatory mandatory /></div>\n" +
-    "        <div><label i18n=\"editUser.birthDate\"></label>: <input date ng-model=\"user.birthDate\" mandatory /></div>\n" +
+    "        <div><label i18n=\"editUser.birthDate\"></label>: <input date ng-model=\"user.birthDate\" /></div>\n" +
     "        <div>\n" +
     "            <label i18n=\"editUser.password\"></label>:\n" +
     "            <input password ng-model=\"user.password\" click-to-change=\"clickToChangePassword\" />\n" +
@@ -1171,9 +1168,9 @@ angular.module("app.html", []).run(["$templateCache", function($templateCache) {
     "    <div app-header class=\"cf\"></div>\n" +
     "	<div class=\"content cf\">\n" +
     "        <div class=\"title\" ng-show=\"isTitleVisible()\"><h5>{{model.title || appInfo.title}}</h5></div>\n" +
-    "        <div app-bridge model=\"model\" internal-data=\"internalData\" src=\"{{type}}\" view=\"{{view}}\"\n" +
-    "             ng-class=\"{alignCenter: model.align=='center', alignRight: model.align=='right'}\"\n" +
-    "             on-event=\"onEvent\"></div>\n" +
+    "        <div ng-class=\"{alignCenter: model.align=='center', alignRight: model.align=='right'}\">\n" +
+    "            <div app-bridge bindings=\"bindings\" src=\"{{type}}\" view=\"{{view}}\" on-event=\"onEvent\"></div>\n" +
+    "        </div>\n" +
     "	</div>\n" +
     "</div>\n" +
     "");
@@ -1297,13 +1294,13 @@ angular.module("richContent.html", []).run(["$templateCache", function($template
     "<div>\n" +
     "    <div class=\"columns large-9 textAlignRight\"><label i18n=\"richContent.color\"></label></div>\n" +
     "    <div class=\"columns large-16\">\n" +
-    "        <input color-picker placeholder=\"richContent.color.placeholder\" ng-model=\"model.color\" on-change=\"propagateChanges()\" />\n" +
+    "        <input color-picker placeholder=\"richContent.color.placeholder\" ng-model=\"style.color\" on-change=\"propagateChanges()\" />\n" +
     "    </div>\n" +
     "    <div class=\"columns large-9 textAlignRight\"><label i18n=\"richContent.style\"></label></div>\n" +
     "    <div class=\"columns large-16\">\n" +
-    "        <button toggle-style ng-model=\"model.fontWeight\" active-when=\"bold\" inactive-when=\"normal\" class=\"boldIcon\"></button>\n" +
-    "        <button toggle-style ng-model=\"model.fontStyle\" active-when=\"italic\" inactive-when=\"normal\" class=\"italicIcon\"></button>\n" +
-    "        <button toggle-style ng-model=\"model.textDecoration\" active-when=\"underline\" inactive-when=\"none\" class=\"underlineIcon\"></button>\n" +
+    "        <button toggle-style ng-model=\"style.fontWeight\" active-when=\"bold\" inactive-when=\"normal\" class=\"boldIcon\"></button>\n" +
+    "        <button toggle-style ng-model=\"style.fontStyle\" active-when=\"italic\" inactive-when=\"normal\" class=\"italicIcon\"></button>\n" +
+    "        <button toggle-style ng-model=\"style.textDecoration\" active-when=\"underline\" inactive-when=\"none\" class=\"underlineIcon\"></button>\n" +
     "    </div>\n" +
     "    <div class=\"columns large-9 textAlignRight\"><label i18n=\"richContent.size\"></label></div>\n" +
     "    <div class=\"columns large-16\">\n" +
@@ -1453,7 +1450,7 @@ angular.module("userList.html", []).run(["$templateCache", function($templateCac
   $templateCache.put("userList.html",
     "<div class=\"userList\">\n" +
     "    <div list=\"userList\" collection=\"collection\" config=\"config\" transcluded-data=\"transcludedData\"\n" +
-    "         template=\"template\" internal-data=\"internalData\" on-edit-panels=\"onEditPanels\"\n" +
+    "         template=\"template\" internal-data=\"internalData\" on-create-panels=\"onCreatePanels\" on-edit-panels=\"onEditPanels\"\n" +
     "         on-create=\"onCreate($item)\" on-delete=\"onDelete($id)\"></div>\n" +
     "</div>");
 }]);

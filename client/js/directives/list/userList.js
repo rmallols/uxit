@@ -9,16 +9,19 @@ function ($rootScope, mediaService, userService, constantsService, listDbService
             config: '='
         },
 		link: function link(scope) {
+            var newUser = {};
             getUserList();
             scope.collection = constantsService.collections.users;
+            scope.onCreatePanels = [{ title: 'Create user', type: 'createUser', bindings: { user: newUser }}];
             scope.onEditPanels = [{ title: 'Edit users', type: 'editUser'}];
-            scope.onCreate = onCreate;
+            scope.onCreate = function() { onCreate(newUser); };
             scope.onDelete = onDelete;
             scope.transcludedData = {};
             scope.transcludedData.getUserAvatarUrl = getUserAvatarUrl;
             scope.template = getTemplate();
             $rootScope.$on(scope.collection + 'Changed', function () { loadUserList(); });
             scope.config.pageActionPos = 0;
+
             /** Private methods**/
             function getUserList() {
                 scope.userList = userService.getUsers();
@@ -30,8 +33,8 @@ function ($rootScope, mediaService, userService, constantsService, listDbService
                 });
             }
 
-            function onCreate(user) {
-                userService.createUser(user, function() {
+            function onCreate(newUser) {
+                userService.createUser(newUser, function() {
                     loadUserList();
                 });
             }

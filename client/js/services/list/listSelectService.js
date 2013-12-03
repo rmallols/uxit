@@ -131,7 +131,10 @@
             var targetObj = $('#' + item._id + ' > *:first-child', element);
             hideSiblingEditBox(element); //Hide any other previous instance of the edit box component
             listScope.panels = listScope.onEditPanels;
-            listScope.model = item;
+            listScope.panels.forEach(function(panel) {
+                if(!panel.bindings) { panel.bindings = {}; }
+                panel.bindings.model = item;
+            });
             listScope.onSave = function() { listScope.onEdit({$item: listScope.model}); };
             listScope.onClose = function () { listScope.unselect(item); };
             editBoxUtilsService.showEditBox(listScope, targetObj, targetObj);

@@ -1,15 +1,14 @@
 (function () {
     'use strict';
     COMPONENTS.directive('edit', ['$compile', 'validationService', 'keyboardService', 'stringService',
-    function ($compile, validationService, keyboardService, stringService) {
+    'objectService',
+    function ($compile, validationService, keyboardService, stringService, oS) {
         return {
             restrict: 'E',
-            require: 'ngModel',
             transclude: true,
             templateUrl: 'edit.html',
             replace: true,
             scope : {
-                model               : '=ngModel',
                 internalData        : '=',
                 panels              : '=',
                 activeTab           : '=',
@@ -19,6 +18,11 @@
                 onCancel            : '&'
             },
             link: function (scope, element, attrs) {
+
+                console.log("HAY QUE CAMBIAR TODA LA LÓGICA QUE TRABAJA CON MODEL PARA QUE LO HAGA CON BINDINGS")
+                console.log("Y TAMBIÉN QUITAR LAS REFERENCIAS A INTERNALDATA")
+                console.log("Y EL ICONO DE YOU NO SALE Y EL ASTERISCO DEBERÍA SALIR")
+                scope.model = {};
 
                 var directiveId = 'edit' + ((attrs.type) ? '-' + attrs.type : ''), i = 0, pristineModel = {},
                     formObjs = [], layersWrapper = $('> .content.level1 > ul', element),
@@ -178,12 +182,11 @@
                 }
 
                 function getEditLayerHtmlElm(panel, index) {
-                    var directiveName, htmlElm;
+                    var directiveName, htmlElm, customBindingKeys;
                     htmlElm = $('<div id="' + panel.type + scope.$id + '" ' +
-                                    'new-model="panels[' + index + '].newModel" model="model" internal-data="internalData" ' +
                                     'on-layer="panels[' + index + '].onLayer" on-cancel="onCancel()" ' +
                                     'on-change="onChange()" ux-show="isLayerShown(' + index + ')" ' +
-                                    'persist="true" ng-style="getLayerHeight()"' +
+                                    'persist="true" ng-style="getLayerHeight()" ' +
                                     'config="panels[' + index + '].config">' +
                                 '</div>');
                     if(panel.appBridge) {
@@ -193,6 +196,12 @@
                         htmlElm.attr('bindings', 'panels[' + index + '].bindings');
                     } else {
                         directiveName = stringService.toSnakeCase(panel.type);
+                        if(panel.bindings) {
+                            customBindingKeys = oS.getRootKeys(panel.bindings);
+                            customBindingKeys.forEach(function(customBindingKey) {
+                                htmlElm.attr(customBindingKey, 'panels[' + index + '].bindings.' + customBindingKey);
+                            });
+                        }
                     }
                     htmlElm.attr(directiveName, '');
                     htmlElm.wrap('<li class="layer" ng-form name="' + panel.type + '"></li>');

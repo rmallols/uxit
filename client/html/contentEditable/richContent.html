@@ -1,13 +1,13 @@
 <div>
     <div class="columns large-9 textAlignRight"><label i18n="richContent.color"></label></div>
     <div class="columns large-16">
-        <input color-picker placeholder="richContent.color.placeholder" ng-model="model.color" on-change="propagateChanges()" />
+        <input color-picker placeholder="richContent.color.placeholder" ng-model="style.color" on-change="propagateChanges()" />
     </div>
     <div class="columns large-9 textAlignRight"><label i18n="richContent.style"></label></div>
     <div class="columns large-16">
-        <button toggle-style ng-model="model.fontWeight" active-when="bold" inactive-when="normal" class="boldIcon"></button>
-        <button toggle-style ng-model="model.fontStyle" active-when="italic" inactive-when="normal" class="italicIcon"></button>
-        <button toggle-style ng-model="model.textDecoration" active-when="underline" inactive-when="none" class="underlineIcon"></button>
+        <button toggle-style ng-model="style.fontWeight" active-when="bold" inactive-when="normal" class="boldIcon"></button>
+        <button toggle-style ng-model="style.fontStyle" active-when="italic" inactive-when="normal" class="italicIcon"></button>
+        <button toggle-style ng-model="style.textDecoration" active-when="underline" inactive-when="none" class="underlineIcon"></button>
     </div>
     <div class="columns large-9 textAlignRight"><label i18n="richContent.size"></label></div>
     <div class="columns large-16">
