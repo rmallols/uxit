@@ -4,6 +4,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         app_lib: 'client/lib/',
         app_js: 'client/js/',
+        app_html: 'client/html/',
         app_css: 'client/css',
         min: 'client/min/',
         clean: ['<%= min %>js.min.js', '<%= min %>css.min.css', '<%= app_js %>/resources-<%= pkg.version %>.js'],
@@ -154,6 +155,15 @@ module.exports = function(grunt) {
                     pkg: 'package.json'
                 }
             }
+        },
+        watch: {
+            templates: {
+                files: ['<%= app_html %>**/*.html'],
+                tasks: ['generateTemplates'],
+                options: {
+                    spawn: false
+                }
+            }
         }
     });
 
@@ -167,6 +177,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-bumpup');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('startKarma', ['karma:watch']);
     grunt.registerTask('startMongo', ['shell:startMongo']);

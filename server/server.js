@@ -65,7 +65,7 @@ app.get('/:portalId/logout', function (req, res) {
 
 app.get('/:portalId/rest/databases', checkAuth, function (req, res) {
     dbService.getDatabases(req.session, function(result) {
-        res.send(result)
+        res.send(result);
     });
 });
 
