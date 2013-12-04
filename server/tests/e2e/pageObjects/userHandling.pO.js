@@ -14,8 +14,8 @@
             fullNameElm         = this._ptor.findElement(this._protractor.By.input("user.fullName"));
             emailElm            = this._ptor.findElement(this._protractor.By.input("user.email"));
             birthDateElm        = this._ptor.findElement(this._protractor.By.input("user.birthDate"));
-            passwordElm         = this._ptor.findElement(this._protractor.By.css("[type='password']"));
-            roleElm             = this._ptor.findElement(this._protractor.By.css("select[ng-model='user.role'] option:nth-child(" + (role + 1) + ')'));
+            passwordElm         = this._ptor.findElement(this._protractor.By.css("[create-user] [type='password']"));
+            roleElm             = this._ptor.findElement(this._protractor.By.css("[create-user] select[ng-model='user.role'] option:nth-child(" + (role + 1) + ')'));
             fullNameElm.sendKeys(userName);
             emailElm.sendKeys(email);
             birthDateElm.click();
@@ -35,7 +35,7 @@
         },
 
         getCreateUserEditBox: function() {
-            return  this._ptor.findElement(this._protractor.By.css("[create-users]"));
+            return  this._ptor.findElement(this._protractor.By.css("[create-user]"));
         },
 
         getEditUsersList: function() {

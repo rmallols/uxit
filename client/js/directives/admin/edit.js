@@ -131,7 +131,7 @@
 
                 function revertToPristineBindings() {
                     scope.panels.forEach(function (panel, i) {
-                        $.extend(true, panel.bindings, pristineBindings[i]);
+                        panel.bindings = pristineBindings[i];
                     });
                 }
 

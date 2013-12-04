@@ -23,7 +23,6 @@
                 function initUserData() {
                     scope.user.role = 1;
                     scope.user.language = scope.languages[0].code;
-                    scope.user.role = {};
                 }
                 /** End of private methods **/
             }

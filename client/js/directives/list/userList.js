@@ -9,12 +9,12 @@ function ($rootScope, mediaService, userService, constantsService, listDbService
             config: '='
         },
 		link: function link(scope) {
-            var newUser = {};
+            var newUserBindings = { user: {} };
             getUserList();
             scope.collection = constantsService.collections.users;
-            scope.onCreatePanels = [{ title: 'Create user', type: 'createUser', bindings: { user: newUser }}];
+            scope.onCreatePanels = [{ title: 'Create user', type: 'createUser', bindings: newUserBindings}];
             scope.onEditPanels = [{ title: 'Edit users', type: 'editUser'}];
-            scope.onCreate = function() { onCreate(newUser); };
+            scope.onCreate = function() { onCreate(newUserBindings); };
             scope.onDelete = onDelete;
             scope.transcludedData = {};
             scope.transcludedData.getUserAvatarUrl = getUserAvatarUrl;
@@ -33,8 +33,9 @@ function ($rootScope, mediaService, userService, constantsService, listDbService
                 });
             }
 
-            function onCreate(newUser) {
-                userService.createUser(newUser, function() {
+            function onCreate(bindings) {
+                userService.createUser(bindings.user, function() {
+                    bindings.user = {};
                     loadUserList();
                 });
             }

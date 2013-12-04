@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="" />
+    <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.35.0.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\usr\menzit\client\min\css.min.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\usr\menzit\client\min\js.min.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/createUser.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/createUser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/edit.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/edit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/e2e/pageObjects/userHandling.pO.js" afterPath="$PROJECT_DIR$/server/tests/e2e/pageObjects/userHandling.pO.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/list/userList.js" afterPath="$PROJECT_DIR$/client/js/directives/list/userList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="uxit.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="test-results.xml" />
@@ -28,27 +38,88 @@
       <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="106" selection-start="278" selection-end="278" vertical-scroll-proportion="0.27827382" vertical-offset="0" max-vertical-offset="782">
+            <state line="17" column="64" selection-start="403" selection-end="403" vertical-scroll-proportion="0.43005952" vertical-offset="0" max-vertical-offset="782">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resources-dev.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/resources-dev.js">
+      <file leaf-file-name="userHandling.spec.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="213" column="91" selection-start="11451" selection-end="11451" vertical-scroll-proportion="0.0" vertical-offset="3076" max-vertical-offset="3774">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="53" column="31" selection-start="2516" selection-end="2516" vertical-scroll-proportion="-23.8" vertical-offset="306" max-vertical-offset="1343">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resources-prod.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/resources-prod.js">
+      <file leaf-file-name="userHandling.pO.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/userHandling.pO.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="60" selection-start="1089" selection-end="1089" vertical-scroll-proportion="0.0" vertical-offset="186" max-vertical-offset="901">
+            <state line="27" column="99" selection-start="1487" selection-end="1487" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editUser.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/admin/editUser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="80" selection-start="739" selection-end="739" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="527">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editUser.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editUser.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="36" selection-start="462" selection-end="462" vertical-scroll-proportion="-7.48" vertical-offset="0" max-vertical-offset="629">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createUser.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/createUser.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="94" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userList.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/list/userList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="91" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1224">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userList.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/list/userList.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="170">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/list/list.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="48" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2618">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/edit.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="125" column="77" selection-start="5563" selection-end="5563" vertical-scroll-proportion="-7.92" vertical-offset="1927" max-vertical-offset="3944">
               <folding />
             </state>
           </provider>
@@ -73,13 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/html/admin/portalsAdminView.html" />
-        <option value="$PROJECT_DIR$/client/html/list/listDb.html" />
-        <option value="$PROJECT_DIR$/client/html/list/userList.html" />
-        <option value="$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js" />
-        <option value="$PROJECT_DIR$/server/tests/unit/directives/list.spec.js" />
-        <option value="$PROJECT_DIR$/client/js/services/dbService.js" />
-        <option value="$PROJECT_DIR$/client/js/services/portalsAdminService.js" />
         <option value="$PROJECT_DIR$/client/html/admin/portalsAdminEditDb.html" />
         <option value="$PROJECT_DIR$/client/js/directives/feedback/urlToken.js" />
         <option value="$PROJECT_DIR$/client/js/services/utils/stringService.js" />
@@ -89,6 +153,13 @@
         <option value="$PROJECT_DIR$/server/tests/unit/directives/app.spec.js" />
         <option value="$PROJECT_DIR$/client/js/resources-prod.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/client/js/directives/admin/editUser.js" />
+        <option value="$PROJECT_DIR$/client/html/admin/editUser.html" />
+        <option value="$PROJECT_DIR$/client/js/directives/admin/createUser.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/admin/edit.js" />
+        <option value="$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/list/userList.js" />
+        <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/userHandling.pO.js" />
       </list>
     </option>
   </component>
@@ -230,7 +301,7 @@
       <recent name="C:\usr\menzit" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.grunt dev">
+  <component name="RunManager" selected="Node.js.grunt prod">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -911,7 +982,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -995,63 +1066,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/list.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="28" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0" vertical-offset="347" max-vertical-offset="3281" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/apps/iframeApp/iframeAppEdit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="71" selection-start="176" selection-end="176" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="153" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/admin/editUser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/dbService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="49" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/portalsAdminService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="46" selection-start="2632" selection-end="2632" vertical-scroll-proportion="0.0" vertical-offset="866" max-vertical-offset="1666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/admin/portalsAdminEditDb.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="61" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/feedback/urlToken.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="121" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/utils/stringService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="87" selection-start="984" selection-end="984" vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="2074">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/listActions.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="82" selection-start="5429" selection-end="5429" vertical-scroll-proportion="0.0" vertical-offset="1918" max-vertical-offset="2652">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/html/app/app.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="61" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255">
@@ -1084,7 +1098,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="213" column="91" selection-start="11451" selection-end="11451" vertical-scroll-proportion="0.0" vertical-offset="3076" max-vertical-offset="3774">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1096,9 +1110,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editUser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="36" selection-start="462" selection-end="462" vertical-scroll-proportion="-7.48" vertical-offset="0" max-vertical-offset="629">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/admin/editUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="80" selection-start="739" selection-end="739" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/list/list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="48" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2618">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/list/userList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="77" selection-start="5563" selection-end="5563" vertical-scroll-proportion="-7.92" vertical-offset="1927" max-vertical-offset="3944">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/createUser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="94" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/list/userList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="91" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="31" selection-start="2516" selection-end="2516" vertical-scroll-proportion="-23.8" vertical-offset="306" max-vertical-offset="1343">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/userHandling.pO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="99" selection-start="1487" selection-end="1487" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="106" selection-start="278" selection-end="278" vertical-scroll-proportion="0.27827382" vertical-offset="0" max-vertical-offset="782">
+        <state line="17" column="64" selection-start="403" selection-end="403" vertical-scroll-proportion="0.43005952" vertical-offset="0" max-vertical-offset="782">
           <folding />
         </state>
       </provider>
