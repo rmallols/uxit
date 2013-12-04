@@ -2,7 +2,7 @@
     "name": "menzit",
     "author": "menzit",
     "version": "0.35.0",
-    "timestamp": 1386141611316,
+    "timestamp": 1386141984676,
     "mode": "cloud",
     "dbHost": "ds053978.mongolab.com",
     "dbPort": "53978",
