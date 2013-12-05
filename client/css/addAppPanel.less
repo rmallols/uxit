@@ -3,21 +3,22 @@
 
 .addAppPanel {
   position:fixed;
-  top:@tabsHeight;
   left:-@collapsedAddAppPanelWidth;
   width:auto;
   height:100%;
   z-index:1;
+  top: 0 !important;
 }
 
 .addAppPanel > .collapsedView {
-  left: 0;
   width:@collapsedAddAppPanelWidth;
   background:@high;
   color:@highComp;
   position:fixed;
   z-index:1;
   .transition(left @speed);
+  left: @tabsWidth;
+  height: 100%;
 }
 
 .addAppPanel[state="hidden"] > .collapsedView {
@@ -75,20 +76,14 @@
   overflow-x: hidden;
 }
 
-/*@appsHeight: `($(window).height() - 150)`;
-@highlightContentHeight: `($(window).height() - 280)`;*/
-@appsHeight: 600;
-@highlightContentHeight: 370;
-
 .addAppPanel > .collapsedView .apps {
-  height:0px+@appsHeight;
+  .offsettedHeight(-100px);
 }
 
 .addAppPanel > .expandedView .preview,
 .addAppPanel > .expandedView .details {
-  height:0px+@highlightContentHeight;
+  .offsettedHeight(-115px);
 }
-
 
 .addAppPanel[state="expanded"] > .collapsedView .apps {
   overflow-y:visible;
@@ -97,12 +92,12 @@
 .addAppPanel > .expandedView {
   position:fixed;
   left: 0px;
-  width: @expandedAddAppPanelWidth;
   height:100%;
   background:@high;
   .padding;
   visibility: hidden;
   .transition(left @speed);
+  width: 76%;
 }
 
 .addAppPanel > .expandedView ::-webkit-scrollbar-thumb { background-color: darken(@highCompDarken, 10%); }
@@ -168,17 +163,4 @@
 
 .addAppPanel [sortable-add-app] {
   cursor: move;
-}
-
-/////////////////////////////////////////////////////////////////////
-.addAppPanel {
-  top: 0 !important;
-}
-
-.addAppPanel > .collapsedView {
-  left: @tabsWidth;
-}
-
-.addAppPanel > .expandedView {
-  width: 76%;
 }

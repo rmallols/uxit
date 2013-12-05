@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/edit.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/edit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/edit.less" afterPath="$PROJECT_DIR$/client/css/edit.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/addAppPanel.less" afterPath="$PROJECT_DIR$/client/css/addAppPanel.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -30,55 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="staticContentAppService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/apps/staticContentApp/staticContentAppService.js">
+      <file leaf-file-name="addAppPanel.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/css/addAppPanel.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="70" selection-start="873" selection-end="873" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1768">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editBox.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editBox.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="138" selection-start="1689" selection-end="1689" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1479">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/admin/edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="24" selection-start="46" selection-end="46" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="391">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/edit.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="60" selection-start="6149" selection-end="6149" vertical-scroll-proportion="0.9910979" vertical-offset="2012" max-vertical-offset="4114">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/css/edit.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="21" selection-start="2390" selection-end="2390" vertical-scroll-proportion="-3.7105262" vertical-offset="2166" max-vertical-offset="2805">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editBox.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/admin/editBox.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="28" selection-start="309" selection-end="309" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="238">
+            <state line="80" column="35" selection-start="1553" selection-end="1553" vertical-scroll-proportion="0.3022508" vertical-offset="1266" max-vertical-offset="2907">
               <folding />
             </state>
           </provider>
@@ -103,7 +56,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/client/js/index.js" />
         <option value="$PROJECT_DIR$/client/js/services/ajaxService.js" />
         <option value="$PROJECT_DIR$/client/js/services/statsService.js" />
@@ -119,6 +71,7 @@
         <option value="$PROJECT_DIR$/client/css/edit.less" />
         <option value="$PROJECT_DIR$/client/html/admin/edit.html" />
         <option value="$PROJECT_DIR$/client/js/directives/admin/edit.js" />
+        <option value="$PROJECT_DIR$/client/css/addAppPanel.less" />
       </list>
     </option>
   </component>
@@ -925,7 +878,11 @@
       <created>1386228168588</created>
       <updated>1386228168588</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="#225 The staticContentApp is broken">
+      <created>1386229262052</created>
+      <updated>1386229262052</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1001,7 +958,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="#165 [List] The bulk delete action is not working" />
     <MESSAGE value="#93 [presentationApp] Slides managament" />
     <MESSAGE value="#141 [bannerCanvas] Text support" />
     <MESSAGE value="#63 [menuApp] The i18n messages are not working for subpages" />
@@ -1026,7 +982,8 @@
     <MESSAGE value="#192 Normalize the data model handling - fixed failing tests" />
     <MESSAGE value="#132 Integrate grunt-contrib-watch with the templates cache process" />
     <MESSAGE value="#224 The imageApp is broken" />
-    <option name="LAST_COMMIT_MESSAGE" value="#224 The imageApp is broken" />
+    <MESSAGE value="#225 The staticContentApp is broken" />
+    <option name="LAST_COMMIT_MESSAGE" value="#225 The staticContentApp is broken" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1034,11 +991,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/html/pages.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="95" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="672" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="11" selection-start="294" selection-end="294" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="255" />
@@ -1100,7 +1052,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/html/admin/editBox.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="28" selection-start="309" selection-end="309" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="238">
+        <state line="4" column="28" selection-start="309" selection-end="309" vertical-scroll-proportion="0.10119048" vertical-offset="0" max-vertical-offset="672">
           <folding />
         </state>
       </provider>
@@ -1121,7 +1073,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/edit.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="21" selection-start="2390" selection-end="2390" vertical-scroll-proportion="-3.7105262" vertical-offset="2166" max-vertical-offset="2805">
+        <state line="144" column="21" selection-start="2390" selection-end="2390" vertical-scroll-proportion="0.4533762" vertical-offset="2166" max-vertical-offset="2805">
           <folding />
         </state>
       </provider>
@@ -1135,7 +1087,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/admin/edit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="60" selection-start="6149" selection-end="6149" vertical-scroll-proportion="0.9910979" vertical-offset="2012" max-vertical-offset="4114">
+        <state line="125" column="53" selection-start="5594" selection-end="5594" vertical-scroll-proportion="0.16189112" vertical-offset="2012" max-vertical-offset="4114">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/addAppPanel.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="35" selection-start="1553" selection-end="1553" vertical-scroll-proportion="0.3022508" vertical-offset="1266" max-vertical-offset="2907">
           <folding />
         </state>
       </provider>
