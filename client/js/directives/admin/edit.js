@@ -21,7 +21,7 @@
                 var directiveId = 'edit' + ((attrs.type) ? '-' + attrs.type : ''), pristineBindings = [],
                     i = 0, formObjs = [], layersWrapper = $('> .content.level1 > ul', element);
 
-                    scope.showIfMultipleTabs = function () {
+                scope.showIfMultipleTabs = function () {
                     return scope.panels.length > 1;
                 };
 
@@ -89,6 +89,7 @@
                 };
 
                 initPristineBindings(); //Save the pristine state of the form
+                adjustActionsTopPos();  //Avoid the situation where the actions are hidden on top
 
                 scope.$watch('panels', function () {
                     scope.tabHeight = 100 / scope.panels.length;
@@ -127,6 +128,15 @@
                         pristineBindings[i] = {};
                         $.extend(true, pristineBindings[i], panel.bindings);
                     });
+                }
+
+                function adjustActionsTopPos() {
+                    var actionsElm = $(' > .actions', element);
+                    setTimeout(function() {
+                        if(actionsElm.offset().top < 0) {
+                            actionsElm.css('top', 0);
+                        }
+                    }, 0);
                 }
 
                 function revertToPristineBindings() {
