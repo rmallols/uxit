@@ -21,6 +21,7 @@
                 $scope.view = 'view';
                 $scope.bindings = {};
                 $scope.onEvent = {};
+                $scope.internalData = {};
             }],
             link: function link(scope, element) {
 
