@@ -9,19 +9,11 @@
          *
          */
         function showAddAppPanel() {
-            var addAppPanelObj          = $('#addAppPanel'),
-                wrapperObj              = pageService.getMainScrollingElm(),
-                collapsedViewObj        = $('> .collapsedView', addAppPanelObj),
-                wrapperMarginLeft       = domService.getDomPercent(wrapperObj, 'margin-left'),
-                wrapperWidth            = domService.getDomPercent(wrapperObj, 'width'),
-                addAppPanelWidth        = domService.getDomPercent(collapsedViewObj, 'width');
-            addAppPanelActive = true;
-            wrapperObj.animate({
-                width		: (wrapperWidth - addAppPanelWidth) + '%',
-                marginLeft	: (addAppPanelWidth + wrapperMarginLeft) + '%',
-                overflow    : 'visible'
-            }, window.speed, function () {});
+            var addAppPanelObj  = $('#addAppPanel'),
+                wrapperObj      = pageService.getMainScrollingElm();
             addAppPanelObj.attr('state', 'collapsed');
+            wrapperObj.addClass('addAppPanelOpen');
+            addAppPanelActive = true;
         }
 
         /**
@@ -29,19 +21,12 @@
          *
          */
         function hideAddAppPanel() {
-            var addAppPanelObj          = $('#addAppPanel'),
-                wrapperObj              = $('ul.pages'),
-                collapsedViewObj        = $('> .collapsedView', addAppPanelObj),
-                wrapperMarginLeft       = domService.getDomPercent(wrapperObj, 'margin-left'),
-                wrapperWidth            = domService.getDomPercent(wrapperObj, 'width'),
-                addAppPanelWidth        = domService.getDomPercent(collapsedViewObj, 'width');
+            var addAppPanelObj  = $('#addAppPanel'),
+                wrapperObj      = pageService.getMainScrollingElm();
             if (addAppPanelActive) {
                 addAppPanelActive = false;
-                wrapperObj.animate({
-                    width		: (wrapperWidth + addAppPanelWidth) + '%',
-                    marginLeft	: (wrapperMarginLeft - addAppPanelWidth) + '%'
-                }, window.speed, function () {});
                 addAppPanelObj.attr('state', 'hidden');
+                wrapperObj.removeClass('addAppPanelOpen');
             }
         }
 

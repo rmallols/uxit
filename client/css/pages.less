@@ -7,6 +7,12 @@ ul.pages {
   position: relative;
 }
 
+@addAppPanelOpenOuterWidth: @collapsedAddAppPanelWidth + @tabsWidth;
+ul.pages.addAppPanelOpen {
+  margin-left: @addAppPanelOpenOuterWidth !important;
+  .transition(margin-left @speed);
+}
+
 ul.pages.adminAccess {
   margin-top: 0;
   margin-left: @tabsWidth;
