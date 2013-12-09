@@ -14,8 +14,6 @@
     getScript('http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js');
     getScript('http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js');
     getScript('http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js');
-    getScript(libPath + '/angularJs/angular-sortable.js');
-    getScript(libPath + '/nprogress/nprogress.js');
 
     //
     getScript(scriptPath + '/index.js');

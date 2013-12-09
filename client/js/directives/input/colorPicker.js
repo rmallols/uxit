@@ -1,4 +1,5 @@
-COMPONENTS.directive('colorPicker', ['styleService', 'i18nService', function (styleService, i18nService) {
+COMPONENTS.directive('colorPicker', ['$rootScope', 'styleService', 'i18nService',
+function ($rootScope, styleService, i18nService) {
 	'use strict';
     return {
         require: 'ngModel',
@@ -46,7 +47,7 @@ COMPONENTS.directive('colorPicker', ['styleService', 'i18nService', function (st
                         ngModelCtrl.$setViewValue(scope.model);
                     }
                     scope.model = hex;
-                    scope.$apply();
+                    if(!$rootScope.$$phase) { scope.$apply(); }
                     if (scope.onChange) { scope.onChange(); }
                 }
             });
@@ -76,7 +77,9 @@ COMPONENTS.directive('colorPicker', ['styleService', 'i18nService', function (st
                 } else {
                     removeTransparentColor();
                 }
-                scope.$apply();
+                if(!$rootScope.$$phase) {
+                    scope.$apply();
+                }
             };
 
             /** Private methods **/

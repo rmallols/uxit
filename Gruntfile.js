@@ -53,36 +53,49 @@ module.exports = function(grunt) {
             }
         },
         concat: {
-            buildFormLets: {
+            src: {
                 files: {
-                    '<%= min %>js.min.js': ['<%= app_js %>controllers/*.js',
+                    '<%= min %>js.min.js': [
+                        '<%= app_js %>controllers/*.js',
                         '<%= app_js %>directives/*.js', '<%= app_js %>directives/*/*.js',
                         '<%= app_js %>services/*.js', '<%= app_js %>services/*/*.js',
-                        '<%= app_js %>errorHandler.js', '<%= app_js %>templates.js'],
-                    '<%= min %>lib.min.js': ['<%= app_lib %>i18n/*.js',
-                        '<%= app_lib %>yepnope/*.js',
-                        '<%= app_lib %>rangy/*.js',
-                        '<%= app_lib %>form/*.js',
+                        '<%= app_js %>errorHandler.js', '<%= app_js %>templates.js']
+                }
+            },
+            lib: {
+                files: {
+                    '<%= min %>lib.min.js': [
+                        '<%= app_lib %>date/date.js', '<%= app_lib %>date/i18n/*.js',
+                        '<%= app_lib %>angularJs/angular-sortable-0.0.1.js',
+                        '<%= app_lib %>powerTip/jquery.powertip-1.2.0.js',
+                        '<%= app_lib %>i18n/jquery.i18n.properties-1.0.9.js',
+                        '<%= app_lib %>rangy/rangy-*.js',
+                        '<%= app_lib %>yepnope/yepnope-1.5.4.js',
+                        '<%= app_lib %>form/jquery.form-3.25.0.js',
                         '<%= app_lib %>morrisJs/*.js',
-                        '<%= app_lib %>select2/*.js',
-                        '<%= app_lib %>powerTip/*.js',
-                        '<%= app_lib %>mousetrap/mousetrap.min.js',
-                        '<%= app_lib %>mousetrap/mousetrap-global-bind.min.js',
-                        '<%= app_lib %>fullscreen/*.js',
-                        '<%= app_lib %>miniColors/*.js',
-                        '<%= app_lib %>iCheck/*.js',
-                        '<%= app_lib %>date/date.js', '<%= app_lib %>date/i18n/*.js']
+                        '<%= app_lib %>select2/select2-3.4.5.js',
+                        '<%= app_lib %>mousetrap/mousetrap-1.4.6.js',
+                        '<%= app_lib %>fullscreen/jquery.fullscreen-1.1.4.js',
+                        '<%= app_lib %>miniColors/jquery.minicolors-2.1.1.js',
+                        '<%= app_lib %>iCheck/jquery.icheck-0.9.1.js',
+                        '<%= app_lib %>nprogress/nprogress-0.1.2.js']
                 }
             }
         },
         uglify: {
+            //Take the options from http://lisperator.net/uglifyjs/compress, start everything false and find where it fails. Afterwards, if possiblle, restore the select2.min.js
             options: {
-                mangle: false, //reduce names of local variables to (usually) single-letters.
+                mangle: true, //reduce names of local variables to (usually) single-letters.
+                report: 'min',
                 banner: '/* Minified js files! <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
-            buildFormLets: {
+            src: {
                 files: {
-                    '<%= min %>js.min.js': ['<%= min %>js.min.js'],
+                    '<%= min %>js.min.js': ['<%= min %>js.min.js']
+                }
+            },
+            lib: {
+                files: {
                     '<%= min %>lib.min.js': ['<%= min %>lib.min.js']
                 }
             }
