@@ -2,6 +2,7 @@
 module.exports = {
 
     _initializedCollectionsCounter: 0,
+    _systemCollection: 'system',
 
     count: function(dbCon, collection, query, callback) {
         dbCon.collection(collection).count(query, function (err, totalSize) {
@@ -20,9 +21,15 @@ module.exports = {
     },
 
     findOne: function(dbCon, collection, query, projection, callback) {
-        if(!projection) { projection = {}}
+        if(!projection) { projection = {}; }
         dbCon.collection(collection).findOne(query, projection, function (err, document) {
             callback(err, document);
+        });
+    },
+
+    findAll: function(dbCon, collection, callback) {
+        this.find(dbCon, collection, null, null, null, null, null, function (err, documents) {
+            callback(err, documents);
         });
     },
 
@@ -53,13 +60,26 @@ module.exports = {
             var collection = constantsService.collections[collectionKey];
             self._existsCollection(dbCon, collection, function(exists) {
                 if(exists) {    //The collection already exists -> return
-                    if(self._registerInitializationAndFinish() && callback) { callback() }
+                    if(self._registerInitializationAndFinish() && callback) { callback(); }
                 } else {        //The collection doesn't exists yet -> initialize it
                     self._initializeCollection(dbCon, collection, function() {
-                        if(self._registerInitializationAndFinish() && callback) { callback() }
+                        if(self._registerInitializationAndFinish() && callback) { callback(); }
                     });
                 }
             });
+        });
+    },
+
+    getCollectionNames: function(dbCon, callback) {
+        var collectionNames = [], self = this;
+        dbCon.collectionNames(function(err, collections) {
+            collections.forEach(function(collection) {
+                var collectionName = collection.name.split('.')[1];
+                if(collectionName !== self._systemCollection) {
+                    collectionNames.push(collectionName);
+                }
+            });
+            callback(err, collectionNames);
         });
     },
 
@@ -74,7 +94,7 @@ module.exports = {
 
     _existsCollection: function(dbCon, collection, callback) {
         var exists = false;
-        dbCon.collectionNames(function(err, collectionNames) {
+        this.getCollectionNames(dbCon, function(err, collectionNames) {
             if(collectionNames.length > 0) {
                 collectionNames.forEach(function(collectionName) {
                     if(collectionName === collection) {
@@ -92,10 +112,10 @@ module.exports = {
             consoleService.success(collection + ' collection initialized');
             if(data && data.length) {
                 self._createDocuments(dbCon, collection, data, function() {
-                    if(callback) { callback() }
-                })
+                    if(callback) { callback(); }
+                });
             } else {
-                if(callback) { callback() }
+                if(callback) { callback(); }
             }
         });
     },

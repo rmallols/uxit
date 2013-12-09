@@ -63,6 +63,18 @@ app.get('/:portalId/logout', function (req, res) {
     });
 });
 
+app.post('/:portalId/rest/import', /*checkAuth, */setupDb, function (req, res) {
+    dbService.importDatabase(req.dbCon, req.params.portalId, req.session, function(result) {
+        res.send(result);
+    });
+});
+
+app.get('/:portalId/rest/export', /*checkAuth, */setupDb, function (req, res) {
+    dbService.exportDatabase(req.dbCon, req.params.portalId, req.session, function(bufferedFile) {
+        redirectionService.goToBufferedFile(req.params.portalId + '.zip', res, bufferedFile);
+    });
+});
+
 app.get('/:portalId/rest/databases', checkAuth, function (req, res) {
     dbService.getDatabases(req.session, function(result) {
         res.send(result);
@@ -83,7 +95,7 @@ app.put('/:portalId/rest/databases/:id/update', checkAuth, function (req, res) {
 
 app.delete('/:portalId/rest/databases/:id/delete', checkAuth, function (req, res) {
     dbService.deleteDatabase(req.params.id, req.session, function(result) {
-        res.send(result)
+        res.send(result);
     });
 });
 

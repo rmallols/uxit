@@ -23,8 +23,8 @@ module.exports = {
         function setDbData(setupObj) {
             return {
                 id                  : setupObj.id,
-                title	            : setupObj.title,
-                desc	            : setupObj.desc,
+                title               : setupObj.title,
+                desc                : setupObj.desc,
                 disabled            : setupObj.disabled,
                 provider            : setupObj.provider,
                 category            : setupObj.category,
@@ -32,7 +32,7 @@ module.exports = {
                 editPanels          : setupObj.editPanels,
                 noCustomEditPanel   : setupObj.noCustomEditPanel,
                 defaultModel        : setupObj.defaultModel
-            }
+            };
         }
 
         function extractPackage(zipObj, setupObj) {
@@ -65,7 +65,7 @@ module.exports = {
                 // Create a capped collection with a maximum of 1000 documents
                 //noinspection JSUnresolvedFunction
                 dbCon.createCollection(collection, {capped: true, size: 10000, max: 1000, w: 1}, function (/*err, collection*/) {
-                    createService.create(dbConnection, collection, { hello: 'world' + Math.floor(Math.random()*11)}, session, callback);
+                    createService.create(dbCon, collection, { hello: 'world' + Math.floor(Math.random()*11)}, session, callback);
                 });
             });
         }

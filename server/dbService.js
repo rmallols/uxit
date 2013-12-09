@@ -90,6 +90,26 @@ module.exports = {
         });
     },
 
+    importDatabase: function(dbCon, databaseId, session, callback) {
+        console.log("YEAA!!");
+        callback({});
+
+    },
+
+    exportDatabase: function(dbCon, databaseId, session, callback) {
+        var zipObj = zipService.getZipObj();
+        collectionService.getCollectionNames(dbCon, function(err, collections){
+            collections.forEach(function(collection, index) {
+                collectionService.findAll(dbCon, collection, function (err, documents) {
+                    zipService.addFile(zipObj, collection + '.json', new Buffer(JSON.stringify(documents)));
+                    if(index + 1 === collections.length) {
+                        callback(zipService.getBuffer(zipObj));
+                    }
+                });
+            });
+        });
+    },
+
     _getConnectionUrl: function(databaseId) {
         var host = pkg.dbHost,
             port = pkg.dbPort,
@@ -145,6 +165,7 @@ module.exports = {
 //that the database connection has been properly initialized
 var MongoDbService      = require('mongodb').MongoClient,
     collectionService   = require('./collectionService'),
+    zipService          = require('./zipService'),
     constantsService    = require('./constantsService'),
     utilsService        = require("./utilsService"),
     pkg                 = require('../package.json');

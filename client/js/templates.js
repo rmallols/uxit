@@ -1540,7 +1540,8 @@ angular.module("portalPage.html", []).run(["$templateCache", function($templateC
   $templateCache.put("portalPage.html",
     "<div global-msg></div>\n" +
     "<admin-panel ux-show=\"isAdmin()\"></admin-panel>\n" +
-    "<pages></pages>");
+    "<pages></pages>\n" +
+    "<!--<file-uploader endpoint=\"rest/import\" on-upload=\"onAvailableAppDeployed()\"></file-uploader>-->");
 }]);
 
 angular.module("listActions.html", []).run(["$templateCache", function($templateCache) {

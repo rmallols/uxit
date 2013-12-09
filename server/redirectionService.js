@@ -121,6 +121,12 @@ module.exports = {
         }
     },
 
+    goToBufferedFile: function(fileName, res, content) {
+        res.setHeader('Content-disposition', 'attachment; filename=' + fileName);
+        res.setHeader('Content-type', 'application/octet-stream');
+        res.send(content);
+    },
+
     _existsPortal: function(dbCon, portalId, session, callback) {
         dbService.existsDatabase(dbCon, portalId, session, function(result) {
             callback(result);
