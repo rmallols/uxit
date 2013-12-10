@@ -15,12 +15,13 @@ function ($rootScope, globalMsgService, domService) {
                     '</div>',
 		link: function link(scope) {
 
-            globalMsgService.onShow(function (text, details) {
+            globalMsgService.onShow(function (text, details, type) {
                 //Show the global message if it was not visible already
                 if (!scope.globalMsg) {
                     scope.globalMsg = {
-                        text: text,
-                        details: details
+                        text    : text,
+                        details : details,
+                        type    : type
                     };
                     //Maybe the loading message is visible, so it's necessary to remove it
                     domService.removeLoadingFeedback($('body'));
@@ -41,7 +42,12 @@ function ($rootScope, globalMsgService, domService) {
             };
 
             scope.getActiveStyleClass = function () {
-                return (scope.globalMsg) ? 'active' : '';
+                var type;
+                if(scope.globalMsg) {
+                    type = Number(scope.globalMsg.type);
+                    return { active: true, success: type === 1, info: type === 0, error: type === -1 };
+                }
+                return null;
             };
 
             scope.toggleDetails = function () {

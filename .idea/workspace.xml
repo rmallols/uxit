@@ -2,23 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/images/migration.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/images/down.svg" afterPath="$PROJECT_DIR$/client/images/down.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/images/up.svg" afterPath="$PROJECT_DIR$/client/images/up.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/e2e/pageObjects/addAppPanel.pO.js" afterPath="$PROJECT_DIR$/server/tests/e2e/pageObjects/addAppPanel.pO.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/e2e/pageObjects/adminPanel.pO.js" afterPath="$PROJECT_DIR$/server/tests/e2e/pageObjects/adminPanel.pO.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/buttons.less" afterPath="$PROJECT_DIR$/client/css/buttons.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/admin/edit.html" afterPath="$PROJECT_DIR$/client/html/admin/edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/edit.less" afterPath="$PROJECT_DIR$/client/css/edit.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/images/warning.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/controllers/LoginCtrl.js" afterPath="$PROJECT_DIR$/client/js/controllers/LoginCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/controllers/PortalCtrl.js" afterPath="$PROJECT_DIR$/client/js/controllers/PortalCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/constants.less" afterPath="$PROJECT_DIR$/client/css/constants.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/admin/editGeneral.html" afterPath="$PROJECT_DIR$/client/html/admin/editGeneral.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/editGeneral.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/editGeneral.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/icons.less" afterPath="$PROJECT_DIR$/client/css/icons.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/feedback/globalMsg.js" afterPath="$PROJECT_DIR$/client/js/directives/feedback/globalMsg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/globalMsg.less" afterPath="$PROJECT_DIR$/client/css/globalMsg.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/feedback/globalMsgService.js" afterPath="$PROJECT_DIR$/client/js/services/feedback/globalMsgService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/index.js" afterPath="$PROJECT_DIR$/client/js/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_en.properties" afterPath="$PROJECT_DIR$/client/messages/messages_en.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_es.properties" afterPath="$PROJECT_DIR$/client/messages/messages_es.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/pages/portalPage.html" afterPath="$PROJECT_DIR$/client/html/pages/portalPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/utils.less" afterPath="$PROJECT_DIR$/client/css/utils.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/verticalTabs.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/verticalTabs.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -44,55 +40,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="editGeneral.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="editGeneral.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/html/admin/editGeneral.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="53" selection-start="3724" selection-end="3724" vertical-scroll-proportion="0.3431221" vertical-offset="900" max-vertical-offset="1632">
+            <state line="79" column="91" selection-start="4470" selection-end="4470" vertical-scroll-proportion="-17.038462" vertical-offset="900" max-vertical-offset="1632">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buttons.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/css/buttons.less">
+      <file leaf-file-name="editGeneral.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editGeneral.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="53" selection-start="121" selection-end="121" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="1666">
+            <state line="27" column="79" selection-start="1247" selection-end="1247" vertical-scroll-proportion="-11.28" vertical-offset="177" max-vertical-offset="901">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="portalPage.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/pages/portalPage.html">
+      <file leaf-file-name="globalMsg.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/feedback/globalMsg.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="32" selection-start="86" selection-end="86" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+            <state line="9" column="54" selection-start="379" selection-end="397" vertical-scroll-proportion="-4.88" vertical-offset="31" max-vertical-offset="1088">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/css/utils.less">
+      <file leaf-file-name="globalMsgService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/services/feedback/globalMsgService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="139" column="76" selection-start="4533" selection-end="4533" vertical-scroll-proportion="-5.3289475" vertical-offset="1958" max-vertical-offset="2754">
+            <state line="8" column="68" selection-start="253" selection-end="253" vertical-scroll-proportion="-5.44" vertical-offset="0" max-vertical-offset="1479">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messages_en.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/messages/messages_en.properties">
+      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="132" selection-start="3545" selection-end="3545" vertical-scroll-proportion="-13.72" vertical-offset="949" max-vertical-offset="3332">
+            <state line="12" column="82" selection-start="559" selection-end="559" vertical-scroll-proportion="-8.16" vertical-offset="0" max-vertical-offset="748">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messages_es.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/messages/messages_es.properties">
+      <file leaf-file-name="globalMsg.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/css/globalMsg.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="72" selection-start="2110" selection-end="2110" vertical-scroll-proportion="-8.28" vertical-offset="609" max-vertical-offset="3162">
+            <state line="23" column="65" selection-start="748" selection-end="748" vertical-scroll-proportion="1.4980843" vertical-offset="0" max-vertical-offset="816">
               <folding />
             </state>
           </provider>
@@ -101,16 +97,43 @@
       <file leaf-file-name="icons.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/css/icons.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="76" selection-start="2198" selection-end="2198" vertical-scroll-proportion="-5.9473686" vertical-offset="92" max-vertical-offset="714">
+            <state line="36" column="5" selection-start="2410" selection-end="2414" vertical-scroll-proportion="-6.8421054" vertical-offset="92" max-vertical-offset="714">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fileUploader.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/input/fileUploader.html">
+      <file leaf-file-name="portalPage.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/pages/portalPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="136">
+            <state line="2" column="77" selection-start="86" selection-end="86" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="messages_en.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/messages/messages_en.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="77" column="0" selection-start="3551" selection-end="3631" vertical-scroll-proportion="0.0" vertical-offset="949" max-vertical-offset="3349">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="messages_es.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/messages/messages_es.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="77" column="0" selection-start="3948" selection-end="3984" vertical-scroll-proportion="-14.4" vertical-offset="949" max-vertical-offset="3298">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="constants.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/css/constants.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="57" selection-start="469" selection-end="469" vertical-scroll-proportion="-2.6842105" vertical-offset="0" max-vertical-offset="493">
               <folding />
             </state>
           </provider>
@@ -135,22 +158,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/html/admin/portalsAdminEditDb.html" />
-        <option value="$PROJECT_DIR$/server/collectionService.js" />
-        <option value="$PROJECT_DIR$/server/dbService.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/admin/editGeneral.js" />
-        <option value="$PROJECT_DIR$/client/messages/messages_es.properties" />
-        <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/addAppPanel.pO.js" />
-        <option value="$PROJECT_DIR$/server/tests/e2e/pageObjects/adminPanel.pO.js" />
-        <option value="$PROJECT_DIR$/client/html/admin/edit.html" />
-        <option value="$PROJECT_DIR$/client/js/directives/admin/verticalTabs.js" />
         <option value="$PROJECT_DIR$/client/css/edit.less" />
         <option value="$PROJECT_DIR$/client/html/pages/portalPage.html" />
         <option value="$PROJECT_DIR$/client/css/buttons.less" />
         <option value="$PROJECT_DIR$/client/css/icons.less" />
         <option value="$PROJECT_DIR$/client/css/utils.less" />
-        <option value="$PROJECT_DIR$/client/messages/messages_en.properties" />
         <option value="$PROJECT_DIR$/client/html/admin/editGeneral.html" />
+        <option value="$PROJECT_DIR$/client/js/controllers/LoginCtrl.js" />
+        <option value="$PROJECT_DIR$/client/js/controllers/PortalCtrl.js" />
+        <option value="$PROJECT_DIR$/client/css/constants.less" />
+        <option value="$PROJECT_DIR$/client/messages/messages_en.properties" />
+        <option value="$PROJECT_DIR$/client/messages/messages_es.properties" />
+        <option value="$PROJECT_DIR$/client/js/directives/admin/editGeneral.js" />
+        <option value="$PROJECT_DIR$/client/js/services/feedback/globalMsgService.js" />
+        <option value="$PROJECT_DIR$/client/js/index.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/feedback/globalMsg.js" />
+        <option value="$PROJECT_DIR$/client/css/globalMsg.less" />
       </list>
     </option>
   </component>
@@ -417,17 +440,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="Settings.JavaScript.Linters.JSHint" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -445,14 +468,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.Watch template changes">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -463,8 +478,12 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -472,6 +491,10 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -1137,7 +1160,11 @@
       <created>1386663137324</created>
       <updated>1386663137324</updated>
     </task>
-    <option name="localTasksCounter" value="147" />
+    <task id="LOCAL-00147" summary="#179 Import / Export Portals support">
+      <created>1386669862856</created>
+      <updated>1386669862856</updated>
+    </task>
+    <option name="localTasksCounter" value="148" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1162,10 +1189,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49861878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4281768" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1174,11 +1200,12 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-321" y="-1073" width="1911" height="1030" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-321" y="-1073" width="1911" height="1030" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1199,9 +1226,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712707" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2208589" sideWeight="0.5718232" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-324" y="-1079" width="1911" height="985" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1246,114 +1273,114 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/adminPanel.pO.js">
+    <entry file="file://$PROJECT_DIR$/client/html/pages/portalPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="92" selection-start="377" selection-end="377" vertical-scroll-proportion="0.2922636" vertical-offset="0" max-vertical-offset="698">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/e2e/pageObjects/addAppPanel.pO.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="88" selection-start="330" selection-end="339" vertical-scroll-proportion="0.2922636" vertical-offset="0" max-vertical-offset="698">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4114">
+        <state line="2" column="77" selection-start="86" selection-end="86" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/buttons.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="53" selection-start="121" selection-end="121" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="1666">
+        <state line="6" column="53" selection-start="121" selection-end="121" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/controllers/PortalCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="45" selection-start="1169" selection-end="1169" vertical-scroll-proportion="0.5557206" vertical-offset="0" max-vertical-offset="673">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/html/input/fileUploader.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editGeneral.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="86" selection-start="830" selection-end="830" vertical-scroll-proportion="0.50520056" vertical-offset="0" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/messages/messages_es.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="72" selection-start="2110" selection-end="2110" vertical-scroll-proportion="-8.28" vertical-offset="609" max-vertical-offset="3162">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/verticalTabs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="54" selection-start="732" selection-end="732" vertical-scroll-proportion="0.4383954" vertical-offset="0" max-vertical-offset="698">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/admin/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="74" selection-start="529" selection-end="529" vertical-scroll-proportion="0.21020092" vertical-offset="0" max-vertical-offset="647">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/edit.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="39" selection-start="715" selection-end="715" vertical-scroll-proportion="0.49678457" vertical-offset="439" max-vertical-offset="3009">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/icons.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="76" selection-start="2198" selection-end="2198" vertical-scroll-proportion="-5.9473686" vertical-offset="92" max-vertical-offset="714">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="672">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/constants.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="4" selection-start="470" selection-end="473" vertical-scroll-proportion="0.35530546" vertical-offset="0" max-vertical-offset="622">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/pages/portalPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="32" selection-start="86" selection-end="86" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/utils.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="76" selection-start="4533" selection-end="4533" vertical-scroll-proportion="-5.3289475" vertical-offset="1958" max-vertical-offset="2754">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/messages/messages_en.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="132" selection-start="3545" selection-end="3545" vertical-scroll-proportion="-13.72" vertical-offset="949" max-vertical-offset="3332">
+        <state line="12" column="57" selection-start="469" selection-end="469" vertical-scroll-proportion="-2.6842105" vertical-offset="0" max-vertical-offset="493">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/html/admin/editGeneral.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="53" selection-start="3724" selection-end="3724" vertical-scroll-proportion="0.3431221" vertical-offset="900" max-vertical-offset="1632">
+        <state line="79" column="91" selection-start="4470" selection-end="4470" vertical-scroll-proportion="-17.038462" vertical-offset="900" max-vertical-offset="1632">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/controllers/LoginCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="30" selection-start="250" selection-end="250" vertical-scroll-proportion="0.12177651" vertical-offset="0" max-vertical-offset="698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/i18n/i18n.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/messages/messages_en.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="0" selection-start="3551" selection-end="3631" vertical-scroll-proportion="0.0" vertical-offset="949" max-vertical-offset="3349">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/messages/messages_es.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="0" selection-start="3948" selection-end="3984" vertical-scroll-proportion="-14.4" vertical-offset="949" max-vertical-offset="3298">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editGeneral.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="79" selection-start="1247" selection-end="1247" vertical-scroll-proportion="-11.28" vertical-offset="177" max-vertical-offset="901">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="82" selection-start="559" selection-end="559" vertical-scroll-proportion="-8.16" vertical-offset="0" max-vertical-offset="748">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/icons.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="5" selection-start="2410" selection-end="2414" vertical-scroll-proportion="-6.8421054" vertical-offset="92" max-vertical-offset="714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/feedback/globalMsgService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="68" selection-start="253" selection-end="253" vertical-scroll-proportion="-5.44" vertical-offset="0" max-vertical-offset="1479">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/feedback/globalMsg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="54" selection-start="379" selection-end="397" vertical-scroll-proportion="-4.88" vertical-offset="31" max-vertical-offset="1088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/globalMsg.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="65" selection-start="748" selection-end="748" vertical-scroll-proportion="1.4980843" vertical-offset="0" max-vertical-offset="816">
           <folding />
         </state>
       </provider>

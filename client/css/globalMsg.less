@@ -1,8 +1,6 @@
 #globalMsg {
-  .padding;
-  background: @errorColor !important;
-  color: @highComp !important;
-  opacity:.5;
+ padding: @padding @padding @padding 4.5 * @padding;
+  opacity:.8;
   font-size: 26px;
   position: fixed;
   width: 60%;
@@ -11,7 +9,15 @@
   top: -100px;
   .transition(top @speed);
   visibility: hidden;
+  line-height: 1.7em;
+  background-repeat: no-repeat;
+  background-size: (3 * @padding) auto;
+  background-position: @padding @padding;
 }
+
+#globalMsg.success  { background-color: @successColor !important; color: @highComp !important; .okIcon; }
+#globalMsg.info     { background-color: @infoColor !important; color: @fontColor !important; .warningIcon; }
+#globalMsg.error    { background-color: @errorColor !important; color: @highComp !important; .cancelIcon; }
 
 #globalMsg.active {
   visibility: visible;

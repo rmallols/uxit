@@ -25,5 +25,5 @@ COMPONENTS.controller('PortalCtrl', ['$scope', '$routeParams', 'portalService', 
                 metaService.setWindowDimensions();
                 portalService.trackAnalytics();
             });
-        });    //Cache roles
+        });
 }]);

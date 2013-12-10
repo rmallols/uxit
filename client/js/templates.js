@@ -901,7 +901,7 @@ angular.module("editGeneral.html", []).run(["$templateCache", function($template
     "                        <label i18n=\"editGeneral.migration.import.warning.desc\"></label>\n" +
     "                    </div>\n" +
     "                    <div>\n" +
-    "                        <file-uploader endpoint=\"rest/import\" on-upload=\"onAvailableAppDeployed()\"></file-uploader>\n" +
+    "                        <file-uploader endpoint=\"rest/import\" on-upload=\"onImportedPortal()\"></file-uploader>\n" +
     "                    </div>\n" +
     "                </div>\n" +
     "            </li>\n" +

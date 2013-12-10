@@ -1,21 +1,27 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('globalMsgService', [function () {
+    COMPONENTS.factory('globalMsgService', ['arrayService', function (arrayService) {
 
-        var onShowObservers = [], onHideObservers = [];
+        var onShowObservers = [], onHideObservers = [], onShowQueue = [];
 
         /**
          * Shows the global message
          *
          * @param {string} text     Main text of to be displayed
          * @param {string} details  Secondary text to be displayed,
+         * @param {number} type     The type of the message (1=success, 0=info, -1=error)
          *                          that will be shown just whenever the user will click in the 'show details' link
          */
-        function show(text, details) {
-            var normalizedMessage = normalizeMessage(text, details);
-            onShowObservers.forEach(function (onShowObserver) {
-                onShowObserver(normalizedMessage.text, normalizedMessage.details);
-            });
+        function show(text, details, type) {
+            if(!type) { type = -1; } //Assume an error message by default
+            var normalizedMsg = normalizeMessage(text, details, type);
+            if(onShowObservers.length) {
+                onShowObservers.forEach(function (onShowObserver) {
+                    onShowObserver(normalizedMsg.text, normalizedMsg.details, normalizedMsg.type);
+                });
+            } else { //If no observer has arrived yet, save the message into a queue
+                arrayService.add(onShowQueue, {text: text, details: details, type: type}, 0);
+            }
         }
 
         /**
@@ -35,6 +41,13 @@
          */
         function onShow(observer) {
             onShowObservers.push(observer);
+            //If there's something to show pending on the queue, show it and remove it from the queue
+            if(onShowQueue.length) {
+                onShowQueue.forEach(function(onShowQueyeMsg, index) {
+                    show(onShowQueyeMsg.text, onShowQueyeMsg.details, onShowQueyeMsg.type);
+                    arrayService.delete(onShowQueue, index);
+                });
+            }
         }
 
         /**
@@ -47,14 +60,14 @@
         }
 
         /** Private methods **/
-        function normalizeMessage(text, details) {
-            var normalizedMessage = {};
+        function normalizeMessage(text, details, type) {
+            var normalizedMsg = {};
             try {
-                normalizedMessage = $.parseJSON(text);
+                normalizedMsg = $.parseJSON(text);
             } catch(ex) {
-                normalizedMessage = { text: text, details: details };
+                normalizedMsg = { text: text, details: details, type: type };
             }
-            return normalizedMessage;
+            return normalizedMsg;
         }
         /** End of private methods **/
 

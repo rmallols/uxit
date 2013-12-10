@@ -1,7 +1,8 @@
 (function (COMPONENTS) {
     'use strict';
-    COMPONENTS.directive('editGeneral', ['portalService', 'mediaService', 'metaService',
-    function (portalService, mediaService, metaService) {
+    COMPONENTS.directive('editGeneral', ['$location', 'portalService', 'mediaService', 'metaService',
+    'i18nService',
+    function ($location, portalService, mediaService, metaService, i18nService) {
         return {
             restrict: 'A',
             replace: true,
@@ -32,6 +33,13 @@
 
                 scope.updateFavicon = function (newFavicon) {
                     scope.model.faviconId = newFavicon[0]._id;
+                };
+
+                scope.onImportedPortal = function() {
+                    $location.search().message = i18nService('editGeneral.migration.import.success');
+                    $location.search().type = 1;
+                    $location.path($location.path());
+                    window.open($location.url(), '_self');
                 };
             }
         };

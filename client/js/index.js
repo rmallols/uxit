@@ -25,6 +25,14 @@
                     reloadOnSearch: false
                 })
                 .otherwise({ redirectTo: '/' });
-        }]).run([function () {}]);
+        }]).run(['$rootScope', '$location', 'globalMsgService',
+        function ($rootScope, $location, globalMsgService) {
+            $rootScope.$on("$routeChangeSuccess", function() {
+                var searchParams = $location.search();
+                if(searchParams.message) {
+                    globalMsgService.show(searchParams.message, searchParams.desc, searchParams.type);
+                }
+            });
+        }]);
 }());
 
