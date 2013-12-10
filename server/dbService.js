@@ -90,10 +90,16 @@ module.exports = {
         });
     },
 
-    importDatabase: function(dbCon, databaseId, session, callback) {
-        console.log("YEAA!!");
-        callback({});
-
+    importDatabase: function(dbCon, importedPortal, session, callback) {
+        var zipObj = zipService.getZipObj(importedPortal.path);
+        var zipFiles = zipService.readFiles(zipObj);
+        zipFiles.forEach(function(zipFile) {
+            var collection  = zipFile.entryName.split('.json')[0],
+                data        = zipFile.getData().toString('utf8');
+            collectionService.importCollection(dbCon, collection, data, function() {
+                callback({});
+            });
+        });
     },
 
     exportDatabase: function(dbCon, databaseId, session, callback) {

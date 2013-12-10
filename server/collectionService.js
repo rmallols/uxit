@@ -48,8 +48,8 @@ module.exports = {
     },
 
     delete: function(dbCon, collection, id, callback) {
-        var _id = this.getFormattedId(dbCon, id.toString());
-        dbCon.collection(collection).remove({_id: _id}, function () {
+        var query = (id) ? {_id: this.getFormattedId(dbCon, id.toString())} : {};
+        dbCon.collection(collection).remove(query, function () {
             callback({});
         });
     },
@@ -66,6 +66,17 @@ module.exports = {
                         if(self._registerInitializationAndFinish() && callback) { callback(); }
                     });
                 }
+            });
+        });
+    },
+
+    importCollection: function(dbCon, collection, data, callback) {
+        var self = this;
+        //1. Delete the entire collection to ensure that it's going to be created from a clean state
+        this.delete(dbCon, collection, null, function() {
+            //2. Create the documents into the empty collection
+            self._createDocuments(dbCon, collection, data, function(err, result) {
+                callback(err, result);
             });
         });
     },
@@ -134,9 +145,9 @@ module.exports = {
     },
 
     _createMultipleDocuments: function(dbCon, collection, documents, session, callback) {
-        var createdDocuments = 0;
+        var createdDocuments = 0, self = this;
         documents.forEach(function(document) { //Create each document of the given collection
-            createService.create(dbCon, collection, document, session, function() {
+            self._createSingleDocument(dbCon, collection, document, session, function() {
                 createdDocuments++;
                 if(createdDocuments === documents.length) {
                     callback();

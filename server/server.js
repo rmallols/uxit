@@ -64,7 +64,7 @@ app.get('/:portalId/logout', function (req, res) {
 });
 
 app.post('/:portalId/rest/import', /*checkAuth, */setupDb, function (req, res) {
-    dbService.importDatabase(req.dbCon, req.params.portalId, req.session, function(result) {
+    dbService.importDatabase(req.dbCon, req.files.upload, req.session, function(result) {
         res.send(result);
     });
 });

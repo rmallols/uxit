@@ -1071,7 +1071,6 @@ angular.module("editUserList.html", []).run(["$templateCache", function($templat
 angular.module("portalsAdminEditDb.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("portalsAdminEditDb.html",
     "<div>\n" +
-    "    --{{model}}\n" +
     "    <div class=\"cf\">\n" +
     "        <div class=\"columns large-10\">Portal Url</div>\n" +
     "        <div class=\"columns large-15\">\n" +
@@ -1538,10 +1537,11 @@ angular.module("loginPage.html", []).run(["$templateCache", function($templateCa
 
 angular.module("portalPage.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("portalPage.html",
+    "<file-uploader endpoint=\"rest/import\" on-upload=\"onAvailableAppDeployed()\"></file-uploader>\n" +
+    "\n" +
     "<div global-msg></div>\n" +
     "<admin-panel ux-show=\"isAdmin()\"></admin-panel>\n" +
-    "<pages></pages>\n" +
-    "<!--<file-uploader endpoint=\"rest/import\" on-upload=\"onAvailableAppDeployed()\"></file-uploader>-->");
+    "<pages></pages>");
 }]);
 
 angular.module("listActions.html", []).run(["$templateCache", function($templateCache) {

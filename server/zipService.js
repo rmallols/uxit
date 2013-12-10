@@ -11,6 +11,10 @@ module.exports = {
         return zipObj.readFile(filePath).toString('utf8');
     },
 
+    readFiles: function (zipObj) {
+        return zipObj.getEntries();
+    },
+
     addFile: function (zipObj, name, content) {
         zipObj.addFile(name, content);
     },
