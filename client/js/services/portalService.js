@@ -1,9 +1,32 @@
 (function () {
     'use strict';
-    COMPONENTS.factory('portalService', ['$rootScope', 'pageService', 'crudService', 'constantsService', 'domService', 'metaService',
-    function ($rootScope, pageService, crudService, constantsService, domService, metaService) {
+    COMPONENTS.factory('portalService', ['$rootScope', '$routeParams', 'pageService', 'crudService',
+    'constantsService', 'domService', 'metaService', 'userService', 'roleService', 'tagService',
+    'i18nService', 'availableAppsService', 'sessionService',
+    function ($rootScope, $routeParams, pageService, crudService, constantsService, domService,
+    metaService, userService, roleService, tagService, i18nService, availableAppsService, sessionService) {
 
         var portal = {};
+
+        function initializeResources() {
+            userService.loadUsers(null);    //Cache users
+            pageService.loadPages(null);    //Cache pages
+            roleService.loadRoles(function() {
+                tagService.loadTags(null);      //Cache tags
+                i18nService.loadLanguages(null);//Cache languages
+                availableAppsService.loadAvailableApps(null); //Cache available apps
+                sessionService.loadUserSession(function (userSession) {
+                    if (userSession && userSession.language) {
+                        i18nService.changeLanguage(userSession.language);
+                    }
+                });
+                loadPortal($routeParams.page, function() {
+                    setHeader();
+                    metaService.setWindowDimensions();
+                    trackAnalytics();
+                });
+            });
+        }
 
         /**
          * Loads the current portal data in the context of a given page
@@ -111,6 +134,7 @@
         }
 
         return {
+            initializeResources: initializeResources,
             loadPortal: loadPortal,
             getPortal: getPortal,
             updatePortal: updatePortal,

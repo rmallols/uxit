@@ -1,12 +1,11 @@
 (function (io) {
     'use strict';
-    COMPONENTS.factory('liveMessageService', [function () {
+    COMPONENTS.factory('liveMessageService', ['globalMsgService', function (globalMsgService) {
 
         var socket = io.connect(window.location.origin);
 
         socket.on('publicMessageReceived', function (data) {
-            //stdService.error(data.text, data.details);
-            alert("msg received" + data.text + ' - ' + data.details);
+            globalMsgService.show("msg received: " + data.text, data.details, 0);
         });
 
         /**

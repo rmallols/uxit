@@ -9,7 +9,9 @@ function ($rootScope, globalMsgService, domService) {
                         '<div class="text">' +
                             '<label>{{globalMsg.text}}</label> ' +
                             '<a href="#" ng-show="globalMsg.details" ng-click="toggleDetails()">[Details]</a>' +
-                            '<div class="details" ng-show="isDetailsVisible"><label>{{globalMsg.details}}</label></div>' +
+                            '<div class="details" ng-show="isDetailsVisible">' +
+                                '<label ng-bind-html-unsafe="globalMsg.details"></label>' +
+                            '</div>' +
                         '</div>' +
                         '<div class="actions"><button class="removeIcon" ng-click="hide()"></button></div>' +
                     '</div>',

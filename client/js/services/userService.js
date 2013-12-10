@@ -1,7 +1,7 @@
 (function (COMPONENTS) {
     'use strict';
-    COMPONENTS.factory('userService', ['portalService', 'sessionService', 'crudService', '$routeParams', 'constantsService',
-    function (portalService, sessionService, crudService, $routeParams, constantsService) {
+    COMPONENTS.factory('userService', ['sessionService', 'crudService', '$routeParams', 'constantsService',
+    function (sessionService, crudService, $routeParams, constantsService) {
 
         var users;
 

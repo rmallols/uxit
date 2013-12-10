@@ -1,8 +1,8 @@
 (function (COMPONENTS) {
     'use strict';
     COMPONENTS.directive('editGeneral', ['$location', 'portalService', 'mediaService', 'metaService',
-    'i18nService',
-    function ($location, portalService, mediaService, metaService, i18nService) {
+    'globalMsgService', 'i18nService',
+    function ($location, portalService, mediaService, metaService, globalMsgService, i18nService) {
         return {
             restrict: 'A',
             replace: true,
@@ -36,10 +36,9 @@
                 };
 
                 scope.onImportedPortal = function() {
-                    $location.search().message = i18nService('editGeneral.migration.import.success');
-                    $location.search().type = 1;
-                    $location.path($location.path());
-                    window.open($location.url(), '_self');
+                    //Reload everything as the portal has been deeply updated
+                    portalService.initializeResources();
+                    globalMsgService.show(i18nService('editGeneral.migration.import.success'), null, 1);
                 };
             }
         };
