@@ -20,7 +20,8 @@
                     { title: 'editGeneral.app',         styleClass : 'appIcon' },
                     { title: 'editGeneral.comments',    styleClass : 'commentsIcon' },
                     { title: 'editGeneral.email',       styleClass : 'notificationsIcon' },
-                    { title: 'editGeneral.analytics',   styleClass : 'statsIcon' }
+                    { title: 'editGeneral.analytics',   styleClass : 'statsIcon' },
+                    { title: 'editGeneral.migration',   styleClass : 'migrationIcon' }
                 ];
 
                 scope.defaultFaviconUrl = metaService.getDefaultFaviconUrl();

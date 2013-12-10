@@ -2,20 +2,33 @@
 @normalButtonSize : 42px;
 @bigButtonSize    : 64px;
 
-button {
-	.circled;
-	background-color:@high;
-	background-size:auto 70%;
-	background-repeat:no-repeat;
-	background-position:50% 50%;
-	border:3px solid @highComp;
-    width:@normalButtonSize;
-    height:@normalButtonSize;
+.button {
+  padding-top: 4px !important;
 }
 
-button:hover { background-color:@highDarken; }
+button,
+.button {
+  .circled;
+  background-color:@high;
+  color: @highComp;
+  background-size:auto 70%;
+  background-repeat:no-repeat;
+  background-position:50% 50%;
+  border:3px solid @highComp;
+  width:@normalButtonSize;
+  height:@normalButtonSize;
+  display: inline-block;
+  text-decoration: none;
+}
 
-button:not(:empty) {
+button:hover,
+.button:hover {
+  background-color:@highDarken;
+  text-decoration: none;
+}
+
+button:not(:empty),
+.button:not(:empty) {
   width: auto !important;
   padding: 0px 12px 0px 36px;
   font-size: 18px;
@@ -23,21 +36,27 @@ button:not(:empty) {
   color: @highComp;
 }
 
-button-group > button { margin: 0px; }
+button-group > button,
+button-group > .button  {
+  margin: 0px;
+}
 
-button-group > button:first-child {
+button-group > button:first-child,
+button-group > .button:first-child {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   border-right: 0px;
 }
 
-button-group > button:last-child {
+button-group > button:last-child,
+button-group > .button:last-child {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   border-left: 0px;
 }
 
-button-group > button:not(:first-child):not(:last-child) {
+button-group > button:not(:first-child):not(:last-child),
+button-group > .button:not(:first-child):not(:last-child) {
   border-radius: 0px;
   border-left-width: 1px;
   border-right-width: 1px;
@@ -45,12 +64,30 @@ button-group > button:not(:first-child):not(:last-child) {
   position: relative;
 }
 
-button.active { background-color: @highDarken !important; }
+button.active,
+.button.active {
+  background-color: @highDarken !important;
+}
 
-button.small    { width:@smallButtonSize; height:@smallButtonSize; }
-button.normal   { width:@normalButtonSize; height:@normalButtonSize; }
-button.big      { width:@bigButtonSize; height:@bigButtonSize; }
+button.small,
+.button.small {
+  width:@smallButtonSize;
+  height:@smallButtonSize;
+}
 
-button.small:not(:empty) {
+button.normal,
+.button.normal {
+  width:@normalButtonSize;
+  height:@normalButtonSize;
+}
+
+button.big,
+.button.big {
+  width:@bigButtonSize;
+  height:@bigButtonSize;
+}
+
+button.small:not(:empty),
+.button.small:not(:empty) {
   padding: 0px 8px 0px 28px;
 }

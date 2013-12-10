@@ -101,8 +101,6 @@ ul.sortable       { position: relative; }
   background-color: @highComp; background-size:32px auto; background-repeat: no-repeat; background-position: 6px 11px; }
 .sortingPlaceholder { .box; background-color: @fontColorHover !important; }
 
-.button         { background-color: @fontColor; color:@highComp; cursor: pointer; }
-.button:hover   { background-color: @fontColorHover; }
 .active         { background-color: @high !important; color: @highComp !important; }
 .hoverState     { border: 3px solid red !important; }
 .button a,
@@ -136,6 +134,17 @@ ul.sortable       { position: relative; }
   -webkit-box-align: end;-moz-box-align: end;flex-align: end;
   -webkit-box-pack: end;-moz-box-pack: end;flex-pack: end;
   -ms-flex-align:end;
+}
+
+.warning {
+  background-size: 32px auto;
+  background-repeat: no-repeat;
+  background-position: @padding @padding;
+  .warningIcon;
+  color: @errorColor;
+  border: 2px solid @errorColor;
+  padding: @padding @padding @padding 4 * @padding;
+  margin-bottom: @padding;
 }
 
 .offsettedWidth(@offset: 0px, @width:100%){ width: -webkit-calc(@width+~"+"@offset) !important; }

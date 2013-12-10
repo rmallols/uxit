@@ -10,7 +10,7 @@
 
         showAdminPanel: function(adminPanelButtonId) {
             var buttonAdminPanelElm;
-            buttonAdminPanelElm = this._ptor.findElement(this._protractor.By.css(".tab.button" + adminPanelButtonId));
+            buttonAdminPanelElm = this._ptor.findElement(this._protractor.By.css(".tabButton" + adminPanelButtonId));
             buttonAdminPanelElm.click();
             return this;
         }

@@ -10,7 +10,7 @@
 
         show: function() {
             var addAppButtonElm;
-            addAppButtonElm = this._ptor.findElement(this._protractor.By.css(".tab.button.addIcon"));
+            addAppButtonElm = this._ptor.findElement(this._protractor.By.css(".tabButton.addIcon"));
             addAppButtonElm.click();
             return this;
         },

@@ -739,7 +739,7 @@ angular.module("edit.html", []).run(["$templateCache", function($templateCache) 
     "    </div>\n" +
     "	<ul class=\"tabs level1\" ng-show=\"showIfMultipleTabs()\">\n" +
     "		<li ng-repeat=\"panel in panels\" style=\"height:{{tabHeight}}%\" ng-style=\"panel.ngStyleFn()\" ng-click=\"clickTab($index)\"\n" +
-    "            class=\"tab button\" ng-class=\"getTabClasses(panel, $index)\" title=\"{{panel.description}}\" i18n-title>\n" +
+    "            class=\"tab tabButton\" ng-class=\"getTabClasses(panel, $index)\" title=\"{{panel.description}}\" i18n-title>\n" +
     "            <label i18n=\"{{panel.title}}\"></label>\n" +
     "            <label ux-show=\"isEditedMarkVisible($parent[panel.type])\" ng-class=\"getEditedMarkColor($parent[panel.type])\"\n" +
     "                   class=\"jsitedMark\">*</label>\n" +
@@ -877,6 +877,32 @@ angular.module("editGeneral.html", []).run(["$templateCache", function($template
     "                </div>\n" +
     "                <div class=\"columns large-16\">\n" +
     "                    <div><input type=\"text\" ng-model=\"model.trackingCode\" /></div>\n" +
+    "                </div>\n" +
+    "            </li>\n" +
+    "            <li class=\"layer\">\n" +
+    "                <div class=\"columns large-13\">\n" +
+    "                    <h5><label i18n=\"editGeneral.migration.export\"></label></h5>\n" +
+    "                    <div>\n" +
+    "                        <label i18n=\"editGeneral.migration.export.desc\"></label>\n" +
+    "                    </div>\n" +
+    "                    <div>\n" +
+    "                        <a href=\"rest/export\" target=\"_blank\" class=\"button upIcon\">\n" +
+    "                            <label i18n=\"editGeneral.migration.export.action\"></label>\n" +
+    "                        </a>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "                <div class=\"columns large-12\">\n" +
+    "                    <h5><label i18n=\"editGeneral.migration.import\"></label></h5>\n" +
+    "                    <div>\n" +
+    "                        <label i18n=\"editGeneral.migration.import.desc\"></label>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"warning\">\n" +
+    "                        <b><label i18n=\"editGeneral.migration.import.warning.title\"></label></b><br/>\n" +
+    "                        <label i18n=\"editGeneral.migration.import.warning.desc\"></label>\n" +
+    "                    </div>\n" +
+    "                    <div>\n" +
+    "                        <file-uploader endpoint=\"rest/import\" on-upload=\"onAvailableAppDeployed()\"></file-uploader>\n" +
+    "                    </div>\n" +
     "                </div>\n" +
     "            </li>\n" +
     "        </ul>\n" +
@@ -1537,8 +1563,6 @@ angular.module("loginPage.html", []).run(["$templateCache", function($templateCa
 
 angular.module("portalPage.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("portalPage.html",
-    "<file-uploader endpoint=\"rest/import\" on-upload=\"onAvailableAppDeployed()\"></file-uploader>\n" +
-    "\n" +
     "<div global-msg></div>\n" +
     "<admin-panel ux-show=\"isAdmin()\"></admin-panel>\n" +
     "<pages></pages>");

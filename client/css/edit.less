@@ -36,11 +36,23 @@
   padding-top: 33px;
 }
 
-.edit ul.tabs.level2 > li.button {
+.edit li.tabButton {
+  background-color: @fontColor !important;
+  color:@highComp !important;
+  cursor: pointer;
+}
+
+.edit li.tabButton:hover {
+  background-color: @fontColorHover !important;
+}
+
+.edit ul.tabs.level2 > li.tabButton {
 	width:100%;
     .box;
-    background-color: @fontColor;
-    color:@highComp;
+}
+
+.edit li.tabButton.active {
+  .active;
 }
 
 .edit .content.level1,

@@ -58,6 +58,32 @@
                     <div><input type="text" ng-model="model.trackingCode" /></div>
                 </div>
             </li>
+            <li class="layer">
+                <div class="columns large-13">
+                    <h5><label i18n="editGeneral.migration.export"></label></h5>
+                    <div>
+                        <label i18n="editGeneral.migration.export.desc"></label>
+                    </div>
+                    <div>
+                        <a href="rest/export" target="_blank" class="button upIcon">
+                            <label i18n="editGeneral.migration.export.action"></label>
+                        </a>
+                    </div>
+                </div>
+                <div class="columns large-12">
+                    <h5><label i18n="editGeneral.migration.import"></label></h5>
+                    <div>
+                        <label i18n="editGeneral.migration.import.desc"></label>
+                    </div>
+                    <div class="warning">
+                        <b><label i18n="editGeneral.migration.import.warning.title"></label></b><br/>
+                        <label i18n="editGeneral.migration.import.warning.desc"></label>
+                    </div>
+                    <div>
+                        <file-uploader endpoint="rest/import" on-upload="onAvailableAppDeployed()"></file-uploader>
+                    </div>
+                </div>
+            </li>
         </ul>
     </div>
 </li>

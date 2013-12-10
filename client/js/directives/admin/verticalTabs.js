@@ -5,7 +5,7 @@ COMPONENTS.directive('verticalTabs', [function () {
         replace: true,
         transclude: true,
         template:   '<ul class="tabs level2">' +
-                        '<li class="button {{tab.styleClass}}" ng-repeat="tab in tabs" ng-class="isCurrentLayer($index)" ' +
+                        '<li class="tabButton {{tab.styleClass}}" ng-repeat="tab in tabs" ng-class="isCurrentLayer($index)" ' +
                         'ng-click="setCurrentLayer($index)">' +
                             '<label i18n="{{tab.title}}"></label>' +
                         '</li>' +
