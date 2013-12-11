@@ -4,17 +4,6 @@
     COMPONENTS.factory('bannerItemService', ['$rootScope', '$injector', 'stringService',
     function ($rootScope, $injector, stringService) {
 
-        var gridSize = 50;
-
-        /**
-         * Gets the grid size that represents the minimum position change of each item
-         *
-         * @returns {number} The grid size
-         */
-        function getGridSize() {
-            return gridSize;
-        }
-
         /**
          * Gets the default value of a given type
          *
@@ -63,10 +52,11 @@
          *                              that wraps the element is
          * @param {object}  borders     The object that contains the information about
          *                              the vertical and horizontal border widths
+         * @param {number}  gridSize    The width of the grid the element is
          */
-        function setModelCoordinatesFromDom(item, contentElm, boxElm, borders) {
-            item.size.width    = getNormalizedSize(contentElm.width(), boxElm.width(), borders.horizontal);
-            item.size.height   = getNormalizedSize(contentElm.height(), boxElm.height(), borders.vertical);
+        function setModelCoordinatesFromDom(item, contentElm, boxElm, borders, gridSize) {
+            item.size.width    = getNormalizedSize(contentElm.width(), boxElm.width(), borders.horizontal, gridSize);
+            item.size.height   = getNormalizedSize(contentElm.height(), boxElm.height(), borders.vertical, gridSize);
             item.position.top  = parseInt(boxElm.css('top'), 10);
             item.position.left = parseInt(boxElm.css('left'), 10);
             if(!$rootScope.$$phase) {
@@ -84,10 +74,11 @@
          *                              that wraps the element is
          * @param {object}  borders     The object that contains the information about
          *                              the vertical and horizontal border widths
+         * @param {number}  gridSize    The width of the grid the element is
          */
-        function refresh(item, contentElm, boxElm, borders) {
+        function refresh(item, contentElm, boxElm, borders, gridSize) {
             //Update the model before propagating the changes
-            setModelCoordinatesFromDom(item, contentElm, boxElm, borders);
+            setModelCoordinatesFromDom(item, contentElm, boxElm, borders, gridSize);
             //Here, the model is updated, but its still necessary to update the DOM
             //in order to get the changes refreshed
             setDomCoordinatesFromModel(item, boxElm, borders);
@@ -105,7 +96,7 @@
         }
 
         /** Private methods **/
-        function getNormalizedSize(contentSize, boxSize, borderBox) {
+        function getNormalizedSize(contentSize, boxSize, borderBox, gridSize) {
             if(contentSize > boxSize) {
                 var heightSlots = Math.ceil(contentSize / gridSize);
                 return heightSlots * gridSize;
@@ -119,7 +110,6 @@
         /** End of private methods **/
 
         return {
-            getGridSize: getGridSize,
             getDefaultValue: getDefaultValue,
             getTypeService: getTypeService,
             refresh: refresh,

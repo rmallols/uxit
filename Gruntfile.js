@@ -1,17 +1,18 @@
 module.exports = function(grunt) {
-    var devKey = 'dev', prodKey = 'prod';
+    var prodKey = 'prod';
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        app_lib: 'client/lib/',
-        app_js: 'client/js/',
-        app_html: 'client/html/',
-        app_css: 'client/css',
-        min: 'client/min/',
-        clean: ['<%= min %>js.min.js', '<%= min %>css.min.css', '<%= app_js %>/resources-<%= pkg.version %>.js'],
+        libFolder: 'client/lib/',
+        jsFolder: 'client/js/',
+        htmlFolder: 'client/html/',
+        cssFolder: 'client/css',
+        minFolder: 'client/min/',
+        appsFolder: 'client/apps/',
+        clean: ['<%= minFolder %>js.min.js', '<%= minFolder %>css.min.css', '<%= jsFolder %>/resources-<%= pkg.version %>.js'],
         jshint: {
-            all: ['<%= app_js %>*.js', '<%= app_js %>controllers/*.js',
-                '<%= app_js %>directives/*.js', '<%= app_js %>directives/**/*.js',
-                '<%= app_js %>services/*.js', '<%= app_js %>services/**/*.js'],
+            all: ['<%= jsFolder %>*.js', '<%= jsFolder %>controllers/*.js',
+                '<%= jsFolder %>directives/*.js', '<%= jsFolder %>directives/**/*.js',
+                '<%= jsFolder %>services/*.js', '<%= jsFolder %>services/**/*.js'],
             options: {
                 '-W014': false, //Bad line breaking,
                 '-W060': false //Document.write can be a form of eval (enable once we have a script loader)
@@ -48,37 +49,37 @@ module.exports = function(grunt) {
                 }
             },
             jsProd: {
-                src : '<%= app_js %>/resources-prod.js',
-                dest : '<%= app_js %>/resources-<%= pkg.version %>.js'
+                src : '<%= jsFolder %>/resources-prod.js',
+                dest : '<%= jsFolder %>/resources-<%= pkg.version %>.js'
             }
         },
         concat: {
             src: {
                 files: {
-                    '<%= min %>js.min.js': [
-                        '<%= app_js %>controllers/*.js',
-                        '<%= app_js %>directives/*.js', '<%= app_js %>directives/*/*.js',
-                        '<%= app_js %>services/*.js', '<%= app_js %>services/*/*.js',
-                        '<%= app_js %>errorHandler.js', '<%= app_js %>templates.js']
+                    '<%= minFolder %>js.min.js': [
+                        '<%= jsFolder %>controllers/*.js',
+                        '<%= jsFolder %>directives/*.js', '<%= jsFolder %>directives/*/*.js',
+                        '<%= jsFolder %>services/*.js', '<%= jsFolder %>services/*/*.js',
+                        '<%= jsFolder %>errorHandler.js', '<%= jsFolder %>templates.js']
                 }
             },
             lib: {
                 files: {
-                    '<%= min %>lib.min.js': [
-                        '<%= app_lib %>date/date.js', '<%= app_lib %>date/i18n/*.js',
-                        '<%= app_lib %>angularJs/angular-sortable-0.0.1.js',
-                        '<%= app_lib %>powerTip/jquery.powertip-1.2.0.js',
-                        '<%= app_lib %>i18n/jquery.i18n.properties-1.0.9.js',
-                        '<%= app_lib %>rangy/rangy-*.js',
-                        '<%= app_lib %>yepnope/yepnope-1.5.4.js',
-                        '<%= app_lib %>form/jquery.form-3.25.0.js',
-                        '<%= app_lib %>morrisJs/*.js',
-                        '<%= app_lib %>select2/select2-3.4.5.js',
-                        '<%= app_lib %>mousetrap/mousetrap-1.4.6.js',
-                        '<%= app_lib %>fullscreen/jquery.fullscreen-1.1.4.js',
-                        '<%= app_lib %>miniColors/jquery.minicolors-2.1.1.js',
-                        '<%= app_lib %>iCheck/jquery.icheck-0.9.1.js',
-                        '<%= app_lib %>nprogress/nprogress-0.1.2.js']
+                    '<%= minFolder %>lib.min.js': [
+                        '<%= libFolder %>date/date.js', '<%= libFolder %>date/i18n/*.js',
+                        '<%= libFolder %>angularJs/angular-sortable-0.0.1.js',
+                        '<%= libFolder %>powerTip/jquery.powertip-1.2.0.js',
+                        '<%= libFolder %>i18n/jquery.i18n.properties-1.0.9.js',
+                        '<%= libFolder %>rangy/rangy-*.js',
+                        '<%= libFolder %>yepnope/yepnope-1.5.4.js',
+                        '<%= libFolder %>form/jquery.form-3.25.0.js',
+                        '<%= libFolder %>morrisJs/*.js',
+                        '<%= libFolder %>select2/select2-3.4.5.js',
+                        '<%= libFolder %>mousetrap/mousetrap-1.4.6.js',
+                        '<%= libFolder %>fullscreen/jquery.fullscreen-1.1.4.js',
+                        '<%= libFolder %>miniColors/jquery.minicolors-2.1.1.js',
+                        '<%= libFolder %>iCheck/jquery.icheck-0.9.1.js',
+                        '<%= libFolder %>nprogress/nprogress-0.1.2.js']
                 }
             }
         },
@@ -91,12 +92,12 @@ module.exports = function(grunt) {
             },
             src: {
                 files: {
-                    '<%= min %>js.min.js': ['<%= min %>js.min.js']
+                    '<%= minFolder %>js.min.js': ['<%= minFolder %>js.min.js']
                 }
             },
             lib: {
                 files: {
-                    '<%= min %>lib.min.js': ['<%= min %>lib.min.js']
+                    '<%= minFolder %>lib.min.js': ['<%= minFolder %>lib.min.js']
                 }
             }
         },
@@ -106,7 +107,7 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    "<%= min %>css.min.css": "client/css/main.less"
+                    "<%= minFolder %>css.min.css": "client/css/main.less"
                 }
             }
         },
@@ -118,7 +119,7 @@ module.exports = function(grunt) {
             },
             main: {
                 src: ['client/**/*.html'],
-                dest: '<%= app_js %>templates.js'
+                dest: '<%= jsFolder %>templates.js'
             }
         },
         shell: {
@@ -171,7 +172,7 @@ module.exports = function(grunt) {
         },
         watch: {
             templates: {
-                files: ['<%= app_html %>**/*.html'],
+                files: ['<%= htmlFolder %>**/*.html', '<%= appsFolder %>**/*.html'],
                 tasks: ['generateTemplates'],
                 options: {
                     spawn: false

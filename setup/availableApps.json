@@ -25,7 +25,11 @@
         "provider": "",
         "rating": "",
         "templates": [ "view", "edit", "help" ],
-        "title": "Banner"
+        "title": "Banner",
+        "defaultModel": {
+            "height": 300,
+            "gridSize": 50
+        }
     },
     {
         "id": "socialApp",

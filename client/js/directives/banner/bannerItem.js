@@ -10,12 +10,10 @@
                 item: '=data',
                 overflow: '=',
                 onItemChange: '&onChange',
-                readOnly: '='
+                readOnly: '=',
+                gridSize: '='
             },
             templateUrl: 'bannerItem.html',
-            controller: function controller() {
-
-            },
             link: function link(scope, element) {
 
                 var itemService = bIS.getTypeService(scope.item.type),
@@ -23,7 +21,6 @@
                     editButtonElm = $(' > button.edit', element),
                     keepItemSelected = false,
                     borderWidth = domService.getObjBorderWidth(element),
-                    gridSize = bIS.getGridSize(),
                     borders = {
                         horizontal  : borderWidth.left + borderWidth.right,
                         vertical    : borderWidth.top + borderWidth.bottom
@@ -35,6 +32,15 @@
                 if(!scope.readOnly) {
                     defineListeners();
                 }
+
+                scope.$watch('gridSize', function(newGridSize) {
+                    setGridSize(newGridSize);
+
+                    var offsetLeft  = element.position().left % scope.gridSize,
+                        offsetTop   = element.position().top % scope.gridSize;
+                    element.css('left', element.position().left - offsetLeft);
+                    element.css('top', element.position().top - offsetTop);
+                });
 
                 /** Private methods **/
                 function getItemTemplate() {
@@ -54,13 +60,13 @@
 
                 function setDraggable() {
                     element.draggable({
-                        grid: [ gridSize,gridSize ],
+                        grid: [ scope.gridSize, scope.gridSize ],
                         start: function() {
                             select();
                         },
                         stop: function() {
                             //Update the model before propagating the changes
-                            bIS.setModelCoordinatesFromDom(scope.item, scope.template, element, borders);
+                            bIS.setModelCoordinatesFromDom(scope.item, scope.template, element, borders, scope.gridSize);
                             bIS.propagateChanges(scope.onItemChange);
                         }
                     });
@@ -73,7 +79,7 @@
                 function setResizable() {
                     element.resizable({
                         //aspectRatio: true,
-                        grid: gridSize,
+                        grid: scope.gridSize,
                         handles: 'ne, nw, se, sw',
                         resize: onResizeItemFn,
                         stop: onStopResizeItemFn
@@ -114,7 +120,7 @@
                 }
 
                 function onStopResizeItemFn() {
-                    bIS.refresh(scope.item, scope.template, element, borders);
+                    bIS.refresh(scope.item, scope.template, element, borders, scope.gridSize);
                     bIS.propagateChanges(scope.onItemChange);
                 }
 
@@ -129,7 +135,7 @@
                             element.removeClass('active');
                             inputElm.removeClass('forceVisible');
                             //Update the model before propagating the changes
-                            bIS.setModelCoordinatesFromDom(scope.item, scope.template, element, borders);
+                            bIS.setModelCoordinatesFromDom(scope.item, scope.template, element, borders, scope.gridSize);
                         }
                     }, 150);
                 }
@@ -155,8 +161,12 @@
                     unselect();
                     hideOverflow();
                     setDraggable(); //Enable dragging again once the edit box is closed
-                    bIS.refresh(scope.item, scope.template, element, borders);
+                    bIS.refresh(scope.item, scope.template, element, borders, scope.gridSize);
                     bIS.propagateChanges(scope.onItemChange);
+                }
+
+                function setGridSize(gridSize) {
+                    element.draggable( "option", "grid", [ gridSize, gridSize ] );
                 }
                 /** End of private methods **/
             }

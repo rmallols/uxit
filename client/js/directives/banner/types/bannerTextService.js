@@ -32,9 +32,10 @@
          *                              that wraps the text element is
          * @param {object}  borders     The object that contains the information about
          *                              the vertical and horizontal border widths
+         * @param {number}  gridSize    The width of the grid the element is
          * @returns {Array}             The array of edit panels of the given text item
          */
-        function getEditPanels(item, contentElm, boxElm, borders) {
+        function getEditPanels(item, contentElm, boxElm, borders, gridSize) {
             return  [
                 {
                     title: 'Content',
@@ -46,7 +47,7 @@
                     },
                     onLayer: {
                         change: function () {
-                            bIS.refresh(item, contentElm, boxElm, borders);
+                            bIS.refresh(item, contentElm, boxElm, borders, gridSize);
                         }
                     }
                 }

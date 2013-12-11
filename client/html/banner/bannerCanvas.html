@@ -3,8 +3,8 @@
         <button class="addImage addIcon" ng-click="addItem('image')">Add image</button>
         <button class="addText addIcon" ng-click="addItem('text')">Add text</button>
     </div>
-    <div class="grid" ng-class="{overflowVisible: overflow.visible}">
+    <div class="grid" ng-class="{overflowVisible: overflow.visible}" ng-style="getCanvasHeight()">
         <div banner-item ng-repeat="item in items.data" data="item" on-change="onItemChange()"
-             overflow="overflow" read-only="isReadOnly()"></div>
+             overflow="overflow" read-only="isReadOnly()" grid-size="gridSize"></div>
     </div>
 </div>

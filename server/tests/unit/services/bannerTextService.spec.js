@@ -43,10 +43,10 @@ describe('bannerItem directive', function () {
 
     describe('getEditPanels', function () {
 
-        var contentElm, editPanels;
+        var contentElm, editPanels, gridSize = 50;
         beforeEach(function() {
             contentElm = $(textPath, bannerItemElm);
-            editPanels = bTS.getEditPanels($scope.model, contentElm, bannerItemElm, borders);
+            editPanels = bTS.getEditPanels($scope.model, contentElm, bannerItemElm, borders, gridSize);
         });
 
         it('should have the proper amount of panels', function () {

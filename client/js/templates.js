@@ -2,7 +2,14 @@ angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'b
 
 angular.module("bannerAppEdit.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerAppEdit.html",
-    "<div>Test edit page</div>");
+    "<div>\n" +
+    "    <div class=\"large-10\">Height (px):</div>\n" +
+    "    <div class=\"large-15\"><input type=\"text\" ng-model=\"model.height\" /></div>\n" +
+    "    <div class=\"large-10\">Grid size (px):</div>\n" +
+    "    <div class=\"large-15\">\n" +
+    "        <select ng-model=\"model.gridSize\" ng-options=\"gridSize for gridSize in gridSizes\"></select>\n" +
+    "    </div>\n" +
+    "</div>");
 }]);
 
 angular.module("bannerAppHelp.html", []).run(["$templateCache", function($templateCache) {
@@ -13,7 +20,7 @@ angular.module("bannerAppHelp.html", []).run(["$templateCache", function($templa
 angular.module("bannerAppView.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerAppView.html",
     "<div>\n" +
-    "    <div banner-canvas ng-model=\"model.items\" on-change=\"onModelChange()\"></div>\n" +
+    "    <div banner-canvas ng-model=\"model.items\" height=\"model.height\" grid-size=\"model.gridSize\" on-change=\"onModelChange()\"></div>\n" +
     "</div>");
 }]);
 
@@ -1210,9 +1217,9 @@ angular.module("bannerCanvas.html", []).run(["$templateCache", function($templat
     "        <button class=\"addImage addIcon\" ng-click=\"addItem('image')\">Add image</button>\n" +
     "        <button class=\"addText addIcon\" ng-click=\"addItem('text')\">Add text</button>\n" +
     "    </div>\n" +
-    "    <div class=\"grid\" ng-class=\"{overflowVisible: overflow.visible}\">\n" +
+    "    <div class=\"grid\" ng-class=\"{overflowVisible: overflow.visible}\" ng-style=\"getCanvasHeight()\">\n" +
     "        <div banner-item ng-repeat=\"item in items.data\" data=\"item\" on-change=\"onItemChange()\"\n" +
-    "             overflow=\"overflow\" read-only=\"isReadOnly()\"></div>\n" +
+    "             overflow=\"overflow\" read-only=\"isReadOnly()\" grid-size=\"gridSize\"></div>\n" +
     "    </div>\n" +
     "</div>");
 }]);

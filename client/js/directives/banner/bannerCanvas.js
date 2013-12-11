@@ -10,19 +10,24 @@
             templateUrl: 'bannerCanvas.html',
             scope: {
                 model: '=ngModel',
+                height: '=',
+                gridSize: '=',
                 onChange: '&'
             },
             link: function link(scope, element) {
 
                 var gridElm     = $(' > .grid', element),
                     directiveId = 'bannerCanvas',
-                    gridSize    = 50,
-                    totalCols   = Math.floor(element.width() / gridSize),
-                    totalRows   = Math.floor(element.height() / gridSize),
                     userSession = sessionService.getUserSession(),
-                    isCreator   = roleService.hasCreatorRole(userSession);
+                    isCreator   = roleService.hasCreatorRole(userSession),
+                    totalCols, totalRows;
 
-                createGrid();
+                scope.$watch('gridSize', function() {
+                    totalCols   = Math.floor(element.width() / scope.gridSize);
+                    totalRows   = Math.floor(scope.height / scope.gridSize);
+                    createGrid();
+                });
+
                 registerKeyboardEvents();
 
                 if(!scope.model) {
@@ -45,15 +50,22 @@
                     return !isCreator || element.attr('readonly') || element.attr('disabled');
                 };
 
+                scope.getCanvasHeight = function() {
+                    return {
+                        height: scope.height
+                    };
+                };
+
                 /** Private methods **/
                 function createGrid() {
-                        var colPos, rowPos;
+                    var colPos, rowPos;
+                    $('.ruler', element).remove();
                     for(var i = 0; i < totalCols; i++) {
-                        colPos = (i + 1) * gridSize;
+                        colPos = (i + 1) * scope.gridSize;
                         gridElm.append('<div class="ruler col" style="top: 0; left: ' + colPos + 'px"></div>');
                     }
                     for(var j = 0; j < totalRows; j++) {
-                        rowPos = (j + 1) * gridSize;
+                        rowPos = (j + 1) * scope.gridSize;
                         gridElm.append('<div class="ruler row" style="top: ' + rowPos + 'px; left: 0"></div>');
                     }
                 }
@@ -63,9 +75,9 @@
                 }
 
                 function createItem(type, value) {
-                    var itemId  = timerService.getRandomNumber(), itemSize = 2 * gridSize,
-                        topPos  = Math.floor(Math.random() * totalRows - 1) * gridSize,
-                        leftPos = Math.floor(Math.random() * totalCols - 1) * gridSize;
+                    var itemId  = timerService.getRandomNumber(), itemSize = 2 * scope.gridSize,
+                        topPos  = Math.floor(Math.random() * totalRows - 1) * scope.gridSize,
+                        leftPos = Math.floor(Math.random() * totalCols - 1) * scope.gridSize;
                     scope.items.index[itemId] = scope.items.data.length;
                     scope.items.data.push({
                         id: itemId,
