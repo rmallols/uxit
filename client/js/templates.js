@@ -20,7 +20,8 @@ angular.module("bannerAppHelp.html", []).run(["$templateCache", function($templa
 angular.module("bannerAppView.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerAppView.html",
     "<div>\n" +
-    "    <div banner-canvas ng-model=\"model.items\" height=\"model.height\" grid-size=\"model.gridSize\" on-change=\"onModelChange()\"></div>\n" +
+    "    <div banner-canvas ng-model=\"model.items\" height=\"model.height\" grid-size=\"model.gridSize\"\n" +
+    "         on-change=\"onModelChange()\"></div>\n" +
     "</div>");
 }]);
 

@@ -1,8 +1,8 @@
 (function() {
+    'use strict';
     COMPONENTS.directive('bannerItem', ['bannerItemService', '$timeout',
     'editBoxUtilsService', 'domService',
     function (bIS, $timeout, editBoxUtilsService, domService) {
-        'use strict';
         return {
             restrict: 'A',
             replace: true,
@@ -35,11 +35,11 @@
 
                 scope.$watch('gridSize', function(newGridSize) {
                     setGridSize(newGridSize);
-
-                    var offsetLeft  = element.position().left % scope.gridSize,
-                        offsetTop   = element.position().top % scope.gridSize;
-                    element.css('left', element.position().left - offsetLeft);
-                    element.css('top', element.position().top - offsetTop);
+                    //Ensure that the banner item fits to the axis of the grid whenever it changes
+                    fitToGrid();
+                    //Once the boundaries of the item fit with the grid size,
+                    //It's still necessary to ensure than the wrapping box is bigger than the content
+                    fitToContent();
                 });
 
                 /** Private methods **/
@@ -79,7 +79,7 @@
                 function setResizable() {
                     element.resizable({
                         //aspectRatio: true,
-                        grid: scope.gridSize,
+                        grid: [scope.gridSize, scope.gridSize],
                         handles: 'ne, nw, se, sw',
                         resize: onResizeItemFn,
                         stop: onStopResizeItemFn
@@ -167,6 +167,29 @@
 
                 function setGridSize(gridSize) {
                     element.draggable( "option", "grid", [ gridSize, gridSize ] );
+                    element.resizable( "option", "grid", [ gridSize, gridSize ] );
+                }
+
+                function fitToGrid() {
+                    scope.item.position.top     -= scope.item.position.top % scope.gridSize;
+                    scope.item.position.left    -= scope.item.position.left % scope.gridSize;
+                    scope.item.size.width       -= scope.item.size.width % scope.gridSize;
+                    scope.item.size.height      -= scope.item.size.height % scope.gridSize;
+                    bIS.setDomCoordinatesFromModel(scope.item, element, borders);
+                }
+
+                function fitToContent() {
+                    //noinspection JSValidateTypes
+                    scope.item.size.width    = bIS.getNormalizedSize(   scope.template.width(),
+                                                                        element.width(),
+                                                                        borders.horizontal,
+                                                                        scope.gridSize);
+                    //noinspection JSValidateTypes
+                    scope.item.size.height   = bIS.getNormalizedSize(   scope.template.height(),
+                                                                        element.height(),
+                                                                        borders.vertical,
+                                                                        scope.gridSize);
+                    bIS.setDomCoordinatesFromModel(scope.item, element, borders);
                 }
                 /** End of private methods **/
             }

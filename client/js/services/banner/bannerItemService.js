@@ -95,7 +95,16 @@
             }
         }
 
-        /** Private methods **/
+        /**
+         * Gets the normalized size (width or height) of an element,
+         * ensuring that the wrapping box is bigger than it
+         *
+         * @param   {number} contentSize    The size (width or height) of the content of the element
+         * @param   {number} boxSize        The size (width or height) of the element itself
+         * @param   {number} borderBox      The size (width or height) of the border of the element
+         * @param   {number} gridSize       The size (width or height) of the grid where the element is
+         * @returns {number}                The normalized size (width or height) of the element
+         */
         function getNormalizedSize(contentSize, boxSize, borderBox, gridSize) {
             if(contentSize > boxSize) {
                 var heightSlots = Math.ceil(contentSize / gridSize);
@@ -104,6 +113,7 @@
             return boxSize + borderBox;
         }
 
+        /** Private methods **/
         function getServiceName(type) {
             return 'banner' + stringService.capitalize(type) + 'Service';
         }
@@ -115,7 +125,8 @@
             refresh: refresh,
             setDomCoordinatesFromModel: setDomCoordinatesFromModel,
             setModelCoordinatesFromDom: setModelCoordinatesFromDom,
-            propagateChanges: propagateChanges
+            propagateChanges: propagateChanges,
+            getNormalizedSize: getNormalizedSize
         };
     }]);
 })();

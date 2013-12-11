@@ -22,11 +22,8 @@
                     isCreator   = roleService.hasCreatorRole(userSession),
                     totalCols, totalRows;
 
-                scope.$watch('gridSize', function() {
-                    totalCols   = Math.floor(element.width() / scope.gridSize);
-                    totalRows   = Math.floor(scope.height / scope.gridSize);
-                    createGrid();
-                });
+                scope.$watch('gridSize', createGrid);
+                scope.$watch('height', createGrid);
 
                 registerKeyboardEvents();
 
@@ -58,14 +55,25 @@
 
                 /** Private methods **/
                 function createGrid() {
-                    var colPos, rowPos;
                     $('.ruler', element).remove();
+                    totalCols   = Math.floor(element.width() / scope.gridSize);
+                    totalRows   = Math.floor(scope.height / scope.gridSize);
+                    createGridCols();
+                    createGridRows();
+                }
+
+                function createGridCols() {
+                    var colPos;
                     for(var i = 0; i < totalCols; i++) {
                         colPos = (i + 1) * scope.gridSize;
                         gridElm.append('<div class="ruler col" style="top: 0; left: ' + colPos + 'px"></div>');
                     }
-                    for(var j = 0; j < totalRows; j++) {
-                        rowPos = (j + 1) * scope.gridSize;
+                }
+
+                function createGridRows() {
+                    var rowPos;
+                    for(var i = 0; i < totalRows; i++) {
+                        rowPos = (i + 1) * scope.gridSize;
                         gridElm.append('<div class="ruler row" style="top: ' + rowPos + 'px; left: 0"></div>');
                     }
                 }
