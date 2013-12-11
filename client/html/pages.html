@@ -10,7 +10,8 @@
                 <ul ux-show="column.rows">
                     <li ng-repeat="row in column.rows" class="rows">
                         <ul>
-                            <li ng-repeat="column in row.columns" resizable-app="{{isAppResizeAllowed()}}" class="columns large-{{column.size}} page" >
+                            <li ng-repeat="column in row.columns" resizable-app="{{isAppResizeAllowed()}}"
+                                ng-class="getColSizeStyleClass(column.size)" class="columns page">
                                 <ul sortable-app="{{isAppSortAllowed()}}" ui-sortable="sortableOptions" ng-model="column.apps" class="appContainer">
                                     <li app="app.id" ng-repeat="app in column.apps" model="app.model" type="app.type" template-app="false" width="column.size"></li>
                                 </ul>

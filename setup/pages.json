@@ -29,6 +29,7 @@
                         "apps": [
                             {
                                 "type": "staticContentApp",
+                                "id": 1377272322541,
                                 "model": {
                                     "selectedContentId": "helloPortal",
                                     "showTitles": true

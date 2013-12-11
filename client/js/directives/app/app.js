@@ -61,6 +61,13 @@
                     });
                 };
 
+                scope.getAppStyleClasses = function() {
+                    var appStyleClasses = {};
+                    appStyleClasses[scope.type] = true;
+                    appStyleClasses[roleService.getCurrentUserAdminAccessStyleClass()] = true;
+                    return appStyleClasses;
+                };
+
                 scope.getCurrentUserAdminAccessStyleClass = function () {
                     return roleService.getCurrentUserAdminAccessStyleClass();
                 };

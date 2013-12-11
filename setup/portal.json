@@ -86,6 +86,7 @@
                             "apps": [
                                 {
                                     "type": "staticContentApp",
+                                    "id": 1377272322592,
                                     "model": {
                                         "showTitles": false,
                                         "showComments": false,

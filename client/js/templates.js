@@ -1173,7 +1173,7 @@ angular.module("styles.html", []).run(["$templateCache", function($templateCache
 
 angular.module("app.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("app.html",
-    "<div class=\"app {{type}} {{getCurrentUserAdminAccessStyleClass()}} cf\" ng-style=\"setAppStyles()\">\n" +
+    "<div ng-class=\"getAppStyleClasses()\" class=\"app cf\" ng-style=\"setAppStyles()\">\n" +
     "    <div app-header class=\"cf\"></div>\n" +
     "	<div class=\"content cf\">\n" +
     "        <div class=\"title\" ng-show=\"isTitleVisible()\"><h5>{{model.title || appInfo.title}}</h5></div>\n" +
@@ -1517,7 +1517,8 @@ angular.module("pages.html", []).run(["$templateCache", function($templateCache)
     "                <ul ux-show=\"column.rows\">\n" +
     "                    <li ng-repeat=\"row in column.rows\" class=\"rows\">\n" +
     "                        <ul>\n" +
-    "                            <li ng-repeat=\"column in row.columns\" resizable-app=\"{{isAppResizeAllowed()}}\" class=\"columns large-{{column.size}} page\" >\n" +
+    "                            <li ng-repeat=\"column in row.columns\" resizable-app=\"{{isAppResizeAllowed()}}\"\n" +
+    "                                ng-class=\"getColSizeStyleClass(column.size)\" class=\"columns page\">\n" +
     "                                <ul sortable-app=\"{{isAppSortAllowed()}}\" ui-sortable=\"sortableOptions\" ng-model=\"column.apps\" class=\"appContainer\">\n" +
     "                                    <li app=\"app.id\" ng-repeat=\"app in column.apps\" model=\"app.model\" type=\"app.type\" template-app=\"false\" width=\"column.size\"></li>\n" +
     "                                </ul>\n" +

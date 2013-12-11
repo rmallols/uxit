@@ -32,6 +32,12 @@ function ($rootScope, portalService, pageService, rowService, appService, roleSe
                 return isAppSortAndResizeAllowed();
             };
 
+            scope.getColSizeStyleClass = function(colSize) {
+                var colStyleClasses = {};
+                colStyleClasses['large-' + colSize] = true;
+                return colStyleClasses;
+            };
+
             /** Private methods **/
             function isAppSortAndResizeAllowed() {
                 return scope.isAdmin() && !appService.isFullscreen();
