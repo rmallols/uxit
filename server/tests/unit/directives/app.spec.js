@@ -30,6 +30,7 @@ describe('app directive', function () {
         $rootScope.$digest();
     }]));
 
+
     describe('root element', function () {
 
         it('should have the app generic style class', function () {

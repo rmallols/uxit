@@ -11,6 +11,7 @@ describe('bannerItem directive', function () {
         $scope                  = $rootScope.$new();
         $scope.model            = model;
         $scope.overflow         = { visible: false };
+        $scope.gridSize         = 50;
         $compile                = compileFn($compile_, $scope, $document_);
         $timeout                = $timeout_;
         sH                      = stringService_;
@@ -171,7 +172,7 @@ describe('bannerItem directive', function () {
     });
 
     function compile() {
-        var template = '<div banner-item data="model" overflow="overflow" read-only="readOnly"></div>';
+        var template = '<div banner-item data="model" overflow="overflow" read-only="readOnly" grid-size="gridSize"></div>';
         bannerItemElm = $compile(template);
         $rootScope.$digest();
     }

@@ -34,12 +34,14 @@
                 }
 
                 scope.$watch('gridSize', function(newGridSize) {
-                    setGridSize(newGridSize);
-                    //Ensure that the banner item fits to the axis of the grid whenever it changes
-                    fitToGrid();
-                    //Once the boundaries of the item fit with the grid size,
-                    //It's still necessary to ensure than the wrapping box is bigger than the content
-                    fitToContent();
+                    if(!scope.readOnly) {
+                        setGridSize(newGridSize);
+                        //Ensure that the banner item fits to the axis of the grid whenever it changes
+                        fitToGrid();
+                        //Once the boundaries of the item fit with the grid size,
+                        //It's still necessary to ensure than the wrapping box is bigger than the content
+                        fitToContent();
+                    }
                 });
 
                 /** Private methods **/

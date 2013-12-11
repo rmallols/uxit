@@ -13,6 +13,8 @@ describe('bannerCanvas directive', function () {
         $rootScope      = $rootScope_;
         $scope          = $rootScope.$new();
         $scope.model    = model;
+        $scope.height   = 300;
+        $scope.gridSize = 50;
         $httpBackend    = $httpBackend_;
         sessionService  = sessionService_;
         roleService     = roleService_;
@@ -116,7 +118,7 @@ describe('bannerCanvas directive', function () {
     });
 
     function compile() {
-        var template    = '<div banner-canvas ng-model="model" style="height: 320px;"></div>',
+        var template    = '<div banner-canvas ng-model="model" height="height" grid-size="gridSize" style="height: 320px;"></div>',
             compile     = compileFn($compile, $scope);
         bannerCanvasDirective = compile(template);
         $rootScope.$digest();
