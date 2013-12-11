@@ -145,8 +145,6 @@
             previousSize = currentSize;
             $('html').addClass('appTemplateFullscreen'); //Allow CSS setup from ancestor DOM elements
             element.addClass('templateFullscreen');
-            console.log("ADDED!", element[0], columns[0]);
-
             updateSearchId(_id);
         }
 
