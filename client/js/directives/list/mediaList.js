@@ -16,7 +16,7 @@ function ($rootScope, mediaService, constantsService) {
             //We're interested in the metadata of the image, but not on the binary data
             scope.projection    = { data: 0 };
             scope.searchTargets = ['name'];
-            scope.onEditPanels  = [{ title: 'Edit media', type: 'editMedia'}];
+            scope.onEditPanels  = [{ title: 'Edit media', src: 'editMedia'}];
             scope.template      = '<img ng-src="{{transcludedData.getDownloadUrl(item)}}" ' +
                                   'title="{{transcludedData.getMediaTitle(item)}}" ' +
                                   'class="cursorPointer" edit-on-click="true" />';

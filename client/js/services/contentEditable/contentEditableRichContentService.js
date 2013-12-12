@@ -16,7 +16,7 @@
             if (cEScope.isEditable() && textSelectionService.isSelection()) {
                 var selectedTextDomObj = textSelectionService.getSelectedTextDomObj(), defaultPanels;
                 cEScope.style = styleService.getComputedStyleInRange(cEDomObj, selectedTextDomObj);
-                defaultPanels = [{ title: 'Content', type: 'richContent', bindings: { style: cEScope.style} }];
+                defaultPanels = [{ title: 'Content', src: 'richContent', bindings: { style: cEScope.style} }];
                 forceTextSelection();
                 cEScope.panels = (cEScope.customPanels) ? cEScope.customPanels : defaultPanels;
                 cEScope.onSave = function() {

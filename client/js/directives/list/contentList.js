@@ -12,7 +12,7 @@ COMPONENTS.directive('contentList', ['constantsService', function (constantsServ
             scope.items         = [];
             scope.collection    = constantsService.collections.content;
             scope.searchTargets = ['title', 'summary', 'content'];
-            scope.onEditPanels  = [{ title: 'Edit content', type: 'editContent'}];
+            scope.onEditPanels  = [{ title: 'Edit content', src: 'editContent'}];
             scope.template      =   '<h3><a href="#"><label i18n-db="item.title"></label></a></h3>' +
                                     '<div class="summary" i18n-db="item.summary"></div>' +
                                     '<div list-expanded-view>' +

@@ -33,7 +33,7 @@
                 scope.selectFromMediaList = function() {
                     scope.panels = [{
                         title: 'Media list selection',
-                        type: 'mediaListPicker',
+                        src: 'mediaListPicker',
                         onLayer: {
                             change: function(selectedMedia) {
                                 success(selectedMedia);

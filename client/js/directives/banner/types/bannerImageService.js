@@ -31,7 +31,7 @@
         function getEditPanels(item) {
             return  [{
                 title: 'Select media',
-                type: 'selectMedia',
+                src: 'selectMedia',
                 config: { editSize: false },
                 onLayer: {
                     change: function (media) {

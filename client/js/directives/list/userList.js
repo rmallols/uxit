@@ -12,8 +12,8 @@ function ($rootScope, mediaService, userService, constantsService, listDbService
             var newUserBindings = { user: {} };
             getUserList();
             scope.collection = constantsService.collections.users;
-            scope.onCreatePanels = [{ title: 'Create user', type: 'createUser', bindings: newUserBindings}];
-            scope.onEditPanels = [{ title: 'Edit users', type: 'editUser'}];
+            scope.onCreatePanels = [{ title: 'Create user', src: 'createUser', bindings: newUserBindings}];
+            scope.onEditPanels = [{ title: 'Edit users', src: 'editUser'}];
             scope.onCreate = function() { onCreate(newUserBindings); };
             scope.onDelete = onDelete;
             scope.transcludedData = {};

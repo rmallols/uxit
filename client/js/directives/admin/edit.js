@@ -88,6 +88,7 @@
                     return (panelForm.$valid) ? 'valid' : 'invalid';
                 };
 
+                setPanelsType();        //Generate the type of each panel based on the src / view attrs
                 initPristineBindings(); //Save the pristine state of the form
                 adjustActionsTopPos();  //Avoid the situation where the actions are hidden on top
 
@@ -120,6 +121,12 @@
                     formObjs.forEach(function (formObj) {
                         formObj.$dirty = false;
                         formObj.$pristine = true;
+                    });
+                }
+
+                function setPanelsType() {
+                    scope.panels.forEach(function (panel) {
+                        panel.type = panel.src + ((panel.view) ? sS.capitalize(panel.view) : '');
                     });
                 }
 

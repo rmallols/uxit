@@ -20,10 +20,10 @@
             var newSlide = {};
             scope.collection = 'slides';
             scope.template = '<label i18n-db="item.content"></label>';
-            scope.onCreatePanels = [{ title: 'Create slide', type: 'slidesAppCreateSlide',
+            scope.onCreatePanels = [{ title: 'Create slide',
                                     appBridge: true, src:'slidesApp', view:'editSlide',
                                     bindings: { model: newSlide}}];
-            scope.onEditPanels = [{ title: 'Edit slide', type: 'slidesAppEditSlide',
+            scope.onEditPanels = [{ title: 'Edit slide',
                                     appBridge: true, src:'slidesApp', view:'editSlide',
                                     bindings: { slide: {}}}];
             scope.config = getEditConfig();

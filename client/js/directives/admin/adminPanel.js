@@ -137,7 +137,7 @@
                     scope.panels.push({
                         title       : title,
                         description : description,
-                        type        : panelId,
+                        src         : panelId,
                         ngClass     : styleClasses,
                         ngStyleFn   : ngStyleFn,
                         onTabClicked: onTabClickedFn,

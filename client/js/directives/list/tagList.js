@@ -11,7 +11,7 @@ COMPONENTS.directive('tagList', ['constantsService', function (constantsService)
             scope.items         = [];
             scope.collection    = constantsService.collections.tags;
             scope.searchTargets = ['text'];
-            scope.onEditPanels  = [{ title: 'Edit tag', type: 'editTag'}];
+            scope.onEditPanels  = [{ title: 'Edit tag', src: 'editTag'}];
 		}
 	};
 }]);

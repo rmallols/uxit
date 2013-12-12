@@ -30,7 +30,7 @@
                     if(scope.onCreatePanels) { //If custom panels are defined for creation, use them
                         panels = scope.onCreatePanels;
                     } else { //Otherwise, use the default create panels
-                        panels = [{ title: 'Create item', type: 'createItem' }];
+                        panels = [{ title: 'Create item', src: 'createItem' }];
                     }
                     return panels;
                 }

@@ -28,8 +28,7 @@
             /** Private methods**/
             function getCreatePanels() {
                 return [{
-                    title: 'Create database', type: 'editDb',
-                    src:'portalsAdmin', view:'editDb', appBridge: true,
+                    title: 'Create database', src:'portalsAdmin', view:'editDb', appBridge: true,
                     bindings: {
                         model: newDb
                     }
@@ -38,8 +37,7 @@
 
             function getEditPanels() {
                 return [{
-                    title: 'Edit database', type: 'editDb',
-                    src:'portalsAdmin', view:'editDb', appBridge: true,
+                    title: 'Edit database', src:'portalsAdmin', view:'editDb', appBridge: true,
                     bindings : {
                         model: scope.model
                     }

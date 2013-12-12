@@ -15,7 +15,7 @@
         function showEditBox(cEScope, cEDomObj, sMDomObj, ngModelCtrl) {
             var defaultPanels = [{
                 title: 'Select media',
-                type: 'selectMedia',
+                src: 'selectMedia',
                 bindings: {
                     mediaSize: getMediaSize(sMDomObj)
                 },
