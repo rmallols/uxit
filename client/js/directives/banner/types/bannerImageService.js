@@ -33,6 +33,7 @@
                 title: 'Select media',
                 src: 'selectMedia',
                 config: { editSize: false },
+                bindings: { mediaSize: '' },
                 onLayer: {
                     change: function (media) {
                         item.value = mediaService.getDownloadUrl(media);

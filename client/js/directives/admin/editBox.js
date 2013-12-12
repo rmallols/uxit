@@ -30,7 +30,7 @@
                         leftPos = (scope.arrowPos === arrowPosOptions.left)
                                     ? scope.target.coordinates.width + scope.target.coordinates.left
                                     - mainScrollingElmMarginLeft + arrowWidth
-                                    : -(element.width() + scope.target.coordinates.width)
+                                    : -(element.width() + arrowWidth)
                                     + scope.target.coordinates.left - mainScrollingElmMarginLeft;
                     return {
                         top : topPos,

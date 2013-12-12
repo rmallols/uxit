@@ -22,7 +22,6 @@
 
                 scope.propagateChanges = function (media) {
                     scope.onLayer.change(media, scope.mediaSize);
-                    //if (scope.onChange) { scope.onChange({$data: media}); }
                 };
 
                 scope.onMediaChange = function($media) {
