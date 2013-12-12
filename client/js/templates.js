@@ -741,7 +741,7 @@ angular.module("createMedia.html", []).run(["$templateCache", function($template
 angular.module("edit.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("edit.html",
     "<div class=\"edit cf\">\n" +
-    "    <div class=\"actions\">\n" +
+    "    <div class=\"actions\" ux-show=\"activeTab.current >= 0\">\n" +
     "        <button class=\"saveIcon\" ng-click=\"save()\"></button>\n" +
     "        <button class=\"cancelIcon\" ng-click=\"cancel()\"></button>\n" +
     "    </div>\n" +

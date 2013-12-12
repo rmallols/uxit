@@ -140,7 +140,7 @@
                 function adjustActionsTopPos() {
                     var actionsElm = $(' > .actions', element);
                     setTimeout(function() {
-                        if(actionsElm.offset().top < 0) {
+                        if(actionsElm.length && actionsElm.offset().top < 0) {
                             actionsElm.css('top', 0);
                         }
                     }, 0);
