@@ -1,7 +1,8 @@
 (function() {
     'use strict';
 
-    var execSetup   = require('../execSetup.js');
+    var execSetup   = require('../../execSetup.js'),
+        listCO      = require('../components/list.cO.js');
 
     module.exports = {
 
@@ -28,9 +29,7 @@
         },
 
         showCreateUserEditBox: function() {
-            var createUserButtonElm;
-            createUserButtonElm = this._ptor.findElement(this._protractor.By.css("button[create-item-button]"));
-            createUserButtonElm.click();
+            listCO.showCreateEditBox();
             return this;
         },
 
@@ -43,15 +42,15 @@
         },
 
         getItemsTitles: function() {
-            return this._ptor.findElements(this._protractor.By.css(".item a"));
+            return listCO.getItemsTitles('a');
         },
 
-        getItemsSelectors: function() {
-            return this._ptor.findElements(this._protractor.By.css(".item ins"));
+        getItemSelectorElms: function() {
+            return listCO.getItemSelectorElms();
         },
 
-        getDeleteItemsButtom: function() {
-            return this._ptor.findElement(this._protractor.By.css("button[ng-click='deleteSelected()']"));
+        getDeleteItemsButtonElm: function() {
+            return listCO.getDeleteItemsButtonElm();
         }
     };
 })();

@@ -1,8 +1,8 @@
 (function() {
     'use strict';
 
-    var execSetup       = require('../execSetup.js'),
-        adminPanelPO    = require('../pageObjects/adminPanel.pO.js');
+    var execSetup       = require('../../execSetup.js'),
+        adminPanelCO    = require('../components/adminPanel.cO.js');
 
     module.exports = {
 
@@ -29,7 +29,7 @@
 
         logout: function() {
             var logoutButtonElm;
-            adminPanelPO.showAdminPanel('.currentUser');
+            adminPanelCO.showAdminPanel('.currentUser');
             logoutButtonElm = this._ptor.findElement(this._protractor.By.css("button[ng-click='logout()']"));
             logoutButtonElm.click();
             return this;

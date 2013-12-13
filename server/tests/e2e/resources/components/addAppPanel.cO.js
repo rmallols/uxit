@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var execSetup = require('../execSetup.js');
+    var execSetup = require('../../execSetup.js');
 
     module.exports = {
 
