@@ -1574,11 +1574,7 @@ angular.module("portalPage.html", []).run(["$templateCache", function($templateC
   $templateCache.put("portalPage.html",
     "<div global-msg></div>\n" +
     "<admin-panel ux-show=\"isAdmin()\"></admin-panel>\n" +
-    "<pages></pages>\n" +
-    "\n" +
-    "        <!--<div style=\"padding: 100px\">\n" +
-    "            <input color-picker placeholder=\"Specify the color\" ng-model=\"model.backgroundColor\" />\n" +
-    "        </div>-->");
+    "<pages></pages>");
 }]);
 
 angular.module("listActions.html", []).run(["$templateCache", function($templateCache) {

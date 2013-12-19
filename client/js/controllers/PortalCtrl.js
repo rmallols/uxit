@@ -7,8 +7,4 @@ function($scope, portalService, roleService, sessionService) {
     };
 
     portalService.initializeResources();
-
-    $scope.model = {
-        backgroundColor: ''
-    }
 }]);

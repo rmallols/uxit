@@ -24,27 +24,20 @@ function ($rootScope, $timeout, styleService, i18nService) {
                 animationSpeed: 0,
                 showSpeed: 0,
                 hideSpeed: 0,
-                show: function () {
-                    removeTransparentColor();
-                    $(this).focus();
-                }
+                show: onColorPaletteShow
             });
 
-            inputElm.blur(function() {
-                scope.model = $(this).val();
+            inputElm.change(function() {
+                scope.model = (scope.isTransparent) ? 'transparent' : $(this).val();
                 scope.$apply();
                 if (scope.onChange) { scope.onChange(); }
             });
 
             scope.$watch('model', function (newVal) {
+                //Ensure that the new model value is an string, as some strange situation may occur...
                 if(angular.isString(newVal)) {
-                    var uiColor = (newVal === 'transparent') ? '' : newVal;
-                    if(newVal === 'transparent') {
-                        setTransparentColor();
-                    }
-                    $timeout(function() { //Update the color in a new thread to avoid $digest problems
-                        inputElm.minicolors('value', uiColor);
-                    });
+                    updateInputColor(newVal);  //Update the UI part of the component
+                //...Otherwise, just initialize the model to a valid, empty string
                 } else if(!inputElm.is(':focus')) {
                     scope.model = '';
                 }
@@ -66,6 +59,23 @@ function ($rootScope, $timeout, styleService, i18nService) {
             };
 
             /** Private methods **/
+            function onColorPaletteShow() {
+                removeTransparentColor();
+                scope.$apply();
+            }
+
+            function updateInputColor(newColor) {
+                var uiColor = (newColor === 'transparent') ? '' : newColor;
+                if(newColor === 'transparent') { setTransparentColor(); }
+                $timeout(function() { //Update the color in a new thread to avoid $digest problems
+                    //Just update if the the source is external, not if the user is editing the input
+                    if(!inputElm.is(':focus')) {
+                        inputElm.minicolors('value', uiColor);
+                        inputElm.val(uiColor);
+                    }
+                });
+            }
+
             function setTransparentColor() {
                 scope.isTransparent = true;
                 scope.model = 'transparent';
@@ -74,7 +84,9 @@ function ($rootScope, $timeout, styleService, i18nService) {
 
             function removeTransparentColor() {
                 scope.isTransparent = false;
-                scope.model = '';
+                if(scope.model === 'transparent') {
+                    scope.model = '';
+                }
                 inputElm.removeAttr('readonly');
             }
 		}
