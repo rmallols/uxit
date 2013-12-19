@@ -17,7 +17,6 @@ describe('urlToken directive', function () {
     describe('main DOM structure', function () {
 
         it('should generate a "label" element', function () {
-            dump(urlTokenElm.text());
             expect(urlTokenElm.is('label')).toBeTruthy();
         });
     });

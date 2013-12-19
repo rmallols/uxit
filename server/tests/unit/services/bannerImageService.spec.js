@@ -52,8 +52,8 @@ describe('bannerItem directive', function () {
             expect(editPanels[0].title).toBe('Select media');
         });
 
-        it('should have the proper type attribute in the edit image layer', function () {
-            expect(editPanels[0].type).toBe('selectMedia');
+        it('should have the proper src attribute in the edit image layer', function () {
+            expect(editPanels[0].src).toBe('selectMedia');
         });
 
         it('should not have the appBridge attribute in the edit image layer', function () {

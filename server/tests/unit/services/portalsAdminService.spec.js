@@ -35,7 +35,7 @@ describe('dbService', function () {
             });
 
             it('should set the proper edit panel data', function() {
-                expect($scope.onEditPanels[0].type).toBe('editDb');
+                expect($scope.onEditPanels[0].src).toBe('portalsAdmin');
                 expect($scope.onEditPanels[0].view).toBe('editDb');
                 expect($scope.onEditPanels[0].src).toBe('portalsAdmin');
                 expect($scope.onEditPanels[0].appBridge).toBe(true);
@@ -49,7 +49,7 @@ describe('dbService', function () {
             });
 
             it('should set the proper edit panel data', function() {
-                expect($scope.onCreatePanels[0].type).toBe('editDb');
+                expect($scope.onEditPanels[0].src).toBe('portalsAdmin');
                 expect($scope.onCreatePanels[0].view).toBe('editDb');
                 expect($scope.onCreatePanels[0].src).toBe('portalsAdmin');
                 expect($scope.onCreatePanels[0].appBridge).toBe(true);
