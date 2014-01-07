@@ -5,9 +5,8 @@ COMPONENTS.directive('styles', [function () {
         replace: true,
         templateUrl: 'styles.html',
         scope: {
-            model : '=styles'
-        },
-        link: function link() {
+            model   : '=styles',
+            target  : '@'
         }
     };
 }]);

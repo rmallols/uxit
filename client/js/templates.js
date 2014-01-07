@@ -778,7 +778,7 @@ angular.module("editAppGeneral.html", []).run(["$templateCache", function($templ
 angular.module("editAppStyles.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("editAppStyles.html",
     "<div>\n" +
-    "    <div styles=\"model.styles\"></div>\n" +
+    "    <div styles=\"model.styles\" target=\"app\"></div>\n" +
     "</div>\n" +
     "");
 }]);
@@ -1039,10 +1039,10 @@ angular.module("editStyles.html", []).run(["$templateCache", function($templateC
     "    <div class=\"content level2\">\n" +
     "        <ul>\n" +
     "            <li class=\"layer\">\n" +
-    "                <div styles=\"model.styles\"></div>\n" +
+    "                <div styles=\"model.styles\" target=\"portal\"></div>\n" +
     "            </li>\n" +
     "            <li class=\"layer\">\n" +
-    "                <div styles=\"model.app.styles\"></div>\n" +
+    "                <div styles=\"model.app.styles\" target=\"app\"></div>\n" +
     "            </li>\n" +
     "        </ul>\n" +
     "    </div>\n" +
@@ -1170,8 +1170,12 @@ angular.module("styles.html", []).run(["$templateCache", function($templateCache
     "        <label i18n=\"editStyles.fontSize\"></label>\n" +
     "        <div><input type=\"text\" ng-model=\"model.fontSize\"/></div>\n" +
     "    </div>\n" +
-    "    <h5>Background</h5>\n" +
+    "    <div class=\"cf\" ng-show=\"target=='app'\">\n" +
+    "        <label i18n=\"editStyles.height\"></label>\n" +
+    "        <div><input type=\"number\" ng-model=\"model.height\"/></div>\n" +
+    "    </div>\n" +
     "    <div class=\"cf\">\n" +
+    "        <h5>Background</h5>\n" +
     "        <background ng-model=\"model.background\"></background>\n" +
     "    </div>\n" +
     "</div>");

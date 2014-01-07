@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/html/input/background.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/tests/unit/directives/background.spec.js" />
-      <change type="DELETED" beforePath="C:\usr\menzit\client\html\input\backgroundImage.html" afterPath="" />
-      <change type="MOVED" beforePath="C:\usr\menzit\client\js\directives\input\backgroundImage.js" afterPath="$PROJECT_DIR$/client/js/directives/input/background.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/input/colorPicker.js" afterPath="$PROJECT_DIR$/client/js/directives/input/colorPicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/config/karma.conf.js" afterPath="$PROJECT_DIR$/server/config/karma.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/directives/mediaPicker.spec.js" afterPath="$PROJECT_DIR$/server/tests/unit/directives/mediaPicker.spec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/admin/editAppStyles.html" afterPath="$PROJECT_DIR$/client/html/admin/editAppStyles.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/admin/editStyles.html" afterPath="$PROJECT_DIR$/client/html/admin/editStyles.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/html.less" afterPath="$PROJECT_DIR$/client/css/html.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_en.properties" afterPath="$PROJECT_DIR$/client/messages/messages_en.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_es.properties" afterPath="$PROJECT_DIR$/client/messages/messages_es.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup/portal.json" afterPath="$PROJECT_DIR$/setup/portal.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/resources-dev.js" afterPath="$PROJECT_DIR$/client/js/resources-dev.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/utils/styleService.js" afterPath="$PROJECT_DIR$/client/js/services/utils/styleService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/admin/styles.html" afterPath="$PROJECT_DIR$/client/html/admin/styles.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/styles.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/styles.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/test-results.xml" afterPath="$PROJECT_DIR$/server/tests/unit/test-results.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -42,46 +35,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="background.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/input/background.html">
+      <file leaf-file-name="styles.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/admin/styles.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="75" selection-start="734" selection-end="740" vertical-scroll-proportion="-4.3333335" vertical-offset="0" max-vertical-offset="459">
+            <state line="8" column="61" selection-start="279" selection-end="279" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="493">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="background.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/input/background.js">
+      <file leaf-file-name="html.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/css/html.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="67" selection-start="890" selection-end="890" vertical-scroll-proportion="-11.96" vertical-offset="109" max-vertical-offset="1037">
+            <state line="50" column="61" selection-start="3488" selection-end="3488" vertical-scroll-proportion="0.6787149" vertical-offset="681" max-vertical-offset="2227">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="background.spec.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/background.spec.js">
+      <file leaf-file-name="styles.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/admin/styles.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="65" selection-start="644" selection-end="644" vertical-scroll-proportion="0.8146965" vertical-offset="0" max-vertical-offset="3366">
+            <state line="8" column="24" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.spec.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/app.spec.js">
+      <file leaf-file-name="editStyles.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/admin/editStyles.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="56" selection-start="664" selection-end="664" vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="2346">
+            <state line="5" column="57" selection-start="199" selection-end="199" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="323">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rolesUtils.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/tests/unit/utils/rolesUtils.js">
+      <file leaf-file-name="editAppStyles.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/admin/editAppStyles.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="98" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="1020">
+            <state line="1" column="43" selection-start="37" selection-end="49" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="153">
               <folding />
             </state>
           </provider>
@@ -106,22 +99,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/html/input/backgroundImage.html" />
-        <option value="$PROJECT_DIR$/setup/portal.json" />
-        <option value="$PROJECT_DIR$/client/js/directives/input/backgroundImage.js" />
-        <option value="$PROJECT_DIR$/client/js/resources-dev.js" />
-        <option value="$PROJECT_DIR$/client/html/admin/styles.html" />
         <option value="$PROJECT_DIR$/client/js/services/utils/styleService.js" />
         <option value="$PROJECT_DIR$/client/js/directives/input/colorPicker.js" />
         <option value="$PROJECT_DIR$/server/tests/unit/directives/mediaPicker.spec.js" />
-        <option value="$PROJECT_DIR$/client/messages/messages_en.properties" />
-        <option value="$PROJECT_DIR$/client/messages/messages_es.properties" />
         <option value="$PROJECT_DIR$/client/html/input/background.html" />
         <option value="$PROJECT_DIR$/client/js/directives/media/mediaPicker.js" />
         <option value="$PROJECT_DIR$/server/config/karma.conf.js" />
         <option value="$PROJECT_DIR$/client/js/directives/input/background.js" />
         <option value="$PROJECT_DIR$/server/tests/unit/utils/rolesUtils.js" />
         <option value="$PROJECT_DIR$/server/tests/unit/directives/background.spec.js" />
+        <option value="$PROJECT_DIR$/client/html/admin/editAppStyles.html" />
+        <option value="$PROJECT_DIR$/client/html/admin/editStyles.html" />
+        <option value="$PROJECT_DIR$/client/js/directives/admin/styles.js" />
+        <option value="$PROJECT_DIR$/client/html/admin/styles.html" />
+        <option value="$PROJECT_DIR$/client/messages/messages_en.properties" />
+        <option value="$PROJECT_DIR$/client/messages/messages_es.properties" />
+        <option value="$PROJECT_DIR$/client/css/html.less" />
       </list>
     </option>
   </component>
@@ -1335,7 +1328,11 @@
       <created>1389089169575</created>
       <updated>1389089169575</updated>
     </task>
-    <option name="localTasksCounter" value="165" />
+    <task id="LOCAL-00165" summary="#246 [App] Set background image">
+      <created>1389119423176</created>
+      <updated>1389119423176</updated>
+    </task>
+    <option name="localTasksCounter" value="166" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1362,6 +1359,7 @@
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49723756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1370,13 +1368,12 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-321" y="-1078" width="1904" height="1037" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-321" y="-1078" width="1904" height="1037" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42679557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1444,64 +1441,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/js/services/utils/styleService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="72" selection-start="5002" selection-end="5002" vertical-scroll-proportion="-4.54902" vertical-offset="1621" max-vertical-offset="2414">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/messages/messages_en.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="58" selection-start="3676" selection-end="3676" vertical-scroll-proportion="-7.6" vertical-offset="1153" max-vertical-offset="3417">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/messages/messages_es.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="45" selection-start="3993" selection-end="3993" vertical-scroll-proportion="-6.24" vertical-offset="1153" max-vertical-offset="3366">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/utils/objectService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0371471" vertical-offset="25" max-vertical-offset="1003">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/media/mediaPicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="70" selection-start="2829" selection-end="2829" vertical-scroll-proportion="0.39375928" vertical-offset="1027" max-vertical-offset="1700">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/lib/miniColors/jquery.minicolors-2.1.1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="14484">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/admin/styles.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="95" selection-start="558" selection-end="611" vertical-scroll-proportion="0.44667697" vertical-offset="0" max-vertical-offset="647">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/mediaPicker.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="53" selection-start="472" selection-end="472" vertical-scroll-proportion="0.2191977" vertical-offset="0" max-vertical-offset="1989">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/html/media/mediaPicker.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="59" selection-start="66" selection-end="85" vertical-scroll-proportion="0.02529762" vertical-offset="0" max-vertical-offset="672">
@@ -1523,20 +1462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/input/background.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="75" selection-start="734" selection-end="740" vertical-scroll-proportion="-4.3333335" vertical-offset="0" max-vertical-offset="459">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/input/background.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="67" selection-start="890" selection-end="890" vertical-scroll-proportion="-11.96" vertical-offset="109" max-vertical-offset="1037">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/app.spec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="56" selection-start="664" selection-end="664" vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="2346">
@@ -1544,16 +1469,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/unit/utils/rolesUtils.js">
+    <entry file="file://$PROJECT_DIR$/client/js/directives/media/mediaPicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="98" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="1020">
+        <state line="79" column="97" selection-start="2973" selection-end="2973" vertical-scroll-proportion="0.46953937" vertical-offset="1027" max-vertical-offset="1700">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/background.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="65" selection-start="644" selection-end="644" vertical-scroll-proportion="0.8146965" vertical-offset="0" max-vertical-offset="3366">
+        <state line="5" column="47" selection-start="252" selection-end="252" vertical-scroll-proportion="0.12630014" vertical-offset="0" max-vertical-offset="3366">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/input/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="67" selection-start="890" selection-end="890" vertical-scroll-proportion="0.44427934" vertical-offset="109" max-vertical-offset="1037">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/input/background.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="75" selection-start="734" selection-end="740" vertical-scroll-proportion="0.34157652" vertical-offset="0" max-vertical-offset="647">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/utils/rolesUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="98" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.41547278" vertical-offset="322" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/admin/editAppStyles.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="43" selection-start="37" selection-end="49" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="153">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/admin/editStyles.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="57" selection-start="199" selection-end="199" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="323">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/styles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="24" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/messages/messages_es.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="92" selection-start="4482" selection-end="4482" vertical-scroll-proportion="0.40544412" vertical-offset="1247" max-vertical-offset="3383">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/messages/messages_en.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="0" selection-start="4003" selection-end="4029" vertical-scroll-proportion="0.60028654" vertical-offset="1094" max-vertical-offset="3434">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/admin/styles.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="61" selection-start="279" selection-end="279" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/html.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="61" selection-start="3488" selection-end="3488" vertical-scroll-proportion="0.6787149" vertical-offset="681" max-vertical-offset="2227">
           <folding />
         </state>
       </provider>

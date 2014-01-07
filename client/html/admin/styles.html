@@ -13,8 +13,12 @@
         <label i18n="editStyles.fontSize"></label>
         <div><input type="text" ng-model="model.fontSize"/></div>
     </div>
-    <h5>Background</h5>
+    <div class="cf" ng-show="target=='app'">
+        <label i18n="editStyles.height"></label>
+        <div><input type="number" ng-model="model.height"/></div>
+    </div>
     <div class="cf">
+        <h5>Background</h5>
         <background ng-model="model.background"></background>
     </div>
 </div>
