@@ -1,0 +1,22 @@
+<div>
+    <div class="columns large-8">
+        <div><label i18n="editStyles.background.color"></label></div>
+        <input color-picker placeholder="Specify the color" ng-model="background.color" />
+    </div>
+    <div class="columns large-5">
+        <div><label i18n="editStyles.background.src"></label></div>
+        <media-picker ng-model="backgroundSrc" multiple="false" preview="true" on-change="changeMediaId($media)"></media-picker>
+    </div>
+    <div class="columns large-4" ng-show="existsSrc()">
+        <div><label i18n="editStyles.background.repeat"></label></div>
+        <div><input type="checkbox" ng-model="background.mosaic"/></div>
+    </div>
+    <div class="columns large-4" ng-show="existsSrc() && !background.mosaic">
+        <div><label i18n="editStyles.background.position.top"></label></div>
+        <select ng-model="background.position.top" ng-options="obj.id as obj.text for obj in position.top"></select>
+    </div>
+    <div class="columns large-4" ng-show="existsSrc() && !background.mosaic">
+        <div><label i18n="editStyles.background.position.left"></label></div>
+        <select ng-model="background.position.left" ng-options="obj.id as obj.text for obj in position.left"></select>
+    </div>
+</div>

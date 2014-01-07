@@ -70,6 +70,10 @@ function ($rootScope, $timeout, styleService, i18nService) {
                 $timeout(function() { //Update the color in a new thread to avoid $digest problems
                     //Just update if the the source is external, not if the user is editing the input
                     if(!inputElm.is(':focus')) {
+                        //Force the case again as otherwise, for some unknown reason,
+                        //the minicolors component will complain from the 2nd time a DOM element
+                        //is instantiated
+                        inputElm.minicolors('letterCase', 'uppercase');
                         inputElm.minicolors('value', uiColor);
                         inputElm.val(uiColor);
                     }

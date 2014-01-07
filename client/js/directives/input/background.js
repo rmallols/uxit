@@ -1,10 +1,10 @@
 (function() {
     'use strict';
-    COMPONENTS.directive('backgroundImage', ['mediaService', function (mediaService) {
+    COMPONENTS.directive('background', ['mediaService', 'objectService', function (mediaService, objectService) {
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: 'backgroundImage.html',
+            templateUrl: 'background.html',
             scope: {
                 background: '=ngModel'
             },
@@ -44,6 +44,10 @@
                     } else {
                         delete scope.background.src;
                     }
+                };
+
+                scope.existsSrc = function() {
+                    return !objectService.isEmpty(scope.backgroundSrc);
                 };
             }
         };

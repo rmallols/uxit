@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="#227 The Minicolors component is broken - tests fixed">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/html/input/backgroundImage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/directives/input/backgroundImage.js" />
-      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.36.0.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\usr\menzit\client\min\css.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\usr\menzit\client\min\js.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/media/mediaPicker.html" afterPath="$PROJECT_DIR$/client/html/media/mediaPicker.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/mediaPicker.less" afterPath="$PROJECT_DIR$/client/css/mediaPicker.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/utils/mediaService.js" afterPath="$PROJECT_DIR$/client/js/services/utils/mediaService.js" />
+    <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/html/input/background.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/tests/unit/directives/background.spec.js" />
+      <change type="DELETED" beforePath="C:\usr\menzit\client\html\input\backgroundImage.html" afterPath="" />
+      <change type="MOVED" beforePath="C:\usr\menzit\client\js\directives\input\backgroundImage.js" afterPath="$PROJECT_DIR$/client/js/directives/input/background.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/input/colorPicker.js" afterPath="$PROJECT_DIR$/client/js/directives/input/colorPicker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/config/karma.conf.js" afterPath="$PROJECT_DIR$/server/config/karma.conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/directives/mediaPicker.spec.js" afterPath="$PROJECT_DIR$/server/tests/unit/directives/mediaPicker.spec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_en.properties" afterPath="$PROJECT_DIR$/client/messages/messages_en.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_es.properties" afterPath="$PROJECT_DIR$/client/messages/messages_es.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup/portal.json" afterPath="$PROJECT_DIR$/setup/portal.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/resources-dev.js" afterPath="$PROJECT_DIR$/client/js/resources-dev.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server.js" afterPath="$PROJECT_DIR$/server/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/apps/socialApp/socialAppService.js" afterPath="$PROJECT_DIR$/client/apps/socialApp/socialAppService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/utils/styleService.js" afterPath="$PROJECT_DIR$/client/js/services/utils/styleService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/admin/styles.html" afterPath="$PROJECT_DIR$/client/html/admin/styles.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/test-results.xml" afterPath="$PROJECT_DIR$/server/tests/unit/test-results.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -41,46 +42,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="styles.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/admin/styles.html">
+      <file leaf-file-name="background.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/input/background.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="56" selection-start="744" selection-end="744" vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="510">
+            <state line="13" column="75" selection-start="734" selection-end="740" vertical-scroll-proportion="-4.3333335" vertical-offset="0" max-vertical-offset="459">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/pages.js">
+      <file leaf-file-name="background.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/input/background.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="50" selection-start="662" selection-end="662" vertical-scroll-proportion="-10.2" vertical-offset="0" max-vertical-offset="918">
+            <state line="24" column="67" selection-start="890" selection-end="890" vertical-scroll-proportion="-11.96" vertical-offset="109" max-vertical-offset="1037">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styleService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/services/utils/styleService.js">
+      <file leaf-file-name="background.spec.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/background.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="85" selection-start="5008" selection-end="5008" vertical-scroll-proportion="0.0" vertical-offset="1648" max-vertical-offset="2346">
+            <state line="15" column="65" selection-start="644" selection-end="644" vertical-scroll-proportion="0.8146965" vertical-offset="0" max-vertical-offset="3366">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backgroundImage.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/input/backgroundImage.js">
+      <file leaf-file-name="app.spec.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/app.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="119" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.0" vertical-offset="186" max-vertical-offset="969">
+            <state line="12" column="56" selection-start="664" selection-end="664" vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="2346">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backgroundImage.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/html/input/backgroundImage.html">
+      <file leaf-file-name="rolesUtils.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/unit/utils/rolesUtils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="93" selection-start="877" selection-end="877" vertical-scroll-proportion="1.0069686" vertical-offset="0" max-vertical-offset="391">
+            <state line="36" column="98" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="1020">
               <folding />
             </state>
           </provider>
@@ -105,22 +106,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/client/html/input/backgroundImage.html" />
+        <option value="$PROJECT_DIR$/setup/portal.json" />
+        <option value="$PROJECT_DIR$/client/js/directives/input/backgroundImage.js" />
         <option value="$PROJECT_DIR$/client/js/resources-dev.js" />
-        <option value="$PROJECT_DIR$/client/html/input/fileUploader.html" />
-        <option value="$PROJECT_DIR$/client/apps/socialApp/socialAppService.js" />
-        <option value="$PROJECT_DIR$/client/css/mediaPicker.less" />
-        <option value="$PROJECT_DIR$/client/html/pages/portalPage.html" />
-        <option value="$PROJECT_DIR$/client/apps/loginApp/loginAppView.html" />
-        <option value="$PROJECT_DIR$/client/html/media/mediaPicker.html" />
-        <option value="$PROJECT_DIR$/client/js/directives/media/mediaPicker.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/pages.js" />
-        <option value="$PROJECT_DIR$/server/server.js" />
-        <option value="$PROJECT_DIR$/client/js/services/utils/mediaService.js" />
         <option value="$PROJECT_DIR$/client/html/admin/styles.html" />
         <option value="$PROJECT_DIR$/client/js/services/utils/styleService.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/input/backgroundImage.js" />
-        <option value="$PROJECT_DIR$/client/html/input/backgroundImage.html" />
+        <option value="$PROJECT_DIR$/client/js/directives/input/colorPicker.js" />
+        <option value="$PROJECT_DIR$/server/tests/unit/directives/mediaPicker.spec.js" />
+        <option value="$PROJECT_DIR$/client/messages/messages_en.properties" />
+        <option value="$PROJECT_DIR$/client/messages/messages_es.properties" />
+        <option value="$PROJECT_DIR$/client/html/input/background.html" />
+        <option value="$PROJECT_DIR$/client/js/directives/media/mediaPicker.js" />
+        <option value="$PROJECT_DIR$/server/config/karma.conf.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/input/background.js" />
+        <option value="$PROJECT_DIR$/server/tests/unit/utils/rolesUtils.js" />
+        <option value="$PROJECT_DIR$/server/tests/unit/directives/background.spec.js" />
       </list>
     </option>
   </component>
@@ -260,7 +261,171 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miniColors" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -377,25 +542,25 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="Settings.JavaScript.Linters.JSHint" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
+    <property name="options.lastSelected" value="vcs.Git" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\usr\menzit\server\tests\unit\utils" />
+      <recent name="C:\usr\menzit\server\tests\unit\directives" />
       <recent name="C:\usr\menzit\client\js\directives\input" />
       <recent name="C:\usr\menzit\client\html\input" />
       <recent name="C:\usr\menzit\server\tests\e2e\pageObjects" />
-      <recent name="C:\usr\menzit\server\tests\e2e\tests" />
-      <recent name="C:\usr\menzit\server\tests\unit\services" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\usr\menzit\server\tests\e2e\resources\components" />
@@ -405,7 +570,15 @@
       <recent name="C:\usr\menzit\client\html\banner\types" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Watch template changes">
+  <component name="RunManager" selected="Node.js.Karma server">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -416,12 +589,8 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -429,10 +598,6 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -1166,7 +1331,11 @@
       <created>1387464265030</created>
       <updated>1387464265030</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="#246 [App] Set background image">
+      <created>1389089169575</created>
+      <updated>1389089169575</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1196,17 +1365,17 @@
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49723756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42679557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712707" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20628834" sideWeight="0.50276244" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-133" y="200" width="1346" height="229" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-321" y="-1078" width="1904" height="1037" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42679557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1228,9 +1397,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712707" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26687115" sideWeight="0.5718232" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-321" y="-1074" width="1911" height="1030" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1242,7 +1411,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="#218 [e2e] User handling" />
     <MESSAGE value="#215 The media upload mechanism is broken" />
     <MESSAGE value="#191  [App] Move the 'settings' icon inside of the box" />
     <MESSAGE value="#162 [Unit tests] listActions" />
@@ -1267,7 +1435,8 @@
     <MESSAGE value="#233 [e2e] Portal handling" />
     <MESSAGE value="#227 The Minicolors component is broken" />
     <MESSAGE value="#227 The Minicolors component is broken - tests fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="#227 The Minicolors component is broken - tests fixed" />
+    <MESSAGE value="#246 [App] Set background image" />
+    <option name="LAST_COMMIT_MESSAGE" value="#246 [App] Set background image" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1275,112 +1444,116 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/html/contentEditable/contentEditable.html">
+    <entry file="file://$PROJECT_DIR$/client/js/services/utils/styleService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="108" selection-start="83" selection-end="170" vertical-scroll-proportion="0.05059524" vertical-offset="0" max-vertical-offset="672" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/crud/mediaService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
+        <state line="109" column="72" selection-start="5002" selection-end="5002" vertical-scroll-proportion="-4.54902" vertical-offset="1621" max-vertical-offset="2414">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/apps/loginApp/loginAppView.html">
+    <entry file="file://$PROJECT_DIR$/client/messages/messages_en.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="672">
+        <state line="79" column="58" selection-start="3676" selection-end="3676" vertical-scroll-proportion="-7.6" vertical-offset="1153" max-vertical-offset="3417">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/media/mediaPicker.html">
+    <entry file="file://$PROJECT_DIR$/client/messages/messages_es.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="31" selection-start="167" selection-end="167" vertical-scroll-proportion="0.07882535" vertical-offset="0" max-vertical-offset="647">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/media/mediaPicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="62" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.60888255" vertical-offset="0" max-vertical-offset="1700">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/pages.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="42" selection-start="28" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="647">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="177" column="86" selection-start="6674" selection-end="6674" vertical-scroll-proportion="0.43387815" vertical-offset="2717" max-vertical-offset="3723">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/utils/stringService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="97" selection-start="4071" selection-end="4071" vertical-scroll-proportion="0.56160456" vertical-offset="1376" max-vertical-offset="2074">
+        <state line="77" column="45" selection-start="3993" selection-end="3993" vertical-scroll-proportion="-6.24" vertical-offset="1153" max-vertical-offset="3366">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/utils/objectService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="40" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0371471" vertical-offset="25" max-vertical-offset="1003">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/utils/mediaService.js">
+    <entry file="file://$PROJECT_DIR$/client/js/directives/media/mediaPicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="32" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.40416047" vertical-offset="867" max-vertical-offset="2380">
+        <state line="76" column="70" selection-start="2829" selection-end="2829" vertical-scroll-proportion="0.39375928" vertical-offset="1027" max-vertical-offset="1700">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/crud/downloadService.js">
+    <entry file="file://$PROJECT_DIR$/client/lib/miniColors/jquery.minicolors-2.1.1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="51" selection-start="490" selection-end="490" vertical-scroll-proportion="0.2679083" vertical-offset="0" max-vertical-offset="698">
-          <folding />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="14484">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/html/admin/styles.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="56" selection-start="744" selection-end="744" vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="510">
+        <state line="17" column="95" selection-start="558" selection-end="611" vertical-scroll-proportion="0.44667697" vertical-offset="0" max-vertical-offset="647">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/pages.js">
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/mediaPicker.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="50" selection-start="662" selection-end="662" vertical-scroll-proportion="-10.2" vertical-offset="0" max-vertical-offset="918">
+        <state line="9" column="53" selection-start="472" selection-end="472" vertical-scroll-proportion="0.2191977" vertical-offset="0" max-vertical-offset="1989">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/utils/styleService.js">
+    <entry file="file://$PROJECT_DIR$/client/html/media/mediaPicker.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="85" selection-start="5008" selection-end="5008" vertical-scroll-proportion="0.0" vertical-offset="1648" max-vertical-offset="2346">
+        <state line="1" column="59" selection-start="66" selection-end="85" vertical-scroll-proportion="0.02529762" vertical-offset="0" max-vertical-offset="672">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/input/backgroundImage.js">
+    <entry file="file://$PROJECT_DIR$/server/config/karma.conf.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="119" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.0" vertical-offset="186" max-vertical-offset="969">
+        <state line="13" column="63" selection-start="455" selection-end="455" vertical-scroll-proportion="0.25705793" vertical-offset="48" max-vertical-offset="1734">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/input/backgroundImage.html">
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/utils/portalUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="93" selection-start="877" selection-end="877" vertical-scroll-proportion="1.0069686" vertical-offset="0" max-vertical-offset="391">
+        <state line="71" column="52" selection-start="2325" selection-end="2346" vertical-scroll-proportion="0.8295129" vertical-offset="628" max-vertical-offset="1326">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/input/background.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="75" selection-start="734" selection-end="740" vertical-scroll-proportion="-4.3333335" vertical-offset="0" max-vertical-offset="459">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/input/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="67" selection-start="890" selection-end="890" vertical-scroll-proportion="-11.96" vertical-offset="109" max-vertical-offset="1037">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/app.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="56" selection-start="664" selection-end="664" vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="2346">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/utils/rolesUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="98" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/background.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="65" selection-start="644" selection-end="644" vertical-scroll-proportion="0.8146965" vertical-offset="0" max-vertical-offset="3366">
           <folding />
         </state>
       </provider>

@@ -1,11 +1,5 @@
 <div>
     <div class="cf">
-        <label i18n="editStyles.backgroundColor"></label>
-        <div>
-            <input color-picker placeholder="Specify the color" ng-model="model.backgroundColor" />
-        </div>
-    </div>
-    <div class="cf">
         <label i18n="editStyles.fontColor"></label>
         <div>
             <input color-picker placeholder="Specify the color" ng-model="model.color" />
@@ -19,7 +13,8 @@
         <label i18n="editStyles.fontSize"></label>
         <div><input type="text" ng-model="model.fontSize"/></div>
     </div>
+    <h5>Background</h5>
     <div class="cf">
-        <background-image ng-model="model.backgroundImg"></background-image>
+        <background ng-model="model.background"></background>
     </div>
 </div>

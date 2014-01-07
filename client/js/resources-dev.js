@@ -153,7 +153,7 @@ window.speed = 150;
     getScript(directivePath + '/banner/types/bannerImageService.js');
     getScript(directivePath + '/input/autoComplete.js');
     getScript(directivePath + '/input/fileUploader.js');
-    getScript(directivePath + '/input/backgroundImage.js');
+    getScript(directivePath + '/input/background.js');
     getScript(directivePath + '/input/rating.js');
     getScript(directivePath + '/input/colorPicker.js');
     getScript(directivePath + '/input/checkbox.js');

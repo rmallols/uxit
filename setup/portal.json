@@ -2,7 +2,9 @@
         "app": { "showTitle": false,
             "showComments": false,
             "styles": {
-                "backgroundColor": "#FFFFFF",
+                "background": {
+                    "color": "#FFFFFF"
+                },
                 "padding": "15"
             },
             "float": "left",
@@ -20,10 +22,9 @@
         "html5Fullscreen": "x1",
         "notifications": {  },
         "styles": {
-            "background": "",
+            "background": {},
             "fontSize": "",
-            "color": "",
-            "backgroundColor": ""
+            "color": ""
         },
         "template": {
             "rows": [

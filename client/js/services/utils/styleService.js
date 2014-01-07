@@ -16,8 +16,8 @@
             if (!destMdl) { destMdl = {}; }
             for (styleKey in sourceMdl) {
                 if (sourceMdl.hasOwnProperty(styleKey)) {
-                    if(styleKey === 'backgroundImg') {
-                        getNormalizedBackgroundImgStyles(sourceMdl, styleKey, destMdl);
+                    if(styleKey === 'background') {
+                        getNormalizedbackgroundStyles(sourceMdl, styleKey, destMdl);
                     } else {
                         getNormalizedDefaultStyles(sourceMdl, styleKey, destMdl);
                     }
@@ -109,14 +109,18 @@
             }
         }
 
-        function getNormalizedBackgroundImgStyles(sourceMdl, styleKey, destMdl) {
-            var backgroundImg = sourceMdl[styleKey],
-                mediaUrl = mediaService.getDownloadUrl(backgroundImg.src);
-            destMdl.backgroundImage = 'url("' + mediaUrl + '")';
-            //noinspection JSUnresolvedVariable
-            destMdl.backgroundRepeat = (backgroundImg.mosaic) ? '' : 'no-repeat';
-            if(backgroundImg.position) {
-                destMdl.backgroundPosition = backgroundImg.position.top + ' ' + backgroundImg.position.left;
+        function getNormalizedbackgroundStyles(sourceMdl, styleKey, destMdl) {
+            var background  = sourceMdl[styleKey],
+                mediaUrl    = mediaService.getDownloadUrl(background.src);
+            if(background.color)    { destMdl.backgroundColor = background.color; }
+            if(background.src)      {
+                destMdl.backgroundImage = 'url("' + mediaUrl + '")';
+                //noinspection JSUnresolvedVariable
+                if(background.mosaic)   { destMdl.backgroundRepeat = ''; }
+                else                    { destMdl.backgroundRepeat = 'no-repeat'; }
+                if(background.position) {
+                    destMdl.backgroundPosition = background.position.top + ' ' + background.position.left;
+                }
             }
         }
 

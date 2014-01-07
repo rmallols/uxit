@@ -80,8 +80,16 @@ describe('mediaPicker directive', function () {
             expect(isVisible($(' > img.current', mediaPickerDirective))).toBe(false);
         });
 
-        it('should not show the image preview if it has been explicitly defined as true', function () {
+        it('should not show the image preview if it has been explicitly defined as true ' +
+            'but the model is not present', function () {
             var mediaPickerDirective = compile(template, { user: {}, preview: true});
+            $rootScope.$digest();
+            expect(isVisible($(' > img.current', mediaPickerDirective))).toBe(false);
+        });
+
+        it('should show the image preview if it has been explicitly defined as true ' +
+            'and the model is present', function () {
+            var mediaPickerDirective = compile(template, { user: { media: {}}, preview: true});
             $rootScope.$digest();
             expect(isVisible($(' > img.current', mediaPickerDirective))).toBe(true);
         });
