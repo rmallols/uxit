@@ -1,7 +1,8 @@
 (function () {
     'use strict';
 
-    COMPONENTS.factory('mediaService', ['crudService', 'constantsService', function (crudService, constantsService) {
+    COMPONENTS.factory('mediaService', ['crudService', 'objectService', 'constantsService',
+    function (crudService, objectService, constantsService) {
 
         /**
          *  Creates new media item(s)
@@ -62,13 +63,18 @@
         /**
          * Gets the download URL of given media object, based on it's Id and it's name
          *
-         * @param   {object} media  The media of which the download URL is going to be retrieved
-         * @returns {*}             The download URL if the media object is valid. Null otherwise
+         * @param   {*} media   The media of which the download URL is going to be retrieved.
+         *                      This can be defined as the Id of the source or the whole object
+         * @returns {*}         The download URL if the media object is valid. Null otherwise
          */
         function getDownloadUrl(media) {
-            //noinspection JSHint
-            if(media && media._id) {
-                return 'media/' + media._id + '/' + media.name;
+            if(objectService.isObject(media)) {
+                //Consider the name of the object. This will allow to download it with its name
+                if(media && media._id) {
+                    return 'media/' + media._id + '/' + media.name;
+                }
+            } else { //Don't consider the name of the object. This is enough i.e. for background images
+                return 'media/' + media;
             }
             return null;
         }

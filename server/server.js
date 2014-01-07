@@ -171,7 +171,7 @@ app.post('/:portalId/media/upload/:id?*', checkAuth, setupDb, function (req, res
     });
 });
 
-app.get('/:portalId/media/:id/:name', setupDb, function (req, res) {
+app.get('/:portalId/media/:id/:name?', setupDb, function (req, res) {
     downloadService.download(req.dbCon, req.params.id, function (content) {
         redirectionService.goToMedia(req, res, content);
     });

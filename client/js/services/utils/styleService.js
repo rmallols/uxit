@@ -1,7 +1,8 @@
 (function () {
     'use strict';
 
-    COMPONENTS.factory('styleService', ['stringService', function (stringService) {
+    COMPONENTS.factory('styleService', ['mediaService', 'stringService',
+    function (mediaService, stringService) {
 
         /**
          * Normalizes the styles properties of a given CSS style model
@@ -11,16 +12,14 @@
          * @returns {object}            The target styles with the styles copied from source to target
          */
         function getNormalizedStyles(sourceMdl, destMdl) {
-            var styleKey, styleValue;
-            if (!destMdl) {
-                destMdl = {};
-            }
+            var styleKey;
+            if (!destMdl) { destMdl = {}; }
             for (styleKey in sourceMdl) {
                 if (sourceMdl.hasOwnProperty(styleKey)) {
-                    styleValue = sourceMdl[styleKey];
-                    if (styleValue) {
-                        //noinspection JSUnfilteredForInLoop
-                        destMdl[styleKey] = sourceMdl[styleKey];
+                    if(styleKey === 'backgroundImg') {
+                        getNormalizedBackgroundImgStyles(sourceMdl, styleKey, destMdl);
+                    } else {
+                        getNormalizedDefaultStyles(sourceMdl, styleKey, destMdl);
                     }
                 }
             }
@@ -100,6 +99,28 @@
 
             return ("#" + componentToHex(rgbObj.r) + componentToHex(rgbObj.g) + componentToHex(rgbObj.b)).toUpperCase();
         }
+
+        /** Private methods **/
+        function getNormalizedDefaultStyles(sourceMdl, styleKey, destMdl) {
+            var styleValue = sourceMdl[styleKey];
+            if (styleValue) {
+                //noinspection JSUnfilteredForInLoop
+                destMdl[styleKey] = sourceMdl[styleKey];
+            }
+        }
+
+        function getNormalizedBackgroundImgStyles(sourceMdl, styleKey, destMdl) {
+            var backgroundImg = sourceMdl[styleKey],
+                mediaUrl = mediaService.getDownloadUrl(backgroundImg.src);
+            destMdl.backgroundImage = 'url("' + mediaUrl + '")';
+            //noinspection JSUnresolvedVariable
+            destMdl.backgroundRepeat = (backgroundImg.mosaic) ? '' : 'no-repeat';
+            if(backgroundImg.position) {
+                destMdl.backgroundPosition = backgroundImg.position.top + ' ' + backgroundImg.position.left;
+            }
+        }
+
+        /** End of private methods **/
 
         return {
             getNormalizedStyles: getNormalizedStyles,

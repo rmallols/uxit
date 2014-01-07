@@ -1,4 +1,4 @@
-angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'bannerAppView.html', 'contentListAppAdd.html', 'contentListAppEdit.html', 'contentListAppHelp.html', 'contentListAppView.html', 'iframeAppEdit.html', 'iframeAppHelp.html', 'iframeAppView.html', 'imageAppEdit.html', 'imageAppHelp.html', 'imageAppView.html', 'languageSelectAppEdit.html', 'languageSelectAppHelp.html', 'languageSelectAppView.html', 'linksAppEdit.html', 'linksAppHelp.html', 'linksAppView.html', 'loginAppEdit.html', 'loginAppHelp.html', 'loginAppView.html', 'mapAppEdit.html', 'mapAppHelp.html', 'mapAppView.html', 'mediaCarouselAppEdit.html', 'mediaCarouselAppHelp.html', 'mediaCarouselAppSelectMedia.html', 'mediaCarouselAppView.html', 'mediaListAppAdd.html', 'mediaListAppEdit.html', 'mediaListAppHelp.html', 'mediaListAppView.html', 'menuAppEdit.html', 'menuAppHelp.html', 'menuAppView.html', 'portalsAdminAppHelp.html', 'portalsAdminAppView.html', 'example.html', 'slidesAppCreateSlide.html', 'slidesAppEdit.html', 'slidesAppEditSlide.html', 'slidesAppHelp.html', 'slidesAppView.html', 'socialAppEdit.html', 'socialAppHelp.html', 'socialAppView.html', 'staticContentAppAdd.html', 'staticContentAppEdit.html', 'staticContentAppHelp.html', 'staticContentAppSelectContent.html', 'staticContentAppView.html', 'userListAppAdd.html', 'userListAppEdit.html', 'userListAppHelp.html', 'userListAppView.html', 'videoAppEdit.html', 'videoAppHelp.html', 'videoAppView.html', 'webGlAppEdit.html', 'webGlAppHelp.html', 'webGlAppView.html', 'addAppPanel.html', 'adminPanel.html', 'createMedia.html', 'edit.html', 'editAppGeneral.html', 'editAppStyles.html', 'editBox.html', 'editContent.html', 'editContentList.html', 'editCurrentUser.html', 'editGeneral.html', 'editMedia.html', 'editMediaList.html', 'editNotifications.html', 'editPages.html', 'editStyles.html', 'editTag.html', 'editTagList.html', 'editUser.html', 'editUserList.html', 'portalsAdminEditDb.html', 'portalsAdminView.html', 'stats.html', 'styles.html', 'app.html', 'appHeader.html', 'bannerCanvas.html', 'bannerItem.html', 'bannerTextEditText.html', 'comment.html', 'comments.html', 'contentEditable.html', 'richContent.html', 'selectMedia.html', 'fileUploader.html', 'password.html', 'rating.html', 'contentList.html', 'list.html', 'listDb.html', 'mediaList.html', 'tagList.html', 'userList.html', 'login.html', 'mediaPicker.html', 'pages.html', 'errorPage.html', 'loginPage.html', 'portalPage.html', 'listActions.html', 'listEdit.html']);
+angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'bannerAppView.html', 'contentListAppAdd.html', 'contentListAppEdit.html', 'contentListAppHelp.html', 'contentListAppView.html', 'iframeAppEdit.html', 'iframeAppHelp.html', 'iframeAppView.html', 'imageAppEdit.html', 'imageAppHelp.html', 'imageAppView.html', 'languageSelectAppEdit.html', 'languageSelectAppHelp.html', 'languageSelectAppView.html', 'linksAppEdit.html', 'linksAppHelp.html', 'linksAppView.html', 'loginAppEdit.html', 'loginAppHelp.html', 'loginAppView.html', 'mapAppEdit.html', 'mapAppHelp.html', 'mapAppView.html', 'mediaCarouselAppEdit.html', 'mediaCarouselAppHelp.html', 'mediaCarouselAppSelectMedia.html', 'mediaCarouselAppView.html', 'mediaListAppAdd.html', 'mediaListAppEdit.html', 'mediaListAppHelp.html', 'mediaListAppView.html', 'menuAppEdit.html', 'menuAppHelp.html', 'menuAppView.html', 'portalsAdminAppHelp.html', 'portalsAdminAppView.html', 'example.html', 'slidesAppCreateSlide.html', 'slidesAppEdit.html', 'slidesAppEditSlide.html', 'slidesAppHelp.html', 'slidesAppView.html', 'socialAppEdit.html', 'socialAppHelp.html', 'socialAppView.html', 'staticContentAppAdd.html', 'staticContentAppEdit.html', 'staticContentAppHelp.html', 'staticContentAppSelectContent.html', 'staticContentAppView.html', 'userListAppAdd.html', 'userListAppEdit.html', 'userListAppHelp.html', 'userListAppView.html', 'videoAppEdit.html', 'videoAppHelp.html', 'videoAppView.html', 'webGlAppEdit.html', 'webGlAppHelp.html', 'webGlAppView.html', 'addAppPanel.html', 'adminPanel.html', 'createMedia.html', 'edit.html', 'editAppGeneral.html', 'editAppStyles.html', 'editBox.html', 'editContent.html', 'editContentList.html', 'editCurrentUser.html', 'editGeneral.html', 'editMedia.html', 'editMediaList.html', 'editNotifications.html', 'editPages.html', 'editStyles.html', 'editTag.html', 'editTagList.html', 'editUser.html', 'editUserList.html', 'portalsAdminEditDb.html', 'portalsAdminView.html', 'stats.html', 'styles.html', 'app.html', 'appHeader.html', 'bannerCanvas.html', 'bannerItem.html', 'bannerTextEditText.html', 'comment.html', 'comments.html', 'contentEditable.html', 'richContent.html', 'selectMedia.html', 'backgroundImage.html', 'fileUploader.html', 'password.html', 'rating.html', 'contentList.html', 'list.html', 'listDb.html', 'mediaList.html', 'tagList.html', 'userList.html', 'login.html', 'mediaPicker.html', 'pages.html', 'errorPage.html', 'loginPage.html', 'portalPage.html', 'listActions.html', 'listEdit.html']);
 
 angular.module("bannerAppEdit.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerAppEdit.html",
@@ -1176,6 +1176,9 @@ angular.module("styles.html", []).run(["$templateCache", function($templateCache
     "        <label i18n=\"editStyles.fontSize\"></label>\n" +
     "        <div><input type=\"text\" ng-model=\"model.fontSize\"/></div>\n" +
     "    </div>\n" +
+    "    <div class=\"cf\">\n" +
+    "        <background-image ng-model=\"model.backgroundImg\"></background-image>\n" +
+    "    </div>\n" +
     "</div>");
 }]);
 
@@ -1362,6 +1365,28 @@ angular.module("selectMedia.html", []).run(["$templateCache", function($template
     "</div>");
 }]);
 
+angular.module("backgroundImage.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("backgroundImage.html",
+    "<div>\n" +
+    "    <div class=\"columns large-7\">\n" +
+    "        <div>Image:</div>\n" +
+    "        <media-picker ng-model=\"backgroundSrc\" multiple=\"false\" preview=\"true\" on-change=\"changeMediaId($media)\"></media-picker>\n" +
+    "    </div>\n" +
+    "    <div class=\"columns large-4\" ng-show=\"backgroundSrc\">\n" +
+    "        <div>Display as mosaic:</div>\n" +
+    "        <div><input type=\"checkbox\" ng-model=\"background.mosaic\"/></div>\n" +
+    "    </div>\n" +
+    "    <div class=\"columns large-7\" ng-show=\"backgroundSrc && !background.mosaic\">\n" +
+    "        <div>Top position:</div>\n" +
+    "        <select ng-model=\"background.position.top\" ng-options=\"obj.id as obj.text for obj in position.top\"></select>\n" +
+    "    </div>\n" +
+    "    <div class=\"columns large-7\" ng-show=\"backgroundSrc && !background.mosaic\">\n" +
+    "        <div>Left position:</div>\n" +
+    "        <select ng-model=\"background.position.left\" ng-options=\"obj.id as obj.text for obj in position.left\"></select>\n" +
+    "    </div>\n" +
+    "</div>");
+}]);
+
 angular.module("fileUploader.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("fileUploader.html",
     "<form enctype=\"multipart/form-data\" action=\"{{endpoint||'media/upload/'}}\" method=\"post\" class=\"fileUploader\">\n" +
@@ -1504,7 +1529,7 @@ angular.module("mediaPicker.html", []).run(["$templateCache", function($template
     "    <button class=\"mediaIcon\" ng-click=\"selectFromMediaList()\">\n" +
     "        <label i18n=\"fileUploader.selectFromMediaList\"></label>\n" +
     "    </button>\n" +
-    "    <img class=\"current\" ng-src=\"{{getDownloadUrl(model)}}\" ng-show=\"preview=='true'\" title=\"{{getFileTitle(model)}}\" />\n" +
+    "    <img class=\"current\" ng-src=\"{{getDownloadUrl(model)}}\" ng-show=\"model && preview=='true'\" title=\"{{getFileTitle(model)}}\" />\n" +
     "    <button class=\"removeIcon small\" ng-click=\"deleteSelection()\" ng-show=\"model._id\">\n" +
     "        <label i18n=\"fileUploader.deleteSelection\"></label>\n" +
     "    </button>\n" +

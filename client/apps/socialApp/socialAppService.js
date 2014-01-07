@@ -10,7 +10,7 @@
                 { id: 'small',  text: 'Small' },
                 { id: 'medium', text: 'Medium' },
                 { id: 'big',    text: 'Big' }
-            ]
+            ];
         }
 
         return {

@@ -2,7 +2,7 @@
     <button class="mediaIcon" ng-click="selectFromMediaList()">
         <label i18n="fileUploader.selectFromMediaList"></label>
     </button>
-    <img class="current" ng-src="{{getDownloadUrl(model)}}" ng-show="preview=='true'" title="{{getFileTitle(model)}}" />
+    <img class="current" ng-src="{{getDownloadUrl(model)}}" ng-show="model && preview=='true'" title="{{getFileTitle(model)}}" />
     <button class="removeIcon small" ng-click="deleteSelection()" ng-show="model._id">
         <label i18n="fileUploader.deleteSelection"></label>
     </button>
