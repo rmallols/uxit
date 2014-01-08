@@ -116,7 +116,8 @@
                 }
 
                 function getModelFromIndex(array, matcher) {
-                    return (array) ? array.model[array.index[matcher]] : null;
+                    //Return a new element to avoid memory references
+                    return (array) ? $.extend(true, {}, array.model[array.index[matcher]]) : null;
                 }
 
                 function setSharedBindings() {

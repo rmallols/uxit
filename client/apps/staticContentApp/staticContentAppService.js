@@ -12,7 +12,7 @@
             loadContent(scope);
             $rootScope.$on(onContentChangedFn, function (e, updatedContentId) {
                 //Refresh the content just if the updated content is the current one
-                if (scope.internalData._id === updatedContentId) {
+                if (scope.model.selectedContentId === updatedContentId) {
                     loadContent(scope);
                 }
             });
