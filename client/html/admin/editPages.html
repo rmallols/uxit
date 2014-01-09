@@ -13,7 +13,7 @@
                 <div class="columns large-9 textAlignRight"><label i18n="editPages.text"></label></div>
                 <div class="columns large-16">
                     <input type="text" ng-model="selectedPage.text" i18n-db-input mandatory
-                           placeholder="editPages.text.placeholder" />
+                           placeholder="editPages.text.placeholder" ux-change="registerSelectedPageChange()" />
                 </div>
                 <div class="columns large-9 textAlignRight"><label i18n="editPages.description"></label></div>
                 <div class="columns large-16">
@@ -24,6 +24,10 @@
                 <div class="columns large-16">
                     <select ng-model="selectedPage.type" ng-options="obj.id as obj.text for obj in pageTypes"
                             ng-change="registerSelectedPageChange()"></select>
+                </div>
+                <div class="columns large-9 textAlignRight"><label i18n="editPages.invisible"></label></div>
+                <div class="columns large-16">
+                    <input type="checkbox" ng-model="selectedPage.invisible" ux-change="registerSelectedPageChange()" />
                 </div>
                 <div ux-show="selectedPage.type=='externalLink'">
                     <div class="columns large-8 textAlignRight"><label i18n="editPages.url"></label></div>

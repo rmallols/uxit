@@ -12,7 +12,7 @@
          */
         function loadPages(callback) {
             var params = {
-                sort        : { field: 'position', order : '1' }
+                sort    : { field: 'position', order : '1' }
             };
             crudService.get(constantsService.collections.pages, null, params, function (returnedPages) {
                 pages = returnedPages.results;

@@ -288,7 +288,7 @@ angular.module("menuAppView.html", []).run(["$templateCache", function($template
   $templateCache.put("menuAppView.html",
     "<div>\n" +
     "    <ul class=\"pagesMenu\">\n" +
-    "        <li ng-repeat=\"page in pages\" class=\"page\" ng-class=\"getPageStyleClass(page)\" ng-show=\"!page.parentPageId\">\n" +
+    "        <li ng-repeat=\"page in pages\" class=\"page\" ng-class=\"getPageStyleClass(page)\" ng-show=\"!page.parentPageId && !page.invisible\">\n" +
     "            <h6>\n" +
     "                <a href=\"{{getPageUrl(page)}}\" target=\"{{getPageTarget(page)}}\" title=\"{{page.description}}\" i18n-db-title>\n" +
     "                    <button class=\"toggleSubPages downIcon small\" ng-show=\"hasSubPages(page)\"></button>\n" +
@@ -298,7 +298,7 @@ angular.module("menuAppView.html", []).run(["$templateCache", function($template
     "            <div class=\"subPagesMenuContainer\">\n" +
     "                <ul class=\"subPagesMenu\" ng-show=\"page.hasSubPages\">\n" +
     "                    <li ng-repeat=\"subPage in pages\" class=\"page\" ng-class=\"getPageStyleClass(subPage)\"\n" +
-    "                        ux-show=\"isSubPageOf(subPage, page)\">\n" +
+    "                        ux-show=\"isSubPageOf(subPage, page) && !subPage.invisible\">\n" +
     "                        <h6>\n" +
     "                            <a href=\"{{getPageUrl(subPage)}}\" target=\"{{getPageTarget(subPage)}}\" title=\"{{subPage.description}}\" i18n-db-title>\n" +
     "                                <label i18n-db=\"subPage.text\"></label>\n" +
@@ -990,7 +990,7 @@ angular.module("editPages.html", []).run(["$templateCache", function($templateCa
     "                <div class=\"columns large-9 textAlignRight\"><label i18n=\"editPages.text\"></label></div>\n" +
     "                <div class=\"columns large-16\">\n" +
     "                    <input type=\"text\" ng-model=\"selectedPage.text\" i18n-db-input mandatory\n" +
-    "                           placeholder=\"editPages.text.placeholder\" />\n" +
+    "                           placeholder=\"editPages.text.placeholder\" ux-change=\"registerSelectedPageChange()\" />\n" +
     "                </div>\n" +
     "                <div class=\"columns large-9 textAlignRight\"><label i18n=\"editPages.description\"></label></div>\n" +
     "                <div class=\"columns large-16\">\n" +
@@ -1001,6 +1001,10 @@ angular.module("editPages.html", []).run(["$templateCache", function($templateCa
     "                <div class=\"columns large-16\">\n" +
     "                    <select ng-model=\"selectedPage.type\" ng-options=\"obj.id as obj.text for obj in pageTypes\"\n" +
     "                            ng-change=\"registerSelectedPageChange()\"></select>\n" +
+    "                </div>\n" +
+    "                <div class=\"columns large-9 textAlignRight\"><label i18n=\"editPages.invisible\"></label></div>\n" +
+    "                <div class=\"columns large-16\">\n" +
+    "                    <input type=\"checkbox\" ng-model=\"selectedPage.invisible\" ux-change=\"registerSelectedPageChange()\" />\n" +
     "                </div>\n" +
     "                <div ux-show=\"selectedPage.type=='externalLink'\">\n" +
     "                    <div class=\"columns large-8 textAlignRight\"><label i18n=\"editPages.url\"></label></div>\n" +

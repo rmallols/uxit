@@ -1,6 +1,6 @@
 <div>
     <ul class="pagesMenu">
-        <li ng-repeat="page in pages" class="page" ng-class="getPageStyleClass(page)" ng-show="!page.parentPageId">
+        <li ng-repeat="page in pages" class="page" ng-class="getPageStyleClass(page)" ng-show="!page.parentPageId && !page.invisible">
             <h6>
                 <a href="{{getPageUrl(page)}}" target="{{getPageTarget(page)}}" title="{{page.description}}" i18n-db-title>
                     <button class="toggleSubPages downIcon small" ng-show="hasSubPages(page)"></button>
@@ -10,7 +10,7 @@
             <div class="subPagesMenuContainer">
                 <ul class="subPagesMenu" ng-show="page.hasSubPages">
                     <li ng-repeat="subPage in pages" class="page" ng-class="getPageStyleClass(subPage)"
-                        ux-show="isSubPageOf(subPage, page)">
+                        ux-show="isSubPageOf(subPage, page) && !subPage.invisible">
                         <h6>
                             <a href="{{getPageUrl(subPage)}}" target="{{getPageTarget(subPage)}}" title="{{subPage.description}}" i18n-db-title>
                                 <label i18n-db="subPage.text"></label>
