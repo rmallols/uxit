@@ -1160,10 +1160,18 @@ angular.module("stats.html", []).run(["$templateCache", function($templateCache)
 angular.module("styles.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("styles.html",
     "<div>\n" +
-    "    <div class=\"cf\">\n" +
-    "        <label i18n=\"editStyles.fontColor\"></label>\n" +
-    "        <div>\n" +
-    "            <input color-picker placeholder=\"Specify the color\" ng-model=\"model.color\" />\n" +
+    "    <div class=\"cf\" ng-show=\"target=='portal'\">\n" +
+    "        <div class=\"columns large-13\">\n" +
+    "            <label i18n=\"editStyles.fontColor\"></label>\n" +
+    "            <div>\n" +
+    "                <input color-picker placeholder=\"Specify the color\" ng-model=\"model.cssVars.fontColor\" />\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"columns large-12\">\n" +
+    "            <label i18n=\"editStyles.highlightColor\"></label>\n" +
+    "            <div>\n" +
+    "                <input color-picker placeholder=\"Specify the color\" ng-model=\"model.cssVars.high\" />\n" +
+    "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "    <div class=\"cf\">\n" +

@@ -1,8 +1,16 @@
 <div>
-    <div class="cf">
-        <label i18n="editStyles.fontColor"></label>
-        <div>
-            <input color-picker placeholder="Specify the color" ng-model="model.color" />
+    <div class="cf" ng-show="target=='portal'">
+        <div class="columns large-13">
+            <label i18n="editStyles.fontColor"></label>
+            <div>
+                <input color-picker placeholder="Specify the color" ng-model="model.cssVars.fontColor" />
+            </div>
+        </div>
+        <div class="columns large-12">
+            <label i18n="editStyles.highlightColor"></label>
+            <div>
+                <input color-picker placeholder="Specify the color" ng-model="model.cssVars.high" />
+            </div>
         </div>
     </div>
     <div class="cf">

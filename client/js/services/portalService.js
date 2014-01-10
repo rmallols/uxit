@@ -2,9 +2,10 @@
     'use strict';
     COMPONENTS.factory('portalService', ['$rootScope', '$routeParams', 'pageService', 'crudService',
     'constantsService', 'domService', 'metaService', 'userService', 'roleService', 'tagService',
-    'i18nService', 'availableAppsService', 'sessionService',
+    'i18nService', 'availableAppsService', 'sessionService', 'stringService', 'timerService',
     function ($rootScope, $routeParams, pageService, crudService, constantsService, domService,
-    metaService, userService, roleService, tagService, i18nService, availableAppsService, sessionService) {
+    metaService, userService, roleService, tagService, i18nService, availableAppsService, sessionService,
+    stringService, timerService) {
 
         var portal = {};
 
@@ -71,7 +72,8 @@
             updatePageDataFromTemplate(portalData, []);
             crudService.update(constantsService.collections.portal, portalData._id, portalData, function (data) {
                 $rootScope.$broadcast('onPortalSaved');
-                setHeader(); //Reload the headers as they could have changed
+                refreshStyleSheets();   //Update the portal stylesheets (font color, background...)
+                setHeader();            //Reload the headers as they could have changed
                 if (callback) {
                     callback(data);
                 }
@@ -133,6 +135,18 @@
             metaService.trackAnalytics(portal.trackingCode);
         }
 
+        /** Private methods */
+        function refreshStyleSheets() {
+            var qKey    = 'forceRefresh',
+                qVal    = timerService.getRandomNumber();
+            $('link').each(function() {
+                var href    = $(this).attr('href'),
+                    newHref = stringService.updateQueryStringParameter(href, qKey, qVal);
+                $(this).attr('href', newHref);
+            });
+        }
+        /** End of private methods */
+
         return {
             initializeResources: initializeResources,
             loadPortal: loadPortal,
@@ -143,7 +157,7 @@
             isMaximizedFullscreen: isMaximizedFullscreen,
             isTemplateFullscreen: isTemplateFullscreen,
             setHeader: setHeader,
-            trackAnalytics: trackAnalytics,
+            trackAnalytics: trackAnalytics
         };
     }]);
 })();

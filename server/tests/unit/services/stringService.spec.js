@@ -87,11 +87,34 @@ describe('stringService', function() {
     });
 
     describe('normalizeExternalUrl', function() {
+
         it('should normalizes the format of a given external url, adding the http:// preffix, if necessary', function() {
             var url = 'www.test.net';
             expect(stringService.normalizeExternalUrl(url)).toBe('http://www.test.net');
             url = 'test.org';
             expect(stringService.normalizeExternalUrl(url)).toBe('http://test.org');
+        });
+    });
+
+    describe('updateQueryStringParameter', function() {
+
+        it('should add a first new parameter to a URL string if it doesn\'t existed yet', function() {
+            var url = 'www.test.net', key = 'src', value = 'bla',
+                resultingUrl = url + '?' + key + '=' + value;
+            expect(stringService.updateQueryStringParameter(url, key, value)).toBe(resultingUrl);
+        });
+
+        it('should concat a new parameter to a URL string if it doesn\'t existed yet ' +
+        'but another one existed before', function() {
+            var url = 'www.test.net?foo=john', key = 'src', value = 'bla',
+                resultingUrl = url + '&' + key + '=' + value;
+            expect(stringService.updateQueryStringParameter(url, key, value)).toBe(resultingUrl);
+        });
+
+        it('should update an existing parameter', function() {
+            var url = 'www.test.net?foo=john', key = 'foo', value = 'bla',
+                resultingUrl = url.replace('john', 'bla');
+            expect(stringService.updateQueryStringParameter(url, key, value)).toBe(resultingUrl);
         });
     });
 });

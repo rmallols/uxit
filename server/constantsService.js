@@ -1,5 +1,9 @@
 'use strict';
 module.exports = {
+    envs: {
+        dev     : 'dev',
+        prod    : 'prod'
+    },
     modes: {
         cloud   : 'cloud',
         host    : 'host'

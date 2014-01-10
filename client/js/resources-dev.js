@@ -44,7 +44,7 @@ window.speed = 150;
     getScript(libPath + '/date/i18n/jquery.ui.datepicker-es.js');
 
     //Core resources
-    getStyleSheet(styleSheetPath + '/main.less');
+    getStyleSheet('main.css');
     getScript(scriptPath + '/index.js');
     getScript(scriptPath + '/templates.js');
     getScript(scriptPath + '/errorHandler.js');
@@ -191,9 +191,6 @@ window.speed = 150;
     getScript(directivePath + '/admin/editAppStyles.js');
     getScript(directivePath + '/admin/stats.js');
     getScript(directivePath + '/admin/styles.js');
-
-    //Load the LESS script, just after all the LESS stylesheets are loaded
-    getScript(libPath + '/less/less-1.3.0.min.js');
 
     //TODO: APP DIRECTIVES, PENDING TO BE MIGRATED TO AN STILL NOT SUPPORTED LAZY LOADING STRATEGY
     getScript('/client/apps/loginApp/loginAppService.js');

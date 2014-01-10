@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-    var prodKey = 'prod';
+    var prodKey = 'prod', devKey = 'dev';
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         libFolder: 'client/lib/',
@@ -144,6 +144,9 @@ module.exports = function(grunt) {
                         type = (grunt.option('env') === prodKey) ? 'minor' : 'patch';
                     return semver.inc(oldVersion, type);
                 },
+                env: function () {
+                    return grunt.option('env');
+                },
                 timestamp: function () {
                     return +new Date();
                 },
@@ -192,6 +195,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-bumpup');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-execute');
 
     grunt.registerTask('startKarma', ['karma:watch']);
     grunt.registerTask('startMongo', ['shell:startMongo']);

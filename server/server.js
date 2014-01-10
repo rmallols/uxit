@@ -38,10 +38,12 @@ function setupDb(req, res, next) {
     });
 }
 
-
-
 app.get('/favicon.ico', function (req, res) {
     redirectionService.goToFavicon(res);
+});
+
+app.get('/:portalId/main.css', setupDb, function (req, res) {
+    redirectionService.goToPortalCss(req, res, req.params.portalId, req.query.forceRefresh);
 });
 
 app.post('/:portalId/rest/login', setupDb, function (req, res) {

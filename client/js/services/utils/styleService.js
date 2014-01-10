@@ -18,7 +18,7 @@
                 if (sourceMdl.hasOwnProperty(styleKey)) {
                     if(styleKey === 'background') {
                         getNormalizedbackgroundStyles(sourceMdl, styleKey, destMdl);
-                    } else {
+                    } else if(styleKey !== 'cssVars') {
                         getNormalizedDefaultStyles(sourceMdl, styleKey, destMdl);
                     }
                 }

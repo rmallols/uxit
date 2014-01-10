@@ -4,6 +4,7 @@ var path                = require('path'),
     dbService           = require("./dbService"),
     collectionService   = require("./collectionService"),
     constantsService    = require("./constantsService"),
+    cssService          = require("./cssService"),
     getService          = require("./crud/getService");
 
 module.exports = {
@@ -125,6 +126,12 @@ module.exports = {
         res.setHeader('Content-disposition', 'attachment; filename=' + fileName);
         res.setHeader('Content-type', 'application/octet-stream');
         res.send(content);
+    },
+
+    goToPortalCss: function (req, res, portalId, forceRefresh) {
+        cssService.getPortalCss(req.dbCon, portalId, forceRefresh, function(css) {
+            res.send(css);
+        });
     },
 
     _existsPortal: function(dbCon, portalId, session, callback) {
