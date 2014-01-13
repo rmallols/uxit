@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
-    var prodKey = 'prod', devKey = 'dev';
+    var constantsService = require('./server/constantsService'),
+        prodKey = constantsService.envs.prod;
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         libFolder: 'client/lib/',

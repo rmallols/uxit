@@ -128,7 +128,7 @@
         }
 
         function showEditBox(listScope, element, item) {
-            var targetObj = $('#' + item._id + ' > *:first-child', element);
+            var targetObj = $('#' + item._id + ' [edit-target]:visible:first', element);
             hideSiblingEditBox(element); //Hide any other previous instance of the edit box component
             listScope.panels = listScope.onEditPanels;
             listScope.panels.forEach(function(panel) {

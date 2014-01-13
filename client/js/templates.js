@@ -1,4 +1,4 @@
-angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'bannerAppView.html', 'contentListAppAdd.html', 'contentListAppEdit.html', 'contentListAppHelp.html', 'contentListAppView.html', 'iframeAppEdit.html', 'iframeAppHelp.html', 'iframeAppView.html', 'imageAppEdit.html', 'imageAppHelp.html', 'imageAppView.html', 'languageSelectAppEdit.html', 'languageSelectAppHelp.html', 'languageSelectAppView.html', 'linksAppEdit.html', 'linksAppHelp.html', 'linksAppView.html', 'loginAppEdit.html', 'loginAppHelp.html', 'loginAppView.html', 'mapAppEdit.html', 'mapAppHelp.html', 'mapAppView.html', 'mediaCarouselAppEdit.html', 'mediaCarouselAppHelp.html', 'mediaCarouselAppSelectMedia.html', 'mediaCarouselAppView.html', 'mediaListAppAdd.html', 'mediaListAppEdit.html', 'mediaListAppHelp.html', 'mediaListAppView.html', 'menuAppEdit.html', 'menuAppHelp.html', 'menuAppView.html', 'portalsAdminAppHelp.html', 'portalsAdminAppView.html', 'example.html', 'slidesAppCreateSlide.html', 'slidesAppEdit.html', 'slidesAppEditSlide.html', 'slidesAppHelp.html', 'slidesAppView.html', 'socialAppEdit.html', 'socialAppHelp.html', 'socialAppView.html', 'staticContentAppAdd.html', 'staticContentAppEdit.html', 'staticContentAppHelp.html', 'staticContentAppSelectContent.html', 'staticContentAppView.html', 'userListAppAdd.html', 'userListAppEdit.html', 'userListAppHelp.html', 'userListAppView.html', 'videoAppEdit.html', 'videoAppHelp.html', 'videoAppView.html', 'webGlAppEdit.html', 'webGlAppHelp.html', 'webGlAppView.html', 'addAppPanel.html', 'adminPanel.html', 'createMedia.html', 'edit.html', 'editAppGeneral.html', 'editAppStyles.html', 'editBox.html', 'editContent.html', 'editContentList.html', 'editCurrentUser.html', 'editGeneral.html', 'editMedia.html', 'editMediaList.html', 'editNotifications.html', 'editPages.html', 'editStyles.html', 'editTag.html', 'editTagList.html', 'editUser.html', 'editUserList.html', 'portalsAdminEditDb.html', 'portalsAdminView.html', 'stats.html', 'styles.html', 'app.html', 'appHeader.html', 'bannerCanvas.html', 'bannerItem.html', 'bannerTextEditText.html', 'comment.html', 'comments.html', 'contentEditable.html', 'richContent.html', 'selectMedia.html', 'background.html', 'fileUploader.html', 'password.html', 'rating.html', 'contentList.html', 'list.html', 'listDb.html', 'mediaList.html', 'tagList.html', 'userList.html', 'login.html', 'mediaPicker.html', 'pages.html', 'errorPage.html', 'loginPage.html', 'portalPage.html', 'listActions.html', 'listEdit.html']);
+angular.module('templates-main', ['bannerAppEdit.html', 'bannerAppHelp.html', 'bannerAppView.html', 'contentListAppAdd.html', 'contentListAppEdit.html', 'contentListAppHelp.html', 'contentListAppView.html', 'iframeAppEdit.html', 'iframeAppHelp.html', 'iframeAppView.html', 'imageAppEdit.html', 'imageAppHelp.html', 'imageAppView.html', 'languageSelectAppEdit.html', 'languageSelectAppHelp.html', 'languageSelectAppView.html', 'linksAppEdit.html', 'linksAppHelp.html', 'linksAppView.html', 'loginAppEdit.html', 'loginAppHelp.html', 'loginAppView.html', 'mapAppEdit.html', 'mapAppHelp.html', 'mapAppView.html', 'mediaCarouselAppEdit.html', 'mediaCarouselAppHelp.html', 'mediaCarouselAppSelectMedia.html', 'mediaCarouselAppView.html', 'mediaListAppAdd.html', 'mediaListAppEdit.html', 'mediaListAppHelp.html', 'mediaListAppView.html', 'menuAppEdit.html', 'menuAppHelp.html', 'menuAppView.html', 'portalsAdminAppHelp.html', 'portalsAdminAppView.html', 'example.html', 'slidesAppCreateSlide.html', 'slidesAppEdit.html', 'slidesAppEditSlide.html', 'slidesAppHelp.html', 'slidesAppView.html', 'socialAppEdit.html', 'socialAppHelp.html', 'socialAppView.html', 'staticContentAppAdd.html', 'staticContentAppEdit.html', 'staticContentAppHelp.html', 'staticContentAppSelectContent.html', 'staticContentAppView.html', 'userListAppAdd.html', 'userListAppEdit.html', 'userListAppHelp.html', 'userListAppView.html', 'videoAppEdit.html', 'videoAppHelp.html', 'videoAppView.html', 'webGlAppEdit.html', 'webGlAppHelp.html', 'webGlAppView.html', 'addAppPanel.html', 'adminPanel.html', 'createMedia.html', 'edit.html', 'editAppGeneral.html', 'editAppStyles.html', 'editBox.html', 'editContent.html', 'editContentList.html', 'editCurrentUser.html', 'editGeneral.html', 'editLanguage.html', 'editMedia.html', 'editMediaList.html', 'editNotifications.html', 'editPages.html', 'editStyles.html', 'editTag.html', 'editTagList.html', 'editUser.html', 'editUserList.html', 'portalsAdminEditDb.html', 'portalsAdminView.html', 'stats.html', 'styles.html', 'app.html', 'appHeader.html', 'bannerCanvas.html', 'bannerItem.html', 'bannerTextEditText.html', 'comment.html', 'comments.html', 'contentEditable.html', 'richContent.html', 'selectMedia.html', 'background.html', 'fileUploader.html', 'password.html', 'rating.html', 'contentList.html', 'languagesList.html', 'list.html', 'listDb.html', 'mediaList.html', 'tagList.html', 'userList.html', 'login.html', 'mediaPicker.html', 'pages.html', 'errorPage.html', 'loginPage.html', 'portalPage.html', 'listActions.html', 'listEdit.html']);
 
 angular.module("bannerAppEdit.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerAppEdit.html",
@@ -107,7 +107,7 @@ angular.module("languageSelectAppView.html", []).run(["$templateCache", function
   $templateCache.put("languageSelectAppView.html",
     "<div>\n" +
     "    <div ng-repeat=\"language in languages\" class=\"flag {{language.code}}\" ng-click=\"selectLanguage(language.code)\"\n" +
-    "         ng-class=\"{current: isCurrentLanguage(language.code)}\" title=\"{{language.text}}\">\n" +
+    "         ng-class=\"{current: isCurrentLanguage(language.code)}\" title=\"{{language.text}}\" ux-show=\"!language.inactive\">\n" +
     "        <img ng-src=\"/client/images/flags/{{language.code}}.svg\" />\n" +
     "     </div>\n" +
     "</div>");
@@ -859,6 +859,9 @@ angular.module("editGeneral.html", []).run(["$templateCache", function($template
     "                <div edit-app-general model=\"model.app\"></div>\n" +
     "            </li>\n" +
     "            <li class=\"layer\">\n" +
+    "                <languages-list config=\"config\"></languages-list>\n" +
+    "            </li>\n" +
+    "            <li class=\"layer\">\n" +
     "                <input checkbox ng-model=\"model.comments.allowRatings\" label=\"editGeneral.comments.allowRatings\" />\n" +
     "            </li>\n" +
     "            <li class=\"layer\">\n" +
@@ -918,6 +921,13 @@ angular.module("editGeneral.html", []).run(["$templateCache", function($template
     "</li>\n" +
     "\n" +
     "");
+}]);
+
+angular.module("editLanguage.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("editLanguage.html",
+    "<div>\n" +
+    "    <input checkbox ng-model=\"language.inactive\" label=\"editGeneral.languages.inactive\" />\n" +
+    "</div>");
 }]);
 
 angular.module("editMedia.html", []).run(["$templateCache", function($templateCache) {
@@ -1439,6 +1449,13 @@ angular.module("contentList.html", []).run(["$templateCache", function($template
     "</div>");
 }]);
 
+angular.module("languagesList.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("languagesList.html",
+    "<div class=\"languagesList\">\n" +
+    "    <div list=\"languagesList\" collection=\"collection\" config=\"config\" template=\"template\" on-edit-panels=\"onEditPanels\"></div>\n" +
+    "</div>");
+}]);
+
 angular.module("list.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("list.html",
     "<div ng-class=\"getWrapperClass()\">\n" +
@@ -1451,7 +1468,7 @@ angular.module("list.html", []).run(["$templateCache", function($templateCache) 
     "    <div ng-show=\"items.length > 0\" ng-hide=\"detailId && detailId!=item._id\" id=\"{{item._id}}\"\n" +
     "         ng-repeat=\"item in items | filter: getFilter()\" class=\"item columns\"\n" +
     "         ng-class=\"getItemStyleClasses(item)\" ng-style=\"setItemHeight()\">\n" +
-    "        <div class=\"selectFromCheckbox\" ng-show=\"isMultiSelectable()\">\n" +
+    "        <div class=\"selectFromCheckbox\" ng-show=\"isMultiSelectable()\" edit-target>\n" +
     "            <input checkbox class=\"white\" ng-model=\"item.isSelected\" ng-click=\"clickOnItem(item, $index, $event, false)\"\n" +
     "                   block-update-model=\"true\" />\n" +
     "        </div>\n" +

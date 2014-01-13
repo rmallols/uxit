@@ -8,7 +8,7 @@
     <div ng-show="items.length > 0" ng-hide="detailId && detailId!=item._id" id="{{item._id}}"
          ng-repeat="item in items | filter: getFilter()" class="item columns"
          ng-class="getItemStyleClasses(item)" ng-style="setItemHeight()">
-        <div class="selectFromCheckbox" ng-show="isMultiSelectable()">
+        <div class="selectFromCheckbox" ng-show="isMultiSelectable()" edit-target>
             <input checkbox class="white" ng-model="item.isSelected" ng-click="clickOnItem(item, $index, $event, false)"
                    block-update-model="true" />
         </div>

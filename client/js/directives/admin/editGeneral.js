@@ -19,6 +19,7 @@
                 scope.level2Tabs = [
                     { title: 'editGeneral.general',     styleClass : 'settingsIcon' },
                     { title: 'editGeneral.app',         styleClass : 'appIcon' },
+                    { title: 'editGeneral.languages',   styleClass : 'languagesIcon' },
                     { title: 'editGeneral.comments',    styleClass : 'commentsIcon' },
                     { title: 'editGeneral.email',       styleClass : 'notificationsIcon' },
                     { title: 'editGeneral.analytics',   styleClass : 'statsIcon' },

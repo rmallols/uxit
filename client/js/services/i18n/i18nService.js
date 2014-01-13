@@ -45,6 +45,23 @@
         };
 
         /**
+         * Updates an existing language
+         *
+         * @param {object}      language    The object that stores the existing langauge information
+         * @param {function}    callback    The function to be executed once the language has been fully updated
+         */
+        i18n.updateLanguage = function (language, callback) {
+            var langData = {
+                inactive: language.inactive
+            };
+            crudService.update(constantsService.collections.languages, language._id, langData, function (updatedLanguage) {
+                if (callback) {
+                    callback(updatedLanguage);
+                }
+            });
+        };
+
+        /**
          * Gets all the loaded languages
          *
          * @returns {array} The array with the loaded languages
