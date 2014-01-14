@@ -19,13 +19,7 @@ function ($rootScope, i18nService, constantsService) {
 
             /** Private methods**/
             function getLanguagesList() {
-                scope.languagesList = i18nService.getLanguages();
-            }
-
-            function loadLanguagesList() {
-                i18nService.loadLanguages(function(languages) {
-                    scope.languagesList = languages;
-                });
+                scope.languagesList = i18nService.getLanguages(true);
             }
 
             function getTemplate() {

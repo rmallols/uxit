@@ -3,12 +3,13 @@ describe('i18nDb directive', function () {
     var $scope, compile, template, i18nService;
 
     beforeEach(module('components'));
-    beforeEach(inject(["$rootScope", "$compile", "i18nService",
-    function ($rootScope_, $compile_, i18nService_) {
+    beforeEach(inject(["$rootScope", "$compile", "i18nService", "$httpBackend",
+    function ($rootScope_, $compile_, i18nService_, $httpBackend) {
         $scope      = $rootScope_.$new();
         compile     = compileFn($compile_, $scope);
         i18nService = i18nService_;
         template    = '<label i18n-db="page.title"></label>';
+        loadLanguages($httpBackend, i18nService);
     }]));
 
     describe('if there isn\'t i18n info present', function () {

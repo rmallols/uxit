@@ -11,12 +11,13 @@
             scope.selectLanguage = function (language) {
                 i18nService.changeLanguage(language);
             };
-            $rootScope.$on(constantsService.collections.languages + 'Changed', function () {
+            $rootScope.$on(constantsService.collections.languages + 'Loaded', function () {
                 getLanguages();
             });
 
             function getLanguages() {
-                scope.languages = i18nService.getLanguages();
+                //Get the active languages
+                scope.languages = i18nService.getLanguages(false);
             }
         }
 

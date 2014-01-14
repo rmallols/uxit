@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.directive('i18nDb', ['$rootScope', 'i18nService', 'i18nDbService',
-    function ($rootScope, i18nService, i18nDbService) {
+    COMPONENTS.directive('i18nDb', ['$rootScope', 'i18nService', 'i18nDbService', 'constantsService',
+    function ($rootScope, i18nService, i18nDbService, constantsService) {
         return {
             restrict: 'A',
             replace: true,
@@ -17,7 +17,10 @@
                     }
                 }
 
-                updateLabel();
+                $rootScope.$on(constantsService.collections.languages + 'Loaded', function () {
+                    updateLabel();
+                });
+
                 scope.$watch('i18nDb', function () {
                     updateLabel();
                 });

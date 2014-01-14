@@ -7,6 +7,7 @@ describe('i18nDbService', function () {
     function ($rootScope, $httpBackend, i18nService_, i18nDbService_) {
         i18nService     = i18nService_;
         i18nDbService   = i18nDbService_;
+        loadLanguages($httpBackend, i18nService);
     }]));
 
     describe('getI18nProperty', function() {

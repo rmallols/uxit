@@ -107,7 +107,7 @@ angular.module("languageSelectAppView.html", []).run(["$templateCache", function
   $templateCache.put("languageSelectAppView.html",
     "<div>\n" +
     "    <div ng-repeat=\"language in languages\" class=\"flag {{language.code}}\" ng-click=\"selectLanguage(language.code)\"\n" +
-    "         ng-class=\"{current: isCurrentLanguage(language.code)}\" title=\"{{language.text}}\" ux-show=\"!language.inactive\">\n" +
+    "         ng-class=\"{current: isCurrentLanguage(language.code)}\" title=\"{{language.text}}\">\n" +
     "        <img ng-src=\"/client/images/flags/{{language.code}}.svg\" />\n" +
     "     </div>\n" +
     "</div>");

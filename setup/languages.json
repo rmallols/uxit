@@ -1,10 +1,11 @@
 [
     {
-        "code": "es",
-        "text": "Español"
-    },
-    {
         "code": "en",
-        "text": "English"
+        "text": "English",
+        "position": 0
+    }, {
+        "code": "es",
+        "text": "Español",
+        "position": 1
     }
 ]
