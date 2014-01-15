@@ -71,11 +71,11 @@ html.appTemplateFullscreen .columns.page:not(.colFullscreen) {
 }
 
 .columns .ui-resizable-e {
-  right: 0;
+  right: -(@resizableWidth / 2);
 }
 
 .columns .ui-resizable-w {
-  left: 0;
+  left: -(@resizableWidth / 2);
 }
 
 html:not(.fullscreen) .columns .appContainer {
