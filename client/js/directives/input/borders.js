@@ -11,7 +11,7 @@
             link: function link(scope) {
 
                 scope.showBordersStyle = function() {
-                    return scope.borders.color && scope.borders.color !== 'transparent';
+                    return scope.borders.color && scope.borders.color !== 'transparent' && scope.borders.width > 0;
                 };
 
                 scope.styles = [
