@@ -16,11 +16,7 @@
             if (!destMdl) { destMdl = {}; }
             for (styleKey in sourceMdl) {
                 if (sourceMdl.hasOwnProperty(styleKey)) {
-                    if(styleKey === 'background') {
-                        getNormalizedbackgroundStyles(sourceMdl, styleKey, destMdl);
-                    } else if(styleKey !== 'cssVars') {
-                        getNormalizedDefaultStyles(sourceMdl, styleKey, destMdl);
-                    }
+                    setNormalizedStyles(sourceMdl, styleKey, destMdl);
                 }
             }
             return destMdl;
@@ -101,7 +97,17 @@
         }
 
         /** Private methods **/
-        function getNormalizedDefaultStyles(sourceMdl, styleKey, destMdl) {
+        function setNormalizedStyles(sourceMdl, styleKey, destMdl) {
+            if(styleKey === 'background') {
+                setNormalizedBackgroundStyles(sourceMdl, styleKey, destMdl);
+            } else if(styleKey === 'borders') {
+                setNormalizedBorderStyles(sourceMdl[styleKey], destMdl);
+            } else if(styleKey !== 'cssVars') {
+                setNormalizedDefaultStyles(sourceMdl, styleKey, destMdl);
+            }
+        }
+
+        function setNormalizedDefaultStyles(sourceMdl, styleKey, destMdl) {
             var styleValue = sourceMdl[styleKey];
             if (styleValue) {
                 //noinspection JSUnfilteredForInLoop
@@ -109,7 +115,7 @@
             }
         }
 
-        function getNormalizedbackgroundStyles(sourceMdl, styleKey, destMdl) {
+        function setNormalizedBackgroundStyles(sourceMdl, styleKey, destMdl) {
             var background  = sourceMdl[styleKey],
                 mediaUrl    = mediaService.getDownloadUrl(background.src);
             if(background.color)    { destMdl.backgroundColor = background.color; }
@@ -121,6 +127,14 @@
                 if(background.position) {
                     destMdl.backgroundPosition = background.position.top + ' ' + background.position.left;
                 }
+            }
+        }
+
+        function setNormalizedBorderStyles(borders, destMdl) {
+            if(borders.color)   { destMdl.borderColor = borders.color; }
+            if(borders.style)   { destMdl.borderStyle = borders.style; }
+            if(borders.width !== undefined) {
+                destMdl.borderWidth = borders.width;
             }
         }
 
