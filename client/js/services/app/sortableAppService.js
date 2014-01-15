@@ -110,8 +110,8 @@
             decorateDropRow(); //New row handling
             //For some reason, in some cases the dragging app is not deleted, so it's necessary to explicitly delete it
             deleteGhostApp();
-            pageService.updateCurrentPage(null);
-            portalService.updatePortal(null);
+            pageService.updateCurrentPage();
+            portalService.updatePortal();
         }
 
         function updateConsideringRowChange() {

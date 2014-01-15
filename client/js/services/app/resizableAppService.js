@@ -33,8 +33,8 @@
             resizingDomObj.removeAttr('style'); //Remove the style data added by the resizable plugin
             //Update the scope of the whole row so both the resizing and the affected cols changes will be executed
             resizingColumnScope.$parent.$apply();
-            pageService.updateCurrentPage(null);
-            portalService.updatePortal(null);
+            pageService.updateCurrentPage();
+            portalService.updatePortal();
         }
 
         /** Private methods **/
@@ -50,12 +50,14 @@
 
         function setNextAffectedColumn(resizingColumnIndex) {
             var nextColumn = resizingColumnScope.$parent.row.columns[resizingColumnIndex + 1];
+            //noinspection JSHint
             affectedColumn = (shouldResizeNextColumn(resizingColumnIndex, nextColumn))
                 ? nextColumn : resizingColumnScope.$parent.row.columns[resizingColumnIndex + 2];
         }
 
         function setPrevAffectedColumn(resizingColumnIndex) {
             var prevColumn = resizingColumnScope.$parent.row.columns[resizingColumnIndex - 1];
+            //noinspection JSHint
             affectedColumn = (shouldResizePrevColumn(resizingColumnIndex, prevColumn))
                 ? prevColumn : resizingColumnScope.$parent.row.columns[resizingColumnIndex - 2];
         }
@@ -72,7 +74,7 @@
             if (hasBeenReduced && resizingColumnScope.column.size > 1) { //Reduce resizing column
                 resizingColumnScope.column.size = resizingColumnScope.column.size - 1;
                 affectedColumn.size = affectedColumn.size + 1;
-            } else if (affectedColumn.size > 1) { //Increase resizing column
+            } else { //Increase resizing column. Please note that the affected column could be hidden
                 resizingColumnScope.column.size = resizingColumnScope.column.size + 1;
                 affectedColumn.size = affectedColumn.size - 1;
             }

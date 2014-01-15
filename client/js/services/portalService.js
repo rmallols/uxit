@@ -61,22 +61,17 @@
 
         /**
          * Saves the current portal model
-         *
-         * @param {function} callback The function to execute once the portal has been fully saved
+         * @param {boolean}     refreshStyles   Determine if the stylesheets have to be reloaded or not
+         * @param {function}    callback        The function to execute once the portal has been fully saved
          */
-        function updatePortal(callback) {
-            //The user handling will have to be refactored at UXIT-273
+        function updatePortal(refreshStyles, callback) {
             var portalData;
             portalData = angular.copy(portal);
             delete portalData.user;
             updatePageDataFromTemplate(portalData, []);
             crudService.update(constantsService.collections.portal, portalData._id, portalData, function (data) {
-                $rootScope.$broadcast('onPortalSaved');
-                refreshStyleSheets();   //Update the portal stylesheets (font color, background...)
-                setHeader();            //Reload the headers as they could have changed
-                if (callback) {
-                    callback(data);
-                }
+                onUpdatedPortal(refreshStyles);
+                if (callback) { callback(data); }
             });
         }
 
@@ -136,14 +131,24 @@
         }
 
         /** Private methods */
+        function onUpdatedPortal(refreshStyles) {
+            $rootScope.$broadcast('onPortalSaved');
+            if(refreshStyles) { //Update the portal stylesheets (font color, background...)
+                refreshStyleSheets();
+            }
+            setHeader(); //Reload the headers as they could have changed
+        }
+
         function refreshStyleSheets() {
-            var qKey    = 'forceRefresh',
-                qVal    = timerService.getRandomNumber();
-            $('link').each(function() {
-                var href    = $(this).attr('href'),
+            var qKey = 'forceRefresh', qVal = timerService.getRandomNumber(), links = $('link');
+            links.each(function() {
+                var href    = $(this).attr('href'), newElm = $(this).clone(),
                     newHref = stringService.updateQueryStringParameter(href, qKey, qVal);
-                $(this).attr('href', newHref);
+                newElm.attr('href', newHref);
+                $(this).after(newElm); //Clone the previous link to avoid flickering effect
             });
+            //After some 'sanity' time, remove the old set of links assuming the new ones are loaded
+            setTimeout(function() { links.remove(); }, 3000);
         }
         /** End of private methods */
 

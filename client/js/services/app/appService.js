@@ -90,8 +90,8 @@
                     rowService.deleteRowAndDependencies(rows, rowScope.$index);
                 }
             }
-            pageService.updateCurrentPage(null);
-            portalService.updatePortal(null);
+            pageService.updateCurrentPage();
+            portalService.updatePortal();
         }
 
         /**

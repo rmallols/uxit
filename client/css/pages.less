@@ -1,4 +1,4 @@
-@resizableWidth: 45px;
+@resizableWidth: 50px;
 
 ul.pages {
   margin-top: 0px;
@@ -35,14 +35,17 @@ ul.pages > li.page > * {
     /*.transition(width @speed);*/
 }
 
+/*
 .columns.template > ul,
 .columns.page > ul {
   border: 6px solid transparent;
   margin: 5px;
 }
+*/
 
 html.sorting .columns.page > ul {
-  border-color: @high;
+  border: 6px solid @high;
+  margin: 5px;
 }
 
 html.sorting .columns.template > ul {
@@ -58,17 +61,21 @@ html.appTemplateFullscreen .columns.page:not(.colFullscreen) {
   min-height: 20px;
 }
 
+.columns.pageWrapper > .ui-resizable-handle {
+  display: none !important;
+}
+
 .columns .ui-resizable-handle {
   width: @resizableWidth;
   z-index: 2 !important;
 }
 
 .columns .ui-resizable-e {
-  right:-@resizableWidth;
+  right: 0;
 }
 
 .columns .ui-resizable-w {
-  left:-@resizableWidth;
+  left: 0;
 }
 
 html:not(.fullscreen) .columns .appContainer {
