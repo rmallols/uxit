@@ -1,6 +1,7 @@
 (function() {
     'use strict';
-    COMPONENTS.directive('background', ['mediaService', 'objectService', function (mediaService, objectService) {
+    COMPONENTS.directive('background', ['mediaService', 'objectService', 'i18nService',
+    function (mediaService, objectService, i18nS) {
         return {
             restrict: 'E',
             replace: true,
@@ -12,14 +13,14 @@
 
                 scope.position = {
                     top: [
-                        { id: 'top',    text: 'Topxxx' },
-                        { id: 'center', text: 'Centerxxx' },
-                        { id: 'bottom', text: 'Bottomxxx' }
+                        { id: 'top',    text: i18nS('editStyles.background.position.options.top.top') },
+                        { id: 'center', text: i18nS('editStyles.background.position.options.top.center') },
+                        { id: 'bottom', text: i18nS('editStyles.background.position.options.top.bottom') }
                     ],
                     left: [
-                        { id: 'left',   text: 'Leftxxx' },
-                        { id: 'center', text: 'Centerxxx' },
-                        { id: 'right',  text: 'Rightxxx' }
+                        { id: 'left',   text: i18nS('editStyles.background.position.options.left.left') },
+                        { id: 'center', text: i18nS('editStyles.background.position.options.left.center') },
+                        { id: 'right',  text: i18nS('editStyles.background.position.options.left.right') }
                     ]
                 };
 

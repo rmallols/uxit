@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/html/input/borders.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/directives/input/borders.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/tests/unit/directives/borders.spec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/input/background.js" afterPath="$PROJECT_DIR$/client/js/directives/input/background.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/input/borders.html" afterPath="$PROJECT_DIR$/client/html/input/borders.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/input/borders.js" afterPath="$PROJECT_DIR$/client/js/directives/input/borders.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_en.properties" afterPath="$PROJECT_DIR$/client/messages/messages_en.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_es.properties" afterPath="$PROJECT_DIR$/client/messages/messages_es.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/resources-dev.js" afterPath="$PROJECT_DIR$/client/js/resources-dev.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/utils/styleService.js" afterPath="$PROJECT_DIR$/client/js/services/utils/styleService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/admin/styles.html" afterPath="$PROJECT_DIR$/client/html/admin/styles.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/test-results.xml" afterPath="$PROJECT_DIR$/server/tests/unit/test-results.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -35,10 +36,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="borders.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="borders.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/directives/input/borders.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="47" selection-start="266" selection-end="266" vertical-scroll-proportion="0.4888179" vertical-offset="0" max-vertical-offset="663">
+            <state line="16" column="39" selection-start="524" selection-end="524" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="background.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/input/background.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="67" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="background.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/input/background.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="62" selection-start="882" selection-end="882" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="459">
               <folding />
             </state>
           </provider>
@@ -47,7 +66,7 @@
       <file leaf-file-name="borders.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/html/input/borders.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="59" selection-start="385" selection-end="402" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="323">
+            <state line="11" column="39" selection-start="499" selection-end="512" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="323">
               <folding />
             </state>
           </provider>
@@ -56,7 +75,16 @@
       <file leaf-file-name="styleService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/services/utils/styleService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="145" column="16" selection-start="6584" selection-end="6584" vertical-scroll-proportion="0.0" vertical-offset="1954" max-vertical-offset="2652">
+            <state line="124" column="112" selection-start="5770" selection-end="5770" vertical-scroll-proportion="0.0" vertical-offset="1920" max-vertical-offset="2618">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="borders.spec.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/borders.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="67" column="47" selection-start="2379" selection-end="2379" vertical-scroll-proportion="0.5207668" vertical-offset="976" max-vertical-offset="1717">
               <folding />
             </state>
           </provider>
@@ -65,25 +93,7 @@
       <file leaf-file-name="styles.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/html/admin/styles.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="87" selection-start="911" selection-end="911" vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="697">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messages_en.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/messages/messages_en.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="24" selection-start="4271" selection-end="4271" vertical-scroll-proportion="0.0" vertical-offset="1315" max-vertical-offset="3587">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messages_es.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/messages/messages_es.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="34" selection-start="4503" selection-end="4503" vertical-scroll-proportion="0.0" vertical-offset="1366" max-vertical-offset="3536">
+            <state line="23" column="87" selection-start="911" selection-end="911" vertical-scroll-proportion="-14.076923" vertical-offset="25" max-vertical-offset="697">
               <folding />
             </state>
           </provider>
@@ -108,9 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/js/directives/admin/adminPanel.js" />
-        <option value="$PROJECT_DIR$/client/js/directives/app/appHeader.js" />
-        <option value="$PROJECT_DIR$/client/js/services/app/appService.js" />
         <option value="$PROJECT_DIR$/client/js/services/app/resizableAppService.js" />
         <option value="$PROJECT_DIR$/client/js/services/app/sortableAppService.js" />
         <option value="$PROJECT_DIR$/client/js/services/portalService.js" />
@@ -118,12 +125,15 @@
         <option value="$PROJECT_DIR$/client/html/input/border.html" />
         <option value="$PROJECT_DIR$/client/js/directives/input/border.js" />
         <option value="$PROJECT_DIR$/client/js/resources-dev.js" />
+        <option value="$PROJECT_DIR$/client/html/admin/styles.html" />
         <option value="$PROJECT_DIR$/client/messages/messages_en.properties" />
         <option value="$PROJECT_DIR$/client/messages/messages_es.properties" />
-        <option value="$PROJECT_DIR$/client/html/admin/styles.html" />
+        <option value="$PROJECT_DIR$/client/html/input/background.html" />
+        <option value="$PROJECT_DIR$/client/js/directives/input/background.js" />
         <option value="$PROJECT_DIR$/client/js/services/utils/styleService.js" />
         <option value="$PROJECT_DIR$/client/html/input/borders.html" />
         <option value="$PROJECT_DIR$/client/js/directives/input/borders.js" />
+        <option value="$PROJECT_DIR$/server/tests/unit/directives/borders.spec.js" />
       </list>
     </option>
   </component>
@@ -263,6 +273,86 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -380,25 +470,25 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="vcs.Git" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
+    <property name="options.lastSelected" value="vcs.Git" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\usr\menzit\server\tests\unit\directives" />
       <recent name="C:\usr\menzit\client\html\input" />
       <recent name="C:\usr\menzit\client\js\directives\input" />
       <recent name="C:\usr\menzit\client\js\directives\admin" />
       <recent name="C:\usr\menzit\client\html\admin" />
-      <recent name="C:\usr\menzit\client\js\directives\list" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\usr\menzit\server\tests\e2e\resources\components" />
@@ -408,7 +498,15 @@
       <recent name="C:\usr\menzit\client\html\banner\types" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Watch changes">
+  <component name="RunManager" selected="Node.js.Karma server">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -419,12 +517,8 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -432,10 +526,6 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -1229,7 +1319,11 @@
       <created>1389776795430</created>
       <updated>1389776795431</updated>
     </task>
-    <option name="localTasksCounter" value="179" />
+    <task id="LOCAL-00179" summary="#240 [App][UI] Add border capabilities">
+      <created>1389780243490</created>
+      <updated>1389780243490</updated>
+    </task>
+    <option name="localTasksCounter" value="180" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1256,21 +1350,21 @@
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49723756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42679557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712707" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20628834" sideWeight="0.50276244" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-321" y="-1078" width="1904" height="1037" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-321" y="-1078" width="1904" height="1037" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42679557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1285,7 +1379,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="#132 Integrate grunt-contrib-watch with the templates cache process" />
     <MESSAGE value="#224 The imageApp is broken" />
     <MESSAGE value="#225 The staticContentApp is broken" />
     <MESSAGE value="#212 [addApp] Remove the reference to pixel in height handling" />
@@ -1310,7 +1403,8 @@
     <MESSAGE value="#234 Language list" />
     <MESSAGE value="#242 [staticContentApp] It's not possible to align the title to the middle" />
     <MESSAGE value="#241 [App] Full row width support" />
-    <option name="LAST_COMMIT_MESSAGE" value="#241 [App] Full row width support" />
+    <MESSAGE value="#240 [App][UI] Add border capabilities" />
+    <option name="LAST_COMMIT_MESSAGE" value="#240 [App][UI] Add border capabilities" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1318,32 +1412,14 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/js/services/app/appService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="54" selection-start="4355" selection-end="4355" vertical-scroll-proportion="0.3816568" vertical-offset="1452" max-vertical-offset="3213">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/app/resizableAppService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="58" selection-start="1707" selection-end="1707" vertical-scroll-proportion="0.0" vertical-offset="483" max-vertical-offset="1598">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/app/sortableAppService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="76" selection-start="5481" selection-end="5481" vertical-scroll-proportion="0.0" vertical-offset="1792" max-vertical-offset="3791">
-          <folding />
-        </state>
+        <state line="115" column="76" selection-start="5481" selection-end="5481" vertical-scroll-proportion="0.0" vertical-offset="1792" max-vertical-offset="3791" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/portalService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="33" selection-start="5474" selection-end="5474" vertical-scroll-proportion="-5.56" vertical-offset="2105" max-vertical-offset="2958">
-          <folding />
-        </state>
+        <state line="132" column="33" selection-start="5474" selection-end="5474" vertical-scroll-proportion="-5.56" vertical-offset="2105" max-vertical-offset="2958" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/pages.less">
@@ -1355,79 +1431,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/html/admin/editStyles.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="29" selection-start="286" selection-end="286" vertical-scroll-proportion="0.20238096" vertical-offset="0" max-vertical-offset="672">
-          <folding />
-        </state>
+        <state line="8" column="29" selection-start="286" selection-end="286" vertical-scroll-proportion="0.20238096" vertical-offset="0" max-vertical-offset="672" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/input/colorPicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="77" selection-start="360" selection-end="378" vertical-scroll-proportion="0.20208023" vertical-offset="0" max-vertical-offset="1768">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/input/background.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="948" selection-end="1233" vertical-scroll-proportion="0.43005952" vertical-offset="0" max-vertical-offset="672">
-          <folding />
-        </state>
+        <state line="8" column="77" selection-start="360" selection-end="378" vertical-scroll-proportion="0.20208023" vertical-offset="0" max-vertical-offset="1768" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/resources-dev.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="45" selection-start="8215" selection-end="8215" vertical-scroll-proportion="0.35673353" vertical-offset="2420" max-vertical-offset="3774">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
+        <state line="157" column="45" selection-start="8215" selection-end="8215" vertical-scroll-proportion="0.35673353" vertical-offset="2420" max-vertical-offset="3774" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/messages/messages_en.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="24" selection-start="4271" selection-end="4271" vertical-scroll-proportion="0.0" vertical-offset="1315" max-vertical-offset="3587">
+        <state line="104" column="0" selection-start="4657" selection-end="4850" vertical-scroll-proportion="0.0" vertical-offset="1315" max-vertical-offset="3757">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/messages/messages_es.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="34" selection-start="4503" selection-end="4503" vertical-scroll-proportion="0.0" vertical-offset="1366" max-vertical-offset="3536">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/admin/styles.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="87" selection-start="911" selection-end="911" vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="697">
+        <state line="102" column="60" selection-start="5057" selection-end="5057" vertical-scroll-proportion="0.0" vertical-offset="1519" max-vertical-offset="3706">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/input/background.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="62" selection-start="558" selection-end="558" vertical-scroll-proportion="0.3323782" vertical-offset="23" max-vertical-offset="1037">
+        <state line="9" column="67" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/background.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="77" selection-start="450" selection-end="450" vertical-scroll-proportion="0.2191977" vertical-offset="0" max-vertical-offset="3366">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/utils/styleService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="16" selection-start="6584" selection-end="6584" vertical-scroll-proportion="0.0" vertical-offset="1954" max-vertical-offset="2652">
+        <state line="124" column="112" selection-start="5770" selection-end="5770" vertical-scroll-proportion="0.0" vertical-offset="1920" max-vertical-offset="2618">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/input/background.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="62" selection-start="882" selection-end="882" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="459">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/html/input/borders.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="59" selection-start="385" selection-end="402" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="323">
+        <state line="11" column="39" selection-start="499" selection-end="512" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="323">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/input/borders.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="47" selection-start="266" selection-end="266" vertical-scroll-proportion="0.4888179" vertical-offset="0" max-vertical-offset="663">
+        <state line="16" column="39" selection-start="524" selection-end="524" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/admin/styles.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="87" selection-start="911" selection-end="911" vertical-scroll-proportion="-14.076923" vertical-offset="25" max-vertical-offset="697">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/borders.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="47" selection-start="2379" selection-end="2379" vertical-scroll-proportion="0.5207668" vertical-offset="976" max-vertical-offset="1717">
           <folding />
         </state>
       </provider>

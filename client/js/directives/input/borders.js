@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    COMPONENTS.directive('borders', [function () {
+    COMPONENTS.directive('borders', ['i18nService', function (i18nS) {
         return {
             restrict: 'E',
             replace: true,
@@ -10,15 +10,15 @@
             },
             link: function link(scope) {
 
-                scope.showBordersStyles = function() {
+                scope.showBordersStyle = function() {
                     return scope.borders.color && scope.borders.color !== 'transparent';
                 };
 
                 scope.styles = [
-                    { id: 'solid',  text: 'Solidxxx' },
-                    { id: 'dashed', text: 'Dashedxxx' },
-                    { id: 'dotted', text: 'Dottedxxx' },
-                    { id: 'double', text: 'Doublexxx' }
+                    { id: 'solid',  text: i18nS('editStyles.borders.style.options.solid') },
+                    { id: 'dashed', text: i18nS('editStyles.borders.style.options.dashed') },
+                    { id: 'dotted', text: i18nS('editStyles.borders.style.options.dotted') },
+                    { id: 'double', text: i18nS('editStyles.borders.style.options.double') }
                 ];
 
                 if(!scope.borders) {

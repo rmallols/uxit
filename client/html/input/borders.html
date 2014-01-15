@@ -7,7 +7,7 @@
         <div><label i18n="editStyles.borders.width"></label></div>
         <input type="number" ng-model="borders.width" />
     </div>
-    <div class="columns large-8" ng-show="showBordersStyles()">
+    <div class="columns large-8" ng-show="showBordersStyle()">
         <div><label i18n="editStyles.borders.style"></label></div>
         <select ng-model="borders.style" ng-options="obj.id as obj.text for obj in styles"></select>
     </div>

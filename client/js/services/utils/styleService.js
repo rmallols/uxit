@@ -98,26 +98,24 @@
 
         /** Private methods **/
         function setNormalizedStyles(sourceMdl, styleKey, destMdl) {
+            var styleToken = sourceMdl[styleKey];
             if(styleKey === 'background') {
-                setNormalizedBackgroundStyles(sourceMdl, styleKey, destMdl);
+                setNormalizedBackgroundStyles(styleToken, destMdl);
             } else if(styleKey === 'borders') {
-                setNormalizedBorderStyles(sourceMdl[styleKey], destMdl);
+                setNormalizedBorderStyles(styleToken, destMdl);
             } else if(styleKey !== 'cssVars') {
-                setNormalizedDefaultStyles(sourceMdl, styleKey, destMdl);
+                setNormalizedDefaultStyles(styleToken, styleKey, destMdl);
             }
         }
 
-        function setNormalizedDefaultStyles(sourceMdl, styleKey, destMdl) {
-            var styleValue = sourceMdl[styleKey];
+        function setNormalizedDefaultStyles(styleValue, styleKey, destMdl) {
             if (styleValue) {
-                //noinspection JSUnfilteredForInLoop
-                destMdl[styleKey] = sourceMdl[styleKey];
+                destMdl[styleKey] = styleValue;
             }
         }
 
-        function setNormalizedBackgroundStyles(sourceMdl, styleKey, destMdl) {
-            var background  = sourceMdl[styleKey],
-                mediaUrl    = mediaService.getDownloadUrl(background.src);
+        function setNormalizedBackgroundStyles(background, destMdl) {
+            var mediaUrl = mediaService.getDownloadUrl(background.src);
             if(background.color)    { destMdl.backgroundColor = background.color; }
             if(background.src)      {
                 destMdl.backgroundImage = 'url("' + mediaUrl + '")';
