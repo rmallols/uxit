@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/tests/unit/directives/borders.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/input/background.js" afterPath="$PROJECT_DIR$/client/js/directives/input/background.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/input/borders.html" afterPath="$PROJECT_DIR$/client/html/input/borders.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/input/borders.js" afterPath="$PROJECT_DIR$/client/js/directives/input/borders.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_en.properties" afterPath="$PROJECT_DIR$/client/messages/messages_en.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_es.properties" afterPath="$PROJECT_DIR$/client/messages/messages_es.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/utils/styleService.js" afterPath="$PROJECT_DIR$/client/js/services/utils/styleService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup/availableApps.json" afterPath="$PROJECT_DIR$/setup/availableApps.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/apps/bannerApp/bannerAppService.js" afterPath="$PROJECT_DIR$/client/apps/bannerApp/bannerAppService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/banner/bannerCanvas.js" afterPath="$PROJECT_DIR$/client/js/directives/banner/bannerCanvas.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/bannerCanvas.less" afterPath="$PROJECT_DIR$/client/css/bannerCanvas.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/banner/bannerItem.html" afterPath="$PROJECT_DIR$/client/html/banner/bannerItem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/banner/bannerItem.js" afterPath="$PROJECT_DIR$/client/js/directives/banner/bannerItem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/bannerItem.less" afterPath="$PROJECT_DIR$/client/css/bannerItem.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/banner/bannerItemService.js" afterPath="$PROJECT_DIR$/client/js/services/banner/bannerItemService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js" afterPath="$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/test-results.xml" afterPath="$PROJECT_DIR$/server/tests/unit/test-results.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -36,64 +38,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="borders.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/input/borders.js">
+      <file leaf-file-name="bannerCanvas.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/banner/bannerCanvas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="39" selection-start="524" selection-end="524" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+            <state line="105" column="62" selection-start="3973" selection-end="3973" vertical-scroll-proportion="0.0" vertical-offset="1631" max-vertical-offset="2329">
+              <folding>
+                <marker date="1389889883983" expanded="false" signature="2419:2433" placeholder="..." />
+                <marker date="1389889883983" expanded="false" signature="2763:2768" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bannerItem.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/banner/bannerItem.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="92" selection-start="83" selection-end="92" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="204">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="background.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/input/background.js">
+      <file leaf-file-name="bannerCanvas.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/banner/bannerCanvas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="67" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054">
+            <state line="9" column="51" selection-start="594" selection-end="594" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="background.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/input/background.html">
+      <file leaf-file-name="bannerItem.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/banner/bannerItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="62" selection-start="882" selection-end="882" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="459">
+            <state line="178" column="70" selection-start="7654" selection-end="7654" vertical-scroll-proportion="-22.686274" vertical-offset="1869" max-vertical-offset="3281">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="borders.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/input/borders.html">
+      <file leaf-file-name="bannerItemService.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/js/services/banner/bannerItemService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="39" selection-start="499" selection-end="512" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="323">
+            <state line="45" column="13" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.20414202" vertical-offset="696" max-vertical-offset="2278">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styleService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/services/utils/styleService.js">
+      <file leaf-file-name="bannerTextService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="124" column="112" selection-start="5770" selection-end="5770" vertical-scroll-proportion="0.0" vertical-offset="1920" max-vertical-offset="2618">
+            <state line="24" column="107" selection-start="683" selection-end="683" vertical-scroll-proportion="-16.32" vertical-offset="0" max-vertical-offset="1411">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="borders.spec.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/borders.spec.js">
+      <file leaf-file-name="bannerImageService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerImageService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="47" selection-start="2379" selection-end="2379" vertical-scroll-proportion="0.5207668" vertical-offset="976" max-vertical-offset="1717">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/admin/styles.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="87" selection-start="911" selection-end="911" vertical-scroll-proportion="-14.076923" vertical-offset="25" max-vertical-offset="697">
+            <state line="11" column="65" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1139">
               <folding />
             </state>
           </provider>
@@ -118,22 +123,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/js/services/app/resizableAppService.js" />
-        <option value="$PROJECT_DIR$/client/js/services/app/sortableAppService.js" />
-        <option value="$PROJECT_DIR$/client/js/services/portalService.js" />
-        <option value="$PROJECT_DIR$/client/css/pages.less" />
-        <option value="$PROJECT_DIR$/client/html/input/border.html" />
-        <option value="$PROJECT_DIR$/client/js/directives/input/border.js" />
-        <option value="$PROJECT_DIR$/client/js/resources-dev.js" />
-        <option value="$PROJECT_DIR$/client/html/admin/styles.html" />
-        <option value="$PROJECT_DIR$/client/messages/messages_en.properties" />
-        <option value="$PROJECT_DIR$/client/messages/messages_es.properties" />
-        <option value="$PROJECT_DIR$/client/html/input/background.html" />
         <option value="$PROJECT_DIR$/client/js/directives/input/background.js" />
         <option value="$PROJECT_DIR$/client/js/services/utils/styleService.js" />
         <option value="$PROJECT_DIR$/client/html/input/borders.html" />
         <option value="$PROJECT_DIR$/client/js/directives/input/borders.js" />
         <option value="$PROJECT_DIR$/server/tests/unit/directives/borders.spec.js" />
+        <option value="$PROJECT_DIR$/client/css/bannerCanvas.less" />
+        <option value="$PROJECT_DIR$/setup/availableApps.json" />
+        <option value="$PROJECT_DIR$/client/apps/bannerApp/bannerAppService.js" />
+        <option value="$PROJECT_DIR$/client/html/banner/bannerItem.html" />
+        <option value="$PROJECT_DIR$/client/css/bannerItem.less" />
+        <option value="$PROJECT_DIR$/client/js/directives/contentEditable/richContent.js" />
+        <option value="$PROJECT_DIR$/client/js/services/utils/textSelectionService.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/banner/bannerCanvas.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/banner/bannerItem.js" />
+        <option value="$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js" />
+        <option value="$PROJECT_DIR$/client/js/services/banner/bannerItemService.js" />
       </list>
     </option>
   </component>
@@ -154,7 +159,16 @@
             <id>Assignment issuesJavaScript</id>
           </State>
           <State>
+            <id>Bitwise operation issuesJavaScript</id>
+          </State>
+          <State>
             <id>CSS</id>
+          </State>
+          <State>
+            <id>Code quality toolsJavaScript</id>
+          </State>
+          <State>
+            <id>Code style issuesJavaScript</id>
           </State>
           <State>
             <id>CoffeeScript</id>
@@ -166,19 +180,25 @@
             <id>DOM issuesJavaScript</id>
           </State>
           <State>
+            <id>Dart</id>
+          </State>
+          <State>
             <id>Data flow issuesJavaScript</id>
           </State>
           <State>
-            <id>Error handlingJavaScript</id>
+            <id>EJS</id>
           </State>
           <State>
-            <id>File Watchers</id>
+            <id>Error handlingJavaScript</id>
           </State>
           <State>
             <id>GeneralCoffeeScript</id>
           </State>
           <State>
             <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>HTML</id>
           </State>
           <State>
             <id>Invalid elementsCSS</id>
@@ -193,13 +213,28 @@
             <id>JavaScript validity issuesJavaScript</id>
           </State>
           <State>
-            <id>Naming conventionsJavaScript</id>
+            <id>JsTestDriverJavaScript</id>
+          </State>
+          <State>
+            <id>Node.jsJavaScript</id>
+          </State>
+          <State>
+            <id>Portability issues</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsJavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugsCoffeeScript</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
           </State>
           <State>
             <id>RELAX NG</id>
           </State>
           <State>
-            <id>Unit testingJavaScript</id>
+            <id>SASS/SCSS</id>
           </State>
           <State>
             <id>XML</id>
@@ -211,11 +246,6 @@
             <id>XSLT</id>
           </State>
         </expanded-state>
-        <selected-state>
-          <State>
-            <id>CoffeeScript</id>
-          </State>
-        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -474,7 +504,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
     <property name="FullScreen" value="false" />
@@ -498,7 +528,7 @@
       <recent name="C:\usr\menzit\client\html\banner\types" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Karma server">
+  <component name="RunManager" selected="Node.js.Watch changes">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -581,6 +611,10 @@
     <recycled_changelist date="1386013296585">
       <option name="PATH" value="C:\Users\Ricardo\.WebStorm7\config\shelf\#192_Normalize_the_data_model_handling.patch" />
       <option name="DESCRIPTION" value="#192 Normalize the data model handling" />
+    </recycled_changelist>
+    <recycled_changelist date="1389813135039">
+      <option name="PATH" value="C:\Users\Ricardo\.WebStorm7\config\shelf\#238_[BannerCanvas]_Set_all_the_sizes_as_%_instead_of_px.patch" />
+      <option name="DESCRIPTION" value="#238 [BannerCanvas] Set all the sizes as % instead of px" />
     </recycled_changelist>
   </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
@@ -1323,7 +1357,23 @@
       <created>1389780243490</created>
       <updated>1389780243490</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="#240 [App][UI] Add border capabilities">
+      <created>1389803191449</created>
+      <updated>1389803191449</updated>
+    </task>
+    <task id="LOCAL-00181" summary="#240 [App][UI] Add border capabilities">
+      <created>1389803361292</created>
+      <updated>1389803361293</updated>
+    </task>
+    <task id="LOCAL-00182" summary="#238 [BannerCanvas] Set all the sizes as % instead of px">
+      <created>1389813136756</created>
+      <updated>1389813136756</updated>
+    </task>
+    <task id="LOCAL-00183" summary="#238 [BannerCanvas] Set all the sizes as % instead of px">
+      <created>1389813200100</created>
+      <updated>1389813200100</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1350,9 +1400,11 @@
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49723756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42679557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712707" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20628834" sideWeight="0.50276244" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1363,8 +1415,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42679557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1379,7 +1429,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="#224 The imageApp is broken" />
     <MESSAGE value="#225 The staticContentApp is broken" />
     <MESSAGE value="#212 [addApp] Remove the reference to pixel in height handling" />
     <MESSAGE value="#138 [Prod] There's an error trying to execute some actions" />
@@ -1404,7 +1453,8 @@
     <MESSAGE value="#242 [staticContentApp] It's not possible to align the title to the middle" />
     <MESSAGE value="#241 [App] Full row width support" />
     <MESSAGE value="#240 [App][UI] Add border capabilities" />
-    <option name="LAST_COMMIT_MESSAGE" value="#240 [App][UI] Add border capabilities" />
+    <MESSAGE value="#238 [BannerCanvas] Set all the sizes as % instead of px" />
+    <option name="LAST_COMMIT_MESSAGE" value="#238 [BannerCanvas] Set all the sizes as % instead of px" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1412,104 +1462,115 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/js/services/app/sortableAppService.js">
+    <entry file="file://$PROJECT_DIR$/client/apps/bannerApp/bannerAppView.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="76" selection-start="5481" selection-end="5481" vertical-scroll-proportion="0.0" vertical-offset="1792" max-vertical-offset="3791" />
+        <state line="3" column="90" selection-start="151" selection-end="151" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="153" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/portalService.js">
+    <entry file="file://$PROJECT_DIR$/setup/availableApps.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="33" selection-start="5474" selection-end="5474" vertical-scroll-proportion="-5.56" vertical-offset="2105" max-vertical-offset="2958" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/pages.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="25" selection-start="1172" selection-end="1172" vertical-scroll-proportion="0.8919861" vertical-offset="917" max-vertical-offset="1564">
+        <state line="21" column="70" selection-start="588" selection-end="588" vertical-scroll-proportion="0.2791798" vertical-offset="180" max-vertical-offset="5865">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/admin/editStyles.html">
+    <entry file="file://$PROJECT_DIR$/client/apps/bannerApp/bannerAppService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="29" selection-start="286" selection-end="286" vertical-scroll-proportion="0.20238096" vertical-offset="0" max-vertical-offset="672" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/input/colorPicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="77" selection-start="360" selection-end="378" vertical-scroll-proportion="0.20208023" vertical-offset="0" max-vertical-offset="1768" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/resources-dev.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="45" selection-start="8215" selection-end="8215" vertical-scroll-proportion="0.35673353" vertical-offset="2420" max-vertical-offset="3774" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/messages/messages_en.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="0" selection-start="4657" selection-end="4850" vertical-scroll-proportion="0.0" vertical-offset="1315" max-vertical-offset="3757">
+        <state line="12" column="64" selection-start="386" selection-end="386" vertical-scroll-proportion="0.2922636" vertical-offset="0" max-vertical-offset="698">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/messages/messages_es.properties">
+    <entry file="file://$PROJECT_DIR$/client/html/banner/bannerCanvas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="60" selection-start="5057" selection-end="5057" vertical-scroll-proportion="0.0" vertical-offset="1519" max-vertical-offset="3706">
+        <state line="9" column="51" selection-start="594" selection-end="594" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/input/background.js">
+    <entry file="file://$PROJECT_DIR$/client/html/banner/bannerItem.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="67" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054">
+        <state line="0" column="92" selection-start="83" selection-end="92" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="204">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/background.spec.js">
+    <entry file="file://$PROJECT_DIR$/client/html/contentEditable/richContent.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="77" selection-start="450" selection-end="450" vertical-scroll-proportion="0.2191977" vertical-offset="0" max-vertical-offset="3366">
+        <state line="11" column="76" selection-start="883" selection-end="886" vertical-scroll-proportion="0.28902626" vertical-offset="0" max-vertical-offset="647">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/utils/styleService.js">
+    <entry file="file://$PROJECT_DIR$/client/js/services/utils/textSelectionService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="112" selection-start="5770" selection-end="5770" vertical-scroll-proportion="0.0" vertical-offset="1920" max-vertical-offset="2618">
+        <state line="10" column="30" selection-start="328" selection-end="341" vertical-scroll-proportion="0.25260028" vertical-offset="0" max-vertical-offset="3213">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/input/background.html">
+    <entry file="file://$PROJECT_DIR$/client/js/directives/contentEditable/richContent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="62" selection-start="882" selection-end="882" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="459">
+        <state line="70" column="46" selection-start="2878" selection-end="2878" vertical-scroll-proportion="0.3833581" vertical-offset="932" max-vertical-offset="1700">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/input/borders.html">
+    <entry file="file://$PROJECT_DIR$/client/js/services/contentEditable/contentEditableRichContentService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="39" selection-start="499" selection-end="512" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="323">
+        <state line="59" column="66" selection-start="3124" selection-end="3124" vertical-scroll-proportion="0.34240687" vertical-offset="764" max-vertical-offset="1513">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/input/borders.js">
+    <entry file="file://$PROJECT_DIR$/client/css/bannerCanvas.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="39" selection-start="524" selection-end="524" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+        <state line="20" column="67" selection-start="356" selection-end="356" vertical-scroll-proportion="0.2503864" vertical-offset="178" max-vertical-offset="850">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/admin/styles.html">
+    <entry file="file://$PROJECT_DIR$/client/css/bannerItem.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="87" selection-start="911" selection-end="911" vertical-scroll-proportion="-14.076923" vertical-offset="25" max-vertical-offset="697">
+        <state line="75" column="68" selection-start="1174" selection-end="1174" vertical-scroll-proportion="0.4807074" vertical-offset="976" max-vertical-offset="1615">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/borders.spec.js">
+    <entry file="file://$PROJECT_DIR$/client/js/directives/banner/bannerCanvas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="47" selection-start="2379" selection-end="2379" vertical-scroll-proportion="0.5207668" vertical-offset="976" max-vertical-offset="1717">
+        <state line="105" column="62" selection-start="3973" selection-end="3973" vertical-scroll-proportion="0.0" vertical-offset="1631" max-vertical-offset="2329">
+          <folding>
+            <marker date="1389889883983" expanded="false" signature="2419:2433" placeholder="..." />
+            <marker date="1389889883983" expanded="false" signature="2763:2768" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/banner/bannerItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="178" column="70" selection-start="7654" selection-end="7654" vertical-scroll-proportion="-22.686274" vertical-offset="1869" max-vertical-offset="3281">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerImageService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="65" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="107" selection-start="683" selection-end="683" vertical-scroll-proportion="-16.32" vertical-offset="0" max-vertical-offset="1411">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/services/banner/bannerItemService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="13" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.20414202" vertical-offset="696" max-vertical-offset="2278">
           <folding />
         </state>
       </provider>

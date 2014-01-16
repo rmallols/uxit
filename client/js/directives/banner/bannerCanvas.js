@@ -1,9 +1,9 @@
 (function() {
-    COMPONENTS.directive('bannerCanvas', ['$compile', 'timerService', 'arrayService', 'keyboardService',
+    'use strict';
+    COMPONENTS.directive('bannerCanvas', ['timerService', 'arrayService', 'keyboardService',
     'roleService', 'sessionService', 'bannerItemService',
-    function ($compile, timerService, arrayService, keyboardService, roleService, sessionService,
+    function (timerService, arrayService, keyboardService, roleService, sessionService,
       bannerItemService) {
-        'use strict';
         return {
             restrict: 'A',
             replace: true,
@@ -56,8 +56,8 @@
                 /** Private methods **/
                 function createGrid() {
                     $('.ruler', element).remove();
-                    totalCols   = Math.floor(element.width() / scope.gridSize);
-                    totalRows   = Math.floor(scope.height / scope.gridSize);
+                    totalCols = 100 / scope.gridSize;
+                    totalRows   = 100 / scope.gridSize;
                     createGridCols();
                     createGridRows();
                 }
@@ -66,7 +66,7 @@
                     var colPos;
                     for(var i = 0; i < totalCols; i++) {
                         colPos = (i + 1) * scope.gridSize;
-                        gridElm.append('<div class="ruler col" style="top: 0; left: ' + colPos + 'px"></div>');
+                        gridElm.append('<div class="ruler col" style="top: 0; left: ' + colPos + '%"></div>');
                     }
                 }
 
@@ -74,7 +74,7 @@
                     var rowPos;
                     for(var i = 0; i < totalRows; i++) {
                         rowPos = (i + 1) * scope.gridSize;
-                        gridElm.append('<div class="ruler row" style="top: ' + rowPos + 'px; left: 0"></div>');
+                        gridElm.append('<div class="ruler row" style="top: ' + rowPos + '%; left: 0"></div>');
                     }
                 }
 
@@ -83,7 +83,7 @@
                 }
 
                 function createItem(type, value) {
-                    var itemId  = timerService.getRandomNumber(), itemSize = 2 * scope.gridSize,
+                    var itemId  = timerService.getRandomNumber(),
                         topPos  = Math.floor(Math.random() * totalRows - 1) * scope.gridSize,
                         leftPos = Math.floor(Math.random() * totalCols - 1) * scope.gridSize;
                     scope.items.index[itemId] = scope.items.data.length;
@@ -91,11 +91,7 @@
                         id: itemId,
                         type: type,
                         value: value,
-                        size: { width: itemSize, height: itemSize },
-                        position: { //Set a random position for the new item
-                            top : (topPos > 0) ? topPos : 0,
-                            left: (leftPos > 0) ? leftPos : 0
-                        }
+                        position: { top: topPos, left: leftPos }
                     });
                     propagateChanges();
                 }

@@ -1255,10 +1255,12 @@ angular.module("bannerCanvas.html", []).run(["$templateCache", function($templat
 
 angular.module("bannerItem.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("bannerItem.html",
-    "<div id=\"{{item.id}}\" class=\"bannerItem\" ng-class=\"{readOnly: readOnly}\">\n" +
-    "    <button class=\"edit editIcon\" ng-click=\"editItem()\"></button>\n" +
-    "    <div ux-transclude=\"template\"></div>\n" +
-    "    <input type=\"text\" class=\"selectHandler mousetrap\" />\n" +
+    "<div id=\"{{item.id}}\" class=\"bannerItem\" ng-class=\"{readOnly: readOnly, invisible: invisible}\">\n" +
+    "    <div class=\"border\">\n" +
+    "        <button class=\"edit editIcon\" ng-click=\"editItem()\"></button>\n" +
+    "        <div ux-transclude=\"template\"></div>\n" +
+    "        <input type=\"text\" class=\"selectHandler mousetrap\" />\n" +
+    "    </div>\n" +
     "</div>");
 }]);
 

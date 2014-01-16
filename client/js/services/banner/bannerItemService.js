@@ -31,37 +31,35 @@
          *
          * @param {object}  item    The model of the element that is going to update the DOM
          * @param {object}  boxElm  The pointer to the DOM object where the content of the element is
-         * @param {object}  borders The object that contains the information about
-         *                          the vertical and horizontal border widths
          */
-        function setDomCoordinatesFromModel(item, boxElm, borders) {
-            boxElm.css('width', item.size.width - borders.horizontal);
-            boxElm.css('height', item.size.height - borders.vertical);
-            boxElm.css('top', item.position.top);
-            boxElm.css('left', item.position.left);
+        function setDomCoordinatesFromModel(item, boxElm) {
+            boxElm.css('width', item.size.width + '%');
+            boxElm.css('height', item.size.height + '%');
+            boxElm.css('top', item.position.top + '%');
+            boxElm.css('left', item.position.left + '%');
         }
 
         /**
          * Updates the DOM based on the given DOM information
          *
-         * @param {object}  item        The model of the element that is going to he updated
-         *                              according to the DOM information
-         * @param {object}  contentElm  The pointer to the DOM object where the content
-         *                              of the element is
-         * @param {object}  boxElm      The pointer to the DOM object where the box
-         *                              that wraps the element is
-         * @param {object}  borders     The object that contains the information about
-         *                              the vertical and horizontal border widths
-         * @param {number}  gridSize    The width of the grid the element is
+         * @param {object}  item            The model of the element that is going to he updated
+         *                                  according to the DOM information
+         * @param {object}  contentElm      The pointer to the DOM object where the content
+         *                                  of the element is
+         * @param {object}  boxElm          The pointer to the DOM object where the box
+         *                                  that wraps the element is
+         * @param {number}  gridSize        The width of the grid the element is
+         * @param {object}  bCDimensions    The dimensions of the parent banner canvas
          */
-        function setModelCoordinatesFromDom(item, contentElm, boxElm, borders, gridSize) {
-            item.size.width    = getNormalizedSize(contentElm.width(), boxElm.width(), borders.horizontal, gridSize);
-            item.size.height   = getNormalizedSize(contentElm.height(), boxElm.height(), borders.vertical, gridSize);
-            item.position.top  = parseInt(boxElm.css('top'), 10);
-            item.position.left = parseInt(boxElm.css('left'), 10);
-            if(!$rootScope.$$phase) {
-                $rootScope.$apply();
-            }
+        function setModelCoordinatesFromDom(item, contentElm, boxElm, gridSize, bCDimensions) {
+            var width = (boxElm.width() > contentElm.width()) ? boxElm.width() : contentElm.width(),
+                height = (boxElm.height() > contentElm.height()) ? boxElm.height() : contentElm.height();
+            item.size.width = Math.round(((width / bCDimensions.width) * 100));
+            item.size.height = Math.round(((height / bCDimensions.height) * 100));
+            item.position.top  = Math.round(((parseInt(boxElm.css('top'), 10) / bCDimensions.height) * 100));
+            item.position.left = Math.round(((parseInt(boxElm.css('left'), 10) / bCDimensions.width) * 100));
+            fitToGrid(item, gridSize);
+            if(!$rootScope.$$phase) { $rootScope.$apply(); }
         }
 
         /**
@@ -72,16 +70,15 @@
          *                              of the element is
          * @param {object}  boxElm      The pointer to the DOM object where the box
          *                              that wraps the element is
-         * @param {object}  borders     The object that contains the information about
-         *                              the vertical and horizontal border widths
          * @param {number}  gridSize    The width of the grid the element is
+         * @param {object}  bCDimensions    The dimensions of the parent banner canvas
          */
-        function refresh(item, contentElm, boxElm, borders, gridSize) {
+        function refresh(item, contentElm, boxElm, gridSize, bCDimensions) {
             //Update the model before propagating the changes
-            setModelCoordinatesFromDom(item, contentElm, boxElm, borders, gridSize);
+            setModelCoordinatesFromDom(item, contentElm, boxElm, gridSize, bCDimensions);
             //Here, the model is updated, but its still necessary to update the DOM
             //in order to get the changes refreshed
-            setDomCoordinatesFromModel(item, boxElm, borders);
+            setDomCoordinatesFromModel(item, boxElm);
         }
 
         /**
@@ -96,26 +93,25 @@
         }
 
         /**
-         * Gets the normalized size (width or height) of an element,
-         * ensuring that the wrapping box is bigger than it
+         * Determines the default size of each new item taken as a reference a given grid size
          *
-         * @param   {number} contentSize    The size (width or height) of the content of the element
-         * @param   {number} boxSize        The size (width or height) of the element itself
-         * @param   {number} borderBox      The size (width or height) of the border of the element
-         * @param   {number} gridSize       The size (width or height) of the grid where the element is
-         * @returns {number}                The normalized size (width or height) of the element
+         * @param   {number} gridSize   The current grid size
+         * @returns {number}            The default size of each new item
          */
-        function getNormalizedSize(contentSize, boxSize, borderBox, gridSize) {
-            if(contentSize > boxSize) {
-                var heightSlots = Math.ceil(contentSize / gridSize);
-                return heightSlots * gridSize;
-            }
-            return boxSize + borderBox;
+        function getDefaultItemSize(gridSize) {
+            return 2 * gridSize;
         }
 
         /** Private methods **/
         function getServiceName(type) {
             return 'banner' + stringService.capitalize(type) + 'Service';
+        }
+
+        function fitToGrid(item, gridSize) {
+            var gapToHGrid  = item.size.width % gridSize,
+                gapToVGrid  = item.size.height % gridSize;
+            if(gapToHGrid)  { item.size.width   = item.size.width - gapToHGrid + gridSize; }
+            if(gapToVGrid)  { item.size.height  = item.size.height - gapToVGrid + gridSize; }
         }
         /** End of private methods **/
 
@@ -126,7 +122,7 @@
             setDomCoordinatesFromModel: setDomCoordinatesFromModel,
             setModelCoordinatesFromDom: setModelCoordinatesFromDom,
             propagateChanges: propagateChanges,
-            getNormalizedSize: getNormalizedSize
+            getDefaultItemSize: getDefaultItemSize
         };
     }]);
 })();

@@ -28,7 +28,7 @@
         "title": "Banner",
         "defaultModel": {
             "height": 300,
-            "gridSize": 50
+            "gridSize": 10
         }
     },
     {

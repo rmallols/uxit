@@ -3,17 +3,30 @@
   position: absolute;
   display: block;
   text-align: center;
-  border: @borderWidth dashed transparent;
-  box-sizing: content-box;
   .alignCenter;
   font-size: 200%;
+  box-sizing: content-box;
+}
+
+.bannerItem.invisible {
+  display: none;
+}
+
+.bannerItem > .border {
+  border: @borderWidth dashed transparent;
+  width: 100%;
+  height: 100%;
+}
+
+.bannerCanvas:not(.readOnly):hover .bannerItem > .border {
+  border-color: @high;
 }
 
 .bannerItem:not(.readOnly) {
   cursor: pointer;
 }
 
-.bannerItem > button.edit {
+.bannerItem button.edit {
   position: absolute;
   visibility: hidden;
   top: 10px;
@@ -24,7 +37,7 @@
   cursor: move;
 }
 
-.bannerItem.active > button.edit {
+.bannerItem.active button.edit {
   visibility: visible;
 }
 
@@ -69,4 +82,9 @@
 .bannerItem .heading {
   border-bottom: 0;
   line-height: 1em;
+}
+
+
+.bannerItem img {
+  width: 100%;
 }

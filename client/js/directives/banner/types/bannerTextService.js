@@ -24,18 +24,17 @@
         /**
          * Gets the edit panels of the given text item
          *
-         * @param {object}  item        The model of the text item which edit panels
-         *                              are going to be retrieved
-         * @param {object}  contentElm  The pointer to the DOM object where the content
-         *                              of the edit element is
-         * @param {object}  boxElm      The pointer to the DOM object where the box
-         *                              that wraps the text element is
-         * @param {object}  borders     The object that contains the information about
-         *                              the vertical and horizontal border widths
-         * @param {number}  gridSize    The width of the grid the element is
+         * @param {object}  item            The model of the text item which edit panels
+         *                                  are going to be retrieved
+         * @param {object}  contentElm      The pointer to the DOM object where the content
+         *                                  of the edit element is
+         * @param {object}  boxElm          The pointer to the DOM object where the box
+         *                                  that wraps the text element is
+         * @param {number}  gridSize        The width of the grid the element is
+         * @param {object}  bCDimensions    The dimensions of the parent banner canvas
          * @returns {Array}             The array of edit panels of the given text item
          */
-        function getEditPanels(item, contentElm, boxElm, borders, gridSize) {
+        function getEditPanels(item, contentElm, boxElm, gridSize, bCDimensions) {
             return  [
                 {
                     title: 'Content',
@@ -47,7 +46,7 @@
                     },
                     onLayer: {
                         change: function () {
-                            bIS.refresh(item, contentElm, boxElm, borders, gridSize);
+                            bIS.setModelCoordinatesFromDom(item, contentElm, boxElm, gridSize, bCDimensions);
                         }
                     }
                 }
