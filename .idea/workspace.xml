@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.37.0.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\usr\menzit\client\min\js.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/cssService.js" afterPath="$PROJECT_DIR$/server/cssService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,25 +40,25 @@
       <file leaf-file-name="redirectionService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/redirectionService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="29" selection-start="5402" selection-end="5402" vertical-scroll-proportion="0.0" vertical-offset="1801" max-vertical-offset="2499">
+            <state line="12" column="61" selection-start="455" selection-end="483" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="2499">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cssService.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="cssService.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/cssService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="30" selection-start="1512" selection-end="1512" vertical-scroll-proportion="-6.92" vertical-offset="507" max-vertical-offset="1445">
+            <state line="44" column="41" selection-start="1715" selection-end="1715" vertical-scroll-proportion="0.35809806" vertical-offset="507" max-vertical-offset="1445">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="212" column="86" selection-start="9350" selection-end="9350" vertical-scroll-proportion="0.80145985" vertical-offset="3055" max-vertical-offset="3740">
+            <state line="192" column="55" selection-start="8152" selection-end="8152" vertical-scroll-proportion="0.0" vertical-offset="3055" max-vertical-offset="3740">
               <folding />
             </state>
           </provider>
@@ -69,7 +67,7 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="64" selection-start="112" selection-end="112" vertical-scroll-proportion="3.5769231" vertical-offset="178" max-vertical-offset="850">
+            <state line="5" column="64" selection-start="113" selection-end="113" vertical-scroll-proportion="3.5769231" vertical-offset="178" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
@@ -107,9 +105,9 @@
         <option value="$PROJECT_DIR$/client/css/pages.less" />
         <option value="$PROJECT_DIR$/client/js/resources-prod.js" />
         <option value="$PROJECT_DIR$/client/js/resources-0.37.0.js" />
-        <option value="$PROJECT_DIR$/server/cssService.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/server/cssService.js" />
       </list>
     </option>
   </component>
@@ -277,7 +275,7 @@
       <recent name="C:\usr\menzit\client\html\banner\types" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Heroku logs">
+  <component name="RunManager" selected="Node.js.grunt prod">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -1167,7 +1165,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49723756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
@@ -1179,7 +1177,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-319" y="-1073" width="1904" height="1037" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-319" y="-1073" width="1904" height="1037" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1310,6 +1308,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/redirectionService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="61" selection-start="455" selection-end="483" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="2499">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="29" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.0" vertical-offset="524" max-vertical-offset="3757">
@@ -1317,30 +1322,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/redirectionService.js">
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="29" selection-start="5402" selection-end="5402" vertical-scroll-proportion="0.0" vertical-offset="1801" max-vertical-offset="2499">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/cssService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="30" selection-start="1512" selection-end="1512" vertical-scroll-proportion="-6.92" vertical-offset="507" max-vertical-offset="1445">
+        <state line="192" column="55" selection-start="8152" selection-end="8152" vertical-scroll-proportion="0.0" vertical-offset="3055" max-vertical-offset="3740">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="64" selection-start="112" selection-end="112" vertical-scroll-proportion="3.5769231" vertical-offset="178" max-vertical-offset="850">
+        <state line="5" column="64" selection-start="113" selection-end="113" vertical-scroll-proportion="3.5769231" vertical-offset="178" max-vertical-offset="850">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+    <entry file="file://$PROJECT_DIR$/server/cssService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="212" column="86" selection-start="9350" selection-end="9350" vertical-scroll-proportion="0.80145985" vertical-offset="3055" max-vertical-offset="3740">
+        <state line="44" column="41" selection-start="1715" selection-end="1715" vertical-scroll-proportion="0.35809806" vertical-offset="507" max-vertical-offset="1445">
           <folding />
         </state>
       </provider>
