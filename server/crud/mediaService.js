@@ -30,7 +30,9 @@ module.exports = {
 
             fileSystemService.readFile(file.path, function (err, data) {
                 var dimensions, saveObj;
-                dimensions = sizeOf(file.path);
+                //Secure the dimensions handling to avoid problems with specific formats (i.e. .ico)
+                try         { dimensions = sizeOf(file.path); }
+                catch(ex)   { dimensions = {width: 0, height: 0 }; }
                 saveObj = {
                     data    : data,
                     name   : file.name,
