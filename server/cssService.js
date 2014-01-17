@@ -31,7 +31,7 @@
 
         _getLessParsingOptions: function() {
             return {
-                paths         : ["../client/css"],  // .less file search paths
+                paths         : ["/client/css"],  // .less file search paths
                 optimization  : 1,                  //optimization level, higher is better but more volatile
                 filename      : "main.less",        // root .less file
                 compress      : true,               //compress?
@@ -41,7 +41,8 @@
 
         _getCss: function(portalVars, callback) {
             var self = this, dataString, options, parser, cssString;
-            fs.readFile( '../client/css/main.less', function ( error, data ) {
+            console.log("X1", __dirname);
+            fs.readFile( '/client/css/main.less', function ( error, data ) {
                 dataString = data.toString();
                 options = self._getLessParsingOptions();
                 parser = new less.Parser(options);
