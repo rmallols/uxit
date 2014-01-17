@@ -65,6 +65,7 @@
                 itemElm.then(function(itemElms) {
                     expect(itemElms[itemElms.length-1].getText()).not.toBe(mockUserName);
                     loginPO.logout();
+                    navigationPO.navigateTo(execSetup.contextPath + '/menzit/login');
                     loginPO.loginAsAdmin();
                 });
             });

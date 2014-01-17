@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/directives/bannerCanvas.spec.js" afterPath="$PROJECT_DIR$/server/tests/unit/directives/bannerCanvas.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/banner/types/bannerImageService.js" afterPath="$PROJECT_DIR$/client/js/directives/banner/types/bannerImageService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/services/bannerImageService.spec.js" afterPath="$PROJECT_DIR$/server/tests/unit/services/bannerImageService.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/directives/bannerItem.spec.js" afterPath="$PROJECT_DIR$/server/tests/unit/directives/bannerItem.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/banner/bannerItemService.js" afterPath="$PROJECT_DIR$/client/js/services/banner/bannerItemService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/services/bannerItemService.spec.js" afterPath="$PROJECT_DIR$/server/tests/unit/services/bannerItemService.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/test-results.xml" afterPath="$PROJECT_DIR$/server/tests/unit/test-results.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js" afterPath="$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -34,28 +28,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bannerItemService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/services/banner/bannerItemService.js">
+      <file leaf-file-name="userHandling.pO.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/e2e/resources/pageObjects/userHandling.pO.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="86" selection-start="3010" selection-end="3010" vertical-scroll-proportion="-8.96" vertical-offset="779" max-vertical-offset="2346">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bannerItemService.spec.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/tests/unit/services/bannerItemService.spec.js">
+      <file leaf-file-name="userHandling.spec.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="58" selection-start="1099" selection-end="1099" vertical-scroll-proportion="1.1065089" vertical-offset="0" max-vertical-offset="3247">
+            <state line="68" column="67" selection-start="3407" selection-end="3407" vertical-scroll-proportion="1.5527157" vertical-offset="670" max-vertical-offset="1360">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bannerItem.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/directives/banner/bannerItem.js">
+      <file leaf-file-name="login.spec.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/login.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="88" selection-start="1016" selection-end="1016" vertical-scroll-proportion="-10.32" vertical-offset="167" max-vertical-offset="3281">
+            <state line="11" column="84" selection-start="446" selection-end="511" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.pO.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/tests/e2e/resources/pageObjects/login.pO.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="8" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="731">
               <folding />
             </state>
           </provider>
@@ -80,7 +83,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/setup/availableApps.json" />
         <option value="$PROJECT_DIR$/client/apps/bannerApp/bannerAppService.js" />
         <option value="$PROJECT_DIR$/client/html/banner/bannerItem.html" />
         <option value="$PROJECT_DIR$/client/css/bannerItem.less" />
@@ -96,6 +98,7 @@
         <option value="$PROJECT_DIR$/client/js/directives/banner/bannerItem.js" />
         <option value="$PROJECT_DIR$/client/js/services/banner/bannerItemService.js" />
         <option value="$PROJECT_DIR$/server/tests/unit/services/bannerItemService.spec.js" />
+        <option value="$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js" />
       </list>
     </option>
   </component>
@@ -235,17 +238,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -263,7 +266,15 @@
       <recent name="C:\usr\menzit\client\html\banner\types" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Karma server">
+  <component name="RunManager" selected="Node.js.Start Protractor">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -274,12 +285,8 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -287,10 +294,6 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -1112,7 +1115,11 @@
       <created>1389893697459</created>
       <updated>1389893697459</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="#238 [BannerCanvas] Set all the sizes as % instead of px - fixing tests">
+      <created>1389954202306</created>
+      <updated>1389954202306</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1168,8 +1175,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="#225 The staticContentApp is broken" />
-    <MESSAGE value="#212 [addApp] Remove the reference to pixel in height handling" />
     <MESSAGE value="#138 [Prod] There's an error trying to execute some actions" />
     <MESSAGE value="#179 Import / Export Portals support" />
     <MESSAGE value="#179 Import / Export Portals support - The changes are now applied on the fly, without refreshing the page" />
@@ -1193,7 +1198,9 @@
     <MESSAGE value="#241 [App] Full row width support" />
     <MESSAGE value="#240 [App][UI] Add border capabilities" />
     <MESSAGE value="#238 [BannerCanvas] Set all the sizes as % instead of px" />
-    <option name="LAST_COMMIT_MESSAGE" value="#238 [BannerCanvas] Set all the sizes as % instead of px" />
+    <MESSAGE value="#238 [BannerCanvas] Set all the sizes as % instead of px - fixing tests" />
+    <MESSAGE value="#0 Test fiex" />
+    <option name="LAST_COMMIT_MESSAGE" value="#0 Test fiex" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1201,113 +1208,96 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/js/directives/contentEditable/richContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="46" selection-start="2878" selection-end="2878" vertical-scroll-proportion="0.3833581" vertical-offset="932" max-vertical-offset="1700" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/services/contentEditable/contentEditableRichContentService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="66" selection-start="3124" selection-end="3124" vertical-scroll-proportion="0.34240687" vertical-offset="764" max-vertical-offset="1513" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/bannerItem.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="68" selection-start="1174" selection-end="1174" vertical-scroll-proportion="0.4807074" vertical-offset="976" max-vertical-offset="1615" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/banner/bannerCanvas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="62" selection-start="3973" selection-end="3973" vertical-scroll-proportion="0.0" vertical-offset="1631" max-vertical-offset="2329">
-          <folding>
-            <marker date="1389889883983" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1389889883983" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/html/banner/bannerItem.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="92" selection-start="83" selection-end="92" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="204">
-          <folding />
-        </state>
+        <state line="0" column="92" selection-start="83" selection-end="92" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="204" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="47" selection-start="829" selection-end="831" vertical-scroll-proportion="0.33283803" vertical-offset="235" max-vertical-offset="1411">
-          <folding />
-        </state>
+        <state line="27" column="47" selection-start="829" selection-end="831" vertical-scroll-proportion="0.33283803" vertical-offset="235" max-vertical-offset="1411" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/bannerCanvas.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="67" selection-start="356" selection-end="356" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="850">
-          <folding />
-        </state>
+        <state line="20" column="67" selection-start="356" selection-end="356" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="850" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerImageService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="43" selection-start="824" selection-end="826" vertical-scroll-proportion="-8.96" vertical-offset="235" max-vertical-offset="969">
-          <folding />
-        </state>
+        <state line="27" column="43" selection-start="824" selection-end="826" vertical-scroll-proportion="-8.96" vertical-offset="235" max-vertical-offset="969" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/unit/services/bannerTextService.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="99" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1768">
-          <folding />
-        </state>
+        <state line="17" column="99" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1768" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/bannerCanvas.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="45" selection-start="300" selection-end="300" vertical-scroll-proportion="-4.08" vertical-offset="0" max-vertical-offset="2261">
-          <folding>
-            <marker date="1389943837221" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="6" column="45" selection-start="300" selection-end="300" vertical-scroll-proportion="-4.08" vertical-offset="0" max-vertical-offset="2261" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/unit/directives/bannerItem.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="1023" selection-end="1100" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3349">
-          <folding />
-        </state>
+        <state line="18" column="0" selection-start="1023" selection-end="1100" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3349" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/html/banner/bannerCanvas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="51" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255">
-          <folding />
-        </state>
+        <state line="9" column="51" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/unit/services/bannerImageService.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="85" selection-start="959" selection-end="959" vertical-scroll-proportion="0.4294205" vertical-offset="0" max-vertical-offset="1394">
-          <folding />
-        </state>
+        <state line="17" column="85" selection-start="959" selection-end="959" vertical-scroll-proportion="0.4294205" vertical-offset="0" max-vertical-offset="1394" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/banner/bannerItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="88" selection-start="1016" selection-end="1016" vertical-scroll-proportion="-10.32" vertical-offset="167" max-vertical-offset="3281">
+        <state line="25" column="88" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.3696275" vertical-offset="167" max-vertical-offset="3281">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/banner/bannerItemService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="86" selection-start="3010" selection-end="3010" vertical-scroll-proportion="-8.96" vertical-offset="779" max-vertical-offset="2346">
+        <state line="59" column="86" selection-start="3010" selection-end="3010" vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="2346">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/unit/services/bannerItemService.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="58" selection-start="1099" selection-end="1099" vertical-scroll-proportion="1.1065089" vertical-offset="0" max-vertical-offset="3247">
+        <state line="42" column="57" selection-start="1899" selection-end="1899" vertical-scroll-proportion="0.5845272" vertical-offset="306" max-vertical-offset="3247">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/e2e/resources/pageObjects/userHandling.pO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/login.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="84" selection-start="446" selection-end="511" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/e2e/resources/pageObjects/login.pO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="8" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="67" selection-start="3407" selection-end="3407" vertical-scroll-proportion="1.5527157" vertical-offset="670" max-vertical-offset="1360">
           <folding />
         </state>
       </provider>
