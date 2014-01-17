@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.37.0.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\usr\menzit\client\min\js.min.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/cssService.js" afterPath="$PROJECT_DIR$/server/cssService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/main.less" afterPath="$PROJECT_DIR$/client/css/main.less" />
     </list>
     <ignored path="uxit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,10 +47,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cssService.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="cssService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/cssService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="41" selection-start="1715" selection-end="1715" vertical-scroll-proportion="0.35809806" vertical-offset="507" max-vertical-offset="1445">
+            <state line="33" column="47" selection-start="1138" selection-end="1138" vertical-scroll-proportion="-2.16" vertical-offset="507" max-vertical-offset="1445">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/css/main.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="40" selection-start="2241" selection-end="2241" vertical-scroll-proportion="-2.5454545" vertical-offset="569" max-vertical-offset="1190">
               <folding />
             </state>
           </provider>
@@ -64,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="64" selection-start="112" selection-end="112" vertical-scroll-proportion="3.5769231" vertical-offset="178" max-vertical-offset="850">
+            <state line="21" column="50" selection-start="479" selection-end="479" vertical-scroll-proportion="0.53125" vertical-offset="0" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
@@ -92,7 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/tests/unit/directives/bannerCanvas.spec.js" />
         <option value="$PROJECT_DIR$/server/tests/unit/directives/bannerItem.spec.js" />
         <option value="$PROJECT_DIR$/client/js/directives/banner/types/bannerImageService.js" />
         <option value="$PROJECT_DIR$/server/tests/unit/services/bannerImageService.spec.js" />
@@ -107,6 +116,7 @@
         <option value="$PROJECT_DIR$/client/js/resources-0.37.0.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/client/css/main.less" />
         <option value="$PROJECT_DIR$/server/cssService.js" />
       </list>
     </option>
@@ -1165,7 +1175,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49723756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
@@ -1229,13 +1239,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/tests/e2e/resources/pageObjects/userHandling.pO.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/login.spec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="84" selection-start="446" selection-end="511" vertical-scroll-proportion="0.2679083" vertical-offset="0" max-vertical-offset="698">
@@ -1329,16 +1332,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/client/css/main.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="64" selection-start="112" selection-end="112" vertical-scroll-proportion="3.5769231" vertical-offset="178" max-vertical-offset="850">
+        <state line="45" column="40" selection-start="2241" selection-end="2241" vertical-scroll-proportion="-2.5454545" vertical-offset="569" max-vertical-offset="1190">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/cssService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="41" selection-start="1715" selection-end="1715" vertical-scroll-proportion="0.35809806" vertical-offset="507" max-vertical-offset="1445">
+        <state line="33" column="47" selection-start="1138" selection-end="1138" vertical-scroll-proportion="-2.16" vertical-offset="507" max-vertical-offset="1445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="50" selection-start="479" selection-end="479" vertical-scroll-proportion="0.53125" vertical-offset="0" max-vertical-offset="850">
           <folding />
         </state>
       </provider>

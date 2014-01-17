@@ -41,7 +41,7 @@
 
         _getCss: function(portalVars, callback) {
             var self = this, dataString, options, parser, cssString;
-            console.log("X1", __dirname);
+            console.log("X1", __dirname + '/../client/css/main.less');
             fs.readFile( __dirname + '/../client/css/main.less', function ( error, data ) {
                 dataString = data.toString();
                 options = self._getLessParsingOptions();
