@@ -1,22 +1,25 @@
 describe('bannerItem directive', function () {
 
-    var $rootScope, $scope, $compile, $timeout, bannerItemElm, model, sH, textPath, imagePath;
+    var $rootScope, $scope, $compile, $timeout, bannerItemElm, model, sH, textPath, imagePath,
+        canvasPxWidth, canvasPxHeight;
 
     beforeEach(module('components', 'templates-main', 'mocks.$timeout'));
     beforeEach(inject(["$rootScope", "$compile", "$document", "$timeout", "stringService",
     function ($rootScope_, $compile_, $document_, $timeout_, stringService_) {
         model                   = {"id":1380531241893,"type":"text","value":"sample test",
-                                   "size":{"width":100,"height":100},"position":{"top":50,"left":300}};
+                                   "size":{"width":40,"height":60},"position":{"top":20,"left":80}};
         $rootScope              = $rootScope_;
         $scope                  = $rootScope.$new();
         $scope.model            = model;
         $scope.overflow         = { visible: false };
-        $scope.gridSize         = 50;
+        $scope.gridSize         = 20;
         $compile                = compileFn($compile_, $scope, $document_);
         $timeout                = $timeout_;
         sH                      = stringService_;
-        textPath                = ' > [ux-transclude] > .item.text';
-        imagePath               = ' > [ux-transclude] > .item.image';
+        canvasPxWidth           = 500;
+        canvasPxHeight          = 300;
+        textPath                = ' [ux-transclude] > .item.text';
+        imagePath               = ' [ux-transclude] > .item.image';
         compile();
     }]));
 
@@ -36,7 +39,7 @@ describe('bannerItem directive', function () {
         });
 
         it('should set the edit item button', function () {
-            expect($('> button.edit[ng-click="editItem()"]', bannerItemElm).length).toBe(1);
+            expect($('button.edit[ng-click="editItem()"]', bannerItemElm).length).toBe(1);
         });
 
         it('should set the select handler input to manage the active status', function () {
@@ -104,22 +107,27 @@ describe('bannerItem directive', function () {
     describe('item size', function () {
 
         it('should set the proper width', function () {
-            expect(parseInt(bannerItemElm.css('width'))).toBe(model.size.width);
+            var itemWidth = Math.round(bannerItemElm.width() / bannerItemElm.parent().width() * 100);
+            expect(itemWidth).toBe(model.size.width);
+
         });
 
         it('should set the proper height', function () {
-            expect(parseInt(bannerItemElm.css('height'))).toBe(model.size.height);
+            var itemHeight = Math.round(bannerItemElm.height() / bannerItemElm.parent().height() * 100);
+            expect(itemHeight).toBe(model.size.height);
         });
     });
 
     describe('item position', function () {
 
         it('should set the proper top position', function () {
-            expect(parseInt(bannerItemElm.css('top'))).toBe(model.position.top);
+            var itemPxTop = (model.position.top / 100) * canvasPxHeight;
+            expect(parseInt(bannerItemElm.css('top'))).toBe(itemPxTop);
         });
 
         it('should set the proper left position', function () {
-            expect(parseInt(bannerItemElm.css('left'))).toBe(model.position.left);
+            var itemPxLeft = (model.position.left / 100) * canvasPxWidth;
+            expect(parseInt(bannerItemElm.css('left'))).toBe(itemPxLeft);
         });
     });
 
@@ -172,8 +180,13 @@ describe('bannerItem directive', function () {
     });
 
     function compile() {
-        var template = '<div banner-item data="model" overflow="overflow" read-only="readOnly" grid-size="gridSize"></div>';
+        var bannerItemParentElm,
+            template = '<div banner-item data="model" overflow="overflow" read-only="readOnly" grid-size="gridSize"></div>';
         bannerItemElm = $compile(template);
+        //Mock the height of the parent element to ease height calculations of the item
+        bannerItemParentElm = bannerItemElm.parent();
+        bannerItemParentElm.width(canvasPxWidth);
+        bannerItemParentElm.height(canvasPxHeight);
         $rootScope.$digest();
     }
 });

@@ -1,20 +1,20 @@
 describe('bannerCanvas directive', function () {
 
     var $rootScope, $scope, $compile, $httpBackend, sessionService, roleService, bannerCanvasDirective,
-    gridSize = 50, model;
+    gridSize = 20, model;
 
     beforeEach(module('components', 'templates-main', 'mocks.$timeout'));
     beforeEach(inject(["$rootScope", "$compile", "$httpBackend", "sessionService", "roleService",
     function ($rootScope_, $compile_, $httpBackend_, sessionService_, roleService_) {
 
         model           = [{"id":1380531241893,"type":"text","value":"sample test",
-                            "size":{"width":100,"height":100}, "position":{"top":50,"left":300}}];
+                            "size":{"width":40,"height":60}, "position":{"top":60,"left":80}}];
         $compile        = $compile_;
         $rootScope      = $rootScope_;
         $scope          = $rootScope.$new();
         $scope.model    = model;
         $scope.height   = 300;
-        $scope.gridSize = 50;
+        $scope.gridSize = gridSize;
         $httpBackend    = $httpBackend_;
         sessionService  = sessionService_;
         roleService     = roleService_;
@@ -97,13 +97,15 @@ describe('bannerCanvas directive', function () {
     describe('rulers structure', function () {
 
         it('should have the proper amount of column rulers', function () {
-            var colRulersSize = Math.floor(bannerCanvasDirective.width() / gridSize),
+            $rootScope.$apply();
+            $rootScope.$digest();
+            var colRulersSize = Math.floor(100 / gridSize),
                 colRulersElms = $(' > .grid > .ruler.col', bannerCanvasDirective);
             expect(colRulersSize).toBe(colRulersElms.length);
         });
 
         it('should have the proper amount of row rulers', function () {
-            var rowRulersSize = Math.floor(bannerCanvasDirective.height() / gridSize),
+            var rowRulersSize = Math.floor(100 / gridSize),
                 rowRulersElms = $(' > .grid > .ruler.row', bannerCanvasDirective);
             expect(rowRulersSize).toBe(rowRulersElms.length);
         });
@@ -118,7 +120,7 @@ describe('bannerCanvas directive', function () {
     });
 
     function compile() {
-        var template    = '<div banner-canvas ng-model="model" height="height" grid-size="gridSize" style="height: 320px;"></div>',
+        var template    = '<div banner-canvas ng-model="model" height="height" grid-size="gridSize" style="width: 100%; height: 320px;"></div>',
             compile     = compileFn($compile, $scope);
         bannerCanvasDirective = compile(template);
         $rootScope.$digest();

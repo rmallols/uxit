@@ -65,12 +65,12 @@
         /**
          * Updates the view and the model according to the state of the item
          *
-         * @param {object}  item        The model of the element
-         * @param {object}  contentElm  The pointer to the DOM object where the content
-         *                              of the element is
-         * @param {object}  boxElm      The pointer to the DOM object where the box
-         *                              that wraps the element is
-         * @param {number}  gridSize    The width of the grid the element is
+         * @param {object}  item            The model of the element
+         * @param {object}  contentElm      The pointer to the DOM object where the content
+         *                                  of the element is
+         * @param {object}  boxElm          The pointer to the DOM object where the box
+         *                                  that wraps the element is
+         * @param {number}  gridSize        The width of the grid the element is
          * @param {object}  bCDimensions    The dimensions of the parent banner canvas
          */
         function refresh(item, contentElm, boxElm, gridSize, bCDimensions) {
@@ -109,9 +109,13 @@
 
         function fitToGrid(item, gridSize) {
             var gapToHGrid  = item.size.width % gridSize,
-                gapToVGrid  = item.size.height % gridSize;
-            if(gapToHGrid)  { item.size.width   = item.size.width - gapToHGrid + gridSize; }
-            if(gapToVGrid)  { item.size.height  = item.size.height - gapToVGrid + gridSize; }
+                gapToVGrid  = item.size.height % gridSize,
+                gapToTGrid  = item.position.top % gridSize,
+                gapToLGrid  = item.position.left % gridSize;
+            if(gapToHGrid)  { item.size.width       = item.size.width - gapToHGrid + gridSize; }
+            if(gapToVGrid)  { item.size.height      = item.size.height - gapToVGrid + gridSize; }
+            if(gapToTGrid)  { item.position.top     = item.position.top - gapToTGrid + gridSize; }
+            if(gapToLGrid)  { item.position.left    = item.position.left - gapToLGrid + gridSize; }
         }
         /** End of private methods **/
 

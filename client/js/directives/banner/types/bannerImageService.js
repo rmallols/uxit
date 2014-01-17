@@ -42,20 +42,10 @@
             ];
         }
 
-        /**
-         * The actions to be executed whenever the box that contains the image item is resized
-         *
-         * @param {object} contentElm The pointer to the DOM object where the image is
-         */
-        function onResizeItem(contentElm) {
-            contentElm.width('100%');
-        }
-
         return {
             getTemplate     : getTemplate,
             getDefaultValue : getDefaultValue,
-            getEditPanels   : getEditPanels,
-            onResizeItem    : onResizeItem
+            getEditPanels   : getEditPanels
         };
     }]);
 })();

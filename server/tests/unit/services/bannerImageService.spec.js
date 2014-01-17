@@ -6,7 +6,7 @@ describe('bannerItem directive', function () {
     beforeEach(inject(["$rootScope", "$compile", "$document", "bannerImageService",
     function ($rootScope_, $compile_, $document_, bannerImageService_) {
         model           = { "id":1380531241893,"type":"image","value":"image.png",
-                            "size":{"width":100,"height":100},"position":{"top":50,"left":300}};
+                            "size":{"width":20,"height":60},"position":{"top":40,"left":80}};
         $rootScope      = $rootScope_;
         $scope          = $rootScope.$new();
         $scope.model    = model;
@@ -66,19 +66,6 @@ describe('bannerItem directive', function () {
 
         it('should have the proper onLayer attribute in the edit image layer', function () {
             expect(editPanels[0].onLayer.change).not.toBe(undefined);
-        });
-    });
-
-    describe('onResizeItem', function () {
-
-        var contentElm;
-        beforeEach(function() {
-            contentElm = $(imagePath, bannerItemElm);
-        });
-
-        it('should set the width of the given element to 100% (the same as the model says)', function () {
-            bIS.onResizeItem(contentElm);
-            expect(parseInt(contentElm.css('width'))).toBe($scope.model.size.width);
         });
     });
 
