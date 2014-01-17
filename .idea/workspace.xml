@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/cssService.js" afterPath="$PROJECT_DIR$/server/cssService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.37.0.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\usr\menzit\client\min\js.min.js" afterPath="" />
     </list>
     <ignored path="uxit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,7 +67,7 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="64" selection-start="113" selection-end="113" vertical-scroll-proportion="3.5769231" vertical-offset="178" max-vertical-offset="850">
+            <state line="5" column="64" selection-start="112" selection-end="112" vertical-scroll-proportion="3.5769231" vertical-offset="178" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
@@ -275,7 +275,7 @@
       <recent name="C:\usr\menzit\client\html\banner\types" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.grunt prod">
+  <component name="RunManager" selected="Node.js.grunt dev">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -1331,7 +1331,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="64" selection-start="113" selection-end="113" vertical-scroll-proportion="3.5769231" vertical-offset="178" max-vertical-offset="850">
+        <state line="5" column="64" selection-start="112" selection-end="112" vertical-scroll-proportion="3.5769231" vertical-offset="178" max-vertical-offset="850">
           <folding />
         </state>
       </provider>
