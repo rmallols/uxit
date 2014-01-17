@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         cssFolder: 'client/css',
         minFolder: 'client/min/',
         appsFolder: 'client/apps/',
-        clean: ['<%= minFolder %>js.min.js', '<%= minFolder %>css.min.css', '<%= jsFolder %>/resources-<%= pkg.version %>.js'],
+        clean: ['<%= minFolder %>js.min.js', '<%= jsFolder %>/resources-<%= pkg.version %>.js'],
         jshint: {
             all: ['<%= jsFolder %>*.js', '<%= jsFolder %>controllers/*.js',
                 '<%= jsFolder %>directives/*.js', '<%= jsFolder %>directives/**/*.js',
@@ -59,8 +59,8 @@ module.exports = function(grunt) {
                 files: {
                     '<%= minFolder %>js.min.js': [
                         '<%= jsFolder %>controllers/*.js',
-                        '<%= jsFolder %>directives/*.js', '<%= jsFolder %>directives/*/*.js',
-                        '<%= jsFolder %>services/*.js', '<%= jsFolder %>services/*/*.js',
+                        '<%= jsFolder %>directives/**/*.js',
+                        '<%= jsFolder %>services/**/*.js',
                         '<%= jsFolder %>errorHandler.js', '<%= jsFolder %>templates.js']
                 }
             },
@@ -102,7 +102,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-        less: {
+        /*less: {
             prod: {
                 options: {
                     compress: true
@@ -111,7 +111,7 @@ module.exports = function(grunt) {
                     "<%= minFolder %>css.min.css": "client/css/main.less"
                 }
             }
-        },
+        },*/
         html2js: {
             options: {
                 rename: function (moduleName) {
@@ -192,7 +192,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-preprocess');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-less');
+    //grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-bumpup');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -211,5 +211,5 @@ module.exports = function(grunt) {
     grunt.registerTask('herokuLogs', ['shell:herokuLogs']);
     grunt.registerTask('dev', ['clean', 'jshint', 'karma:run', 'startProtractor', 'bump', 'devPreprocess', 'generateTemplates', 'githubPush']);
     grunt.registerTask('prod', ['clean', 'jshint', 'karma:run', 'startProtractor', 'bump', 'prodPreprocess',
-                                'generateTemplates', 'concat', 'uglify', 'less:prod', 'githubPush', 'herokuPush']);
+                                'generateTemplates', 'concat', 'uglify', /*'less:prod',*/ 'githubPush', 'herokuPush']);
 };
