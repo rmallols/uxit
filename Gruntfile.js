@@ -210,6 +210,6 @@ module.exports = function(grunt) {
     grunt.registerTask('herokuPush', ['shell:herokuPush']);
     grunt.registerTask('herokuLogs', ['shell:herokuLogs']);
     grunt.registerTask('dev', ['clean', 'jshint', 'bump', 'devPreprocess', 'generateTemplates', 'githubPush']);
-    grunt.registerTask('prod', ['clean', 'jshint', 'startProtractor', 'karma:run', 'bump', 'prodPreprocess',
+    grunt.registerTask('prod', ['clean', /*'jshint', 'startProtractor', 'karma:run',*/ 'bump', 'prodPreprocess',
                                 'generateTemplates', 'concat', 'uglify', /*'less:prod',*/ 'githubPush', 'herokuPush']);
 };
