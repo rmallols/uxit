@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/crud/mediaService.js" afterPath="$PROJECT_DIR$/server/crud/mediaService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/pages.less" afterPath="$PROJECT_DIR$/client/css/pages.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -46,10 +46,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mediaService.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="mediaService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/crud/mediaService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="75" selection-start="1575" selection-end="1575" vertical-scroll-proportion="1.0088757" vertical-offset="254" max-vertical-offset="1241">
+            <state line="26" column="77" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="1241">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pages.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/css/pages.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="72" selection-start="780" selection-end="780" vertical-scroll-proportion="1.2442749" vertical-offset="422" max-vertical-offset="1428">
               <folding />
             </state>
           </provider>
@@ -92,7 +101,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/html/banner/bannerItem.html" />
         <option value="$PROJECT_DIR$/client/css/bannerItem.less" />
         <option value="$PROJECT_DIR$/client/js/directives/contentEditable/richContent.js" />
         <option value="$PROJECT_DIR$/client/js/services/utils/textSelectionService.js" />
@@ -108,6 +116,7 @@
         <option value="$PROJECT_DIR$/server/tests/unit/services/bannerItemService.spec.js" />
         <option value="$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js" />
         <option value="$PROJECT_DIR$/server/crud/mediaService.js" />
+        <option value="$PROJECT_DIR$/client/css/pages.less" />
       </list>
     </option>
   </component>
@@ -1132,7 +1141,11 @@
       <created>1389971810535</created>
       <updated>1389971810535</updated>
     </task>
-    <option name="localTasksCounter" value="187" />
+    <task id="LOCAL-00187" summary="#236 [Favicon] Support for .ico favicons">
+      <created>1389975038686</created>
+      <updated>1389975038686</updated>
+    </task>
+    <option name="localTasksCounter" value="188" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1168,7 +1181,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-319" y="-1074" width="1904" height="1037" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-319" y="-1074" width="1904" height="1037" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1188,7 +1201,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="#138 [Prod] There's an error trying to execute some actions" />
     <MESSAGE value="#179 Import / Export Portals support" />
     <MESSAGE value="#179 Import / Export Portals support - The changes are now applied on the fly, without refreshing the page" />
     <MESSAGE value="#220 The maximize app is partially broken" />
@@ -1213,7 +1225,8 @@
     <MESSAGE value="#238 [BannerCanvas] Set all the sizes as % instead of px" />
     <MESSAGE value="#238 [BannerCanvas] Set all the sizes as % instead of px - fixing tests" />
     <MESSAGE value="#0 Test fiex" />
-    <option name="LAST_COMMIT_MESSAGE" value="#0 Test fiex" />
+    <MESSAGE value="#236 [Favicon] Support for .ico favicons" />
+    <option name="LAST_COMMIT_MESSAGE" value="#236 [Favicon] Support for .ico favicons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1221,11 +1234,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/js/directives/banner/types/bannerTextService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="47" selection-start="829" selection-end="831" vertical-scroll-proportion="0.33283803" vertical-offset="235" max-vertical-offset="1411" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/css/bannerCanvas.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="67" selection-start="356" selection-end="356" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="850" />
@@ -1316,7 +1324,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/crud/mediaService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="75" selection-start="1575" selection-end="1575" vertical-scroll-proportion="1.0088757" vertical-offset="254" max-vertical-offset="1241">
+        <state line="26" column="77" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="1241">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/pages.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="72" selection-start="780" selection-end="780" vertical-scroll-proportion="1.2442749" vertical-offset="422" max-vertical-offset="1428">
           <folding />
         </state>
       </provider>
