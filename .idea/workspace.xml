@@ -9,6 +9,8 @@
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.41.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.42.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.43.0.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.44.0.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\usr\menzit\client\min\js.min.js" afterPath="" />
     </list>
     <ignored path="uxit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,7 +47,7 @@
       <file leaf-file-name="main.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/css/main.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="125" selection-start="1902" selection-end="1902" vertical-scroll-proportion="0.84863126" vertical-offset="0" max-vertical-offset="1207">
+            <state line="7" column="46" selection-start="515" selection-end="515" vertical-scroll-proportion="0.19162641" vertical-offset="0" max-vertical-offset="1207">
               <folding />
             </state>
           </provider>
@@ -63,7 +65,7 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="49" selection-start="234" selection-end="234" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="850">
+            <state line="10" column="49" selection-start="212" selection-end="212" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
@@ -271,7 +273,7 @@
       <recent name="C:\usr\menzit\client\html\banner\types" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.grunt prod">
+  <component name="RunManager" selected="Node.js.grunt dev">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -1160,7 +1162,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1320" height="784" extended-state="7" />
+    <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49723756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
@@ -1172,7 +1174,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-319" y="-1073" width="1904" height="1037" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-318" y="-1073" width="1904" height="1037" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1302,7 +1304,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="49" selection-start="234" selection-end="234" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="850">
+        <state line="10" column="49" selection-start="212" selection-end="212" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="850">
           <folding />
         </state>
       </provider>
@@ -1316,7 +1318,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/main.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="125" selection-start="1902" selection-end="1902" vertical-scroll-proportion="0.84863126" vertical-offset="0" max-vertical-offset="1207">
+        <state line="7" column="46" selection-start="515" selection-end="515" vertical-scroll-proportion="0.19162641" vertical-offset="0" max-vertical-offset="1207">
           <folding />
         </state>
       </provider>
