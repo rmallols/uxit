@@ -1170,7 +1170,7 @@ angular.module("stats.html", []).run(["$templateCache", function($templateCache)
 angular.module("styles.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("styles.html",
     "<div>\n" +
-    "    <div class=\"cf\" ng-show=\"target=='portal'\">\n" +
+    "    <div class=\"cf\" ux-show=\"isPortalTarget()\">\n" +
     "        <div class=\"columns large-13\">\n" +
     "            <label i18n=\"editStyles.fontColor\"></label>\n" +
     "            <div>\n" +
@@ -1192,9 +1192,13 @@ angular.module("styles.html", []).run(["$templateCache", function($templateCache
     "        <label i18n=\"editStyles.fontSize\"></label>\n" +
     "        <div><input type=\"text\" ng-model=\"model.fontSize\"/></div>\n" +
     "    </div>\n" +
-    "    <div class=\"cf\" ng-show=\"target=='app'\">\n" +
+    "    <div class=\"cf\" ux-show=\"isAppTarget()\">\n" +
     "        <label i18n=\"editStyles.height\"></label>\n" +
     "        <div><input type=\"number\" ng-model=\"model.height\"/></div>\n" +
+    "    </div>\n" +
+    "    <div class=\"cf columns large-12\" ux-show=\"isPortalTarget()\">\n" +
+    "        <h5><label i18n=\"editStyles.logo\"></label></h5>\n" +
+    "        <media-picker ng-model=\"logo\" multiple=\"false\" preview=\"true\" on-change=\"changeLogoId($media)\"></media-picker>\n" +
     "    </div>\n" +
     "    <div class=\"cf\">\n" +
     "        <h5><label i18n=\"editStyles.background\"></label></h5>\n" +
@@ -1644,7 +1648,7 @@ angular.module("loginPage.html", []).run(["$templateCache", function($templateCa
   $templateCache.put("loginPage.html",
     "<div global-msg></div>\n" +
     "<div class=\"loginPage\">\n" +
-    "    <img src=\"/client/images/logo.svg\"/>\n" +
+    "    <div class=\"logo\"></div>\n" +
     "    <login></login>\n" +
     "</div>\n" +
     "\n" +

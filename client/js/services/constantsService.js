@@ -38,6 +38,10 @@
                 apps        : 'apps',
                 externalLink: 'externalLink'
             },
+            stylesTarget    : {
+                portal      : 'portal',
+                app         : 'app'
+            },
             blurOpacity     : 0.3,
             keyboardInterval: 100, //minimum time between different keyboard events
             defaultFontSize : 16

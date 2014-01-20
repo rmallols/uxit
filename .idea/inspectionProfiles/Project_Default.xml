@@ -5,7 +5,7 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="74">
+          <list size="76">
             <item index="0" class="java.lang.String" itemvalue="ng-app" />
             <item index="1" class="java.lang.String" itemvalue="ng-view" />
             <item index="2" class="java.lang.String" itemvalue="i18n" />
@@ -80,6 +80,8 @@
             <item index="71" class="java.lang.String" itemvalue="ng-hide" />
             <item index="72" class="java.lang.String" itemvalue="i18n-db" />
             <item index="73" class="java.lang.String" itemvalue="ux-transclude" />
+            <item index="74" class="java.lang.String" itemvalue="ux-show" />
+            <item index="75" class="java.lang.String" itemvalue="color-picker" />
           </list>
         </value>
       </option>
@@ -88,7 +90,7 @@
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="7">
+          <list size="8">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -96,6 +98,7 @@
             <item index="4" class="java.lang.String" itemvalue="embed" />
             <item index="5" class="java.lang.String" itemvalue="script" />
             <item index="6" class="java.lang.String" itemvalue="file-uploader" />
+            <item index="7" class="java.lang.String" itemvalue="media-picker" />
           </list>
         </value>
       </option>

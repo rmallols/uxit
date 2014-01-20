@@ -20,7 +20,7 @@
     getScript(scriptPath + '/errorHandler.js');
 
     //
-    getStyleSheet('main.css');
+    getStyleSheet('rest/main.css');
     getScript(minPath + '/lib.min.js');
     getScript(minPath + '/js.min.js');
 

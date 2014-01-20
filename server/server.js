@@ -16,7 +16,6 @@ var express             = require('express'),
     updateService       = require("./crud/updateService"),
     deleteService       = require("./crud/deleteService"),
     mediaService        = require("./crud/mediaService"),
-    downloadService     = require("./crud/downloadService"),
     redirectionService  = require("./redirectionService");
 
 app.use(express.bodyParser());
@@ -42,8 +41,12 @@ app.get('/favicon.ico', function (req, res) {
     redirectionService.goToFavicon(res);
 });
 
-app.get('/:portalId/main.css', setupDb, function (req, res) {
+app.get('/:portalId/rest/main.css', setupDb, function (req, res) {
     redirectionService.goToPortalCss(req, res, req.params.portalId, req.query.forceRefresh);
+});
+
+app.get('/:portalId/rest/logo', setupDb, function (req, res) {
+    redirectionService.goToLogo(req, res);
 });
 
 app.post('/:portalId/rest/login', setupDb, function (req, res) {
@@ -174,9 +177,7 @@ app.post('/:portalId/media/upload/:id?*', checkAuth, setupDb, function (req, res
 });
 
 app.get('/:portalId/media/:id/:name?', setupDb, function (req, res) {
-    downloadService.download(req.dbCon, req.params.id, function (content) {
-        redirectionService.goToMedia(req, res, content);
-    });
+    redirectionService.goToMedia(req, res);
 });
 
 app.post('/:portalId/rest/sendEmail', setupDb, function (req, res) {

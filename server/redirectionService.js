@@ -5,7 +5,8 @@ var path                = require('path'),
     collectionService   = require("./collectionService"),
     constantsService    = require("./constantsService"),
     cssService          = require("./cssService"),
-    getService          = require("./crud/getService");
+    getService          = require("./crud/getService"),
+    downloadService     = require("./crud/downloadService");
 
 module.exports = {
 
@@ -106,20 +107,45 @@ module.exports = {
         res.end();
     },
 
-    goToMedia: function(req, res, content) {
-        if(content && content[0]) {
-            //Try to get the file name from the URL in order to keep the document name once it's going to be downloaded
-            // Otherwise, take it from database
-            var filename = req.params.name || content.name, buffer;
-            //noinspection JSUnresolvedFunction
-            res.attachment(filename);
-            res.header("Content-Type", content.mime);
-            //noinspection JSUnresolvedFunction,JSCheckFunctionSignatures
-            buffer = new Buffer(content[0].data.toString('base64'), "base64")
-            res.end(buffer, 'base64');
-        } else {
-            res.end(null);
-        }
+    _goToPortalLogo: function(req, res, logoId) {
+        req.params.id = logoId;
+        this.goToMedia(req, res);
+    },
+
+    _goToDefaultLogo: function(res) {
+        var img = fs.readFileSync(__dirname + '/../client/images/logo.svg');
+        res.writeHead(200, {'Content-Type': 'image/svg+xml' });
+        res.end(img, 'binary');
+    },
+
+    goToLogo: function(req, res) {
+        var self = this;
+        getService.getFirst(req.dbCon, constantsService.collections.portal, {}, function (portal) {
+            var logoId = portal.styles.logoId;
+            if(logoId) { //Get the custom logo
+                self._goToPortalLogo(req, res, logoId);
+            } else { //Get the default logo
+                self._goToDefaultLogo(res);
+            }
+        });
+    },
+
+    goToMedia: function(req, res) {
+        downloadService.download(req.dbCon, req.params.id, function (content) {
+            if(content && content[0]) {
+                //Try to get the file name from the URL in order to keep the document name once it's going to be downloaded
+                // Otherwise, take it from database
+                var filename = req.params.name || content.name, buffer;
+                //noinspection JSUnresolvedFunction
+                res.attachment(filename);
+                res.header("Content-Type", content.mime);
+                //noinspection JSUnresolvedFunction,JSCheckFunctionSignatures
+                buffer = new Buffer(content[0].data.toString('base64'), "base64")
+                res.end(buffer, 'base64');
+            } else {
+                res.end(null);
+            }
+        });
     },
 
     goToBufferedFile: function(fileName, res, content) {

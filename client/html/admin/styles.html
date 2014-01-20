@@ -1,5 +1,5 @@
 <div>
-    <div class="cf" ng-show="target=='portal'">
+    <div class="cf" ux-show="isPortalTarget()">
         <div class="columns large-13">
             <label i18n="editStyles.fontColor"></label>
             <div>
@@ -21,9 +21,13 @@
         <label i18n="editStyles.fontSize"></label>
         <div><input type="text" ng-model="model.fontSize"/></div>
     </div>
-    <div class="cf" ng-show="target=='app'">
+    <div class="cf" ux-show="isAppTarget()">
         <label i18n="editStyles.height"></label>
         <div><input type="number" ng-model="model.height"/></div>
+    </div>
+    <div class="cf columns large-12" ux-show="isPortalTarget()">
+        <h5><label i18n="editStyles.logo"></label></h5>
+        <media-picker ng-model="logo" multiple="false" preview="true" on-change="changeLogoId($media)"></media-picker>
     </div>
     <div class="cf">
         <h5><label i18n="editStyles.background"></label></h5>

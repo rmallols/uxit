@@ -44,7 +44,7 @@ window.speed = 150;
     getScript(libPath + '/date/i18n/jquery.ui.datepicker-es.js');
 
     //Core resources
-    getStyleSheet('main.css');
+    getStyleSheet('rest/main.css');
     getScript(scriptPath + '/index.js');
     getScript(scriptPath + '/templates.js');
     getScript(scriptPath + '/errorHandler.js');
