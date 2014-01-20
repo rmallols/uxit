@@ -70,7 +70,7 @@
                 callback(this._cssCache[portalId]);
             } else {
                 self._getPortalVars(dbCon, function(portalVars) {
-                    self._getCss(portalVars.styles.cssVars, function(css) {
+                    self._getCss(portalVars.styles.cssVars || {}, function(css) {
                         if(self._isProdEnv()) { self._cssCache[portalId] = css; }
                         callback(css);
                     });
