@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.37.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.38.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.39.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.41.0.js" afterPath="" />
@@ -11,7 +10,6 @@
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.44.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.45.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.46.0.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\usr\menzit\client\min\js.min.js" afterPath="" />
     </list>
     <ignored path="uxit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,7 +73,7 @@
       <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="30" selection-start="66" selection-end="66" vertical-scroll-proportion="0.07882535" vertical-offset="0" max-vertical-offset="833">
+            <state line="17" column="71" selection-start="369" selection-end="369" vertical-scroll-proportion="0.44667697" vertical-offset="0" max-vertical-offset="833">
               <folding />
             </state>
           </provider>
@@ -283,7 +281,7 @@
       <recent name="C:\usr\menzit\client\html\banner\types" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.grunt prod">
+  <component name="RunManager" selected="Node.js.grunt dev">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -1173,7 +1171,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49723756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1330,7 +1328,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="30" selection-start="66" selection-end="66" vertical-scroll-proportion="0.07882535" vertical-offset="0" max-vertical-offset="833">
+        <state line="17" column="71" selection-start="369" selection-end="369" vertical-scroll-proportion="0.44667697" vertical-offset="0" max-vertical-offset="833">
           <folding />
         </state>
       </provider>
