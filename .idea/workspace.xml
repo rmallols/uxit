@@ -7,7 +7,8 @@
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.39.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.40.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.41.0.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/cssService.js" afterPath="$PROJECT_DIR$/server/cssService.js" />
+      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.42.0.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/main.less" afterPath="$PROJECT_DIR$/client/css/main.less" />
     </list>
     <ignored path="uxit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,19 +33,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="cssService.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="cssService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/cssService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="71" selection-start="2055" selection-end="2055" vertical-scroll-proportion="0.35809806" vertical-offset="575" max-vertical-offset="1479">
+            <state line="48" column="71" selection-start="2055" selection-end="2055" vertical-scroll-proportion="-9.64" vertical-offset="575" max-vertical-offset="1479">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.less" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/css/main.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="19" selection-start="425" selection-end="425" vertical-scroll-proportion="-1.3246753" vertical-offset="0" max-vertical-offset="1207">
+            <state line="31" column="125" selection-start="1902" selection-end="1902" vertical-scroll-proportion="0.84863126" vertical-offset="0" max-vertical-offset="1207">
               <folding />
             </state>
           </provider>
@@ -101,8 +102,8 @@
         <option value="$PROJECT_DIR$/client/js/resources-0.37.0.js" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/client/css/main.less" />
         <option value="$PROJECT_DIR$/server/cssService.js" />
+        <option value="$PROJECT_DIR$/client/css/main.less" />
       </list>
     </option>
   </component>
@@ -1292,13 +1293,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/main.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="425" selection-end="425" vertical-scroll-proportion="-1.3246753" vertical-offset="0" max-vertical-offset="1207">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="185" column="41" selection-start="7886" selection-end="7886" vertical-scroll-proportion="0.0" vertical-offset="3055" max-vertical-offset="3740">
@@ -1315,7 +1309,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/cssService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="71" selection-start="2055" selection-end="2055" vertical-scroll-proportion="0.35809806" vertical-offset="575" max-vertical-offset="1479">
+        <state line="48" column="71" selection-start="2055" selection-end="2055" vertical-scroll-proportion="-9.64" vertical-offset="575" max-vertical-offset="1479">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="125" selection-start="1902" selection-end="1902" vertical-scroll-proportion="0.84863126" vertical-offset="0" max-vertical-offset="1207">
           <folding />
         </state>
       </provider>
