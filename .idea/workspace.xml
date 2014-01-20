@@ -4,6 +4,11 @@
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.37.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.38.0.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.39.0.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\usr\menzit\client\min\js.min.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/cssService.js" afterPath="$PROJECT_DIR$/server/cssService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/main.less" afterPath="$PROJECT_DIR$/client/css/main.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,46 +33,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="29" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.0" vertical-offset="524" max-vertical-offset="3757">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="redirectionService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/redirectionService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="61" selection-start="455" selection-end="483" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="2499">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="cssService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/cssService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="47" selection-start="1138" selection-end="1138" vertical-scroll-proportion="-2.16" vertical-offset="507" max-vertical-offset="1445">
+            <state line="48" column="42" selection-start="1991" selection-end="1991" vertical-scroll-proportion="-13.72" vertical-offset="473" max-vertical-offset="1462">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.less" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/css/main.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="38" selection-start="503" selection-end="509" vertical-scroll-proportion="0.21020092" vertical-offset="0" max-vertical-offset="1190">
+            <state line="19" column="60" selection-start="1060" selection-end="1060" vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="1207">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="192" column="55" selection-start="8152" selection-end="8152" vertical-scroll-proportion="0.0" vertical-offset="3055" max-vertical-offset="3740">
+            <state line="201" column="106" selection-start="8533" selection-end="8533" vertical-scroll-proportion="0.5284672" vertical-offset="3055" max-vertical-offset="3740">
               <folding />
             </state>
           </provider>
@@ -76,7 +63,7 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="40" selection-start="190" selection-end="190" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="850">
+            <state line="8" column="40" selection-start="176" selection-end="176" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
@@ -114,9 +101,9 @@
         <option value="$PROJECT_DIR$/client/js/resources-prod.js" />
         <option value="$PROJECT_DIR$/client/js/resources-0.37.0.js" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
-        <option value="$PROJECT_DIR$/client/css/main.less" />
-        <option value="$PROJECT_DIR$/server/cssService.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/server/cssService.js" />
+        <option value="$PROJECT_DIR$/client/css/main.less" />
       </list>
     </option>
   </component>
@@ -256,17 +243,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -285,14 +272,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.grunt prod">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -303,8 +282,12 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -312,6 +295,10 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -1176,21 +1163,21 @@
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49723756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42679557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712707" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20628834" sideWeight="0.50276244" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-319" y="-1073" width="1904" height="1037" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-319" y="-1073" width="1904" height="1037" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42679557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1240,72 +1227,57 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/login.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="84" selection-start="446" selection-end="511" vertical-scroll-proportion="0.2679083" vertical-offset="0" max-vertical-offset="698">
-          <folding />
-        </state>
+        <state line="11" column="84" selection-start="446" selection-end="511" vertical-scroll-proportion="0.2679083" vertical-offset="0" max-vertical-offset="698" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/e2e/resources/pageObjects/login.pO.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="8" selection-start="845" selection-end="845" vertical-scroll-proportion="0.53724927" vertical-offset="33" max-vertical-offset="731">
-          <folding />
-        </state>
+        <state line="24" column="8" selection-start="845" selection-end="845" vertical-scroll-proportion="0.53724927" vertical-offset="33" max-vertical-offset="731" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="51" selection-start="2804" selection-end="2804" vertical-scroll-proportion="-13.32" vertical-offset="670" max-vertical-offset="1360">
-          <folding />
-        </state>
+        <state line="59" column="51" selection-start="2804" selection-end="2804" vertical-scroll-proportion="-13.32" vertical-offset="670" max-vertical-offset="1360" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/crud/mediaService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="77" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="1241">
-          <folding />
-        </state>
+        <state line="26" column="77" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="1241" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/pages.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="71" selection-start="523" selection-end="523" vertical-scroll-proportion="0.08681672" vertical-offset="422" max-vertical-offset="1428">
-          <folding />
-        </state>
+        <state line="28" column="71" selection-start="523" selection-end="523" vertical-scroll-proportion="0.08681672" vertical-offset="422" max-vertical-offset="1428" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="62" selection-start="220" selection-end="221" vertical-scroll-proportion="0.10510046" vertical-offset="0" max-vertical-offset="647">
-          <folding />
-        </state>
+        <state line="4" column="62" selection-start="220" selection-end="221" vertical-scroll-proportion="0.10510046" vertical-offset="0" max-vertical-offset="647" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/resources-dev.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="30" selection-start="2182" selection-end="2208" vertical-scroll-proportion="0.33283803" vertical-offset="558" max-vertical-offset="3774">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state line="46" column="30" selection-start="2182" selection-end="2208" vertical-scroll-proportion="0.33283803" vertical-offset="558" max-vertical-offset="3774" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/resources-prod.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="57" selection-start="561" selection-end="561" vertical-scroll-proportion="0.30312034" vertical-offset="0" max-vertical-offset="867">
-          <folding />
-        </state>
+        <state line="12" column="57" selection-start="561" selection-end="561" vertical-scroll-proportion="0.30312034" vertical-offset="0" max-vertical-offset="867" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/collectionService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="82" selection-start="737" selection-end="737" vertical-scroll-proportion="0.48710603" vertical-offset="0" max-vertical-offset="3196">
-          <folding />
-        </state>
+        <state line="20" column="82" selection-start="737" selection-end="737" vertical-scroll-proportion="0.48710603" vertical-offset="0" max-vertical-offset="3196" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/utils/styleService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2618">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2618" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="29" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.0" vertical-offset="524" max-vertical-offset="3757">
           <folding />
         </state>
       </provider>
@@ -1317,37 +1289,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="29" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.0" vertical-offset="524" max-vertical-offset="3757">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="55" selection-start="8152" selection-end="8152" vertical-scroll-proportion="0.0" vertical-offset="3055" max-vertical-offset="3740">
+        <state line="8" column="40" selection-start="176" selection-end="176" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="850">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/cssService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="47" selection-start="1138" selection-end="1138" vertical-scroll-proportion="-2.16" vertical-offset="507" max-vertical-offset="1445">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="190" selection-end="190" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="850">
+        <state line="48" column="42" selection-start="1991" selection-end="1991" vertical-scroll-proportion="-13.72" vertical-offset="473" max-vertical-offset="1462">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/main.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="38" selection-start="503" selection-end="509" vertical-scroll-proportion="0.21020092" vertical-offset="0" max-vertical-offset="1190">
+        <state line="19" column="60" selection-start="1060" selection-end="1060" vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="1207">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="201" column="106" selection-start="8533" selection-end="8533" vertical-scroll-proportion="0.5284672" vertical-offset="3055" max-vertical-offset="3740">
           <folding />
         </state>
       </provider>

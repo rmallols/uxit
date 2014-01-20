@@ -46,6 +46,7 @@
                 dataString = data.toString();
                 options = self._getLessParsingOptions();
                 parser = new less.Parser(options);
+                portalVars.bla = __dirname;
                 dataString = dataString + '\n' + self._getNormalizedVars(portalVars) + '\n';
                 parser.parse( dataString, function ( error, cssTree ) {
                     if (error) { less.writeError( error, options ); return; }
