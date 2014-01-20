@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.38.0.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.37.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.39.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.40.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.41.0.js" afterPath="" />
@@ -39,7 +39,7 @@
       <file leaf-file-name="cssService.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/cssService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="68" selection-start="2963" selection-end="2963" vertical-scroll-proportion="0.43982807" vertical-offset="900" max-vertical-offset="1598">
+            <state line="77" column="68" selection-start="3319" selection-end="3319" vertical-scroll-proportion="0.5859599" vertical-offset="900" max-vertical-offset="1598">
               <folding />
             </state>
           </provider>
@@ -1303,13 +1303,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="29" selection-start="96" selection-end="96" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="211" column="86" selection-start="9302" selection-end="9302" vertical-scroll-proportion="0.0" vertical-offset="3038" max-vertical-offset="3723">
@@ -1317,9 +1310,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="29" selection-start="96" selection-end="96" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/cssService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="68" selection-start="2963" selection-end="2963" vertical-scroll-proportion="0.43982807" vertical-offset="900" max-vertical-offset="1598">
+        <state line="77" column="68" selection-start="3319" selection-end="3319" vertical-scroll-proportion="0.5859599" vertical-offset="900" max-vertical-offset="1598">
           <folding />
         </state>
       </provider>
