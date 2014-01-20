@@ -66,7 +66,7 @@
         },
 
         _isProdEnv: function() {
-            return pkg.env === constantsService.modes.prod;
+            return pkg.env === constantsService.envs.prod;
         },
 
         getPortalCss: function (dbCon, portalId, forceRefresh, callback) {
@@ -76,7 +76,7 @@
                 console.log("GETTING FROM CACHE**********************")
                 callback(this._cssCache[portalId]);
             } else {
-                console.log("NO CACHE...GENERATING!!!!*******************", pkg.env, constantsService.modes.prod);
+                console.log("NO CACHE...GENERATING!!!!*******************", pkg.env, constantsService.envs.prod);
                 self._getPortalVars(dbCon, function(portalVars) {
                     self._getCss(portalVars.styles.cssVars || {}, function(css) {
                         if(self._isProdEnv()) { self._cssCache[portalId] = css; }

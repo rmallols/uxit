@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.37.0.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.39.0.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.38.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.40.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.41.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.42.0.js" afterPath="" />
@@ -39,7 +39,16 @@
       <file leaf-file-name="cssService.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/cssService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="68" selection-start="3319" selection-end="3319" vertical-scroll-proportion="0.5859599" vertical-offset="900" max-vertical-offset="1598">
+            <state line="70" column="69" selection-start="2893" selection-end="2893" vertical-scroll-proportion="0.41547278" vertical-offset="900" max-vertical-offset="1598">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="constantsService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/constantsService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
               <folding />
             </state>
           </provider>
@@ -1228,11 +1237,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/tests/e2e/resources/pageObjects/login.pO.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="8" selection-start="845" selection-end="845" vertical-scroll-proportion="0.53724927" vertical-offset="33" max-vertical-offset="731" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="51" selection-start="2804" selection-end="2804" vertical-scroll-proportion="-13.32" vertical-offset="670" max-vertical-offset="1360" />
@@ -1317,9 +1321,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/constantsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/cssService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="68" selection-start="3319" selection-end="3319" vertical-scroll-proportion="0.5859599" vertical-offset="900" max-vertical-offset="1598">
+        <state line="70" column="69" selection-start="2893" selection-end="2893" vertical-scroll-proportion="0.41547278" vertical-offset="900" max-vertical-offset="1598">
           <folding />
         </state>
       </provider>
