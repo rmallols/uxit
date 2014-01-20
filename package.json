@@ -1,8 +1,8 @@
 {
   "name": "menzit",
   "author": "menzit",
-  "version": "0.37.0",
-  "timestamp": 1390210047066,
+  "version": "0.38.0",
+  "timestamp": 1390210435067,
   "env": "prod",
   "mode": "cloud",
   "dbHost": "ds053978.mongolab.com",

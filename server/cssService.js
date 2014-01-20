@@ -76,7 +76,7 @@
                 console.log("GETTING FROM CACHE**********************")
                 callback(this._cssCache[portalId]);
             } else {
-                console.log("NO CACHE...GENERATING!!!!*******************");
+                console.log("NO CACHE...GENERATING!!!!*******************", self._isProdEnv(), portalId, self._cssCache[portalId], forceRefresh);
                 self._getPortalVars(dbCon, function(portalVars) {
                     self._getCss(portalVars.styles.cssVars || {}, function(css) {
                         if(self._isProdEnv()) { self._cssCache[portalId] = css; }
