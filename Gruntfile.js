@@ -192,7 +192,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-preprocess');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    //grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-bumpup');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -211,5 +210,5 @@ module.exports = function(grunt) {
     grunt.registerTask('herokuLogs', ['shell:herokuLogs']);
     grunt.registerTask('dev', ['clean', 'jshint', 'bump', 'devPreprocess', 'generateTemplates', 'githubPush']);
     grunt.registerTask('prod', ['clean', /*'jshint', 'startProtractor', 'karma:run',*/ 'bump', 'prodPreprocess',
-                                'generateTemplates', 'concat', 'uglify', /*'less:prod',*/ 'githubPush', 'herokuPush']);
+                                'generateTemplates', 'concat', 'uglify', 'githubPush', 'herokuPush']);
 };
