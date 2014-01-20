@@ -25,12 +25,12 @@
         <label i18n="editStyles.height"></label>
         <div><input type="number" ng-model="model.height"/></div>
     </div>
-    <div class="cf columns large-8">
+    <div class="cf columns large-8" ng-show="isAppTarget()">
         <label i18n="editStyles.align.horizontal"></label>
         <select ng-model="model.align.horizontal" ng-options="obj.id as obj.text for obj in aligns.horizontal"
                 ng-init="model.align.horizontal=model.align.horizontal||aligns.horizontal[0].id"></select>
     </div>
-    <div class="cf columns large-8" ng-show="model.height">
+    <div class="cf columns large-8" ng-show="model.height && isAppTarget()">
         <label i18n="editStyles.align.vertical"></label>
         <select ng-model="model.align.vertical" ng-options="obj.id as obj.text for obj in aligns.vertical"
                 ng-init="model.align.vertical=model.align.vertical||aligns.vertical[0].id"></select>

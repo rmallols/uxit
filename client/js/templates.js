@@ -1194,12 +1194,12 @@ angular.module("styles.html", []).run(["$templateCache", function($templateCache
     "        <label i18n=\"editStyles.height\"></label>\n" +
     "        <div><input type=\"number\" ng-model=\"model.height\"/></div>\n" +
     "    </div>\n" +
-    "    <div class=\"cf columns large-8\">\n" +
+    "    <div class=\"cf columns large-8\" ng-show=\"isAppTarget()\">\n" +
     "        <label i18n=\"editStyles.align.horizontal\"></label>\n" +
     "        <select ng-model=\"model.align.horizontal\" ng-options=\"obj.id as obj.text for obj in aligns.horizontal\"\n" +
     "                ng-init=\"model.align.horizontal=model.align.horizontal||aligns.horizontal[0].id\"></select>\n" +
     "    </div>\n" +
-    "    <div class=\"cf columns large-8\" ng-show=\"model.height\">\n" +
+    "    <div class=\"cf columns large-8\" ng-show=\"model.height && isAppTarget()\">\n" +
     "        <label i18n=\"editStyles.align.vertical\"></label>\n" +
     "        <select ng-model=\"model.align.vertical\" ng-options=\"obj.id as obj.text for obj in aligns.vertical\"\n" +
     "                ng-init=\"model.align.vertical=model.align.vertical||aligns.vertical[0].id\"></select>\n" +

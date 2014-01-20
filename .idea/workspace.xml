@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/app/app.html" afterPath="$PROJECT_DIR$/client/html/app/app.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/app/app.js" afterPath="$PROJECT_DIR$/client/js/directives/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/app.less" afterPath="$PROJECT_DIR$/client/css/app.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/input/background.html" afterPath="$PROJECT_DIR$/client/html/input/background.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/input/background.js" afterPath="$PROJECT_DIR$/client/js/directives/input/background.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/admin/editAppGeneral.html" afterPath="$PROJECT_DIR$/client/html/admin/editAppGeneral.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/editAppGeneral.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/editAppGeneral.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/css/aligns.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/main.less" afterPath="$PROJECT_DIR$/client/css/main.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_en.properties" afterPath="$PROJECT_DIR$/client/messages/messages_en.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/messages/messages_es.properties" afterPath="$PROJECT_DIR$/client/messages/messages_es.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/admin/styles.html" afterPath="$PROJECT_DIR$/client/html/admin/styles.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/styles.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/styles.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/utils.less" afterPath="$PROJECT_DIR$/client/css/utils.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -44,7 +35,16 @@
       <file leaf-file-name="utils.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/css/utils.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="67" selection-start="4228" selection-end="4228" vertical-scroll-proportion="-2.0" vertical-offset="2126" max-vertical-offset="3111">
+            <state line="115" column="33" selection-start="3421" selection-end="3421" vertical-scroll-proportion="-0.18421052" vertical-offset="1941" max-vertical-offset="2550">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aligns.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/css/aligns.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="48" selection-start="495" selection-end="495" vertical-scroll-proportion="0.7108014" vertical-offset="0" max-vertical-offset="629">
               <folding />
             </state>
           </provider>
@@ -89,7 +89,7 @@
       <file leaf-file-name="main.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/css/main.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="32" selection-start="684" selection-end="684" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="1258">
+            <state line="32" column="78" selection-start="2019" selection-end="2019" vertical-scroll-proportion="-15.384615" vertical-offset="144" max-vertical-offset="1275">
               <folding />
             </state>
           </provider>
@@ -109,10 +109,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="styles.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/html/admin/styles.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="60" selection-start="976" selection-end="976" vertical-scroll-proportion="0.85823756" vertical-offset="184" max-vertical-offset="935">
+            <state line="8" column="42" selection-start="345" selection-end="345" vertical-scroll-proportion="-1.7662338" vertical-offset="0" max-vertical-offset="935">
               <folding />
             </state>
           </provider>
@@ -177,7 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/client/html/pages/loginPage.html" />
         <option value="$PROJECT_DIR$/server/redirectionService.js" />
         <option value="$PROJECT_DIR$/client/js/directives/admin/editAppGeneral.js" />
@@ -185,14 +184,15 @@
         <option value="$PROJECT_DIR$/client/js/directives/input/background.js" />
         <option value="$PROJECT_DIR$/client/html/input/background.html" />
         <option value="$PROJECT_DIR$/client/js/directives/admin/styles.js" />
-        <option value="$PROJECT_DIR$/client/css/main.less" />
         <option value="$PROJECT_DIR$/client/html/app/app.html" />
         <option value="$PROJECT_DIR$/client/js/directives/app/app.js" />
         <option value="$PROJECT_DIR$/client/css/app.less" />
-        <option value="$PROJECT_DIR$/client/css/utils.less" />
         <option value="$PROJECT_DIR$/client/messages/messages_en.properties" />
         <option value="$PROJECT_DIR$/client/messages/messages_es.properties" />
         <option value="$PROJECT_DIR$/client/html/admin/styles.html" />
+        <option value="$PROJECT_DIR$/client/css/utils.less" />
+        <option value="$PROJECT_DIR$/client/css/main.less" />
+        <option value="$PROJECT_DIR$/client/css/aligns.less" />
       </list>
     </option>
   </component>
@@ -317,7 +317,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -328,7 +328,61 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uxit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menzit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -1229,7 +1283,11 @@
       <created>1390238550089</created>
       <updated>1390238550089</updated>
     </task>
-    <option name="localTasksCounter" value="190" />
+    <task id="LOCAL-00190" summary="#256 [App] Vertical align support for content">
+      <created>1390246183283</created>
+      <updated>1390246183283</updated>
+    </task>
+    <option name="localTasksCounter" value="191" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1318,13 +1376,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/html/pages/loginPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="47" selection-start="104" selection-end="104" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="204">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/redirectionService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="109" column="80" selection-start="4467" selection-end="4467" vertical-scroll-proportion="0.0" vertical-offset="1723" max-vertical-offset="2941">
@@ -1376,20 +1427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/main.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="32" selection-start="684" selection-end="684" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="1258">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/utils.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="67" selection-start="4228" selection-end="4228" vertical-scroll-proportion="-2.0" vertical-offset="2126" max-vertical-offset="3111">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/css/bannerItem.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="82" selection-start="54" selection-end="54" vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="1615">
@@ -1434,7 +1471,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/html/admin/styles.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="60" selection-start="976" selection-end="976" vertical-scroll-proportion="0.85823756" vertical-offset="184" max-vertical-offset="935">
+        <state line="8" column="42" selection-start="345" selection-end="345" vertical-scroll-proportion="-1.7662338" vertical-offset="0" max-vertical-offset="935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="78" selection-start="2019" selection-end="2019" vertical-scroll-proportion="-15.384615" vertical-offset="144" max-vertical-offset="1275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/utils.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="33" selection-start="3421" selection-end="3421" vertical-scroll-proportion="-0.18421052" vertical-offset="1941" max-vertical-offset="2550">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/aligns.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="48" selection-start="495" selection-end="495" vertical-scroll-proportion="0.7108014" vertical-offset="0" max-vertical-offset="629">
           <folding />
         </state>
       </provider>
