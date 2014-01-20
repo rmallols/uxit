@@ -39,26 +39,29 @@
             };
         },
 
+        _setAbsolutePath: function(portalVars) {
+            portalVars.absoluteClientPath = __dirname.replace(/\\/g, '/') + "/../client/'";
+        },
+
+        _parseLessVariables: function(dataString, portalVars, callback) {
+            var options = this._getLessParsingOptions(),
+                parser = new less.Parser(options), cssString;
+            dataString += '\n' + this._getNormalizedVars(portalVars) + '\n';
+            parser.parse( dataString, function ( error, cssTree ) {
+                if (error) { less.writeError( error, options ); return; }
+                cssString = cssTree.toCSS({compress: options.compress, yuicompress: options.yuicompress});
+                callback(cssString);
+            });
+        },
+
         _getCss: function(portalVars, callback) {
-            var self = this, dataString, options, parser, cssString;
+            var self = this;
+            //Generate the absolute path to the LESS resources
+            //This is necessary since they're handled taking as reference the root of the system,
+            //and not the root of the project
+            self._setAbsolutePath(portalVars);
             fs.readFile( __dirname + '/../client/css/main.less', function ( error, data ) {
-                dataString = data.toString();
-                options = self._getLessParsingOptions();
-                parser = new less.Parser(options);
-                //portalVars.absoluteClientPath = "'" + __dirname.replace(/\//g, '\\') + "\\..\\client'";
-                //portalVars.absoluteClientPath = "'" + __dirname.replace(/\//g, '/') + "/../client'";
-                portalVars.absoluteClientPath = "'" + __dirname.replace(/\\/g, '/') + "/../client/'";
-                //portalVars.absoluteClientPath = "'" + __dirname + "/../client'";
-                console.log("OOO", __dirname, portalVars.absoluteClientPath);
-                dataString = dataString + '\n' + self._getNormalizedVars(portalVars) + '\n';
-                parser.parse( dataString, function ( error, cssTree ) {
-                    if (error) { less.writeError( error, options ); return; }
-                    cssString = cssTree.toCSS( {
-                        compress   : options.compress,
-                        yuicompress: options.yuicompress
-                    } );
-                    callback(cssString);
-                });
+                self._parseLessVariables(data.toString(), portalVars, callback);
             });
         },
 
