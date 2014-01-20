@@ -13,14 +13,14 @@
 
                 scope.position = {
                     top: [
-                        { id: 'top',    text: i18nS('editStyles.background.position.options.top.top') },
-                        { id: 'center', text: i18nS('editStyles.background.position.options.top.center') },
-                        { id: 'bottom', text: i18nS('editStyles.background.position.options.top.bottom') }
+                        { id: 'top',    text: i18nS('position.vertical.top') },
+                        { id: 'center', text: i18nS('position.vertical.center') },
+                        { id: 'bottom', text: i18nS('position.vertical.bottom') }
                     ],
                     left: [
-                        { id: 'left',   text: i18nS('editStyles.background.position.options.left.left') },
-                        { id: 'center', text: i18nS('editStyles.background.position.options.left.center') },
-                        { id: 'right',  text: i18nS('editStyles.background.position.options.left.right') }
+                        { id: 'left',   text: i18nS('position.horizontal.left') },
+                        { id: 'center', text: i18nS('position.horizontal.center') },
+                        { id: 'right',  text: i18nS('position.horizontal.right') }
                     ]
                 };
 

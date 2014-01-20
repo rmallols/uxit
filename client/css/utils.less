@@ -125,17 +125,34 @@ ul.sortable       { position: relative; }
 [id="heading3"] { font-size: 150% !important; line-height: 1.1; margin: 15px 0px 10px 0px; }
 
 .alignCenter {
+  .alignHorizontallyCenter;
+  .alignVerticallyCenter;
+}
+
+.alignHorizontallyCenter {
   display: -webkit-box; display: -moz-box; display: box;
   -webkit-box-orient: vertical;-moz-box-orient: vertical;box-orient: vertical;
   -webkit-box-align: center;-moz-box-align: center;flex-align: center;
+  -ms-flex-align:center;
+}
+
+.alignVerticallyCenter {
+  display: -webkit-box; display: -moz-box; display: box;
+  -webkit-box-orient: vertical;-moz-box-orient: vertical;box-orient: vertical;
   -webkit-box-pack: center;-moz-box-pack: center;flex-pack: center;
   -ms-flex-align:center;
 }
 
-.alignRight {
+.alignHorizontallyRight {
   display: -webkit-box; display: -moz-box; display: box;
   -webkit-box-orient: vertical;-moz-box-orient: vertical;box-orient: vertical;
   -webkit-box-align: end;-moz-box-align: end;flex-align: end;
+  -ms-flex-align:end;
+}
+
+.alignVerticallyBottom {
+  display: -webkit-box; display: -moz-box; display: box;
+  -webkit-box-orient: vertical;-moz-box-orient: vertical;box-orient: vertical;
   -webkit-box-pack: end;-moz-box-pack: end;flex-pack: end;
   -ms-flex-align:end;
 }

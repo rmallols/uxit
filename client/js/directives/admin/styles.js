@@ -1,4 +1,4 @@
-COMPONENTS.directive('styles', ['mediaService', 'constantsService', function (mS, cS) {
+COMPONENTS.directive('styles', ['mediaService', 'i18nService', 'constantsService', function (mS, i18nS, cS) {
     'use strict';
     return {
         restrict: 'A',
@@ -8,6 +8,20 @@ COMPONENTS.directive('styles', ['mediaService', 'constantsService', function (mS
             model   : '=styles',
             target  : '@'
         },
+        controller: ['$scope', function($scope) {
+            $scope.aligns = {
+                vertical: [
+                    { id: 'top',    text: i18nS('position.vertical.top') },
+                    { id: 'center', text: i18nS('position.vertical.center') },
+                    { id: 'bottom', text: i18nS('position.vertical.bottom') }
+                ],
+                horizontal: [
+                    { id: 'left',   text: i18nS('position.horizontal.left') },
+                    { id: 'center', text: i18nS('position.horizontal.center') },
+                    { id: 'right',  text: i18nS('position.horizontal.right') }
+                ]
+            };
+        }],
         link: function(scope) {
 
             scope.isPortalTarget = function() {
@@ -18,12 +32,6 @@ COMPONENTS.directive('styles', ['mediaService', 'constantsService', function (mS
                 return scope.target === cS.stylesTarget.app;
             };
 
-            if(scope.model.logoId) {
-                mS.getMedia(scope.model.logoId, null, function(media) {
-                    scope.logo = media;
-                });
-            }
-
             scope.changeLogoId = function(selectedMedia) {
                 if(selectedMedia) {
                     scope.model.logoId = selectedMedia._id;
@@ -31,6 +39,14 @@ COMPONENTS.directive('styles', ['mediaService', 'constantsService', function (mS
                     delete scope.model.logoId;
                 }
             };
+
+            if(scope.model && scope.model.logoId) {
+                mS.getMedia(scope.model.logoId, null, function(media) {
+                    scope.logo = media;
+                });
+            }
+
+
         }
     };
 }]);

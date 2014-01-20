@@ -28,7 +28,7 @@
                 var hasWidthChanged = false;
                 element.addClass(scope.type);
 
-                scope.setAppStyles = function () {
+                scope.getAppStyles = function () {
                     var portal = portalService.getPortal();
                     if (scope.model && portal) {
                         //1. Set the default app styles from the portal settings
@@ -38,6 +38,19 @@
                         return styles;
                     }
                     return null;
+                };
+
+                scope.getAppAlignment = function () {
+                    var align = {}, hAlignStyleClass, vAlignStyleClass;
+                    if(scope.model && scope.model.styles && scope.model.styles.align) {
+                        hAlignStyleClass = 'alignHorizontally' +
+                            stringService.capitalize(scope.model.styles.align.horizontal);
+                        vAlignStyleClass = 'alignVertically' +
+                            stringService.capitalize(scope.model.styles.align.vertical);
+                        align[hAlignStyleClass]  = true;
+                        align[vAlignStyleClass]    = true;
+                    }
+                    return align;
                 };
 
                 scope.isTitleVisible = function () {
@@ -65,6 +78,9 @@
                     var appStyleClasses = {};
                     appStyleClasses[scope.type] = true;
                     appStyleClasses[roleService.getCurrentUserAdminAccessStyleClass()] = true;
+                    if(scope.model && scope.model.styles && scope.model.styles.height) {
+                        appStyleClasses.fixedHeight = true;
+                    }
                     return appStyleClasses;
                 };
 

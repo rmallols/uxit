@@ -768,8 +768,6 @@ angular.module("editAppGeneral.html", []).run(["$templateCache", function($templ
     "        <div class=\"columns large-25\">\n" +
     "            <input checkbox ng-model=\"model.showTitle\" label=\"editApp.showAppTitles\"/>\n" +
     "        </div>\n" +
-    "        <label i18n=\"editApp.align\"></label>\n" +
-    "        <select ng-model=\"model.align\" ng-options=\"obj.id as obj.text for obj in aligns\"></select>\n" +
     "    </div>\n" +
     "</div>\n" +
     "");
@@ -1170,7 +1168,7 @@ angular.module("stats.html", []).run(["$templateCache", function($templateCache)
 angular.module("styles.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("styles.html",
     "<div>\n" +
-    "    <div class=\"cf\" ux-show=\"isPortalTarget()\">\n" +
+    "    <div class=\"cf\" ng-show=\"isPortalTarget()\">\n" +
     "        <div class=\"columns large-13\">\n" +
     "            <label i18n=\"editStyles.fontColor\"></label>\n" +
     "            <div>\n" +
@@ -1192,11 +1190,21 @@ angular.module("styles.html", []).run(["$templateCache", function($templateCache
     "        <label i18n=\"editStyles.fontSize\"></label>\n" +
     "        <div><input type=\"text\" ng-model=\"model.fontSize\"/></div>\n" +
     "    </div>\n" +
-    "    <div class=\"cf\" ux-show=\"isAppTarget()\">\n" +
+    "    <div class=\"cf columns large-9\" ng-show=\"isAppTarget()\">\n" +
     "        <label i18n=\"editStyles.height\"></label>\n" +
     "        <div><input type=\"number\" ng-model=\"model.height\"/></div>\n" +
     "    </div>\n" +
-    "    <div class=\"cf columns large-12\" ux-show=\"isPortalTarget()\">\n" +
+    "    <div class=\"cf columns large-8\">\n" +
+    "        <label i18n=\"editStyles.align.horizontal\"></label>\n" +
+    "        <select ng-model=\"model.align.horizontal\" ng-options=\"obj.id as obj.text for obj in aligns.horizontal\"\n" +
+    "                ng-init=\"model.align.horizontal=model.align.horizontal||aligns.horizontal[0].id\"></select>\n" +
+    "    </div>\n" +
+    "    <div class=\"cf columns large-8\" ng-show=\"model.height\">\n" +
+    "        <label i18n=\"editStyles.align.vertical\"></label>\n" +
+    "        <select ng-model=\"model.align.vertical\" ng-options=\"obj.id as obj.text for obj in aligns.vertical\"\n" +
+    "                ng-init=\"model.align.vertical=model.align.vertical||aligns.vertical[0].id\"></select>\n" +
+    "    </div>\n" +
+    "    <div class=\"cf columns large-12\" ng-show=\"isPortalTarget()\">\n" +
     "        <h5><label i18n=\"editStyles.logo\"></label></h5>\n" +
     "        <media-picker ng-model=\"logo\" multiple=\"false\" preview=\"true\" on-change=\"changeLogoId($media)\"></media-picker>\n" +
     "    </div>\n" +
@@ -1213,11 +1221,11 @@ angular.module("styles.html", []).run(["$templateCache", function($templateCache
 
 angular.module("app.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("app.html",
-    "<div ng-class=\"getAppStyleClasses()\" class=\"app cf\" ng-style=\"setAppStyles()\">\n" +
+    "<div ng-class=\"getAppStyleClasses()\" class=\"app cf\" ng-style=\"getAppStyles()\">\n" +
     "    <div app-header class=\"cf\"></div>\n" +
     "	<div class=\"content cf\">\n" +
     "        <div class=\"title\" ng-show=\"isTitleVisible()\"><h5>{{model.title || appInfo.title}}</h5></div>\n" +
-    "        <div class=\"align\" ng-class=\"{alignCenter: model.align=='center', alignRight: model.align=='right'}\">\n" +
+    "        <div class=\"alignment\" ng-class=\"getAppAlignment()\">\n" +
     "            <div app-bridge bindings=\"bindings\" src=\"{{type}}\" view=\"{{view}}\" on-event=\"onEvent\"></div>\n" +
     "        </div>\n" +
     "	</div>\n" +
@@ -1413,11 +1421,11 @@ angular.module("background.html", []).run(["$templateCache", function($templateC
     "    </div>\n" +
     "    <div class=\"columns large-4\" ng-show=\"existsSrc() && !background.mosaic\">\n" +
     "        <div><label i18n=\"editStyles.background.position.top\"></label></div>\n" +
-    "        <select ng-model=\"background.position.top\" ng-options=\"obj.id as obj.text for obj in position.top\"></select>\n" +
+    "        <select ng-model=\"background.position.top\" ng-options=\"obj.id as obj.text for obj in positions.top\"></select>\n" +
     "    </div>\n" +
     "    <div class=\"columns large-4\" ng-show=\"existsSrc() && !background.mosaic\">\n" +
     "        <div><label i18n=\"editStyles.background.position.left\"></label></div>\n" +
-    "        <select ng-model=\"background.position.left\" ng-options=\"obj.id as obj.text for obj in position.left\"></select>\n" +
+    "        <select ng-model=\"background.position.left\" ng-options=\"obj.id as obj.text for obj in positions.left\"></select>\n" +
     "    </div>\n" +
     "</div>");
 }]);

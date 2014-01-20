@@ -13,10 +13,10 @@
     </div>
     <div class="columns large-4" ng-show="existsSrc() && !background.mosaic">
         <div><label i18n="editStyles.background.position.top"></label></div>
-        <select ng-model="background.position.top" ng-options="obj.id as obj.text for obj in position.top"></select>
+        <select ng-model="background.position.top" ng-options="obj.id as obj.text for obj in positions.top"></select>
     </div>
     <div class="columns large-4" ng-show="existsSrc() && !background.mosaic">
         <div><label i18n="editStyles.background.position.left"></label></div>
-        <select ng-model="background.position.left" ng-options="obj.id as obj.text for obj in position.left"></select>
+        <select ng-model="background.position.left" ng-options="obj.id as obj.text for obj in positions.left"></select>
     </div>
 </div>

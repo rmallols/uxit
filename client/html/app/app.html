@@ -1,8 +1,8 @@
-<div ng-class="getAppStyleClasses()" class="app cf" ng-style="setAppStyles()">
+<div ng-class="getAppStyleClasses()" class="app cf" ng-style="getAppStyles()">
     <div app-header class="cf"></div>
 	<div class="content cf">
         <div class="title" ng-show="isTitleVisible()"><h5>{{model.title || appInfo.title}}</h5></div>
-        <div class="align" ng-class="{alignCenter: model.align=='center', alignRight: model.align=='right'}">
+        <div class="alignment" ng-class="getAppAlignment()">
             <div app-bridge bindings="bindings" src="{{type}}" view="{{view}}" on-event="onEvent"></div>
         </div>
 	</div>

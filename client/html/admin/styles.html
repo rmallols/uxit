@@ -1,5 +1,5 @@
 <div>
-    <div class="cf" ux-show="isPortalTarget()">
+    <div class="cf" ng-show="isPortalTarget()">
         <div class="columns large-13">
             <label i18n="editStyles.fontColor"></label>
             <div>
@@ -21,11 +21,21 @@
         <label i18n="editStyles.fontSize"></label>
         <div><input type="text" ng-model="model.fontSize"/></div>
     </div>
-    <div class="cf" ux-show="isAppTarget()">
+    <div class="cf columns large-9" ng-show="isAppTarget()">
         <label i18n="editStyles.height"></label>
         <div><input type="number" ng-model="model.height"/></div>
     </div>
-    <div class="cf columns large-12" ux-show="isPortalTarget()">
+    <div class="cf columns large-8">
+        <label i18n="editStyles.align.horizontal"></label>
+        <select ng-model="model.align.horizontal" ng-options="obj.id as obj.text for obj in aligns.horizontal"
+                ng-init="model.align.horizontal=model.align.horizontal||aligns.horizontal[0].id"></select>
+    </div>
+    <div class="cf columns large-8" ng-show="model.height">
+        <label i18n="editStyles.align.vertical"></label>
+        <select ng-model="model.align.vertical" ng-options="obj.id as obj.text for obj in aligns.vertical"
+                ng-init="model.align.vertical=model.align.vertical||aligns.vertical[0].id"></select>
+    </div>
+    <div class="cf columns large-12" ng-show="isPortalTarget()">
         <h5><label i18n="editStyles.logo"></label></h5>
         <media-picker ng-model="logo" multiple="false" preview="true" on-change="changeLogoId($media)"></media-picker>
     </div>

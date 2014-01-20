@@ -35,9 +35,9 @@ html:not(.fullscreen) [sortable-app] .app.adminAccess {
   cursor:move;
 }
 
-.app > * {
-  cursor:default;
-}
+.app > * { cursor:default; }
 
-.app .alignCenter [content-editable] { text-align: center; }
-.app .alignRight [content-editable]  { text-align: right; }
+/* Only fixed width apps will set the content to 100% thinking in the vertical alignments */
+.app.fixedHeight .alignment { height: 100%; }
+.app .alignment.horizontal.center [content-editable] { text-align: center; }
+.app .alignment.horizontal.right  [content-editable]  { text-align: right; }
