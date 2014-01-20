@@ -41,12 +41,11 @@
 
         _getCss: function(portalVars, callback) {
             var self = this, dataString, options, parser, cssString;
-            console.log("X1", __dirname + '/../client/css/main.less');
             fs.readFile( __dirname + '/../client/css/main.less', function ( error, data ) {
                 dataString = data.toString();
                 options = self._getLessParsingOptions();
                 parser = new less.Parser(options);
-                portalVars.bla = __dirname;
+                portalVars.absoluteClientPath = "'" + __dirname + "'";
                 dataString = dataString + '\n' + self._getNormalizedVars(portalVars) + '\n';
                 parser.parse( dataString, function ( error, cssTree ) {
                     if (error) { less.writeError( error, options ); return; }
