@@ -40,7 +40,7 @@
         },
 
         _setAbsolutePath: function(portalVars) {
-            portalVars.absoluteClientPath = __dirname.replace(/\\/g, '/') + "/../client/'";
+            portalVars.absoluteClientPath = "'" + __dirname.replace(/\\/g, '/') + "/../client/'";
         },
 
         _parseLessVariables: function(dataString, portalVars, callback) {
