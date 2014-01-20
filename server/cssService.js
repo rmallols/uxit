@@ -45,7 +45,8 @@
                 dataString = data.toString();
                 options = self._getLessParsingOptions();
                 parser = new less.Parser(options);
-                portalVars.absoluteClientPath = "'" + __dirname + "'";
+                portalVars.absoluteClientPath = "'" + __dirname.replace(/\//g, '\\') + "\\..\\client'";
+                console.log("OOO", portalVars.absoluteClientPath);
                 dataString = dataString + '\n' + self._getNormalizedVars(portalVars) + '\n';
                 parser.parse( dataString, function ( error, cssTree ) {
                     if (error) { less.writeError( error, options ); return; }
