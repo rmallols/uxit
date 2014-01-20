@@ -46,8 +46,10 @@
                 options = self._getLessParsingOptions();
                 parser = new less.Parser(options);
                 //portalVars.absoluteClientPath = "'" + __dirname.replace(/\//g, '\\') + "\\..\\client'";
-                portalVars.absoluteClientPath = "'" + __dirname + "/../client'";
-                console.log("OOO", portalVars.absoluteClientPath);
+                //portalVars.absoluteClientPath = "'" + __dirname.replace(/\//g, '/') + "/../client'";
+                portalVars.absoluteClientPath = "'" + __dirname.replace(/\\/g, '/') + "/../client/'";
+                //portalVars.absoluteClientPath = "'" + __dirname + "/../client'";
+                console.log("OOO", __dirname, portalVars.absoluteClientPath);
                 dataString = dataString + '\n' + self._getNormalizedVars(portalVars) + '\n';
                 parser.parse( dataString, function ( error, cssTree ) {
                     if (error) { less.writeError( error, options ); return; }

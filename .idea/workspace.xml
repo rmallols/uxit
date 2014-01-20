@@ -11,6 +11,7 @@
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.43.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.44.0.js" afterPath="" />
       <change type="DELETED" beforePath="C:\usr\menzit\client\min\js.min.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/cssService.js" afterPath="$PROJECT_DIR$/server/cssService.js" />
     </list>
     <ignored path="uxit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +39,7 @@
       <file leaf-file-name="cssService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/cssService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="71" selection-start="2055" selection-end="2055" vertical-scroll-proportion="-9.64" vertical-offset="575" max-vertical-offset="1479">
+            <state line="39" column="29" selection-start="1511" selection-end="1511" vertical-scroll-proportion="-3.52" vertical-offset="575" max-vertical-offset="1513">
               <folding />
             </state>
           </provider>
@@ -47,7 +48,7 @@
       <file leaf-file-name="main.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/css/main.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="46" selection-start="515" selection-end="515" vertical-scroll-proportion="0.19162641" vertical-offset="0" max-vertical-offset="1207">
+            <state line="17" column="49" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.44667697" vertical-offset="0" max-vertical-offset="1207">
               <folding />
             </state>
           </provider>
@@ -65,7 +66,7 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="49" selection-start="212" selection-end="212" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="850">
+            <state line="13" column="56" selection-start="269" selection-end="269" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
@@ -104,8 +105,8 @@
         <option value="$PROJECT_DIR$/client/js/resources-0.37.0.js" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/server/cssService.js" />
         <option value="$PROJECT_DIR$/client/css/main.less" />
+        <option value="$PROJECT_DIR$/server/cssService.js" />
       </list>
     </option>
   </component>
@@ -273,7 +274,7 @@
       <recent name="C:\usr\menzit\client\html\banner\types" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.grunt dev">
+  <component name="RunManager" selected="Node.js.grunt prod">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -1174,7 +1175,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-318" y="-1073" width="1904" height="1037" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-317" y="-1073" width="1904" height="1037" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1304,21 +1305,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="49" selection-start="212" selection-end="212" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="850">
+        <state line="13" column="56" selection-start="269" selection-end="269" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="850">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/cssService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="71" selection-start="2055" selection-end="2055" vertical-scroll-proportion="-9.64" vertical-offset="575" max-vertical-offset="1479">
+        <state line="39" column="29" selection-start="1511" selection-end="1511" vertical-scroll-proportion="-3.52" vertical-offset="575" max-vertical-offset="1513">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/main.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="46" selection-start="515" selection-end="515" vertical-scroll-proportion="0.19162641" vertical-offset="0" max-vertical-offset="1207">
+        <state line="17" column="49" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.44667697" vertical-offset="0" max-vertical-offset="1207">
           <folding />
         </state>
       </provider>
