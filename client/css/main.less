@@ -1,4 +1,4 @@
-@absoluteClientPath: ''; /*The absolute client path will be calculated on the fly from the backend*/
+/**CSS resources are handled taking as a reference the root of the project**/
 @import url("../client/lib/foundation/foundation-4.2.3.custom.css");
 @import url("../client/lib/jQuery/jquery-ui-1.10.3.custom.min.css");
 @import url("../client/lib/select2/select2.css");
@@ -7,6 +7,8 @@
 @import url("../client/lib/miniColors/jquery.minicolors.css");
 @import url("../client/lib/morrisJs/morris-0.4.1.min.css");
 @import url("../client/lib/iCheck/skins/square/blue.css");
+/**LESS resources are handled taking as a reference the root of the system**/
+@absoluteClientPath: ''; /*The absolute client path will be calculated on the fly from the backend*/
 @import url("@{absoluteClientPath}/lib/less/prefixer.less");
 @import url("@{absoluteClientPath}/css/constants.less");
 @import url("@{absoluteClientPath}/css/jquery-ui-ext.less");
