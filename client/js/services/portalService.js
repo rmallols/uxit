@@ -20,11 +20,11 @@
                     if (userSession && userSession.language) {
                         i18nService.changeLanguage(userSession.language);
                     }
-                });
-                loadPortal($routeParams.page, function() {
-                    setHeader();
-                    metaService.setWindowDimensions();
-                    trackAnalytics();
+                    loadPortal($routeParams.page, function() {
+                        setHeader();
+                        metaService.setWindowDimensions();
+                        trackAnalytics();
+                    });
                 });
             });
         }
