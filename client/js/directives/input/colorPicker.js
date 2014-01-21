@@ -28,7 +28,7 @@ function ($rootScope, $timeout, styleService, i18nService) {
             });
 
             inputElm.change(function() {
-                scope.model = (scope.isTransparent) ? 'transparent' : $(this).val();
+                scope.model = (scope.isTransparent) ? 'transparent' : normalizeColorFormat($(this).val());
                 scope.$apply();
                 if (scope.onChange) { scope.onChange(); }
             });
@@ -92,6 +92,11 @@ function ($rootScope, $timeout, styleService, i18nService) {
                     scope.model = '';
                 }
                 inputElm.removeAttr('readonly');
+            }
+
+            function normalizeColorFormat(val) {
+                if(val && val.substr(0, 1) !== '#') { val = '#' + val; }
+                return val;
             }
 		}
 	};
