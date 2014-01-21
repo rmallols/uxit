@@ -5,10 +5,11 @@
     </div>
     <div class="columns large-8">
         <div><label i18n="editStyles.borders.width"></label></div>
-        <input type="number" ng-model="borders.width" />
+        <input type="number" ng-model="borders.width" ng-change="onWidthChange()" />
     </div>
-    <div class="columns large-8" ng-show="showBordersStyle()">
+    <div class="columns large-8">
         <div><label i18n="editStyles.borders.style"></label></div>
-        <select ng-model="borders.style" ng-options="obj.id as obj.text for obj in styles"></select>
+        <select ng-model="borders.style" ng-options="obj.id as obj.text for obj in styles"
+                ng-init="borders.style=borders.style||styles[0].id"></select>
     </div>
 </div>

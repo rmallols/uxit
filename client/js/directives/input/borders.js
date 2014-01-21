@@ -8,25 +8,24 @@
             scope: {
                 borders: '=ngModel'
             },
-            link: function link(scope) {
-
-                scope.showBordersStyle = function() {
-                    return scope.borders.color && scope.borders.color !== 'transparent' && scope.borders.width > 0;
-                };
-
-                scope.styles = [
+            controller: ['$scope', function($scope) {
+                $scope.styles = [
+                    { id: '',       text: '' },
                     { id: 'solid',  text: i18nS('editStyles.borders.style.options.solid') },
                     { id: 'dashed', text: i18nS('editStyles.borders.style.options.dashed') },
                     { id: 'dotted', text: i18nS('editStyles.borders.style.options.dotted') },
                     { id: 'double', text: i18nS('editStyles.borders.style.options.double') }
                 ];
+            }],
+            link: function link(scope) {
 
                 if(!scope.borders) {
-                    scope.borders = {
-                        width: 3,
-                        style: scope.styles[0].id
-                    };
+                    scope.borders = {};
                 }
+
+                scope.onWidthChange = function() {
+                    if(scope.borders.width === null) { scope.borders.width = ''; }
+                };
             }
         };
     }]);

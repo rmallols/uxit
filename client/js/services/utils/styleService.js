@@ -129,11 +129,13 @@
         }
 
         function setNormalizedBorderStyles(borders, destMdl) {
-            if(borders.color)   { destMdl.borderColor = borders.color; }
-            if(borders.style)   { destMdl.borderStyle = borders.style; }
-            if(borders.width !== undefined) {
-                destMdl.borderWidth = borders.width;
-            }
+            if(borders.color)           { destMdl.borderColor = borders.color; }
+            if(borders.style)           { destMdl.borderStyle = borders.style; }
+            if(isNumber(borders.width)) { destMdl.borderWidth = borders.width; }
+        }
+
+        function isNumber(n) {
+            return !isNaN(parseFloat(n)) && isFinite(n);
         }
 
         /** End of private methods **/

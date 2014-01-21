@@ -1439,11 +1439,12 @@ angular.module("borders.html", []).run(["$templateCache", function($templateCach
     "    </div>\n" +
     "    <div class=\"columns large-8\">\n" +
     "        <div><label i18n=\"editStyles.borders.width\"></label></div>\n" +
-    "        <input type=\"number\" ng-model=\"borders.width\" />\n" +
+    "        <input type=\"number\" ng-model=\"borders.width\" ng-change=\"onWidthChange()\" />\n" +
     "    </div>\n" +
-    "    <div class=\"columns large-8\" ng-show=\"showBordersStyle()\">\n" +
+    "    <div class=\"columns large-8\">\n" +
     "        <div><label i18n=\"editStyles.borders.style\"></label></div>\n" +
-    "        <select ng-model=\"borders.style\" ng-options=\"obj.id as obj.text for obj in styles\"></select>\n" +
+    "        <select ng-model=\"borders.style\" ng-options=\"obj.id as obj.text for obj in styles\"\n" +
+    "                ng-init=\"borders.style=borders.style||styles[0].id\"></select>\n" +
     "    </div>\n" +
     "</div>");
 }]);

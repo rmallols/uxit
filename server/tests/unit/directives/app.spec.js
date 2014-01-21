@@ -79,7 +79,7 @@ describe('app directive', function () {
 
     describe('content area - app bridge', function () {
 
-        var appBridgeSelector = ' > .content > .align > [app-bridge]';
+        var appBridgeSelector = ' > .content > .alignment > [app-bridge]';
         it('should have a reference to the app bridge area', function () {
             expect($(appBridgeSelector, appDirective).length).toBe(1);
         });

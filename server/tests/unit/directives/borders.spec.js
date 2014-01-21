@@ -67,38 +67,4 @@ describe('borders directive', function () {
             });
         });
     });
-
-    describe('element visibility', function() {
-
-        var bordersDirective, styleCol;
-        beforeEach(function() {
-            bordersDirective = compile(template, {});
-            $rootScope.$digest();
-            styleCol = $(' .columns:eq(2)', bordersDirective);
-        });
-
-        it('should not show the style column if there isn\'t set', function () {
-            expect(isVisible(styleCol)).toBe(false);
-        });
-
-        it('should not show the style column if the color is set to transparent', function () {
-            $scope.model = { borders: { color: 'transparent' }};
-            $rootScope.$digest();
-            expect(isVisible(styleCol)).toBe(false);
-        });
-
-        it('should not show the style column if the color is set to something different than transparent ' +
-        'but the border width is still set to 0', function () {
-            $scope.model = { borders: { color: '#00aaef' }};
-            $rootScope.$digest();
-            expect(isVisible(styleCol)).toBe(false);
-        });
-
-        it('should show the style column if the color is set to something different than transparent ' +
-            'and the border width is still set to something different than 0', function () {
-            $scope.model = { borders: { color: '#00aaef', width: 3 }};
-            $rootScope.$digest();
-            expect(isVisible(styleCol)).toBe(true);
-        });
-    });
 });
