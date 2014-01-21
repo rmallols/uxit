@@ -14,6 +14,7 @@
          * @param {object} selectedDomObj   The pointer to the DOM object of the selected text, if case
          */
         function showEditBox(scope, element, selectedDomObj) {
+
             function setTargetSettings() {
                 //Add relative position to the parent element of the edit box
                 //To force the [0,0] axis at its beginning and make the position placement easier afterwards

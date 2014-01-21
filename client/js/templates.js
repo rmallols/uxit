@@ -789,7 +789,7 @@ angular.module("editBox.html", []).run(["$templateCache", function($templateCach
     "        <edit panels=\"panels\" active-tab=\"activeTab\" on-save=\"save()\" on-change=\"change()\"\n" +
     "              on-cancel=\"cancel()\" limit-layer-height=\"true\"></edit>\n" +
     "    </div>\n" +
-    "    <div class=\"arrow\" ng-style=\"getArrowPos()\"></div>\n" +
+    "    <div class=\"arrow\"></div>\n" +
     "</div>\n" +
     "");
 }]);

@@ -1,13 +1,15 @@
-@arrowWidth   :30px;
-@arrowContainerWidth : 2 * @arrowWidth;
-@borderWidth  :8px;
-@arrowTopPos  :@padding + @normalButtonSize + @arrowWidth;
-@zIndex       : 10; /*Be aware of the z-index of the overlay*/
+@arrowWidth           :30px;
+@halfArrowWidth       :(@arrowWidth / 2);
+@arrowContainerWidth  : 2 * @arrowWidth;
+@borderWidth          :8px;
+@arrowTopPos          :@padding + @normalButtonSize;
+@halfArrowTopPos      : (@arrowTopPos / 2);
+@zIndex               : 10; /*Be aware of the z-index of the overlay*/
 
 .editBox {
     position:absolute;
     left:0px;
-    margin-top: -((@arrowTopPos / 2) + @borderWidth);
+    margin-top: -(2 * @arrowWidth);
     background-color: transparent;
     max-width:75%;
     border:0;
@@ -23,7 +25,7 @@
   width: @arrowContainerWidth;
   height: @arrowContainerWidth;
   position: absolute;
-  top: 0;
+  top: -@arrowWidth;
   z-index: @zIndex;
 }
 
@@ -31,7 +33,7 @@
     position: absolute;
     right: 100%;
     border: @arrowWidth solid transparent;
-    margin: -@arrowWidth 0 0 -(2 * @arrowWidth);
+    margin: -(@padding + @normalButtonSize - @halfArrowTopPos) 0 0 -(2 * @arrowWidth);
     content: " ";
     height: 0;
     width: 0;
@@ -113,7 +115,7 @@
 
 .editBox .edit > .actions {
   float: right;
-  width: auto;
+  width: 100%;
   padding: @padding @padding 0 @padding;
   background-color: @highComp;
   position: absolute;

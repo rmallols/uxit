@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.directive('editBox', ['editBoxUtilsService', 'pageService', 'keyboardService',
-    function (editBoxUtilsService, pageService, keyboardService) {
+    COMPONENTS.directive('editBox', ['$timeout', 'editBoxUtilsService', 'pageService', 'keyboardService',
+    function ($timeout, editBoxUtilsService, pageService, keyboardService) {
         return {
             restrict: 'E',
             transclude: true,
@@ -23,10 +23,17 @@
                 var arrowPosOptions = { top: 'top', right: 'right', bottom: 'bottom', left: 'left' },
                     directiveId     = 'editBox', mainScrollingElm = pageService.getMainScrollingElm(),
                     mainScrollingElmMarginLeft = parseInt(mainScrollingElm.css('margin-left'), 10),
-                    arrowWidth = $(' > .arrow', element).width() / 2;
+                    arrowWidth = $(' > .arrow', element).width() / 2, actionsHeight;
+
+                //Get the actions height in a new thread as it belongs to a different directive
+                $timeout(function() {
+                    actionsHeight = $('.actions', element).outerHeight();
+                });
+
                 scope.activeTab = { current: 0};
                 scope.getStyles = function () {
-                    var topPos  = scope.target.coordinates.top + (scope.target.coordinates.height / 2),
+                    var topPos  = scope.target.coordinates.top + (scope.target.coordinates.height / 2)
+                                    + actionsHeight,
                         leftPos = (scope.arrowPos === arrowPosOptions.left)
                                     ? scope.target.coordinates.width + scope.target.coordinates.left
                                     - mainScrollingElmMarginLeft + arrowWidth
@@ -52,15 +59,6 @@
                     editBoxUtilsService.hideEditBox(scope.target.id);
                     if (scope.onCancel) { scope.onCancel(); }
                     if (scope.onClose)  { scope.onClose(); }
-                };
-
-                scope.getArrowPos = function () {
-                    var topPos              = scope.target.coordinates.top,
-                        offsetTop           = element.offset().top,
-                        scrollTop           = mainScrollingElm.scrollTop();
-                    return {
-                        top: topPos - offsetTop -  scrollTop
-                    };
                 };
 
                 function registerKeyboardEvents() {
