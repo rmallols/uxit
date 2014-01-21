@@ -2,8 +2,8 @@
     <ul class="pages" ng-style="setPagesStyles()">
         <li ng-repeat="row in portal.template.rows" class="rows">
             <ul>
-                <li ng-repeat="column in row.columns" resizable-app="{{isAppResizeAllowed()}}" class="columns large-{{column.size}}"
-                    ng-class="{template: column.apps, pageWrapper: !column.apps}">
+                <li ng-repeat="column in row.columns" resizable-app="{{isAppResizeAllowed()}}" class="columns"
+                    ng-class="getColStyleClass(column, $index, true)">
                     <ul ux-show="column.apps" sortable-app="{{isAppSortAllowed()}}" ui-sortable="sortableOptions"
                         ng-model="column.apps" class="appContainer">
                         <li app="app.id" ng-repeat="app in column.apps" model="app.model" type="app.type" template-app="true" width="column.size"></li>
@@ -12,7 +12,7 @@
                         <li ng-repeat="row in column.rows" class="rows">
                             <ul>
                                 <li ng-repeat="column in row.columns" resizable-app="{{isAppResizeAllowed()}}"
-                                    ng-class="getColSizeStyleClass(column.size, $index)" class="columns page">
+                                    ng-class="getColStyleClass(column, $index, false)" class="columns page">
                                     <ul sortable-app="{{isAppSortAllowed()}}" ui-sortable="sortableOptions" ng-model="column.apps" class="appContainer">
                                         <li app="app.id" ng-repeat="app in column.apps" model="app.model" type="app.type" template-app="false" width="column.size"></li>
                                     </ul>

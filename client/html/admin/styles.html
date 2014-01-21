@@ -17,11 +17,11 @@
         <label i18n="editStyles.padding"></label>
         <div><input type="number" ng-model="model.padding"/></div>
     </div>
-    <div class="cf columns large-12">
+    <div class="cf columns large-12" ng-show="isAppTarget()">
         <label i18n="editStyles.margin"></label>
         <div><input type="number" ng-model="model.margin"/></div>
     </div>
-    <div class="cf">
+    <div class="cf columns large-25">
         <label i18n="editStyles.fontSize"></label>
         <div><input type="text" ng-model="model.fontSize"/></div>
     </div>

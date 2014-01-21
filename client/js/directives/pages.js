@@ -35,7 +35,6 @@ function ($rootScope, portalService, pageService, rowService, appService, roleSe
             };
 
             $rootScope.$on('onStartDraggingNewApp', function() {
-                console.log("START!");
                 isAppBeingDragged = true;
                 scope.$digest();
 
@@ -46,20 +45,30 @@ function ($rootScope, portalService, pageService, rowService, appService, roleSe
                 scope.$digest();
             });
 
-            scope.getColSizeStyleClass = function(colSize, colIndex) {
-                var colStyleClasses = {};
-                if(!isAppBeingDragged) {
-                    if(colSize === 1) {
-                        colSize = 0;
-                        colStyleClasses.showWhileDragging = true;
-                    } else { colSize++; }
-                    if(colIndex === 1) { colSize++; }
+            scope.getColStyleClass = function(col, index, isTemplate) {
+                var colStyleClasses = {}, colSize;
+                if(isTemplate) {
+                    if(col.apps)    { colStyleClasses.template = true; }
+                    else            { colStyleClasses.pageWrapper = true; }
                 }
+                colSize = getFinalColSize(col.size, index, colStyleClasses.pageWrapper, col.apps);
                 colStyleClasses['large-' + colSize] = true;
                 return colStyleClasses;
             };
 
             /** Private methods **/
+            function getFinalColSize(originalColSize, colIndex, isPageWrapper, colApps) {
+                var colSize = originalColSize;
+                if(!isAppBeingDragged) {  //If an app is being sorted, finalColSize = originalColSize
+                    if(!isPageWrapper && !colApps.length)   { colSize = 0; } //Hide empty cols
+                    else                                    { colSize++; }
+                    //Increase the first one to fit all the available space
+                    if(colIndex === 1)                      { colSize++; }
+                }
+                return colSize;
+           }
+
+
             function isAppSortAndResizeAllowed() {
                 return scope.isAdmin() && !appService.isFullscreen();
             }
