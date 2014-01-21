@@ -41,7 +41,7 @@
                                     + scope.target.coordinates.left - mainScrollingElmMarginLeft;
                     return {
                         top : topPos,
-                        left: leftPos
+                        left: (leftPos > 0) ? leftPos : 0 //Avoid negative offsets
                      };
                 };
 

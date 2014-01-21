@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/admin/editBox.html" afterPath="$PROJECT_DIR$/client/html/admin/editBox.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/directives/admin/editBox.js" afterPath="$PROJECT_DIR$/client/js/directives/admin/editBox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/editBox.less" afterPath="$PROJECT_DIR$/client/css/editBox.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js" afterPath="$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/templates.js" afterPath="$PROJECT_DIR$/client/js/templates.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/tests/unit/test-results.xml" afterPath="$PROJECT_DIR$/server/tests/unit/test-results.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -44,19 +39,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editBox.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="editBox.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editBox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="31" selection-start="2438" selection-end="2438" vertical-scroll-proportion="-4.48" vertical-offset="772" max-vertical-offset="1445">
+            <state line="50" column="37" selection-start="2408" selection-end="2408" vertical-scroll-proportion="1.172524" vertical-offset="483" max-vertical-offset="1445">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editBox.less" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="editBox.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/css/editBox.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="67" selection-start="2568" selection-end="2568" vertical-scroll-proportion="1.4656489" vertical-offset="1571" max-vertical-offset="2193">
+            <state line="107" column="92" selection-start="2436" selection-end="2436" vertical-scroll-proportion="-3.2631578" vertical-offset="1571" max-vertical-offset="2193">
               <folding />
             </state>
           </provider>
@@ -121,9 +116,9 @@
         <option value="$PROJECT_DIR$/server/tests/unit/directives/borders.spec.js" />
         <option value="$PROJECT_DIR$/client/js/services/utils/editBoxUtilsService.js" />
         <option value="$PROJECT_DIR$/client/html/admin/editBox.html" />
-        <option value="$PROJECT_DIR$/client/js/directives/admin/editBox.js" />
         <option value="$PROJECT_DIR$/client/css/buttons.less" />
         <option value="$PROJECT_DIR$/client/css/editBox.less" />
+        <option value="$PROJECT_DIR$/client/js/directives/admin/editBox.js" />
       </list>
     </option>
   </component>
@@ -1172,7 +1167,11 @@
       <created>1390291981678</created>
       <updated>1390291981678</updated>
     </task>
-    <option name="localTasksCounter" value="193" />
+    <task id="LOCAL-00193" summary="#251 [Edit box] The component is not always fully visible">
+      <created>1390295983845</created>
+      <updated>1390295983846</updated>
+    </task>
+    <option name="localTasksCounter" value="194" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1228,7 +1227,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="#157 [Unit tests] listService" />
     <MESSAGE value="#196 [Tooltip][List][Edit box] The 'are you sure' delete confirmation message appears scattered from the button itself - added a min width to the editbox width" />
     <MESSAGE value="#193 [App bridge] Setup simplification" />
     <MESSAGE value="#226 [e2e] App basic handling - solved problem with previous tests" />
@@ -1253,7 +1251,8 @@
     <MESSAGE value="#253 Add the capability to upload a logo" />
     <MESSAGE value="#256 [App] Vertical align support for content" />
     <MESSAGE value="#252 Apps have sometimes border, by default" />
-    <option name="LAST_COMMIT_MESSAGE" value="#252 Apps have sometimes border, by default" />
+    <MESSAGE value="#251 [Edit box] The component is not always fully visible" />
+    <option name="LAST_COMMIT_MESSAGE" value="#251 [Edit box] The component is not always fully visible" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1347,13 +1346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editBox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="31" selection-start="2438" selection-end="2438" vertical-scroll-proportion="-4.48" vertical-offset="772" max-vertical-offset="1445">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/html/admin/editBox.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="58" selection-start="398" selection-end="398" vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="238">
@@ -1370,7 +1362,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/editBox.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="67" selection-start="2568" selection-end="2568" vertical-scroll-proportion="1.4656489" vertical-offset="1571" max-vertical-offset="2193">
+        <state line="107" column="92" selection-start="2436" selection-end="2436" vertical-scroll-proportion="-3.2631578" vertical-offset="1571" max-vertical-offset="2193">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/directives/admin/editBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="37" selection-start="2408" selection-end="2408" vertical-scroll-proportion="1.172524" vertical-offset="483" max-vertical-offset="1445">
           <folding />
         </state>
       </provider>
