@@ -20,12 +20,14 @@
                         cursorAt            : { top: 0, left: 0 },
                         start: function (event, ui) {
                             sortableAppService.start(ui);
+                            sortableAppService.broadcastStartSortingApp();
                         },
                         update: function (event, ui) {
                             sortableAppService.update(ui);
                         },
                         stop: function () {
                             sortableAppService.stop();
+                            sortableAppService.broadcastStopSortingApp();
                         }
                     };
                 }

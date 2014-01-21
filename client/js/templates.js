@@ -1625,7 +1625,7 @@ angular.module("pages.html", []).run(["$templateCache", function($templateCache)
     "                        <li ng-repeat=\"row in column.rows\" class=\"rows\">\n" +
     "                            <ul>\n" +
     "                                <li ng-repeat=\"column in row.columns\" resizable-app=\"{{isAppResizeAllowed()}}\"\n" +
-    "                                    ng-class=\"getColSizeStyleClass(column.size)\" class=\"columns page\">\n" +
+    "                                    ng-class=\"getColSizeStyleClass(column.size, $index)\" class=\"columns page\">\n" +
     "                                    <ul sortable-app=\"{{isAppSortAllowed()}}\" ui-sortable=\"sortableOptions\" ng-model=\"column.apps\" class=\"appContainer\">\n" +
     "                                        <li app=\"app.id\" ng-repeat=\"app in column.apps\" model=\"app.model\" type=\"app.type\" template-app=\"false\" width=\"column.size\"></li>\n" +
     "                                    </ul>\n" +

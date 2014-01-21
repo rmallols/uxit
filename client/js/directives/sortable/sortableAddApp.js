@@ -1,6 +1,7 @@
 (function () {
     'use strict';
-    COMPONENTS.directive('sortableAddApp', ['keyboardService', '$timeout', function (keyboardService, $timeout) {
+    COMPONENTS.directive('sortableAddApp', ['sortableAppService', 'keyboardService', '$timeout',
+    function (sortableAppService, keyboardService, $timeout) {
         return {
             restrict: 'A',
             replace: false,
@@ -10,10 +11,12 @@
                     //Force the size of the dragging element to be as it originally was
                     $(ui.helper).css({width: element.outerWidth(), height: element.outerHeight()});
                     registerKeyboardEvents();
+                    sortableAppService.broadcastStartSortingApp();
                 }
 
                 function stop() {
                     unregisterKeyboardEvents();
+                    sortableAppService.broadcastStopSortingApp();
                 }
 
                 function registerKeyboardEvents() {

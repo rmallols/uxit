@@ -7,6 +7,8 @@ function ($rootScope, portalService, pageService, rowService, appService, roleSe
 		templateUrl: 'pages.html',
 		link: function link(scope) {
 
+            var isAppBeingDragged = false;
+
             $rootScope.$on('portalLoaded', function() {
                 scope.portal = portalService.getPortal();
             });
@@ -32,8 +34,27 @@ function ($rootScope, portalService, pageService, rowService, appService, roleSe
                 return isAppSortAndResizeAllowed();
             };
 
-            scope.getColSizeStyleClass = function(colSize) {
+            $rootScope.$on('onStartDraggingNewApp', function() {
+                console.log("START!");
+                isAppBeingDragged = true;
+                scope.$digest();
+
+            });
+
+            $rootScope.$on('onStopDraggingNewApp', function() {
+                isAppBeingDragged = false;
+                scope.$digest();
+            });
+
+            scope.getColSizeStyleClass = function(colSize, colIndex) {
                 var colStyleClasses = {};
+                if(!isAppBeingDragged) {
+                    if(colSize === 1) {
+                        colSize = 0;
+                        colStyleClasses.showWhileDragging = true;
+                    } else { colSize++; }
+                    if(colIndex === 1) { colSize++; }
+                }
                 colStyleClasses['large-' + colSize] = true;
                 return colStyleClasses;
             };

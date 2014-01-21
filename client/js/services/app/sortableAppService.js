@@ -43,6 +43,14 @@
             $('html').removeClass('sorting');
         }
 
+        function broadcastStartSortingApp() {
+            $rootScope.$broadcast('onStartDraggingNewApp');
+        }
+
+        function broadcastStopSortingApp() {
+            $rootScope.$broadcast('onStopDraggingNewApp');
+        }
+
         /** Private methods **/
         function isUpdateTime() {
             return colService.areSameCol(options.originalCol, options.dropCol) || !isUpdateBlocked || options.isNewItem;
@@ -212,7 +220,9 @@
         return {
             start: start,
             update: update,
-            stop: stop
+            stop: stop,
+            broadcastStartSortingApp: broadcastStartSortingApp,
+            broadcastStopSortingApp: broadcastStopSortingApp
         };
     }]);
 })();
