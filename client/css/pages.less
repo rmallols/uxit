@@ -1,6 +1,6 @@
 @resizableWidth: 50px;
 
-ul.pages {
+.portal {
   margin-top: 0px;
   height: 100%;
   overflow-x: hidden;
@@ -8,12 +8,12 @@ ul.pages {
 }
 
 @addAppPanelOpenOuterWidth: @collapsedAddAppPanelWidth + @tabsWidth;
-ul.pages.addAppPanelOpen {
+.portal.addAppPanelOpen {
   margin-left: @addAppPanelOpenOuterWidth !important;
   .transition(margin-left @speed);
 }
 
-ul.pages.adminAccess {
+.portal.adminAccess {
   margin-top: 0;
   margin-left: @tabsWidth;
 }

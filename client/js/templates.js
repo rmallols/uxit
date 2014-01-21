@@ -1182,9 +1182,13 @@ angular.module("styles.html", []).run(["$templateCache", function($templateCache
     "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
-    "    <div class=\"cf\">\n" +
+    "    <div class=\"cf columns large-13\">\n" +
     "        <label i18n=\"editStyles.padding\"></label>\n" +
-    "        <div><input type=\"text\" ng-model=\"model.padding\"/></div>\n" +
+    "        <div><input type=\"number\" ng-model=\"model.padding\"/></div>\n" +
+    "    </div>\n" +
+    "    <div class=\"cf columns large-12\">\n" +
+    "        <label i18n=\"editStyles.margin\"></label>\n" +
+    "        <div><input type=\"number\" ng-model=\"model.margin\"/></div>\n" +
     "    </div>\n" +
     "    <div class=\"cf\">\n" +
     "        <label i18n=\"editStyles.fontSize\"></label>\n" +
@@ -1607,31 +1611,33 @@ angular.module("mediaPicker.html", []).run(["$templateCache", function($template
 
 angular.module("pages.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("pages.html",
-    "<ul class=\"pages\" ng-style=\"setPagesStyles()\" ng-class=\"getCurrentUserAdminAccessStyleClass()\">\n" +
-    "    <li ng-repeat=\"row in portal.template.rows\" class=\"rows\">\n" +
-    "        <ul>\n" +
-    "            <li ng-repeat=\"column in row.columns\" resizable-app=\"{{isAppResizeAllowed()}}\" class=\"columns large-{{column.size}}\"\n" +
-    "                ng-class=\"{template: column.apps, pageWrapper: !column.apps}\">\n" +
-    "                <ul ux-show=\"column.apps\" sortable-app=\"{{isAppSortAllowed()}}\" ui-sortable=\"sortableOptions\"\n" +
-    "                    ng-model=\"column.apps\" class=\"appContainer\">\n" +
-    "                    <li app=\"app.id\" ng-repeat=\"app in column.apps\" model=\"app.model\" type=\"app.type\" template-app=\"true\" width=\"column.size\"></li>\n" +
-    "                </ul>\n" +
-    "                <ul ux-show=\"column.rows\">\n" +
-    "                    <li ng-repeat=\"row in column.rows\" class=\"rows\">\n" +
-    "                        <ul>\n" +
-    "                            <li ng-repeat=\"column in row.columns\" resizable-app=\"{{isAppResizeAllowed()}}\"\n" +
-    "                                ng-class=\"getColSizeStyleClass(column.size)\" class=\"columns page\">\n" +
-    "                                <ul sortable-app=\"{{isAppSortAllowed()}}\" ui-sortable=\"sortableOptions\" ng-model=\"column.apps\" class=\"appContainer\">\n" +
-    "                                    <li app=\"app.id\" ng-repeat=\"app in column.apps\" model=\"app.model\" type=\"app.type\" template-app=\"false\" width=\"column.size\"></li>\n" +
-    "                                </ul>\n" +
-    "                            </li>\n" +
-    "                        </ul>\n" +
-    "                    </li>\n" +
-    "                </ul>\n" +
-    "            </li>\n" +
-    "        </ul>\n" +
-    "    </li>\n" +
-    "</ul>");
+    "<div class=\"portal\" ng-class=\"getCurrentUserAdminAccessStyleClass()\">\n" +
+    "    <ul class=\"pages\" ng-style=\"setPagesStyles()\">\n" +
+    "        <li ng-repeat=\"row in portal.template.rows\" class=\"rows\">\n" +
+    "            <ul>\n" +
+    "                <li ng-repeat=\"column in row.columns\" resizable-app=\"{{isAppResizeAllowed()}}\" class=\"columns large-{{column.size}}\"\n" +
+    "                    ng-class=\"{template: column.apps, pageWrapper: !column.apps}\">\n" +
+    "                    <ul ux-show=\"column.apps\" sortable-app=\"{{isAppSortAllowed()}}\" ui-sortable=\"sortableOptions\"\n" +
+    "                        ng-model=\"column.apps\" class=\"appContainer\">\n" +
+    "                        <li app=\"app.id\" ng-repeat=\"app in column.apps\" model=\"app.model\" type=\"app.type\" template-app=\"true\" width=\"column.size\"></li>\n" +
+    "                    </ul>\n" +
+    "                    <ul ux-show=\"column.rows\">\n" +
+    "                        <li ng-repeat=\"row in column.rows\" class=\"rows\">\n" +
+    "                            <ul>\n" +
+    "                                <li ng-repeat=\"column in row.columns\" resizable-app=\"{{isAppResizeAllowed()}}\"\n" +
+    "                                    ng-class=\"getColSizeStyleClass(column.size)\" class=\"columns page\">\n" +
+    "                                    <ul sortable-app=\"{{isAppSortAllowed()}}\" ui-sortable=\"sortableOptions\" ng-model=\"column.apps\" class=\"appContainer\">\n" +
+    "                                        <li app=\"app.id\" ng-repeat=\"app in column.apps\" model=\"app.model\" type=\"app.type\" template-app=\"false\" width=\"column.size\"></li>\n" +
+    "                                    </ul>\n" +
+    "                                </li>\n" +
+    "                            </ul>\n" +
+    "                        </li>\n" +
+    "                    </ul>\n" +
+    "                </li>\n" +
+    "            </ul>\n" +
+    "        </li>\n" +
+    "    </ul>\n" +
+    "</div>");
 }]);
 
 angular.module("errorPage.html", []).run(["$templateCache", function($templateCache) {

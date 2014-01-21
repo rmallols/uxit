@@ -109,7 +109,7 @@
         }
 
         function setNormalizedDefaultStyles(styleValue, styleKey, destMdl) {
-            if (styleValue) {
+            if (styleValue || isNumber(styleValue)) { //Consider '0' as a valid style
                 destMdl[styleKey] = styleValue;
             }
         }

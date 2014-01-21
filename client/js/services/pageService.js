@@ -135,7 +135,7 @@
          * @returns {jQuery} The pointer to the DOM object where the scrolling area is
          */
         function getMainScrollingElm() {
-            return $('ul.pages');
+            return $('div.portal');
         }
 
         return {
