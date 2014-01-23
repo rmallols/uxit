@@ -18,16 +18,11 @@
                 cEScope.style = styleService.getComputedStyleInRange(cEDomObj, selectedTextDomObj);
                 defaultPanels = [{ title: 'Content', src: 'richContent', bindings: { style: cEScope.style} }];
                 forceTextSelection();
-                cEScope.panels = (cEScope.customPanels) ? cEScope.customPanels : defaultPanels;
-                cEScope.onSave = function() {
-                    onSaveEditBox(cEScope, cEDomObj, ngModelCtrl);
-                };
-                cEScope.onCancel = function() {
-                    onCancelEditBox(cEScope);
-                };
-                cEScope.onChange = function() {
-                    onChangeEditBox(cEScope, cEDomObj, ngModelCtrl, cEScope.style);
-                };
+                blur(cEDomObj);
+                cEScope.panels      = (cEScope.customPanels) ? cEScope.customPanels : defaultPanels;
+                cEScope.onSave      = function() { onSaveEditBox(cEScope, cEDomObj, ngModelCtrl); };
+                cEScope.onCancel    = function() { onCancelEditBox(cEScope); };
+                cEScope.onChange    = function() { onChangeEditBox(cEScope, cEDomObj, ngModelCtrl, cEScope.style); };
                 editBoxUtilsService.showEditBox(cEScope, cEDomObj, selectedTextDomObj);
                 cEScope.showActions = true;
             }
@@ -50,11 +45,21 @@
             textSelectionService.restoreSelection(); //Restore saved selection
             textSelectionService.setStylesToSelection(styles); //Apply styles physically
             contentEditableService.updateValue(cEScope, cEDomObj, ngModelCtrl);
+            blur(cEDomObj);
         }
 
         function forceTextSelection() {
             textSelectionService.setFakeSelection();
             textSelectionService.saveSelection(); //Save the current text selection to be able to restore if afterwards
+        }
+
+        function blur(cEDomObj) {
+            //Once the edit box is openend, the content editable component still has the focus
+            //this means that the keyboard events (i.e. 'esc' to close the edit box) won't work
+            //as they're still owned by the content editable component.
+            //Thus, blurring it allows to normalize the keyboard handling.
+            //This scenario applies as well to the change callback
+            cEDomObj.blur();
         }
 
         function setLinkTitles(cEScope) {
@@ -75,6 +80,7 @@
             tooltipService.setTitle(newTitle, linkObj, true);
             linkObj.removeAttr('title');
         }
+
         /** End of private methods **/
 
         return {

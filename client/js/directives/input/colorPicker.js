@@ -27,7 +27,7 @@ function ($rootScope, $timeout, styleService, i18nService) {
                 show: onColorPaletteShow
             });
 
-            inputElm.change(function() {
+            inputElm.blur(function() {
                 scope.model = (scope.isTransparent) ? 'transparent' : normalizeColorFormat($(this).val());
                 scope.$apply();
                 if (scope.onChange) { scope.onChange(); }
