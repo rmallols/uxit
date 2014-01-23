@@ -4,7 +4,7 @@
     var execSetup       = require('../execSetup.js'),
         portalsAdminPO  = require('../resources/pageObjects/portalsAdmin.pO.js'),
         navigationPO    = require('../resources/pageObjects/navigation.pO.js'),
-        mockPortalName  = 'MockPortal', mockUpdatedPortalName = mockPortalName + 'Updated';
+        mockPortalName  = 'zLastMockPortal', mockUpdatedPortalName = mockPortalName + 'Updated';
 
     describe('portals admin', function() {
 

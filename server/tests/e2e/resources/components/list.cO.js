@@ -27,8 +27,9 @@
             return this._ptor.findElements(this._protractor.By.css(".item .text"));
         },
 
-        getItemSelectorElms: function() {
-            return this._ptor.findElements(this._protractor.By.css(".item ins"));
+        getItemSelectorElms: function(context) {
+            if(!context) { context = ''; }
+            return this._ptor.findElements(this._protractor.By.css(context + " .item ins"));
         }
     };
 })();

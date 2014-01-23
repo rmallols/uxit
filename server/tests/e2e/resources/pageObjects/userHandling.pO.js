@@ -46,7 +46,7 @@
         },
 
         getItemSelectorElms: function() {
-            return listCO.getItemSelectorElms();
+            return listCO.getItemSelectorElms('[edit-user-list]');
         },
 
         getDeleteItemsButtonElm: function() {
