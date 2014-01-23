@@ -1,10 +1,10 @@
 (function () {
     'use strict';
 
-    COMPONENTS.factory('editBoxUtilsService', ['$compile', 'pageService', 'domService', 'keyboardService',
-    function ($compile, pageService, domService, keyboardService) {
+    COMPONENTS.factory('editBoxUtilsService', ['$compile', 'pageService', 'domService',
+    function ($compile, pageService, domService) {
 
-        var isHideActionBlocked = false, isMoving = false, serviceId = 'editBoxUtilsService';
+        var isHideActionBlocked = false, isMoving = false;
 
         /**
          * Shows the edit box
@@ -82,15 +82,7 @@
                     editBoxObj = $('.editBox').remove();
                 }
                 removeOverlay(editBoxObj);
-                unregisterKeyboardEvents();
                 editBoxObj.remove();
-            }
-
-            function unregisterKeyboardEvents() {
-                keyboardService.unregister('esc', serviceId);
-                //Unregister the edit events as well
-                keyboardService.unregister('left', 'edit');
-                keyboardService.unregister('right', 'edit');
             }
         }
 

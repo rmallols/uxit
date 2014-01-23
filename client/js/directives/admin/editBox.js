@@ -50,17 +50,18 @@
                 };
 
                 scope.save = function () {
-                    editBoxUtilsService.hideEditBox(scope.target.id);
+                    hideEditBox();
                     if (scope.onSave)   { scope.onSave(scope.model, scope.$id); }
                     if (scope.onClose)  { scope.onClose(); }
                 };
 
                 scope.cancel = function () {
-                    editBoxUtilsService.hideEditBox(scope.target.id);
+                    hideEditBox();
                     if (scope.onCancel) { scope.onCancel(); }
                     if (scope.onClose)  { scope.onClose(); }
                 };
 
+                /** Private methods **/
                 function registerKeyboardEvents() {
                     keyboardService.register('ctrl+enter', directiveId, function () {
                         scope.save();
@@ -71,6 +72,19 @@
                         scope.$apply();
                     });
                 }
+
+                function unregisterKeyboardEvents() {
+                    keyboardService.unregister('esc', directiveId);
+                    //Unregister the edit events as well
+                    keyboardService.unregister('left', 'edit');
+                    keyboardService.unregister('right', 'edit');
+                }
+
+                function hideEditBox() {
+                    editBoxUtilsService.hideEditBox(scope.target.id);
+                    unregisterKeyboardEvents();
+                }
+                /** End of private methods **/
 
                 registerKeyboardEvents();
             }
