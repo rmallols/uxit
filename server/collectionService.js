@@ -123,7 +123,7 @@
             var self = this;
             setupService.getCollectionData(collection, function (err, data) {
                 consoleService.success(collection + ' collection initialized');
-                if(data && data.length) {
+                if(data) {
                     self._createDocuments(dbCon, collection, data, function() {
                         if(callback) { callback(); }
                     });
@@ -133,8 +133,8 @@
             });
         },
 
-        _createDocuments: function(dbCon, collection, data, callback) {
-            var documents = JSON.parse(data), session = { user: {} };
+        _createDocuments: function(dbCon, collection, documents, callback) {
+            var session = { user: {} };
             if(utilsService.isArray(documents)) {
                 this._createMultipleDocuments(dbCon, collection, documents, session, function() {
                     callback();

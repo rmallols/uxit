@@ -9,4 +9,12 @@
         <div class="columns large-10">Database name:<br/>(Without spaces)</div>
         <div class="columns large-15"><input type="text" ng-model="model.typedName" /></div>
     </div>
+    <div class="cf columns large-12">
+        <h5><label i18n="portalsAdmin.dataTemplates"></label></h5>
+        <select ng-model="model.dataTemplateId" ng-options="obj.id as obj.text for obj in dataTemplates"></select>
+    </div>
+    <div class="cf columns large-13">
+        <h5><label i18n="portalsAdmin.stylesTemplates"></label></h5>
+        <select ng-model="model.stylesTemplateId" ng-options="obj.id as obj.text for obj in stylesTemplates"></select>
+    </div>
 </div>

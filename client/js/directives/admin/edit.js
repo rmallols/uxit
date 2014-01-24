@@ -222,6 +222,7 @@
                 function setAppBridgeProperties(htmlElm, panel, index) {
                     htmlElm.attr('src', panel.src);
                     htmlElm.attr('view', panel.view);
+                    htmlElm.attr('ctrl', panel.ctrl);
                     htmlElm.attr('bindings', 'panels[' + index + '].bindings');
                 }
 

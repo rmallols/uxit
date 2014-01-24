@@ -29,7 +29,7 @@
 
         _getData: function(filePath, callback) {
             fileSystemService.readFile(filePath, function (err, data) {
-                callback(err, JSON.parse(data));
+                callback(err, (data) ? JSON.parse(data) : {});
             });
         },
 

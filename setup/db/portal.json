@@ -1,12 +1,14 @@
     {
-        "app": { "showTitle": false,
+        "app": {
+            "showTitle": false,
             "showComments": false,
             "styles": {
                 "background": {
                     "color": "#FFFFFF"
                 },
                 "padding": 15,
-                "margin": 15
+                "margin": 15,
+                "cssVars": {}
             },
             "float": "left",
             "align": "left" },

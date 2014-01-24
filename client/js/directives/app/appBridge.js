@@ -12,7 +12,8 @@
                     onLayer         : '=',
                     onEvent         : '=',
                     src             : '@',
-                    view            : '@'
+                    view            : '@',
+                    ctrl            : '@'
                 },
                 link: function link(scope, element) {
 
@@ -23,7 +24,7 @@
                             $timeout(function() {
                                 inheritParentScopeModel();
                                 if(childScope.src && childScope.view) {
-                                    executeServiceMethod(childScope.src, childScope.view);
+                                    executeServiceMethod(childScope.src, childScope.view, childScope.ctrl);
                                 }
                             });
                         }
@@ -36,6 +37,7 @@
                         childScope.onLayer      = scope.onLayer;
                         childScope.src          = scope.src;
                         childScope.view         = scope.view;
+                        childScope.ctrl         = scope.ctrl;
                         childScope.onEvent      = scope.onEvent;
                         setCustomBindings(childScope, scope.bindings);
                     }
@@ -50,9 +52,9 @@
                         }
                     }
 
-                    function executeServiceMethod(src, view) {
+                    function executeServiceMethod(src, view, ctrl) {
                         var appElm = compileTemplate(src, view);
-                        manageServiceFns(src, view, appElm);
+                        manageServiceFns(src, view, ctrl, appElm);
                     }
 
                     function compileTemplate(src, view) {
@@ -64,9 +66,9 @@
                         return appElm;
                     }
 
-                    function manageServiceFns(src, view, appElm) {
+                    function manageServiceFns(src, view, ctrl, appElm) {
                         var appService = $injector.get(src + 'Service');
-                        defineViewFn(appService, view, appElm);
+                        defineViewFn(appService, view, ctrl, appElm);
                         defineOnLayerSaveFn(appService, view);
                         defineOnResizeFn(appService, appElm);
                     }
@@ -82,9 +84,10 @@
                         }
                     }
 
-                    function defineViewFn(appService, view, appElm) {
-                        if(appService[view]) {
-                            appService[view](childScope, appElm);
+                    function defineViewFn(appService, view, ctrl, appElm) {
+                        var viewFn = ctrl || view; //Allow custom controller functions
+                        if(appService[viewFn]) {
+                            appService[viewFn](childScope, appElm);
                         }
                     }
 

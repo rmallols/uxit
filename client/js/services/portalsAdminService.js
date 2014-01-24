@@ -1,6 +1,9 @@
 (function () {
     'use strict';
-    COMPONENTS.service('portalsAdminService', ['dbService', function (dbService) {
+    COMPONENTS.service('portalsAdminService', ['dbService', 'crudService', 'i18nDbService',
+    function (dbService, crudService, i18nDbService) {
+
+        var forEach = angular.forEach;
 
         function view(scope) {
 
@@ -28,7 +31,8 @@
             /** Private methods**/
             function getCreatePanels() {
                 return [{
-                    title: 'Create database', src:'portalsAdmin', view:'editDb', appBridge: true,
+                    title: 'Create database', src:'portalsAdmin', appBridge: true,
+                    view:'editDb', ctrl: 'createDb',
                     bindings: {
                         model: newDb
                     }
@@ -49,6 +53,7 @@
             }
 
             function onCreateDb(database) {
+                console.log("CreATING!", database);
                 dbService.createDatabase(database, function(databases) {
                     updateModel(databases);
                 });
@@ -70,10 +75,43 @@
                     'Size on disk; {{item.sizeOnDisk}} - empty: {{item.empty}}' +
                     '</div>';
             }
-            /** Private methods**/
+            /** End of private methods**/
         }
 
-        function createDb(scope) {}
+        function createDb(scope) {
+
+            getTemplatesData(function(templatesData)    {
+                scope.dataTemplates         = templatesData;
+                scope.model.dataTemplateId  = scope.dataTemplates[0].id;
+            });
+            getTemplatesStyles(function(templatesStyles){
+                scope.stylesTemplates           = templatesStyles;
+                scope.model.stylesTemplateId    = scope.stylesTemplates[0].id;
+            });
+
+            /** Private methods**/
+            function getTemplatesData(callback) {
+                getTemplates('setup/db/templates/data', callback);
+            }
+
+            function getTemplatesStyles(callback) {
+                getTemplates('setup/db/templates/styles', callback);
+            }
+
+            function getTemplates(endpoint, callback) {
+                var templates = [{ id: '', text: '' }];
+                crudService.get(endpoint, null, null, function (loadedTemplates) {
+                    forEach(loadedTemplates, function(template) {
+                        templates.push({
+                            id  : template.id,
+                            text: i18nDbService.getI18nProperty(template.text).text
+                        });
+                    });
+                    callback(templates);
+                });
+            }
+            /** End of private methods**/
+        }
 		
 		function editDb(scope) {
             if(scope.model) {

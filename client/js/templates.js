@@ -1127,6 +1127,14 @@ angular.module("portalsAdminEditDb.html", []).run(["$templateCache", function($t
     "        <div class=\"columns large-10\">Database name:<br/>(Without spaces)</div>\n" +
     "        <div class=\"columns large-15\"><input type=\"text\" ng-model=\"model.typedName\" /></div>\n" +
     "    </div>\n" +
+    "    <div class=\"cf columns large-12\">\n" +
+    "        <h5><label i18n=\"portalsAdmin.dataTemplates\"></label></h5>\n" +
+    "        <select ng-model=\"model.dataTemplateId\" ng-options=\"obj.id as obj.text for obj in dataTemplates\"></select>\n" +
+    "    </div>\n" +
+    "    <div class=\"cf columns large-13\">\n" +
+    "        <h5><label i18n=\"portalsAdmin.stylesTemplates\"></label></h5>\n" +
+    "        <select ng-model=\"model.stylesTemplateId\" ng-options=\"obj.id as obj.text for obj in stylesTemplates\"></select>\n" +
+    "    </div>\n" +
     "</div>");
 }]);
 
