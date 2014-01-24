@@ -30,7 +30,7 @@
       <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="30" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+            <state line="17" column="30" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="748">
               <folding />
             </state>
           </provider>
@@ -39,7 +39,7 @@
       <file leaf-file-name="LoginCtrl.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/js/controllers/LoginCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="18" selection-start="279" selection-end="279" vertical-scroll-proportion="0.1461318" vertical-offset="0" max-vertical-offset="698">
+            <state line="7" column="92" selection-start="284" selection-end="284" vertical-scroll-proportion="0.1704871" vertical-offset="0" max-vertical-offset="698">
               <folding />
             </state>
           </provider>
@@ -48,7 +48,7 @@
       <file leaf-file-name="portalService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/services/portalService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="48" selection-start="5184" selection-end="5184" vertical-scroll-proportion="-9.64" vertical-offset="1799" max-vertical-offset="2958">
+            <state line="120" column="48" selection-start="5184" selection-end="5184" vertical-scroll-proportion="0.0" vertical-offset="1799" max-vertical-offset="2958">
               <folding />
             </state>
           </provider>
@@ -237,17 +237,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -265,15 +265,7 @@
       <recent name="C:\usr\menzit\client\html\banner\types" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.grunt prod">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Node.js.grunt dev">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -284,8 +276,12 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -293,6 +289,10 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -1214,10 +1214,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="false" />
+    <frame x="54" y="-8" width="1320" height="784" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49723756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1226,12 +1225,13 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-314" y="-1073" width="1904" height="1037" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-314" y="-1073" width="1904" height="1037" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42679557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1281,86 +1281,62 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/client/js/services/utils/keyboardService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="59" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.25705793" vertical-offset="320" max-vertical-offset="1700">
-          <folding />
-        </state>
+        <state line="29" column="59" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.25705793" vertical-offset="320" max-vertical-offset="1700" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/editBox.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="40" selection-start="669" selection-end="669" vertical-scroll-proportion="1.1324042" vertical-offset="100" max-vertical-offset="2193">
-          <folding />
-        </state>
+        <state line="25" column="40" selection-start="669" selection-end="669" vertical-scroll-proportion="1.1324042" vertical-offset="100" max-vertical-offset="2193" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/e2e/resources/pageObjects/portalsAdmin.pO.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="8" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.0" vertical-offset="407" max-vertical-offset="1105">
-          <folding />
-        </state>
+        <state line="50" column="8" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.0" vertical-offset="407" max-vertical-offset="1105" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/collectionService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="12" selection-start="959" selection-end="959" vertical-scroll-proportion="0.3323782" vertical-offset="193" max-vertical-offset="3196">
-          <folding />
-        </state>
+        <state line="25" column="12" selection-start="959" selection-end="959" vertical-scroll-proportion="0.3323782" vertical-offset="193" max-vertical-offset="3196" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/crud/userService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="100" selection-start="1662" selection-end="1662" vertical-scroll-proportion="0.11589896" vertical-offset="551" max-vertical-offset="1224">
-          <folding />
-        </state>
+        <state line="37" column="100" selection-start="1662" selection-end="1662" vertical-scroll-proportion="0.11589896" vertical-offset="551" max-vertical-offset="1224" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/sessionService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="23" selection-start="995" selection-end="995" vertical-scroll-proportion="0.43982807" vertical-offset="169" max-vertical-offset="867">
-          <folding />
-        </state>
+        <state line="28" column="23" selection-start="995" selection-end="995" vertical-scroll-proportion="0.43982807" vertical-offset="169" max-vertical-offset="867" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/e2e/resources/components/list.cO.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="60" selection-start="773" selection-end="773" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-          <folding />
-        </state>
+        <state line="24" column="60" selection-start="773" selection-end="773" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/e2e/resources/pageObjects/userHandling.pO.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="62" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.9585799" vertical-offset="339" max-vertical-offset="1037">
-          <folding />
-        </state>
+        <state line="39" column="62" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.9585799" vertical-offset="339" max-vertical-offset="1037" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/portalsAdmin.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="43" selection-start="389" selection-end="389" vertical-scroll-proportion="-5.44" vertical-offset="0" max-vertical-offset="1700">
-          <folding />
-        </state>
+        <state line="8" column="43" selection-start="389" selection-end="389" vertical-scroll-proportion="-5.44" vertical-offset="0" max-vertical-offset="1700" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/e2e/customConf.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="54" selection-start="1954" selection-end="1954" vertical-scroll-proportion="1.313099" vertical-offset="320" max-vertical-offset="1989">
-          <folding />
-        </state>
+        <state line="43" column="54" selection-start="1954" selection-end="1954" vertical-scroll-proportion="1.313099" vertical-offset="320" max-vertical-offset="1989" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="58" selection-start="1911" selection-end="1911" vertical-scroll-proportion="0.57507986" vertical-offset="483" max-vertical-offset="1360">
-          <folding />
-        </state>
+        <state line="39" column="58" selection-start="1911" selection-end="1911" vertical-scroll-proportion="0.57507986" vertical-offset="483" max-vertical-offset="1360" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/controllers/PortalCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/index.js">
@@ -1372,7 +1348,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/portalService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="48" selection-start="5184" selection-end="5184" vertical-scroll-proportion="-9.64" vertical-offset="1799" max-vertical-offset="2958">
+        <state line="120" column="48" selection-start="5184" selection-end="5184" vertical-scroll-proportion="0.0" vertical-offset="1799" max-vertical-offset="2958">
           <folding />
         </state>
       </provider>
@@ -1386,7 +1362,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/controllers/LoginCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="18" selection-start="279" selection-end="279" vertical-scroll-proportion="0.1461318" vertical-offset="0" max-vertical-offset="698">
+        <state line="7" column="92" selection-start="284" selection-end="284" vertical-scroll-proportion="0.1704871" vertical-offset="0" max-vertical-offset="698">
           <folding />
         </state>
       </provider>
