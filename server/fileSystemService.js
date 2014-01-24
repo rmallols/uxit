@@ -4,10 +4,27 @@ var fs = require("fs");
 module.exports = {
 
     readFile: function (filePath, callback) {
-        fs.readFile(filePath, function (err, data) {
+        fs.readFile(filePath, 'utf-8', function (err, data) {
             if (callback) {
                 callback(err, data);
             }
+        });
+    },
+
+    readFiles: function (folderPath, isJsonFormat, callback) {
+        var c = 0, self = this, filesArray = [];
+        fs.readdir(folderPath, function (err, files) {
+            if (err) { throw err; }
+            files.forEach(function(fileName){
+                c++;
+                self.readFile(folderPath + '/' + fileName, function(err, data) {
+                    if (err) { throw err; }
+                    filesArray[filesArray.length] = (isJsonFormat) ?  JSON.parse(data) : data;
+                    if (0===--c) {
+                        if (callback) { callback(err, filesArray); }
+                    }
+                });
+            });
         });
     },
 

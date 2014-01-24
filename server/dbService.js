@@ -130,10 +130,6 @@ module.exports = {
         return pkg.mode === constantsService.modes.host;
     },
 
-    _isCloudDb: function() {
-        return pkg.mode === constantsService.modes.cloud;
-    },
-
     _copyDatabase: function(srcDbId, dstDbId, callback) {
         var self = this, commandOptions = { copydb: 1, fromdb: srcDbId, todb: dstDbId };
         self.connect(self._defaultDbId, function(err, db) {

@@ -1,0 +1,25 @@
+{
+    "id"    : "pyme",
+    "text"  : {
+        "en": { "text": "Small and mid size business" },
+        "es": { "text": "Pequeño y mediano negocio" }
+    },
+    "db"    : [
+        {
+            "collection": "pages",
+            "data": {
+                "_id": "productsAndServices",
+                "position": 1,
+                "rows": [
+                    { "columns": [{ "size": 25, "apps": [  ] }] }
+                ],
+                "text": {
+                    "en": { "text": "Products and Services" },
+                    "es": { "text": "Productos y Servicios" }
+                },
+                "type": "apps",
+                "url": "ProductsAndServices"
+            }
+        }
+    ]
+}

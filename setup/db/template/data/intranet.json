@@ -1,0 +1,25 @@
+{
+    "id"    : "intranet",
+    "text"  : {
+        "en": { "text": "Intranet" },
+        "es": { "text": "intranet" }
+    },
+    "db"    : [
+        {
+            "collection": "intranet",
+            "data": {
+                "_id": "intranet",
+                "position": 1,
+                "rows": [
+                    { "columns": [{ "size": 25, "apps": [  ] }] }
+                ],
+                "text": {
+                    "en": { "text": "Agenda" },
+                    "es": { "text": "Agenda" }
+                },
+                "type": "apps",
+                "url": "Intranet"
+            }
+        }
+    ]
+}

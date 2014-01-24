@@ -6,6 +6,7 @@ var express             = require('express'),
     emailService        = require('./emailService'),
     liveMessageService  = require("./liveMessageService"),
     dbService           = require("./dbService"),
+    setupService        = require("./setupService"),
     sessionService      = require("./sessionService"),
     appService          = require("./appService"),
     createService       = require("./crud/createService"),
@@ -74,9 +75,15 @@ app.post('/:portalId/rest/import', /*checkAuth, */setupDb, function (req, res) {
     });
 });
 
-app.get('/:portalId/rest/export', /*checkAuth, */setupDb, function (req, res) {
+app.get('/:portalId/rest/export', checkAuth, setupDb, function (req, res) {
     dbService.exportDatabase(req.dbCon, req.params.portalId, req.session, function(bufferedFile) {
         redirectionService.goToBufferedFile(req.params.portalId + '.zip', res, bufferedFile);
+    });
+});
+
+app.get('/:portalId/rest/setup/db/template/data', function (req, res) {
+    setupService.getTemplatesData(function(err, result) {
+        res.send(result);
     });
 });
 

@@ -62,7 +62,7 @@
     <option passfail="false" />
     <option white="false" />
     <option maxerr="50" />
-    <option predef="angular, $, jQuery, describe, ddescribe, it, iit, beforeEach, afterEach, require, expect, inject, module, COMPONENTS, yepnope, setTimeout" />
+    <option predef="angular, $, jQuery, describe, ddescribe, it, iit, beforeEach, afterEach, require, expect, inject, module, COMPONENTS, yepnope, setTimeout, __dirname" />
   </component>
 </project>
 
