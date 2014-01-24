@@ -2,28 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d897453-2535-485f-823f-a25c91233bb4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/setup/db/template/data/intranet.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/setup/db/template/data/pyme.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/setup/db/template/style/restaurant.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/setupService.js" />
-      <change type="DELETED" beforePath="C:\usr\menzit\client\js\resources-0.38.0.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\usr\menzit\client\min\js.min.js" afterPath="" />
-      <change type="MOVED" beforePath="C:\usr\menzit\setup\availableApps.json" afterPath="$PROJECT_DIR$/setup/db/availableApps.json" />
-      <change type="MOVED" beforePath="C:\usr\menzit\setup\comments.json" afterPath="$PROJECT_DIR$/setup/db/comments.json" />
-      <change type="MOVED" beforePath="C:\usr\menzit\setup\content.json" afterPath="$PROJECT_DIR$/setup/db/content.json" />
-      <change type="MOVED" beforePath="C:\usr\menzit\setup\languages.json" afterPath="$PROJECT_DIR$/setup/db/languages.json" />
-      <change type="MOVED" beforePath="C:\usr\menzit\setup\media.json" afterPath="$PROJECT_DIR$/setup/db/media.json" />
-      <change type="MOVED" beforePath="C:\usr\menzit\setup\pages.json" afterPath="$PROJECT_DIR$/setup/db/pages.json" />
-      <change type="MOVED" beforePath="C:\usr\menzit\setup\portal.json" afterPath="$PROJECT_DIR$/setup/db/portal.json" />
-      <change type="MOVED" beforePath="C:\usr\menzit\setup\ratings.json" afterPath="$PROJECT_DIR$/setup/db/ratings.json" />
-      <change type="MOVED" beforePath="C:\usr\menzit\setup\roles.json" afterPath="$PROJECT_DIR$/setup/db/roles.json" />
-      <change type="MOVED" beforePath="C:\usr\menzit\setup\tags.json" afterPath="$PROJECT_DIR$/setup/db/tags.json" />
-      <change type="MOVED" beforePath="C:\usr\menzit\setup\users.json" afterPath="$PROJECT_DIR$/setup/db/users.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/setup/db/template/styles/pink.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/setup/db/template/styles/restaurant.json" />
+      <change type="DELETED" beforePath="C:\usr\menzit\setup\db\template\style\restaurant.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/collectionService.js" afterPath="$PROJECT_DIR$/server/collectionService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/dbService.js" afterPath="$PROJECT_DIR$/server/dbService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/fileSystemService.js" afterPath="$PROJECT_DIR$/server/fileSystemService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server.js" afterPath="$PROJECT_DIR$/server/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/setupService.js" afterPath="$PROJECT_DIR$/server/setupService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uxit.iws" />
@@ -49,10 +34,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="96" column="34" selection-start="3579" selection-end="3579" vertical-scroll-proportion="0.0" vertical-offset="1187" max-vertical-offset="4199">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="pyme.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup/db/template/data/pyme.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="24" selection-end="705" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="510">
+            <state line="24" column="4" selection-start="0" selection-end="707" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="510">
               <folding />
             </state>
           </provider>
@@ -61,25 +55,25 @@
       <file leaf-file-name="intranet.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup/db/template/data/intranet.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="57" selection-start="211" selection-end="211" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="510">
+            <state line="9" column="21" selection-start="211" selection-end="211" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="510">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="restaurant.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/setup/db/template/style/restaurant.json">
+        <entry file="file://$PROJECT_DIR$/setup/db/template/styles/restaurant.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
+            <state line="9" column="48" selection-start="0" selection-end="511" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="476">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/server.js">
+      <file leaf-file-name="pink.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setup/db/template/styles/pink.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="74" selection-start="3424" selection-end="3424" vertical-scroll-proportion="0.0" vertical-offset="1187" max-vertical-offset="3893">
+            <state line="15" column="59" selection-start="372" selection-end="372" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="476">
               <folding />
             </state>
           </provider>
@@ -88,16 +82,7 @@
       <file leaf-file-name="setupService.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/setupService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="39" selection-start="605" selection-end="605" vertical-scroll-proportion="0.9053255" vertical-offset="0" max-vertical-offset="442">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dbService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/dbService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="69" selection-start="3143" selection-end="3143" vertical-scroll-proportion="-15.08" vertical-offset="1085" max-vertical-offset="3026">
+            <state line="40" column="44" selection-start="1562" selection-end="1562" vertical-scroll-proportion="0.95527154" vertical-offset="381" max-vertical-offset="1054">
               <folding />
             </state>
           </provider>
@@ -106,16 +91,16 @@
       <file leaf-file-name="collectionService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/collectionService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="39" selection-start="5737" selection-end="5748" vertical-scroll-proportion="-45.68" vertical-offset="1170" max-vertical-offset="3247">
+            <state line="123" column="42" selection-start="5212" selection-end="5212" vertical-scroll-proportion="0.0" vertical-offset="1962" max-vertical-offset="3247">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fileSystemService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/fileSystemService.js">
+      <file leaf-file-name="portal.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setup/db/portal.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="76" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
+            <state line="24" column="0" selection-start="674" selection-end="786" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="2023">
               <folding />
             </state>
           </provider>
@@ -140,22 +125,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/js/services/utils/keyboardService.js" />
-        <option value="$PROJECT_DIR$/client/css/editBox.less" />
-        <option value="$PROJECT_DIR$/server/tests/e2e/tests/portalsAdmin.spec.js" />
-        <option value="$PROJECT_DIR$/server/tests/e2e/resources/pageObjects/userHandling.pO.js" />
         <option value="$PROJECT_DIR$/server/tests/e2e/resources/components/list.cO.js" />
         <option value="$PROJECT_DIR$/server/tests/e2e/customConf.js" />
         <option value="$PROJECT_DIR$/server/tests/e2e/tests/userHandling.spec.js" />
         <option value="$PROJECT_DIR$/client/js/services/metaService.js" />
         <option value="$PROJECT_DIR$/client/js/controllers/LoginCtrl.js" />
         <option value="$PROJECT_DIR$/server/dbService.js" />
-        <option value="$PROJECT_DIR$/server/collectionService.js" />
-        <option value="$PROJECT_DIR$/server/server.js" />
-        <option value="$PROJECT_DIR$/server/fileSystemService.js" />
-        <option value="$PROJECT_DIR$/server/setupService.js" />
         <option value="$PROJECT_DIR$/setup/db/template/data/pyme.json" />
         <option value="$PROJECT_DIR$/setup/db/template/data/intranet.json" />
+        <option value="$PROJECT_DIR$/server/fileSystemService.js" />
+        <option value="$PROJECT_DIR$/setup/db/template/style/restaurant.json" />
+        <option value="$PROJECT_DIR$/setup/db/template/style/pink.json" />
+        <option value="$PROJECT_DIR$/setup/db/template/styles/restaurant.json" />
+        <option value="$PROJECT_DIR$/setup/db/template/styles/pink.json" />
+        <option value="$PROJECT_DIR$/server/collectionService.js" />
+        <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/server/setupService.js" />
       </list>
     </option>
   </component>
@@ -292,6 +277,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -364,7 +350,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
+              <option name="myItemId" value="styles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -410,30 +396,29 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="Settings.JavaScript.Linters.JSHint" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
+    <property name="options.lastSelected" value="Settings.JavaScript.Linters.JSHint" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backups/uxit/#52_All_the_callbacks_defined_in_the_templates_should_have_the_()_suffix.patch" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\usr\menzit\setup\db\template\style" />
       <recent name="C:\usr\menzit\setup\db\template\data" />
       <recent name="C:\usr\menzit\server" />
       <recent name="C:\usr\menzit\server\tests\unit\directives" />
       <recent name="C:\usr\menzit\client\html\input" />
-      <recent name="C:\usr\menzit\client\js\directives\input" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\usr\menzit\setup\db" />
@@ -444,6 +429,14 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.Watch changes">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -454,12 +447,8 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -467,10 +456,6 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -1368,7 +1353,11 @@
       <created>1390503022359</created>
       <updated>1390503022359</updated>
     </task>
-    <option name="localTasksCounter" value="204" />
+    <task id="LOCAL-00204" summary="#219 Provide a mechanism to update DB">
+      <created>1390558424445</created>
+      <updated>1390558424446</updated>
+    </task>
+    <option name="localTasksCounter" value="205" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1398,17 +1387,17 @@
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49723756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-313" y="-1086" width="1304" height="241" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42679557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712707" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20628834" sideWeight="0.50276244" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39917126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-314" y="-1073" width="1904" height="1037" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.33701658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-314" y="-1073" width="1904" height="1037" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42679557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1424,7 +1413,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="#243 [App] Add the possibility to set a fixed height for every app" />
     <MESSAGE value="#239 Glitchy isolation of content apps" />
     <MESSAGE value="#248 [staticContentApp] Select content is broken" />
     <MESSAGE value="#235 [Pages] Invisible pages support" />
@@ -1449,7 +1437,8 @@
     <MESSAGE value="#255 [editBox] Pressing ESC key creates a new overlay layer instead of closing the component" />
     <MESSAGE value="#257 [edit Box] Provide a mechanism to figure out the width of the component" />
     <MESSAGE value="#259 [e2e] If three portals have been created, the test that deletes mockPortal is removing another one" />
-    <option name="LAST_COMMIT_MESSAGE" value="#259 [e2e] If three portals have been created, the test that deletes mockPortal is removing another one" />
+    <MESSAGE value="#219 Provide a mechanism to update DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="#219 Provide a mechanism to update DB" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1457,25 +1446,14 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/js/services/portalService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="48" selection-start="5184" selection-end="5184" vertical-scroll-proportion="0.3452722" vertical-offset="1799" max-vertical-offset="2958">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/services/metaService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="88" selection-start="2789" selection-end="2789" vertical-scroll-proportion="0.35673353" vertical-offset="907" max-vertical-offset="1870">
-          <folding />
-        </state>
+        <state line="68" column="88" selection-start="2789" selection-end="2789" vertical-scroll-proportion="0.35673353" vertical-offset="907" max-vertical-offset="1870" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/controllers/LoginCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="72" selection-start="284" selection-end="284" vertical-scroll-proportion="0.1704871" vertical-offset="0" max-vertical-offset="698">
-          <folding />
-        </state>
+        <state line="7" column="72" selection-start="284" selection-end="284" vertical-scroll-proportion="0.1704871" vertical-offset="0" max-vertical-offset="698" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/directives/pages.js">
@@ -1499,72 +1477,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup/db/portal.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="33" selection-start="191" selection-end="191" vertical-scroll-proportion="0.15178572" vertical-offset="0" max-vertical-offset="2023">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup/db/pages.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="2" selection-end="1809" vertical-scroll-proportion="0.02529762" vertical-offset="0" max-vertical-offset="1156">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="2" selection-end="1809" vertical-scroll-proportion="0.02529762" vertical-offset="0" max-vertical-offset="1156" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup/db/template/style/restaurant.json">
+    <entry file="file://$PROJECT_DIR$/setup/db/template/data/intranet.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="698">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="74" selection-start="3424" selection-end="3424" vertical-scroll-proportion="0.0" vertical-offset="1187" max-vertical-offset="3893">
+        <state line="9" column="21" selection-start="211" selection-end="211" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="510">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/dbService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="69" selection-start="3143" selection-end="3143" vertical-scroll-proportion="-15.08" vertical-offset="1085" max-vertical-offset="3026">
+        <state line="86" column="69" selection-start="3143" selection-end="3143" vertical-scroll-proportion="0.54011464" vertical-offset="1085" max-vertical-offset="3026">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/fileSystemService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="76" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
+        <state line="5" column="4" selection-start="63" selection-end="63" vertical-scroll-proportion="0.12177651" vertical-offset="0" max-vertical-offset="935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup/db/portal.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="674" selection-end="786" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="2023">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/setup/db/template/data/pyme.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="24" selection-end="705" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="510">
+        <state line="24" column="4" selection-start="0" selection-end="707" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="510">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup/db/template/data/intranet.json">
+    <entry file="file://$PROJECT_DIR$/setup/db/template/styles/restaurant.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="57" selection-start="211" selection-end="211" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="510">
+        <state line="9" column="48" selection-start="0" selection-end="511" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="476">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup/db/template/styles/pink.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="59" selection-start="372" selection-end="372" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="476">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/collectionService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="39" selection-start="5737" selection-end="5748" vertical-scroll-proportion="-45.68" vertical-offset="1170" max-vertical-offset="3247">
+        <state line="123" column="42" selection-start="5212" selection-end="5212" vertical-scroll-proportion="0.0" vertical-offset="1962" max-vertical-offset="3247">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="34" selection-start="3579" selection-end="3579" vertical-scroll-proportion="0.0" vertical-offset="1187" max-vertical-offset="4199">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/setupService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="39" selection-start="605" selection-end="605" vertical-scroll-proportion="0.9053255" vertical-offset="0" max-vertical-offset="442">
+        <state line="40" column="44" selection-start="1562" selection-end="1562" vertical-scroll-proportion="0.95527154" vertical-offset="381" max-vertical-offset="1054">
           <folding />
         </state>
       </provider>

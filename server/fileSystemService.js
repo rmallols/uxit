@@ -11,7 +11,7 @@ module.exports = {
         });
     },
 
-    readFiles: function (folderPath, isJsonFormat, callback) {
+    readFiles: function (folderPath, callback) {
         var c = 0, self = this, filesArray = [];
         fs.readdir(folderPath, function (err, files) {
             if (err) { throw err; }
@@ -19,7 +19,7 @@ module.exports = {
                 c++;
                 self.readFile(folderPath + '/' + fileName, function(err, data) {
                     if (err) { throw err; }
-                    filesArray[filesArray.length] = (isJsonFormat) ?  JSON.parse(data) : data;
+                    filesArray[filesArray.length] = data;
                     if (0===--c) {
                         if (callback) { callback(err, filesArray); }
                     }

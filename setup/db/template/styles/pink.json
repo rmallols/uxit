@@ -1,0 +1,23 @@
+{
+    "id"    : "pink",
+    "text"  : {
+        "en": { "text": "Pink-like look&feel" },
+        "es": { "text": "Interfaz de tonos rosas" }
+    },
+    "db"    : {
+        "styles": {
+            "background": {
+                "color": "#00AAEF"
+            },
+            "fontSize": ""
+        },
+        "app": {
+            "styles": {
+                "background": {
+                    "color": "#FF0000"
+                },
+                "fontSize": ""
+            }
+        }
+    }
+}

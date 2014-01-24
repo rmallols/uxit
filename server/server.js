@@ -81,8 +81,26 @@ app.get('/:portalId/rest/export', checkAuth, setupDb, function (req, res) {
     });
 });
 
-app.get('/:portalId/rest/setup/db/template/data', function (req, res) {
-    setupService.getTemplatesData(function(err, result) {
+app.get('/:portalId/rest/setup/db/templates/data', function (req, res) {
+    setupService.getTemplatesDataSummary(function(err, result) {
+        res.send(result);
+    });
+});
+
+app.get('/:portalId/rest/setup/db/templates/data/:templateId', function (req, res) {
+    setupService.getTemplateData(req.params.templateId, function(err, result) {
+        res.send(result);
+    });
+});
+
+app.get('/:portalId/rest/setup/db/templates/styles', function (req, res) {
+    setupService.getTemplatesStylesSummary(function(err, result) {
+        res.send(result);
+    });
+});
+
+app.get('/:portalId/rest/setup/db/templates/styles/:templateId', function (req, res) {
+    setupService.getTemplateStyles(req.params.templateId, function(err, result) {
         res.send(result);
     });
 });

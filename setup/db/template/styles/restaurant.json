@@ -1,0 +1,23 @@
+{
+    "id"    : "restaurant",
+    "text"  : {
+        "en": { "text": "Restaurante-like look&feel" },
+        "es": { "text": "Interfaz de tipo restaurante" }
+    },
+    "db"    : {
+        "styles": {
+            "background": {
+                "color": "#FF0000"
+            },
+            "fontSize": ""
+        },
+        "app": {
+            "styles": {
+                "background": {
+                    "color": "#00AAEF"
+                },
+                "fontSize": ""
+            }
+        }
+    }
+}

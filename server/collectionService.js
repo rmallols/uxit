@@ -121,7 +121,7 @@
 
         _initializeCollection: function (dbCon, collection, callback) {
             var self = this;
-            setupService.getData(collection, function (err, data) {
+            setupService.getCollectionData(collection, function (err, data) {
                 consoleService.success(collection + ' collection initialized');
                 if(data && data.length) {
                     self._createDocuments(dbCon, collection, data, function() {
